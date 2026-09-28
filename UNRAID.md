@@ -1,4 +1,4 @@
-# Mathe-Coach auf Unraid installieren
+# Mathe-Prüfungstrainer auf Unraid installieren
 
 Diese Anleitung führt dich Schritt für Schritt durch die Installation. Du brauchst etwa 15 Minuten.
 
@@ -44,13 +44,13 @@ Im Unraid-Terminal:
 cd /mnt/user/appdata/mathematik
 docker compose up -d --build
 ```
-Beim ersten Mal dauert das ein paar Minuten. Danach erscheint der Container **mathe-coach** im Reiter **Docker** und startet ab jetzt automatisch mit dem Server.
+Beim ersten Mal dauert das ein paar Minuten. Danach erscheint der Container **mathe-pruefungstrainer** im Reiter **Docker** und startet ab jetzt automatisch mit dem Server.
 
 Prüfen, ob alles läuft:
 ```bash
-docker logs mathe-coach
+docker logs mathe-pruefungstrainer
 ```
-Dort sollte stehen: `Mathe-Abschluss-Coach läuft auf http://localhost:3000`.
+Dort sollte stehen: `Mathe-Prüfungstrainer läuft auf http://localhost:3000`.
 
 ## 5. Erste Anmeldung
 
@@ -62,7 +62,7 @@ Dort sollte stehen: `Mathe-Abschluss-Coach läuft auf http://localhost:3000`.
 4. **Kurse & Kinder** → Kurs anlegen → „Kinder hinzufügen“ → Namen einfügen → Zugangsdaten ausdrucken.
 5. Falls der Demo-Kurs angelegt wurde: Kurs löschen und die Demo-Kinder (peter, lea, ali, mia) entfernen.
 
-Auf dem iPad: Seite in Safari öffnen → **Teilen → Zum Home-Bildschirm**. Dann startet der Mathe-Coach wie eine App.
+Auf dem iPad: Seite in Safari öffnen → **Teilen → Zum Home-Bildschirm**. Dann startet der Mathe-Prüfungstrainer wie eine App.
 
 ## 6. Update auf eine neue Version
 
@@ -93,7 +93,7 @@ Solange nichts weiter eingerichtet ist, funktioniert die Plattform **nur im Heim
 
 | Problem | Lösung |
 |---|---|
-| Seite lädt nicht | `docker ps` → läuft `mathe-coach`? Sonst `docker logs mathe-coach` ansehen. |
+| Seite lädt nicht | `docker ps` → läuft `mathe-pruefungstrainer`? Sonst `docker logs mathe-pruefungstrainer` ansehen. |
 | „port is already allocated“ | Anderen Port wählen (siehe Schritt 3), dann `docker compose up -d`. |
 | Admin-Passwort vergessen | In `docker-compose.yml` neues `ADMIN_PASSWORD` eintragen und `ADMIN_RESET: "true"` setzen → `docker compose up -d` → anmelden → `ADMIN_RESET` wieder auf `"false"` setzen und erneut `docker compose up -d`. |
 | Kind hat Passwort vergessen | Admin → Kurse & Kinder → Schlüssel-Symbol beim Kind. |

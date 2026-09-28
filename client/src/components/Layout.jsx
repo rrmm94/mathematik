@@ -29,13 +29,13 @@ export function HelpButton() {
 
 function Logo({ to = '/' }) {
   return (
-    <Link to={to} className="flex items-center gap-2.5">
-      <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 text-white shadow-sm shadow-brand-600/30">
+    <Link to={to} className="flex min-w-0 items-center gap-2.5">
+      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-600 text-white shadow-sm shadow-brand-600/30">
         <Sigma size={20} strokeWidth={2.5} />
       </span>
       <span className="leading-tight">
-        <span className="block text-[15px] font-bold text-slate-900">Mathe-Coach</span>
-        <span className="block text-[11px] font-medium text-slate-500">Fit für die Abschlussprüfung</span>
+        <span className="block whitespace-nowrap text-[14px] font-bold text-slate-900 sm:text-[15px]">Mathe-Prüfungstrainer</span>
+        <span className="hidden text-[11px] font-medium text-slate-500 sm:block">Fit für die Abschlussprüfung</span>
       </span>
     </Link>
   );
@@ -57,9 +57,9 @@ export function StudentLayout() {
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-3 sm:gap-3 sm:px-4">
           <Logo />
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-1 sm:gap-2">
             {user?.onboarded && (
               <Link to="/" className="btn-ghost hidden md:inline-flex"><Home size={17} /> Startseite</Link>
             )}

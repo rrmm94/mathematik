@@ -34,8 +34,8 @@ export default function Dashboard() {
       {data.retest && <RetestResult retest={data.retest} />}
       {(diagnose.canStart || diagnose.active) && <RetestCard diagnose={diagnose} />}
 
-      <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
-        <section>
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+        <section className="min-w-0">
           <div className="mb-3 flex items-end justify-between">
             <div>
               <h2 className="text-lg font-bold text-slate-900">Dein Lernplan</h2>

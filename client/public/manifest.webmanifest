@@ -1,6 +1,6 @@
 {
-  "name": "Mathe-Coach – Fit für die Abschlussprüfung",
-  "short_name": "Mathe-Coach",
+  "name": "Mathe-Prüfungstrainer – Fit für die Abschlussprüfung",
+  "short_name": "Mathe-Prüfungstrainer",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f8fafc",

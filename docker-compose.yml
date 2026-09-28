@@ -1,8 +1,8 @@
 services:
-  mathe-coach:
+  mathe-pruefungstrainer:
     build: .
-    image: mathe-coach:latest
-    container_name: mathe-coach
+    image: mathe-pruefungstrainer:latest
+    container_name: mathe-pruefungstrainer
     restart: unless-stopped
     ports:
       - "3000:3000"

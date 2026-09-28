@@ -1,4 +1,4 @@
-# Mathe-Coach – Lernplattform für die Mathe-Abschlussprüfung
+# Mathe-Prüfungstrainer – Lernplattform für die Mathe-Abschlussprüfung
 
 Eine Lernplattform für die Oberschule (Haupt- und Realschulzweig), mit der sich Schülerinnen und Schüler selbstständig auf die Mathematik-Abschlussprüfung vorbereiten. Die Inhalte orientieren sich an den niedersächsischen Abschlussarbeiten (HS 9, HS 10 jeweils G/E, RS).
 
