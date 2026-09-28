@@ -14,26 +14,26 @@ Unraid bringt Docker mit, aber nicht „Docker Compose“.
 
 **Variante A – per ZIP (am einfachsten):**
 1. Auf GitHub das Repository `rrmm94/mathematik` öffnen, Branch **main** wählen → **Code → Download ZIP**.
-2. ZIP entpacken und den Ordner über die Netzwerkfreigabe nach `appdata` kopieren und in `mathe-coach-src` umbenennen, sodass es diesen Pfad gibt:
-   `/mnt/user/appdata/mathe-coach-src/docker-compose.yml`
+2. ZIP entpacken und den Ordner über die Netzwerkfreigabe nach `appdata` kopieren und in `mathematik` umbenennen, sodass es diesen Pfad gibt:
+   `/mnt/user/appdata/mathematik/docker-compose.yml`
 
 **Variante B – per git im Unraid-Terminal** (Symbol `>_` oben rechts):
 ```bash
 cd /mnt/user/appdata
-git clone -b main https://github.com/rrmm94/mathematik.git mathe-coach-src
+git clone -b main https://github.com/rrmm94/mathematik.git mathematik
 ```
 Falls `git` nicht gefunden wird, nimm Variante A. Bei einem privaten Repository fragt git nach Benutzername und einem **Personal Access Token** (GitHub → Settings → Developer settings → Tokens) statt des Passworts.
 
 ## 3. Einstellungen anpassen
 
-Die Datei `/mnt/user/appdata/mathe-coach-src/docker-compose.yml` öffnen (z. B. im Terminal mit `nano`, oder über die Freigabe mit einem Texteditor):
+Die Datei `/mnt/user/appdata/mathematik/docker-compose.yml` öffnen (z. B. im Terminal mit `nano`, oder über die Freigabe mit einem Texteditor):
 
 | Eintrag | Bedeutung |
 |---|---|
 | `ADMIN_PASSWORD` | **Unbedingt ändern!** Dein Passwort für den Lehrkraft-Zugang (Benutzer: `admin`). |
 | `SEED_DEMO` | `"true"` legt einen Demo-Kurs mit Beispielkindern an. Für den echten Einsatz `"false"`. |
 | `ports: "3000:3000"` | Die **linke** Zahl ist der Port im Browser. Ist 3000 schon belegt, z. B. `"3080:3000"` eintragen. |
-| `volumes` | Hier liegen Datenbank und hochgeladene Bilder: `/mnt/user/appdata/mathe-coach` |
+| `volumes` | Datenbank und hochgeladene Bilder liegen im Unterordner `data`: `/mnt/user/appdata/mathematik/data` |
 
 In `nano`: speichern mit `Strg+O`, `Enter`, beenden mit `Strg+X`.
 
@@ -41,7 +41,7 @@ In `nano`: speichern mit `Strg+O`, `Enter`, beenden mit `Strg+X`.
 
 Im Unraid-Terminal:
 ```bash
-cd /mnt/user/appdata/mathe-coach-src
+cd /mnt/user/appdata/mathematik
 docker compose up -d --build
 ```
 Beim ersten Mal dauert das ein paar Minuten. Danach erscheint der Container **mathe-coach** im Reiter **Docker** und startet ab jetzt automatisch mit dem Server.
@@ -68,14 +68,14 @@ Auf dem iPad: Seite in Safari öffnen → **Teilen → Zum Home-Bildschirm**. Da
 
 Deine Daten (Kinder, Aufgaben, Fortschritt) bleiben dabei erhalten.
 ```bash
-cd /mnt/user/appdata/mathe-coach-src
-git pull            # bei Variante A: stattdessen neues ZIP hineinkopieren (docker-compose.yml vorher sichern)
+cd /mnt/user/appdata/mathematik
+git pull            # bei Variante A: neues ZIP darüberkopieren – den Ordner data und deine docker-compose.yml NICHT überschreiben
 docker compose up -d --build
 ```
 
 ## 7. Datensicherung
 
-Alles Wichtige liegt in **`/mnt/user/appdata/mathe-coach`** (Datenbank `mathe.db` + Ordner `uploads`).
+Deine Daten liegen in **`/mnt/user/appdata/mathematik/data`** (Datenbank `mathe.db` + Ordner `uploads`). Sichere am besten gleich den ganzen Ordner `/mnt/user/appdata/mathematik` – dann ist auch deine `docker-compose.yml` dabei.
 - Am bequemsten mit dem Plugin **„Appdata Backup“** aus den Apps automatisch sichern lassen.
 - Oder von Hand: Container kurz stoppen und den Ordner kopieren.
 
@@ -97,4 +97,4 @@ Solange nichts weiter eingerichtet ist, funktioniert die Plattform **nur im Heim
 | „port is already allocated“ | Anderen Port wählen (siehe Schritt 3), dann `docker compose up -d`. |
 | Admin-Passwort vergessen | In `docker-compose.yml` neues `ADMIN_PASSWORD` eintragen und `ADMIN_RESET: "true"` setzen → `docker compose up -d` → anmelden → `ADMIN_RESET` wieder auf `"false"` setzen und erneut `docker compose up -d`. |
 | Kind hat Passwort vergessen | Admin → Kurse & Kinder → Schlüssel-Symbol beim Kind. |
-| Alles neu anfangen | Container stoppen, Ordner `/mnt/user/appdata/mathe-coach` löschen, neu starten. **Achtung: löscht alle Daten!** |
+| Alles neu anfangen | Container stoppen (`docker compose down`), Unterordner `/mnt/user/appdata/mathematik/data` löschen, neu starten. **Achtung: löscht alle Daten!** |

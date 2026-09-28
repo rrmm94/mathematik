@@ -18,5 +18,6 @@ services:
       COOKIE_SECURE: "false"
       TZ: Europe/Berlin
     volumes:
-      # Datenbank + hochgeladene Bilder – auf Unraid z. B. unter appdata
-      - /mnt/user/appdata/mathe-coach:/data
+      # Datenbank + hochgeladene Bilder – im Unterordner "data" neben dieser Datei
+      # (auf Unraid also /mnt/user/appdata/mathematik/data)
+      - ./data:/data

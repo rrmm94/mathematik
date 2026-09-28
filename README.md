@@ -58,7 +58,7 @@ Alle Beispielinhalte können im Editor geändert oder gelöscht werden.
 
 ➡️ **Ausführliche Schritt-für-Schritt-Anleitung: [UNRAID.md](UNRAID.md)**
 
-1. Projektordner auf den Server kopieren (z. B. `/mnt/user/appdata/mathe-coach-src`), oder per `git clone`.
+1. Projektordner auf den Server kopieren nach `/mnt/user/appdata/mathematik` (oder per `git clone`).
 2. In `docker-compose.yml` mindestens `ADMIN_PASSWORD` ändern.
 3. Starten:
    ```bash
@@ -67,7 +67,7 @@ Alle Beispielinhalte können im Editor geändert oder gelöscht werden.
 4. Im Browser öffnen: `http://<server-ip>:3000` → mit `admin` und deinem Passwort anmelden.
 5. Unter **Einstellungen** den Chatbot-Link und die Prüfungstermine eintragen.
 
-**Daten:** Datenbank und hochgeladene Bilder liegen im Volume (`/mnt/user/appdata/mathe-coach`). Für ein Backup einfach diesen Ordner sichern.
+**Daten:** Datenbank und hochgeladene Bilder liegen im Unterordner `data` (`/mnt/user/appdata/mathematik/data`). Für ein Backup einfach den Ordner `/mnt/user/appdata/mathematik` sichern.
 
 **Zugriff von außen / HTTPS:** Am besten hinter einen Reverse Proxy (z. B. Nginx Proxy Manager oder SWAG auf Unraid) mit Let's-Encrypt-Zertifikat stellen und dann `COOKIE_SECURE: "true"` setzen.
 
