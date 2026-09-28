@@ -1,0 +1,20 @@
+services:
+  mathe-coach:
+    build: .
+    image: mathe-coach:latest
+    container_name: mathe-coach
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # Zugangsdaten der Lehrkraft beim allerersten Start (danach in den Einstellungen änderbar)
+      ADMIN_USER: admin
+      ADMIN_PASSWORD: bitte-aendern
+      # Demo-Kurs mit Beispielkindern anlegen? (true/false)
+      SEED_DEMO: "true"
+      # Auf "true" setzen, wenn die Seite per HTTPS (z. B. über einen Reverse Proxy) erreichbar ist
+      COOKIE_SECURE: "false"
+      TZ: Europe/Berlin
+    volumes:
+      # Datenbank + hochgeladene Bilder – auf Unraid z. B. unter appdata
+      - /mnt/user/appdata/mathe-coach:/data
