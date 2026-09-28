@@ -22,6 +22,12 @@ if (!get("SELECT id FROM users WHERE role = 'admin'")) {
   run("INSERT INTO users (username, password_hash, role, display_name, onboarded) VALUES (?, ?, 'admin', ?, 1)", user, hashPassword(pw), 'Lehrkraft');
   console.log(`Admin-Konto angelegt: ${user} (Passwort aus ADMIN_PASSWORD bzw. Standard "admin1234" – bitte ändern!)`);
 }
+// Notfall: Admin-Passwort zurücksetzen (ADMIN_RESET=true + ADMIN_PASSWORD setzen, Container neu starten)
+if (process.env.ADMIN_RESET === 'true' && process.env.ADMIN_PASSWORD) {
+  run("UPDATE users SET password_hash = ? WHERE role = 'admin'", hashPassword(process.env.ADMIN_PASSWORD));
+  run("DELETE FROM sessions WHERE user_id IN (SELECT id FROM users WHERE role = 'admin')");
+  console.log('Admin-Passwort wurde aus ADMIN_PASSWORD zurückgesetzt. Bitte ADMIN_RESET wieder entfernen.');
+}
 seedIfEmpty();
 
 app.use('/api', authRoutes);

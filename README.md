@@ -56,6 +56,8 @@ Alle Beispielinhalte können im Editor geändert oder gelöscht werden.
 
 ## Installation auf Unraid (Docker Compose)
 
+➡️ **Ausführliche Schritt-für-Schritt-Anleitung: [UNRAID.md](UNRAID.md)**
+
 1. Projektordner auf den Server kopieren (z. B. `/mnt/user/appdata/mathe-coach-src`), oder per `git clone`.
 2. In `docker-compose.yml` mindestens `ADMIN_PASSWORD` ändern.
 3. Starten:
