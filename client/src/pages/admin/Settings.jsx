@@ -54,7 +54,6 @@ export default function SettingsPage() {
             </div>
           ))}
         </div>
-        <p className="text-xs text-slate-500">Für „Ziel Realschulabschluss (Klasse 9)“ trägst du am besten den RS-Prüfungstermin im folgenden Schuljahr ein.</p>
       </section>
 
       <section className="card space-y-4 p-6">

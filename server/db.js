@@ -24,9 +24,7 @@ CREATE TABLE IF NOT EXISTS users (
   role TEXT NOT NULL CHECK (role IN ('admin','student')),
   display_name TEXT NOT NULL,
   course_id INTEGER REFERENCES courses(id) ON DELETE SET NULL,
-  grade INTEGER,                 -- 9 oder 10
-  profile TEXT,                  -- HS9, RS9, HS10, RS10, ERS10
-  ge_course TEXT,                -- 'G' / 'E' (nur Info für Lehrkraft)
+  profile TEXT,                  -- HS10, RS10, ERS10
   onboarded INTEGER DEFAULT 0,
   diag_unlocked INTEGER DEFAULT 1, -- darf (erneut) einen Diagnosetest starten
   note TEXT DEFAULT '',

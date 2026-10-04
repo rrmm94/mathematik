@@ -1,4 +1,4 @@
-# Mathe-Prüfungstrainer auf Unraid installieren
+# Mathematik-Prüfungstrainer auf Unraid installieren
 
 Diese Anleitung führt dich Schritt für Schritt durch die Installation. Du brauchst etwa 15 Minuten.
 
@@ -50,7 +50,7 @@ Prüfen, ob alles läuft:
 ```bash
 docker logs mathe-pruefungstrainer
 ```
-Dort sollte stehen: `Mathe-Prüfungstrainer läuft auf http://localhost:3000`.
+Dort sollte stehen: `Mathematik-Prüfungstrainer läuft auf http://localhost:3000`.
 
 ## 5. Erste Anmeldung
 
@@ -59,12 +59,14 @@ Dort sollte stehen: `Mathe-Prüfungstrainer läuft auf http://localhost:3000`.
 3. **Einstellungen** öffnen:
    - Link zum KI-Chatbot eintragen („Benötigst du Hilfe?“-Button)
    - Prüfungstermine je Abschluss eintragen (für den Countdown)
-4. **Kurse & Kinder** → Kurs anlegen → „Kinder hinzufügen“ → Namen einfügen → Zugangsdaten ausdrucken.
-5. Falls der Demo-Kurs angelegt wurde: Kurs löschen und die Demo-Kinder (peter, lea, ali, mia) entfernen.
+4. **Kurse & Kinder** → Kurs anlegen → „Kinder hinzufügen“ → Namen einfügen, Startpasswort für alle eintippen → Zugangsdaten ausdrucken.
+5. Falls der Demo-Kurs angelegt wurde: Kurs löschen und die Demo-Kinder (peter, lea, ali) entfernen.
 
-Auf dem iPad: Seite in Safari öffnen → **Teilen → Zum Home-Bildschirm**. Dann startet der Mathe-Prüfungstrainer wie eine App.
+Auf dem iPad: Seite in Safari öffnen → **Teilen → Zum Home-Bildschirm**. Dann startet der Mathematik-Prüfungstrainer wie eine App.
 
 ## 6. Update auf eine neue Version
+
+> **Einmalig beim Update auf die Version „nur Klasse 10“:** Diese Version passt nicht zu alten Daten mit 9. Klasse. Lösche deshalb nach dem `git pull` und **vor** `docker compose up -d --build` einmal den Inhalt von `/mnt/user/appdata/mathematik/data` (vorher `docker compose down`). Beim Start wird alles frisch angelegt – auch das Admin-Konto mit dem `ADMIN_PASSWORD` aus deiner `docker-compose.yml`. Einstellungen (Chatbot-Link, Prüfungstermine) musst du danach neu eintragen.
 
 Deine Daten (Kinder, Aufgaben, Fortschritt) bleiben dabei erhalten.
 ```bash
@@ -96,5 +98,5 @@ Solange nichts weiter eingerichtet ist, funktioniert die Plattform **nur im Heim
 | Seite lädt nicht | `docker ps` → läuft `mathe-pruefungstrainer`? Sonst `docker logs mathe-pruefungstrainer` ansehen. |
 | „port is already allocated“ | Anderen Port wählen (siehe Schritt 3), dann `docker compose up -d`. |
 | Admin-Passwort vergessen | In `docker-compose.yml` neues `ADMIN_PASSWORD` eintragen und `ADMIN_RESET: "true"` setzen → `docker compose up -d` → anmelden → `ADMIN_RESET` wieder auf `"false"` setzen und erneut `docker compose up -d`. |
-| Kind hat Passwort vergessen | Admin → Kurse & Kinder → Schlüssel-Symbol beim Kind. |
+| Kind hat Passwort vergessen | Admin → Kurse & Kinder → Schlüssel-Symbol beim Kind → neues Passwort eintippen. |
 | Alles neu anfangen | Container stoppen (`docker compose down`), Unterordner `/mnt/user/appdata/mathematik/data` löschen, neu starten. **Achtung: löscht alle Daten!** |

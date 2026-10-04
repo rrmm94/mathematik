@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
-  ArrowDown, ArrowUp, Check, ChevronDown, ChevronRight, Clock, Eye, MessageSquarePlus, Pencil, RotateCcw, Save, Trash2, Unlock, X, Minus, ArrowUpRight, ArrowDownRight,
+  ArrowDown, ArrowUp, Check, ChevronDown, ChevronRight, Clock, Eye, KeyRound, MessageSquarePlus, Pencil, RotateCcw, Save, Trash2, Unlock, X, Minus, ArrowUpRight, ArrowDownRight,
 } from 'lucide-react';
 import { LEVELS, PROFILES, DIFFICULTIES } from '../../../../shared/constants.js';
 import { api } from '../../lib/api.js';
 import { useLoad, PageLoader, ErrorBox, TopicIcon, ProgressBar, toast, formatDate, formatDuration, MathContent, Empty } from '../../components/ui.jsx';
 import { PageHeader } from '../../components/Layout.jsx';
-import { EditStudent } from './CourseDetail.jsx';
+import { EditStudent, SetPassword } from './CourseDetail.jsx';
 
 export function LevelBadge({ level, small }) {
   if (level == null) return <span className="text-xs text-slate-400">–</span>;
@@ -22,6 +22,7 @@ export default function StudentDetail() {
   const { data, error, loading, reload } = useLoad(() => Promise.all([api.get(`/admin/students/${id}`), api.get('/admin/courses')]), [id]);
   const [tab, setTab] = useState('plan');
   const [edit, setEdit] = useState(null);
+  const [pwFor, setPwFor] = useState(null);
   if (loading && !data) return <PageLoader />;
   if (error) return <ErrorBox error={error} />;
   const [detail, courses] = data;
@@ -44,10 +45,11 @@ export default function StudentDetail() {
     <div className="max-w-6xl">
       <PageHeader
         title={s.displayName}
-        subtitle={[s.username, s.grade && `${s.grade}. Jahrgang`, s.profile && PROFILES[s.profile]?.label, s.geCourse && `${s.geCourse}-Kurs`, course?.name].filter(Boolean).join(' · ')}
+        subtitle={[s.username, s.profile && PROFILES[s.profile]?.label, course?.name].filter(Boolean).join(' · ')}
         back={course ? { to: `/admin/kurse/${course.id}`, label: course.name } : { to: '/admin/kurse', label: 'Kurse' }}
       >
         <button className="btn-secondary" onClick={() => setEdit(s)}><Pencil size={16} /> Bearbeiten</button>
+        <button className="btn-secondary" onClick={() => setPwFor(s)}><KeyRound size={16} /> Passwort ändern</button>
         {s.diagnose?.count > 0 && (
           <button className={s.diagUnlocked ? 'btn-secondary border-sky-300 text-sky-700' : 'btn-secondary'} onClick={unlock}>
             <Unlock size={16} /> {s.diagUnlocked ? 'Test-Freigabe zurücknehmen' : 'Test erneut freigeben'}
@@ -68,6 +70,7 @@ export default function StudentDetail() {
       {tab === 'feedback' && <FeedbackView student={s} plan={detail.plan} feedback={detail.feedback} onChanged={reload} />}
 
       <EditStudent student={edit} courses={courses} onClose={() => setEdit(null)} onSaved={() => { setEdit(null); reload(); }} />
+      <SetPassword student={pwFor} onClose={() => setPwFor(null)} />
     </div>
   );
 }

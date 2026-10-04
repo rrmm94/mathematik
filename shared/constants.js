@@ -1,27 +1,22 @@
 // Gemeinsame Konstanten für Server und Oberfläche.
 
-// Prüfungsprofile: ergeben sich aus Jahrgang + angestrebtem Abschluss.
+// Prüfungsprofile (Klasse 10): ergeben sich aus dem angestrebten Abschluss.
 export const PROFILES = {
-  HS9: { label: 'Hauptschulabschluss nach Klasse 9', short: 'HS 9', grade: 9 },
-  RS9: { label: 'Ziel Realschulabschluss (Klasse 9)', short: 'Ziel RS', grade: 9 },
-  HS10: { label: 'Hauptschulabschluss nach Klasse 10', short: 'HS 10', grade: 10 },
-  RS10: { label: 'Realschulabschluss', short: 'RS 10', grade: 10 },
-  ERS10: { label: 'Erweiterter Realschulabschluss', short: 'erw. RS', grade: 10 },
+  HS10: { label: 'Hauptschulabschluss nach Klasse 10', short: 'HS 10' },
+  RS10: { label: 'Realschulabschluss', short: 'RS 10' },
+  ERS10: { label: 'Erweiterter Realschulabschluss', short: 'erw. RS' },
 };
 export const PROFILE_KEYS = Object.keys(PROFILES);
 
-// Auswahl beim ersten Login, je Jahrgang.
-export const GOAL_OPTIONS = {
-  9: [
-    { profile: 'HS9', title: 'Hauptschulabschluss', text: 'Ich schreibe am Ende von Klasse 9 die Hauptschulprüfung.' },
-    { profile: 'RS9', title: 'Realschulabschluss', text: 'Mein Ziel ist der Realschulabschluss nach Klasse 10 – ich übe schon jetzt dafür.' },
-  ],
-  10: [
-    { profile: 'HS10', title: 'Hauptschulabschluss', text: 'Ich schreibe am Ende von Klasse 10 die Hauptschulprüfung.' },
-    { profile: 'RS10', title: 'Realschulabschluss', text: 'Ich schreibe die Realschulprüfung.' },
-    { profile: 'ERS10', title: 'Erweiterter Realschulabschluss', text: 'Ich möchte den erweiterten Realschulabschluss – mit Blick auf Oberstufe/Abitur.' },
-  ],
-};
+// Auswahl beim ersten Login.
+export const GOAL_OPTIONS = [
+  { profile: 'HS10', title: 'Hauptschulabschluss nach Klasse 10', text: 'Ich schreibe am Ende von Klasse 10 die Hauptschulprüfung.' },
+  { profile: 'RS10', title: 'Realschulabschluss', text: 'Ich schreibe die Realschulprüfung.' },
+  { profile: 'ERS10', title: 'Erweiterter Realschulabschluss', text: 'Ich möchte den erweiterten Realschulabschluss – mit Blick auf Oberstufe/Abitur.' },
+];
+
+// Mindestlänge für Schülerpasswörter.
+export const MIN_STUDENT_PASSWORD = 4;
 
 // Niveaustufen – NUR für Lehrkräfte sichtbar.
 export const LEVELS = [

@@ -1,5 +1,5 @@
 // Legt beim ersten Start Beispielinhalte an: Themen, Skripte, Diagnosetest
-// (5 Profile × Themen × 3 Aufgaben mit je 3 Varianten), Übungspakete und
+// (3 Profile × Themen × 3 Aufgaben mit je 3 Varianten), Übungspakete und
 // optional einen Demo-Kurs. Aufruf auch manuell: npm run seed
 import { get, run, all, tx, setSetting, getSetting } from '../db.js';
 import { hashPassword } from '../auth.js';
@@ -12,8 +12,6 @@ export const TOPICS = [...topicsA, ...topicsB];
 
 // Welche Schwierigkeits-Sprossen (1..5) für die Diagnose-Aufgaben leicht/mittel/schwer genutzt werden
 export const DIAG_RUNGS = {
-  HS9: [1, 2, 3],
-  RS9: [2, 3, 4], // Ziel RS in Kl. 9: überwiegend E-Kurs-Niveau
   HS10: [2, 3, 4],
   RS10: [3, 4, 5],
   ERS10: [3, 4, 5],
@@ -21,8 +19,8 @@ export const DIAG_RUNGS = {
 
 // Übungspakete: Niveaustufe (0 Basis … 3 Experte) -> Sprosse, getrennt nach HS- und RS-Profilen
 export const PRACTICE_GROUPS = [
-  { profiles: ['HS9', 'HS10'], rungs: { 0: 1, 1: 2, 2: 3, 3: 4 } },
-  { profiles: ['RS9', 'RS10', 'ERS10'], rungs: { 0: 2, 1: 3, 2: 4, 3: 5 } },
+  { profiles: ['HS10'], rungs: { 0: 1, 1: 2, 2: 3, 3: 4 } },
+  { profiles: ['RS10', 'ERS10'], rungs: { 0: 2, 1: 3, 2: 4, 3: 5 } },
 ];
 
 const VARIANTS = 3;
@@ -124,8 +122,6 @@ function seedSettings() {
   const defaults = {
     chatbot_url: '',
     school_name: 'Oberschule',
-    exam_date_HS9: '2027-05-06',
-    exam_date_RS9: '2028-05-04',
     exam_date_HS10: '2027-05-06',
     exam_date_RS10: '2027-05-06',
     exam_date_ERS10: '2027-05-06',
@@ -138,19 +134,17 @@ function seedSettings() {
 export function seedDemo() {
   const pw = hashPassword('demo1234');
   const c10 = Number(run('INSERT INTO courses (name, description) VALUES (?, ?)', '10a Mathe (Demo)', 'Beispielkurs – kann gelöscht werden').lastInsertRowid);
-  const c9 = Number(run('INSERT INTO courses (name, description) VALUES (?, ?)', '9b Mathe (Demo)', 'Beispielkurs – kann gelöscht werden').lastInsertRowid);
-  const mk = (username, name, course, grade, profile, ge = null) => Number(run(
-    `INSERT INTO users (username, password_hash, role, display_name, course_id, grade, profile, ge_course, onboarded) VALUES (?, ?, 'student', ?, ?, ?, ?, ?, ?)`,
-    username, pw, name, course, grade, profile, ge, grade ? 1 : 0,
+  const mk = (username, name, course, profile) => Number(run(
+    `INSERT INTO users (username, password_hash, role, display_name, course_id, profile, onboarded) VALUES (?, ?, 'student', ?, ?, ?, ?)`,
+    username, pw, name, course, profile, profile ? 1 : 0,
   ).lastInsertRowid);
 
-  mk('peter', 'Peter Neumann', c10, null, null); // erster Login: Auswahl + Diagnose
-  const lea = mk('lea', 'Lea Beispiel', c10, 10, 'RS10', 'E');
-  mk('ali', 'Ali Demir', c9, null, null);
-  const mia = mk('mia', 'Mia Schulz', c9, 9, 'HS9', 'G');
+  mk('peter', 'Peter Neumann', c10, null); // erster Login: Auswahl + Diagnose
+  const lea = mk('lea', 'Lea Beispiel', c10, 'RS10');
+  const ali = mk('ali', 'Ali Demir', c10, 'HS10');
 
-  // Lea und Mia haben den Diagnosetest schon gemacht (simuliert)
-  for (const [uid, profile, skill] of [[lea, 'RS10', 0.6], [mia, 'HS9', 0.45]]) {
+  // Lea und Ali haben den Diagnosetest schon gemacht (simuliert)
+  for (const [uid, profile, skill] of [[lea, 'RS10', 0.6], [ali, 'HS10', 0.45]]) {
     const r = rng(uid * 97);
     const runId = Number(run("INSERT INTO diag_runs (user_id, number, profile, status, finished_at) VALUES (?, 1, ?, 'done', datetime('now', '-9 days'))", uid, profile).lastInsertRowid);
     let sort = 0;
@@ -182,7 +176,7 @@ export function seedDemo() {
   // Termine (Input-Veranstaltungen)
   const topicIds = all('SELECT id, title FROM topics ORDER BY sort');
   const day = (d) => new Date(Date.now() + d * 864e5).toISOString().slice(0, 10);
-  const ev = [[c10, 2, 'Prozent & Zinsen'], [c10, 9, 'Satz des Pythagoras'], [c10, 16, 'Quadratische Funktionen & Gleichungen'], [c9, 3, 'Zahlen & Rechnen'], [c9, 10, 'Zuordnungen & Dreisatz']];
+  const ev = [[c10, 2, 'Prozent & Zinsen'], [c10, 9, 'Satz des Pythagoras'], [c10, 16, 'Quadratische Funktionen & Gleichungen'], [c10, 23, 'Zuordnungen & Dreisatz']];
   for (const [course, d, title] of ev) {
     const t = topicIds.find((x) => x.title === title);
     run('INSERT INTO events (course_id, topic_id, title, date, time, room, note) VALUES (?, ?, ?, ?, ?, ?, ?)',
@@ -197,7 +191,7 @@ export function seedIfEmpty() {
     seedContent();
     if (process.env.SEED_DEMO !== 'false' && get("SELECT COUNT(*) AS n FROM users WHERE role = 'student'").n === 0) {
       tx(seedDemo);
-      console.log('Demo-Kurs angelegt (Kennungen: peter, lea, ali, mia – Passwort: demo1234)');
+      console.log('Demo-Kurs angelegt (Kennungen: peter, lea, ali – Passwort: demo1234)');
     }
     const c = get("SELECT (SELECT COUNT(*) FROM tasks WHERE kind='diagnose') AS d, (SELECT COUNT(*) FROM tasks WHERE kind='practice') AS p, (SELECT COUNT(*) FROM task_variants) AS v");
     console.log(`Fertig: ${TOPICS.length} Themen, ${c.d} Diagnoseaufgaben, ${c.p} Übungsaufgaben, ${c.v} Varianten.`);

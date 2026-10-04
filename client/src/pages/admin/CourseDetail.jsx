@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { UserPlus, KeyRound, Pencil, Unlock, Printer, Trash2, ChevronRight } from 'lucide-react';
-import { PROFILES, LEVELS } from '../../../../shared/constants.js';
+import { PROFILES, LEVELS, MIN_STUDENT_PASSWORD } from '../../../../shared/constants.js';
 import { api } from '../../lib/api.js';
 import { useLoad, PageLoader, ErrorBox, Modal, toast, Empty, ProgressBar, formatDate } from '../../components/ui.jsx';
 import { PageHeader } from '../../components/Layout.jsx';
@@ -45,13 +45,8 @@ export function LevelMix({ counts }) {
 
 export function StudentTable({ students, courses, onChange }) {
   const [edit, setEdit] = useState(null);
-  const [pw, setPw] = useState(null);
+  const [pwFor, setPwFor] = useState(null);
 
-  const resetPw = async (s) => {
-    if (!confirm(`Neues Passwort für ${s.displayName} erzeugen?`)) return;
-    const r = await api.post(`/admin/students/${s.id}/password`);
-    setPw({ name: s.displayName, username: s.username, password: r.password });
-  };
   const unlock = async (s) => {
     await api.post(`/admin/students/${s.id}/unlock-diagnose`, { unlock: !s.diagUnlocked });
     toast(s.diagUnlocked ? 'Freigabe zurückgenommen' : 'Diagnosetest freigegeben');
@@ -63,13 +58,11 @@ export function StudentTable({ students, courses, onChange }) {
   return (
     <>
       <div className="card overflow-x-auto">
-        <table className="w-full min-w-[900px] text-sm">
+        <table className="w-full min-w-[780px] text-sm">
           <thead className="border-b border-slate-200 bg-slate-50/80 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
             <tr>
               <th className="px-4 py-3">Name</th>
-              <th className="px-4 py-3">Jahrgang</th>
               <th className="px-4 py-3">Ziel</th>
-              <th className="px-4 py-3">Kurs</th>
               <th className="px-4 py-3">Diagnose</th>
               <th className="px-4 py-3">Niveaus</th>
               <th className="px-4 py-3">Fortschritt</th>
@@ -83,9 +76,7 @@ export function StudentTable({ students, courses, onChange }) {
                   <Link to={`/admin/kinder/${s.id}`} className="whitespace-nowrap font-semibold text-slate-900 hover:text-brand-700">{s.displayName}</Link>
                   <div className="whitespace-nowrap text-xs text-slate-500">{s.username}{s.lastLogin && ` · zuletzt ${formatDate(s.lastLogin)}`}</div>
                 </td>
-                <td className="px-4 py-3">{s.grade ? `${s.grade}.` : <span className="text-slate-400">offen</span>}</td>
                 <td className="px-4 py-3">{s.profile ? <span className="chip bg-brand-50 text-brand-700">{PROFILES[s.profile]?.short}</span> : <span className="text-slate-400">offen</span>}</td>
-                <td className="px-4 py-3">{s.geCourse ? <span className="chip bg-slate-100 text-slate-700">{s.geCourse}-Kurs</span> : <span className="text-slate-400">–</span>}</td>
                 <td className="px-4 py-3">
                   {s.diagnose?.active ? <span className="chip bg-amber-100 text-amber-800">läuft</span>
                     : s.diagnose?.count ? <span className="chip bg-emerald-100 text-emerald-700">{s.diagnose.count}× gemacht</span>
@@ -98,7 +89,7 @@ export function StudentTable({ students, courses, onChange }) {
                 </td>
                 <td className="whitespace-nowrap px-4 py-3 text-right">
                   <button className="btn-ghost btn-sm" onClick={() => setEdit({ ...s })} title="Bearbeiten"><Pencil size={14} /></button>
-                  <button className="btn-ghost btn-sm" onClick={() => resetPw(s)} title="Neues Passwort"><KeyRound size={14} /></button>
+                  <button className="btn-ghost btn-sm" onClick={() => setPwFor(s)} title="Passwort ändern"><KeyRound size={14} /></button>
                   {s.diagnose?.count > 0 && (
                     <button className={`btn-ghost btn-sm ${s.diagUnlocked ? 'text-sky-600' : ''}`} onClick={() => unlock(s)} title={s.diagUnlocked ? 'Freigabe zurücknehmen' : 'Diagnosetest erneut freigeben'}><Unlock size={14} /></button>
                   )}
@@ -110,15 +101,45 @@ export function StudentTable({ students, courses, onChange }) {
         </table>
       </div>
       <EditStudent student={edit} courses={courses} onClose={() => setEdit(null)} onSaved={() => { setEdit(null); onChange(); }} />
-      <Modal open={!!pw} onClose={() => setPw(null)} title="Neues Passwort">
-        {pw && (
-          <div className="space-y-3">
-            <p className="text-sm text-slate-600">Bitte notieren und an {pw.name} weitergeben. Das Passwort wird nicht erneut angezeigt.</p>
-            <div className="rounded-xl bg-slate-50 p-4 font-mono text-sm">Kennung: <b>{pw.username}</b><br />Passwort: <b>{pw.password}</b></div>
-          </div>
-        )}
-      </Modal>
+      <SetPassword student={pwFor} onClose={() => setPwFor(null)} />
     </>
+  );
+}
+
+export function SetPassword({ student, onClose }) {
+  if (!student) return null;
+  return <SetPasswordForm key={student.id} student={student} onClose={onClose} />;
+}
+
+function SetPasswordForm({ student, onClose }) {
+  const [pw, setPw] = useState('');
+  const [err, setErr] = useState(null);
+  const save = async (e) => {
+    e.preventDefault();
+    setErr(null);
+    try {
+      await api.post(`/admin/students/${student.id}/password`, { password: pw });
+      toast(`Passwort für ${student.displayName} geändert`);
+      onClose();
+    } catch (ex) {
+      setErr(ex.message);
+    }
+  };
+  return (
+    <Modal open onClose={onClose} title="Passwort ändern">
+      <form onSubmit={save} className="space-y-4">
+        <p className="text-sm text-slate-600">Neues Passwort für <b>{student.displayName}</b> (Kennung <span className="font-mono">{student.username}</span>). Das Kind wird auf allen Geräten abgemeldet.</p>
+        <div>
+          <label className="label">Neues Passwort</label>
+          <input className="input font-mono" value={pw} onChange={(e) => setPw(e.target.value)} placeholder={`mind. ${MIN_STUDENT_PASSWORD} Zeichen`} autoFocus autoComplete="off" />
+        </div>
+        {err && <p className="text-sm text-red-600">{err}</p>}
+        <div className="flex justify-end gap-2">
+          <button type="button" className="btn-secondary" onClick={onClose}>Abbrechen</button>
+          <button className="btn-primary" disabled={pw.length < MIN_STUDENT_PASSWORD}><KeyRound size={16} /> Speichern</button>
+        </div>
+      </form>
+    </Modal>
   );
 }
 
@@ -133,8 +154,8 @@ function EditStudentForm({ student, courses, onClose, onSaved }) {
   const save = async () => {
     try {
       await api.put(`/admin/students/${s.id}`, {
-        displayName: s.displayName, username: s.username, courseId: s.courseId || null, grade: s.grade ? Number(s.grade) : null,
-        profile: s.profile || null, geCourse: s.geCourse || null, note: s.note || '',
+        displayName: s.displayName, username: s.username, courseId: s.courseId || null,
+        profile: s.profile || null, note: s.note || '',
       });
       toast('Gespeichert');
       onSaved();
@@ -160,22 +181,10 @@ function EditStudentForm({ student, courses, onClose, onSaved }) {
           </select>
         </div>
         <div>
-          <label className="label">Jahrgang</label>
-          <select className="input" value={s.grade || ''} onChange={(e) => setS({ ...s, grade: e.target.value })}>
-            <option value="">– offen –</option><option value="9">9</option><option value="10">10</option>
-          </select>
-        </div>
-        <div>
           <label className="label">Ziel / Abschluss</label>
           <select className="input" value={s.profile || ''} onChange={(e) => setS({ ...s, profile: e.target.value })}>
             <option value="">– offen –</option>
             {Object.entries(PROFILES).map(([k, p]) => <option key={k} value={k}>{p.label}</option>)}
-          </select>
-        </div>
-        <div>
-          <label className="label">Kurs-Niveau (nur Info)</label>
-          <select className="input" value={s.geCourse || ''} onChange={(e) => setS({ ...s, geCourse: e.target.value })}>
-            <option value="">–</option><option value="G">G-Kurs</option><option value="E">E-Kurs</option>
           </select>
         </div>
         <div className="sm:col-span-2"><label className="label">Notiz (nur für dich)</label><textarea className="input" rows={2} value={s.note || ''} onChange={(e) => setS({ ...s, note: e.target.value })} /></div>
@@ -195,7 +204,7 @@ function EditStudentForm({ student, courses, onClose, onSaved }) {
 
 function AddStudents({ open, onClose, courseId, courseName }) {
   const [names, setNames] = useState('');
-  const [grade, setGrade] = useState('');
+  const [password, setPassword] = useState('');
   const [profile, setProfile] = useState('');
   const [created, setCreated] = useState(null);
   const [err, setErr] = useState(null);
@@ -204,13 +213,13 @@ function AddStudents({ open, onClose, courseId, courseName }) {
     setErr(null);
     try {
       const list = names.split('\n').map((n) => n.trim()).filter(Boolean);
-      const r = await api.post('/admin/students', { names: list, courseId, grade: grade ? Number(grade) : null, profile: profile || null });
+      const r = await api.post('/admin/students', { names: list, courseId, password, profile: profile || null });
       setCreated(r.created);
     } catch (e) {
       setErr(e.message);
     }
   };
-  const close = () => { setNames(''); setCreated(null); setErr(null); onClose(); };
+  const close = () => { setNames(''); setPassword(''); setProfile(''); setCreated(null); setErr(null); onClose(); };
 
   const print = () => {
     const w = window.open('', '_blank');
@@ -228,32 +237,31 @@ function AddStudents({ open, onClose, courseId, courseName }) {
           <div>
             <label className="label">Namen (eine Zeile pro Kind)</label>
             <textarea className="input font-mono" rows={8} value={names} onChange={(e) => setNames(e.target.value)} placeholder={'Peter Neumann\nLea Beispiel\n…'} autoFocus />
-            <p className="mt-1 text-xs text-slate-500">Kennung und Startpasswort werden automatisch erzeugt (z. B. „peter.n“ / „kreis4821“).</p>
+            <p className="mt-1 text-xs text-slate-500">Die Kennung wird automatisch erzeugt (z. B. „peter.n“).</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
-              <label className="label">Jahrgang (optional)</label>
-              <select className="input" value={grade} onChange={(e) => { setGrade(e.target.value); setProfile(''); }}>
-                <option value="">Kind wählt beim ersten Login</option><option value="9">9</option><option value="10">10</option>
-              </select>
+              <label className="label">Startpasswort (für alle)</label>
+              <input className="input font-mono" value={password} onChange={(e) => setPassword(e.target.value)} placeholder={`mind. ${MIN_STUDENT_PASSWORD} Zeichen`} autoComplete="off" />
+              <p className="mt-1 text-xs text-slate-500">Die Kinder können es später selbst ändern.</p>
             </div>
             <div>
-              <label className="label">Ziel (optional)</label>
-              <select className="input" value={profile} disabled={!grade} onChange={(e) => setProfile(e.target.value)}>
+              <label className="label">Abschluss (optional)</label>
+              <select className="input" value={profile} onChange={(e) => setProfile(e.target.value)}>
                 <option value="">Kind wählt beim ersten Login</option>
-                {Object.entries(PROFILES).filter(([, p]) => String(p.grade) === grade).map(([k, p]) => <option key={k} value={k}>{p.label}</option>)}
+                {Object.entries(PROFILES).map(([k, p]) => <option key={k} value={k}>{p.label}</option>)}
               </select>
             </div>
           </div>
           {err && <p className="text-sm text-red-600">{err}</p>}
           <div className="flex justify-end gap-2">
             <button className="btn-secondary" onClick={close}>Abbrechen</button>
-            <button className="btn-primary" disabled={!names.trim()} onClick={submit}><UserPlus size={16} /> Anlegen</button>
+            <button className="btn-primary" disabled={!names.trim() || password.length < MIN_STUDENT_PASSWORD} onClick={submit}><UserPlus size={16} /> Anlegen</button>
           </div>
         </div>
       ) : (
         <div className="space-y-4">
-          <p className="text-sm text-slate-600">Die Passwörter werden nur jetzt angezeigt. Drucke die Zugangsdaten am besten direkt aus.</p>
+          <p className="text-sm text-slate-600">Die Kinder wurden angelegt. Du kannst die Zugangsdaten direkt als Kärtchen ausdrucken.</p>
           <div className="max-h-80 overflow-y-auto rounded-xl border border-slate-200">
             <table className="w-full text-sm">
               <thead className="bg-slate-50 text-left text-xs uppercase text-slate-500"><tr><th className="px-4 py-2">Name</th><th className="px-4 py-2">Kennung</th><th className="px-4 py-2">Passwort</th></tr></thead>
