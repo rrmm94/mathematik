@@ -3,9 +3,9 @@ import multer from 'multer';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { all, get, run, json, tx, getSetting, setSetting, UPLOAD_DIR } from '../db.js';
-import { requireAdmin, hashPassword, generatePassword } from '../auth.js';
+import { requireAdmin, hashPassword } from '../auth.js';
 import { runTopicScores, buildPlanFromRun, topicsForProfile, topicProgress, syncPlan } from '../plan.js';
-import { PROFILE_KEYS } from '../../shared/constants.js';
+import { PROFILE_KEYS, MIN_STUDENT_PASSWORD } from '../../shared/constants.js';
 
 const r = Router();
 r.use(requireAdmin);
@@ -76,10 +76,9 @@ function studentSummary(u) {
     username: u.username,
     displayName: u.display_name,
     courseId: u.course_id,
-    grade: u.grade,
     profile: u.profile,
-    geCourse: u.ge_course,
     onboarded: !!u.onboarded,
+    easyTopics: json(u.easy_topics, []),
     diagUnlocked: !!u.diag_unlocked,
     lastLogin: u.last_login,
     note: u.note,
@@ -100,17 +99,17 @@ function makeUsername(name) {
   return candidate;
 }
 
-function createStudent({ displayName, username, password, courseId, grade, profile, geCourse }) {
+const passwordError = (pw) => (pw.length < MIN_STUDENT_PASSWORD ? `Das Passwort muss mindestens ${MIN_STUDENT_PASSWORD} Zeichen lang sein.` : null);
+
+function createStudent({ displayName, username, password, courseId, profile }) {
   const uname = (username && String(username).trim()) || makeUsername(displayName);
   if (get('SELECT id FROM users WHERE username = ?', uname)) throw new Error(`Kennung „${uname}“ ist schon vergeben.`);
-  const pw = password || generatePassword();
-  const onboarded = grade && profile ? 1 : 0;
   const info = run(
-    `INSERT INTO users (username, password_hash, role, display_name, course_id, grade, profile, ge_course, onboarded)
-     VALUES (?, ?, 'student', ?, ?, ?, ?, ?, ?)`,
-    uname, hashPassword(pw), displayName, courseId || null, grade || null, profile || null, geCourse || null, onboarded,
+    `INSERT INTO users (username, password_hash, role, display_name, course_id, profile, onboarded)
+     VALUES (?, ?, 'student', ?, ?, ?, ?)`,
+    uname, hashPassword(password), displayName, courseId || null, profile || null, profile ? 1 : 0,
   );
-  return { id: Number(info.lastInsertRowid), username: uname, password: pw, displayName };
+  return { id: Number(info.lastInsertRowid), username: uname, password, displayName };
 }
 
 r.post('/students', (req, res) => {
@@ -118,12 +117,16 @@ r.post('/students', (req, res) => {
   const names = Array.isArray(b.names) ? b.names : [b.displayName];
   const clean = names.map((n) => String(n || '').trim()).filter(Boolean);
   if (!clean.length) return bad(res, 'Bitte mindestens einen Namen angeben.');
+  const password = String(b.password || '');
+  const pwErr = passwordError(password);
+  if (pwErr) return bad(res, pwErr);
+  if (b.profile && !PROFILE_KEYS.includes(b.profile)) return bad(res, 'Unbekanntes Ziel.');
   try {
     const created = tx(() => clean.map((displayName) => createStudent({
       displayName,
       username: clean.length === 1 ? b.username : null,
-      password: clean.length === 1 ? b.password : null,
-      courseId: b.courseId, grade: b.grade, profile: b.profile, geCourse: b.geCourse,
+      password,
+      courseId: b.courseId, profile: b.profile,
     })));
     res.json({ created });
   } catch (e) {
@@ -138,22 +141,23 @@ r.put('/students/:id', (req, res) => {
   if (b.username && b.username !== u.username && get('SELECT id FROM users WHERE username = ?', b.username)) return bad(res, 'Kennung ist schon vergeben.');
   if (b.profile && !PROFILE_KEYS.includes(b.profile)) return bad(res, 'Unbekanntes Ziel.');
   run(
-    `UPDATE users SET display_name = ?, username = ?, course_id = ?, grade = ?, profile = ?, ge_course = ?, note = ?,
-       onboarded = CASE WHEN ? IS NOT NULL AND ? IS NOT NULL THEN 1 ELSE onboarded END WHERE id = ?`,
+    `UPDATE users SET display_name = ?, username = ?, course_id = ?, profile = ?, note = ?,
+       onboarded = CASE WHEN ? IS NOT NULL THEN 1 ELSE onboarded END WHERE id = ?`,
     b.displayName ?? u.display_name, b.username ?? u.username, b.courseId === undefined ? u.course_id : b.courseId || null,
-    b.grade === undefined ? u.grade : b.grade || null, b.profile === undefined ? u.profile : b.profile || null,
-    b.geCourse === undefined ? u.ge_course : b.geCourse || null, b.note ?? u.note,
-    b.grade ?? u.grade, b.profile ?? u.profile, u.id,
+    b.profile === undefined ? u.profile : b.profile || null, b.note ?? u.note,
+    b.profile ?? u.profile, u.id,
   );
   if (b.profile && b.profile !== u.profile) syncPlan(u.id);
   res.json(studentSummary(get('SELECT * FROM users WHERE id = ?', u.id)));
 });
 
 r.post('/students/:id/password', (req, res) => {
-  const pw = String(req.body?.password || '') || generatePassword();
+  const pw = String(req.body?.password || '');
+  const pwErr = passwordError(pw);
+  if (pwErr) return bad(res, pwErr);
   run("UPDATE users SET password_hash = ? WHERE id = ? AND role = 'student'", hashPassword(pw), id(req.params.id));
   run('DELETE FROM sessions WHERE user_id = ?', id(req.params.id));
-  res.json({ password: pw });
+  res.json({ ok: true });
 });
 
 r.delete('/students/:id', (req, res) => {
@@ -292,17 +296,17 @@ r.post('/topics', (req, res) => {
   const b = req.body || {};
   if (!String(b.title || '').trim()) return bad(res, 'Titel fehlt.');
   const sort = (get('SELECT MAX(sort) AS m FROM topics').m ?? -1) + 1;
-  const info = run('INSERT INTO topics (title, description, icon, color, sort, profiles) VALUES (?, ?, ?, ?, ?, ?)',
-    b.title.trim(), b.description || '', b.icon || 'Sigma', b.color || 'indigo', sort, JSON.stringify(b.profiles || PROFILE_KEYS));
+  const info = run('INSERT INTO topics (title, description, icon, color, sort, profiles, keywords, example) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+    b.title.trim(), b.description || '', b.icon || 'Sigma', b.color || 'indigo', sort, JSON.stringify(b.profiles || PROFILE_KEYS), b.keywords || '', b.example || '');
   res.json({ id: Number(info.lastInsertRowid) });
 });
 r.put('/topics/:id', (req, res) => {
   const t = get('SELECT * FROM topics WHERE id = ?', id(req.params.id));
   if (!t) return res.status(404).json({ error: 'Nicht gefunden.' });
   const b = req.body || {};
-  run('UPDATE topics SET title = ?, description = ?, icon = ?, color = ?, profiles = ? WHERE id = ?',
+  run('UPDATE topics SET title = ?, description = ?, icon = ?, color = ?, profiles = ?, keywords = ?, example = ? WHERE id = ?',
     b.title ?? t.title, b.description ?? t.description, b.icon ?? t.icon, b.color ?? t.color,
-    b.profiles ? JSON.stringify(b.profiles) : t.profiles, t.id);
+    b.profiles ? JSON.stringify(b.profiles) : t.profiles, b.keywords ?? t.keywords, b.example ?? t.example, t.id);
   res.json({ ok: true });
 });
 r.put('/topics-order', (req, res) => {
@@ -346,7 +350,7 @@ r.delete('/packages/:id', (req, res) => {
 
 // ---------- Aufgaben ----------
 r.get('/diagnose-tasks', (req, res) => {
-  const profile = String(req.query.profile || 'HS9');
+  const profile = String(req.query.profile || 'HS10');
   const topics = all('SELECT * FROM topics ORDER BY sort, id').map((t) => ({
     ...t,
     profiles: json(t.profiles, []),

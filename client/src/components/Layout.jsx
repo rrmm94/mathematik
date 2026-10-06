@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { LifeBuoy, LogOut, Sigma, LayoutDashboard, Users, ClipboardList, BookOpen, Layers, CalendarDays, Settings, Home, Shapes } from 'lucide-react';
-import { useAuth, toast } from './ui.jsx';
+import { LifeBuoy, LogOut, Sigma, LayoutDashboard, Users, ClipboardList, BookOpen, Layers, CalendarDays, Settings, Home, Shapes, KeyRound } from 'lucide-react';
+import { MIN_STUDENT_PASSWORD } from '../../../shared/constants.js';
+import { useAuth, toast, Modal } from './ui.jsx';
 import { api } from '../lib/api.js';
 
 // "Benötigst du Hilfe?" – auf allen Seiten gleich, oben rechts.
@@ -34,7 +36,7 @@ function Logo({ to = '/' }) {
         <Sigma size={20} strokeWidth={2.5} />
       </span>
       <span className="leading-tight">
-        <span className="block whitespace-nowrap text-[14px] font-bold text-slate-900 sm:text-[15px]">Mathe-Prüfungstrainer</span>
+        <span className="block text-[13px] font-bold text-slate-900 sm:whitespace-nowrap sm:text-[15px]">Mathematik-<wbr />Prüfungstrainer</span>
         <span className="hidden text-[11px] font-medium text-slate-500 sm:block">Fit für die Abschlussprüfung</span>
       </span>
     </Link>
@@ -54,6 +56,7 @@ function useLogout() {
 export function StudentLayout() {
   const { user } = useAuth();
   const logout = useLogout();
+  const [pwOpen, setPwOpen] = useState(false);
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur">
@@ -63,6 +66,7 @@ export function StudentLayout() {
             {user?.onboarded && (
               <Link to="/" className="btn-ghost hidden md:inline-flex"><Home size={17} /> Startseite</Link>
             )}
+            <button onClick={() => setPwOpen(true)} className="btn-ghost" title="Passwort ändern"><KeyRound size={17} /><span className="hidden lg:inline">Passwort</span></button>
             <button onClick={logout} className="btn-ghost" title="Abmelden"><LogOut size={17} /><span className="hidden md:inline">Abmelden</span></button>
             <HelpButton />
           </div>
@@ -71,7 +75,45 @@ export function StudentLayout() {
       <main className="mx-auto max-w-6xl px-4 py-6 sm:py-8">
         <Outlet />
       </main>
+      {pwOpen && <ChangePassword onClose={() => setPwOpen(false)} />}
     </div>
+  );
+}
+
+function ChangePassword({ onClose }) {
+  const [oldPassword, setOld] = useState('');
+  const [newPassword, setNew] = useState('');
+  const [repeat, setRepeat] = useState('');
+  const [err, setErr] = useState(null);
+  const mismatch = repeat && newPassword !== repeat;
+  const save = async (e) => {
+    e.preventDefault();
+    setErr(null);
+    try {
+      await api.put('/student/password', { oldPassword, newPassword });
+      toast('Dein Passwort wurde geändert');
+      onClose();
+    } catch (ex) {
+      setErr(ex.message);
+    }
+  };
+  return (
+    <Modal open onClose={onClose} title="Passwort ändern">
+      <form onSubmit={save} className="space-y-4">
+        <div><label className="label">Bisheriges Passwort</label><input type="password" className="input" value={oldPassword} onChange={(e) => setOld(e.target.value)} autoComplete="current-password" autoFocus /></div>
+        <div><label className="label">Neues Passwort</label><input type="password" className="input" value={newPassword} onChange={(e) => setNew(e.target.value)} placeholder={`mind. ${MIN_STUDENT_PASSWORD} Zeichen`} autoComplete="new-password" /></div>
+        <div>
+          <label className="label">Neues Passwort wiederholen</label>
+          <input type="password" className="input" value={repeat} onChange={(e) => setRepeat(e.target.value)} autoComplete="new-password" />
+          {mismatch && <p className="mt-1 text-xs text-red-600">Die beiden Passwörter sind nicht gleich.</p>}
+        </div>
+        {err && <p className="text-sm text-red-600">{err}</p>}
+        <div className="flex justify-end gap-2">
+          <button type="button" className="btn-secondary" onClick={onClose}>Abbrechen</button>
+          <button className="btn-primary" disabled={!oldPassword || newPassword.length < MIN_STUDENT_PASSWORD || newPassword !== repeat}>Speichern</button>
+        </div>
+      </form>
+    </Modal>
   );
 }
 

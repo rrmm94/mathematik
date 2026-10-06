@@ -54,4 +54,4 @@ app.use((err, _req, res, _next) => {
   res.status(500).json({ error: 'Serverfehler. Bitte später erneut versuchen.' });
 });
 
-app.listen(PORT, () => console.log(`Mathe-Prüfungstrainer läuft auf http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Mathematik-Prüfungstrainer läuft auf http://localhost:${PORT}`));

@@ -11,7 +11,7 @@ const DIFF_STYLE = ['bg-emerald-50 text-emerald-700', 'bg-amber-50 text-amber-70
 
 export default function DiagnoseTasks() {
   const [params, setParams] = useSearchParams();
-  const profile = params.get('profile') || 'HS9';
+  const profile = PROFILES[params.get('profile')] ? params.get('profile') : 'HS10';
   const navigate = useNavigate();
   const { data, error, loading } = useLoad(() => api.get(`/admin/diagnose-tasks?profile=${profile}`), [profile]);
 

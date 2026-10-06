@@ -18,13 +18,6 @@ export function verifyPassword(pw, stored) {
   return ref.length === test.length && crypto.timingSafeEqual(ref, test);
 }
 
-// Leicht lesbare Startpasswörter (ohne verwechselbare Zeichen).
-export function generatePassword() {
-  const words = ['mathe', 'zahl', 'kreis', 'prisma', 'winkel', 'summe', 'kegel', 'punkt', 'gerade', 'wurzel', 'bruch', 'term'];
-  const w = words[crypto.randomInt(words.length)];
-  return `${w}${crypto.randomInt(1000, 9999)}`;
-}
-
 export function createSession(userId) {
   const token = crypto.randomBytes(32).toString('hex');
   run('INSERT INTO sessions (token, user_id, expires_at) VALUES (?, ?, ?)', token, userId, Date.now() + SESSION_DAYS * 864e5);

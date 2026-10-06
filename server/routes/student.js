@@ -1,13 +1,13 @@
 import { Router } from 'express';
 import { all, get, run, json, tx, getSetting } from '../db.js';
-import { requireStudent } from '../auth.js';
+import { requireStudent, verifyPassword, hashPassword } from '../auth.js';
 import { checkAnswer, publicAnswerSpec, answerSummary } from '../../shared/checker.js';
 import { buildPlanFromRun, runTopicScores, topicsForProfile, packagesFor, topicProgress, syncPlan } from '../plan.js';
-import { PROFILES, GOAL_OPTIONS } from '../../shared/constants.js';
+import { PROFILES, GOAL_OPTIONS, MIN_STUDENT_PASSWORD } from '../../shared/constants.js';
 import { publicUser } from './auth.js';
 
 // WICHTIG: Keine Antwort dieses Routers darf Niveaustufen, Schwierigkeitsgrade
-// oder G/E-Kurse enthalten. Die Kinder sollen ihr Niveau nicht erkennen.
+// oder Leistungskurse enthalten. Die Kinder sollen ihr Niveau nicht erkennen.
 
 const r = Router();
 r.use(requireStudent);
@@ -24,13 +24,46 @@ function today() {
 r.get('/onboarding', (_req, res) => res.json({ options: GOAL_OPTIONS }));
 
 r.post('/onboarding', (req, res) => {
-  const grade = Number(req.body?.grade);
   const profile = String(req.body?.profile || '');
-  if (![9, 10].includes(grade) || !GOAL_OPTIONS[grade].some((o) => o.profile === profile)) {
-    return res.status(400).json({ error: 'Bitte wähle Jahrgang und Ziel aus.' });
+  if (!GOAL_OPTIONS.some((o) => o.profile === profile)) {
+    return res.status(400).json({ error: 'Bitte wähle deinen Abschluss aus.' });
   }
-  run('UPDATE users SET grade = ?, profile = ?, onboarded = 1 WHERE id = ?', grade, profile, req.user.id);
+  run('UPDATE users SET profile = ?, onboarded = 1 WHERE id = ?', profile, req.user.id);
   res.json({ user: publicUser(get('SELECT * FROM users WHERE id = ?', req.user.id)) });
+});
+
+// Themenauswahl „Was ist dir bisher leichtgefallen?“ – änderbar, bis der erste Test beginnt.
+const canEditEasyTopics = (userId) => !get('SELECT 1 FROM diag_runs WHERE user_id = ?', userId) && !get('SELECT 1 FROM plan_items WHERE user_id = ?', userId);
+
+r.get('/onboarding/topics', (req, res) => {
+  const u = req.user;
+  if (!u.profile) return res.status(400).json({ error: 'Bitte wähle zuerst deinen Abschluss aus.' });
+  res.json({
+    topics: topicsForProfile(u.profile).map((t) => ({ ...topicPublic(t), keywords: t.keywords, example: t.example })),
+    selected: json(u.easy_topics, []),
+    editable: canEditEasyTopics(u.id),
+  });
+});
+
+r.put('/onboarding/topics', (req, res) => {
+  const u = req.user;
+  if (!u.profile) return res.status(400).json({ error: 'Bitte wähle zuerst deinen Abschluss aus.' });
+  if (!canEditEasyTopics(u.id)) return res.status(400).json({ error: 'Die Auswahl kann nach dem Start des Tests nicht mehr geändert werden.' });
+  const allowed = new Set(topicsForProfile(u.profile).map((t) => t.id));
+  const ids = [...new Set((Array.isArray(req.body?.topicIds) ? req.body.topicIds : []).map(Number))].filter((x) => allowed.has(x));
+  run('UPDATE users SET easy_topics = ?, topics_asked = 1 WHERE id = ?', JSON.stringify(ids), u.id);
+  res.json({ user: publicUser(get('SELECT * FROM users WHERE id = ?', u.id)) });
+});
+
+// ---------- Eigenes Passwort ändern ----------
+r.put('/password', (req, res) => {
+  const oldPw = String(req.body?.oldPassword || '');
+  const newPw = String(req.body?.newPassword || '');
+  if (!verifyPassword(oldPw, req.user.password_hash)) return res.status(400).json({ error: 'Dein bisheriges Passwort stimmt nicht.' });
+  if (newPw.length < MIN_STUDENT_PASSWORD) return res.status(400).json({ error: `Das neue Passwort muss mindestens ${MIN_STUDENT_PASSWORD} Zeichen lang sein.` });
+  run('UPDATE users SET password_hash = ? WHERE id = ?', hashPassword(newPw), req.user.id);
+  run('DELETE FROM sessions WHERE user_id = ? AND token != ?', req.user.id, req.sessionToken || '');
+  res.json({ ok: true });
 });
 
 // ---------- Startseite ----------

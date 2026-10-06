@@ -42,10 +42,10 @@ export function publicUser(u) {
     username: u.username,
     displayName: u.display_name,
     role: u.role,
-    grade: u.grade,
     profile: u.profile,
     goalLabel: u.profile ? PROFILES[u.profile]?.label : null,
     onboarded: !!u.onboarded,
+    topicsAsked: !!u.topics_asked,
   };
 }
 

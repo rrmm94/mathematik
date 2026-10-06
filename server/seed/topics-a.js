@@ -5,7 +5,7 @@ import { de, dt, round, num, fields, choice, free, relTol } from './helpers.js';
 import { angles, triangleGH, composite, coordLine, img } from './figures.js';
 
 const L = String.raw;
-const ALL = ['HS9', 'RS9', 'HS10', 'RS10', 'ERS10'];
+const ALL = ['HS10', 'RS10', 'ERS10'];
 
 export const topicsA = [
   // ------------------------------------------------------------------ 1

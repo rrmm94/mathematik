@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ArrowDown, ArrowUp, Pencil, Plus, Trash2 } from 'lucide-react';
 import { PROFILES, PROFILE_KEYS, TOPIC_ICONS, TOPIC_COLORS } from '../../../../shared/constants.js';
 import { api } from '../../lib/api.js';
-import { useLoad, PageLoader, ErrorBox, TopicIcon, Modal, toast, Icon, colorOf } from '../../components/ui.jsx';
+import { useLoad, PageLoader, ErrorBox, TopicIcon, Modal, toast, Icon, colorOf, MathContent } from '../../components/ui.jsx';
 import { PageHeader } from '../../components/Layout.jsx';
 
 export default function Topics() {
@@ -35,7 +35,7 @@ export default function Topics() {
   return (
     <div className="max-w-6xl">
       <PageHeader title="Themenbereiche" subtitle="Lege Themen an, wähle ein Symbol und bestimme, für welche Abschlüsse sie gelten.">
-        <button className="btn-primary" onClick={() => setEdit({ title: '', description: '', icon: 'Sigma', color: 'indigo', profiles: [...PROFILE_KEYS] })}><Plus size={16} /> Neuer Themenbereich</button>
+        <button className="btn-primary" onClick={() => setEdit({ title: '', description: '', keywords: '', example: '', icon: 'Sigma', color: 'indigo', profiles: [...PROFILE_KEYS] })}><Plus size={16} /> Neuer Themenbereich</button>
       </PageHeader>
       <div className="card divide-y divide-slate-100 overflow-hidden">
         {data.map((t, i) => (
@@ -67,6 +67,29 @@ export default function Topics() {
             <div className="grid gap-4 sm:grid-cols-2">
               <div><label className="label">Titel</label><input className="input" value={edit.title} onChange={(e) => setEdit({ ...edit, title: e.target.value })} autoFocus /></div>
               <div><label className="label">Kurzbeschreibung</label><input className="input" value={edit.description || ''} onChange={(e) => setEdit({ ...edit, description: e.target.value })} /></div>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-4">
+              <div className="mb-3 text-sm font-semibold text-slate-700">Erster Login: „Welche Themen sind dir bisher leichtgefallen?“</div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="label">Stichworte</label>
+                  <input className="input" value={edit.keywords || ''} onChange={(e) => setEdit({ ...edit, keywords: e.target.value })} placeholder="z. B. Rabatt, Mehrwertsteuer, Zinsen" />
+                </div>
+                <div>
+                  <label className="label">Mini-Beispielaufgabe (LaTeX mit $…$)</label>
+                  <input className="input font-mono text-sm" value={edit.example || ''} onChange={(e) => setEdit({ ...edit, example: e.target.value })} placeholder="z. B. $20\,\%$ von $50$ € $= \;?$" />
+                </div>
+              </div>
+              {(edit.keywords || edit.example) && (
+                <div className="mt-3 flex items-start gap-3 rounded-xl bg-white p-3 ring-1 ring-slate-200">
+                  <TopicIcon topic={edit} size="sm" />
+                  <div className="min-w-0">
+                    <div className="font-semibold text-slate-900">{edit.title || 'Vorschau'}</div>
+                    {edit.keywords && <MathContent md={edit.keywords} className="text-xs text-slate-500 [&_p]:m-0" />}
+                    {edit.example && <div className="mt-1.5 rounded-lg bg-slate-50 px-2.5 py-1.5 text-xs text-slate-700 ring-1 ring-slate-200/70"><span className="mr-1 font-semibold text-slate-500">z. B.</span><MathContent md={edit.example} className="inline [&_p]:m-0 [&_p]:inline" /></div>}
+                  </div>
+                </div>
+              )}
             </div>
             <div>
               <label className="label">Symbol</label>
