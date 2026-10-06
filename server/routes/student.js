@@ -32,6 +32,29 @@ r.post('/onboarding', (req, res) => {
   res.json({ user: publicUser(get('SELECT * FROM users WHERE id = ?', req.user.id)) });
 });
 
+// Themenauswahl „Was ist dir bisher leichtgefallen?“ – änderbar, bis der erste Test beginnt.
+const canEditEasyTopics = (userId) => !get('SELECT 1 FROM diag_runs WHERE user_id = ?', userId) && !get('SELECT 1 FROM plan_items WHERE user_id = ?', userId);
+
+r.get('/onboarding/topics', (req, res) => {
+  const u = req.user;
+  if (!u.profile) return res.status(400).json({ error: 'Bitte wähle zuerst deinen Abschluss aus.' });
+  res.json({
+    topics: topicsForProfile(u.profile).map((t) => ({ ...topicPublic(t), keywords: t.keywords, example: t.example })),
+    selected: json(u.easy_topics, []),
+    editable: canEditEasyTopics(u.id),
+  });
+});
+
+r.put('/onboarding/topics', (req, res) => {
+  const u = req.user;
+  if (!u.profile) return res.status(400).json({ error: 'Bitte wähle zuerst deinen Abschluss aus.' });
+  if (!canEditEasyTopics(u.id)) return res.status(400).json({ error: 'Die Auswahl kann nach dem Start des Tests nicht mehr geändert werden.' });
+  const allowed = new Set(topicsForProfile(u.profile).map((t) => t.id));
+  const ids = [...new Set((Array.isArray(req.body?.topicIds) ? req.body.topicIds : []).map(Number))].filter((x) => allowed.has(x));
+  run('UPDATE users SET easy_topics = ?, topics_asked = 1 WHERE id = ?', JSON.stringify(ids), u.id);
+  res.json({ user: publicUser(get('SELECT * FROM users WHERE id = ?', u.id)) });
+});
+
 // ---------- Eigenes Passwort ändern ----------
 r.put('/password', (req, res) => {
   const oldPw = String(req.body?.oldPassword || '');

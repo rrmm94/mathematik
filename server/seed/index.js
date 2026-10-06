@@ -7,6 +7,7 @@ import { buildPlanFromRun } from '../plan.js';
 import { rng } from './helpers.js';
 import { topicsA } from './topics-a.js';
 import { topicsB } from './topics-b.js';
+import { TOPIC_HINTS } from './topic-hints.js';
 
 export const TOPICS = [...topicsA, ...topicsB];
 
@@ -61,8 +62,9 @@ export function seedContent() {
   tx(() => {
     TOPICS.forEach((t, ti) => {
       const topicId = Number(run(
-        'INSERT INTO topics (title, description, icon, color, sort, profiles) VALUES (?, ?, ?, ?, ?, ?)',
+        'INSERT INTO topics (title, description, icon, color, sort, profiles, keywords, example) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
         t.title, t.description, t.icon, t.color, ti, JSON.stringify(t.profiles),
+        TOPIC_HINTS[t.title]?.keywords ?? '', TOPIC_HINTS[t.title]?.example ?? '',
       ).lastInsertRowid);
 
       // Skript
@@ -135,13 +137,17 @@ export function seedDemo() {
   const pw = hashPassword('demo1234');
   const c10 = Number(run('INSERT INTO courses (name, description) VALUES (?, ?)', '10a Mathe (Demo)', 'Beispielkurs – kann gelöscht werden').lastInsertRowid);
   const mk = (username, name, course, profile) => Number(run(
-    `INSERT INTO users (username, password_hash, role, display_name, course_id, profile, onboarded) VALUES (?, ?, 'student', ?, ?, ?, ?)`,
-    username, pw, name, course, profile, profile ? 1 : 0,
+    `INSERT INTO users (username, password_hash, role, display_name, course_id, profile, onboarded, topics_asked) VALUES (?, ?, 'student', ?, ?, ?, ?, ?)`,
+    username, pw, name, course, profile, profile ? 1 : 0, profile ? 1 : 0,
   ).lastInsertRowid);
 
   mk('peter', 'Peter Neumann', c10, null); // erster Login: Auswahl + Diagnose
   const lea = mk('lea', 'Lea Beispiel', c10, 'RS10');
   const ali = mk('ali', 'Ali Demir', c10, 'HS10');
+
+  // Lea hat beim ersten Login Themen angehakt, die ihr leichtfallen
+  const easy = all("SELECT id FROM topics WHERE title IN ('Zahlen & Rechnen', 'Winkel, Dreiecke & Flächen', 'Wahrscheinlichkeit')").map((t) => t.id);
+  run('UPDATE users SET easy_topics = ? WHERE id = ?', JSON.stringify(easy), lea);
 
   // Lea und Ali haben den Diagnosetest schon gemacht (simuliert)
   for (const [uid, profile, skill] of [[lea, 'RS10', 0.6], [ali, 'HS10', 0.45]]) {
@@ -184,6 +190,15 @@ export function seedDemo() {
   }
 }
 
+// Ältere Installationen: Stichworte/Beispiele einmalig für die Standardthemen ergänzen.
+function seedTopicHints() {
+  if (getSetting('topic_hints_v1', '')) return;
+  for (const [title, h] of Object.entries(TOPIC_HINTS)) {
+    run("UPDATE topics SET keywords = ?, example = ? WHERE title = ? AND keywords = '' AND example = ''", h.keywords, h.example, title);
+  }
+  setSetting('topic_hints_v1', '1');
+}
+
 export function seedIfEmpty() {
   seedSettings();
   if (get('SELECT COUNT(*) AS n FROM topics').n === 0) {
@@ -196,6 +211,7 @@ export function seedIfEmpty() {
     const c = get("SELECT (SELECT COUNT(*) FROM tasks WHERE kind='diagnose') AS d, (SELECT COUNT(*) FROM tasks WHERE kind='practice') AS p, (SELECT COUNT(*) FROM task_variants) AS v");
     console.log(`Fertig: ${TOPICS.length} Themen, ${c.d} Diagnoseaufgaben, ${c.p} Übungsaufgaben, ${c.v} Varianten.`);
   }
+  seedTopicHints();
 }
 
 // Direkter Aufruf: npm run seed

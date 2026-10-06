@@ -78,6 +78,7 @@ function studentSummary(u) {
     courseId: u.course_id,
     profile: u.profile,
     onboarded: !!u.onboarded,
+    easyTopics: json(u.easy_topics, []),
     diagUnlocked: !!u.diag_unlocked,
     lastLogin: u.last_login,
     note: u.note,
@@ -295,17 +296,17 @@ r.post('/topics', (req, res) => {
   const b = req.body || {};
   if (!String(b.title || '').trim()) return bad(res, 'Titel fehlt.');
   const sort = (get('SELECT MAX(sort) AS m FROM topics').m ?? -1) + 1;
-  const info = run('INSERT INTO topics (title, description, icon, color, sort, profiles) VALUES (?, ?, ?, ?, ?, ?)',
-    b.title.trim(), b.description || '', b.icon || 'Sigma', b.color || 'indigo', sort, JSON.stringify(b.profiles || PROFILE_KEYS));
+  const info = run('INSERT INTO topics (title, description, icon, color, sort, profiles, keywords, example) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+    b.title.trim(), b.description || '', b.icon || 'Sigma', b.color || 'indigo', sort, JSON.stringify(b.profiles || PROFILE_KEYS), b.keywords || '', b.example || '');
   res.json({ id: Number(info.lastInsertRowid) });
 });
 r.put('/topics/:id', (req, res) => {
   const t = get('SELECT * FROM topics WHERE id = ?', id(req.params.id));
   if (!t) return res.status(404).json({ error: 'Nicht gefunden.' });
   const b = req.body || {};
-  run('UPDATE topics SET title = ?, description = ?, icon = ?, color = ?, profiles = ? WHERE id = ?',
+  run('UPDATE topics SET title = ?, description = ?, icon = ?, color = ?, profiles = ?, keywords = ?, example = ? WHERE id = ?',
     b.title ?? t.title, b.description ?? t.description, b.icon ?? t.icon, b.color ?? t.color,
-    b.profiles ? JSON.stringify(b.profiles) : t.profiles, t.id);
+    b.profiles ? JSON.stringify(b.profiles) : t.profiles, b.keywords ?? t.keywords, b.example ?? t.example, t.id);
   res.json({ ok: true });
 });
 r.put('/topics-order', (req, res) => {

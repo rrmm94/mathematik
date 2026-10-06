@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
-  ArrowDown, ArrowUp, Check, ChevronDown, ChevronRight, Clock, Eye, KeyRound, MessageSquarePlus, Pencil, RotateCcw, Save, Trash2, Unlock, X, Minus, ArrowUpRight, ArrowDownRight,
+  ArrowDown, ArrowUp, Check, Star, ChevronDown, ChevronRight, Clock, Eye, KeyRound, MessageSquarePlus, Pencil, RotateCcw, Save, Trash2, Unlock, X, Minus, ArrowUpRight, ArrowDownRight,
 } from 'lucide-react';
 import { LEVELS, PROFILES, DIFFICULTIES } from '../../../../shared/constants.js';
 import { api } from '../../lib/api.js';
@@ -14,6 +14,16 @@ export function LevelBadge({ level, small }) {
   const l = LEVELS[level];
   return (
     <span className={`chip font-semibold text-white ${small ? 'px-2 text-[11px]' : ''}`} style={{ background: l.color }}>{l.short}</span>
+  );
+}
+
+// Markierung für Themen, die das Kind beim ersten Login als „leicht“ angehakt hat.
+export function EasyStar({ student, topicId }) {
+  if (!student.easyTopics?.includes(topicId)) return null;
+  return (
+    <span title="Vom Kind beim ersten Login als „fällt mir leicht“ angehakt" className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-semibold text-amber-700 ring-1 ring-amber-200">
+      <Star size={12} className="fill-amber-400 text-amber-500" /> leicht
+    </span>
   );
 }
 
@@ -137,7 +147,7 @@ function PlanEditor({ student, plan, onSaved }) {
               </div>
               <TopicIcon topic={{ icon: it.icon, color: it.color }} size="sm" />
               <div className="min-w-44 flex-1">
-                <div className="font-semibold text-slate-900">{it.title}</div>
+                <div className="flex flex-wrap items-center gap-2 font-semibold text-slate-900">{it.title} <EasyStar student={student} topicId={it.topicId} /></div>
                 <div className="flex items-center gap-1.5 text-xs text-slate-500">Diagnose: <LevelBadge level={it.diagLevel} small /></div>
               </div>
               <div className="flex flex-wrap gap-1">
@@ -258,7 +268,7 @@ function DiagnoseView({ student, runs, plan, onChanged }) {
 
       <div className="card overflow-hidden">
         <div className="border-b border-slate-100 bg-slate-50/70 px-5 py-3 text-sm text-slate-600">
-          So wurde der Lernplan berechnet: <b>0 richtig → Basis</b>, <b>1 → Mindest</b>, <b>2 → Regel</b>, <b>3 → Experte</b>. Themen mit dem geringsten Anteil richtiger Antworten stehen oben.
+          So wurde der Lernplan berechnet: <b>0 richtig → Basis</b>, <b>1 → Mindest</b>, <b>2 → Regel</b>, <b>3 → Experte</b>. Themen mit dem geringsten Anteil richtiger Antworten stehen oben. Themen mit <Star size={12} className="inline fill-amber-400 text-amber-500" /> hat das Kind als „leicht“ angehakt – waren sie im Test mindestens auf Regelstandard, stehen sie am Ende.
         </div>
         <div className="divide-y divide-slate-100">
           {byTopic.map((t) => {
@@ -269,7 +279,7 @@ function DiagnoseView({ student, runs, plan, onChanged }) {
             return (
               <div key={t.topicId} className="px-5 py-4">
                 <div className="mb-2 flex flex-wrap items-center gap-3">
-                  <div className="min-w-48 flex-1 font-semibold text-slate-900">{t.title}</div>
+                  <div className="flex min-w-48 flex-1 flex-wrap items-center gap-2 font-semibold text-slate-900">{t.title} <EasyStar student={student} topicId={t.topicId} /></div>
                   <span className="text-sm text-slate-600">{sc?.correct ?? 0}/{sc?.total ?? 0} richtig</span>
                   <LevelBadge level={sc?.level} />
                   {delta !== null && (

@@ -45,6 +45,7 @@ export function publicUser(u) {
     profile: u.profile,
     goalLabel: u.profile ? PROFILES[u.profile]?.label : null,
     onboarded: !!u.onboarded,
+    topicsAsked: !!u.topics_asked,
   };
 }
 

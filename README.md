@@ -6,10 +6,10 @@ Eine Lernplattform für die Oberschule (Haupt- und Realschulzweig), mit der sich
 
 ### Für die Kinder
 - **Login mit Kennung + Passwort** (vergeben durch die Lehrkraft, keine E-Mail-Adressen); das Passwort können die Kinder selbst ändern (Schlüssel-Symbol oben)
-- **Erster Login:** angestrebten Abschluss wählen – Hauptschulabschluss nach Klasse 10, Realschulabschluss oder erweiterter Realschulabschluss (entfällt, wenn die Lehrkraft den Abschluss schon eingetragen hat)
+- **Erster Login:** angestrebten Abschluss wählen – Hauptschulabschluss nach Klasse 10, Realschulabschluss oder erweiterter Realschulabschluss (entfällt, wenn die Lehrkraft den Abschluss schon eingetragen hat), danach **„Welche Themen sind dir bisher leichtgefallen?“** – Themen mit Stichworten und Mini-Beispielaufgabe zum Anhaken (freiwillig, bis zum Teststart änderbar)
 - **Einstiegstest (Diagnose):** je Thema 3 Aufgaben (leicht/mittel/schwer), pausierbar, ohne Richtig/Falsch-Rückmeldung
 - **Animation „Dein Lernplan wird erstellt …“** nach dem Test
-- **Individueller Lernplan:** schwächste Themen zuerst, alle Themen frei wählbar, Fortschrittsbalken je Thema
+- **Individueller Lernplan:** schwächste Themen zuerst; Themen, die das Kind als leicht angehakt hat **und** im Test mindestens auf Regelstandard lagen, stehen am Ende. Alle Themen frei wählbar, Fortschrittsbalken je Thema
 - **Übungspakete** mit Eingabefeldern, Multiple Choice oder Freitext; unbegrenzte Versuche, Tipp, Lösung auf Wunsch, „Neue Zahlen“ (Varianten)
 - **„Skript“-Button** an jeder Aufgabe springt zum passenden Abschnitt im interaktiven Skript
 - **Startseite:** Ziel, Countdown bis zur Prüfung, Lernplan, Feedback der Lehrkraft, nächste Termine
@@ -22,6 +22,7 @@ Eine Lernplattform für die Oberschule (Haupt- und Realschulzweig), mit der sich
 - **Detailansicht je Kind:**
   - Diagnose-Ergebnis je Aufgabe inkl. Antwort und **Bearbeitungszeit**
   - berechnete Niveaustufe je Thema (Basis / Mindest / Regel / Experte)
+  - ⭐ „leicht“-Markierung bei Themen, die das Kind selbst als leicht angehakt hat
   - Lernplan anpassen: **Reihenfolge per Drag & Drop**, **mehrere Stufen gleichzeitig freischalten**
   - Fortschritt, **Anzahl der Versuche und Zeit je Übungsaufgabe**, „Lösung angesehen“
   - Vergleich Einstiegstest ↔ Wiederholungstest, Stufen per Klick übernehmen
@@ -30,7 +31,7 @@ Eine Lernplattform für die Oberschule (Haupt- und Realschulzweig), mit der sich
 - **Übungsaufgaben-Editor:** Themen → Übungspakete (je Niveaustufe) → Aufgaben
 - **Aufgaben-Editor:** Freitext + **LaTeX** (`$…$`) mit Live-Vorschau, **Bilder und GeoGebra-SVG** (Hochladen, Einfügen per Drag & Drop oder Zwischenablage), **mehrere Varianten** (Tabs), Musterlösung, Lösungsweg, Tipp, Test „als Kind“
 - **Skript-Editor:** Abschnitte aus Bausteinen – Text/LaTeX, Bild/SVG, YouTube-Video (datenschutzfreundlich eingebettet), Link mit **QR-Code**
-- **Themenbereiche** anlegen/sortieren, Symbol und Farbe wählen, Zuordnung zu Abschlüssen
+- **Themenbereiche** anlegen/sortieren, Symbol und Farbe wählen, Zuordnung zu Abschlüssen, Stichworte und Mini-Beispielaufgabe für die Themenauswahl beim ersten Login
 - **Termine** (Input-Veranstaltungen) je Kurs
 - **Einstellungen:** Chatbot-Link, Prüfungstermine je Abschluss (Countdown)
 

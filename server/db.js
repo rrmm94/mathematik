@@ -25,7 +25,9 @@ CREATE TABLE IF NOT EXISTS users (
   display_name TEXT NOT NULL,
   course_id INTEGER REFERENCES courses(id) ON DELETE SET NULL,
   profile TEXT,                  -- HS10, RS10, ERS10
-  onboarded INTEGER DEFAULT 0,
+  onboarded INTEGER DEFAULT 0,   -- Abschluss gewählt
+  easy_topics TEXT DEFAULT '[]', -- JSON: Themen-IDs, die dem Kind nach eigener Aussage leichtfallen
+  topics_asked INTEGER DEFAULT 0, -- Themenauswahl beim ersten Login erledigt
   diag_unlocked INTEGER DEFAULT 1, -- darf (erneut) einen Diagnosetest starten
   note TEXT DEFAULT '',
   created_at TEXT DEFAULT CURRENT_TIMESTAMP,
@@ -50,7 +52,9 @@ CREATE TABLE IF NOT EXISTS topics (
   icon TEXT DEFAULT 'Sigma',
   color TEXT DEFAULT 'indigo',
   sort INTEGER DEFAULT 0,
-  profiles TEXT DEFAULT '[]'     -- JSON: Profile, für die das Thema gilt
+  profiles TEXT DEFAULT '[]',    -- JSON: Profile, für die das Thema gilt
+  keywords TEXT DEFAULT '',      -- Stichworte für die Themenauswahl beim ersten Login
+  example TEXT DEFAULT ''        -- Mini-Beispielaufgabe (Markdown + LaTeX), nur zur Ansicht
 );
 
 CREATE TABLE IF NOT EXISTS script_sections (
@@ -177,6 +181,21 @@ CREATE TABLE IF NOT EXISTS uploads (
   created_at TEXT DEFAULT CURRENT_TIMESTAMP
 );
 `);
+
+// Spalten nachrüsten, die in älteren Datenbanken fehlen.
+function addColumn(table, column, def) {
+  const cols = db.prepare(`PRAGMA table_info(${table})`).all().map((c) => c.name);
+  if (cols.includes(column)) return false;
+  db.exec(`ALTER TABLE ${table} ADD COLUMN ${column} ${def}`);
+  return true;
+}
+addColumn('topics', 'keywords', "TEXT DEFAULT ''");
+addColumn('topics', 'example', "TEXT DEFAULT ''");
+addColumn('users', 'easy_topics', "TEXT DEFAULT '[]'");
+if (addColumn('users', 'topics_asked', 'INTEGER DEFAULT 0')) {
+  // Wer schon einen Test gemacht hat, wird nicht nachträglich gefragt.
+  db.exec('UPDATE users SET topics_asked = 1 WHERE id IN (SELECT user_id FROM diag_runs)');
+}
 
 // Hilfsfunktionen
 export const all = (sql, ...p) => db.prepare(sql).all(...p);
