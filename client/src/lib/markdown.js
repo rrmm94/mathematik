@@ -28,6 +28,8 @@ export function renderMarkdown(src = '') {
   let html = marked.parse(text);
   html = DOMPurify.sanitize(html, { ADD_ATTR: ['target'] });
   html = html
+    // Lücken ⟦1⟧ im Aufgabentext: Platzhalter, in den die Oberfläche ein Eingabefeld setzt
+    .replace(/⟦(\d+)⟧/g, '<span class="blank-slot" data-blank="$1"></span>')
     .replace(/<p>%%MATH(\d+)%%<\/p>/g, (_, i) => math[+i])
     .replace(/%%MATH(\d+)%%/g, (_, i) => math[+i]);
   if (cache.size > 500) cache.clear();

@@ -182,7 +182,7 @@ r.get('/diagnose', (req, res) => {
   const active = get("SELECT * FROM diag_runs WHERE user_id = ? AND status = 'active'", req.user.id);
   if (!active) return res.json({ run: null });
   const items = all(
-    `SELECT i.id, i.topic_id, i.answer, i.answered_at, v.prompt, v.answer AS spec, t.title AS topic_title, t.icon, t.color
+    `SELECT i.id, i.topic_id, i.answer, i.answered_at, v.prompt, v.context, v.answer AS spec, t.title AS topic_title, t.icon, t.color
      FROM diag_items i JOIN task_variants v ON v.id = i.variant_id JOIN topics t ON t.id = i.topic_id
      WHERE i.run_id = ? ORDER BY i.sort`,
     active.id,
@@ -193,6 +193,7 @@ r.get('/diagnose', (req, res) => {
       id: i.id,
       topic: { id: i.topic_id, title: i.topic_title, icon: i.icon, color: i.color },
       prompt: i.prompt,
+      context: i.context || '',
       spec: publicAnswerSpec(json(i.spec, {})),
       answer: json(i.answer, null),
       answered: !!i.answered_at,
@@ -284,6 +285,8 @@ function taskView(u, task, forceNew = false) {
     variantId: variant.id,
     variantCount: variants.length,
     prompt: variant.prompt,
+    context: variant.context || '',
+    points: variant.points || 0,
     hint: variant.hint || '',
     spec: publicAnswerSpec(json(variant.answer, {})),
     scriptSectionId: task.script_section_id,

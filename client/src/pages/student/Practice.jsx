@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { BookOpen, CheckCircle2, Eye, Lightbulb, RefreshCw, SendHorizonal, PartyPopper, XCircle } from 'lucide-react';
 import { api } from '../../lib/api.js';
-import { useLoad, PageLoader, ErrorBox, MathContent, TopicIcon, ProgressBar, colorOf } from '../../components/ui.jsx';
-import AnswerInput, { isEmptyAnswer } from '../../components/AnswerInput.jsx';
+import { useLoad, PageLoader, ErrorBox, MathContent, TaskContext, TopicIcon, ProgressBar, colorOf } from '../../components/ui.jsx';
+import { TaskBody, isEmptyAnswer } from '../../components/AnswerInput.jsx';
 
 export default function Practice() {
   const { id } = useParams();
@@ -94,6 +94,7 @@ function TaskCard({ task, index, topicId, onUpdate }) {
           <span className="grid h-7 w-7 place-items-center rounded-lg bg-slate-900 text-xs font-bold text-white">{index + 1}</span>
           <span className="hidden text-sm font-semibold text-slate-700 sm:inline">Aufgabe {index + 1}</span>
           {task.solved && <CheckCircle2 size={18} className="text-emerald-500" />}
+          {task.points > 0 && <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-600">{task.points} {task.points === 1 ? 'Punkt' : 'Punkte'}</span>}
         </div>
         <div className="flex gap-1">
           {task.scriptSectionId && (
@@ -105,8 +106,8 @@ function TaskCard({ task, index, topicId, onUpdate }) {
         </div>
       </div>
       <div className="space-y-5 p-5">
-        <MathContent md={task.prompt} />
-        <AnswerInput spec={task.spec} value={value} onChange={(v) => { setValue(v); if (status && !isFree) setStatus(null); }} status={isFree ? null : status} onSubmit={check} />
+        <TaskContext md={task.context} />
+        <TaskBody prompt={task.prompt} spec={task.spec} value={value} onChange={(v) => { setValue(v); if (status && !isFree) setStatus(null); }} status={isFree ? null : status} onSubmit={check} />
 
         {status && !isFree && (
           <div className={`animate-pop flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium ${status.correct ? 'bg-emerald-50 text-emerald-800' : 'bg-red-50 text-red-700'}`}>

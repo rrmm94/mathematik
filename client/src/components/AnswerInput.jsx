@@ -1,47 +1,53 @@
 import { Check, X } from 'lucide-react';
+import { MathContent, InlineMath } from './ui.jsx';
+
+// Ein einzelnes Eingabefeld (frei unter der Aufgabe oder als Lücke im Text).
+function FieldInput({ part, value, ok, checked, disabled, onChange, onSubmit, inline }) {
+  const state = checked ? (ok ? 'border-emerald-400 bg-emerald-50 focus:border-emerald-500' : 'border-red-300 bg-red-50 focus:border-red-400') : '';
+  return (
+    <span className={`inline-flex items-center gap-1.5 align-middle ${inline ? 'mx-1' : ''}`}>
+      <span className="relative">
+        <input
+          className={`input ${inline ? 'w-24 py-1' : 'w-36'} pr-8 text-base font-medium tabular-nums ${state}`}
+          value={value ?? ''}
+          disabled={disabled}
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck={false}
+          autoComplete="off"
+          placeholder="?"
+          aria-label={part.label || 'Lücke'}
+          onChange={(e) => onChange(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && onSubmit?.()}
+        />
+        {checked && (
+          <span className={`absolute right-2 top-1/2 -translate-y-1/2 ${ok ? 'text-emerald-600' : 'text-red-500'}`}>
+            {ok ? <Check size={16} /> : <X size={16} />}
+          </span>
+        )}
+      </span>
+      {part.unit && <span className="text-sm text-slate-500">{part.unit}</span>}
+    </span>
+  );
+}
 
 // Eingabe je nach Antworttyp. value: Array (fields/choice) oder String (free).
 // status: null | { correct, parts } für farbige Rückmeldung.
+// Lückentexte (spec.inline) werden von <TaskBody> direkt im Text dargestellt.
 export default function AnswerInput({ spec, value, onChange, status, disabled, onSubmit }) {
   if (!spec) return null;
 
   if (spec.type === 'fields') {
     const vals = Array.isArray(value) ? value : [];
+    const set = (i, v) => { const next = [...vals]; next[i] = v; onChange(next); };
     return (
       <div className="flex flex-wrap items-end gap-3">
-        {spec.parts.map((p, i) => {
-          const ok = status?.parts?.[i];
-          const state = status?.parts ? (ok ? 'border-emerald-400 bg-emerald-50 focus:border-emerald-500' : 'border-red-300 bg-red-50 focus:border-red-400') : '';
-          return (
-            <label key={i} className="flex items-center gap-2">
-              {p.label && <span className="text-sm font-medium text-slate-600">{p.label}</span>}
-              <span className="relative">
-                <input
-                  className={`input w-36 pr-8 text-base font-medium tabular-nums ${state}`}
-                  value={vals[i] ?? ''}
-                  disabled={disabled}
-                  autoCorrect="off"
-                  autoCapitalize="off"
-                  spellCheck={false}
-                  autoComplete="off"
-                  placeholder="?"
-                  onChange={(e) => {
-                    const next = [...vals];
-                    next[i] = e.target.value;
-                    onChange(next);
-                  }}
-                  onKeyDown={(e) => e.key === 'Enter' && onSubmit?.()}
-                />
-                {status?.parts && (
-                  <span className={`absolute right-2 top-1/2 -translate-y-1/2 ${ok ? 'text-emerald-600' : 'text-red-500'}`}>
-                    {ok ? <Check size={16} /> : <X size={16} />}
-                  </span>
-                )}
-              </span>
-              {p.unit && <span className="text-sm text-slate-500">{p.unit}</span>}
-            </label>
-          );
-        })}
+        {spec.parts.map((p, i) => (
+          <label key={i} className="flex items-center gap-2">
+            {p.label && <span className="text-sm font-medium text-slate-600">{p.label}</span>}
+            <FieldInput part={p} value={vals[i]} ok={status?.parts?.[i]} checked={!!status?.parts} disabled={disabled} onChange={(v) => set(i, v)} onSubmit={onSubmit} />
+          </label>
+        ))}
       </div>
     );
   }
@@ -71,7 +77,7 @@ export default function AnswerInput({ spec, value, onChange, status, disabled, o
               <span className={`grid h-5 w-5 shrink-0 place-items-center border-2 ${spec.multiple ? 'rounded-md' : 'rounded-full'} ${active ? 'border-brand-600 bg-brand-600 text-white' : 'border-slate-300'}`}>
                 {active && <Check size={12} strokeWidth={3} />}
               </span>
-              <span className="font-medium">{o.text}</span>
+              <InlineMath md={o.text} className="font-medium" />
             </button>
           );
         })}
@@ -88,6 +94,31 @@ export default function AnswerInput({ spec, value, onChange, status, disabled, o
       disabled={disabled}
       onChange={(e) => onChange(e.target.value)}
     />
+  );
+}
+
+// Aufgabentext + Antwortfelder. Bei Lückentexten stehen die Felder direkt im Text.
+export function TaskBody({ prompt, spec, value, onChange, status, disabled, onSubmit }) {
+  const gaps = (String(prompt || '').match(/⟦\d+⟧/g) || []).length;
+  if (spec?.type === 'fields' && spec.inline && gaps >= spec.parts.length) {
+    const vals = Array.isArray(value) ? value : [];
+    const slot = (i) => {
+      const part = spec.parts[i];
+      if (!part) return null;
+      return (
+        <FieldInput
+          inline part={part} value={vals[i]} ok={status?.parts?.[i]} checked={!!status?.parts} disabled={disabled}
+          onChange={(v) => { const next = [...vals]; next[i] = v; onChange(next); }} onSubmit={onSubmit}
+        />
+      );
+    };
+    return <MathContent md={prompt} slots={slot} />;
+  }
+  return (
+    <>
+      <MathContent md={String(prompt || '').replace(/⟦\d+⟧/g, '…')} />
+      <AnswerInput spec={spec} value={value} onChange={onChange} status={status} disabled={disabled} onSubmit={onSubmit} />
+    </>
   );
 }
 
