@@ -2,6 +2,7 @@
 //
 // Formate:
 //  { type: 'fields', parts: [{ label, kind: 'number'|'text', value, tolerance, unit, alternatives: [] }] }
+//     inline: true -> die Felder stehen als Lücken ⟦1⟧, ⟦2⟧ … direkt im Aufgabentext
 //  { type: 'choice', multiple: bool, options: [{ text, correct }] }
 //  { type: 'free', sample: '...' }   -> keine automatische Prüfung (correct = null)
 
@@ -36,8 +37,10 @@ function checkPart(part, given) {
     const tol = Number(part.tolerance) || 1e-9;
     return values.some((v) => Math.abs(n - v) <= tol + 1e-9);
   }
-  const accepted = [part.value, ...(part.alternatives || [])].map(normText);
-  return accepted.includes(normText(given));
+  // Terme wie „y = 0,5x + 1“: Leerzeichen, Malpunkt/Stern und Dezimalkomma/-punkt sind gleichwertig
+  const squash = (x) => normText(x).replace(/\s+/g, '').replace(/[·*]/g, '').replace(/,/g, '.');
+  const accepted = [part.value, ...(part.alternatives || [])].map(squash);
+  return accepted.includes(squash(given));
 }
 
 /**
@@ -80,7 +83,7 @@ export function checkAnswer(spec, given) {
 export function publicAnswerSpec(spec) {
   if (!spec) return { type: 'free' };
   if (spec.type === 'fields') {
-    return { type: 'fields', parts: (spec.parts || []).map((p) => ({ label: p.label || '', unit: p.unit || '', kind: p.kind || 'number' })) };
+    return { type: 'fields', inline: !!spec.inline, parts: (spec.parts || []).map((p) => ({ label: p.label || '', unit: p.unit || '', kind: p.kind || 'number' })) };
   }
   if (spec.type === 'choice') {
     return { type: 'choice', multiple: !!spec.multiple, options: (spec.options || []).map((o) => ({ text: o.text })) };

@@ -2,8 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Pause, Send, SkipForward } from 'lucide-react';
 import { api } from '../../lib/api.js';
-import { useLoad, PageLoader, ErrorBox, MathContent, TopicIcon, ProgressBar, Modal } from '../../components/ui.jsx';
-import AnswerInput, { isEmptyAnswer } from '../../components/AnswerInput.jsx';
+import { useLoad, PageLoader, ErrorBox, TaskContext, TopicIcon, ProgressBar, Modal } from '../../components/ui.jsx';
+import { TaskBody, isEmptyAnswer } from '../../components/AnswerInput.jsx';
 
 export default function Diagnose() {
   const navigate = useNavigate();
@@ -116,8 +116,8 @@ export default function Diagnose() {
           </div>
         </div>
         <div className="space-y-6 p-6">
-          <MathContent md={item.prompt} />
-          <AnswerInput spec={item.spec} value={answers[item.id]} onChange={(v) => setAnswers((a) => ({ ...a, [item.id]: v }))} onSubmit={next} />
+          <TaskContext md={item.context} />
+          <TaskBody prompt={item.prompt} spec={item.spec} value={answers[item.id]} onChange={(v) => setAnswers((a) => ({ ...a, [item.id]: v }))} onSubmit={next} />
         </div>
         <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 px-6 py-4">
           <button className="btn-ghost" disabled={idx === 0 || busy} onClick={() => setIdx(idx - 1)}><ArrowLeft size={16} /> Zurück</button>

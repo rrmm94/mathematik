@@ -193,13 +193,13 @@ r.get('/students/:id', (req, res) => {
 
   const runs = all('SELECT * FROM diag_runs WHERE user_id = ? ORDER BY number', u.id).map((d) => {
     const items = all(
-      `SELECT i.*, t.title AS task_title, v.prompt, v.answer AS spec, v.sort AS variant_sort, tp.title AS topic_title
+      `SELECT i.*, t.title AS task_title, v.prompt, v.context, v.source, v.answer AS spec, v.sort AS variant_sort, tp.title AS topic_title
        FROM diag_items i JOIN tasks t ON t.id = i.task_id JOIN task_variants v ON v.id = i.variant_id JOIN topics tp ON tp.id = i.topic_id
        WHERE i.run_id = ? ORDER BY i.sort`,
       d.id,
     ).map((i) => ({
       id: i.id, taskId: i.task_id, topicId: i.topic_id, topicTitle: i.topic_title, taskTitle: i.task_title, difficulty: i.difficulty,
-      variant: i.variant_sort + 1, prompt: i.prompt, answer: json(i.answer), spec: json(i.spec, {}), correct: i.correct, timeMs: i.time_ms, answeredAt: i.answered_at,
+      source: i.source || '', variant: i.variant_sort + 1, prompt: i.context ? `${i.context}\n\n${i.prompt}` : i.prompt, answer: json(i.answer), spec: json(i.spec, {}), correct: i.correct, timeMs: i.time_ms, answeredAt: i.answered_at,
     }));
     return { ...d, items, scores: runTopicScores(d.id) };
   });
@@ -323,7 +323,7 @@ r.get('/topics/:id/packages', (req, res) => {
   const pkgs = all('SELECT * FROM packages WHERE topic_id = ? ORDER BY level, sort, id', id(req.params.id)).map((p) => ({
     ...p,
     profiles: json(p.profiles, []),
-    tasks: all("SELECT id, title, sort, (SELECT COUNT(*) FROM task_variants v WHERE v.task_id = tasks.id) AS variants FROM tasks WHERE package_id = ? ORDER BY sort, id", p.id),
+    tasks: all("SELECT id, title, sort, (SELECT COUNT(*) FROM task_variants v WHERE v.task_id = tasks.id) AS variants, (SELECT source FROM task_variants v WHERE v.task_id = tasks.id AND v.source != '' ORDER BY sort, id LIMIT 1) AS source FROM tasks WHERE package_id = ? ORDER BY sort, id", p.id),
   }));
   res.json(pkgs);
 });
@@ -356,6 +356,7 @@ r.get('/diagnose-tasks', (req, res) => {
     profiles: json(t.profiles, []),
     tasks: all(
       `SELECT id, title, difficulty, sort, (SELECT COUNT(*) FROM task_variants v WHERE v.task_id = tasks.id) AS variants,
+              (SELECT COUNT(*) FROM task_variants v WHERE v.task_id = tasks.id AND v.source LIKE 'Abschlussprüfung%') AS exam_variants,
               (SELECT prompt FROM task_variants v WHERE v.task_id = tasks.id ORDER BY sort, id LIMIT 1) AS preview
        FROM tasks WHERE kind = 'diagnose' AND topic_id = ? AND profile = ? ORDER BY difficulty, sort, id`,
       t.id, profile,
@@ -378,12 +379,12 @@ r.get('/tasks/:id', (req, res) => {
 function saveVariants(taskId, variants) {
   const keep = [];
   (variants || []).slice(0, 8).forEach((v, i) => {
-    const data = [v.prompt || '', JSON.stringify(v.answer || { type: 'free' }), v.solution || '', v.hint || '', i];
+    const data = [v.prompt || '', JSON.stringify(v.answer || { type: 'free' }), v.solution || '', v.hint || '', v.context || '', Math.max(0, Math.min(Number(v.points) || 0, 20)), String(v.source || '').slice(0, 500), i];
     if (v.id && get('SELECT id FROM task_variants WHERE id = ? AND task_id = ?', v.id, taskId)) {
-      run('UPDATE task_variants SET prompt = ?, answer = ?, solution = ?, hint = ?, sort = ? WHERE id = ?', ...data, v.id);
+      run('UPDATE task_variants SET prompt = ?, answer = ?, solution = ?, hint = ?, context = ?, points = ?, source = ?, sort = ? WHERE id = ?', ...data, v.id);
       keep.push(v.id);
     } else {
-      keep.push(Number(run('INSERT INTO task_variants (task_id, prompt, answer, solution, hint, sort) VALUES (?, ?, ?, ?, ?, ?)', taskId, ...data).lastInsertRowid));
+      keep.push(Number(run('INSERT INTO task_variants (task_id, prompt, answer, solution, hint, context, points, source, sort) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', taskId, ...data).lastInsertRowid));
     }
   });
   const existing = all('SELECT id FROM task_variants WHERE task_id = ?', taskId).map((x) => x.id);
@@ -428,7 +429,7 @@ r.post('/tasks/:id/duplicate', (req, res) => {
       t.kind, t.topic_id, t.package_id, req.body?.profile || t.profile, t.difficulty, `${t.title} (Kopie)`, t.script_section_id, t.sort + 1);
     const nid = Number(info.lastInsertRowid);
     for (const v of all('SELECT * FROM task_variants WHERE task_id = ? ORDER BY sort', t.id)) {
-      run('INSERT INTO task_variants (task_id, prompt, answer, solution, hint, sort) VALUES (?, ?, ?, ?, ?, ?)', nid, v.prompt, v.answer, v.solution, v.hint, v.sort);
+      run('INSERT INTO task_variants (task_id, prompt, answer, solution, hint, context, points, source, sort) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', nid, v.prompt, v.answer, v.solution, v.hint, v.context, v.points, v.source, v.sort);
     }
     return nid;
   });

@@ -1,4 +1,5 @@
-import { useEffect, useState, useCallback, createContext, useContext } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, useCallback, createContext, useContext } from 'react';
+import { createPortal } from 'react-dom';
 import { Loader2, AlertCircle, X, Check } from 'lucide-react';
 import { ICONS } from '../lib/icons.js';
 import { renderMarkdown } from '../lib/markdown.js';
@@ -22,8 +23,35 @@ export function useLoad(loader, deps = []) {
 }
 
 // ---------- Mathe-Inhalt ----------
-export function MathContent({ md, className = '' }) {
-  return <div className={`prose-math ${className}`} dangerouslySetInnerHTML={{ __html: renderMarkdown(md || '') }} />;
+// slots(i): optional – setzt für jede Lücke ⟦i+1⟧ im Text ein Eingabefeld ein.
+export function MathContent({ md, className = '', slots = null }) {
+  const html = useMemo(() => renderMarkdown(md || ''), [md]);
+  const ref = useRef(null);
+  const [targets, setTargets] = useState([]);
+  useLayoutEffect(() => {
+    if (!slots || !ref.current) { setTargets([]); return; }
+    setTargets([...ref.current.querySelectorAll('[data-blank]')].map((node) => ({ node, i: Number(node.dataset.blank) - 1 })));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [html, !!slots]);
+  return (
+    <>
+      <div ref={ref} className={`prose-math ${className}`} dangerouslySetInnerHTML={{ __html: html }} />
+      {slots && targets.map(({ node, i }) => createPortal(slots(i), node))}
+    </>
+  );
+}
+
+// Gemeinsame Ausgangssituation einer Aufgabe (Text, Bild, Tabelle) über der Aufgabenstellung.
+export function TaskContext({ md }) {
+  if (!md) return null;
+  return <div className="task-context"><MathContent md={md} /></div>;
+}
+
+// Kurzer Text mit Formeln mitten in einer Zeile (z. B. Antwortmöglichkeiten).
+export function InlineMath({ md, className = '' }) {
+  if (!/[$\\]/.test(md || '')) return <span className={className}>{md}</span>;
+  const html = renderMarkdown(md).replace(/^<p>([\s\S]*)<\/p>\s*$/, '$1');
+  return <span className={`prose-inline ${className}`} dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
 // ---------- Themen-Symbole und Farben ----------

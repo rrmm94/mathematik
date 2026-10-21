@@ -8,6 +8,7 @@ import { rng } from './helpers.js';
 import { topicsA } from './topics-a.js';
 import { topicsB } from './topics-b.js';
 import { TOPIC_HINTS } from './topic-hints.js';
+import { seedExams } from './exams.js';
 
 export const TOPICS = [...topicsA, ...topicsB];
 
@@ -212,6 +213,7 @@ export function seedIfEmpty() {
     console.log(`Fertig: ${TOPICS.length} Themen, ${c.d} Diagnoseaufgaben, ${c.p} Übungsaufgaben, ${c.v} Varianten.`);
   }
   seedTopicHints();
+  seedExams();
 }
 
 // Direkter Aufruf: npm run seed

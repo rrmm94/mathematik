@@ -71,3 +71,11 @@ body {
   .btn-sm { min-height: 36px; }
 }
 html { -webkit-tap-highlight-color: transparent; }
+
+/* Lücken im Aufgabentext, Ausgangssituation, Punkte */
+.prose-math .blank-slot { display: inline-block; vertical-align: middle; }
+.prose-math .blank-slot:empty::before { content: '▭'; margin: 0 .2em; color: #94a3b8; }
+.prose-inline .katex { font-size: 1.05em; }
+.task-context { @apply rounded-xl border-l-4 border-slate-300 bg-slate-50 px-4 py-1; }
+.task-context .prose-math p:first-child { @apply mt-1.5; }
+.task-context .prose-math p:last-child { @apply mb-1.5; }

@@ -53,6 +53,19 @@ Freitext-Aufgaben zählen im Diagnosetest nicht für die Stufe. Eine KI-Bewertun
 
 Alle Beispielinhalte können im Editor geändert oder gelöscht werden.
 
+## Originalaufgaben aus den Abschlussprüfungen
+Beim ersten Start (auch bei bestehenden Installationen) werden die Abschlussprüfungen Niedersachsen 2021–2026 (Realschule, Hauptschule G- und E-Kurs) eingebunden:
+
+- **Übungen:** je Thema eigene Pakete „Prüfungsaufgaben“, nach Prüfungsteil (Teil 1 / Teil 2 / Wahlteil) und Kurs einer Niveaustufe zugeordnet. Diagnosetest: Einige Originalaufgaben kommen als zusätzliche Varianten der vorhandenen Aufgaben dazu.
+- **Herkunft nur für Lehrkräfte:** Im Aufgaben-Editor (Feld „Herkunft“), in der Aufgabenliste und in der Detailansicht eines Kindes steht z. B. „Abschlussprüfung 2025 · Hauptschule E-Kurs · Teil 2 · Aufgabe 3 b)“. Kinder sehen nur die Aufgabe, keinen Hinweis auf Jahr, Prüfung oder Niveau.
+- **Themenfreigabe:** Trigonometrie, Quadratische Funktionen und Wachstum bleiben der Realschule vorbehalten; Hauptschulkinder bekommen dazu keine Aufgaben.
+- **Zeichenaufgaben** („Zeichne …“, „Miss …“, „Verbinde …“) sind ausgelassen, sie lassen sich am Bildschirm nicht lösen.
+- Aufgaben mit Bildern, Tabellen und Lücken im Text sowie Punkte je Teilaufgabe werden wie in der Prüfung dargestellt.
+- **Varianten mit neuen Zahlen:** Zu etwa 90 Aufgaben (Rechen- und Lückenaufgaben, Einheiten, Terme, Prozent und Zinsen, Wahrscheinlichkeit, Wertetabellen …) gibt es je zwei weitere Varianten; das Kind bekommt sie über „Neue Zahlen“, im Diagnosetest wechseln sie beim Wiederholungstest. Sie stehen in `server/seed/exam-variants.js`. Aufgaben, deren Zahlen in einem Bild stehen, haben nur die Originalfassung.
+- **Kontrolle:** `DATA_DIR=/tmp/x node --no-warnings scripts/check-exam-variants.mjs` rechnet jede Vorlage gegen die Originalaufgabe nach und prüft jede Variante auf eine bestehende eigene Lösung und fehlerfreie Formeln.
+
+Die Aufgaben wurden mit `scripts/serlo-import.mjs` aus Serlo (CC BY-SA 4.0) übernommen; Aufgabentexte: Niedersächsisches Kultusministerium.
+
 ## Installation auf Unraid (Docker Compose)
 
 ➡️ **Ausführliche Schritt-für-Schritt-Anleitung: [UNRAID.md](UNRAID.md)**
