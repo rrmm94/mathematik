@@ -1,0 +1,452 @@
+{
+ "school": "rs",
+ "schoolLabel": "Realschule",
+ "year": 2025,
+ "part": "Teil 2",
+ "folderId": 328319,
+ "url": "https://de.serlo.org/mathe/328319/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "In jedem Jahr wurden 1200 Jugendliche befragt, ob sie in ihrer Freizeit Bücher lesen.\n\n![Abbildung](/uploads/ex-4a9e9272e141.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne, wie viele der befragten Jugendlichen im Jahr 2022 Bücher gelesen haben.\n\nIm Jahr 2022 haben ⟦1⟧ der befragten Jugendlichen Bücher gelesen.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 384,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen, wie viele der befragten Jugendlichen im Jahr 2022 Bücher gelesen haben.**\n\nDie Anzahl der befragten Jugendlichen entspricht dem Grundwert $\\textbf{G}$.\n\nDen Prozentsatz entnehmen wir der Grafik.\n\nIm Jahr 2022 haben $32\\ \\%$ der befragten Jugendlichen Bücher gelesen.\n\nDen Prozentwert berechnen wir mit der folgenden Formel:\n\n$\\mathrm{W=G\\cdot p}$\n\nEinsetzen der bekannten Größen in die Formel.\n\n$\\mathrm{W=1200\\cdot\\dfrac{32}{100}\\ \\Rightarrow\\ W=1200\\cdot0,32}$\n\n$\\underline{\\underline{\\mathrm{W=384}}}$\n\nIm Jahr 2022 haben $\\textbf{384}$ der befragten Jugendlichen Bücher gelesen.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Im Jahr 2023 haben 420 der befragten 1200 Jugendlichen Bücher gelesen.\n\nGib den prozentualen Anteil an und ergänze die Säule im Diagramm.\n\nIm Jahr 2023 haben ⟦1⟧ % der befragten Jugendlichen Bücher gelesen.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 35,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen des prozentualen Anteils.**\n\nDie Anzahl der befragten Jugendlichen entspricht dem Grundwert $\\textbf{G}$.\n\nDie Anzahl der Jugendlichen die im Jahr 2023 Bücher gelesen haben entspricht dem Prozentwert $\\textbf{W}$.\n\nDen Prozentsatz berechnen wir mit der folgenden Formel:\n\n$\\mathrm{p=\\dfrac{W}{G}\\cdot100}$\n\nEinsetzen der bekannten Größen in die Formel.\n\n$\\mathrm{p=\\dfrac{420}{1200}\\cdot100\\ \\Rightarrow\\ p=0,35\\cdot100}$\n\n$\\underline{\\underline{\\mathrm{p=35\\ \\%}}}$\n\nIm Jahr 2023 haben $\\textbf{35\\ \\%}$ der befragten Jugendlichen Bücher gelesen.\n\n**Ergänzen der Säule im Diagramm.**\n\n![Abbildung](/uploads/ex-3ddbac2cae68.png)",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "In einer anderen Umfrage sagten 276 Jugendliche, dass sie noch nie ein Buch gelesen haben. Das waren $17,25 \\%$ aller befragten Jugendlichen.\n\nBerechne die Anzahl aller befragten Jugendlichen.\n\nEs wurden ⟦1⟧ Jugendliche befragt.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1600,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen der Anzahl aller befragten Jugendlichen.**\n\nDie Anzahl der befragten Jugendlichen entspricht dem Grundwert **G**.\n\nDen Grundwert berechnen wir mit der folgenden Formel:\n\n$\\mathrm{G=\\dfrac{W}{p}}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{W=276\\qquad\\qquad p=17,25\\ \\%}$\n\nEinsetzen der bekannten Größen in die Formel.\n\n$\\mathrm{G=\\dfrac{276}{17,25\\ \\%}\\ \\Rightarrow\\ G=\\dfrac{276\\cdot100}{17,25}}$\n\n$\\underline{\\underline{\\mathrm{G=1600}}}$\n\nEs wurden $\\textbf{1600}$ Jugendliche befragt.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "In einem Computerchip befinden sich Bauteile, die Informationen verarbeiten. Der Amerikaner Gordon Moore untersuchte vor etwa 60 Jahren die Entwicklung solcher Computerchips und stellte fest: Die Anzahl der Bauteile in einem Computerchip verdoppelt sich von Jahr zu Jahr.\n\n![Abbildung](/uploads/ex-048a4d3a2eb6.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Ergänze in der Tabelle die zwei fehlenden Werte.\n\n| Jahr | 1959 | 1960 | 1961 | 1962 | 1963 | 1964 | ... | ⟦1⟧ |\n|---|---|---|---|---|---|---|---|---|\n| Anzahl Bauteile | 2 | 4 | 8 | 16 | 32 | ⟦2⟧ | ... | 512 |",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1967,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 64,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Ergänzen der zwei fehlenden Werte in der Tabelle.**\n\n![Abbildung](/uploads/ex-f8c918c7fee0.png)",
+     "points": 2,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib die Art des Wachstums an.\n\nDie Anzahl der Bauteile wächst ⟦1⟧ .",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "exponentiell",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Angeben der Art des Wachstums.**\n\nDie Anzahl der Bauteile wächst **exponentiell**.",
+     "points": 1,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "![Abbildung](/uploads/ex-c092f41965fe.png)\n\nTrage die Wertepaare in das Koordinatensystem ein.",
+     "answer": {
+      "type": "free",
+      "sample": "Eintragen der Wertepaare in das Koordinatensystem. ![Abbildung](/uploads/ex-46b12c9c4152.png)"
+     },
+     "solution": "**Eintragen der Wertepaare in das Koordinatensystem.**\n\n![Abbildung](/uploads/ex-46b12c9c4152.png)",
+     "points": 1,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "d)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Im Jahr 2025 sind 65 Jahre seit dem Jahr 1960 vergangen.\n\nKreuze den Term an, mit dem die Anzahl der Bauteile im Jahr 2025 berechnet wird und gib die Anzahl der Bauteile in Zehnerpotenz-Schreibweise an.\n\n![Abbildung](/uploads/ex-2e417160e54d.png)",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$2\\cdot4^{65}$",
+        "correct": false
+       },
+       {
+        "text": "$4\\cdot2^{65}$",
+        "correct": true
+       },
+       {
+        "text": "$2\\cdot2^{65}$",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "**Ankreuzen des Terms, mit dem die Anzahl der Bauteile im Jahr 2025 berechnet wird.**\n\n![Abbildung](/uploads/ex-082fa4513b78.png)\n\n**Angeben der Anzahl der Bauteile in Zehnerpotenz-Schreibweise.**\n\n$2^2\\cdot2^{65}=2^{67}$\n\n$2^{67}$ als Zehnerpotenz-Schreibweise ist ca. $\\boxed{1,48\\cdot10^{20}}$.",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Eine Leiter ist $2,40 \\mathrm{~m}$ lang und wird in $2,20 \\mathrm{~m}$ Höhe angelehnt.\n\n![Abbildung](/uploads/ex-4b052826fe63.png)\n\nBerechne den Abstand x .\n\n$x=$ ⟦1⟧ $\\m$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.96,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen des Abstandes x .**\n\nDas oben abgebildete Dreieck ist ein rechtwinkliges Dreieck.\n\nIn rechtwinkligen Dreiecken gilt der Satz des Pythagoras.\n\nDer Satz des Pythagoras lautet:\n\n$\\mathrm{c^2=a^2+b^2}$\n\nFür das obige Dreieck ist dann:\n\n$\\mathrm{2,40^2=2,20^2+x^2\\ \\Rightarrow\\ x^2=2,40^2-2,20^2}$\n\n$\\mathrm{x=\\sqrt{2,40^2-2,20^2}\\ \\Rightarrow\\ x=\\sqrt{0,92}}$\n\n$\\underline{\\underline{\\text{x}\\approx0,96}}$\n\nDie Länge des Abstandes x beträgt ca.: $\\boxed{0,96\\m}$.",
+     "points": 3,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Damit die Leiter sicher steht, muss der Anstellwinkel $\\alpha$ zwischen $65^{\\circ}$ und $75^{\\circ}$ liegen.\n\nÜberprüfe mit einer Rechnung, ob die abgebildete Leiter sicher steht.",
+     "answer": {
+      "type": "free",
+      "sample": "Rechnerisches überprüfen, ob die abgebildete Leiter sicher steht. Berechnen des Winkels alpha mithilfe des Sinus im rechtwinkligem Dreieck. Der Sinus im rechtwinkligen Dreieck ist definiert als: mathrm{sin{(sphericalangle)}=dfrac{Gegenkathete}{Hypotenuse}} Für das obige Dreieck ist das dann: mathrm{sin{(alpha)}=dfrac{2,20}{2,40} Rightarrow sin(alpha)approx0,9167} mathrm{sin^{-1}(alpha)approx66,4°} Der Winkel alpha beträgt ca. textbf{66,4°}, die Leiter steht also sicher."
+     },
+     "solution": "**Rechnerisches überprüfen, ob die abgebildete Leiter sicher steht.**\n\nBerechnen des Winkels $\\alpha$ mithilfe des Sinus im rechtwinkligem Dreieck.\n\nDer Sinus im rechtwinkligen Dreieck ist definiert als:\n\n$\\mathrm{sin{(\\sphericalangle)}=\\dfrac{Gegenkathete}{Hypotenuse}}$\n\nFür das obige Dreieck ist das dann:\n\n$\\mathrm{\\sin{(\\alpha)}=\\dfrac{2,20}{2,40}\\ \\Rightarrow sin(\\alpha)\\approx0,9167}$\n\n$\\mathrm{sin^{-1}(\\alpha)\\approx66,4°}$\n\nDer Winkel $\\alpha$ beträgt ca. $\\textbf{66,4°}$, die Leiter steht also sicher.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Eine andere Leiter kann auch als Klappleiter aufgestellt werden.\n\n![Abbildung](/uploads/ex-23a72fadff04.png)\n\nBerechne die Breite b.\n\nb = ⟦1⟧ $\\m$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1.46,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen der Breite b.**\n\nBerechnen der Breite **b** mithilfe des Tangens im rechtwinkligem Dreieck.\n\nDer Tangens im rechtwinkligem Dreieck ist definiert als:\n\n$\\mathrm{\\tan{(\\sphericalangle)}=\\dfrac{Gegenkathete}{Ankathete}}$\n\nFür das obige Dreieck ist das dann:\n\n$\\mathrm{\\tan{\\left(\\dfrac{40°}{2}\\right)}=\\dfrac{\\left(\\dfrac{b}{2}\\right)}{2}\\ \\Rightarrow \\dfrac{b}{2}=2\\cdot tan(20°)}$\n\n$\\mathrm{b=2\\cdot2\\cdot tan(20°)\\qquad b=4\\cdot0,3640}$\n\n$\\mathrm{b\\approx1,46}$\n\nDie Breite **b** beträgt ca.: $\\boxed{1,46\\m}$",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Auf dem Bild sieht man Wachskugeln der Sorte A.\n\n![Abbildung](/uploads/ex-7a4e4ab3527b.png)\n\nBerechne das Volumen einer Wachskugel der Sorte A mit dem Radius $\\mathrm{r}=0,3 \\mathrm{~cm}$.\n\n$\\mathrm{V_{Kugel}}$ = ⟦1⟧ $\\cm^3$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.11,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen des Volumens einer Kunststoffkugel der Sorte A.**\n\nDie Formel zur Berechnung des Volumens einer Kugel lautet:\n\n$\\mathrm{V_{{Kugel}}=\\dfrac43 \\cdot \\pi \\cdot r^3}$\n\nEinsetzen des Zahlenwerts für den Radius in die Formel.\n\n$\\mathrm{V_{Kugel}=\\dfrac43 \\cdot \\pi \\cdot 0,3^3}$\n\n$\\mathrm{V_{Kugel}=\\dfrac43 \\cdot0,027\\cdot\\pi\\ \\Rightarrow\\ V_{Kugel}=0,036\\cdot\\pi}$\n\n$\\mathrm{V_{Kugel}=0,11\\cm^3}$\n\nDas Volumen einer Kunststoffkugel der Sorte A beträgt: $\\boxed{0,11\\cm^3}$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Wachskugeln der Sorte B haben das Volumen V $=0,2 \\mathrm{~cm}^{3}$.\n\nEs werden 1000 dieser Wachskugeln geschmolzen und zu einer kugelförmigen Kerze gegossen.\n\n![Abbildung](/uploads/ex-607518741850.png)\n\nGib das Volumen dieser Kerze an und berechne ihren Radius.\n\nDas Volumen der Kerze beträgt ⟦1⟧ $\\cm^3$.\n\nDer Radius der Kerze beträgt ⟦2⟧ $\\cm$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 200,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3.63,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Angeben des Volumens der Kerze.**\n\nVolumen einer Kugel der Sorte B $\\Rightarrow\\ 0,2\\cm^3$ .\n\nVolumen von $1000$ Kugeln der Sorte B $\\Rightarrow\\ 1000\\cdot0,2=200\\cm^3$\n\nDas Volumen der Kerze beträgt dann: $\\boxed{200\\cm^3}$.\n\n**Berechnen des Radius der kugelförmigen Kerze.**\n\nDie Formel zur Berechnung des Volumens einer Kugel lautet:\n\n$\\mathrm{V_{Kugel}=\\dfrac{4}{3}\\cdot r^3\\cdot\\pi}$\n\nAuflösen der Formel nach **r**.\n\n$\\mathrm{V_{Kugel}=\\dfrac{4}{3}\\cdot r^3\\cdot\\pi\\hspace{14mm}|\\cdot3}$\n\n$\\mathrm{3\\cdot V_{Kugel}=4\\cdot r^3\\cdot\\pi\\qquad|:4\\pi}$\n\n$\\mathrm{\\dfrac{3\\cdot V_{Kugel}}{4\\pi}=r^3\\ \\Rightarrow\\ r=\\sqrt[3]{\\dfrac{3\\cdot V_{Kugel}}{4\\pi}}}$\n\n$\\mathrm{r=\\sqrt[3]{\\dfrac{3\\cdot200}{4\\pi}}}$\n\n$\\mathrm{r=\\sqrt[3]{47,75}}$\n\n$\\mathrm{r\\approx3,63\\cm}$\n\nDer Radius der kugelförmigen Kerze beträgt ca.: $\\boxed{3,63\\cm}$.",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Aus weiteren 1000 Wachskugeln der Sorte B wird eine pyramidenförmige Kerze mit der Körperhöhe $\\mathrm{h}_{\\mathrm{K}}=8 \\mathrm{~cm}$ gegossen.\n\n![Abbildung](/uploads/ex-bf36368ea49a.png)\n\nBerechne die Kantenlänge a dieser Kerze.\n\n(Wenn du die Teilaufgabe b) nicht gelöst hast, dann rechne mit $\\mathrm{V}=220 \\mathrm{~cm}^{3}$ weiter.)\n\nDie Kantenlange **a** beträgt ca. ⟦1⟧ $\\cm$.\n\nWenn du mit $\\mathrm{V=220\\cm^3}$ gerechnet hast beträgt die Kantenlänge **a** ca. ⟦2⟧ $\\cm$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 8.66,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 9.08,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen der Kantenlänge a dieser Kerze.**\n\nDie Formel zur Berechnung des Volumens einer Pyramide lautet:\n\n$\\mathrm{V_{Pyramide}=\\dfrac{1}{3}\\cdot G\\cdot h}$\n\nAuflösen der Formel nach **G**.\n\n$\\mathrm{V_{Pyramide}=\\dfrac{1}{3}\\cdot G\\cdot h\\hspace{12mm}|\\cdot3}$\n\n$\\mathrm{3\\cdot V_{Pyramide}= G\\cdot h\\hspace{13mm}|:h}$\n\n$\\mathrm{\\dfrac{3\\cdot V_{Pyramide}}{h}=G}$\n\n$\\mathrm{G=\\dfrac{3\\cdot200}{8}}$\n\n$\\mathrm{G=75\\cm^2}$\n\nDie Grundflache **G** der Pyramide ist eine Quadrat mit der Kantenlänge **a.**\n\nBerechnen von **a**.\n\n$\\mathrm{a=\\sqrt{75}}$\n\n$\\mathrm{a\\approx8,66\\cm}$\n\nDie Kantenlange **a** beträgt ca.: $\\boxed{8,66\\cm}$.\n\nWenn du mit $\\mathrm{V=220\\cm^3}$ gerechnet hast, dann sind das ca.: $9,08\\cm^3$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "d)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Andere Wachskugeln haben einen halb so großen Radius wie Wachskugeln der Sorte B.\n\nEs soll die gleiche pyramidenförmige Kerze hergestellt werden.\n\nKreuze die richtige Aussage an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "2-mal so viele Wachskugeln wie vorher.",
+        "correct": false
+       },
+       {
+        "text": "4-mal so viele Wachskugeln wie vorher.",
+        "correct": false
+       },
+       {
+        "text": "8-mal so viele Wachskugeln wie vorher.",
+        "correct": true
+       },
+       {
+        "text": "16-mal so viele Wachskugeln wie vorher.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "**Ankreuzen der richtigen Antwort.**\n\nDie Formel zur Berechnung des Volumens einer Kugel lautet:\n\n$\\mathrm{V_{Kugel}=\\dfrac{4}{3}\\cdot r^3\\cdot\\pi}$\n\nDa der Radius r in der 3. Potenz in der Formel steht, verkleinert sich das Volumen um das $8$ -fache, wenn der Radius halbiert wird.\n\n$\\hspace{60mm} \\mathrm{\\left(\\dfrac{1}{2}\\right)^3=\\dfrac{1}{8}}$\n\nEs werden also $8$-mal so viele Kunststoffkugeln, wie bei Sorte B, benötigt.\n\nKreuze entsprechend an.",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "In einem Spielwarengeschäft sollen Glücksbringer mit drei verschiedenen Symbolen verschenkt werden.\n\nNach dem Einkauf darf das abgebildete Glücksrad zweimal gedreht werden.\n\n![Abbildung](/uploads/ex-24b5f0e312f2.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Ergänze im Baumdiagramm die beiden fehlenden Wahrscheinlichkeiten.\n\n![Abbildung](/uploads/ex-0e0f14902d2c.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Anzahl der Felder auf dem Glücksrad: 10 Anzahl Klee: 2 Wahrscheinlichkeit einen Klee zu treffen: P(Klee)= displaystylefrac{2}{10}=frac{1}{5} ![Abbildung](/uploads/ex-e1ad03e78af9.png)"
+     },
+     "solution": "Anzahl der Felder auf dem Glücksrad: 10\n\nAnzahl Klee: 2\n\nWahrscheinlichkeit einen Klee zu treffen: P(Klee)= $\\displaystyle\\frac{2}{10}=\\frac{1}{5}$\n\n![Abbildung](/uploads/ex-e1ad03e78af9.png)",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, dass der Pfeil zuerst auf das \"Schweinchen\" und danach auf den \"Pilz\" zeigt.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.15,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "P(Schwein;Pilz)=P(Schwein)$\\cdot$ P(Pilz)= $\\displaystyle\\dfrac{1}{2}\\cdot \\dfrac{3}{10}=\\dfrac{3}{20}$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ein anderes Spielwarengeschäft möchte insgesamt 400 Glücksbringer mit den gleichen Symbolen verschenken. Der Anteil der verschiedenen Glücksbringer in dem Karton ist zu Beginn genauso groß wie der Anteil der Symbole auf dem Glücksrad.\n\n![Abbildung](/uploads/ex-8ead8d1a9c8d.png)\n\nErgänze in der Tabelle die Anzahl für \"Schweinchen\" und \"Klee\".",
+     "answer": {
+      "type": "free",
+      "sample": "Anteil Schweine: displaystyledfrac{5}{10} Anteil Pilze: displaystyle dfrac{3}{10} Anteil Klee: displaystyledfrac{2}{10} Anzahl Pilze: dfrac{3}{10}widehat{=}120 Anzahl Schweine: dfrac{5}{10}widehat{=}(120:3)cdot 5=200 Anzahl Klee: dfrac{2}{10}widehat{=}(120:3)cdot 2=80 ![Abbildung](/uploads/ex-680b8a6674dd.png)"
+     },
+     "solution": "Anteil Schweine: $\\displaystyle\\dfrac{5}{10}$\n\nAnteil Pilze: $\\displaystyle \\dfrac{3}{10}$\n\nAnteil Klee: $\\displaystyle\\dfrac{2}{10}$\n\nAnzahl Pilze: $\\dfrac{3}{10}\\widehat{=}120$\n\nAnzahl Schweine: $\\dfrac{5}{10}\\widehat{=}(120:3)\\cdot 5=200$\n\nAnzahl Klee: $\\dfrac{2}{10}\\widehat{=}(120:3)\\cdot 2=80$\n\n![Abbildung](/uploads/ex-680b8a6674dd.png)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Nach dem Einkauf zieht das 1. Kind zufällig ein \"Schweinchen\" aus dem Karton und nimmt es mit.\n\nErgänze im Baumdiagramm die Wahrscheinlichkeit, dass das 2. Kind auch ein \"Schweinchen\" zieht.\n\n![Abbildung](/uploads/ex-6a4aeda7866e.png)",
+     "answer": {
+      "type": "free",
+      "sample": "1. Kind: P(Schwein)=displaystyledfrac{1}{2}=dfrac{200}{400} 2. Kind: P(Schwein)=displaystyledfrac{200-1}{400-1}=dfrac{199}{399} ![Abbildung](/uploads/ex-e9023b996dfb.png)"
+     },
+     "solution": "\\1. Kind: P(Schwein)$=\\displaystyle\\dfrac{1}{2}=\\dfrac{200}{400}$\n\n\\2. Kind: P(Schwein)$=\\displaystyle\\dfrac{200-1}{400-1}=\\dfrac{199}{399}$\n\n![Abbildung](/uploads/ex-e9023b996dfb.png)",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Das Drehen eines Glücksrades und das Ziehen von Glücksbringern sind verschiedene Zufallsversuche.\n\nBeschreibe, worin sich diese Zufallsversuche mathematisch voneinander unterscheiden.",
+     "answer": {
+      "type": "free",
+      "sample": "1. Spielwarengeschäft: Es handelt sich beim Drehen eines Glücksrades um einen Zufallsversuch mit Zurücklegen. 2. Spielwarengeschäft: Es handelt sich beim Ziehen von Glücksbringern um einen Zufallsversuch ohne Zurücklegen."
+     },
+     "solution": "\\1. Spielwarengeschäft: Es handelt sich beim Drehen eines Glücksrades um einen Zufallsversuch mit Zurücklegen.\n\n\\2. Spielwarengeschäft: Es handelt sich beim Ziehen von Glücksbringern um einen Zufallsversuch ohne Zurücklegen.",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  }
+ ]
+}

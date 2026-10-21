@@ -1,0 +1,297 @@
+{
+ "school": "rs",
+ "schoolLabel": "Realschule",
+ "year": 2026,
+ "part": "Teil 2",
+ "folderId": 334271,
+ "url": "https://de.serlo.org/mathe/334271/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Es wurden 18600 Frauen nach ihrer Lieblingssportart gefragt.\n\n![Abbildung](/uploads/ex-650d2b57d038.png)\n\nFülle die Lücken aus.\n\nDie beliebteste Sportart ist ⟦1⟧ .\n\nNordic Walking betreiben am liebsten ⟦2⟧ $\\%$ der befragten Frauen.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Fitness",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 21,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "",
+     "points": 0,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "Berechne die Anzahl der befragten Frauen, die am liebsten Yoga betreiben.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "![Abbildung](/uploads/ex-6caad2b3170f.png)\n\nBerechne zuerst die Winkelgrößen in der Tabelle.\n\n![Abbildung](/uploads/ex-c586a18ea0ff.png)\n\nZeichne die fehlende Unterteilung in das Kreisdiagramm ein.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 2,
+     "topic": "Daten & Statistik"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "Kathrin behauptet: „Mehr Männer als Frauen haben angegeben, dass ihre Lieblingssport Joggen ist.“\n\nNimm Stellung zu Kathrins Behauptung.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "„Super Marion“ ist ein Videospiel. Es erscheinen zufällig die Hindernisse Wolke (W), Stein (S) oder Blitz (B), denen „Super Marion\" ausweichen muss.\n\n![Abbildung](/uploads/ex-17b089bcfd8c.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Das Baumdiagramm zeigt die Wahrscheinlichkeiten für das Erscheinen der Hindernisse.\n\n![Abbildung](/uploads/ex-ec0d212f77c7.png)\n\nTrage die fehlende Wahrscheinlichkeit in den Kreis ein.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "„Super Marion“ trifft nacheinander auf zwei Hindernisse.\n\nBerechne die Wahrscheinlichkeit, dass „Super Marion“ zuerst auf eine Wolke (W) und dann auf einen Stein (S) trifft.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "Berechne die Wahrscheinlichkeit, dass sie auf zwei gleiche Hindernisse trifft.\n\n(Wenn du die Teilaufgabe a) nicht gelöst hast, dann rechne mit $\\frac{2}{20}$ weiter.)",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 3,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Abgebildet ist die quadratische Funktion $\\mathrm{y}_{1}$.\n\n![Abbildung](/uploads/ex-63e0850cbfe8.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze die zugehörige Funktionsgleichung für $\\mathrm{y}_{1}$ an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$y_1=\\left(x+2\\right)^2+3$",
+        "correct": false
+       },
+       {
+        "text": "$y_1=\\left(x+2\\right)^2-3$",
+        "correct": false
+       },
+       {
+        "text": "$y_1=\\left(x-2\\right)^2+3$",
+        "correct": false
+       },
+       {
+        "text": "$y_1=\\left(x-2\\right)^2-3$",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne den Graphen der Funktion $\\mathrm{y}_{2}$ in das Koordinatensystem ein.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "Murat soll die Nullstellen der Funktion $\\mathrm{y}_{2}$ berechnen. Er beginnt seine Rechnung so:\n\n![Abbildung](/uploads/ex-d0e3f44becf1.png)\n\nBeende Murats Rechnung.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 3,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "Der Graph einer quadratischen Funktion $\\mathrm{y}_{3}$ soll so verlaufen, dass sich die Graphen von $\\mathrm{y}_{2}$ und $\\mathrm{y}_{3}$ nicht schneiden.\nGib eine Funktionsgleichung für $\\mathrm{y}_{3}$ an.\n\nBegründe, dass es mehrere mögliche Funktionsgleichungen gibt.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Die Abbildung zeigt den Kopf einer Stehlampe.\n\n![Abbildung](/uploads/ex-a0a94dd46304.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "Die Größe der kreisförmigen Fläche (1) beträgt $346,36 \\mathrm{~cm}^{2}$.\n\nBerechne den Radius r.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "Berechne den Flächeninhalt der Fläche (2).",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 4,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "![Abbildung](/uploads/ex-b6eeb5fe15c3.png)\n\nStelle eine allgemeine Formel zur Berechnung des Flächeninhalts der Fläche (2) auf.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "Die Spitze eines Spielgerätes ist von außen mit vier gleichen Blech-Dreiecken verkleidet. Das Blech soll erneuert werden.\n\n![Abbildung](/uploads/ex-57e746003315.png)\n\nBerechne den Blechbedarf in $\\mathrm{m}^{2}$.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "Die Skizze und das Foto zeigen das komplette Spielgerät. Es hat die Form einer Pyramide mit quadratischer Grundfläche.\n\n![Abbildung](/uploads/ex-3a97ae538de2.png)\n\nBerechne die Länge der Diagonalen d.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "Die Größe des Winkels $\\alpha$ beträgt 73°.\n\nBerechne die Länge s.\n\n(Wenn du die Teilaufgabe b) nicht gelöst hast, dann rechne mit $\\mathrm{d}=2,53 \\mathrm{~m}$ weiter.)",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 3,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  }
+ ]
+}

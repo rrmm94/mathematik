@@ -1,0 +1,412 @@
+{
+ "school": "hs-g",
+ "schoolLabel": "Hauptschule G-Kurs",
+ "year": 2024,
+ "part": "Teil 2",
+ "folderId": 315341,
+ "url": "https://de.serlo.org/mathe/315341/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Das Kreisdiagramm zeigt die prozentuale Verteilung der verkauften Autos in Norwegen im April 2022.\n\n![Abbildung](/uploads/ex-9f57efc6bfb9.png)\n\nBerechne den Prozentsatz der Benzin-Autos.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5,
+        "tolerance": 0,
+        "unit": "%",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Ziehe die prozentualen Anteile aller Autos, die nicht Benzinautos sind, von der Grundmenge $100\\%$ ab.*\n\nDie Summe der verkauften Autos entspricht $100\\%$.\n\nZur Berechnung des Prozentsatzes der Benzinautos werden die prozentualen Anteile der anderen Autos von $100\\%$ abgezogen.\n\n$100-74-18-3=5$\n\n$5\\%$ der Autos waren Benzinautos.",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Im April 2022 wurden in Norwegen insgesamt $9\\,700$ Autos verkauft.\n\nBerechne die Anzahl der Elektro-Autos.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 7178,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Lies den Prozentsatz der Elektro-Autos aus dem Kreisdiagramm ab. - Bestimme den Grundwert. - Berechne den Prozentwert der Elektro-Autos mittels der Formeln für die Prozentrechnung.*\n\nAus dem Kreisdiagramm kannst du entnehmen, dass $74\\%$ der verkauften Autos Elektro-Autos waren. Dies ist der Prozentsatz $p$.\n\nVerkauft wurden insgesamt $9\\,700$ Autos, dies ist der Grundwert $G$.\n\nGesucht ist der Prozentwert $W$der Elektro-Autos.\n\n$W=p\\cdot G$\n\n$W=0,74\\cdot 9\\,700=7\\,178$\n\nEs wurden $7\\,178$ Elektro-Autos verkauft.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Im Mai 2022 wurden in Norwegen $8\\,400$ Elektro-Autos verkauft.\n\nDas war ein Anteil von $75\\%$.\n\nBerechne die Anzahl aller im Mai 2022 verkauften Autos.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 11200,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme aus der Aufgabenstellung den Prozentwert und den Prozentsatz. - Berechne den Grundwert mittels der Formeln zu Prozentrechnung*\n\nIm Mai wurden $8\\,400$ Elektro-Autos verkauft. Dies ist der Prozentwert $W$ bei einem Prozentsatz $p=0,75$.\n\nGesucht ist die Anzahl aller verkauften Autos. Dies ist der Grundwert $G$.\n\n$G=\\dfrac{W}{p}$\n\n$G=\\dfrac{8\\,400}{0,75}=11\\,200$\n\nIm Mai 2022 wurden insgesamt $11\\,200$ Autos verkauft.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Im Mai 2022 wurden in Deutschland $200\\,000$ Autos verkauft.\n\nDavon waren nur $10\\%$ Elektro-Autos.\n\nTerje behauptet: „In Deutschland wurden trotzdem mehr Elektro-Autos verkauft als in Norwegen.\"\n\nBegründe, dass Terjes Behauptung stimmt.",
+     "answer": {
+      "type": "free",
+      "sample": "- Berechne die Zahl der in Deutschland verkauften Elektro-Autos. - Vergleiche mit der Anzhal der in Norwegen verkauften Elektro-Autos und entscheide. Verkaufte Elektro-Autos in Deutschland W=pcdot G W=0,1 cdot 200,000=20,000 In Deutschland wurden im Mai 2022 20,000 Elektro-Autos verkauft. Vergleich 8,400<20,000 In Norwegen wurden im Mai 2022 8,400 Elektro-Autos verkauft. Dies sind weniger als 20,000 Autos, die in Deutschland verkauft wurden. Terje hat recht."
+     },
+     "solution": "*- Berechne die Zahl der in Deutschland verkauften Elektro-Autos. - Vergleiche mit der Anzhal der in Norwegen verkauften Elektro-Autos und entscheide.*\n\n**Verkaufte Elektro-Autos in Deutschland**\n\n$W=p\\cdot G \\\\\nW=0,1 \\cdot 200\\,000=20\\,000$\n\nIn Deutschland wurden im Mai 2022 $20\\,000$ Elektro-Autos verkauft.\n\n**Vergleich**\n\n$8\\,400<20\\,000$\n\nIn Norwegen wurden im Mai 2022 $8\\,400$ Elektro-Autos verkauft. Dies sind weniger als $20\\,000$ Autos, die in Deutschland verkauft wurden.\n\nTerje hat recht.",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Beim Elfmeter-Schießen im Fußball gibt es drei Möglichkeiten:\n\n\\- Der Spieler schießt ein Tor (T).\n\n\\- Der Spieler schießt den Ball am Tor vorbei (V).\n\n\\- Der Torwart hält den Ball (H).\n\n![Abbildung](/uploads/ex-fa59cdbaeffc.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Das Baumdiagramm zeigt die Wahrscheinlichkeiten.\n\n![Abbildung](/uploads/ex-14b2db128ae3.png)\n\nErgänze die fehlenden Werte im Baumdiagramm.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-9d02d9632063.svg) Die Summe der Wahrscheinlichkeiten der drei verschiedenen Möglichkeiten bei jedem Schuss ergeben immer 1."
+     },
+     "solution": "![Abbildung](/uploads/ex-9d02d9632063.svg)\n\nDie Summe der Wahrscheinlichkeiten der drei verschiedenen Möglichkeiten bei jedem Schuss ergeben immer $1$.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Es werden zwei Elfmeter geschossen. Beide Elfmeter werden ein Tor.\n\nBerechne die Wahrscheinlichkeit.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.5625,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Berechne die Wahrscheinlichkeit mithilfe der Pfadregeln.*\n\nDie beiden Ereignissen \"1. Schuss\" und \"2. Schuss\" sind voneinander unabhängig.\n\nBerechnung der Wahrscheinlichkeit für das Ereignis \"1. Schuss\" und \"2. Schuss\" ein Tor nach der Pfadregel.\n\n$P\\left(\\text{1. Schuss und 2. Schuss Tor}\\right)=P\\left(\\text{1. Schuss Tor}\\right)\\cdot P\\left(\\text{2. Schuss Tor}\\right)$\n\n$P\\left(\\text{1. Schuss und 2. Schuss Tor}\\right)=\\dfrac{15}{20} \\cdot \\dfrac{15}{20}=\\dfrac{225}{400}$\n\nDie Wahrscheinlichkeit, dass beide Elfmeter ein Tor werden, beträgt $\\dfrac{225}{400}$.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Der erste Elfmeter wird ein Tor und der zweite Elfmeter nicht.\n\nMarkiere die Pfade für die Wahrscheinlichkeit.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-b57b549127e1.svg)"
+     },
+     "solution": "![Abbildung](/uploads/ex-b57b549127e1.svg)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Eine Bank bietet für die Kontoführung zwei unterschiedliche Tarife $A$ und $B$ an.\n\nIm Koordinatensystem sind beide Tarife graphisch dargestellt.\n\n![Abbildung](/uploads/ex-2ee116772fcc.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Fülle die Lücken im Text und in der Tabelle mit Hilfe der Grafik aus.\n\n![Abbildung](/uploads/ex-2b78c7dd053a.png)\n\nFür $7$€ kann man im Tarif B ⟦1⟧ Buchungen pro Monat tätigen.\n\nFür 10 Buchungen pro Monat ist Tarif ⟦2⟧ günstiger.\n\nBei ⟦3⟧ Buchungen pro Monat sind die Gesamtkosten für beide Tarife gleich hoch.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 20,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "B",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 25,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Ausgehend von $7$€ auf der y-Achse gehe nach rechts bis zum Graphen für Tarif B. Gehe von dort aus senkrecht nach unten auf die x-Achse und lies die Anzahl der Buchungen ab. - Gehe von $10$ Buchungen pro Monat auf der x-Achse senkrecht hoch. Der erste Schnittpunkt mit den Graphen für die Tarife A und B zeigt den günstigeren Tarif. - Vom Schnittpunkt der Graphen für Tarif A und B gehe senkrecht zur x-Achse und waagerecht zur y-Achse und lies die Werte ab. - Lies aus dem Schnittpunkt des Graphen von Tarif B und der y-Achse den Grundpreis ab. - Bestimme aus der Steigung des Graphen von Tarif B die Kosten pro Buchung.*\n\nFür $7$€ kann man im Tarif B $20$ Buchungen im Monat tätigen.\n\nFür $10$ Buchungen im Monat ist Tarif B günstiger.\n\nBei $25$ Buchungen pro Monat sind die Gesamtkosten für beide Tarife gleich hoch.\n\n![Abbildung](/uploads/ex-7c8f3b27aa9a.png)\n\nDer Grundpreis für Tarif B ist der Schnittpunkt des Graphen mit der y-Achse. Auch wenn keine Buchung erfolgt, müssen $3$€ gezahlt werden.\n\nDie Kosten pro Buchung entsprechen der Steigung des Graphen.\n\nBeispiel: Aus dem Graphen kann man ablesen:\n\nDie Kosten bei $5$ Buchungen betragen $4$ €. Davon wird der Grundpreis abgezogen, sodass die Kosten pro Buchung $\\dfrac{4-3}{5}=0,20$ € betragen.",
+     "points": 5,
+     "topic": "Daten & Statistik"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Bank führt einen neuen Tarif $C$ ein.\n\n![Abbildung](/uploads/ex-bca1d268f4e6.png)\n\nBerechne die Gesamtkosten für 37 Buchungen pro Monat.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 10.55,
+        "tolerance": 0,
+        "unit": "€",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Die Gesamtkosten $K$ berechnen sich nach der Formel\n\n$K=\\text{Grundpreis pro Monat} + \\text{Anzahl Buchungen}\\cdot\\text{Kosten pro Buchung}$\n\n$K=5+37 \\cdot 0,15=10,55$\n\nDie Gesamtkosten für $37$ Buchungen pro Monat betragen $10,55$ €.",
+     "points": 1,
+     "topic": "Daten & Statistik"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne den Graphen für Tarif C in das Koordinatensystem.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-3af943a00569.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-3af943a00569.png)",
+     "points": 2,
+     "topic": "Daten & Statistik"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "![Abbildung](/uploads/ex-22d1ff405110.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne den Umfang der grau gefärbten Fläche.\n\nU = ⟦1⟧ cm",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 204,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Addiere die Länge der einzelnen Teilstrecken.*\n\nDer Gesamtumfang der Fläche $U$ ergibt sich aus der Addition der einzelnen Teilstrecken.\n\n$U=4\\cdot 41+2\\cdot 20=204$\n\nDer Umfang der grau gefärbten Fläche beträgt $204\\cm$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne $x$.\n\nx = ⟦1⟧ cm",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 9,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Verwende des Satz des Pythagors zur Berechnung von $x$.*\n\nDas in der Skizze fett markierte Dreieck ist ein rechtwinkliges Dreieck mit der Hypotenuse $c=41$ und einer Kathete $a=40$.\n\nGesucht ist die Länge der zweiten Kathete $x$.\n\nMit dem Satz des Pythagoras kann die Länge der Kathete berechnet werden.\n\n$$\\begin{aligned}\nc^2 &= a^2+x^2 \\\\\n41^2 &= 40^2+x^2 \\qquad |\\; -40^2 \\\\\n41^2-40^2 &= x^2 \\\\\n81 &= x^2 \\qquad |\\; \\sqrt{} \\\\\n9 &= x\n\\end{aligned}$$\n\nDie Teilstrecke $x$ ist $9\\cm$ lang.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne den Flächeninhalt der Flächen (1) und (2).\n\nBerechne den grau gefärbten Gesamtflächeninhalt.\n\n(Wenn du die Teilaufgabe b) nicht gelöst hast, dann rechne mit $x=9,11\\cm$ weiter.)\n\nFlächeninhalt (1) ⟦1⟧ cm²\n\nFlächeninhalt (2) ⟦2⟧ cm²\n\nGrau gefärbten Gesamtflächeninhalt ⟦3⟧ cm²",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1600,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 360,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2320,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Flächeninhalt der Fläche (1) - Berechne den Flächeninhalt der Fläche (2). Beachte, dass die Fläche aus zwei rechtwinkligen Dreiecken besteht. - Addiere die Teilflächen.*\n\n**Fläche (1)**\n\nFläche (1) ist ein Rechteck mit einer Seite der Länge $20\\cm$ und der daran anliegenden Seite von $40+40=80\\cm$.\n\n$A_\\text{Fläche(1)}=20\\cdot 80=1\\,600$\n\nDer Flächeninhalt der Fläche (1) beträgt $1\\,600\\cm^2$.\n\n**Fläche (2)**\n\nFläche (2) besteht aus zwei symmetrischen [rechtwinkligen Dreiecken.](/36070)\n\nDer Flächeninhalt eines rechtwinkligen Dreiecks berechnet sich nach\n\n$A_\\text{Dreieck}=\\dfrac{1}{2}\\cdot\\text{Kathete 1}\\cdot\\text{Kathete 2}$\n\n$A_\\text{Dreieck}=\\dfrac{1}{2}\\cdot 40 \\cdot 9=180$\n\n$A_\\text{Fläche(2)}=2\\cdot A_\\text{Dreieck}=2\\cdot 180=360$\n\nDer Flächeninhalt der Fläche (2) beträgt $360\\cm^2$.\n\n**Gesamtflächeninhalt**\n\nDie grau gefärbte Gesamtfläche besteht aus der Fläche (1) und 2 Mal der Fläche (2).\n\n$A_\\text{Gesamtfläche}=\\text{Fläche(1)}+2\\cdot \\text{Fläche(2)}$\n\n$A_\\text{Gesamtfläche}=1\\,600+2\\cdot 360=2\\,320$\n\nDer grau gefärbte Gesamtflächeninhalt beträgt $2\\,320\\cm^2$.",
+     "points": 5,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "Klara bastelt für ihre kleine Schwester zur Einschulung eine kegelförmige Schultüte mit $r=12\\cm$.\n\n![Abbildung](/uploads/ex-a0dabfabe30f.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen der Schultüte.\n\nVolumen der Schultüte ⟦1⟧ cm³",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 11309.73,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Grundfläche des Kegels - Verwende dann die Formel zur Berechnung des Kegelvolumens und berechne das Volumen der Schultüte.*\n\nKegelvolumen\n\nDas Volumen eines Kegels berechnet sich nach folgender Formel. Dabei bezeichnet $G$ die Grundfläche des Kegels und $h$ seine Höhe.\n\n$V_\\text{Kegel}=\\dfrac{1}{3}\\cdot G \\cdot h$\n\nDie Grundfläche des Kegels ist ein [Kreis](/276459) mit Radius $r$, dessen Fläche $A$ berechnet wird mit der Formel\n\n$A_\\text{Kreis}=\\pi\\cdot r^2$\n\nMit diesen Angaben ergibt sich für das Volumen der Schultüte\n\n$V_\\text{Schultüte}=\\dfrac{1}{3}\\cdot\\pi\\cdot r^2\\cdot h$\n\nWerte einsetzen\n\n$V_\\text{Schultüte}=\\dfrac{1}{3}\\cdot\\pi\\cdot 12^2 \\cdot 75$\n\n$V_\\text{Schultüte}\\approx 11\\,309,73$\n\nDas Volumen der Schultüte beträgt $11\\,309,73\\cm^3$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Klara beklebt den oberen Rand der Schultüte mit einem Band.\n\nSie hat ein $76\\cm$ langes Band.\n\nIst das Band lang genug? Berechne und entscheide.",
+     "answer": {
+      "type": "free",
+      "sample": "- Berechne den Umfang der Öffnung der Schultüte. - Vergleiche mit der Länge des Bandes und entscheide. Die obere Öffnung der Schultüte bildet einen Kreis. Kreisumfang U=2cdotpicdot r Werte einsetzen U=2cdotpicdot 12approx 75,4 Vergleich 75,4<76 Der Kreisumfang ist kleiner als die Länge des Bandes. Das Band ist lang genug."
+     },
+     "solution": "*- Berechne den Umfang der Öffnung der Schultüte. - Vergleiche mit der Länge des Bandes und entscheide.*\n\nDie obere Öffnung der Schultüte bildet einen Kreis.\n\n**Kreisumfang**\n\n$U=2\\cdot\\pi\\cdot r$\n\n**Werte einsetzen**\n\n$U=2\\cdot\\pi\\cdot 12\\approx 75,4$\n\n**Vergleich**\n\n$75,4<76$\n\nDer Kreisumfang ist kleiner als die Länge des Bandes. Das Band ist lang genug.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Winkels $\\alpha$.\n\n$\\alpha$ = ⟦1⟧ °",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 9.09,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Benutze die passende Winkelfunktion zur Berechnung des Winkels*\n\nEs soll der Winkel $\\alpha$ in einem rechtwinkligen Dreieck berechnet werden.\n\nGegeben sind:\n\nGegenkathete $\\text{GK}=r=12\\cm$\n\nAnkathete $\\text{AK}=h_k=75\\cm$\n\nDer Winkel $\\alpha$ beträgt dann\n\n$\\arctan(\\dfrac{\\text{GK}}{\\text{AK}})=\\arctan(\\dfrac{12}{75})=9,09^\\circ$\n\nDer Winkel $\\alpha$ hat $9,09^\\circ$.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze an, sodass die Aussage stimmt.\n\nVerringert man die Höhe $h_{\\kappa}$ und lässt den Radius $r$ gleich groß, dann...",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "... verringert sich die Größe des Winkels $\\alpha$.",
+        "correct": false
+       },
+       {
+        "text": "... vergrößert sich die Größe des Winkels $\\alpha$.",
+        "correct": true
+       },
+       {
+        "text": "... bleibt die Größe des Winkels $\\alpha$ gleich.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "Verringert man die Höhe der Schultüte, wird ihre Öffnung größer und der Winkel $\\alpha$ vergrößert sich.\n\nDie zweite Aussage ist korrekt.",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  }
+ ]
+}

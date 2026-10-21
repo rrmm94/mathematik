@@ -1,0 +1,448 @@
+{
+ "school": "hs-g",
+ "schoolLabel": "Hauptschule G-Kurs",
+ "year": 2026,
+ "part": "Wahlteil",
+ "folderId": 334934,
+ "url": "https://de.serlo.org/mathe/334934/wahlteil",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Jan trinkt gern Kaffee.\n\nDiese Kaffee-Kapseln liegen unsortiert in einem Gefäß:\n\n12 Kapseln Ristretto (R)\n\n1 Kapsel Espresso (E)\n\n9 Kapseln Lungo (L)\n\n![Abbildung](/uploads/ex-adb197c8e7c7.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Jan greift, ohne hinzusehen, in das Gefäß und zieht nacheinander zwei Kapseln heraus.\n\nErgänze im Baumdiagramm die fehlenden Pfade und Wahrscheinlichkeiten.\n\n![Abbildung](/uploads/ex-bb1a54524099.png)\n\n2 Pkte",
+     "answer": {
+      "type": "free",
+      "sample": "Fehlende Pfade und Wahrscheinlichkeiten in der Mitte: Da insgesamt nur eine Kapsel Espresso (E) vorhanden ist, kann beim 2. Ziehen entweder eine Kapsel Ristretto (R) oder eine Kapsel Lungo (L) gezogen werden. Gesamtzahl der Kapseln beim 2. Ziehen: 21 Anzahl Ristretto: 12 Anzahl Lungo: 9 P(R)=displaystyledfrac{12}{21} P(L)=displaystyledfrac{9}{21} Fehlende Wahrscheinlichkeit rechts unten: Gesamtzahl der Kapseln beim 2. Ziehen: 21 Berechne nun die fehlende Wahrscheinlichkeit mit der Summenregel: P(L)=displaystylefrac{21}{21}-frac{12}{21}-frac{1}{21}=frac{8}{21} ![Abbildung](/uploads/ex-a11f72a52"
+     },
+     "solution": "**Fehlende Pfade und Wahrscheinlichkeiten in der Mitte:**\n\nDa insgesamt nur eine Kapsel Espresso (E) vorhanden ist, kann beim 2. Ziehen entweder eine Kapsel Ristretto (R) oder eine Kapsel Lungo (L) gezogen werden.\n\nGesamtzahl der Kapseln beim 2. Ziehen: 21\n\nAnzahl Ristretto: 12\n\nAnzahl Lungo: 9\n\n$P(R)=\\displaystyle\\dfrac{12}{21}$\n\n$P(L)=\\displaystyle\\dfrac{9}{21}$\n\n**Fehlende Wahrscheinlichkeit rechts unten:**\n\nGesamtzahl der Kapseln beim 2. Ziehen: 21\n\nBerechne nun die fehlende Wahrscheinlichkeit mit der Summenregel:\n\n$P(L)=\\displaystyle\\frac{21}{21}-\\frac{12}{21}-\\frac{1}{21}=\\frac{8}{21}$\n\n![Abbildung](/uploads/ex-a11f72a52cf7.png)",
+     "points": 0,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Jan berechnet die Wahrscheinlichkeit für ein Ereignis mit der folgenden Rechnung:\n\n$P=\\displaystyle\\dfrac{9}{22}\\cdot \\dfrac{1}{21}$\n\nGib das passende Ereignis an.\n\n2 Pkte",
+     "answer": {
+      "type": "free",
+      "sample": "Jan verwendet die Produktregel. Lies den entsprechenden Pfad aus dem Baumdiagramm ab. Es werden eine Kapsel Lungo und eine Kapsel Espresso gezogen."
+     },
+     "solution": "*Jan verwendet die Produktregel. Lies den entsprechenden Pfad aus dem Baumdiagramm ab.*\n\nEs werden eine Kapsel Lungo und eine Kapsel Espresso gezogen.",
+     "points": 0,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, dass Jan zuerst Ristretto (R) und dann Espresso (E) zieht.\n\n2 Pkte",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.025974026,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "\\1. Ziehen Ristretto (R): $\\displaystyle\\dfrac{12}{22}$\n\n\\2. Ziehen Espresso (E): $\\displaystyle\\dfrac{1}{21}$\n\nVerwende die Produktregel: $\\displaystyle\\dfrac{12}{22}\\cdot\\dfrac{1}{21}=\\dfrac{12}{462}$\n\nDie Wahrscheinlichkeit, dass Jan zuerst Ristretto (R) und dann Espresso (E) zieht ist $\\displaystyle\\dfrac{12}{462}.$",
+     "points": 0,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Jan möchte einen Lungo (L) und einen Ristretto (R) trinken.\n\nMarkiere alle betreffenden Pfade und berechne die Wahrscheinlichkeit, dass ein Lungo (L) und ein Ristretto (R) gezogen werden.\n\n3 Pkte",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.467532468,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "\\1. Möglichkeit:\n\nGehe vom Ursprung des Baumdiagramms zuerst zu (L) und dann zu (R).\n\nProduktregel: $\\displaystyle \\dfrac{9}{22}\\cdot \\dfrac{12}{21}=\\dfrac{108}{462}$\n\n\\2. Möglichkeit:\n\nGehe vom Ursprung des Baumdiagramms zuerst zu (R) und dann zu (L).\n\nProduktregel: $\\displaystyle \\dfrac{12}{22}\\cdot\\dfrac{9}{21}=\\dfrac{108}{462}$\n\nDie Wahrscheinlichkeit, dass ein Lungo (L) und ein Ristretto (R) gezogen werden beträgt $\\displaystyle \\dfrac{216}{462}$.",
+     "points": 0,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Jan berechnet die Wahrscheinlichkeit für ein Ereignis mit der folgenden Rechnung:\n\n$P=1-(\\displaystyle\\dfrac{12}{22}\\cdot \\dfrac{11}{21})$\n\nKreuze das passende Ereignis an.\n\n1 Pkt",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "Es wird kein Lungo und kein Ristretto gezogen.",
+        "correct": false
+       },
+       {
+        "text": "Es wird nicht zweimal Ristretto gezogen.",
+        "correct": true
+       },
+       {
+        "text": "Es werden zwei Lungo gezogen.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "$\\displaystyle\\dfrac{12}{22}\\cdot \\dfrac{11}{21}$ ist die Wahrscheinlichkeit, dass zweimal Ristertto (R) gezogen wird.\n\n$1-(\\displaystyle\\dfrac{12}{22}\\cdot \\dfrac{11}{21})$ ist das dazugehörige Gegenereignis und bedeutet, dass nicht zweimal Ristretto (R) gezogen wird.",
+     "points": 0,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Bambuspflanzen wachsen sehr schnell. Eine Bambusart ist zu Beginn der Messung 50 cm hoch und wächst täglich um 15 cm.\n\n![Abbildung](/uploads/ex-e8836e776d9a.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Fülle die zwei Lücken in der Tabelle aus.\n\n2 Pkte\n\n| Anzahl der Tage | 0 | 1 | 2 | ... | 5 | ... | ⟦1⟧ |\n|---|---|---|---|---|---|---|---|\n| Höhe in cm | 50 | 65 | 80 | ... | ⟦2⟧ | ... | 170 |",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 8,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 125,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "![Abbildung](/uploads/ex-9c76c646fab4.png)",
+     "points": 0,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Stelle für das Wachstum der Bambusart eine Funktionsgleichung in der Form $\\mathrm{y}=\\mathrm{m} \\cdot \\mathrm{x}+\\mathrm{b}$ auf.\n\n2 Pkte\n\n$y=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "15x+50",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Höhe der Pflanze zu Beginn der Messung: $50\\cm$\n\nWachstum der Pflanze pro Tag: $15\\cm$\n\n$y=15x+50$",
+     "points": 0,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne den Graphen der Funktion in ein Koordinatensystem.\n\n3 Pkte",
+     "answer": {
+      "type": "free",
+      "sample": "Achsenabschnitt: 50cm Steigung: 15cm ![Abbildung](/uploads/ex-8e7c065b4659.png)"
+     },
+     "solution": "Achsenabschnitt: $50\\cm$\n\nSteigung: $15\\cm$\n\n![Abbildung](/uploads/ex-8e7c065b4659.png)",
+     "points": 0,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Eine andere Pflanze ist zu Beginn der Messung 4$\\cm$ hoch. Sie wächst jeden Tag um $10\\%.$ Berechne die Höhe dieser Pflanze nach 3 Tagen.\n\n2 Pkte",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5.32,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Höhe der Pflanze zu Beginn der Messung: $4\\cm$\n\nWachstum 10% pro Tag.\n\n\\1. Tag: Wachstum $0,4\\cm$, Höhe $4,4\\cm$\n\n\\2. Tag: Wachstum $0,44\\cm$, Höhe $4,84\\cm$\n\n\\3. Tag: Wachstum $0,484\\cm$, Höhe $5,32\\cm$\n\nAm 3. Tag ist die Pflanze $5,32 \\cm$ groß.",
+     "points": 0,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ordne dem Wachstum dieser Pflanze den richtigen Graphen zu. Kreuze an.\n\n![Abbildung](/uploads/ex-44ae7a882853.png)\n\n1 Pkt",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-837f05d8f1b3.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-837f05d8f1b3.png)",
+     "points": 0,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Auf dem Bild siehst du eine Boje, die aus einem Kegel und einer Halbkugel zusammengesetzt ist.\n\n![Abbildung](/uploads/ex-b509dfe08697.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne zuerst die Höhe des Kegels und dann das Volumen des Kegels.\n\n3 Pkte\n\n$h_k=$⟦1⟧ $\\cm$\n\n$V_k=$⟦2⟧$\\cm^3$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 107,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 364050.9,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Höhe des Kegels:\n\n$h_k=164-57=107$\n\nDer Kegel ist $107\\cm$ hoch.\n\nVolumen des Kegels:\n\n$V_{Kegel}=\\frac13\\cdot G\\cdot h$\n\n[Grundfläche](/2107): G\n\n$G=r^2\\cdot\\pi$\n\n$G=57^2\\cdot\\pi=10207$\n\n$V_{Kegel}=\\dfrac{1}{3}\\cdot 10207\\cdot 107=364050,90$\n\nDer Kegel hat ein Volumen von $364 050,90\\cm^3$.",
+     "points": 0,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Der Kegel besteht aus Kunststoff.\r\n$1 \\mathrm{~cm}^{3}$ Kunststoff hat die Masse $\\mathrm{m}=0,97 \\mathrm{~g}$.\n\nBerechne die Masse des Kegels. (Skizze nicht maßstäblich)\r\n(Wenn du die Teilaufgabe a) nicht gelöst hast, dann rechne mit $\\mathrm{V}_{\\text{Kegel }}=365047,75\\mathrm{~cm}^3$ weiter.)\n\n2 Pkte\n\n$m=$⟦1⟧ g\n\nWenn du mit $V_k=365047,75\\cm^3$ gerechnet hast, ergibt sich\n\n$m=$⟦2⟧ g",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 353129.37,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 354096.32,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Multipliziere das Volumen des Kegels mit dem Masse pro $m^3$ Kunststoff.*\n\n$m=0,97g/m^3$\n\n$V_{Kegel}=364 050,90\\cm^3$\n\n$m_{Kegel}=353129,37 g$\n\nWenn du mit\n\n$V_{Kegel}=365047,75\\cm^3$ gerechnet hast, ergibt sich\n\n$m_{Kegel}=354096,32 g$",
+     "points": 0,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze die richtige Aussage an.\n\nWenn der Radius der Boje verdoppelt wird und die Höhe des Kegels gleich bleibt, dann ...\n\n1 Pkt",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "verdoppelt sich das Volumen des Kegels.",
+        "correct": false
+       },
+       {
+        "text": "verdreifacht sich das Volumen des Kegels.",
+        "correct": false
+       },
+       {
+        "text": "vervierfacht sich das Volumen des Kegels.",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "Setze in die Formel für die Grundfläche $2\\cdot r$ statt $r$ ein.\n\n$G=(2r)^2\\cdot\\pi$ =\\>\n\n$G=4r^2\\cdot\\pi$\n\n$V_{Kegel}=\\displaystyle\\frac13\\cdot 4r^2\\cdot\\pi\\cdot h$\n\n$V_{Kegel}=4\\cdot\\displaystyle\\frac13\\cdot r^2\\cdot\\pi\\cdot h$\n\nWenn der Radius der Boje verdoppelt wird und die Höhe des Kegels gleich bleibt, dann vervierfacht sich das Volumen des Kegels.",
+     "points": 0,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen der Halbkugel.\n\n2 Pkte\n\n$V_{Halbkugel}=$⟦1⟧ $\\cm^3$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 387867.31,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Berechne das Volumen der Kugel und dividiere dieses durch 2.*\n\n$V_{\\text{Kugel}}=\\frac43 \\cdot \\pi \\cdot r^3$\n\n$V_{\\text{Kugel}}=\\frac43 \\cdot \\pi \\cdot 57^3$\n\n$V_{\\text{Kugel}}=\\frac43 \\cdot \\pi \\cdot r^3=775734,62$\n\n$V_{Halbkugel}=387867,31$\n\nDie Halbkugel hat ein Volumen von $387867,31\\cm^3$.",
+     "points": 0,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "e)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne den prozentualen Anteil des Kegelvolumens am Gesamtvolumen der Boje. (Wenn du die Teilaufgabe d) nicht gelöst hast, dann rechne mit $\\mathrm{V}_{\\text{Halbkugel }}=377637,49\\mathrm{~cm}^3$ weiter.)\n\n2 Pkte\n\n⟦1⟧ %\n\nWenn du mit $V_{Halbkugel}=377637,49 \\cm^3$ gerechnet hast, sind es ⟦2⟧ %.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 48.42,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 49.08,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Gesamtvolumen der Boje:\n\n$V_{Boje}=V_{Kegel}+V_{Halbkugel}$\n\n$V_{Boje}=364 050,90 \\cm^3+387867,31\\cm^3=751918,21\\cm^3$\n\n$V_{Boje}=751918,21$ $\\widehat=100%$\n\n$V_{Kegel}=364 050,90$\n\n$364 050,90:7519,18=48,42$\n\nDas Kegelvolumen hat einen Anteil von $48,42\\%$ am Gesamtvolumen der Boje.\n\nWenn du mit $V_{Halbkugel}=377637,49 \\cm^3$ gerechnet hast, ergibt sich\n\nGesamtvolumen der Boje:\n\n$V_{Boje}=V_{Kegel}+V_{Halbkugel}$\n\n$V_{Boje}=364050,90+377637,49=741688,39$\n\n$V_{Boje}=741688,39$ $\\widehat=100%$\n\n$V_{Kegel}=364 050,90$\n\n$364 050,90:7416,88=49,08$\n\nDas Kegelvolumen hat einen Anteil von $49,08\\%$ am Gesamtvolumen der Boje.",
+     "points": 0,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Die Abbildung zeigt den Landeanflug eines Flugzeuges.\r\nDer Landeanflug beginnt auf der Flughöhe $\\mathrm{h}=10 \\mathrm{~km}$.\r\nBeim Landeanflug legt das Flugzeug den Gleitweg $\\mathrm{g}=196 \\mathrm{~km}$ zurück.\n\n![Abbildung](/uploads/ex-464159410b58.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der horizontalen Entfernung e.\n\n3 Pkte\n\n$e\\approx$⟦1⟧ $\\km$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 195.74,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$h^2+e^2=g^2$\n\n$10^2+e^2=196^2$\n\n$e^2=38318$\n\n$e=\\sqrt{38318}=195,74$\n\nDie Länge der horizontalen Entfernung $e$ beträgt $195,74\\km$.",
+     "points": 0,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Zeige mithilfe einer Rechnung, dass die Pilotin den Landewinkel $\\alpha=2,92^{\\circ}$ eingestellt hat.\n\n2 Pkte",
+     "answer": {
+      "type": "free",
+      "sample": "sin (alpha )=displaystylefrac{text{Gegenkathete}}{text{Hypotenuse}} sin (alpha )=displaystylefrac{10}{196}=0,05 alpha=2,92°"
+     },
+     "solution": "$\\sin (\\alpha )=\\displaystyle\\frac{\\text{Gegenkathete}}{\\text{Hypotenuse}}$\n\n$\\sin (\\alpha )=\\displaystyle\\frac{10}{196}=0,05$\n\n$\\alpha=2,92°$",
+     "points": 0,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Aufgrund eines Problems muss die Pilotin „durchstarten“: Direkt nach dem Aufsetzen steigt das Flugzeug wieder.\n\n![Abbildung](/uploads/ex-6e868ef9077c.png)\n\nBeim Steigen stellt die Pilotin den Winkel $\\beta=9^{\\circ}$ ein.\r\nDas Flugzeug steigt, bis die Flughöhe $\\mathrm{h}=10 \\mathrm{~km}$ wieder erreicht wird.\r\nBerechne die Länge des Steigflugs s.\n\n3 Pkte\n\n$s\\approx$⟦1⟧ $\\km$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 63.92,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$\\sin (\\beta )=\\displaystyle\\frac{\\text{Gegenkathete}}{\\text{Hypotenuse}}$\n\n$\\sin (\\beta )=\\displaystyle\\frac{h}{s}$\n\n$\\sin (9 )=\\displaystyle\\frac{10}{s}$\n\n$s=\\displaystyle\\dfrac{10}{0,1564}=63,92$\n\nDie Länge des Steigflugs $s$ beträgt $63,92\\km$.",
+     "points": 0,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "textAreaExercise",
+     "skip": null,
+     "prompt": "Dilara möchte die Länge der Strecke x mit dem Satz des Pythagoras berechnen.\n\nSie nutzt dafür im Dreieck ABC diese Formel:\n\n$x^2=g^2+s^2$\n\nBegründe, dass Dilaras Formel im Dreieck ABC nicht angewendet werden darf.\n\n2 Pkte",
+     "answer": {
+      "type": "free",
+      "sample": "Dilaras Formel darf im Dreieck ABC nicht angewendet werden weil gamma kein rechter Winkel ist."
+     },
+     "solution": "Dilaras Formel darf im Dreieck ABC nicht angewendet werden weil $\\gamma$ kein rechter Winkel ist.",
+     "points": 0,
+     "topic": "Satz des Pythagoras"
+    }
+   ]
+  }
+ ]
+}

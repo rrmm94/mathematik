@@ -176,4 +176,6 @@ export function seedExams() {
     setSetting(SETTING, '1');
   });
   console.log(`Originalaufgaben eingebunden: ${nPackages} Übungspakete, ${nTasks} Aufgaben, ${nDiag} Diagnose-Varianten (${skippedTopic} für die Hauptschule nicht freigeschaltete Zuordnungen ausgelassen).`);
+  const total = get("SELECT (SELECT COUNT(*) FROM tasks WHERE kind = 'practice') AS p, (SELECT COUNT(*) FROM tasks WHERE kind = 'diagnose') AS d, (SELECT COUNT(*) FROM task_variants WHERE source LIKE 'Abschlussprüfung%' OR source LIKE 'Variante mit%') AS e");
+  console.log(`Gesamt jetzt: ${total.p} Übungsaufgaben, ${total.d} Diagnoseaufgaben, davon ${total.e} Varianten aus Abschlussprüfungen.`);
 }

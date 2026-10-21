@@ -1,0 +1,451 @@
+{
+ "school": "hs-e",
+ "schoolLabel": "Hauptschule E-Kurs",
+ "year": 2023,
+ "part": "Wahlteil",
+ "folderId": 315333,
+ "url": "https://de.serlo.org/mathe/315333/wahlteil",
+ "groups": [
+  {
+   "no": 1,
+   "context": "In Braunschweig steht ein kugelförmiger Gasspeicher.\nDie Kugel hat einen Außenradius von $r=13,5 \\mathrm{~m}$.\n\n![Abbildung](/uploads/ex-79cd7cf93f51.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Oberfläche der Kugel.\n\n$O_{\\text{Kugel}}\\approx$ ⟦1⟧$\\m^2$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2290.22,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Oberfläche einer Kugel\n\n$O_\\text{Kugel}=4\\cdot r^2\\cdot\\pi$\n\nWerte einsetzen\n\n$O_\\text{Kugel}=4\\cdot 13,5^2\\cdot \\pi$\n\n$O_\\text{Kugel}\\approx 2\\,290,22$\n\nDie Oberfläche der Kugel hat $2\\,290,22\\m^2$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Der Pfeil zeigt auf einen Ring, der kreisförmig um die Mitte des Gasspeichers verläuft. Der Ring ist $90\\m$ lang.\n\n![Abbildung](/uploads/ex-8c12a47bad78.png)\n\nBerechne den Abstand zwischen dem Gasspeicher und dem Ring.\n\nDer Abstand zwischen dem Gasspeicher und dem Ring beträgt ca. ⟦1⟧ $\\m$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.82,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne zunächst den Radius des Rings. - Ziehe davon den Radius des Gasspeichers ab.*\n\nDer Ring bildet einen Kreis, dessen Umfang $U=90$ bekannt ist.\n\n**Radius des Rings**\n\n$U=2\\cdot\\pi\\cdot r$\n\n$90=2\\cdot\\pi\\cdot r$\n\n$r=\\dfrac{90}{2\\cdot \\pi}$\n\n$r\\approx 14,32$\n\n**Abstand zwischen Ring und Gasspeicher**\n\n$\\text{Abstand}=\\text{Radius Ring}-\\text{Radius Gasspeicher}$\n\n$\\text{Abstand}=14,32-13,5=0,82$\n\nDer Abstand zwischen dem Gasspeicher und dem Ring beträgt $0,82\\m$.",
+     "points": 3,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Für Reparaturarbeiten am Gasspeicher wird ein Kran aufgestellt.\n\n![Abbildung](/uploads/ex-b4bf2bad7dc0.png)\n\nBerechne die Länge $x$.\n\n$x\\approx$ ⟦1⟧ $\\m$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 9.17,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Der Kran bildet mit der Wand des Gasspeichers einen rechten Winkel.\n\nBekannt sind\n\n- die Hypotenuse $c=22$\n- eine Kathete $a=20$\n\nGesucht ist die Länge der zweiten Kathete $x$.\n\n**Satz des Pythagoras**\n\n$c^2=a^2+x^2$\n\n**Werte einsetzen**\n\n$22^2=20^2+b^2$\n\n$484=400+x$\n\n$84=x^2$\n\n$x\\approx \\pm 9,17$\n\nNur der positive Wert ist in diesem Fall sinnvoll.\n\nDie Länge $x$ beträgt $9,17\\m$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die Metallwand des Gasspeichers ist $0,03 \\mathrm{~m}$ dick.\n\nBerechne das Volumen des Hohlraums der Kugel.\n\n$V_{\\text{Hohlraum}}=$⟦1⟧$\\m^3$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 10237.44,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Radius des Hohlraums - Verwende die Volumenformel zur Berechnung des Volumens*\n\n**Radius des Hohlraums**\n\n$r_\\text{Hohlraum}=13,5-0,03=13,47$\n\n**Volumen des Hohlraums**\n\n$V_\\text{Hohlraum}=\\dfrac{4}{3}\\cdot r^3 \\cdot \\pi$\n\n**Werte einsetzen**\n\n$V_\\text{Hohlraum}=\\dfrac{4}{3}\\cdot 13,47^3 \\cdot\\pi$\n\n$V_\\text{Hohlraum}=10\\,237,44$\n\nDas Volumen des Hohlraums beträgt $10\\,237,44\\m^3.$",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "In einer anderen Stadt steht ein weiterer kugelförmiger Gasspeicher, der einen doppelt so großen Durchmesser hat.\n\nBegründe, dass dieser Gasspeicher ein achtmal so großes Volumen besitzt.",
+     "answer": {
+      "type": "free",
+      "sample": "Volumen des kleineren Gasspeichers r V_text{kleiner Gasspeicher}=dfrac{4}{3}cdot r^3cdotpi Volumen des größeren Gasspeichers Der Radius des kleineren Gasspeichers ist r. Da der größere Gasspeicher einen doppelt so großen Durchmesser hat, ist auch sein Radius doppelt so groß. Er beträgt 2cdot r V_text{großer Gasspeicher}=dfrac{4}{3}cdot left(2cdot rright)^3cdot pi V_text{großer Gasspeicher}=dfrac{4}{3}cdot 8cdot r^3cdotpi V_text{großer Gasspeicher}=8cdot left(dfrac{4}{3}cdot r^3cdotpiright) V_text{großer Gasspeicher}=8cdot V_text{kleiner Gasspeicher}"
+     },
+     "solution": "Volumen des kleineren Gasspeichers r\n\n$V_\\text{kleiner Gasspeicher}=\\dfrac{4}{3}\\cdot r^3\\cdot\\pi$\n\nVolumen des größeren Gasspeichers\n\nDer Radius des kleineren Gasspeichers ist $r$. Da der größere Gasspeicher einen doppelt so großen Durchmesser hat, ist auch sein Radius doppelt so groß.\n\nEr beträgt $2\\cdot r$\n\n$V_\\text{großer Gasspeicher}=\\dfrac{4}{3}\\cdot \\left(2\\cdot r\\right)^3\\cdot \\pi$\n\n$V_\\text{großer Gasspeicher}=\\dfrac{4}{3}\\cdot 8\\cdot r^3\\cdot\\pi$\n\n$V_\\text{großer Gasspeicher}=8\\cdot \\left(\\dfrac{4}{3}\\cdot r^3\\cdot\\pi\\right)$\n\n$V_\\text{großer Gasspeicher}=8\\cdot V_\\text{kleiner Gasspeicher}$",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Ein Boiler dient zur Erwärmung von Wasser in Küche und Bad.\n\nWenn der Boiler eingeschaltet wird, erhöht sich die Wassertemperatur pro Minute um $15^{\\circ} \\mathrm{C}$.\n\n![Abbildung](/uploads/ex-e2d071cdacd0.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Zu Beginn hat das Wasser im Boiler eine Temperatur von $20^{\\circ} \\mathrm{C}$.\n\nBerechne die Wassertemperatur nach 3 Minuten.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 65,
+        "tolerance": 0,
+        "unit": "°",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Das Wasser hat am Anfang eine Temperatur von $20$ °C.\n\nJede Minute steigt die Temperatur um $15$ °C. Innerhalb von $3$ Minuten steigt die Temperatur des Wassers also um $3 \\cdot 15$ °C $= 45$ °C.\n\nNach $3$ Minuten hat das Wasser eine Temperatur von $20$ °C $+ \\ 45$ °C $= 65$ °C.",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Stelle die Funktionsgleichung zur Berechnung der Wassertemperatur in der Form $y=m \\cdot x+b$ auf.\n\n$y=$⟦1⟧ $x+$ ⟦2⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 15,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 20,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Um die Funktion aufzustellen, muss man zuerst wissen, welche Variable wofür steht:\n\n| y | Die Wassertemperatur zu einem bestimmten Zeitpunkt in °C. |\n|---|---|\n| m | Die Geschwindigkeit, mit der sich die Temperatur des Wassers ändert, nachdem der Boiler eingeschaltet wurde (= $15$ °C/min). |\n| x | Die vergangene Zeit seit Einschalten des Boilers in Minuten. |\n| b | Die Temperatur des Wassers, bevor der Boiler angeschaltet wurde (= $20$ °C). |\n\nJetzt kann man also für $b$ und $m$ die Werte aus der Aufgabe einsetzen und erhält die Funktion:\n\n$y = 15$ °C/min $\\cdot \\ x + 20$ °C",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Nach Abschalten des Boilers um 12:00 Uhr fällt die Temperatur des Wassers pro Stunde um ca. $15\\%$.\n\nVervollständige die Tabelle.\n\n![Abbildung](/uploads/ex-b7aeb21e8cd7.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Innerhalb einer Stunde fällt die Wassertemperatur um 15 %, sie wird also auf 85 % ( = 100 % - 15 %) ihres vorherigen Wertes reduziert. Um die Wassertemperatur eine Stunde später zu berechnen, multipliziert man die jetzige Temperatur mit 0,85. Um die Wassertemperatur um 16 Uhr zu berechnen, multipliziert man die Temperatur um 15 Uhr mit 0,85: 49,1 °C cdot 0,85 approx 41,74 °C ![Abbildung](/uploads/ex-b9de7279a0ed.png)"
+     },
+     "solution": "Innerhalb einer Stunde fällt die Wassertemperatur um $15 \\%$, sie wird also auf $85 \\%$ $( = 100 \\% - 15 \\%)$ ihres vorherigen Wertes reduziert.\n\nUm die Wassertemperatur eine Stunde später zu berechnen, multipliziert man die jetzige Temperatur mit $0,85$.\n\nUm die Wassertemperatur um 16 Uhr zu berechnen, multipliziert man die Temperatur um 15 Uhr mit $0,85$:\n\n$49,1$ °C $\\cdot \\ 0,85 \\approx 41,74$ °C\n\n![Abbildung](/uploads/ex-b9de7279a0ed.png)",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": "zeichnen",
+     "prompt": "Zeichne die Wertepaare in das Koordinatensystem und verbinde sie sinnvoll.\n\n![Abbildung](/uploads/ex-b6db7e4aa108.png)\n\nFülle die Lücken aus.\n\nUm 12:45 Uhr beträgt die Temperatur ⟦1⟧ °C.\n\nUm ⟦2⟧ Uhr ist die Temperatur um $35^{\\circ} \\mathrm{C}$ gefallen.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 71,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "15:30",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Trägt man die Werte in das Koordinatensystem und verbindet sie, so erhält man folgenden Graphen:\n\n![Abbildung](/uploads/ex-914eb385273c.png)\n\nMithilfe des Graphen kann man jetzt den Lückentext ausfüllen:\n\nUm 12:45 Uhr beträgt die Temperatur ${\\underline {\\ \\color {blue} 71 \\ }} ^\\circ\\text{C}$.\n\nUm ${\\underline {\\ \\color {blue} 15{:}30 \\ }}$ Uhr ist die Temperatur um $35^{\\circ} \\mathrm{C}$ gefallen.",
+     "points": 5,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "e)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze an.\n\nDie im Graph dargestellte Zuordnung ist...",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "linear.",
+        "correct": false
+       },
+       {
+        "text": "proportional.",
+        "correct": false
+       },
+       {
+        "text": "exponentiell.",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "Die Zuordnung ist nicht linear, da ihr Graph keine Gerade ist. Also ist sie auch nicht proportional, weil proportionale Funktionen auch linear sind.\n\nDie Zuordnung beschreibt einen exponentiellen Zerfall, da der Wert immer um denselben Faktor, in diesem Fall $15 \\%$, sinkt.",
+     "points": 1,
+     "topic": "Wachstum & Exponentialfunktionen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Pia und Lea trinken gern Tee.\n\nSie haben diese Teebeutel unsortiert in einer Teebox:\n\n\\- 10 Beutel Kamillentee (K)\n\n\\- 4 Beutel Erdbeertee (E)\n\n\\- 6 Beutel Apfeltee (A)\n\n![Abbildung](/uploads/ex-c5e3940bbe90.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Pia greift, ohne hinzusehen, in die Teebox und zieht nacheinander zwei Teebeutel heraus.\n\nErgänze im Baumdiagramm die fehlenden Wahrscheinlichkeiten.\n\n![Abbildung](/uploads/ex-2af513f833b2.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Ausgehend von einem Knoten muss die Summe der mit diesem Knoten verknüpften Ereignisse 1 ergeben. 1. Knoten oben: 1-left(dfrac{10}{20}+dfrac{4}{20}right)=dfrac{6}{20} 2. Knoten links: 1-left(dfrac{4}{19}+dfrac{6}{19}right)=dfrac{9}{19} ![Abbildung](/uploads/ex-00892cda1a4b.png)"
+     },
+     "solution": "Ausgehend von einem Knoten muss die Summe der mit diesem Knoten verknüpften Ereignisse $1$ ergeben.\n\n\\1. Knoten oben: $1-\\left(\\dfrac{10}{20}+\\dfrac{4}{20}\\right)=\\dfrac{6}{20}$\n\n\\2. Knoten links: $1-\\left(\\dfrac{4}{19}+\\dfrac{6}{19}\\right)=\\dfrac{9}{19}$\n\n![Abbildung](/uploads/ex-00892cda1a4b.png)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, dass Pia erst Kamillentee und dann Apfeltee zieht. Schreibe die Wahrscheinlichkeit als Bruch.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.157894737,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Es soll die Wahrscheinlichkeit für einen ganz bestimmten Versuchsausgang berechnet werden.\n\nDazu wird die erste Pfadregel (Produktregel) verwendet.\n\n$P\\left(K,A\\right)=\\dfrac{10}{20}\\cdot\\dfrac{6}{19}=\\dfrac{60}{380}$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Pia und Lea mögen keinen Erdbeertee.\n\nBerechne die Wahrscheinlichkeit, dass Pia keinen Erdbeertee zieht. Schreibe die Wahrscheinlichkeit als Bruch.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.631578947,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme die verschiedenen Möglichkeiten, bei zwei Zügen keinen Erdbeertee zu ziehen und berechne die Wahrscheinlichkeiten. - Addiere die Wahrscheinlichkeiten der verschiedenen Möglichkeiten.*\n\nFolgende Ereignisse sind bei zweimaligem Ziehen möglich, wenn kein Erdbeertee gezogen wird:\n\n**Erste Möglichkeit**\n\nIm ersten Zug Kamillentee und im zweiten Zug Kamillentee oder Apfeltee.\n\nDie Wahrscheinlichkeit dafür beträgt:\n\n$P\\left(K,K\\ oder\\ A\\right)=\\dfrac{10}{20}\\cdot\\left(1-\\dfrac{4}{19}\\right)=\\dfrac{10}{20}\\cdot\\dfrac{15}{19}=\\dfrac{150}{380}$\n\n**Zweite Möglichkeit**\n\nIm ersten Zug Apfeltee und im zweiten Zug Kamillentee oder Apfeltee.\n\nDie Wahrscheinlichkeit dafür beträgt:\n\n$P\\left(A,K\\ oder\\ A\\right)=\\dfrac{6}{20}\\cdot\\left(1-\\dfrac{4}{19}\\right)=\\dfrac{6}{20}\\cdot\\dfrac{15}{19}=\\dfrac{90}{380}$\n\n**Wahrscheinlichkeit kein Erdbeertee**\n\n$P\\left(keinen\\ Erbeertee\\right)=P\\left(K,K\\ oder\\ A\\right)+P\\left(A,K\\ oder\\ A\\right)$\n\n$P\\left(keinen\\ Erbeertee\\right)=\\dfrac{150}{380}+\\dfrac{90}{380}=\\dfrac{240}{380}$\n\nDie Wahrscheinlichkeit, dass Pia keinen Erdbeertee zieht, beträgt $\\dfrac{240}{380}=\\dfrac{12}{19}$.",
+     "points": 3,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Lea berechnet die Wahrscheinlichkeit für ein Ereignis mit der folgenden Rechnung:\n\n$P=1-\\left(\\dfrac{4}{20} \\cdot \\dfrac{3}{19}\\right)$\n\nGib das passende Ereignis an.",
+     "answer": {
+      "type": "free",
+      "sample": "Die Wahrscheinlichkeit zweimal hintereinander Erdbeertee zu ziehen beträgt Pleft(zweimal hintereinander Erbeerteeright)=dfrac{4}{20}cdotdfrac{3}{19} Die [Gegenwahrscheinlichkeit](/1691), nicht zweimal hintereinander Erdbeertee zu ziehen, beträgt Pleft(nicht zweimal Erdbeerteeright)qquad=1-Pleft(zweimal hintereinander Erdbeerteeright)qquad =1-left(dfrac{4}{20}cdotdfrac{3}{19}right) Die gegebene Rechnung beschreibt das Ereignis: \"Es wird nicht zweimal hintereinander Erdbeertee gezogen\""
+     },
+     "solution": "Die Wahrscheinlichkeit zweimal hintereinander Erdbeertee zu ziehen beträgt\n\n$P\\left(zweimal\\ hintereinander\\ Erbeertee\\right)=\\dfrac{4}{20}\\cdot\\dfrac{3}{19}$\n\nDie [Gegenwahrscheinlichkeit](/1691), nicht zweimal hintereinander Erdbeertee zu ziehen, beträgt\n\n$P\\left(nicht\\ zweimal\\ Erdbeertee\\right)\\\\\\qquad=1-P\\left(zweimal\\ hintereinander\\ Erdbeertee\\right)\\\\\\qquad =1-\\left(\\dfrac{4}{20}\\cdot\\dfrac{3}{19}\\right)$\n\nDie gegebene Rechnung beschreibt das Ereignis:\n\n\"Es wird nicht zweimal hintereinander Erdbeertee gezogen\"",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Pia hat ein Glücksrad gebaut und behauptet: „Statt zweimal aus der Teebox zu ziehen, können wir auch zweimal am Glücksrad drehen.\"\n\n![Abbildung](/uploads/ex-5c0874500d0d.png)\n\nBegründe, dass das Glücksrad nicht zum Baumdiagramm aus Aufgabenteil a) passt.",
+     "answer": {
+      "type": "free",
+      "sample": "Wenn das Drehen das Glücksrad mehrmals gedreht wird, entspricht das einem Experiment mit Zurücklegen. Ein mehrmaliges Ziehen aus der Teebox ist aber ein Ziehen ohne Zurücklegen. Das Glücksrad passt also nicht zum Baumdiagramm aus Aufgabenteil a)."
+     },
+     "solution": "Wenn das Drehen das Glücksrad mehrmals gedreht wird, entspricht das einem Experiment **mit** Zurücklegen.\n\nEin mehrmaliges Ziehen aus der Teebox ist aber ein Ziehen **ohne** Zurücklegen.\n\nDas Glücksrad passt also nicht zum Baumdiagramm aus Aufgabenteil a).",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Die Bergbahn „Waldi\" fährt von einer Talstation zu einer Bergstation. Danny hat eine Skizze gezeichnet und einige Streckenlängen eingetragen.\n\n![Abbildung](/uploads/ex-ef727afaf319.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne den Höhenunterschied $h$.\n\n$h=$ ⟦1⟧ $\\km$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.67,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Berechne die Höhe $h$ mit dem Satz des Pythagoras.*\n\nDie Skizze zeigt ein rechtwinkliges Dreieck.\n\n$h^2+5,53^2=5,57^2$\n\n$h^2=5,57^2-5,53^2=0,444$\n\n$h\\approx\\pm 0,66633$\n\nNur der positive Wert ergibt hier ein sinnvolles Ergebnis.\n\nDer Höhenunterschied $h$ beträgt $0,67\\km$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Steigungswinkels $\\alpha$.\n\n$\\alpha\\approx$⟦1⟧ °",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 6.87,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Berechne den Winkel mit einer geeigneten trigonometrischen Funktion*\n\nDer Winkel $\\alpha$ kann mithilfe der Sinus Winkelfunktion berechnet werden.\n\n$\\sin\\left(\\alpha\\right)=\\dfrac{\\text{Gegenkathete}}{\\text{Hypotenuse}}$\n\n$\\sin\\left(\\alpha\\right)=\\dfrac{0,66633}{5,57}=0,1196$\n\n$\\alpha\\approx 6,87^\\circ$",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die Bergbahn „Rosi\" hat eine Steigung von $9 \\%$.\n\n![Abbildung](/uploads/ex-62cea13399d8.png)\n\nEntscheide mithilfe einer Rechnung, welche Bergbahn die größere Steigung hat.\n\n⟦1⟧ (Rosi/Waldi)",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Waldi",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne mit einer geeigneten trigonometrischen Funktion den Steigungswinkel der Bergbahn \"Rosi\". - Vergleiche die Steigungswinkel und entscheide.*\n\n**Steigungswinkel der Bergbahn \"Rosi\"**\n\n$\\tan\\left(\\alpha\\right)=\\dfrac{9}{100}=5,14^\\circ$\n\n**Vergleich der Steigungswinkel**\n\n$5,14^\\circ\\lt 6,87^\\circ$\n\nDie Bergbahn \"Waldi\" hat die größere Steigung.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Danny behauptet: „Die Steigung einer Strecke kann höchstens $100 \\%$ betragen.\"\n\nZeige, dass Dannys Behauptung falsch ist.",
+     "answer": {
+      "type": "free",
+      "sample": "Bei einem Steigungswinkel von 45^circ beträgt die Steigung 100%. arctanleft(dfrac{100}{100}right)=45^circ Der Steigungswinkel kann aber auch größer sein. Dannys Behauptung ist falsch."
+     },
+     "solution": "Bei einem Steigungswinkel von $45^\\circ$ beträgt die Steigung $100\\%$.\n\n$\\arctan\\left(\\dfrac{100}{100}\\right)=45^\\circ$\n\nDer Steigungswinkel kann aber auch größer sein.\n\nDannys Behauptung ist falsch.",
+     "points": 1,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Damit Züge in Kurven schneller fahren können, werden die Gleise etwas geneigt. Die maximale Geschwindigkeit hängt vom Neigungswinkel $\\alpha$ ab.\n\n![Abbildung](/uploads/ex-a8ec312297bd.png)\n\nBestimme die maximale Geschwindigkeit, mit der ein Zug bei einem Höhenunterschied von $u=217$ mm durch die Kurve fahren darf.\n\n$\\renewcommand{\\arraystretch}{2}\n \\begin{array}{c|c}\n \\text{Neigungswinkel\\ } \\alpha & \\text{max. Geschwindigkeit} \\\\\n \\hline\n 0^\\circ \\text{\\ bis\\ } 4,3^\\circ & 60\\ \\dfrac{\\text{km}}{\\text{h}} \\\\\n \\hline\n \\text{über\\ }4,3^\\circ \\text{\\ bis\\ } 8,6^\\circ & 80\\ \\dfrac{\\text{km}}{\\text{h}} \\\\\n \\hline\n \\text{über\\ } 8,6^\\circ & 90\\ \\dfrac{\\text{km}}{\\text{h}}\n \\end{array}$\n\nDer Zug kann mit ⟦1⟧ $\\dfrac{\\km}{\\h}$ durch die Kurve fahren.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 90,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Neigungswinkel bei einem Höhenunterschied von $u=217\\mm$. - Vergleich den Winkel mit den Winkeln der Tabelle und entscheide.*\n\nGröße des Neigungswinkels $\\alpha$ bei einem Höhenunterschied von $u=217\\mm$.\n\n$\\sin\\left(\\alpha\\right)=\\dfrac{\\text{Gegenkathete}}{\\text{Hypotenuse}}$\n\n$\\sin\\left(\\alpha\\right)=\\dfrac{217}{1435}\\approx 8,70^\\circ$\n\nVergleich mit den Neigungswinkeln der gegebenen Tabelle\n\n$8,7^\\circ \\gt 8,6^\\circ$\n\nDer Zug kann mit $90\\dfrac{\\text{km}}{\\text{h}}$ durch die Kurve fahren.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  }
+ ]
+}

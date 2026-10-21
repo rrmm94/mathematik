@@ -1,0 +1,427 @@
+{
+ "school": "hs-e",
+ "schoolLabel": "Hauptschule E-Kurs",
+ "year": 2026,
+ "part": "Teil 1",
+ "folderId": 334261,
+ "url": "https://de.serlo.org/mathe/334261/teil-1",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Löse die Aufgaben.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$-7+30=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 23,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$-7+30=30-7=23$",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$11,5+2,35=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 13.85,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$\\hphantom{+}11,50 \\\\\n+\\hphantom{1}2,35 \\\\\n------ \\\\\n\\hphantom{+}13,85$",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$0,8\\cdot4=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3.2,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$0,8 \\cdot 4 = 3,2$\n\n1. Kommas zunächst wegdenken und multiplizieren  $\\rightarrow 8\\cdot4=32$\n2. Nachkommastellen der beiden Faktoren zählen und im Ergebnis einsetzen",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$15+5\\cdot9=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 60,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$15+5\\cdot 9=15+45=60$\n\nFühre zuerst die Multiplikation aus und danach die Addition",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Bei einer Spendenaktion nimmt der Förderverein einer Schule 402,10 € ein. Davon sollen so viele\n\nZirkel wie möglich gekauft werden. Ein Zirkel kostet 7,98 €.\n\nHerr Gerdes möchte im Kopf überschlagen, wie viele Zirkel er ungefähr kaufen kann.\n\nNotiere eine sinnvolle Überschlagsrechnung.\n\n![Abbildung](/uploads/ex-0845321706b8.png)\n\nHerr Gerdes kann ungefähr ⟦1⟧ Zirkel kaufen.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 50,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Runde zuerst alle Zahlen sinnvoll auf oder ab, sodass du leichter mit ihnen im Kopf rechnen kannst. - Dividiere den gerundeten verfügbaren Betrag durch den gerundeten Preis für einen Zirkel*\n\n$402,10 \\rightarrow 400 \\\\\n7,98 \\rightarrow 8$\n\n$400 : 8 = 50$\n\nHerr Gerdes kann ungefähr $50$ Zirkel kaufen.",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Die Tabelle zeigt den Fahrplan des Zuges RE 30 von Hannover nach Wolfsburg.\n\nDer Zug benötigt 9 Minuten von Hannover nach Lehrte.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Trage die Ankunftszeit in Lehrte in die Tabelle ein.\n\n| Hannover | ab | 09:48 |\n|---|---|---|\n| Lehrte | an ab | ⟦1⟧ 09:58 |\n| Meinersen | an ab | 10:15 10:16 |\n| Gifhorn | an ab | 10:25 10:32 |\n| Fallersleben | an ab | 10:41 10:42 |\n| Wolfsburg | an | 10:46 |",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "09:57",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Addiere $9$ Minuten auf die Abfahrtszeit in Hannover.\n\n$09:48 + 9 \\text{Min} \\rightarrow 09:57$\n\nDer Zug kommt um $09:57$ in Lehrte an.",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Ergänze die folgenden Sätze.\n\nDer Zug benötigt von Lehrte nach Gifhorn ⟦1⟧ Minuten.\n\nIn Wolfsburg kommt der Zug wegen einer Streckensperrung 27 Minuten später an,\n\nalso um ⟦2⟧ Uhr.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 27,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "11:13",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Lehrte - Gifhorn**\n\nBerechne die Zeitdifferenz zwischen der Ankunft in Gifhorn und der Abfahrt in Lehrte.\n\n$10:25 - 09:58 \\rightarrow 27\\text{ Minuten}$\n\nDer Zug benötigt von Lehrte nach Gifhorn $27$ Minuten.\n\n**Ankunft Wolfsburg**\n\nAddiere die Verspätung auf die geplante Ankunftszeit in Wolfsburg.\n\n$10:46 + 27\\text{ Minuten} \\rightarrow 11:13$\n\nDer Zug kommt um $11:13$ Uhr in Wolfsburg an.",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "textAreaExercise",
+     "skip": null,
+     "prompt": "Der Graph zeigt die planmäßige Zugfahrt des RE 30.\n\n![Abbildung](/uploads/ex-24f8beca6be3.png)\n\nErkläre, warum der Graph an mehreren Stellen waagerecht verläuft.",
+     "answer": {
+      "type": "free",
+      "sample": "An den waagerechten Stellen hält der Zug, d.h. die Zeit (x-Achse) läuft weiter, die Länge der Fahrtstrecke (y-Achse) bleibt gleich."
+     },
+     "solution": "An den waagerechten Stellen hält der Zug, d.h. die Zeit (x-Achse) läuft weiter, die Länge der Fahrtstrecke (y-Achse) bleibt gleich.",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Von $400$ Schülerinnen und Schülern einer Schule kommen $35\\ \\%$ mit dem Fahrrad.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Anzahl der Schülerinnen und Schüler, die mit dem Fahrrad kommen.\n\nNotiere deinen Rechenweg.\n\nEs kommen ⟦1⟧ Schülerinnen und Schüler mit dem Fahrrad zur Schule.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 140,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$0,35 \\cdot 400=140$\n\nEs kommen $140$ Schülerinnen und Schüler mit dem Fahrrad zur Schule.",
+     "points": 0,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "textAreaExercise",
+     "skip": null,
+     "prompt": "Drei Schülerinnen haben Prozentsätze in einem Prozentstreifen grau dargestellt\n\n![Abbildung](/uploads/ex-09c5da4f187f.png)\n\nEntscheide, welche Schülerin $35\\ \\%$ dargestellt hat. Begründe deine Entscheidung.",
+     "answer": {
+      "type": "free",
+      "sample": "Ayse hat 35% richtig dargestellt. Franke hat nur etwa ein Fünftel (20%) und damit zu wenig markiert. Maria hat mehr als die Hälfte (50%) und damit zu viel markiert."
+     },
+     "solution": "Ayse hat $35\\%$ richtig dargestellt.\n\nFranke hat nur etwa ein Fünftel ($20\\%$) und damit zu wenig markiert.\n\nMaria hat mehr als die Hälfte ($50\\%$) und damit zu viel markiert.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "An einer anderen Schule kommen $40\\ \\%$ der Kinder mit dem Fahrrad. Das sind $120$ Kinder.\n\nBerechne die Anzahl aller Kinder, die diese Schule besuchen. Notiere deinen Rechenweg.\n\nDiese Schule besuchen ⟦1⟧ Kinder.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 300,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Die Anzahl aller Kinder (Grundwert) wird mit folgender Formel berechnet:\n\n$\\text{Grundwert G}=\\dfrac{\\text{Prozentwert W}}{\\text{Prozentsatz p}}$\n\n$G=\\dfrac{120}{0,40}=300$\n\nInsgesamt besuchen $300$ Kinder die Schule.",
+     "points": 0,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "In einem Regal stehen 15 Kisten mit Äpfeln. In jeder Kiste sind 8 Äpfel.\n\nAlle Äpfel werden in Tüten umgepackt. In jede Tüte werden 6 Äpfel gepackt.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne, wie viele Tüten man benötigt.\n\nNotiere deinen Rechenweg\n\nMan benötigt ⟦1⟧ Tüten.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 20,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne zuerst die Anzahl der Äpfel - Teile dann durch die Anzahl Äpfel pro Tüte*\n\nAnzahl der Äpfel insgesamt\n\n$15\\cdot 8= 120$\n\nAnzahl benötigter Tüten bei $6$ Äpfeln pro Tüte\n\n$120:6=20$\n\nEs werden $20$ Tüten benötigt.",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "textAreaExercise",
+     "skip": null,
+     "prompt": "In einem anderen Betrieb sollen 130 Birnen in Tüten mit jeweils 9 Birnen verpackt werden.\n\nBegründe, dass das nicht möglich ist.",
+     "answer": {
+      "type": "free",
+      "sample": "Teilt man die Anzahl der Birnen durch die Anzahl der Birnen pro Tüte, um die Anzahl der Tüten zu erhalten, erhält man keine ganze Zahl. 130:9 ergibt keine ganze Zahl. Es ist also nicht möglich 130 Birnen in Tüten mit jeweils 9 Birnen zu verpacken."
+     },
+     "solution": "Teilt man die Anzahl der Birnen durch die Anzahl der Birnen pro Tüte, um die Anzahl der Tüten zu erhalten, erhält man keine ganze Zahl.\n\n$130:9$ ergibt keine ganze Zahl.\n\nEs ist also nicht möglich $130$ Birnen in Tüten mit jeweils $9$ Birnen zu verpacken.",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "Ein Dreieck ABC soll gezeichnet werden. Die Strecke $\\overline{\\text{AB}}$ ist vorgegeben.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": "messen",
+     "prompt": "Miss die Länge der Strecke $\\overline{\\text{AB}}$ .\n\n![Abbildung](/uploads/ex-13ad42e5f2ca.png)\n\n$\\overline{\\text{AB}} =$ ⟦1⟧ cm",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4.3,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "![Abbildung](/uploads/ex-f6a5eaaf0647.svg)\n\nDie Strecke $\\overline{AB}$ ist $4,3\\cm$ lang.\n\n> **Hinweis**\n>\n> Bei dieser Aufgabe muss die Strecke mit einem Lineal gemessen werden. Auf dem Bildschirm ist das nicht möglich. Deshalb ist in der Abbildung ein Gitter unter die Strecke gelegt worden.",
+     "points": 0,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne das Dreieck ABC mit den Winkeln $α = 110°$ und $β = 25°$.\n\nBeschrifte alle Winkel.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-62978d45a37a.svg)"
+     },
+     "solution": "![Abbildung](/uploads/ex-62978d45a37a.svg)",
+     "points": 3,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Bestimme die Größe des Winkels γ.\n\nγ = ⟦1⟧ °",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 45,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Die Innenwinkelsumme im Dreieck beträgt immer $180^\\circ$.\n\n$\\gamma=180-110-25=45$\n\nDie Größe des Winkels $\\gamma$ beträgt $45^\\circ$.",
+     "points": 0,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Mia hat einen Würfel mit dem abgebildeten Netz.\n\nEs gibt die Symbole Stern (S), Kreis (K) und Batterie (B).\n\nWenn Mia den Würfel zweimal würfelt, dann erhält sie eine Kombination aus zwei Symbolen.\n\n![Abbildung](/uploads/ex-124a4ae614a5.png)\n\nErgänze die Tabelle mit allen weiteren möglichen Kombinationen.\n\n![Abbildung](/uploads/ex-365f1e0978b3.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-c600012c9c8d.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-c600012c9c8d.png)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Mia zeichnet zu diesem Würfel ein anderes Netz.\n\n![Abbildung](/uploads/ex-88c3be30593c.png)\n\nZeichne den Kreis in Mias Netz ein.\n\n![Abbildung](/uploads/ex-b1494d431eb6.png)",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Kreuze die beiden Abbildungen an, die diesen Würfel darstellen.\n\n![Abbildung](/uploads/ex-af9ac3ba898e.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-899b0ba723c2.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-899b0ba723c2.png)",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  }
+ ]
+}

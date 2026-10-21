@@ -1,0 +1,450 @@
+{
+ "school": "hs-g",
+ "schoolLabel": "Hauptschule G-Kurs",
+ "year": 2021,
+ "part": "Teil 2",
+ "folderId": 315350,
+ "url": "https://de.serlo.org/mathe/315350/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Im Jahr 2015 fielen in Deutschland insgesamt $45 900 000$ t Hausmüll an.\n\nZu diesem Zeitpunkt lebten in Deutschland ca. $81 200 000$ Menschen.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne, wie viele Tonnen Hausmüll jede Person in Deutschland durchschnittlich verursacht hat.\n\n![Abbildung](/uploads/ex-1844e0e5244a.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.57,
+        "tolerance": 0,
+        "unit": "t",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Dividiere die angefallenen Tonnen Hausmüll durch die Anzahl der Einwohner.*\n\n**Berechnen, wie viele Tonnen Hausmüll jede Person in Deutschland durchschnittlich verursacht ha​t.**\n\n$\\varnothing\\mathrm{{Hausmüll}_{2015}=\\dfrac{45\\ 900\\ 000}{81\\ 000\\ 000}}$\n\n$\\varnothing\\mathrm{{Hausmüll}_{2015}=0,57\\ t}$\n\nIm Jahr 2015 hat jede Person in Deutschland durchschnittlich $\\boxed{\\mathrm{0,57\\ t}}$ Hausmüll verursacht.",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne, wie viele Tonnen Papier im Hausmüll enthalten waren.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 8262000,
+        "tolerance": 0,
+        "unit": "t",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Prozentwert mit der Formel $\\mathrm{W=p\\cdot G}$.*\n\n**Berechnen, wie viele Tonnen Papier im Hausmüll enthalten waren.**\n\nDie Formel zur Berechnung des **Prozentwerts** lautet:\n\n$\\mathrm{W=p\\cdot G}$\n\nFolgende Größen sind bekannt:\n\nGrundwert $\\textbf{G}=45\\ 900\\ 000$\n\nProzentsatz $\\textbf{p}=18\\ \\%$\n\nEinsetzen der bekannten Größen in die Formel:\n\n$\\mathrm{W=\\dfrac{18}{100}\\cdot45\\ 900\\ 000}$\n\n$\\mathrm{W=8\\ 262\\ 000\\ t}$\n\nIm Hausmüll waren $\\boxed{\\mathrm{8\\ 262\\ 000\\ t}}$ Papier enthalten.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Vervollständige das Streifendiagramm.\n\n![Abbildung](/uploads/ex-647a8d7cae85.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Wähle für die Länge des Streifens „Verpackungen“: 1,3cm. - Wähle für die Länge des Streifens „Restmüll“: 3,1cm. Vervollständigen des Streifendiagramms. ![Abbildung](/uploads/ex-cf4ed4356cc6.png)"
+     },
+     "solution": "*- Wähle für die Länge des Streifens „Verpackungen“: $1,3\\cm$. - Wähle für die Länge des Streifens „Restmüll“: $3,1\\cm$.*\n\n**Vervollständigen des Streifendiagramms.**\n\n![Abbildung](/uploads/ex-cf4ed4356cc6.png)",
+     "points": 2,
+     "topic": "Daten & Statistik"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Die Klasse 7a (17 Kinder und zwei Erwachsene) möchte eine Theateraufführung besuchen. Sie nutzt die öffentlichen Verkehrsmittel.\n\nDie Klassensprecherin berechnet als günstigsten Gesamtfahrpreis für die Hin- und Rückfahrt $60,20\\ €$.\n\nErkläre, wie sie diesen Gesamtfahrpreis berechnet hat.\n\n![Abbildung](/uploads/ex-76e8de533efd.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Erklärung, wie der Gesamtfahrpreis berechnet wurde. 17 Tagestickets für die Kinder: 17cdot3,00=51 € (17Tagestickets sind günstiger als 34 Einzeltickets) 4 Einzelfahrten für die Erwachsenen: 4cdot2,30=9,20 € (4 Einzelfahrten sind günstiger als 2 Tagestickets) Gesamtpreis: 51+9,20=60,20 €"
+     },
+     "solution": "**Erklärung, wie der Gesamtfahrpreis berechnet wurde.**\n\n$17$ Tagestickets für die Kinder: $\\ 17\\cdot3,00=51\\ €$\n\n($17$Tagestickets sind günstiger als $34$ Einzeltickets)\n\n$4$ Einzelfahrten für die Erwachsenen: $\\ 4\\cdot2,30=9,20\\ €$\n\n($4$ Einzelfahrten sind günstiger als $2$ Tagestickets)\n\nGesamtpreis: $51+9,20=60,20\\ €$",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Laura hatte zu Beginn des Jahres $1300\\ €$ auf ihrem Sparkonto.\n\nAm Jahresende waren es $1303,90\\ €$.\n\nBerechne den Zinssatz.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.3,
+        "tolerance": 0,
+        "unit": "%",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Prozentsatz mithilfe der Formel zur Berechnung des vermehrten Grundwerts.*\n\n**Berechnen des Zinssatzes.**\n\nDie Formel zur Berechnung des vermehrten Grundwerts lautet:\n\n$\\mathrm{G^+=G\\cdot(1+p)}$\n\nfolgende Werte sind bekannt:\n\nvermehrter Grundwert:$\\ \\mathrm{G^+=1303,90\\ €}$\n\n$\\hspace{16.5mm}$Grundwert: $\\text{G}\\ \\ =\\ 1300\\ €$\n\neinsetzen der Werte in die Formel:\n\n$1303,90=1300\\cdot(1+\\text{p})$\n\n$$\\begin{aligned}\n1303,90 &= 1300+1300\\text{p} \\qquad |\\; -1300 \\\\\n3,90 &= 1300\\text{p} \\qquad |\\; :1300 \\\\\n\\text{p} &= 0,003\n\\end{aligned}$$\n\nDer Zinssatz, den Laura auf ihrem Sparkonto bekommt, beträgt: $\\boxed{0,3\\ \\%}$.",
+     "points": 0,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Das Schild eines Cafés soll mit einer LED-Lichterkette umrandet werden.\n\nDer Radius des Schildes beträgt $64\\cm.$\n\n![Abbildung](/uploads/ex-58a55988107c.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der benötigten LED-Lichterkette.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 402.12,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Die Länge der Lichterkette entspricht dem Umfang des Schildes. - Berechne den Umfang des Schildes mit der entsprechenden Formel.*\n\n**Berechnen der Länge der benötigten LED-Lichterkette.**\n\nDie Formel zur Berechnung des Umfangs eines Kreises, wenn der Radius gegeben ist, lautet:\n\n$\\mathrm{U_{Kreis}=2\\cdot r\\cdot\\pi}$\n\n$\\mathrm{U_{Kreis}=2\\cdot 64\\cdot\\pi\\ \\ [cm]}$\n\n$\\mathrm{U_{Kreis}=402,12\\cm}$\n\nDie Länge der benötigten LED-Lichterkette beträgt: $\\ \\boxed{402,12\\cm}$.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Bestimme die Anzahl der LEDs, wenn diese in einem Abstand von $4\\cm$ auf der Lichterkette angebracht sind.\n\n(Solltest du die Teilaufgabe $\\mathrm{a._)}$ nicht gelöst haben, rechne mit einer Länge von $406,24\\cm$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 100,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         101
+        ]
+       }
+      ]
+     },
+     "solution": "*- Dividiere die Länge der LED-Lichterkette durch den Abstand der LEDs.*\n\n**Bestimme die Anzahl der LEDs.**\n\nDie LEDs werden in einem Abstand von $4\\cm$ auf der Lichterkette angebracht.\n\nDie Länge der Lichterkette beträgt $402,12\\cm$.\n\n$\\mathrm{Anzahl_{LEDs}=402,12:4}$\n\n$\\mathrm{Anzahl_{LEDs}=100,53}$\n\nDa es nur ganze LEDs gibt, werden entweder $\\textbf{100}$ oder $\\textbf{101}$ LEDs gebraucht.",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "In Paris steht eine Pyramide mit quadratischer Grundfläche. Ihre vier Seitenflächen bestehen aus Glas.\n\n![Abbildung](/uploads/ex-b3e24b47a9ea.png)\n\n![Abbildung](/uploads/ex-7fbd44175d2f.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Seitenhöhe $\\mathrm{h_a}$ der Pyramide.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 27.96,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Seitenhöhe $\\mathrm{h_a}$ der Pyramide mithilfe des Satzes des Pythagoras.*\n\n![Abbildung](/uploads/ex-2781a5f3e1d8.png)\n\n**Berechnen der Seitenhöhe $\\mathrm{h_a}$ der Pyramide.**\n\nDas farbig markierte Dreieck bildet mit $\\mathrm{Kathete_1}$, $\\mathrm{Kathete_2}$ und der Höhe $\\mathrm{h_a}$ ein rechtwinkliges Dreieck. Im rechtwinkligen Dreieck gilt der Satz des Pythagoras.\n\nDer Satz des Pythagoras lautet:\n\n$\\mathrm{c^2=a^2+b^2}$\n\nDer Satz des Pythagoras angewandt auf unser Dreieck:\n\n$\\mathrm{(h_a)^2=(Kathete_1)^2+(Kathete_2)^2}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{Kathete_1=21,64\\m\\quad Kathete_2=\\dfrac{35,42}{2}\\m}$\n\nEinsetzen der bekannten Größen:\n\n$\\mathrm{h_a=\\sqrt{(21,64)^2+\\left(\\dfrac{35,42}{2}\\right)^2}}$\n\n$\\mathrm{h_a=27,96}$\n\nDie Seitenhöhe $\\mathrm{h_a}$ der Pyramide beträgt: $\\boxed{27,96\\m}$.",
+     "points": 3,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die gesamte Glasfläche der Pyramide.\n\n(Solltest du die Teilaufgabe $\\mathrm{a)}$ nicht gelöst haben, rechne mit $\\mathrm{h_a = 28,86\\m}$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1980.69,
+        "tolerance": 0,
+        "unit": "m²",
+        "alternatives": [
+         1980.9
+        ]
+       }
+      ]
+     },
+     "solution": "*- Die Pyramide besteht aus $\\textbf{4}$ gleichschenkligen Dreiecken. - Berechne die Flache eines Dreiecks und multipliziere sie mit $\\textbf{4}$.*\n\n**Berechnen der gesamten Glasfläche der Pyramide.**\n\nDie Formel zur Berechnung der Fläche eines Dreiecks lautet:\n\n$\\mathrm{A_{Dreieck}=\\dfrac{g\\cdot h}{2}}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{g=35,42\\m\\quad h_a=27,96\\m}$\n\nEinsetzen der bekannten Größen:\n\n$\\mathrm{A_{Dreieck}=\\dfrac{35,42\\cdot 27,96}{2}}$\n\n$\\mathrm{A_{Dreieck}=495,17}$\n\nDann ist die gesamten Glasfläche der Pyramide:\n\n$\\ \\mathrm{A_{Glaspyramide}=495,17\\cdot4\\ \\Rightarrow\\ \\boxed{\\mathrm{A_{Glaspyramide}=1980,69\\m^2}}}$\n\n**Hinweis:**\n\nWir haben hier für $\\mathrm{h_a}$ mit dem gerundeten Wert $27,96$ gerechnet. Wenn du für $\\mathrm{h_a}$ mit dem Wert rechnest, den der Rechner liefert, erhältst du für die gesamte Glasfläche der Pyramide $1980,90\\m^2$.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Amélie betrachtet eine Seitenfläche der Pyramide.\n\nKreuze die richtige Aussage an.\n\nWenn man die Seitenhöhe $\\mathrm{h_a}$ verdoppelt, dann …",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "…bleibt der Flächeninhalt der Seitenfläche gleich groß.",
+        "correct": false
+       },
+       {
+        "text": "…verdoppelt sich der Flächeninhalt der Seitenfläche.",
+        "correct": true
+       },
+       {
+        "text": "…vervierfacht sich der Flächeninhalt der Seitenfläche.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "Bei einer Verdopplung der Höhe$\\h_\\text{a}$ verdoppelt sich auch die Fläche des Dreiecks.\n\nKreuze entsprechend an.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ordne den Funktionsgleichungen den passenden Graphen zu.\n\n![Abbildung](/uploads/ex-66ebc3bd8ef7.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Vergleich die Steigungen der Funktionen. Zuordnen der passenden Graphen zu den Funktionsgleichungen. ![Abbildung](/uploads/ex-ff55163015c5.png)"
+     },
+     "solution": "*- Vergleich die Steigungen der Funktionen.*\n\n**Zuordnen der passenden Graphen zu den Funktionsgleichungen.**\n\n![Abbildung](/uploads/ex-ff55163015c5.png)",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die Graphen $\\textcircled{\\textbf{2}}$ und $\\textcircled{\\textbf{4}}$ schneiden sich im Punkt $\\text{S}$.\n\nGib die Koordinaten des Schnittpunktes $\\text{S}$ an: $\\mathrm{S(\\qquad|\\qquad)}$\n\nS(⟦1⟧ \\|⟦2⟧ )",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": -4.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Lies den Schnittpunkt $\\textbf{S}$ der Geraden $\\textcircled{\\textbf{2}}$ und $\\textcircled{\\textbf{4}}$ aus der Skizze ab.*\n\n**Angabe des Schnittpunkts $\\textbf{S}$ der Geraden $\\textcircled{\\textbf{2}}$ und $\\textcircled{\\textbf{4}}$.**\n\nKoordinaten des Schnittpunktes $\\text{S}$: $\\mathrm{S(-4,5\\ |\\ 5)}.$",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne den Graphen der Funktion $\\mathrm{y = \\dfrac{1}{2}x\\ –\\ 1}$ in das Koordinatensystem.\n\n![Abbildung](/uploads/ex-9b4e4870a912.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Markiere auf der textbf{x}-Achse den Punkt textbf{2} und auf der textbf{y}-Achse den Punkt textbf{-1}. - Lege eine Gerade durch die beiden Punkte. Zeichnen des Graphen der Funktion mathrm{y = dfrac{1}{2}x – 1} in das Koordinatensystem. ![Abbildung](/uploads/ex-ee94b41f7576.png)"
+     },
+     "solution": "*- Markiere auf der $\\textbf{x}$-Achse den Punkt $\\textbf{2}$ und auf der $\\textbf{y}$-Achse den Punkt $\\textbf{-1}$. - Lege eine Gerade durch die beiden Punkte.*\n\n**Zeichnen des Graphen der Funktion $\\mathrm{y = \\dfrac{1}{2}x\\ –\\ 1}$ in das Koordinatensystem.**\n\n![Abbildung](/uploads/ex-ee94b41f7576.png)",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "Drei Radrennfahrer (Ali, Kai, Tom) fahren ein Radrennen.\n\nDas Radrennen besteht aus zwei Etappen.\n\nNach jeder Etappe wird ein Radrennfahrer zur Dopingkontrolle zufällig ausgelost.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Im abgebildeten Baumdiagramm fehlen die Wahrscheinlichkeiten.\n\nSchreibe die Wahrscheinlichkeiten an die Äste.\n\n![Abbildung](/uploads/ex-82561ac5fb64.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Vervollständigen des Baumdiagramms. ![Abbildung](/uploads/ex-a13041c49b33.png)"
+     },
+     "solution": "**Vervollständigen des Baumdiagramms.**\n\n![Abbildung](/uploads/ex-a13041c49b33.png)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, dass Ali bei beiden Dopingkontrollen ausgelost wird.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.111111111,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Wende die 1. Pfadregel (Produktregel) an.*\n\n![Abbildung](/uploads/ex-20aaab4f0dc1.png)\n\n**Berechnen der Wahrscheinlichkeit, dass Ali bei beiden Dopingkontrollen ausgelost wird.**\n\n$\\mathrm{P_{2xAli}=\\dfrac{1}{3}\\cdot\\dfrac{1}{3}}$\n\n$\\mathrm{P_{2xAli}=\\dfrac{1}{9}}$\n\nDie Wahrscheinlichkeit, dass Ali bei beiden Dopingkontrollen ausgelost wird beträgt: $\\boxed{\\dfrac{1}{9}}$.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 8,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Lea möchte mit ihrer Kamera ein Klassenfoto aufnehmen. Sie stellt sich in einem Abstand von $6,30\\m$ vor die Klasse.\n\nBerechne die Breite $\\text{b}$, die der Klasse zum Aufstellen zur Verfügung steht.\n\n![Abbildung](/uploads/ex-87c8c2f8f4cf.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 7.28,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": [
+         7.27
+        ]
+       }
+      ]
+     },
+     "solution": "*- Berechne die Breite $\\textbf{a}$ mithilfe des Tangens. - Berechne die Breite $\\textbf{b}$, indem du die Breite $\\textbf{a}$ verdoppelst.*\n\n**Berechnen der Breite $\\textbf{b}$.**\n\nDer Tangens im rechtwinkligem Dreieck ist definiert als:\n\n$\\mathrm{tan{(\\alpha)}=\\dfrac{Gegenkathete}{Ankathete}}$\n\nFür die obige Skizze gilt dann:\n\n$\\mathrm{tan{(30^\\circ)}=\\dfrac{a}{6,30}}$\n\nAuflösen nach a:\n\n$\\mathrm{a=6,30\\cdot\\tan(30^\\circ)}$\n\n$\\mathrm{a=6,30\\cdot0,5774}$\n\n$\\mathrm{a=3,64}$\n\nDie Breite $\\textbf{b}=2\\cdot \\textbf{a}\\ \\Rightarrow\\ \\textbf{b}=3,64\\cdot2=7,28\\m$\n\nDie Breite $\\text{b}$, die der Klasse zum Aufstellen zur Verfügung steht\n\nbeträgt: $\\ \\boxed{7,28\\m}$.\n\n**Hinweis:**\n\nWir haben hier für $\\tan(30^\\circ)$ mit dem gerundeten Wert $0,5774$ gerechnet. Wenn du für $\\tan(30^\\circ)$ mit dem Wert rechnest, den der Rechner liefert, erhältst du für die Breite $\\textbf{b}$ $7,27\\m$.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 9,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Eine Regentonne ist bis 15 cm unter den Rand gefüllt. Berechne die Wassermenge in der Regentonne.\n\n![Abbildung](/uploads/ex-9adf6bd95bbb.png)\n\n⟦1⟧ $\\cm^3$ oder ⟦2⟧ l",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 942477.8,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 942.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne das Volumen des Wassers in der Tonne mit der Formel zur Berechnung des Volumeninhaltes eines Zylinders. Beachte die Einheiten.*\n\n**Berechnen der Wassermenge in der Regentonne.**\n\nDie Formel zur Berechnung des Volumeninhalts eines Zylinders lautet:\n\n$\\mathrm{V_{Zylinder}=r^2\\cdot\\pi\\cdot h}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{r=50\\cm\\qquad h_K=120\\cm}$\n\nEinsetzen der bekannten Größen:\n\n$\\mathrm{V_{Wasser}=50^2\\cdot\\pi\\cdot 120\\ \\Rightarrow\\ V_{Wasser}=2500\\cdot\\pi\\cdot120}$\n\n$\\mathrm{V_{Wasser}=942477,80\\cm^3}$\n\nDie Wassermenge in der Regentonne beträgt : $\\boxed{942477,80\\cm^3}\\ (942,5\\l)$.",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 10,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne x.\n\n![Abbildung](/uploads/ex-c9f8c170d9b1.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 126.34,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Berechne x mithilfe des 2. Strahlensatzes.*\n\n**Berechnen von x.**\n\nAnwenden des 2. Strahlensatzes auf die obige Figur.\n\n$$\\begin{aligned}\n\\mathrm{\\dfrac{198}{x}} &= \\dfrac{105}{67} \\qquad |\\; \\cdot67 \\\\\n\\mathrm{\\dfrac{13266}{x}} &= 105 \\qquad |\\; \\cdot \\text{x} \\\\\n\\mathrm{105x} &= 13266 \\qquad |\\; :105 \\\\\n\\text{x} &= 126,34\n\\end{aligned}$$\n\nDie Länge $\\textbf{x}$ beträgt: $\\ \\boxed{126,34\\m}$.",
+     "points": 0,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  }
+ ]
+}

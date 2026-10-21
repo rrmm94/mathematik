@@ -1,0 +1,429 @@
+{
+ "school": "hs-g",
+ "schoolLabel": "Hauptschule G-Kurs",
+ "year": 2023,
+ "part": "Teil 1",
+ "folderId": 315343,
+ "url": "https://de.serlo.org/mathe/315343/teil-1",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Wandle in die angegebene Einheit um.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$8\\km$ = ⟦1⟧ $\\m$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 8000,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$1\\km=1000\\m$\n\n$8 \\km$ = $8000\\m$",
+     "points": 1,
+     "topic": "Größen & Einheiten"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$3,12\\cm^2$ = ⟦1⟧ $\\mm^2$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 312,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$1\\cm^2=100\\mm^2$\n\n$3,12 \\cm^2$ = $312\\mm^2$",
+     "points": 1,
+     "topic": "Größen & Einheiten"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$150$ $\\min$ = ⟦1⟧ $h$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$60\\min=1$h\n\n$150$ min = $2,5$ h",
+     "points": 1,
+     "topic": "Größen & Einheiten"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Frau Spar tankt 5 Liter Benzin.\n\n![Abbildung](/uploads/ex-4e6445bfd6dc.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Preis.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 10.19,
+        "tolerance": 0,
+        "unit": "€",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$2,038\\cdot5=10,190$\n\nFrau Spar muss für 5 Liter Benzin $10,19\\ €$ bezahlen.",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "An der Tankstelle müssen die Preise oft gerundet werden.\n\nRunde den Preis $34,2552$ $€$ auf zwei Nachkommastellen.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 34.26,
+        "tolerance": 0,
+        "unit": "€",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Betrachte die 3. Nachkommastelle. - Ab  5 wird aufgerundet.*\n\n$34,2552\\ €\\approx$ $34,26\\ €$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Tasja hat von zwei Schokoladentafeln jeweils einen Teil gegessen. Die grau gefärbten Anteile sind übrig.\n\n![Abbildung](/uploads/ex-0501c6402655.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib die grau gefärbten Anteile jeweils als Bruch an. Schreibe den Bruch neben die Abbildung.\n\nLinkes Bild: ⟦1⟧\n\nRechtes Bild: ⟦2⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.666666667,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.75,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "![Abbildung](/uploads/ex-9f849e222cb6.png)",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Tasja behauptet: „Wenn ich nur die übrig gebliebenen Anteile von beiden Schokoladentafeln esse, dann esse ich mehr als eine ganze Schokoladentafel.“\n\nZeige, dass Tasja recht hat.",
+     "answer": {
+      "type": "free",
+      "sample": "displaystylefrac{2}{3}+frac{3}{4}=dfrac{8}{12} +dfrac{9}{12}= frac{17}{12}1 Tanja hat also recht."
+     },
+     "solution": "$\\ \\displaystyle\\frac{2}{3}+\\frac{3}{4}=\\dfrac{8}{12}\n\n+\\dfrac{9}{12}=\n\n\\frac{17}{12}>1$\n\nTanja hat also recht.",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "In der Abbildung ist ein Anteil grau gefärbt.\n\n![Abbildung](/uploads/ex-42bd4d8bcc64.png)\n\nKreuze die vier richtigen Angaben für den grau gefärbten\n\nAnteil an.\n\n![Abbildung](/uploads/ex-50cd772151d3.png)",
+     "answer": {
+      "type": "free",
+      "sample": "[Umrechnen von Dezimalzahlen in Brüche](/28296) [Prozent](/2193) ![Abbildung](/uploads/ex-e6ea8bd75024.png)"
+     },
+     "solution": "[Umrechnen von Dezimalzahlen in Brüche](/28296)\n\n[Prozent](/2193)\n\n![Abbildung](/uploads/ex-e6ea8bd75024.png)",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "In einer Eisdiele gibt es vier verschiedene Sorten Eis. Am Vormittag wurden 40 Kugeln Eis verkauft. Das Diagramm zeigt die Anzahl der Kugeln für jede Sorte.\n\n![Abbildung](/uploads/ex-d853131e9ded.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne die Säule für die Sorte „Erdbeere“ in das Diagramm ein.",
+     "answer": {
+      "type": "free",
+      "sample": "- Berechne wie viele Kugeln Eis der Sorte Erdbeere verkauft wurden. - Zeichne die entsprechende Säule in das Diagramm ein. Ingesamt wurden 40 Kugeln Eis verkauft. Anzahl Kugeln der Sorte Erdbeere: 40-(8+16+10)=6 ![Abbildung](/uploads/ex-6664b8bb4364.png)"
+     },
+     "solution": "*- Berechne wie viele Kugeln Eis der Sorte Erdbeere verkauft wurden. - Zeichne die entsprechende Säule in das Diagramm ein.*\n\nIngesamt wurden 40 Kugeln Eis verkauft.\n\nAnzahl Kugeln der Sorte Erdbeere: $40-(8+16+10)=6$\n\n![Abbildung](/uploads/ex-6664b8bb4364.png)",
+     "points": 1,
+     "topic": "Daten & Statistik"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Erkläre, wie du die Anzahl der Kugeln der Sorte „Erdbeere“ berechnet hast.",
+     "answer": {
+      "type": "free",
+      "sample": "Ich habe die Anzahlen der Kugeln der anderen Sorten addiert und von 40 subtrahiert.“"
+     },
+     "solution": "Ich habe die Anzahlen der Kugeln der anderen Sorten addiert und von 40 subtrahiert.“",
+     "points": 1,
+     "topic": "Daten & Statistik"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Die Anzahl der Kugeln für jede Sorte wird in einem Kreisdiagramm dargestellt.\n\nKreuze das passende Kreisdiagramm an. Begründe deine Entscheidung.\n\n![Abbildung](/uploads/ex-1ad84381d130.png)\n\nFür die Sorte Nuss (10 von 40 Kugeln) steht ein Viertelkreis. Diesen gibt es nur im Kreisdiagramm 2.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-6723ce7c9b0e.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-6723ce7c9b0e.png)",
+     "points": 2,
+     "topic": "Daten & Statistik"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Nora bestellt zwei verschiedene Sorten Eis. Die Kugeln werden nebeneinander in eine Schale gelegt.\n\n![Abbildung](/uploads/ex-5ebb56315861.png)\n\nErmittle die Anzahl der Möglichkeiten, eine Schale mit\n\nzwei verschiedenen Sorten Eis zusammenzustellen.\n\nEs gibt ⟦1⟧ Möglichkeiten.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 6,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Es gibt folgende Möglichkeiten:\n\nVanille - Schokolade\n\nVanille - Erdbeere\n\nVanille - Nuss\n\nSchokolade - Erdbeere\n\nSchokolade - Nuss\n\nErdbeere - Nuss\n\nEs gibt also 6 Möglichkeiten.",
+     "points": 1,
+     "topic": "Daten & Statistik"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zu jedem Graphen gehört genau eine Zuordnung.\n\nVerbinde jeden Graphen mit der passenden Zuordnung.\n\n![Abbildung](/uploads/ex-5b391b4e4f0b.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-ac7d02087a44.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-ac7d02087a44.png)",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "Ein Quader wird so halbiert, dass das abgebildete Dreiecksprisma entsteht.\n\n![Abbildung](/uploads/ex-6d4bb8c2003c.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen des Dreiecksprismas.\n\n$V=$ ⟦1⟧ $\\cm^3$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 36,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$V=G\\cdot h$\n\nG: Grundfläche\n\nh: Höhe\n\nDie Grundfläche ist ein [rechtwinkiges Dreieck](/36070). Für dieses gilt:\n\n$A=\\displaystyle\\frac{1}{2}\\cdot Kathede_1\\cdot Kathede_2$\n\n$A=\\displaystyle\\frac{1}{2}\\cdot3\\cdot4=6$\n\n$h=6$\n\n$V=6\\cdot6=36$\n\nDas Dreiecksprisma hat ein Volumen von $36\\cm^3$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Stelle eine allgemeine Formel zur Berechnung des Volumens in Abhängigkeit von **x** auf. Fasse die Formel so weit wie möglich zusammen.\n\n![Abbildung](/uploads/ex-cd57a839b5f0.png)\n\n$V=$ ⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "3x³",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$V=G\\cdot h$\n\nDie Grundfläche ist ein [rechtwinkiges Dreieck](/36070). Für dieses gilt:\n\n$G=\\displaystyle\\frac{1}{2}\\cdot x\\cdot2x$\n\n$h=3x$\n\n$V=x^2\\cdot3x=3x^3$",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne das Netz des abgebildeten Dreiecksprismas.\n\n![Abbildung](/uploads/ex-e3a15af79fa5.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-b25952ea721d.svg)"
+     },
+     "solution": "![Abbildung](/uploads/ex-b25952ea721d.svg)",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 8,
+   "context": "Die Abbildung zeigt die ersten drei Figuren eines Musters.\n\n![Abbildung](/uploads/ex-35e10e743bab.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Vervollständige die unten abgebildete Figur 4 des Musters. Achte auf genaues Zeichnen.\n\n![Abbildung](/uploads/ex-0710af9b4665.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-5e13f8a9bb5c.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-5e13f8a9bb5c.png)",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib die Anzahl der schwarzen Dreiecke der nicht abgebildeten Figur 6 des Musters an.\n\nIn der Figur 6 gibt es ⟦1⟧ schwarze Dreiecke.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 19,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Ermittle, um wie viel sich die Anzahl der schwarzen Dreiecke von zwei aufeinander folgenden Dreiecken erhöht. - Schließe dann, z.B. von Figur 3 auf Figur 6.*\n\nBei zwei aufeinander folgenden Figuren erhöht sich die Anzahl der schwarzen Dreiecke jeweils um 3.\n\nFigur 3: 10 schwarze Dreiecke\n\nFigur 4: 13 schwarze Dreiecke\n\nFigur 5: 16 schwarze Dreiecke\n\nFigur 6: 19 schwarze Dreiecke",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Lucas möchte die Anzahl der schwarzen Dreiecke in einer beliebigen Figur x des Musters bestimmen. Dafür hat er vier Terme zur Auswahl.\n\nKreuze den passenden Term an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$3x+1$",
+        "correct": true
+       },
+       {
+        "text": "$x+3$",
+        "correct": false
+       },
+       {
+        "text": "$4x-3$",
+        "correct": false
+       },
+       {
+        "text": "$3x+4$",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "![Abbildung](/uploads/ex-e8a6ac21c637.png)",
+     "points": 1,
+     "topic": "Terme, Gleichungen & Formeln"
+    }
+   ]
+  }
+ ]
+}

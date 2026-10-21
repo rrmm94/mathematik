@@ -1,0 +1,434 @@
+{
+ "school": "rs",
+ "schoolLabel": "Realschule",
+ "year": 2021,
+ "part": "Teil 2",
+ "folderId": 300724,
+ "url": "https://de.serlo.org/mathe/300724/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Seite x.\n\n![Abbildung](/uploads/ex-54e93f714581.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5.75,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme die Seiten (Gegenkathete/Ankathete/Hypotenuse), die gegeben und gesucht sind im rechtwinkligen Dreieck. - Berechne die Länge von $x$ mithilfe der geeigneten Winkelfunktion (Sinus, Kosinus, Tangens).*\n\n**Bestimmung der gegebenen Seiten**\n\nIm rechtwinkligen Dreieck sind vom Winkel $52°$ aus gesehen:\n\n- Die Ankathete mit $7,3~\\text{cm}$ gegeben\n- Die Gegenkathete $x$ gesucht\n\n**Berechnung von $x$**\n\nMit dem Tanges gilt:\n\n$$\\begin{aligned}\n\\tan\\left(52°\\right) &= \\frac{x}{7,3} \\qquad |\\; \\cdot7,3 \\\\\nx &= \\tan\\left(52°\\right)\\cdot7,3 \\\\\n &= 9,343... \\\\\n &= 9,34\n\\end{aligned}$$\n\n$x$ hat die Länge $9,34~\\text{cm}$.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Die Abbildung zeigt einen Würfel mit der Kantenlänge $a = 4 ~\\text{cm}$.\n\n![Abbildung](/uploads/ex-ef59e897d51c.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Flächendiagonalen d in der Grundfläche des\n\nWürfels.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5.66,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme das rechtwinklige Dreieck, in dem $d$ und $a$ enthalten sind. - Berechne $d$ mit dem Satz des Pythagoras.*\n\n**Rechtwinkliges Dreieck**\n\nVon oben gesehen liegen $d$ und $a$ in einem rechtwinkligen Dreieck (auf der Grundseite).\n\n![Abbildung](/uploads/ex-251e32b750ed.png)\n\n**Länge von $d$**\n\nMit dem Satz des Pythagoras gilt:\n\n$$\\begin{aligned}\nd^2 &= a^2+a^2 \\\\\n &= 4^2+4^2 \\\\\n &= 32 \\qquad |\\; \\sqrt{ } \\\\\nd &= \\sqrt{32} \\\\\n &= 5,656... \\\\\n &= 5,66\n\\end{aligned}$$\n\nDie Diagonale hat etwa die Länge $d=5,66~\\text{cm}$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Winkels α.\n\n(Solltest du Teilaufgabe a) nicht gelöst haben, rechne mit $d = 7,07 ~\\text{cm}$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 35.26,
+        "tolerance": 0,
+        "unit": "°",
+        "alternatives": [
+         35.25
+        ]
+       }
+      ]
+     },
+     "solution": "*- Bestimme das rechtwinklige Dreieck, in dem $\\alpha$, $d$ und $a$ enthalten sind. - Berechne den Winkel $\\alpha$ mit der geeigneten Winkelfunktion.*\n\n**Rechtwinkliges Dreieck**\n\nDas graue Dreieck aus der Skizze der Aufgabenstellung enthält $\\alpha,d$ und $a$.\n\nHier sind:\n\n- $d$ die Ankathete\n- $a$ die Gegenkathete\n\n![Abbildung](/uploads/ex-ef59e897d51c.png)\n\n**Wert von $\\alpha$**\n\n$$\\begin{aligned}\n\\tan\\alpha &= \\frac{a}{d} \\\\\n &= \\frac{4}{5,66} \\qquad |\\; \\tan^{-1}\\left(\\right) \\\\\n\\alpha &= \\tan^{-1}\\left(\\frac{4}{5,66}\\right) \\\\\n &= 35,249... \\\\\n &= 35,25\n\\end{aligned}$$\n\n$\\alpha$ ist etwa $35,25°$ groß.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Zeige mithilfe einer Rechnung, dass die Länge der Raumdiagonalen e mit der Formel $e=\\sqrt{3}\\cdot a$ berechnet werden kann.",
+     "answer": {
+      "type": "free",
+      "sample": "- Bestimme die Länge von d^2 in Abhängigkeit von a. - Bestimme die Länge der Raumdiagonalen e mithilfe von d^2 und a^2. Verwende den Satz des Pythagoras. Länge von d^2 Mit dem Satz des Pythagoras gilt: begin{aligned} d^2 &= a^2+a^2 &= 2a^2 end{aligned} Länge von e Mit dem Satz des Pythagoras gilt: begin{aligned} e^2 &= d^2+a^2 &= 2a^2+a^2 &= 3a^2 qquad |; sqrt{ } e &= sqrt{3a^2} &= sqrt{3}cdot a^{ } end{aligned}"
+     },
+     "solution": "*- Bestimme die Länge von $d^2$ in Abhängigkeit von $a$. - Bestimme die Länge der Raumdiagonalen $e$ mithilfe von $d^2$ und $a^2$. *Verwende den Satz des Pythagoras.**\n\n**Länge von $d^2$**\n\nMit dem Satz des Pythagoras gilt:\n\n$$\\begin{aligned}\nd^2 &= a^2+a^2 \\\\\n &= 2a^2\n\\end{aligned}$$\n\n**Länge von $e$**\n\nMit dem Satz des Pythagoras gilt:\n\n$$\\begin{aligned}\ne^2 &= d^2+a^2 \\\\\n &= 2a^2+a^2 \\\\\n &= 3a^2 \\qquad |\\; \\sqrt{ } \\\\\ne &= \\sqrt{3a^2} \\\\\n &= \\sqrt{3}\\cdot a^{ }\n\\end{aligned}$$",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Erik bestimmt mit einem Peildreieck die Höhe eines Baumes. Er steht 22,70 m vom Baum entfernt und hält die Unterkante des Peildreiecks in einer Höhe von 1,60 m.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Übertrage die fehlenden Größen in die Skizze.\n\n![Abbildung](/uploads/ex-7b35bd1e92be.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- 1,6~text{m} ist die Höhe des Kopfes links - 22,7~text{m} ist der Abstand zum Baum ![Abbildung](/uploads/ex-dc5712778dd6.png)"
+     },
+     "solution": "- $1,6~\\text{m}$ ist die Höhe des Kopfes links\n- $22,7~\\text{m}$ ist der Abstand zum Baum\n\n![Abbildung](/uploads/ex-dc5712778dd6.png)",
+     "points": 1,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Höhe des Baumes.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 10.68,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": [
+         1068
+        ]
+       }
+      ]
+     },
+     "solution": "*- Bestimme die Höhe des Baumes ab der gestrichelten Linie mit dem Strahlensatz. - Addiere die Höhe von $1,6~\\text{m}$ auf das Ergebnis für die Gesamtgröße.*\n\nGrundsätzlich ist zu beachten, dass es mehrere Möglichkeiten gibt, die gesuchte Länge zu berechnen.\n\nBeachten muss man auch die **unterschiedlichen Maßeinheiten**. Wir rechnen in Metern:\n\n$x$ beschreibt die Höhe des Baumes ab der gestrichelten Linie.\n\nMit dem Strahlensatz gilt die Gleichung:\n\n$$\\begin{aligned}\n\\frac{x}{0,12} &= \\frac{22,7}{0,3} \\qquad |\\; \\cdot0,12 \\\\\nx &= \\frac{22,7}{0,3}\\cdot0,12 \\\\\n &= 9,08\n\\end{aligned}$$\n\nDie Gesamthöhe ist: $9,08+1,6=10,68$\n\nDer Baum ist $10,68~\\text{m}$ hoch.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Leonie will ein zweites Dreieck zeichnen.\n\nEs soll zum abgebildeten Dreieck ähnlich sein.\n\n![Abbildung](/uploads/ex-00b78e6c636d.png)\n\nErgänze Leonies Satz.\n\n„Wenn ich die Seite a verdopple, dann muss ich\n\n$\\underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}$,\n\ndamit die Dreiecke ähnlich sind.\"",
+     "answer": {
+      "type": "free",
+      "sample": "Eine Möglichkeit für Leonies Satz kann sein: „Wenn ich die Seite a verdopple, dann muss ich color{blue}text{die anderen Seiten auch verdoppeln}, damit die Dreiecke ähnlich sind.\""
+     },
+     "solution": "Eine Möglichkeit für Leonies Satz kann sein:\n\n„Wenn ich die Seite a verdopple, dann muss ich\n\n$\\color{blue}\\text{die anderen Seiten auch verdoppeln}$,\n\ndamit die Dreiecke ähnlich sind.\"",
+     "points": 1,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Mustafa möchte eine Kugelbahn bauen. Er hat\n\nden abgebildeten Baustein hergestellt.\n\n![Abbildung](/uploads/ex-def3ff47611c.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Nenne den Fachbegriff für den geometrischen Körper.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Prisma",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         "Dreiecksprisma"
+        ]
+       }
+      ]
+     },
+     "solution": "Der dargestellte Körper ist ein **Prisma**.",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen des Bausteins.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1530,
+        "tolerance": 0,
+        "unit": "cm³",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Fläche der Grundseite $G$. - Berechne das Volumen mit der Formel  $V=G\\cdot h$.*\n\n**Grundfläche $G$**\n\nDie Grundseite ist ein Dreieck mit den Maßen:\n\n- $g=15~\\text{cm}$\n- $h=12~\\text{cm}$\n\n$A=\\frac12\\cdot 15\\cdot 12=90$\n\nDie Grundfläche ist $90~\\text{cm}^2$ groß.\n\n![Abbildung](/uploads/ex-def3ff47611c.png)\n\n**Volumen des Prismas**\n\nMit der Formel für das Volumen gilt:\n\n$$\\begin{aligned}\nV &= G\\cdot h \\\\\n &= 90\\cdot17 \\\\\n &= 1530\n\\end{aligned}$$\n\nDas Volumen des Prismas ist $V=1530~\\text{cm}^3$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Aus dem Baustein höhlt Mustafa einen Tunnel für die Kugelbahn aus.\n\nMustafa bemalt die Vorderseite des Bausteins dunkelgrau.\n\n![Abbildung](/uploads/ex-fa3199f53160.png)\n\nBerechne den Flächeninhalt der vorderen Fläche des Bausteins.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 75.86,
+        "tolerance": 0,
+        "unit": "cm²",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Flächeninhalt des Halbkreises. - Subtrahiere den Flächeninhalt des Halbkreises vom Flächeninhalt des Dreiecks.*\n\n**Fläche des Halbkreises**\n\nDer Halbkreis hat eine Fläche von:\n\n$$\\begin{aligned}\nA &= \\frac{1}{2}\\cdot\\pi\\cdot r^2 \\\\\n &= \\frac{1}{2}\\cdot\\pi\\cdot3^2 \\\\\n &= 14,137... \\\\\n &= 14,14\n\\end{aligned}$$\n\nDie Fläche des Halbkreises ist $A=14,14~\\text{cm}^2$ groß.\n\n**Fläche der Vorderseite**\n\nBerechne die Differenz**:** $A=90-14,14=75,86$\n\nDer Flächeninhalt der Vorderseite ist: $A=75,86~\\text{cm}^2$",
+     "points": 3,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Mustafa streicht die Wand des Tunnels.\n\nBerechne den Flächeninhalt der zu streichenden Fläche.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 160.22,
+        "tolerance": 0,
+        "unit": "cm²",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Mantelfläche, die ein Zylinder mit den Maßen aus der Aufgabenstellung hat. - Bestimme die Fläche des **halben** Zylinders.*\n\n**Mantelfläche des Zylinders**\n\n$$\\begin{aligned}\nA &= 2\\pi\\cdot r\\cdot h \\\\\n &= 2\\pi\\cdot3\\cdot17 \\\\\n &= 320,442... \\\\\n &= 320,44\n\\end{aligned}$$\n\nDie Mantelfläche eines ganzen Zylinders beträgt $A=320,44~\\text{cm}^2$.\n\n**Oberfläche der Tunnelwand**\n\nDie Tunnelwand hat einen Flächeninhalt von etwa**:**",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "e)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Eine Kugel mit V = 15,59 cm³ soll durch den Tunnel gerollt werden.\n\nÜberprüfe, ob die Kugel durch den Tunnel passt.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "Die Kugel passt durch den Tunnel.",
+        "correct": false
+       },
+       {
+        "text": "Die Kugel passt nicht durch den Tunnel.",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "*- Bestimme den Durchmesser der Kugel - Vergleiche, ob der Durchmesser größer oder kleiner ist, als die Öffnung des Tunneldurchgangs.*\n\n**Durchmesser der Kugel**\n\nDer Radius der Kugel kann mithilfe der Formel für das [Volumen](/55204) bestimmt werden:\n\n$$\\begin{aligned}\nV &= \\frac{4}{3}\\pi\\cdot r^3 \\\\\n15,59 &= \\frac{4}{3}\\pi\\cdot r^3 \\qquad |\\; \\cdot\\frac{3}{4} \\\\\n\\frac{3}{4}\\cdot15,59 &= \\pi\\cdot r^3 \\qquad |\\; :\\pi \\\\\nr^3 &= 3,721... \\qquad |\\; \\sqrt[3]{} \\\\\nr &= 1,549...\n\\end{aligned}$$\n\nDie Kugel hat einen Radius von etwa $r=1,55~\\text{cm}$. Der Durchmesser beträgt damit $d=3,1~\\text{cm}$.\n\n**Vergleich mit dem Tunneleingang**\n\nDie Kugel passt nicht durch den Tunneleingang, denn dieser ist nur $3~\\text{cm}$ hoch.",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "In dem Koordinatensystem ist der Graph der linearen Funktion $y_1$ abgebildet.\n\n![Abbildung](/uploads/ex-1674dff17359.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze die passende Funktionsgleichung an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$y_1=2x+2$",
+        "correct": false
+       },
+       {
+        "text": "$y_1=-2x+2$",
+        "correct": true
+       },
+       {
+        "text": "$y_1=2x-2$",
+        "correct": false
+       },
+       {
+        "text": "$y_1=-2x-2$",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*- Lies den y-Achsenabschnitt ab aus der Skizze. - Lies die Steigung der Geraden ab. - Wähle die richtige Funktionsgleichung aus.*\n\n- Der y-Achsenabschnitt ist $b=2$\n- Die Steigung beträgt $m=-2$\n\nDie richtige Gerade ist gegeben durch: $y=-2x+2$",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Eine weitere lineare Funktion mit der Gleichung $y_2=\\frac{1}{2}x-3$ ist gegeben.\n\nGib die Koordinaten des Schnittpunktes der Funktionen $y_1$ und $y_2$ an.\n\n$\\large S($⟦1⟧$\\large \\mid$⟦2⟧$\\large )$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": -2,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Setze die Funktionsgleichungen gleich $y_1=y_2$ - Bestimme $x$ aus der Gleichung. - Bestimme den y-Wert des Schnittpunkts, indem du $x$ in eine der Gleichungen einsetzt.*\n\nDer Schnittpunkt könnte auch graphisch bestimmt werden. Hier die rechnerische Lösung:\n\n**x-Wert des Schnittpunkts**\n\nSetze die Geradengleichungen gleich:\n\n$$\\begin{aligned}\ny_1 &= y_2 \\\\\n-2x+2 &= \\frac{1}{2}x-3 \\qquad |\\; +3 \\\\\n-2x+5 &= \\frac{1}{2}x \\qquad |\\; +2x \\\\\n5 &= 2,5\\ x \\qquad |\\; :2,5 \\\\\nx &= 2\n\\end{aligned}$$\n\n**y-Wert des Schnittpunkts**\n\n$$\\begin{aligned}\ny_1 &= -2x+2 \\\\\n &= -2\\cdot2+2 \\\\\n &= -2\n\\end{aligned}$$\n\nDamit ist der Schnittpunkt $S(2\\mid -2)$.",
+     "points": 3,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Überprüfe mithilfe einer Rechnung, ob der Punkt P(–8\\|–7) auf dem Graphen der Funktion $y_2$ liegt.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "Der Punkt $P(-8|-7)$ liegt auf dem Graphen.",
+        "correct": true
+       },
+       {
+        "text": "Der Punkt $P(-8|-7)$ liegt **nicht** auf dem Graphen.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*- Setze den x-Wert des Punktes in die Gleichung $y_2$ ein. - Überprüfe, ob der Funktionswert mit dem y-Wert des Punktes übereinstimmt.*\n\n$$\\begin{aligned}\ny_2 &= \\frac{1}{2}\\cdot x-3 \\\\\n &= \\frac{1}{2}\\cdot\\left(-8\\right)-3 \\\\\n &= -4-3 \\\\\n &= -7\n\\end{aligned}$$\n\nDas bedeutet, die Gerade und der Punkt haben den gleichen $y$-Wert. Der Punkt liegt auf der Geraden.",
+     "points": 3,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Löse die quadratische Gleichung $x^2+14x+24=0$.\n\n$x_1 =$ ⟦1⟧\n\n$x_2=$ ⟦2⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": -2,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": -12,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Verwende dafür z. B. die $pq$-Formel.Bestimme $p$ und $q$ aus der Gleichung.Setze in die $pq$-Formel ein und bestimme die Lösungen $x_{1,2}$.*\n\nVerwende z. B. die $pq$-Formel:\n\n$$\\begin{aligned}\n0 &= x^2+14x+24 \\\\\nx_{1,2} &= -\\frac{p}{2}\\pm\\sqrt{\\left(\\frac{p}{2}\\right)^2-q} \\\\\n &= -\\frac{14}{2}\\pm\\sqrt{\\left(\\frac{14}{2}\\right)^2-24} \\\\\n &= -7\\pm\\sqrt{49-24} \\\\\n &= -7\\pm5 \\\\\nx_1 &= -2 \\\\\nx_2 &= -12\n\\end{aligned}$$\n\nDie Lösung der Gleichung ist die Menge $\\mathbb{L}=\\{-2;-12\\}$",
+     "points": 3,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "In der Lösungsformel für quadratische Gleichungen fehlt eine Zahl für die Variable $q$.\n\nGib eine Zahl für $q$ an, sodass die Lösungsformel genau ein Ergebnis hat.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 9,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- *Hinweis: Der Wert der Diskriminante (Term unter der Wurzel) muss* $0$ *ergeben*. - Bestimme $q$ aus der Gleichung  $\\left(\\dfrac{6}{2}\\right)^2-q=0$*\n\nDer Wert der Diskriminante (Term unter der Wurzel) muss $0$ ergeben:\n\n$$\\begin{aligned}\n\\left(\\frac{6}{2}\\right)^2-q &= 0 \\qquad |\\; +q \\\\\nq &= \\left(\\frac{6}{2}\\right)^2 \\\\\n &= 9\n\\end{aligned}$$\n\nFür $q=9$ hat die quadratische Gleichung nur eine Lösung.",
+     "points": 1,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    }
+   ]
+  }
+ ]
+}

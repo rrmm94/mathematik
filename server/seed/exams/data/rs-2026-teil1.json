@@ -1,0 +1,417 @@
+{
+ "school": "rs",
+ "schoolLabel": "Realschule",
+ "year": 2026,
+ "part": "Teil 1",
+ "folderId": 334270,
+ "url": "https://de.serlo.org/mathe/334270/teil-1",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Löse die Aufgaben.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$-7+30=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 23,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$11,5+2,35=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 13.85,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$0,8\\cdot 4=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3.2,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$15+5\\cdot 9=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 60,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Bei einer Spendenaktion nimmt der Förderverein einer Schule 402,10 € ein. Davon sollen so viele Zirkel wie möglich gekauft werden. Ein Zirkel kostet 7,98 €.\n\nHerr Gerdes möchte im Kopf überschlagen, wie viele Zirkel er ungefähr kaufen kann.\n\nNotiere eine sinnvolle Überschlagsrechnung.\n\n![Abbildung](/uploads/ex-a0e61dd90570.png)\n\nHerr Gerdes kann ungefähr ⟦1⟧ Zirkel kaufen.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 50,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "![Abbildung](/uploads/ex-8265f1e00661.png)\n\nDie Tabelle zeigt den Fahrplan des Zuges RE 30 von Hannover nach Wolfsburg.\n\nDer Zug benötigt 9 Minuten von Hannover nach Lehrte.\n\nTrage die Ankunftszeit in Lehrte in die Tabelle ein.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Ergänze die folgenden Sätze.\n\nDer Zug benötigt von Lehrte nach Gifhorn ⟦1⟧ Minuten.\n\nIn Wolfsburg kommt der Zug wegen einer Streckensperrung 27 Minuten später an, also um ⟦2⟧ Uhr.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 27,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "11:13",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "Der Graph zeigt die planmäßige Zugfahrt des RE 30.\n\n![Abbildung](/uploads/ex-2152f4a024b3.png)\n\nErkläre, warum der Graph an mehreren Stellen waagerecht verläuft.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Von 400 Schülerinnen und Schülern einer Schule kommen $35 \\%$ mit dem Fahrrad.\n\nBerechne die Anzahl der Schülerinnen und Schüler, die mit dem Fahrrad kommen. Notiere deinen Rechenweg.\n\nEs kommen ⟦1⟧ Schülerinnen und Schüler mit dem Fahrrad zur Schule.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 140,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "",
+     "points": 0,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "Drei Schülerinnen haben\n\nProzentsätze in einem Prozentstreifen grau dargestellt.\n\n![Abbildung](/uploads/ex-c9d44c83ba7f.png)\n\nEntscheide, welche Schülerin $35 \\%$ dargestellt hat. Begründe deine Entscheidung.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "An einer anderen Schule kommen $40 \\%$ der Kinder mit dem Fahrrad. Das sind 120 Kinder.\n\nBerechne die Anzahl aller Kinder, die diese Schule besuchen. Notiere deinen Rechenweg.\n\nDiese Schule besuchen ⟦1⟧ Kinder.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 300,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "",
+     "points": 0,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "In einem Regal stehen 15 Kisten mit Äpfeln. In jeder Kiste sind 8 Äpfel.\n\nAlle Äpfel werden in Tüten umgepackt. In jede Tüte werden 6 Äpfel gepackt.\n\nBerechne, wie viele Tüten man benötigt. Notiere deinen Rechenweg.\n\nMan benötigt ⟦1⟧ Tüten.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 20,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "In einem anderen Betrieb sollen 130 Birnen in Tüten mit jeweils 9 Birnen verpackt werden.\n\nBegründe, dass das nicht möglich ist.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": "messen",
+     "prompt": "Ein Dreieck ABC soll gezeichnet werden. Die Strecke $\\overline{A B}$ ist vorgegeben.\n\n![Abbildung](/uploads/ex-d529b72f8ef7.png)\n\nMiss die Länge der Strecke $\\overline{\\mathrm{AB}}$.\n\n$\\overline{\\mathrm{AB}}=$⟦1⟧ $\\cm$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4.3,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "",
+     "points": 0,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne das Dreieck ABC mit den Winkeln $\\alpha=110^{\\circ}$ und $\\beta=25^{\\circ}$.\n\nBeschrifte alle Winkel.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 3,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Bestimme die Größe des Winkels $\\gamma$.\n\n$\\gamma=$⟦1⟧ Grad.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 45,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "",
+     "points": 0,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "Mia hat einen Würfel mit dem abgebildeten Netz.\n\nEs gibt die Symbole Stern (S), Kreis (K) und Batterie (B).\n\nWenn Mia den Würfel zweimal würfelt, dann erhält sie eine Kombination aus zwei Symbolen.\n\n![Abbildung](/uploads/ex-edec8dfa7cda.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "Ergänze die Tabelle mit allen weiteren möglichen Kombinationen.\n\n![Abbildung](/uploads/ex-4a00df372eba.png)",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Mia zeichnet zu diesem Würfel ein anderes Netz.\n\n![Abbildung](/uploads/ex-301d7f32a064.png)\n\nZeichne den Kreis in Mias Netz ein.",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "ohne Lösung",
+     "prompt": "Kreuze die beiden Abbildungen an, die diesen Würfel darstellen.\n\n![Abbildung](/uploads/ex-f5d6b1f5ab9a.png)",
+     "answer": {
+      "type": "free",
+      "sample": ""
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  }
+ ]
+}

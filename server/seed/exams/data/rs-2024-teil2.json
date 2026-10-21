@@ -1,0 +1,396 @@
+{
+ "school": "rs",
+ "schoolLabel": "Realschule",
+ "year": 2024,
+ "part": "Teil 2",
+ "folderId": 315304,
+ "url": "https://de.serlo.org/mathe/315304/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Beim Elfmeter-Schießen im Fußball gibt es drei Möglichkeiten.\n\n\\- Der Spieler schießt ein Tor (T).\n\n\\- Der Spieler schießt den Ball am Tor vorbei\n\n(V).\n\n\\- Der Torwart hält den Ball (H).\n\n![Abbildung](/uploads/ex-462c8f0ea43c.png)\n\nDas Baumdiagramm zeigt die Wahrscheinlichkeiten.\n\n\\1. Schuss:\n\n![Abbildung](/uploads/ex-a86afcf676dc.png)\n\n\\2. Schuss:",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Ergänze den fehlenden Wert im Baumdiagramm.",
+     "answer": {
+      "type": "free",
+      "sample": "Ziehe die Wahrscheinlichkeiten für \"Tor\" und für \"Vorbeigeschossen\" von der Gesamtwahrscheinlichkeit ab. ![Abbildung](/uploads/ex-1ffee12c77d5.svg) Die Summe der Wahrscheinlichkeiten bei einem Schuss ist gleich . Die Wahrscheinlichkeit , dass der Torwart den Ball hält, ist damit: P(H)=1-left(dfrac{3}{4}+dfrac{1}{20}right) P(H)=dfrac{20}{20}-left(dfrac{15}{20}+dfrac{1}{20}right) P(H)=dfrac{16}{20}=dfrac{1}{5} Die Wahrscheinlichkeit, dass der Torwart den Schuss hält, beträgt dfrac{1}{5}."
+     },
+     "solution": "*Ziehe die Wahrscheinlichkeiten für \"Tor\" und für \"Vorbeigeschossen\" von der Gesamtwahrscheinlichkeit ab.*\n\n![Abbildung](/uploads/ex-1ffee12c77d5.svg)\n\nDie Summe der Wahrscheinlichkeiten bei einem Schuss ist gleich .\n\nDie Wahrscheinlichkeit , dass der Torwart den Ball hält, ist damit:\n\n$P(H)=1-\\left(\\dfrac{3}{4}+\\dfrac{1}{20}\\right)$\n\n$P(H)=\\dfrac{20}{20}-\\left(\\dfrac{15}{20}+\\dfrac{1}{20}\\right)$\n\n$P(H)=\\dfrac{16}{20}=\\dfrac{1}{5}$\n\nDie Wahrscheinlichkeit, dass der Torwart den Schuss hält, beträgt $\\dfrac{1}{5}$.",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Es werden zwei Elfmeter geschossen. Ergänze das Baumdiagramm für den zweiten Schuss.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-6d5e530be683.svg) Es werden zwei Elfmeter nacheinander geschossen. Unabhängig vom Ergebnis des ersten Schusses können beim zweiten Schuss wieder alle drei möglichen Ereignisse eintreten."
+     },
+     "solution": "![Abbildung](/uploads/ex-6d5e530be683.svg)\n\nEs werden zwei Elfmeter nacheinander geschossen. Unabhängig vom Ergebnis des ersten Schusses können beim zweiten Schuss wieder alle drei möglichen Ereignisse eintreten.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Beide Elfmeter werden ein Tor. Berechne die Wahrscheinlichkeit.\n\nDie Wahrscheinlichkeit, bei beiden Elfmetern ein Tor zu schießen, beträgt ⟦1⟧ .",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.5625,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Berechne die Wahrscheinlichkeit mit der Multiplikationsregel für unabhängige Ereignisse.*\n\nDie Ergebnisse der beiden Torschüsse sind zwei unabhängige Ereignisse.\n\nNach der Multiplikationsregel für unabhängige Ereignisse müssen die beiden Wahrscheinlichkeiten multipliziert werden.\n\n$P(\\text{zweimal Tor})=\\dfrac{3}{4}\\cdot\\dfrac{3}{4}=\\dfrac{9}{16}$\n\nDie Wahrscheinlichkeit, bei beiden Elfmetern ein Tor zu schießen, beträgt $\\dfrac{9}{16}$.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Das Diagramm zeigt die Anzahl der Elektro-Autos in Deutschland von 2014 bis 2019.\n\n![Abbildung](/uploads/ex-a1b1095d1d5e.png)\n\n2016 gab es insgesamt etwa 45 100 000 Autos in Deutschland.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "2016 waren nur etwa $0,058\\ \\%$ aller Autos Elektro-Autos. Bestätige das mit einer Rechnung.",
+     "answer": {
+      "type": "free",
+      "sample": "- Berechne den Prozentsatz der Elektroautos, indem du den Prozentwert durch den Grundwert teilst. - Vergleiche mit der Aussage Anteil der Elektroautos an der Gesamtzahl der Autos wird anhand folgender Formel berechnet: p=dfrac{text{Pozentwert}}{text{Grundwert}} p=dfrac{26,000}{45,100,000}approx 0,00058 2016 waren etwa 0,058% aller Autos Elektroautos."
+     },
+     "solution": "*- Berechne den Prozentsatz der Elektroautos, indem du den Prozentwert durch den Grundwert teilst. - Vergleiche mit der Aussage*\n\nAnteil der Elektroautos an der Gesamtzahl der Autos wird anhand folgender Formel berechnet:\n\n$p=\\dfrac{\\text{Pozentwert}}{\\text{Grundwert}}$\n\n$p=\\dfrac{26\\,000}{45\\,100\\,000}\\approx 0,00058$\n\n2016 waren etwa $0,058\\%$ aller Autos Elektroautos.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Von 2018 zu 2019 gab es eine besonders große Steigerung der Anzahl der Elektro-Autos. Berechne die prozentuale Veränderung von 2018 zu 2019.\n\nIm Vergleich zu 2019 ist diese Anzahl der Elektroautos um etwa ⟦1⟧ % gestiegen.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 53.7,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Nimm die Anzahl der Elektroautos im Jahr 2018 als Grundwert - Berechne die Steigerung zum Jahr 2019*\n\nBerechnung des Prozentsatzes $p$ mit der Formel\n\n$p=\\dfrac{\\text{Pozentwert}}{\\text{Grundwert}}$\n\nGrundwert ist die Anzahl der Elektroautos im Jahr 2018.\n\nProzentwert ist die Anzahl der Elektroautos im Jahr 2019.\n\n$p=\\dfrac{83\\,000}{54\\,000}\\approx 1,537$\n\nDie Anzahl der Elektroautos im Jahr 2018 entsprechen $100\\%$. Im Vergleich zu 2019 ist diese Anzahl um etwa $53,7\\%$ gestiegen.",
+     "points": 3,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Das Ziel der Bundesregierung war, dass es im Jahr 2022 in Deutschland 1 Million Elektro-Autos gibt. 2022 gab es insgesamt 48 500 000 Autos. Davon waren $1,3\\ \\%$ Elektro-Autos.\n\nZeige mit einer Rechnung, dass das Ziel der Bundesregierung nicht erreicht wurde.",
+     "answer": {
+      "type": "free",
+      "sample": "- Berechne die Anzahl der Elektroautos im Jahr 2022 - Vergleiche Der Prozentwert W gibt an, wie viele Elektroautos es im Jahr 2022 gab. Er berechnet sich mit der Formel W=text{Prozentsatz}cdottext{Grundwert} W=0,013cdot 48,500,000=630,500 Im Jahr 2022 gab es 630,500 Elektroautos. Da 630,500lt 1,000,000 ist das Ziel der Bundesregierung nicht erfüllt.."
+     },
+     "solution": "*- Berechne die Anzahl der Elektroautos im Jahr 2022 - Vergleiche*\n\nDer Prozentwert $W$ gibt an, wie viele Elektroautos es im Jahr 2022 gab. Er berechnet sich mit der Formel\n\n$W=\\text{Prozentsatz}\\cdot\\text{Grundwert}$\n\n$W=0,013\\cdot 48\\,500\\,000=630\\,500$\n\nIm Jahr 2022 gab es $630\\,500$ Elektroautos.\n\nDa $630\\,500\\lt 1\\,000\\,000$ ist das Ziel der Bundesregierung **nicht** erfüllt..",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": "leere Lösung",
+     "prompt": "Trage die Nummer des passenden Graphen in die Tabelle ein.\n\n![Abbildung](/uploads/ex-343e6055c96d.png)\n\n| Funktionsgleichung | Nummer |\n|---|---|\n| $y=x^2$ | ⟦1⟧ |\n| $y=x^2-4$ | ⟦2⟧ |\n| $y=-x^2+2$ | ⟦3⟧ |\n| $y=(x+2)^2-2$ | ⟦4⟧ |\n| $y=(x-2)^2-4$ | ⟦5⟧ |",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "| Funktionsgleichung | Nummer | Erklärung |\n|---|---|---|\n| $y=x^2$ | $2$ | Normalparabel mit Scheitelpunkt $S(0\\|0)$ |\n| $y=x^2-4$ |   |   |\n| $y=-x^2+2$ | $3$ | Nach unten geöffnete Parabel wegen des negativen Vorzeichens vor $x^2$ Verschiebung um $2$ in y-Richtung |\n| $y=(x+2)^2-2$ | $1$ | [Parabel in Scheitelform](/54534) Verschiebung um -2 in x-Richtung Verschiebung um $-2$ in y-Richtung |\n| $y=(x-2)^2-4$ | $4$ | [Parabel in Scheitelform](/54534) Verschiebung um $2$ in x-Richtung Verschiebung um $-4$ in y-Richtung |",
+     "points": 2,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gegeben ist die Funktionsgleichung $y=x^2-4x+2.$\n\nVervollständige die Wertetabelle.\n\n![Abbildung](/uploads/ex-1c279a215670.png)\n\n| x | -1 | 0 | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|---|---|\n| y | ⟦1⟧ | 2 | -1 | -2 | ⟦2⟧ | 2 | 7 |",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 7,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": -1,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Setze x-Werte in die Funktionsgleichung ein und berechne die Werte für y*\n\n| $x$ | $-1$ | $0$ | $1$ | $2$ | $3$ | $4$ | $5$ |\n|---|---|---|---|---|---|---|---|\n| $y$ | $\\textcolor{cc0000}{7}$ | $2$ | $-1$ | $-2$ | $\\textcolor{cc0000}{-1}$ | $2$ | $7$ |\n\nBerechnung der Werte durch Einsetzen in die Funktionsgleichung\n\n$$\\begin{aligned}\ny &= x^2-4x+2 \\\\\ny &= (-1)^2-4\\cdot (-1)+2 \\\\\ny &= 7\n\\end{aligned}$$\n\n$$\\begin{aligned}\ny &= x^2-4x+2 \\\\\ny &= 3^2-4\\cdot 3+2 \\\\\ny &= -1\n\\end{aligned}$$",
+     "points": 2,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": "zeichnen",
+     "prompt": "Zeichne ein Koordinatensystem und trage die Wertepaare ein. Verbinde die Punkte sinnvoll.\n\n(Wähle bei der x-Achse und der y-Achse jeweils 1 cm für 1 Einheit.)\n\n$x_1\\approx$ ⟦1⟧\n\n$x_2\\approx$ ⟦2⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3.41,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.59,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "![Abbildung](/uploads/ex-6741487ef840.svg)\n\nZeichne die Werte aus der Tabelle in ein Koordinatensystem und zeichne den Graphen.",
+     "points": 3,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Bestimme die Nullstellen der Funktionsgleichung $y=x^2-4x+2$.",
+     "answer": {
+      "type": "free",
+      "sample": "Verwende die Mitternachtsformel zur Berechnung der Nullstellen der quadratischen Gleichung Berechnung der Nullstellen Zur Berechnung der Nullstellen der Funktion muss man die x-Werte finden, für die f(x)=0 ist. Da hier eine [quadratische Gleichung](/1821) vorliegt, kann man die Nullstellen mit der [Mitternachtsformel](/1549) bestimmen. begin{aligned} x_{1,2} &= dfrac{-bpmsqrt{b^2-4ac}}{2a} x_{1,2} &= dfrac{-(-4)pmsqrt{(-4)^2-4cdot 2}}{2} x_{1,2} &= dfrac{4pmsqrt{8}}{2} x_1 &= dfrac{4+sqrt{8}}{2} x_1 &= 3,41 x_2 &= dfrac{4-sqrt{8}}{2} x_2 &= 0,59 end{aligned}"
+     },
+     "solution": "*Verwende die Mitternachtsformel zur Berechnung der Nullstellen der quadratischen Gleichung*\n\n**Berechnung der Nullstellen**\n\nZur Berechnung der Nullstellen der Funktion muss man die $x$-Werte finden, für die $f(x)=0$ ist.\n\nDa hier eine [quadratische Gleichung](/1821) vorliegt, kann man die Nullstellen mit der [Mitternachtsformel](/1549) bestimmen.\n\n$$\\begin{aligned}\nx_{1,2} &= \\dfrac{-b\\pm\\sqrt{b^2-4ac}}{2a} \\\\\nx_{1,2} &= \\dfrac{-(-4)\\pm\\sqrt{(-4)^2-4\\cdot 2}}{2} \\\\\nx_{1,2} &= \\dfrac{4\\pm\\sqrt{8}}{2} \\\\\nx_1 &= \\dfrac{4+\\sqrt{8}}{2} \\\\\nx_1 &= 3,41 \\\\\nx_2 &= \\dfrac{4-\\sqrt{8}}{2} \\\\\nx_2 &= 0,59\n\\end{aligned}$$",
+     "points": 2,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Die Abbildung zeigt ein Fenster mit zwei gleich großen Glasscheiben.\n\nAlle Längen sind in $\\cm$ angegeben.\n\n![Abbildung](/uploads/ex-7175415e395c.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Berechne das fehlende Maß und trage es in die Skizze ein.",
+     "answer": {
+      "type": "free",
+      "sample": "- Lies die gegebenen Maße aus der Zeichnung ab - Berechne die Breite eines Fensters ![Abbildung](/uploads/ex-5a62b2a70eee.png) Die gesamte Breite des Fensters von der Spitze der linken Scheibe bis zur Spitze der rechten Scheibe beträgt 160cm. Der Holm zwischen den Scheiben misst 8cm. Beide Scheiben sind gleich groß. Die Breite einer Scheibe kann damit berechnet werden. dfrac{160-8}{2}=76 Die Breite einer Scheibe beträgt 76cm."
+     },
+     "solution": "*- Lies die gegebenen Maße aus der Zeichnung ab - Berechne die Breite eines Fensters*\n\n![Abbildung](/uploads/ex-5a62b2a70eee.png)\n\nDie gesamte Breite des Fensters von der Spitze der linken Scheibe bis zur Spitze der rechten Scheibe beträgt $160\\cm$.\n\nDer Holm zwischen den Scheiben misst $8\\cm$.\n\nBeide Scheiben sind gleich groß.\n\nDie Breite einer Scheibe kann damit berechnet werden.\n\n$\\dfrac{160-8}{2}=76$\n\nDie Breite einer Scheibe beträgt $76\\cm$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Höhe $h$ einer Glasscheibe.\n\n$h=$⟦1⟧ $\\cm$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 76.73,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Verwende den Satz des Pythagoras*\n\nDie Scheibe bildet ein rechtwinkliges Dreieck. Von diesem Dreieck ist die Hypotenuse und eine Kathete bekannt.\n\nMithilfe des Satzes von Pythagoras kann die Länge der zweiten Kathete berechnet werden.\n\n**Satz des Pythagoras**\n\n$a^2+b^2=c^2$\n\n**Werte einsetzen**\n\n$76^2+h^2=108^2 \\\\\nh^2=108^2-76^2 \\\\\nh=\\sqrt{108^2-76^2} \\\\\nh\\approx 76,73$\n\nDie Höhe $h$ der Scheibe beträgt ca. $76,73\\cm$.",
+     "points": 3,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Eine Glasscheibe wird ersetzt. Berechne den Flächeninhalt einer Glasscheibe.\n\n(Wenn du Teilaufgabe a) nicht gelöst hast, dann rechne mit $h = 75,48 \\cm$ weiter.)\n\n$a=$⟦1⟧ $\\cm²$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2915.74,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Da die Scheibe ein rechtwinkliges Dreieck bildet, kann der Flächeninhalt $A$ nach folgender Formel berechnet werden.\n\n$A=\\dfrac{1}{2}\\cdot \\text{Kathete}_1 \\cdot \\text{Kathete}_2$\n\n$A=\\dfrac{1}{2}\\cdot 76 \\cdot 76,73$\n\n$A=2915,74$\n\nDie Fläche der Glasscheibe beträgt $2915,74\\cm^2$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "Klara bastelt für ihre kleine Schwester zur Einschulung eine Schultüte.\n\nDie obere Öffnung hat einen Radius $r = 12 \\cm.$\n\n![Abbildung](/uploads/ex-73d2cfbcecbd.png)\n\nKlara beklebt den oberen Rand der\n\nSchultüte mit einem Band.\n\n![Abbildung](/uploads/ex-93b1e351f629.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge des Bandes.\n\nDie Länge des Bandes beträgt ca. ⟦1⟧ $\\cm$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 75.4,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Benutze die Formel zur Berechnung des Kreisumfangs*\n\nDer obere Rand der Schultüte bildet einen Kreis.\n\nDer Kreisumfang $U$ beträgt:\n\n$U=2\\cdot\\pi\\cdot r$\n\nDer Radius des Kreises ist in der Aufgabe gegeben mit $r=12$\n\n$U=2\\cdot\\pi\\cdot 12\\approx 75,4$\n\nDie Länge des Bandes beträgt $\\approx 75,40\\cm$",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die Schultüte hat ein Volumen von $11310 \\cm^3$.\n\nBerechne die Höhe $h_K$ der Schultüte.\n\n$h_k\\approx$ ⟦1⟧ $\\cm$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 75,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme, welche Werte in der Aufgabenstellung gegeben sind. - Setze die Werte in die Formel für die Berechnung des Kegelvolumens ein und berechne die Höhe.*\n\n**Volumen des Kegels mit Grundfläche $G$**\n\n$V_{\\text{Kegel}}=\\dfrac{1}{3}\\cdot G\\cdot h =\\dfrac{1}{3}\\cdot r^2 \\cdot\\pi\\cdot h$\n\n**Berechnung der Höhe $h_K$**\n\nIn der Aufgabe ist gegeben:\n\n$V_{\\text{Kegel}}=11\\,310\\cm^3$\n\n$r=12\\cm$\n\n$$\\begin{aligned}\nV_{\\text{Kegel}} &= \\dfrac{1}{3}\\cdot r^2 \\cdot\\pi\\cdot h_K \\\\\n11\\,310 &= \\dfrac{1}{3}\\cdot 12^2 \\cdot\\pi\\cdot h_K \\\\\n11\\ 310 &= 150,8 \\cdot h_K \\qquad |\\; : 150,8 \\\\\n75,0 &= h_K\n\\end{aligned}$$\n\nDie Höhe der Schultüte beträgt $75\\cm$.",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Winkels $α$.\n\n(Wenn du die Teilaufgabe b) nicht gelöst hast, dann rechne mit $h_K = 75,51 \\cm$ weiter.)\n\n$\\alpha=$ ⟦1⟧ °.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 18.18,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne zuerst die Hypotenuse des rechtwinkligen Dreiecks, die durch Radius und Höhe des Kegels gebildet wird. - Berechne dann den Winkel $\\alpha$ mit einer trigonometrischen Funktion.*\n\nDie Höhe $h_K$, der Radius $r$ und die Seite der Schultüte bilden ein rechtwinkliges Dreieck.\n\nDabei ist die Seite der Schultüte die Hypotenuse $c$ des rechtwinkligen Dreiecks.\n\nDie Höhe $h_K$ ist die Ankathete.\n\nDer Radius $r$ ist die Kathete.\n\n**Berechnung der Hypotenuse**\n\nMit dem [Satz des Pythagoras](/1515) kann jetzt die Hypotenuse berechnet werden.\n\n$c^2=(h_K)^2+r^2$\n\n$c^2=75^2+12^2=5769$\n\n$c=\\sqrt{5769}\\approx 75,95$\n\n**Berechnung des Winkels**\n\nDie Höhe $h_K$ teilt den Winkel $\\alpha$ in zwei gleich große Hälften. Mithilfe einer trigonometrischen Gleichung kann jetzt der Winkel $\\frac{\\alpha}{2}$ berechnet werden.\n\n$\\sin(\\frac{\\alpha}{2})= \\dfrac{\\text{Gegenkathete}}{\\text{Hypotnuse}}$\n\n$\\sin(\\frac{\\alpha}{2})= \\dfrac{12}{75,95}$\n\n$\\frac{\\alpha}{2}= 9,09^\\circ \\Rightarrow \\alpha=18,18^\\circ$\n\nDer Winkel $\\alpha$ hat eine Größe von $18,18^\\circ$",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,512 @@
+{
+ "school": "rs",
+ "schoolLabel": "Realschule",
+ "year": 2025,
+ "part": "Teil 1",
+ "folderId": 328318,
+ "url": "https://de.serlo.org/mathe/328318/teil-1",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Ergänze die fehlenden Zahlen in den Lücken.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$12\\cdot$ ⟦1⟧ = 48",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$12\\cdot \\mathbf{4} =48$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "⟦1⟧ $-15=-9$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 6,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$\\mathbf{6}-15=-9$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$3\\cdot$ ($0,5$ + ⟦1⟧ ) = $6$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$3\\cdot\\left(0,5+\\mathbf{1,5}\\right)=6$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$\\displaystyle\\frac{2}{3}:2$ = ⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.333333333,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$\\dfrac{2}{3}:2=\\dfrac{1}{3}$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Markiere 5 % der Fläche.\n\n![Abbildung](/uploads/ex-814b14550687.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Markieren 5 % der Fläche. ![Abbildung](/uploads/ex-be2686ecb060.png) Das Rechteck ist in 40 gleich große Kästchen aufgeteilt. Wir kennen den Grundwert, text{G}=40 und den Prozentsatz hspace{15mm}mathrm{p=5 %} Die Formel zur Berechnung des Prozentwerts lautet: mathrm{W=Gcdot p} mathrm{W=40cdotdfrac{5}{100} Rightarrow W=2} Markiere 2 Kästchen ."
+     },
+     "solution": "**Markieren 5 % der Fläche.**\n\n![Abbildung](/uploads/ex-be2686ecb060.png)\n\nDas Rechteck ist in $40$ gleich große Kästchen aufgeteilt.\n\nWir kennen den Grundwert, $\\text{G}=40$\n\nund den Prozentsatz $\\hspace{15mm}\\mathrm{p=5\\ \\%}$\n\nDie Formel zur Berechnung des Prozentwerts lautet: $\\mathrm{W=G\\cdot p}$\n\n$\\mathrm{W=40\\cdot\\dfrac{5}{100}\\ \\Rightarrow\\ W=2}$\n\nMarkiere $2$ Kästchen .",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Ein Tablet kostet 600 €. Nina erhält 5 % Rabatt auf diesen Preis.\n\nBerechne den neuen Preis.\n\nDer neue Preis beträgt ⟦1⟧ €.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 570,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen des neuen Preises.**\n\nDie Formel zur Berechnung des verminderten Grundwertes lautet:\n\n$\\mathrm{G^-=\\;G\\cdot\\left(1-p\\right)}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{G=600\\ €;\\hspace{15mm}p=5\\ \\%}$\n\nEinsetzen der bekannten Größen in die Formel.\n\n$\\mathrm{G^-=\\;600\\cdot\\left(1-\\dfrac{5}{100}\\right)\\ \\Rightarrow\\ G^-=600\\cdot0,95}$\n\n$\\mathrm{G^-=570}$\n\nDer neue Preis beträgt $\\boxed{570\\ €}$ .",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Jan erhält auf das gleiche Tablet $20\\ \\%$ Rabatt.\n\nEr berechnet den neuen Preis so:\n\n$\\boxed{600\\ €\\cdot0,8=480\\ €}$\n\nBegründe, warum Jan mit $0,8$ multipliziert hat.",
+     "answer": {
+      "type": "free",
+      "sample": "Begründen, warum Jan mit large{textbf{0,8}} multipliziert hat. Jan muss vom ursprünglichen Preis 80 % bezahlen, das ist dfrac{80}{100}, als Dezimalbruch ist das dann 0,8."
+     },
+     "solution": "**Begründen, warum Jan mit $\\large{\\textbf{0,8}}$ multipliziert hat.**\n\nJan muss vom ursprünglichen Preis $80\\ \\%$ bezahlen, das ist $\\dfrac{80}{100}$, als\n\nDezimalbruch ist das dann $0,8$.",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Löse die Gleichung.\n\n$\\mathrm{4x-17+3x=18}$\n\n$x=$ ⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$$\\begin{aligned}\n\\mathrm{4x-17+3x} &= 18 \\\\\n7x-17 &= 18 \\qquad |\\; +17 \\\\\n7x &= 35 \\qquad |\\; :7 \\\\\nx &= 5\n\\end{aligned}$$",
+     "points": 2,
+     "topic": "Terme, Gleichungen & Formeln"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Abgebildet ist das Dreieck ABC.\n\n![Abbildung](/uploads/ex-fb9c3c1f0c95.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": "messen",
+     "prompt": "Miss die Größe des Winkels α.\n\nDie Größe des Winkels α beträgt ⟦1⟧ °.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 33,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Die Größe des Winkels α beträgt $\\alpha=33°.$",
+     "points": 1,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib die Dreiecksart in Bezug auf die Winkel an.\n\nDas Dreieck ist ein ⟦1⟧ Dreieck.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "rechtwinkliges",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$\\sphericalangle ACB=90°$\n\nDas Dreieck ist ein rechtwinkliges Dreieck.",
+     "points": 1,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Die Größe des Winkels β soll berechnet werden.\n\nSchreibe einen geeigneten Rechenweg auf.\n\nRechenweg:",
+     "answer": {
+      "type": "free",
+      "sample": "beta=180°-90°-alpha beta=90°-alpha"
+     },
+     "solution": "$\\beta=180°-90°-\\alpha$\n\n$\\beta=90°-\\alpha$",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne im Dreieck ABC die Höhe hc ein.\n\n![Abbildung](/uploads/ex-e4ef32792575.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Einzeichnen der Höhe hc in das Dreieck ABC. ![Abbildung](/uploads/ex-3df058ca7fa7.png) ![Abbildung](/uploads/ex-5d70540c6e88.png)"
+     },
+     "solution": "**Einzeichnen der Höhe hc in das Dreieck ABC.**\n\n![Abbildung](/uploads/ex-3df058ca7fa7.png)\n\n![Abbildung](/uploads/ex-5d70540c6e88.png)",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne zur Geraden g eine parallele Gerade f im Abstand von $1,5\\cm$.\n\n![Abbildung](/uploads/ex-15a2c1665ba5.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Einzeichnen einer parallelen Geraden f zur Geraden g. ![Abbildung](/uploads/ex-ea0085c6d7c4.png)"
+     },
+     "solution": "**Einzeichnen einer parallelen Geraden f zur Geraden g.**\n\n![Abbildung](/uploads/ex-ea0085c6d7c4.png)",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "![Abbildung](/uploads/ex-b285a3c0b8a3.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib die Koordinaten des Punktes $\\text{C}$ an.\n\nDie Koordinaten des Punktes C sind C (⟦1⟧ \\|⟦2⟧ )",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Angeben der Koordinaten des Punktes C.**\n\n![Abbildung](/uploads/ex-4e221cf19e5a.png)\n\nDie Koordinaten des Punktes C sind:\n\n$\\boxed{\\text{C}\\ \\left(4|3\\right)}$",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die Punkte $\\mathrm{A, B}$ und $\\text{C}$ bilden ein Dreieck.\n\nBerechne den Flächeninhalt des Dreiecks.\n\nDer Flächeninhalt beträgt ⟦1⟧ cm².",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen des Flächeninhalts des Dreiecks ABC.**\n\n![Abbildung](/uploads/ex-866ae2aa92ea.png)\n\nWir verwenden zur Berechnung des Dreiecks ABC die Formel:\n\n$\\mathrm{A_{ABC}=\\dfrac{g\\cdot h}{2}}$\n\nFür unser Dreieck ist dann:\n\n$\\mathrm{g=\\overline{AB}=3\\cm;\\qquad h=\\overline{F_{h}C}=2\\cm}$\n\n$\\mathrm{A_{ABC}=\\dfrac{3\\cdot 2}{2}\\ \\Rightarrow\\ A_{ABC}=\\dfrac{6}{2}}$\n\n$\\underline{\\underline{\\mathrm{A_{ABC}=3\\cm^2}}}$\n\nDer Flächeninhalt des Dreiecks ABC beträgt: $\\boxed{\\mathrm{A_{ABC}=3\\cm^2}}$\n\n*Das Dreieck braucht nicht eingezeichnet zu werden.*",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Es soll ein Punkt $\\text{D}$ ergänzt werden, sodass ein Parallelogramm entsteht.\n\nErgänze den Punkt $\\text{D}$ im Koordinatensystem.",
+     "answer": {
+      "type": "free",
+      "sample": "Ergänzen des Punktes large{textbf{D}} im Koordinatensystem. ![Abbildung](/uploads/ex-57c0f5485cc3.png) Die Koordinaten des Punktes text{D} sind: boxed{mathrm{Dleft(1|3right)}} Das Parallelogramm braucht nicht eingezeichnet zu werden."
+     },
+     "solution": "**Ergänzen des Punktes $\\large{\\textbf{D}}$ im Koordinatensystem.**\n\n![Abbildung](/uploads/ex-57c0f5485cc3.png)\n\nDie Koordinaten des Punktes $\\text{D}$ sind:\n\n$\\boxed{\\mathrm{D\\left(1|3\\right)}}$\n\n*Das Parallelogramm braucht nicht eingezeichnet zu werden.*",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Den Umfang eines Fußballfeldes nennt man Außenlinie.\n\nBerechne die Länge der Außenlinie.\n\n![Abbildung](/uploads/ex-34a07204d789.png)\n\nDie Außenlinie ist ⟦1⟧ m lang.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 330,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen der Länge der Außenlinie.**\n\nDas Fussballfeld hat die Form eines Rechtecks.\n\nDie Außenlinie entspricht dem Umfang dieses Rechtecks.\n\nDie Formel zur Berechnung des Umfangs eines Rechtecks lautet:\n\n$\\mathrm{U_{Rechteck}=2\\cdot Länge+2\\cdot Breite}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{Länge=100\\m;\\qquad Breite=65\\m}$\n\n$\\mathrm{U_{Rechteck}=2\\cdot100+2\\cdot65\\ \\Rightarrow\\ U_{Rechteck}=200+130}$\n\n$\\underline{\\underline{\\mathrm{U_{Rechteck}=330\\m}}}$\n\nDie Außenlinie des Fussballfeldes ist $\\boxed{330\\m}$ lang.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 8,
+   "context": "Die Rechtecke $\\textcircled{1},\\ \\textcircled{2},\\ \\textcircled{3}$ und $\\textcircled{4}$ haben den gleichen Flächeninhalt.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Ergänze die fehlenden Werte in der Tabelle.\n\n|   | Länge | Breite |\n|---|---|---|\n| Rechteck (1) | $2\\ m$ | $20\\ m$ |\n| Rechteck (2) | $4\\ m$ | ⟦1⟧ m |\n| Rechteck (3) | $8\\ m$ | $5\\ m$ |\n| Rechteck (4) | $80\\ m$ | ⟦2⟧ m |",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 10,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Ergänzen der fehlenden Werte in der Tabelle.**\n\n|   | Länge | Breite |\n|---|---|---|\n| $\\mathrm{Rechteck\\ \\textcircled{1}}$ | $2\\m$ | $20\\m$ |\n| $\\mathrm{Rechteck\\ \\textcircled{2}}$ | $4\\m$ | $\\textbf{10\\m}$ |\n| $\\mathrm{Rechteck\\ \\textcircled{3}}$ | $8\\m$ | $5\\m$ |\n| $\\mathrm{Rechteck\\ \\textcircled{4}}$ | $80\\m$ | $\\textbf{0,5\\m}$ |",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Bei Rechtecken mit gleichem Flächeninhalt gilt:\n\nDie Zuordnung „Länge eines Rechtecks → Breite eines Rechtecks“ ist antiproportional.\n\nBegründe, dass diese Aussage richtig ist.",
+     "answer": {
+      "type": "free",
+      "sample": "Begründen, dass die Aussage richtig ist. Damit der Flächeninhalt des Rechtecks gleich bleibt, muss bei einer Verdoppelung der Länge die Breite halbiert werden. Bei einer Verdoppelung der Breite muss die Länge halbiert werden."
+     },
+     "solution": "**Begründen, dass die Aussage richtig ist.**\n\nDamit der Flächeninhalt des Rechtecks gleich bleibt, muss bei einer Verdoppelung der Länge die Breite halbiert werden.\n\nBei einer Verdoppelung der Breite muss die Länge halbiert werden.",
+     "points": 1,
+     "topic": "Zuordnungen & Dreisatz"
+    }
+   ]
+  },
+  {
+   "no": 9,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Lukas spielt Handball.\n\nEr notiert die Anzahl seiner Treffer nach jedem Spiel:\n\nBerechne die durchschnittliche Anzahl seiner Treffer pro Spiel.\n\n![Abbildung](/uploads/ex-4a2dd497d5d3.png)\n\nLukas hatte durchschnittlich ⟦1⟧ Treffer pro Spiel.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 7,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen der durchschnittlichen Anzahl von Lukas Treffer pro Spiel.**\n\nDer Durchschnitt mehrerer Zahlenwerte lässt sich wie folgt berechnen:\n\n$\\dfrac{\\text{Wert}_1+\\text{Wert}_2+\\text{Wert}_3+\\ldots}{\\text{Anzahl der Werte}}$\n\nDie durchschnittlichen Treffer pro Spiel berechnen wir dann mit der folgenden Formel:\n\n$\\mathrm{Durchschn_{Spiel}=\\dfrac{T_{1.\\ Spiel}+T_{2.\\ Spiel}+T_{3.\\ Spiel}+T_{4.\\ Spiel}+T_{5.\\ Spiel}+T_{6.\\ Spiel}}{Anzahl_{Spiele}}}$\n\nEinsetzen der Werte aus der Aufgabenstellung:\n\n$\\mathrm{Durchschn_{Spiel}=\\dfrac{5+7+3+10+8+9}{6}\\ \\Rightarrow\\ Durchschn_{Spiel}=\\dfrac{42}{6}}$\n\n$\\mathrm{Durchschn_{Spiel}=7}$\n\nLukas hatte durchschnittlich $\\textbf{7}$ Treffer pro Spiel.",
+     "points": 2,
+     "topic": "Daten & Statistik"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Kira hat in $4$ Spielen einen Durchschnitt von $8,5$ Treffern erzielt.\n\nGib an, wie viele Treffer Kira insgesamt erzielt hat.\n\nKira hat insgesamt ⟦1⟧Treffer erzielt.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 34,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Angeben wie viele Treffer Kira insgesamt erzielt hat.**\n\nKira hat durchschnittlich $8,5$ Treffer in $4$ Spielen erzielt, insgesamt sind das dann:\n\n$8,5\\cdot4=34$ Treffer.\n\nKira hat insgesamt $\\textbf{34}$ Treffer erzielt.",
+     "points": 1,
+     "topic": "Daten & Statistik"
+    }
+   ]
+  },
+  {
+   "no": 10,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Körper A soll mit einem der unten abgebildeten Körper zu einem großen Würfel ergänzt werden.\n\n![Abbildung](/uploads/ex-c5c1ae44ed12.png)\n\nKreuze den passenden Körper an.\n\n![Abbildung](/uploads/ex-f7505e652f66.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Ankreuzen des passenden Körpers. ![Abbildung](/uploads/ex-659703bbba58.png)"
+     },
+     "solution": "**Ankreuzen des passenden Körpers.**\n\n![Abbildung](/uploads/ex-659703bbba58.png)",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  }
+ ]
+}

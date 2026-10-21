@@ -1,0 +1,503 @@
+{
+ "school": "hs-e",
+ "schoolLabel": "Hauptschule E-Kurs",
+ "year": 2022,
+ "part": "Teil 2",
+ "folderId": 315335,
+ "url": "https://de.serlo.org/mathe/315335/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Für eine Studie wurden 1200 Jugendliche gefragt, welche technischen Geräte sie besitzen. Das\n\nErgebnis ist im Diagramm dargestellt.\n\n![Abbildung](/uploads/ex-2643bb4a2003.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Fülle die Lücken aus.\n\nEs sind ⟦1⟧ Prozent der Jugendlichen im Besitz eines Smartphones.\n\nFast drei Viertel der Jugendlichen haben einen ⟦2⟧.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 94,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Computer/Laptop",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Ausfüllen der Lücke.**\n\nEs sind $\\textbf{94}$ Prozent der Jugendlichen im Besitz eines Smartphones.\n\nFast drei Viertel der Jugendlichen haben einen **Computer/Laptop**.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Anzahl der Jugendlichen, die ein Tablet besitzen.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 456,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Anzahl der Jugendlichen, die ein Tablet besitzen. - Verwende die Formel zur Berechnung des Prozentwertes.*\n\n**Berechnen der Anzahl der Jugendlichen, die ein Tablet besitzen.**\n\nDie Formel zur Berechnung des Prozentwertes lautet:\n\n$\\mathrm{W=p\\cdot G}$\n\nFolgende Werte sind bekannt:\n\n$\\mathrm{G=1200\\qquad p=38\\ \\%}$\n\nEinsetzen der bekannten Werte in die Formel:\n\n$\\mathrm{W=\\dfrac{38}{100}\\cdot1200}$\n\n$\\mathrm{W=456}$\n\n$\\boxed{456}$ der Jugendlichen besitzen ein Tablet.",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "504 Jugendliche sind im Besitz einer tragbaren Spielkonsole.\n\nBerechne den prozentualen Anteil der Jugendlichen, die ein solches Gerät besitzen.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 42,
+        "tolerance": 0,
+        "unit": "%",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Prozentsatz mit der Prozentformel.*\n\n**Berechnen des prozentualen Anteils (Prozentsatz).**\n\nDie Formel zur Berechnung des Prozentsatzes lautet:\n\n$\\mathrm{p=\\dfrac{W}{G}}$\n\nFolgende Werte sind bekannt:\n\n$\\mathrm{W=504\\qquad G=1200}$\n\nEinsetzen der bekannten Werte in die Formel:\n\n$\\mathrm{p=\\dfrac{504}{1200}\\cdot100}$\n\n$\\text{p}=42\\ \\%$\n\n$\\boxed{42\\ \\%}$ der Jugendlichen besitzen eine eintragbare Spielkonsole.",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne den fehlenden Balken für die tragbare Spielkonsole in das Diagramm ein.\n\n(Solltest du die Teilaufgabe c) nicht gelöst haben, verwende $43\\ \\%$ .)",
+     "answer": {
+      "type": "free",
+      "sample": "Zeichnen des fehlenden Balken für die tragbare Spielkonsole. ![Abbildung](/uploads/ex-f76cba6f49ab.png)"
+     },
+     "solution": "**Zeichnen des fehlenden Balken für die tragbare Spielkonsole.**\n\n![Abbildung](/uploads/ex-f76cba6f49ab.png)",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Eine Firma bietet folgende Fliese an:\n\n![Abbildung](/uploads/ex-dcd2cc62d9c0.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Flächeninhalt der Fliese.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1260,
+        "tolerance": 0,
+        "unit": "cm²",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Die Fliese hat die Form eines Parallelogramms, berechne den Flächeninhalt mit der entsprechenden Formel.*\n\n**Berechnen des Flächeninhalts der Fliese.**\n\nDie Formel zur Berechnung des Flächeninhalts eines Parallelogramms lautet:\n\n$\\mathrm{A_{Parallelogramm}=Höhe\\cdot Seitenlänge}$\n\nFolgende Werte sind bekannt:\n\n$\\mathrm{Höhe=45\\cm\\qquad Seitenlänge=28\\cm}$\n\nEinsetzen der bekannten Werte in die Formel:\n\n$\\mathrm{A_{Parallelogramm}=45\\cdot 28}$\n\n$\\mathrm{A_{Parallelogramm}=1260\\cm^2}$\n\nDer Flächeninhalt der Fliese beträgt: $\\ \\boxed{1260\\cm^2}$.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Firma möchte eine quadratische Fliese mit dem gleichen Flächeninhalt herstellen.\n\nBestimme die Kantenlänge der quadratischen Fliese.\n\n(Solltest du die Teilaufgabe a) nicht gelöst haben, rechne mit $1240\\ cm^2$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 35.5,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Setze den Flächeninhalt des Parallelogramms gleich dem Flächeninhalts des Quadrates. - Löse die Formel zur Berechnung des Flächeninhalts eines Quadrates nach $\\textbf{a}$ auf.*\n\n**Bestimmen der Kantenlänge der quadratischen Fliese.**\n\nDie Formel zur Berechnung des Flächeninhalts eines Quadrates Lautet:\n\n$\\mathrm{A_{Quadrat}=a\\cdot a}$\n\n$\\mathrm{A_{Quadrat}=A_{Parallelogramm}}$\n\n$\\mathrm{1260=a^2\\ \\Rightarrow a=\\sqrt{1260}}$\n\n$\\mathrm{a=35,50\\cm}$\n\nDie Kantenlänge der quadratischen Fliese beträgt: $\\ \\boxed{35,50\\cm}$.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Simone näht eine Tischdecke für einen runden Tisch. Der Tisch hat einen Durchmesser von $85 \\cm$. Die runde Tischdecke soll überall gleichmäßig $15 \\cm$ über den Tischrand reichen.\n\n![Abbildung](/uploads/ex-e73bf348173f.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Flächeninhalt der runden Tischdecke.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 10386.89,
+        "tolerance": 0,
+        "unit": "cm²",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Flächeninhalt der runden Tischdecke mithilfe der Formel zur Berechnung des Flächeninhalts eines Kreises.*\n\n**Berechnen des Flächeninhalts der runden Tischdecke.**\n\nDie Formel zur Berechnung des Flächeninhalts eines Kreises lautet:\n\n$\\mathrm{A_{Kreis}=r^2\\cdot\\pi}$\n\nDer Durchmesser der Tischdecke ist:\n\n$\\mathrm{d_{Tischdecke}=Durchmesser\\ Tisch+2\\cdot\\ Überhang}$\n\n$\\mathrm{d_{Tischdecke}=85+2\\cdot15=115\\ cm\\ \\Rightarrow r_{Tischdecke}=\\dfrac{115}{2}\\cm}$\n\n$\\mathrm{A_{Tischdecke}=57,5^2\\cdot\\pi}$\n\n$\\mathrm{A_{Tischdecke}=10386,89\\cm^2}$\n\nDer Flächeninhalt der runden Tischdecke beträgt: $\\ \\boxed{10386,89\\cm^2}$.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Simone schneidet die runde Tischdecke aus einem\n\nrechteckigen Stück Stoff ($A=15000cm^2$) aus. Es bleibt ein Rest als Verschnitt übrig.\n\n![Abbildung](/uploads/ex-a2ab38b12d4a.png)\n\nBerechne den prozentualen Anteil des Verschnittes.\n\n(Solltest du die Teilaufgabe a) nicht gelöst haben, rechne mit $10380,78cm^2$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 30.75,
+        "tolerance": 0,
+        "unit": "%",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den prozentualen Anteil des Verschnitts mit der Formel zur Berechnung des Prozentsatzes.*\n\n**Berechnen des prozentualen Anteils (Prozentsatzes) des Verschnittes.**\n\nDie Formel zur Berechnung des Prozentsatzes lautet:\n\n$\\mathrm{p=\\dfrac{W}{G}}$\n\nFolgende Werte sind bekannt:\n\nDer Grundwert $\\textbf{G}$ entspricht der Fläche des rechteckigen Stück Stoffs.\n\n$\\mathrm{G=15000}$\n\nDer Prozentwert $\\textbf{W}$ entspricht der Fläche des Verschnitts.\n\n$\\mathrm{A_{Verschnitt}=A_{Stoff}-A_{Tischdecke}}$\n\n$\\mathrm{A_{Verschnitt}=15000-10386,89}$\n\n$\\mathrm{A_{Verschnitt}=4613,11}$\n\n$\\mathrm{W=4613,11}$\n\nEinsetzen der Werte in die Formel:\n\n$\\mathrm{p=\\dfrac{4613,11}{15000}\\cdot100}$\n\n$\\mathrm{p=30,75\\ \\%}$\n\nDer prozentuale Anteil des Verschnitts beträgt: $\\boxed{30,75\\ \\%}$.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Im Koordinatensystem sind zwei Graphen linearer Funktionen dargestellt.\n\n![Abbildung](/uploads/ex-645c110ec213.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Ordne dem Graphen g die passende Funktionsgleichung zu. Kreuze an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$y=2x+3$",
+        "correct": false
+       },
+       {
+        "text": "$y=1,5x+3$",
+        "correct": false
+       },
+       {
+        "text": "$y=−2x+3$",
+        "correct": true
+       },
+       {
+        "text": "$y=−3x+1,5$",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*- Beachte die Steigung und den $\\text{y}$-Achsenabschnitt.*\n\n**Zuordnen der passende Funktionsgleichung zum Graphen $\\text{g}$.**\n\nDie allgemeine Geradengleichung lautet:\n\n$\\mathrm{y=m\\cdot x+t}$\n\nDie Gerade schneidet die y-Achse bei $\\text{t}=3$ und hat eine Steigung von $\\text{m}=-2$.\n\nKreuze entsprechend an.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib die Funktionsgleichung des Graphen **h** an.\n\n$y=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "1/2x+1,5",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         "0,5x+1,5"
+        ]
+       }
+      ]
+     },
+     "solution": "*Setze den $\\text{y}$-Achsenabschnitt und die Steigung in die allgemeine Geradengleichung ein.*\n\n**Aufstellen der Funktionsgleichung des Graphen h.**\n\nDie allgemeine Geradengleichung lautet:\n\n$\\mathrm{y=m\\cdot x+t}$\n\nDie Gerade $\\text{h}$ schneidet die $\\text{y}$-Achse bei $1,5$ und hat eine Steigung von $\\displaystyle{\\frac{1}{2}}$.\n\nFunktionsgleichung der Geraden $\\text{g}$ lautet dann:\n\n$\\boxed{\\mathrm{y=\\dfrac{1}{2}\\cdot x+1,5}}$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne den Graphen der Funktion $y=\\displaystyle\\frac{2}{3}x-2$ in das Koordinatensystem.",
+     "answer": {
+      "type": "free",
+      "sample": "Einzeichnen des Graphen. ![Abbildung](/uploads/ex-7fa251d97488.png)"
+     },
+     "solution": "**Einzeichnen des Graphen.**\n\n![Abbildung](/uploads/ex-7fa251d97488.png)",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "In einer Tüte Bonbons befinden sich vier verschiedene Geschmackssorten: Zitrone, Orange, Himbeere und Kirsche. Von jeder Sorte sind es genau 12 Stück.\n\n![Abbildung](/uploads/ex-9a24eed5a8d9.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gregor greift blind in die Tüte.\n\nBestimme die Wahrscheinlichkeit, dass er einen Orangen-Bonbon zieht.\n\n$P_{Orangen-Bonbon}=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.25,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Bestimmen der Wahrscheinlichkeit, dass Grego einen Orangen-Bonbon zieht.**\n\nDie Gesamtanzahl der Bonbons in der Tüte beträgt: $48$\n\nDie Anzahl von Orangen-Bonbons in der Tüte beträgt: $12$\n\nDie Wahrscheinlichkeit, dass Greg ein Orangen-Bonbon zieht ist:\n\n$\\boxed{\\mathrm{P_{Orangen-Bonbon}=\\dfrac{12}{48}}}$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gregor hat tatsächlich einen Orangen-Bonbon gezogen und isst ihn auf. Danach greift er ein zweites Mal blind in die Tüte.\n\nBestimme die Wahrscheinlichkeit, dass er auch beim zweiten Mal einen Orangen-Bonbon zieht.\n\n$P_{Orangen-Bonbon}=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.234042553,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Bestimmen der Wahrscheinlichkeit, dass Greg auch beim zweiten Mal einen Orangen-Bonbon zieht.**\n\nNachdem Greg einen Orangen-Bonbon gegessen hat, befinden sich jetzt in der Tüte nur noch $47$ Bonbons, $11$ davon sind Orangen-Bonbons.\n\nDie Wahrscheinlichkeit, dass Greg auch ein zweites Mal ein Orangen-Bonbon zieht ist:\n\n$\\boxed{\\mathrm{P_{2.Orangen-Bonbon}=\\dfrac{11}{47}}}$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "Mehrere Teile eines Spielhauses müssen repariert werden.\n\n![Abbildung](/uploads/ex-496bda0351c4.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Dachkante **x**.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1.85,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Länge $\\textbf{x}$ der Dachkante mithilfe des Satzes des Pythagoras.*\n\n**Berechnen der Länge der Dachkante x.**\n\nDie Vorderseite des Spielhauses hat die From eines gleichschenkligen Dreiecks.\n\nDie Höhe $\\left(1,21\\m\\right)$ halbiert die Grundseite $\\left(2,80\\m\\right)$.\n\nDie Höhe bildet mit der halbierten Grundseite ein rechtwinkliges Dreieck.\n\nIm rechtwinkligen Dreieck gilt der Satz des Pythagoras.\n\nDer Satz des Pythagoras lautet:\n\n$\\mathrm{c^2=a^2+b^2}$\n\nDer Satz des Pythagoras angewandt auf unser Dreieck:\n\n$\\mathrm{x^2=1,40^2+1,21^2}$\n\n$\\mathrm{x=\\sqrt{3,4241}}$\n\n$\\mathrm{x\\approx1,85}$\n\nDie Länge der Dachkante beträgt ungefähr.: $\\boxed{1,85\\m}$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge des Stützbalkens **y**.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.7,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Länge des Stützbalkens **y** mithilfe des Satzes des Pythagoras.*\n\n**Berechnen der Länge des Stützbalkens y.**\n\nDas kleine Dreieck ist ebenfalls ein rechtwinkliges Dreieck.\n\nDer Satz des Pythagoras angewandt auf das kleine Dreieck:\n\n$\\mathrm{1,07^2=y^2+0,81^2}$\n\naufgelöst nach $\\textbf{y}$ ergibt::\n\n$\\mathrm{y=\\sqrt{1,07^2-0,81^2}}$\n\n$\\mathrm{y=\\sqrt{0,4888}}$\n\n$\\mathrm{y\\approx0,70}$\n\nDie Länge des Stützbalkens beträgt ungefähr.: $\\boxed{0,70\\m}$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "In der Abbildung ist ein Strommast dargestellt.\n\n![Abbildung](/uploads/ex-cff9f526b966.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Haltestange **a**.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4.88,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Länge der Haltestange **a** mithilfe des Sinus**.***\n\n**Berechne die Länge der Haltestange a.**\n\nDer Sinus im rechtwinkligen Dreieck ist definiert als:\n\n$\\sin(\\alpha )=\\dfrac{\\text{Gegenkathete}}{\\text{Hypotenuse}}$\n\nDie folgende Größen sind bekannt:\n\n$\\alpha=35^\\circ\\qquad \\text{Gegenkathete}=2,80\\m$\n\nEinsetzen der Größen in die Formel:\n\n$\\sin(35^\\circ)=\\dfrac{2,80}{\\text{a}}$\n\nAuflösen der Formel nach $\\text{a}$:\n\n$\\mathrm{a=\\dfrac{2,80}{\\sin(35^\\circ)}}$\n\n$\\mathrm{a=\\dfrac{2,80}{0,5736}}$\n\n$\\mathrm{a\\approx4,88\\m}$\n\nDie Länge der Haltestange **a** beträgt ungefähr**:** $\\ \\boxed{4,88\\m}$.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Winkels α.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 30.16,
+        "tolerance": 0,
+        "unit": "°",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "***Berechne die Größe des Winkels α mithilfe des Kosinus.***\n\n**Berechnen der Größe des Winkels α.**\n\nDer Kosinus im rechtwinkligen Dreieck ist definiert als:\n\n$\\sin(\\alpha )=\\dfrac{\\text{Ankathete}}{\\text{Hypotenuse}}$\n\nDie folgende Größen sind bekannt:\n\n$\\mathrm{Ankathete=2,80\\m+8,70\\m=11,50\\m\\qquad Hypothenuse=13,30\\m}$\n\nEinsetzen der Größen in die Formel:\n\n$\\cos(\\alpha)=\\dfrac{11,50}{13,30}$\n\n$\\mathrm{cos{(\\alpha)}\\approx0,8647}$\n\n$\\mathrm{\\alpha\\approx30,16^\\circ}$\n\nDie Größe des Winkels α beträgt ungefähr: $\\ \\boxed{30,16^\\circ}$.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 8,
+   "context": "Das abgebildete Werkstück besteht aus zwei Teilkörpern.\n\n![Abbildung](/uploads/ex-cdd5861cc12d.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen des unteren Teilkörpers.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 192.42,
+        "tolerance": 0,
+        "unit": "cm³",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Der untere Teilkörper hat die Form eines Zylinders. - Berechne das Volumen des unteren Teilkörpers mit der entsprechenden Formel.*\n\n**Berechnen des Volumens des unteren Teilkörpers.**\n\nDie Formel zur Berechnung des Volumens eines Zylinders lautet:\n\n$\\mathrm{V_{Zylinder}=r^2\\cdot\\pi\\cdot h}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{d=7\\cm\\ \\Rightarrow\\ r=3,5\\cm\\qquad\\quad h=5\\cm}$\n\nEinsetzen der bekannten Größen in die Formel:\n\n$\\mathrm{V_{Zylinder}=3,5^2\\cdot\\pi\\cdot 5}$\n\n$\\mathrm{V_{Zylinder}=61,25\\cdot\\pi}$\n\n$\\mathrm{V_{Zylinder}\\approx192,42\\cm^3}$\n\nDas Volumen des Zylinders beträgt ungefähr: $\\ \\boxed{192,42\\cm^3}$.\n\n**Hinweis:**\n\nWir haben hier für $\\large{\\pi}$ mit dem Wert gerechnet, den der Rechner liefert.\n\nWenn du für $\\large{\\pi}$mit $3,14$ rechnest, erhältst du für das Volumen des Zylinders einen geringfügig abweichenden Wert.",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Der obere Teilkörper hat ein Volumen von $\\text{V}=58\\cm^3$.\n\nBerechne **x**.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3.01,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Setze $\\text{V}=58$ in die Formel zur Berechnung des Volumens eines Zylinders ein. - Setze für $\\mathrm{h=x}$ und löse die Formel nach $\\textbf{x}$ auf. - Beachte, der obere Teilkörper ist ein halbierter Zylinder.*\n\n**Berechnen der Höhe x des oberen Teilkörpers.**\n\nDie Formel zur Berechnung des Volumens eines Zylinders lautet:\n\n$\\mathrm{V_{Zylinder}=r^2\\cdot\\pi\\cdot h}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{d=7\\cm\\ \\Rightarrow\\ r=3,5\\cm\\qquad h=x\\qquad V=58\\cm^3}$\n\nEinsetzen der bekannten Größen in die Formel:\n\n$\\mathrm{58=\\dfrac{3,5^2\\cdot\\pi\\cdot x}{2}}$\n\n$\\mathrm{x=\\dfrac{116}{12,25\\cdot\\pi}}$\n\n$\\mathrm{x\\approx3,01}$\n\nDie Höhe $\\textbf{x}$ des oberen Teilkörpers beträgt ungefähr: $\\ \\boxed{3,01\\cm}$.",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Das Werkstück besteht aus Eisen. $1\\cm^3$ Eisen hat die Masse $7,86\\ \\text{g}$.\n\nBestimme die Masse des Werkstücks.\n\n(Solltest du die Teilaufgabe a) nicht gelöst haben, rechne mit $\\text{V}=195,24\\cm^3$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1968.3,
+        "tolerance": 0,
+        "unit": "g",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Das Werkstück setzt sich zusammen aus einem oberen und einem unteren Teilkörper. - Addiere das Volumen des oberen Teilkörpers und das Volumen des unteren Teilkörpers. - Multipliziere das Volumen des Werkstücks mit $\\mathrm{7,86\\ g}$.*\n\n**Bestimmen der Masse des Werkstücks.**\n\nDas Volumen des Werkstücks setzt sich zusammen aus dem Volumen des oberen Teilköpers und dem Volumen des unteren Teilkörpers.\n\n$\\mathrm{V_{Werkstück}=192,42\\cm^3+58\\cm^3}$\n\nDie Formel zur Berechnung der Masse eines Körpers lautet:\n\n$\\mathrm{m=V\\cdot spez. Masse}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{V_{Werkstück}=250,42\\cm^3}$\n\n$\\mathrm{spez. Masse=7,86\\ \\dfrac{g}{cm^3}}$\n\nEinsetzen in die Formel:\n\n$\\mathrm{m_{Werkstück}=250,42\\cdot7,86}$\n\n$\\mathrm{m_{Werkstück}\\approx1968,30\\ g}$\n\nDie Masse des Werkstücks beträgt ungefähr: $\\boxed{\\mathrm{1968,30\\ g}}.$\n\n**Hinweis:**\n\nWir haben hier für das Volumen des unteren Teilkörpers mit dem, auf $2$ Stellen nach dem Komma, gerundeten Wert gerechnet. Wenn du mit dem Wert rechnest, den der Rechner liefert, erhältst du für die Masse des Werkstücks 1$968,32\\ \\text{g}$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  }
+ ]
+}

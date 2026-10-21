@@ -1,0 +1,533 @@
+{
+ "school": "hs-g",
+ "schoolLabel": "Hauptschule G-Kurs",
+ "year": 2025,
+ "part": "Wahlteil",
+ "folderId": 328877,
+ "url": "https://de.serlo.org/mathe/328877/wahlteil",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Medina bastelt für den Mathematikunterricht aus einem DIN-A4-Blatt einen Papierflieger.\n\nIhre Aufgabe ist es, eine Faltanleitung mit einigen Längen- und Winkelangaben zu erstellen.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Ermittle die Länge der Strecke x.\n\n![Abbildung](/uploads/ex-85db318bd4c0.png)\n\nDie Länge der Strecke $\\text{x}$ beträgt: ⟦1⟧ $\\mm$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 105,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         253.5
+        ]
+       }
+      ]
+     },
+     "solution": "**Ermitteln der Länge der Strecke $x$**\n\nDas Blatt ist $210\\mm$ breit und wird genau in der Mitte gefaltet.\n\nDie Länge der Strecke $x$ beträgt somit:\n\n$x=\\dfrac{210}{2}=105\\mm$",
+     "points": 1,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Strecke y.\n\n(Wenn du Teilaufgabe a) nicht gelöst hast, dann rechne mit $\\mathrm{x=104,9\\mm}$ weiter.)\n\n![Abbildung](/uploads/ex-e6984d3ebf95.png)\n\nDie Länge der Strecke $\\text{y}$ beträgt: ⟦1⟧ $\\mm$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 148.49,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         148.5
+        ]
+       }
+      ]
+     },
+     "solution": "**Berechnen der Länge der Strecke $y$**\n\nDie Strecke $y$ ist die Hypotenuse eines [rechtwinkligen Dreiecks](/36070) mit zwei Katheten der Länge $x$.\n\nIm rechtwinkligen Dreieck gilt der Satz des Pythagoras.\n\n$c^2=a^2+b^2$\n\nFür das oben beschriebene Dreieck gilt dann:\n\n$y^2=x^2 + x^2$\n\n$y^2=105^2+105^2$\n\n$y=\\sqrt{105^2+105^2}$\n\n$y\\approx 148,49$\n\nDie Strecke $y$ ist $148,49\\mm$ lang.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Strecke z.\n\nDie Länge der Strecke $\\text{z}$ beträgt: ⟦1⟧ $\\mm$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 274.38,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         274.4
+        ]
+       }
+      ]
+     },
+     "solution": "![Abbildung](/uploads/ex-1fe4b39103bd.svg)\n\n**Berechnen der Länge der Strecke $z$**\n\nDas Blatt wird ein zweites Mal gefaltet, sodass die Strecke $y$ auf der Mittellinie zu liegen kommt.\n\nDadurch entsteht ein [rechtwinkliges Dreieck](/36070) mit Hypotenuse $z$, einer Kathete der Länge $x$ und der zweiten Kathete der Länge $x+y$.\n\nIm rechtwinkligen Dreieck gilt der Satz des Pythagoras.\n\n$c^2=a^2+b^2$\n\nFür das oben beschriebene Dreieck gilt dann:\n\n$z^2=x^2+\\left(x+y\\right)^2$\n\n$z^2=105^2+\\left(105+148,49\\right)^2$\n\n$z=\\sqrt{105^2+\\left(105+148,49\\right)^2 }$\n\n$z\\approx 274,38$\n\nDie Strecke $z$ ist $274,38\\mm$ lang.",
+     "points": 3,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Medina gibt die Größe des Winkels α mit 45° an.\n\nÜberprüfe den Wert mithilfe einer Rechnung.",
+     "answer": {
+      "type": "free",
+      "sample": "Überprüfung der Größe des Winkels alpha Der Winkel alpha ist Basiswinkel eines gleichschenkligen Dreiecks mit Schenkeln der Länge x. Der Winkel, der der Basis gegenüberliegt, ist ein rechter Winkel. Die Summe der [Innenwinkel im Dreieck](/1873) beträgt immer 180^circ. 90+2cdotalpha = 180 2cdotalpha = 90 alpha=45 Der Wert, den Medina angibt, ist richtig."
+     },
+     "solution": "**Überprüfung der Größe des Winkels $\\alpha$**\n\nDer Winkel $\\alpha$ ist Basiswinkel eines gleichschenkligen Dreiecks mit Schenkeln der Länge $x$.\n\nDer Winkel, der der Basis gegenüberliegt, ist ein rechter Winkel.\n\nDie Summe der [Innenwinkel im Dreieck](/1873) beträgt immer $180^\\circ$.\n\n$90+2\\cdot\\alpha = 180$\n\n$2\\cdot\\alpha = 90$\n\n$\\alpha=45$\n\nDer Wert, den Medina angibt, ist richtig.",
+     "points": 3,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "e)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Medina möchte ihre Faltanleitung für ein kleineres Blatt (DIN-A5) anpassen und\n\nüberlegt, ob sie dafür die Längenangaben und Winkelangaben verändern muss.\n\n![Abbildung](/uploads/ex-f5322da756d5.png)\n\nKreuze an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "Sie muss nur die Längenangaben verändern",
+        "correct": true
+       },
+       {
+        "text": "Sie muss nur die Winkelangaben verändern.",
+        "correct": false
+       },
+       {
+        "text": "Sie muss die Längenangaben und die Winkelangaben verändern.",
+        "correct": false
+       },
+       {
+        "text": "Sie kann alle Längenangaben und Winkelangaben unverändert lassen.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "**Anpassung der Faltanleitung**\n\nZur Anpassung der Faltanleitung auf ein kleineres Blatt müssen nur die Längen angepasst werden.\n\nDie Winkel sind davon nicht betroffen.\n\nDie erste Antwort ist korrekt.",
+     "points": 1,
+     "topic": "Satz des Pythagoras"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "In einer Eisdiele gibt es spezielle Ständer für Eistüten.\n\nDie Ständer werden aus Acrylglaszylindern hergestellt (alle Maße in cm).\n\n![Abbildung](/uploads/ex-2bbb30e07abe.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen eines Zylinders.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 346.36,
+        "tolerance": 0,
+        "unit": "m³",
+        "alternatives": [
+         346.19
+        ]
+       }
+      ]
+     },
+     "solution": "**Berechnung des Volumens des Zylinders**\n\nDas Volumen eines Zylinders wird mit folgender Formel berechnet:\n\n$V_{Zylinder}=r^2\\pi h$\n\nFür den in der Aufgabe gegebenen Zylinder ist dann:\n\n$V_{Zylinder}=3,5^2\\cdot\\pi\\cdot9$\n\n$V_{Zylinder}=346,36$\n\nDas Volumen des Zylinders beträgt $346,36\\cm^3$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$1\\cm³$ Acrylglas hat die Masse $1,2\\ \\text{g}$. Berechne die Masse eines Zylinders.\n\n(Wenn du Teilaufgabe a) nicht gelöst hast, dann rechne mit $345,98\\cm³$ weiter.)\n\nDie Masse eines Zylinders beträgt: ⟦1⟧ $\\text{g}$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 415.63,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnung der Masse**\n\nWenn $1\\cm^3$ Acrylglas eine Masse von $1,2\\text{\\,g}$ hat, muss das Volumen des Zylinders mit diesem Wert multipliziert werden.\n\n$346,36\\cdot 1,2\\approx 415,63$\n\nDie Masse des Zylinders beträgt $415,63\\text{\\,g}$.",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "In den Zylinder wird eine Vertiefung gefräst\n\n![Abbildung](/uploads/ex-d69d02b2a7f4.png)\n\nErgänze.\n\nDie Vertiefung hat die Form eines ⟦1⟧ .",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Kegels",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Bestimmung der eingefrästen Form**\n\nDie Vertiefung hat die Form eines [Kegels](/1561).",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die Vertiefung hat ein Volumen von $\\mathrm{V=6,4\\cm^3}$.\n\nBerechne die Höhe x der Vertiefung.\n\n$\\text{x}=$ ⟦1⟧ $\\cm$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3.62,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Höhe $x$ der Vertiefung berechnen**\n\nDie Vertiefung ist ein Kegel, dessen Volumen gegeben ist.\n\nEbenfalls gegeben ist der Radius der Grundfläche.\n\nVolumen des Kegels\n\n$V_{Kegel}=\\dfrac{1}{3}\\cdot G\\cdot h$\n\nDie Grundfläche des Kegels ist ein [Kreis](/276459).\n\nGrundfläche des Kreises\n\n$G=r^2\\pi$\n\nFür den eingefrästen Kegel gilt dann:\n\n$V_{Kegel}=\\dfrac{1}{3}\\cdot r^2\\cdot\\pi\\cdot h$\n\n$6,4=\\dfrac{1}{3}\\cdot 1,3^2\\cdot \\pi\\cdot x$\n\n$\\dfrac{6,4}{\\dfrac{1}{3}\\cdot 1,3^2\\cdot\\pi}=x$\n\n$3,62\\approx x$\n\nDie Höhe $x$ beträgt $3,62\\cm$.",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "e)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Wie viel Prozent des Zylindervolumens wurden für die Vertiefung herausgefräst?\n\nBerechne.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1.85,
+        "tolerance": 0,
+        "unit": "%",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnung des Prozentsatzes**\n\nDer Prozentsatz wird mit folgender Formel berechnet:\n\n$p=\\dfrac{\\text{Prozentwert}}{\\text{Grundwert}}$\n\nFür den herausgefrästen Kegel gilt dann:\n\n$p=\\dfrac{\\text{Volumen des Kegels}}{\\text{Volumen des Zylinders}}$\n\n$p=\\dfrac{6,4}{346,36}\\approx 0,0185 \\Rightarrow 1,85\\%$\n\nFür die Vertiefung wurden $1,85\\%$ herausgefräst.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "f)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Es wird eine zweite Variante des Ständers angeboten, die etwas höher ist.\n\nDie Grundfläche und die Vertiefung sind bei beiden Varianten gleich.\n\n![Abbildung](/uploads/ex-cb3006319df7.png)\n\nDer herausgefräste Anteil am Zylindervolumen ist im Vergleich zum ersten Zylinder…",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": ". . . genauso groß.",
+        "correct": false
+       },
+       {
+        "text": ". . . kleiner.",
+        "correct": true
+       },
+       {
+        "text": ". . . größer.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "**Vergleich der beiden Ständer**\n\nDas Volumen des Zylinders des zweiten Ständers ist größer. Das Volumen des herausgefrästen Kegels bleibt gleich.\n\nDeshalb wird der herausgefräste Anteil am Zylindervolumen kleiner.\n\nDiesen Zusammenhang erkennst du auch an der Formel $p=\\dfrac{W}{G}$.\n\nWenn der Grundwert, d.h. der Nenner, größer wird und der Zähler gleich bleibt, dann wird der Wert des Bruchs kleiner.\n\nDie zweite Antwort ist richtig.",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Alfons, Bert und Claudia wandern denselben Wanderweg. Sie starten zu unterschiedlichen Zeitpunkten und laufen alle mit konstanter Geschwindigkeit.\n\nIn der Grafik ist die Bewegung von Alfons dargestellt.\n\n![Abbildung](/uploads/ex-ab808b1a6dff.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Fülle die Lücken aus.\n\nFür $20\\km$ benötigt Alfons ⟦1⟧ Stunden.\n\nAlfons Geschwindigkeit beträgt ⟦2⟧ km pro Stunde.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Ausfüllen der Lücken**\n\nGehe auf der y-Achse bis zur Markierung für $20\\km$ und dann waagerecht bis zum Graphen. Von dort aus gehe senkrecht nach unten zur x-Achse und lies den Wert ab.\n\nFür $20\\km$ benötigt Alfons $5$ Stunden.\n\nBerechnung der Geschwindigkeit\n\n$\\dfrac{20}{5}=4$\n\nAlfons Geschwindigkeit beträgt $4\\km$ pro Stunde.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Bert startet $2$ Stunden später.\n\nSeine Bewegung ist in der Wertetabelle dargestellt.\n\n![Abbildung](/uploads/ex-7acfc055e0d1.png)\n\nErgänze die fehlenden Werte in der Wertetabelle.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-cd9b59f7cb36.png) Bert legt pro Stunde 6km zurück."
+     },
+     "solution": "![Abbildung](/uploads/ex-cd9b59f7cb36.png)\n\nBert legt pro Stunde $6\\km$ zurück.",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne die Gerade für Berts Bewegung in das Koordinatensystem aus\n\nAufgabenteil a) ein.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-7fb0cad26abf.svg) Da Bert 2 Stunden später startet, schneidet der Graph die x-Achse bei 2."
+     },
+     "solution": "![Abbildung](/uploads/ex-7fb0cad26abf.svg)\n\nDa Bert $2$ Stunden später startet, schneidet der Graph die x-Achse bei $2$.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Fülle die Lücke aus:\n\nBert hat Alfons nach ⟦1⟧ Stunden eingeholt.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 6,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Ausfüllen der Lücke**\n\nDie beiden Graphen schneiden sich im Punkt (6\\|24). Dies ist der Punkt, an dem Bert Alfons eingeholt hat.\n\nBert hat Alfons nach $6$ Stunden eingeholt.",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Wenn Alfons startet, ist Claudia bereits $3\\km$ gelaufen. Beide laufen gleich schnell.\n\nZeichne eine Gerade für Claudias Bewegung in das Koordinatensystem ein und gib die Funktionsgleichung an.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-8009be233dd6.svg) Funktionsgleichung Der Graph der Funktion ist eine Gerade. Die allgemeine Geradengleichung lautet: y=mcdot x + t Da Claudia bereits 3km gelaufen ist, wenn Alfons startet, schneidet der Graph die y-Achse bei t=3. Claudia läuft genauso schnell wie Alfons. Die Steigung der beiden Funktionsgleichungen ist gleich. Beide laufen in einer Stunde 4km. Damit ist die Steigung m=4. Die Funktionsgleichung lautet: y=4x+3"
+     },
+     "solution": "![Abbildung](/uploads/ex-8009be233dd6.svg)\n\n**Funktionsgleichung**\n\nDer Graph der Funktion ist eine Gerade.\n\nDie allgemeine Geradengleichung lautet:\n\n$y=m\\cdot x + t$\n\nDa Claudia bereits $3\\km$ gelaufen ist, wenn Alfons startet, schneidet der Graph die y-Achse bei $t=3.$\n\nClaudia läuft genauso schnell wie Alfons. Die Steigung der beiden Funktionsgleichungen ist gleich. Beide laufen in einer Stunde $4\\km$. Damit ist die Steigung $m=4$.\n\nDie Funktionsgleichung lautet:\n\n$y=4x+3$",
+     "points": 3,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "f)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Warum treffen sich Alfons und Claudia auf dem Wanderweg nicht?\n\nErkläre mithilfe der Graphen.",
+     "answer": {
+      "type": "free",
+      "sample": "Da Alfons und Claudia gleich schnell laufen, ist die Steigung der beiden Funktion gleich. Die beiden Graphen verlaufen deshalb parallel und schneiden sich nicht."
+     },
+     "solution": "Da Alfons und Claudia gleich schnell laufen, ist die Steigung der beiden Funktion gleich.\n\nDie beiden Graphen verlaufen deshalb parallel und schneiden sich nicht.",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Im Supermarkt steht ein Karton mit 72 Schokoladeneiern. In jedem Schokoladenei befindet sich ein Spielzeug.\n\n10 Eier enthalten eine Sammelfigur als besonderes Spielzeug.\n\n![Abbildung](/uploads/ex-e8d7f7ea9c9b.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Elena wählt zufällig zwei Schokoladeneier aus.\n\nTrage die zwei fehlenden Wahrscheinlichkeiten in die gestrichelten Kästchen ein.\n\n![Abbildung](/uploads/ex-02a47ec6a72b.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-1978eb90f315.png) 1. Kästchen Im ersten Zug wird kein Schokoladenei mit Spielzeug gezogen. Nach dem Zug befinden sich noch insgesamt 71 Schokoladeneier im Karton. Davon sind nur noch 61 Schokoladeneier ohne Spielzeug. Die Wahrscheinlichkeit im zweiten Zug kein Schokoladenei mit Spielzeug zu ziehen beträgt: p=dfrac{61}{71} 2. Kästchen Im ersten Zug wurde ein Schokoladenei mit Spielzeug gezogen. Nach dem Zug befinden sich noch insgesamt 71 Schokoladeneier im Karton. Davon sind noch 62 Schokoladeneier ohne Spielzeug. Die Wahrscheinlichkeit im zweiten Zug kein Schokoladene"
+     },
+     "solution": "![Abbildung](/uploads/ex-1978eb90f315.png)\n\n**\\1. Kästchen**\n\nIm ersten Zug wird kein Schokoladenei mit Spielzeug gezogen. Nach dem Zug befinden sich noch insgesamt $71$ Schokoladeneier im Karton. Davon sind nur noch $61$ Schokoladeneier ohne Spielzeug.\n\nDie Wahrscheinlichkeit im zweiten Zug kein Schokoladenei mit Spielzeug zu ziehen beträgt:\n\n$p=\\dfrac{61}{71}$\n\n**\\2. Kästchen**\n\nIm ersten Zug wurde ein Schokoladenei mit Spielzeug gezogen. Nach dem Zug befinden sich noch insgesamt $71$ Schokoladeneier im Karton. Davon sind noch $62$ Schokoladeneier ohne Spielzeug.\n\nDie Wahrscheinlichkeit im zweiten Zug kein Schokoladenei mit Spielzeug zu ziehen beträgt:\n\n$p=\\dfrac{62}{71}$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, dass Elena zwei Schokoladeneier mit Sammelfiguren zieht.\n\nDie Wahrscheinlichkeit, dass Elena zwei Schokoladeneier mit Sammelfiguren zieht\n\nbeträgt: ⟦1⟧ oder ⟦2⟧ $\\%$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.017605634,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1.76,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Wahrscheinlichkeit bestimmen**\n\nDie Wahrscheinlichkeit im ersten Zug ein Schokoladenei mit Spielzeug zu ziehen beträgt $\\dfrac{10}{72}$.\n\nNach diesem Zug befinden sich noch insgesamt $71$ Schokoladeneier im Karton. Davon sind noch $9$ Schokoladeneier mit Spielzeug.\n\nDie Wahrscheinlichkeit im zweiten Zug ein Schokoladenei mit Spielzeug zu ziehen beträgt $\\dfrac{9}{71}$.\n\nNach der Produktregel müssen die Wahrscheinlichkeiten entlang des Pfades multipliziert werden.\n\nDie Wahrscheinlichkeit zwei Schokoladeneier mit Spielzeug zu ziehen beträgt somit:\n\n$\\displaystyle\\frac{10}{72}\\cdot\\frac{9}{71}=\\frac{90}{5112}\\approx1,76\\%$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Elena berechnet die Wahrscheinlichkeit für ein Ereignis mit folgender Rechnung:\n\n$\\hspace{70mm}\\text{P}\\ =\\ \\dfrac{62}{72}\\cdot\\dfrac{10}{71}$\n\nGib das passende Ereignis an.",
+     "answer": {
+      "type": "free",
+      "sample": "Die Wahrscheinlichkeit dfrac{62}{72} gibt an, dass aus der Gesamtmenge von 72 Schokoladeneiern 1 Ei ohne Spielzeug gezogen wird. Die Wahrscheinlichkeit dfrac{10}{71} beim zweiten Zug gibt an, das aus der verbliebenen Gesamtmenge von 71 Eiern ein Ei mit Spielzeug gezogen wird. Elena zieht zuerst ein Schokoladenei ohne Sammelfigur und danach ein Ei mit Sammelfigur."
+     },
+     "solution": "Die Wahrscheinlichkeit $\\dfrac{62}{72}$ gibt an, dass aus der Gesamtmenge von $72$ Schokoladeneiern $1$ Ei ohne Spielzeug gezogen wird.\n\nDie Wahrscheinlichkeit $\\dfrac{10}{71}$ beim zweiten Zug gibt an, das aus der verbliebenen Gesamtmenge von $71$ Eiern ein Ei mit Spielzeug gezogen wird.\n\nElena zieht zuerst ein Schokoladenei ohne Sammelfigur und danach ein Ei mit Sammelfigur.",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Elena hat von den $72$ Schokoladeneiern insgesamt $7$ gekauft. In $2$ Schokoladeneiern waren Sammelfiguren. Sie kauft ein weiteres Schokoladenei.\n\nBestimme die Wahrscheinlichkeit, dass dieses Schokoladenei eine Sammelfigur enthält.\n\nDie Wahrscheinlichkeit, dass dieses Schokoladenei eine Sammelfigur enthält beträgt: ⟦1⟧ oder ⟦2⟧ $\\%$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.123076923,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 12.31,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Bestimmung der Wahrscheinlichkeit**\n\nElena hat bereits $7$ Schokoladeneier gekauft. In $2$ Eiern waren Sammelfiguren.\n\nDanach befinden sich noch insgesamt $72-7=65$ Schokoladeneier im Karton.\n\nVon den verbliebenen Eiern enthalten noch $10-2=8$ Eier eine Sammelfigur.\n\nDie Wahrscheinlichkeit, beim nächsten Zug eine Sammelfigur zu ziehen, beträgt dann $\\dfrac{8}{65}\\approx12,31\\%$.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Einmal im Jahr gibt es eine Aktion: In jedem Karton mit $72$ Schokoladeneiern\n\nbefinden sich nun $9$ Sammelfiguren und eine besonders beliebte Bärenfigur.\n\nZeichne in das Baumdiagramm die fehlenden Pfade\n\nund Wahrscheinlichkeiten für das $2.$ Ei ein.“\n\n![Abbildung](/uploads/ex-11b142bfdbf5.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Ergänzung der Pfade ![Abbildung](/uploads/ex-666ecb98cd23.png) Wenn beim ersten Zug bereits die Bärenfigur gewogen wird, gibt es danach für den zweiten Zug nur noch die beiden Möglichkeiten entweder eine Sammelfigur oder ein Ei ohne Figur zu ziehen."
+     },
+     "solution": "**Ergänzung der Pfade**\n\n![Abbildung](/uploads/ex-666ecb98cd23.png)\n\nWenn beim ersten Zug bereits die Bärenfigur gewogen wird, gibt es danach für den zweiten Zug nur noch die beiden Möglichkeiten entweder eine Sammelfigur oder ein Ei ohne Figur zu ziehen.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "f)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Elena überlegt: „Angenommen ich kaufe während der Aktion $1000$ Schokoladeneier.\n\nWie viele Bärenfiguren werde ich vermutlich erhalten?“\n\nKreuze an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$1\\ \\text{bis}\\ 10$",
+        "correct": false
+       },
+       {
+        "text": "$11\\ \\text{bis}\\ 20$",
+        "correct": true
+       },
+       {
+        "text": "$21\\ \\text{bis}\\ 30$",
+        "correct": false
+       },
+       {
+        "text": "$31\\ \\text{bis}\\ 40$",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "Die Wahrscheinlichkeit eine Bärenfigur zu ziehen beträgt $\\dfrac{1}{72}$.\n\nDie Anzahl der Bärenfiguren, die bei $1\\,000$ Schokoladeneiern zu erwarten sind, beträgt dann:\n\n$\\dfrac{1}{72}\\cdot 1\\,000\\approx 14$\n\nDie zweite Antwort ist korrekt. Elena wird vermutlich $11-20$ Bärenfiguren bekommen.",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  }
+ ]
+}
