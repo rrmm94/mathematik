@@ -1,0 +1,560 @@
+{
+ "school": "rs",
+ "schoolLabel": "Realschule",
+ "year": 2021,
+ "part": "Teil 1",
+ "folderId": 300723,
+ "url": "https://de.serlo.org/mathe/300723/teil-1",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Ergänze die fehlenden Zahlen in den Lücken.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$1,5 + 2\\cdot 3=$ ⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 7.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Beachte Punkt- vor Strichrechnung und löse die Aufgabe schrittweise.*\n\n**Lösung**\n\n$$\\begin{aligned}\n &= 1,5+2\\cdot3 \\\\\n &= 1,5+6 \\\\\n &= 7,5\n\\end{aligned}$$",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "⟦1⟧ $-2=-7$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": -5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Denke dir in der Lücke ein x und löse die Gleichung nach x auf.*\n\n**Lösung**\n\n$$\\begin{aligned}\nx-2 &= -7 \\qquad |\\; +2 \\\\\nx &= -5\n\\end{aligned}$$",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$\\frac{1}{2}+$ ⟦1⟧ $=\\frac{3}{4}$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.25,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Denke dir in der Lücke ein x und löse die Gleichung nach x auf.*\n\n**Lösung**\n\n$$\\begin{aligned}\n\\frac{1}{2}+x &= \\frac{3}{4} \\qquad |\\; -\\frac{1}{2} \\\\\nx &= \\frac{3}{4}-\\frac{1}{2} \\\\\nx &= \\frac{3}{4}-\\frac{2}{4} \\\\\nx &= \\frac{1}{4}\n\\end{aligned}$$",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$0,4^2=$ ⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.16,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Lösung**\n\n$$\\begin{aligned}\n &= 0,4^2 \\\\\n &= 0,4\\cdot0,4 \\\\\n &= 0,16\n\\end{aligned}$$",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Gib die Größen in den angegebenen Einheiten an.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$2,7~\\text{cm}=$ ⟦1⟧ $\\text{mm}$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 27,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Überlege, welchen Umrechnungsfaktor $\\text{cm}\\to \\text{mm}$ hat. Rechne diesen für $2,7~\\text{cm}$ hoch.*\n\nIn einem Zentimeter sind $10$ Millimeter enthalten.\n\n$$\\begin{aligned}\n1\\ cm &= 10\\ mm \\\\\n2,7\\ cm &= 27\\ mm\n\\end{aligned}$$",
+     "points": 0,
+     "topic": "Größen & Einheiten"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$\\frac{3}{4}\\text{l}=$ ⟦1⟧ $\\text{ml}$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 750,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Überlege, welchen Umrechnungsfaktor $\\text{l}\\to \\text{ml}$ hat. Rechne diesen für $\\frac{3}{4}\\text{l}$ hoch.*\n\n**Lösung**\n\n$$\\begin{aligned}\n1\\ l &= 1000\\ ml \\\\\n\\frac{3}{4}\\ l &= \\frac{1000\\cdot3}{4}\\ ml \\\\\n\\frac{3}{4}\\ l &= 750\\ ml\n\\end{aligned}$$",
+     "points": 0,
+     "topic": "Größen & Einheiten"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$2\\frac{1}{3}\\text{h}=$ ⟦1⟧ $\\text{min}$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 140,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Überlege, welchen Umrechnungsfaktor $\\text{h}\\to \\text{min}$ hat. Rechne diesen für $2\\frac{1}{3}\\text{h}$ hoch.*\n\n**Lösung**\n\n$$\\begin{aligned}\n1\\ h &= 60\\ \\min \\\\\n2\\ \\frac{1}{3}\\ h &= 60\\cdot2\\frac{1}{3}\\min \\\\\n2\\frac{1}{3}h &= 60\\cdot\\frac{7}{3}\\min \\\\\n2\\frac{1}{3}h &= 140\\min\n\\end{aligned}$$",
+     "points": 0,
+     "topic": "Größen & Einheiten"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Alle niedersächsischen Kühe geben zusammen jeden Tag durchschnittlich 18 465 232 Liter Milch.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Runde die Zahl auf ganze Millionen.\n\n18 465 232 $\\thickapprox$",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 18000000,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         18
+        ]
+       }
+      ]
+     },
+     "solution": "*Bestimme, auf welche Stelle gerundet werden soll. Achte auf die nachfolgende Ziffer.*\n\n**Lösung**\n\nDie Zahl **18 465 232** liest sich als **18 Millionen 465 Tausend 232**.\n\nDie Stelle, die gerundet werden soll, ist also die 2. Ziffer.\n\nAchte daher auf die 3. Ziffer:\n\n**18** **4****65 232**\n\nDie 3. Ziffer ist eine 4.\n\nDie Zahl wird auf ganze Millionen abgerundet: **18 000 000**",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Bestimme die Menge Milch, die alle niedersächsischen Kühe zusammen in einem Jahr\n\ndurchschnittlich geben. Kreuze an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "670 Mrd. Liter",
+        "correct": false
+       },
+       {
+        "text": "6,7 Mrd. Liter",
+        "correct": true
+       },
+       {
+        "text": "67 Mio. Liter",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*Multipliziere die Anzahl der Liter pro Tag mit den Tagen pro Jahr.*\n\n**Lösung**\n\n$365\\cdot18\\ 465\\ 232\\ l=6\\ 739\\ 809\\ 680\\ l$\n\nDas sind ca. **6,7 Milliarden Liter**.",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Entscheide, ob die Zuordnungen proportional, antiproportional oder keines von beidem sind.\n\nKreuze an.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "**Zuordnung:**\n\n![Abbildung](/uploads/ex-7622f46d231a.png)",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "proportional",
+        "correct": true
+       },
+       {
+        "text": "antiproportional",
+        "correct": false
+       },
+       {
+        "text": "keines von beidem",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*Bei proportionalen Zuordnungen vergrößern sich beide Seiten immer um den gleichen Faktor. Bei antiproportionalen Zuordnungen verringert sich eine Seite um den Faktor, um den sich die andere Seite erhöht.*\n\n**Lösung**\n\n![Abbildung](/uploads/ex-cc745756a2b8.png)\n\nBeide Seiten vergrößern sich immer mit demselben Faktor.\n\nDaher handelt es sich um eine **proportionale Zuordnung**.",
+     "points": 0,
+     "topic": "Zuordnungen & Dreisatz"
+    },
+    {
+     "label": "b)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "**Zuordnung:**\n\nSeitenlänge eines Quadrats $\\rightarrow$ Flächeninhalt dieses Quadrats",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "proportional",
+        "correct": false
+       },
+       {
+        "text": "antiproportional",
+        "correct": false
+       },
+       {
+        "text": "keines von beidem",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "*Überlege, wie sich der Flächeninhalt eines Quadrats berechnet. Vergrößert/verringert er sich immer mit demselben Faktor, mit dem sich die Seitenlänge vergrößert/verringert?*\n\n**Lösung**\n\nDer Flächeninhalt eines Quadrats berechnet sich mit:\n\nDie Seitenlänge des Quadrats wird dabei quadriert und nicht mit einem konstanten Faktor vergrößert oder verringert.\n\nDie Zuordnung ist daher **weder proportional noch antiproportional**.",
+     "points": 0,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "**Zuordnung:**\n\n![Abbildung](/uploads/ex-f7fc61b9aeba.png)",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "proportional",
+        "correct": false
+       },
+       {
+        "text": "antiproportional",
+        "correct": true
+       },
+       {
+        "text": "keines von beidem",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*Wie sieht der Graph einer proportionalen Zuordnung aus? Wie sieht der Graph einer antiproportionalen Zuordnung aus?*\n\n**Lösung**\n\n- **proportionale Zuordnung:**Der Wert der y-Achse steigt proportional zu dem Wert auf der x-Achse.Der Graph dazu ist eine **ansteigende Gerade**.\n- **antiproportionale Zuordnung:**Der Wert der y-Achse sinkt proportional zu dem Wert auf der x-Achse.Der Graph dazu ist eine **absinkende Hyperbel, wie sie in der Aufgabe zu sehen ist**.\n\nDie Zuordnung ist daher **antiproportional**.",
+     "points": 0,
+     "topic": "Zuordnungen & Dreisatz"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "80 Schülerinnen und Schülern haben jeweils eine Arbeitsgemeinschaft gewählt. Die\n\nVerteilung ist im Kreisdiagramm dargestellt.\n\n![Abbildung](/uploads/ex-2ddb3257e1c5.png)\n\nErgänze die folgenden Sätze.\n\nDie Arbeitsgemeinschaft „Theater“ haben ⟦1⟧ % der Schülerinnen und Schüler gewählt.\n\nVon den 80 Schülerinnen und Schülern haben 20 % die Arbeitsgemeinschaft „Kochen“ gewählt.\n\nDas sind ⟦2⟧ Schülerinnen und Schüler.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 25,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 16,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Beachte: 100% entsprechen dem ganzen Kreis. Berechne die Schüler\\*innenanzahl mithilfe der Prozentformel oder des Dreisatzes.*\n\n**Lösung**\n\n**Prozentanteil \"Theater\"** $=100\\%-45\\%-10\\%-20\\%=25\\%$\n\n**Anzahl Schüler\\*innen der AG \"Kochen\"**:\n\n$$\\begin{aligned}\n80 &= 100\\% \\\\\n0,8 &= 1\\% \\\\\n16 &= 20\\%\n\\end{aligned}$$\n\n$\\rightarrow$ **16 Schüler\\*innen sind in der AG Kochen.**",
+     "points": 2,
+     "topic": "Daten & Statistik"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "Die Lehrerin Frau Meier hat eine Klassenarbeit korrigiert und alle Noten unsortiert aufgeschrieben.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Vervollständige die Tabelle.\n\n| Note | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| Anzahl | 1 | 4 | ⟦1⟧ | 4 | 2 | 1 |",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 8,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Zähle, wie oft eine 3 in der Liste von Frau Meier vorkommt.*\n\n**Lösung**\n\nDie 3 ist **8 mal** in der Liste enthalten.",
+     "points": 1,
+     "topic": "Daten & Statistik"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Frau Meier berechnet den Mittelwert M der erreichten Noten mit folgender Rechenvorschrift.\n\nErgänze die folgenden Sätze.\n\nFrau Meier setzt für den Buchstaben e die Anzahl der Schülerinnen und Schüler ein, die\n\n$\\underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}$\n\nFrau Meier teilt durch 20, weil $\\underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}$",
+     "answer": {
+      "type": "free",
+      "sample": "Überlege, wofür das e in der Rechenvorschrift steht. Was würdest du dafür einsetzen? Überlege wofür die 20 in der Rechenvorschrift steht. Warum wird am Ende durch 20 dividiert? Lösung Mögliche Antworten: „Frau Meier setzt für den Buchstaben e die Anzahl der Schülerinnen und Schüler ein, die eine 5 geschrieben haben.“ “Frau Meier teilt durch 20, weil 20 Schülerinnen und Schüler die Klassenarbeit geschrieben haben.“"
+     },
+     "solution": "*Überlege, wofür das e in der Rechenvorschrift steht. Was würdest du dafür einsetzen? Überlege wofür die 20 in der Rechenvorschrift steht. Warum wird am Ende durch 20 dividiert?*\n\n**Lösung**\n\nMögliche Antworten:\n\n„Frau Meier setzt für den Buchstaben e die Anzahl der Schülerinnen und Schüler ein, die **eine 5 geschrieben haben.**“\n\n“Frau Meier teilt durch 20, weil **20 Schülerinnen und Schüler die Klassenarbeit geschrieben haben.**“",
+     "points": 2,
+     "topic": "Daten & Statistik"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne einen Winkel α = 110°.",
+     "answer": {
+      "type": "free",
+      "sample": "- Zeichne eine horizontale Grundlinie. - Lege das Geodreieck bündig an die Grundlinie an. - Skizziere einen Punkt, der an der Skala des Geodreiecks bei 110° liegt.Verbinde diesen Punkt mit dem Punkt, bei dem die \"0\" deines Geodreiecks lag. Lösung"
+     },
+     "solution": "*- Zeichne eine horizontale Grundlinie. - Lege das Geodreieck bündig an die Grundlinie an. - Skizziere einen Punkt, der an der Skala des Geodreiecks bei $110°$ liegt.Verbinde diesen Punkt mit dem Punkt, bei dem die \"0\" deines Geodreiecks lag.*\n\n**Lösung**",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Winkels β.\n\n![Abbildung](/uploads/ex-db3e0e6a9193.png)\n\n$\\beta=$ ⟦1⟧°",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 116,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Überlege, wie du $\\beta$ mithilfe von Stufen- und Nebenwinkeln berechnen kannst.*\n\n**Lösung**\n\n1. Der kleine Winkel zwischen f und h ist ein **Stufenwinkel** des kleinen Winkels zwischen g und h. Daher beträgt dieser Winkel ebenso 64°.\n2. Der Winkel zwischen f und h ist ein **Nebenwinkel** von $\\beta$. Daher ist die Summe der beiden Winkel 180°.\n\n$\\rightarrow\\beta=180°-64°=116°$\n\n![Abbildung](/uploads/ex-8b7d27fab739.png)",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Björn behauptet: „Ich kann ein Nebenwinkelpaar zeichnen, das aus zwei spitzen Winkeln besteht.“\n\nBegründe, dass Björns Behauptung falsch ist.",
+     "answer": {
+      "type": "free",
+      "sample": "Lösung Mögliche Begründung: „Spitze Winkel sind kleiner als 90° und Nebenwinkel ergänzen sich zu 180°. Zwei Winkel, die kleiner als 90° sind, können zusammen nicht 180° ergeben.“"
+     },
+     "solution": "**Lösung**\n\nMögliche Begründung:\n\n„Spitze Winkel sind kleiner als 90° und Nebenwinkel ergänzen sich zu 180°. Zwei Winkel, die kleiner als 90° sind, können zusammen nicht 180° ergeben.“",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 8,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ergänze die Abbildung zu einem Quadernetz.\n\n![Abbildung](/uploads/ex-d366d8ae2686.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Es gibt verschiedene Möglichkeiten. Das Netz kann wie in der Skizze ergänzt werden. Achte auf die Größe der Rechtecke. Die blauen Rechtecke müssen gleich groß sein wie die, die zuvor eingezeichnet waren. ![Abbildung](/uploads/ex-849c006fbf4d.png)"
+     },
+     "solution": "Es gibt verschiedene Möglichkeiten.\n\nDas Netz kann wie in der Skizze ergänzt werden.\n\nAchte auf die Größe der Rechtecke.\n\nDie blauen Rechtecke müssen gleich groß sein wie die, die zuvor eingezeichnet waren.\n\n![Abbildung](/uploads/ex-849c006fbf4d.png)",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "h5p",
+     "skip": "h5p",
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 9,
+   "context": "Der Flächeninhalt der abgebildeten Figur soll berechnet werden.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne eine passende Zerlegung oder Ergänzung in die Skizze ein, um den Flächeninhalt zu berechnen.\n\n![Abbildung](/uploads/ex-1f1ff5e0c9c4.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Zerlege oder ergänze die Fläche in Rechtecke und Dreiecke, deren Flächeninhalt du berechnen kannst. Lösung Mögliche Zerlegung: Die Fläche wird in ein Quadrat und zwei Dreiecke zerlegt. ![Abbildung](/uploads/ex-fe9aba8f1d85.png) Mögliche Ergänzung: Die Fläche wird um ein Dreieck zu einem Rechteck ergänzt. ![Abbildung](/uploads/ex-11ddbbed9b96.png)"
+     },
+     "solution": "*Zerlege oder ergänze die Fläche in Rechtecke und Dreiecke, deren Flächeninhalt du berechnen kannst.*\n\n**Lösung**\n\nMögliche Zerlegung:\n\nDie Fläche wird in ein Quadrat und zwei Dreiecke zerlegt.\n\n![Abbildung](/uploads/ex-fe9aba8f1d85.png)\n\nMögliche Ergänzung:\n\nDie Fläche wird um ein Dreieck zu einem Rechteck ergänzt.\n\n![Abbildung](/uploads/ex-11ddbbed9b96.png)",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne den Flächeninhalt der Figur.\n\nA = ⟦1⟧ cm²",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 24,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Wenn du in Teil a eine Zerlegung gemacht hast: berechne die einzelnen Flächenaddiere die berechneten Flächen - Wenn du in Teil a eine Ergänzung gemacht hast:berechne die Fläche, zu der du ergänzt hastsubtrahiere die Fläche, um die du ergänzt hast*\n\n**Lösung**\n\n**Beispiel Zerlegung:**\n\n![Abbildung](/uploads/ex-b69610f775a5.png)\n\n$$\\begin{aligned}\nA_1 &= a^2 \\\\\n &= \\left(4cm\\right)^2=4cm\\cdot4cm=16cm^2\n\\end{aligned}$$\n\n$$\\begin{aligned}\nA_2 &= \\frac{1}{2}\\cdot g\\cdot h \\\\\n &= \\frac{1}{2}\\cdot4cm\\cdot2cm=4cm^2\n\\end{aligned}$$\n\n$$\\begin{aligned}\nA_{gesamt} &= A_1+2\\cdot A_2 \\\\\n &= 16cm^2+2\\cdot4cm^2=24cm^2\n\\end{aligned}$$",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Gib eine allgemeine Formel zur Berechnung des Flächeninhaltes der Figur in Abhängigkeit von x an.\n\n![Abbildung](/uploads/ex-27b34b76ad07.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Berechne auf die gleiche Weise wie in Teil b und setze statt der Längen in cm x, 2x und 4x ein. Lösung Beispiel Zerlegung: begin{aligned} A_1 &= 2xcdot2x=4x^2 end{aligned} begin{aligned} A_2 &= frac{1}{2}cdot2xcdot x=x^2 end{aligned} begin{aligned} A_{gesamt} &= A_1+2cdot A_2 &= 4x^2+2cdot x^2=6x^2 end{aligned}"
+     },
+     "solution": "*Berechne auf die gleiche Weise wie in Teil b und setze statt der Längen in cm x, 2x und 4x ein.*\n\n**Lösung**\n\n**Beispiel Zerlegung:**\n\n$$\\begin{aligned}\nA_1 &= 2x\\cdot2x=4x^2\n\\end{aligned}$$\n\n$$\\begin{aligned}\nA_2 &= \\frac{1}{2}\\cdot2x\\cdot x=x^2\n\\end{aligned}$$\n\n$$\\begin{aligned}\nA_{gesamt} &= A_1+2\\cdot A_2 \\\\\n &= 4x^2+2\\cdot x^2=6x^2\n\\end{aligned}$$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 10,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Stelle die Formel nach h um.",
+     "answer": {
+      "type": "free",
+      "sample": "- Stelle die Gleichung mit [Äquivalenzumformungen](/1847) um:Führe immer auf beiden Seiten der Gleichung dieselben Rechenoperationen (z.B. minus, plus, mal, geteilt) durch.Stelle die Gleichung so um, dass h alleine auf einer Seite steht. Lösung begin{aligned} A &= frac{gcdot h}{2} qquad |; cdot2 2cdot A &= gcdot h qquad |; :g frac{2cdot A}{g} &= h end{aligned} rightarrow Die Formel lautet nach h umgestellt: h=frac{2cdot A}{g}"
+     },
+     "solution": "*- Stelle die Gleichung mit [Äquivalenzumformungen](/1847) um:Führe immer auf beiden Seiten der Gleichung dieselben Rechenoperationen (z.B. minus, plus, mal, geteilt) durch.Stelle die Gleichung so um, dass h alleine auf einer Seite steht.*\n\n**Lösung**\n\n$$\\begin{aligned}\nA &= \\frac{g\\cdot h}{2} \\qquad |\\; \\cdot2 \\\\\n2\\cdot A &= g\\cdot h \\qquad |\\; :g \\\\\n\\frac{2\\cdot A}{g} &= h\n\\end{aligned}$$\n\n$\\rightarrow$ Die **Formel** lautet **nach h umgestellt**: $h=\\frac{2\\cdot A}{g}$",
+     "points": 1,
+     "topic": "Terme, Gleichungen & Formeln"
+    }
+   ]
+  }
+ ]
+}

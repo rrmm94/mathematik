@@ -1,0 +1,400 @@
+{
+ "school": "hs-e",
+ "schoolLabel": "Hauptschule E-Kurs",
+ "year": 2026,
+ "part": "Wahlteil",
+ "folderId": 334380,
+ "url": "https://de.serlo.org/mathe/334380/wahlteil",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Jan trinkt gern Kaffee.\n\nDiese Kaffee-Kapseln liegen unsortiert in einem Gefäß:\n\n- 12 Kapseln Ristretto (R)\n- 1 Kapsel Espresso (E)\n- 9 Kapseln Lungo (L)\n\n![Abbildung](/uploads/ex-8aec04320808.png)\n\nJan greift, ohne hinzusehen, in das Gefäß und zieht nacheinander zwei Kapseln heraus.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Ergänze im Baumdiagramm die fehlenden Pfade und Wahrscheinlichkeiten.\n\n![Abbildung](/uploads/ex-8b5894c4ad75.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-ae3d760b1843.svg)"
+     },
+     "solution": "![Abbildung](/uploads/ex-ae3d760b1843.svg)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, dass Jan zuerst Ristretto (R) und dann Espresso (E) zieht.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.025974026,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Die Wahrscheinlichkeit zuerst einen Ristretto (R) zu ziehen, beträgt $\\dfrac{12}{22}$.\n\nDie Wahrscheinlichkeit, danach einen Espresso (E) zu ziehen, beträgt $\\dfrac{1}{21}$.\n\nNach der ersten Pfadregel (Produktregel) müssen diese beiden Wahrscheinlichkeiten multipliziert werden.\n\n$P(\\text{erst R, dann E})=\\dfrac{12}{22}\\cdot\\dfrac{1}{21}=\\dfrac{12}{462}$\n\nDie Wahrscheinlichkeit, dass Jan zuerst Ristretto (R) und dann Espresso (E) zieht, beträgt $\\dfrac{12}{462}$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Jan mag keinen Espresso.\n\nBerechne die Wahrscheinlichkeit, dass Jan zweimal keinen Espresso zieht.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.909090909,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Die Wahrscheinlichkeit, dass Jan zweimal keinen Espresso zieht, setzt sich aus folgenden Wahrscheinlichkeiten zusammen, die anschließend addiert werden.\n\n- $P(\\text{R, dann R})=\\dfrac{12}{22}\\cdot\\dfrac{11}{21}=\\dfrac{132}{462}$\n- $P(\\text{R, dann L})=\\dfrac{12}{22}\\cdot\\dfrac{9}{21}=\\dfrac{108}{462}$\n- $P(\\text{L, dann R})=\\dfrac{9}{22}\\cdot\\dfrac{12}{21}=\\dfrac{108}{462}$\n- $P(\\text{L, dann L})=\\dfrac{9}{22}\\cdot\\dfrac{8}{21}=\\dfrac{72}{462}$\n\n$\\dfrac{132}{462}+\\dfrac{108}{462}+\\dfrac{108}{462}+\\dfrac{72}{462}=\\dfrac{420}{462}$\n\nDie Wahrscheinlichkeit, dass Jan zweimal keinen Espresso zieht, beträgt $\\dfrac{420}{462}$.",
+     "points": 3,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Jan berechnet die Wahrscheinlichkeit für ein Ereignis mit der folgenden Rechnung:\n\n$P=1-\\left(\\displaystyle\\frac{12}{22}\\cdot\\frac{11}{21}\\right)$\n\nGib das passende Ereignis an.",
+     "answer": {
+      "type": "free",
+      "sample": "Der Wert in der Klammer left(dfrac{12}{22}cdotdfrac{11}{21}right)gibt die Wahrscheinlichkeit dafür an, zweimal hintereinander Ristretto (R) zu ziehen. Die Wahrscheinlichkeit 1-left(dfrac{12}{22}cdotdfrac{11}{21}right)gibt somit die Wahrscheinlichkeit an, zweimal keinen Ristretto (R) zu ziehen."
+     },
+     "solution": "Der Wert in der Klammer $\\left(\\dfrac{12}{22}\\cdot\\dfrac{11}{21}\\right)$gibt die Wahrscheinlichkeit dafür an, zweimal hintereinander Ristretto (R) zu ziehen.\n\nDie Wahrscheinlichkeit $1-\\left(\\dfrac{12}{22}\\cdot\\dfrac{11}{21}\\right)$gibt somit die Wahrscheinlichkeit an, zweimal **keinen** Ristretto (R) zu ziehen.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Gib an, wie oft Jan maximal ins Gefäß greifen muss, bis er einen Ristretto (R) zieht.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 11,
+        "tolerance": 0,
+        "unit": "mal",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Da es möglich ist, dass Jan zunächst alle Espresso und alle Lungo Kapseln zieht, muss er maximal $11$ mal ins Gefäß greifen, bis er sicher einen Ristretto zieht.",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Ein Golfspieler schlägt einen Golfball.\n\n![Abbildung](/uploads/ex-7b4a68fa7513.png)\n\nDer Funktionsgraph beschreibt die Flugbahn des Golfballes.\n\n![Abbildung](/uploads/ex-89d239b6edae.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Fülle die Lücken aus.\n\nDer Golfball fliegt ⟦1⟧ m weit und maximal ⟦2⟧ m hoch.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 200,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 30,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "An den Stellen, an denen der Graph die x-Achse schneidet, ist die Höhe der Flugbahn gleich $0$.\n\nDer Golfball fliegt also $200\\m$ weit.\n\nDer höchste Punkt der Parabel gibt die maximale Höhe der Flugbahn an.\n\nDer Golfball fliegt maximal $30\\m$ hoch.",
+     "points": 1,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Vervollständige die Funktionsgleichung so, dass sie zur Flugbahn des Golfballes passt.\n\n$y_1=-0,003\\cdot(x$\\_\\_\\_\\_\\_\\_\\_",
+     "answer": {
+      "type": "free",
+      "sample": "Verwende die Scheitelform der Parabel Die allgemeine Scheitelform einer Parabel lautet: f(x)=aleft(x-dright)^2+e Der Parameter d gibt die Verschiebung der Parabel in x-Richtung an. Aus dem Funktionsgraphen kannst du ablesen, das der Scheitelpunkt um 100 nach rechts verschoben ist. Daraus folgt d=100. Der Parameter e gibt die Verschiebung der Parabel in y-Richtung an. Die Parabel ist um 30 nach oben verschoben. Daraus folgt e=30. Die vollständige Funktionsgleichung lautet: y_1=-0,003cdotleft(x-100right)^2+30"
+     },
+     "solution": "*Verwende die Scheitelform der Parabel*\n\nDie allgemeine Scheitelform einer Parabel lautet:\n\n$f(x)=a\\left(x-d\\right)^2+e$\n\nDer Parameter $d$ gibt die Verschiebung der Parabel in x-Richtung an. Aus dem Funktionsgraphen kannst du ablesen, das der Scheitelpunkt um $100$ nach rechts verschoben ist. Daraus folgt $d=100$.\n\nDer Parameter $e$ gibt die Verschiebung der Parabel in y-Richtung an. Die Parabel ist um $30$ nach oben verschoben. Daraus folgt $e=30$.\n\nDie vollständige Funktionsgleichung lautet:\n\n$y_1=-0,003\\cdot\\left(x-100\\right)^2+30$",
+     "points": 2,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Am nächsten Tag schlägt der Golfspieler den Golfball von einer anderen Position.\n\nDie Flugbahn wird jetzt durch folgende Funktionsgleichung beschrieben:\n\n$y_2=-0,003\\cdot x^2+0,9\\cdot x-37,5$\n\nZeige rechnerisch, dass der Golfball die gleiche Flugweite hat wie am Vortag.\n\n![Abbildung](/uploads/ex-abc453ee7c6e.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Berechne der Nullstellen - verwende eine geeignete Formel zur Lösung der quadratischen Gleichung Zur Berechnung der Stelle, an der der Golfball der Boden (x-Achse) berührt, müssen die Nullstellen der Funktion berechnet werden. Dazu wird die Funktion gleich 0 gesetzt. begin{aligned} 0 &= -0,003cdot x^2+0,9cdot x-37,5 qquad |; : -0,003 0 &= x^2-300cdot x+12,500 end{aligned} Zur Berechnung der Nullstellen kann die pq-Formel verwendet werden. begin{aligned} x_{1,2} &= -dfrac{p}{2}pmsqrt{left(dfrac{p}{2}right)^2-q} x_{1,2} &= -dfrac{-300}{2}pmsqrt{left(dfrac{-300}{2}right)^2-12,500} x_{1,2} &= 15"
+     },
+     "solution": "*- Berechne der Nullstellen - verwende eine geeignete Formel zur Lösung der quadratischen Gleichung*\n\nZur Berechnung der Stelle, an der der Golfball der Boden (x-Achse) berührt, müssen die Nullstellen der Funktion berechnet werden. Dazu wird die Funktion gleich $0$ gesetzt.\n\n$$\\begin{aligned}\n0 &= -0,003\\cdot x^2+0,9\\cdot x-37,5 \\qquad |\\; : -0,003 \\\\\n0 &= x^2-300\\cdot x+12\\,500\n\\end{aligned}$$\n\nZur Berechnung der Nullstellen kann die pq-Formel verwendet werden.\n\n$$\\begin{aligned}\nx_{1,2} &= -\\dfrac{p}{2}\\pm\\sqrt{\\left(\\dfrac{p}{2}\\right)^2-q} \\\\\nx_{1,2} &= -\\dfrac{-300}{2}\\pm\\sqrt{\\left(\\dfrac{-300}{2}\\right)^2-12\\,500} \\\\\nx_{1,2} &= 150\\pm 100 \\\\\nx_1 &= 50 \\\\\nx_2 &= 250\n\\end{aligned}$$\n\nDer Golfball fliegt $250-50=200\\m$ weit.",
+     "points": 4,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Die Flugbahn eines anderen Golfballes hat folgende Funktionsgleichung:\n\n$y_3=-0,004\\cdot(x-95)^2+3$5\n\nEin $22\\m$ hoher Baum steht $45\\m$ vom Koordinatenursprung entfernt.\n\nZeige rechnerisch, dass der Golfball den Baum nicht trifft.",
+     "answer": {
+      "type": "free",
+      "sample": "Berechnung der Flughöhe des Balles an der Stelle x=45 begin{aligned} y_3 &= -0,004cdot(x-95)^2+35 y_3 &= -0,004cdotleft(45-95right)^2+35 y_3 &= -0,004cdot(-50)^2+35 y_3 &= 25 end{aligned} 45m vom Koordinatenursprung hat der Ball eine Höhe von 25m. Er trifft den 22m hohen Baum nicht."
+     },
+     "solution": "Berechnung der Flughöhe des Balles an der Stelle $x=45$\n\n$$\\begin{aligned}\ny_3 &= -0,004\\cdot(x-95)^2+35 \\\\\ny_3 &= -0,004\\cdot\\left(45-95\\right)^2+35 \\\\\ny_3 &= -0,004\\cdot(-50)^2+35 \\\\\ny_3 &= 25\n\\end{aligned}$$\n\n$45\\m$ vom Koordinatenursprung hat der Ball eine Höhe von $25\\m$.\n\nEr trifft den $22\\m$ hohen Baum nicht.",
+     "points": 2,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "e)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Die Funktionsgleichungen beschreiben Flugbahnen von Bällen.\n\nWelcher Ball fliegt am weitesten? Kreuze die Funktionsgleichung an.\n\n![Abbildung](/uploads/ex-ac49993506a1.png)",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$y=-0,006\\cdot(x-95)^2+35$",
+        "correct": false
+       },
+       {
+        "text": "$y=-0,01\\cdot(x-95)^2+35$",
+        "correct": false
+       },
+       {
+        "text": "$y=-0,001\\cdot(x-95)^2+35$",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "Die dritte Funktionsgleichung muss angekreuzt werden.\n\nDer Parameter $a$ in der Scheitelform $f(x)=a(x-d)^2+e$ gibt die Streckung bzw. Stauchung der Parabel an.\n\nIst $|a|<0$, dann ist die Parabel Richtung y-Achse gestaucht. Je kleiner der Wert ist, desto breiter ist die Parabel gestaucht.\n\nDie dritte Funktionsgleichung hat den kleinsten Parameter $a$.",
+     "points": 1,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Auf dem Bild siehst du eine Boje, die aus einem Kegel und einer Halbkugel zusammengesetzt ist. Die Boje wird lackiert.\n\n![Abbildung](/uploads/ex-01e97888ab67.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Höhe $\\mathrm{h}_{\\mathrm{k}}$ des Kegels.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 107,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Überlege, welche Maße von Kegel und Kugel gegeben sind oder sich aus gegeben Maßen ableiten lassen. - Verwende die abgeleiteten Maße zur Berechnung der Höhe.*\n\nDie gesamte Höhe der Boje ist gegeben und beträgt $164\\cm$. Der Durchmesser der Kugel ist ebenfalls gegeben. Er beträgt $114\\cm$. Damit beträgt der Radius der Kugel $57\\cm$.\n\nZur Berechnung der Höhe $h_K$ des Kegels wird der Radius der Kugel von der Gesamthöhe der Boje abgezogen.\n\n$h_K=164-57=107$\n\nDie Höhe des Kegels beträgt $107\\cm$.",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Fläche, die lackiert wird. (Wenn du die Teilaufgabe a) nicht gelöst hast, dann rechne mit $\\mathrm{h}_{\\mathrm{k}}=105 \\mathrm{~cm}$ weiter.)\n\n⟦1⟧ $\\cm^2$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 42123.77,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Die zu lackierende Fläche besteht aus der [Oberfläche der Halbkugel](/1563) und der [Mantelfläche des Kegels](/1561).\n\n**Oberfläche Halbkugel**\n\n$O_{HK}=\\dfrac{1}{2}\\cdot\\left(4\\cdot\\pi\\cdot r^2\\right)$\n\n**Mantelfläche Kegel**\n\n$O_{MK}=r\\cdot m\\cdot\\pi$\n\nDabei bezeichnet $m$ die Mantellinie des Kegels\n\n$m=\\sqrt{r^2+h_K^2}$\n\nDie Mantelfläche des Kegels beträgt damit\n\n$O_{MK}=r\\cdot\\sqrt{r^2+h_K^2}\\cdot \\pi$\n\n**Oberfläche Boje**\n\n$O_B=O_{HK}+O_{MK}$\n\n$O_B=\\dfrac{1}{2}\\cdot \\left(4\\cdot\\pi\\cdot r^2\\right)+r\\cdot\\sqrt{r^2+h_K^2}\\cdot \\pi$\n\nFolgende Werte sind bekannt:\n\n$r=57$\n\n$h_K=107$\n\n$O_B=\\dfrac{1}{2}\\cdot\\left(4\\cdot\\pi\\cdot 57^2\\right)+57\\cdot\\sqrt{57^2+107^2}\\cdot \\pi$\n\n$O_B=42\\,123,77$\n\nEs müssen $42\\,123,77\\cm^2$ lackiert werden.",
+     "points": 5,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Der Kegel besteht aus Kunststoff. $1 \\mathrm{~cm}^{3}$ Kunststoff hat die Masse $\\mathrm{m}=0,97 \\mathrm{~g}$. (Skizze nicht maßstäblich)\r\nBerechne die Masse des Kegels in kg. (Wenn du die Teilaufgabe a) nicht gelöst hast, dann rechne mit $\\mathrm{h}_{\\mathrm{k}}=105 \\mathrm{~cm}$ weiter.)\n\n⟦1⟧ kg",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 353.13,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Volumen Kegel**\n\n$V_K=\\dfrac{1}{3}\\cdot G\\cdot h_K$\n\nDie Grundfläche $G$ ist ein Kreis mit der Fläche $G=\\pi\\cdot r^2$\n\n$V_K=\\dfrac{1}{3}\\cdot\\pi\\cdot r^2 \\cdot h_K$\n\nBekannt sind:\n\n$r=57$\n\n$h_K=107$\n\n**Werte einsetzen und Masse berechnen**\n\nZur Berechnung der Masse wird das Volumen mit $m=0,97\\,g$ pro $\\cm^3$ multipliziert und in Kilogramm umgerechnet.\n\n$M=\\dfrac{V_K\\cdot m}{1000}$\n\n$V_K=\\dfrac{1}{3}\\cdot\\pi\\cdot 57^2\\cdot 107$\n\n$M=\\dfrac{\\dfrac{1}{3}\\cdot\\pi\\cdot 57^2\\cdot 107 \\cdot 0,97}{1000}$\n\n$M=353,13\\,kg$\n\nMasse des Kegels beträgt $353,13\\,kg$.",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "d)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Vervollständige den Satz und kreuze entsprechend an. Verdreifacht sich der Radius der Boje,",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "verdreifacht sich das Volumen der Halbkugel.",
+        "correct": false
+       },
+       {
+        "text": "verneunfacht sich das Volumen der Halbkugel.",
+        "correct": false
+       },
+       {
+        "text": "ist das Volumen der Halbkugel 27-mal so groß.",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Die Abbildung zeigt den Landeanflug des Flugzeuges 1.\r\nDer Landeanflug beginnt auf der Flughöhe $\\mathrm{h}=10 \\mathrm{~km}$. Beim Landeanflug legt das Flugzeug 1 eine horizontale Entfernung von **198 km** zurück.\n\n![Abbildung](/uploads/ex-35e9db7b469d.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Zeige mithilfe einer Rechnung, dass die Pilotin den Landewinkel $\\delta=2,89^{\\circ}$ eingestellt hat.",
+     "answer": {
+      "type": "free",
+      "sample": "tan(delta)=displaystylefrac{Gegenkathede}{Ankathete} tan(delta)=displaystylefrac{10}{198}=0,05 delta=2,89"
+     },
+     "solution": "$\\tan(\\delta)=\\displaystyle\\frac{Gegenkathede}{Ankathete}$\n\n$\\tan(\\delta)=\\displaystyle\\frac{10}{198}=0,05$\n\n$\\delta=2,89$",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "In Flugzeug 2 stellt der Pilot auf der Flughöhe $\\mathrm{h}=10 \\mathrm{~km}$ den Landewinkel $\\alpha=3,00^{\\circ}$ ein.\n\n![Abbildung](/uploads/ex-dd97f52f8ed8.png)\n\nBerechne für Flugzeug 2 die Länge des Gleitweges g.\n\n$g\\approx$⟦1⟧ $\\km$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 191.07,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$sin(\\alpha)=\\displaystyle\\dfrac{Gegenkathete}{Hypothenuse}$\n\n$sin(\\alpha)=\\displaystyle\\dfrac{h}{g}$\n\n$0,05233...=\\displaystyle\\dfrac{10}{g}$\n\n$g=\\displaystyle\\dfrac{10}{0,05233...}=191,07$\n\nDer Gleitweg $g$ für Flugzeug 2 hat eine Länge von $191,07\\m$.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Aufgrund eines Problems muss der Pilot des Flugzeuges 2 „durchstarten“:\n\nDirekt nach dem Aufsetzen steigt das Flugzeug 2, bis wieder die Flughöhe h erreicht wird.\n\n![Abbildung](/uploads/ex-59037d8e41b4.png)\n\nBeim Steigen stellt der Pilot des Flugzeuges 2 den Winkel γ = 9° ein.\n\nBerechne die Größe des Winkels $\\beta$.\n\n$\\beta=$ ⟦1⟧ °",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 168,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$\\beta=180°-3,00°-9°=168°$",
+     "points": 1,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die horizontale Entfernung x.\n\n$x\\approx$⟦1⟧ $\\km$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 254.1,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "x= Strecke Landeanflug + Strecke Neustart\n\nStrecke Landeanflug $x_1$:\n\n$x_1^2+h^2=g^2$\n\n$x_1^2=191,07^2-10^2$\n\n$x_1^2=36507,74-100=36407,74$\n\n$x_1=190,81$\n\nStrecke Neustart $x_2$:\n\n$tan(\\gamma)=\\displaystyle\\dfrac{Gegenkathete}{Ankathete}$\n\n$\\tan(9)=0,158$\n\n$0,158=\\displaystyle\\dfrac{10}{x_2}$\n\n$x_2=63,29$\n\n$x=x_1+x_2=254,1$\n\nDie horizontale Entfernung beträgt $x=254,1\\km$.",
+     "points": 4,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  }
+ ]
+}

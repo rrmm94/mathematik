@@ -1,0 +1,574 @@
+{
+ "school": "hs-g",
+ "schoolLabel": "Hauptschule G-Kurs",
+ "year": 2021,
+ "part": "Teil 1",
+ "folderId": 315349,
+ "url": "https://de.serlo.org/mathe/315349/teil-1",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Ergänze die fehlenden Zahlen in den Lücken.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$1,5+2\\cdot3=$ ⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 7.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Beachte die Rechenregel Punkt vor Strich.*\n\n**Berechnen:**\n\n$\\mathrm{1,5+\\textcolor{teal}{2\\cdot3}=}1,5+\\textcolor{teal}{6}=7,5$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "⟦1⟧ $-2=-7$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": -5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Beachte die Vorzeichen*\n\n**Berechnen:**\n\n$\\textcolor{teal}{-5}-2=-7$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$\\displaystyle\\frac{1}{2}+$⟦1⟧ $=\\displaystyle\\frac{3}{4}$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.25,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bilde den gemeinsamen Nenner von $\\dfrac{1}{2}$ und $\\dfrac{3}{4}.$ - Addiere den fehlenden Bruch.*\n\n**Berechnen:**\n\n$\\dfrac{2}{4}+\\textcolor{teal}{\\dfrac{1}{4}}=\\dfrac{3}{4}$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$0,4^2=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.16,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Multipliziere $0,4$ mit sich selbst*\n\n**Berechne:**\n\n$0,4^2=0,4\\cdot\\textcolor{teal}{0,4}=0,16$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Gib die Größen in den angegebenen Einheiten an.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$2,7\\cm=$⟦1⟧ $\\mm$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 27,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Multipliziere $2,7\\cm$ mit $100.$*\n\n**Umrechnen von$\\left[\\text{cm}\\right]$ in $\\left[\\text{mm}\\right].$**\n\n$\\mathrm{2,7\\cancel{\\cm}\\cdot10\\dfrac{mm}{\\cancel{cm}}=27\\mm}$",
+     "points": 1,
+     "topic": "Größen & Einheiten"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$\\displaystyle\\frac{3}{4}$ l =⟦1⟧ ml",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 750,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Multipliziere $\\dfrac{3}{4}\\l$ mit $1000.$*\n\n**Umrechnen von$[\\text{l}]$ in $\\left[\\text{ml}\\right].$**\n\n$\\mathrm{\\dfrac{3}{4}\\cancel{\\l}\\cdot1000\\dfrac{ml}{\\cancel{l}}=\\dfrac{3000}{4}=750\\ml}$",
+     "points": 1,
+     "topic": "Größen & Einheiten"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$2\\displaystyle\\frac{1}{3}$ h=⟦1⟧ min",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 140,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Wandle zuerst $2\\h$ in Minuten um, dann den Bruch $\\dfrac{1}{3}.$ - Addiere die beiden Werte*\n\n**Umrechnen von $\\left[\\text{h}\\right]$ in $\\left[\\min\\right].$**\n\n$\\mathrm{2\\h=2\\ \\cancel{h}\\cdot60\\dfrac{min}{\\cancel{h}}=120\\min}$\n\n$\\mathrm{\\dfrac{1}{3}\\h=\\dfrac{1}{3}\\ \\cancel{h}\\cdot60\\dfrac{min}{\\cancel{h}}=20\\min}$\n\n$2\\dfrac{1}{3}\\h = 140\\min$",
+     "points": 1,
+     "topic": "Größen & Einheiten"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Alle niedersächsischen Kühe geben zusammen jeden Tag durchschnittlich $18\\ 465\\ 232$ Liter Milch.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Runde die Zahl auf ganze Millionen.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 18000000,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Runden der Zahl auf ganze Millionen.**\n\nDa die Hunderttausenderstelle eine $4$ ist wird abgerundet,\n\nalso:\n\n$18\\ 465\\ 232\\approx\\ 18\\ 000\\ 000$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Bestimme die Menge Milch, die alle niedersächsischen Kühe zusammen in einem Jahr durchschnittlich geben. Kreuze an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$670$ Mrd. Liter",
+        "correct": false
+       },
+       {
+        "text": "$6,7$ Mrd. Liter",
+        "correct": true
+       },
+       {
+        "text": "$67$ Mio. Liter",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*- Multipliziere die Menge Milch pro Tag mit $365$.*\n\n**Bestimmen der Menge Milch pro Jahr.**\n\nMenge Milch pro Tag:\n\n$\\hspace{6mm}18\\ 465\\ 232\\l$\n\nMenge Milch pro Jahr:\n\n$\\mathrm{18\\ 465\\ 232\\l\\cdot 365=6\\ 739\\ 809\\ 680\\approx 6,7\\ Mrd.\\ Liter}$\n\nAlle niedersächsischen Kühe zusammen geben durchschnittlich $\\boxed{\\mathrm{6,7\\ Mrd.\\ Liter}}$ Milch pro Jahr.\n\nKreuze entsprechend an.",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Entscheide, ob die Zuordnungen proportional, antiproportional oder keines von beidem sind.\n\nKreuze an.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Zuordnung\n\n![Abbildung](/uploads/ex-318a8692f20f.png)",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "proportional",
+        "correct": true
+       },
+       {
+        "text": "antiproportional",
+        "correct": false
+       },
+       {
+        "text": "keines von beidem",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "Die Zuordnung ist **proportional**, da die x- Werte im gleichen Maß zunehmen wie die y-Werte.\n\nKreuze entsprechend an.",
+     "points": 1,
+     "topic": "Zuordnungen & Dreisatz"
+    },
+    {
+     "label": "b)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Zuordnung\n\nSeitenlänge eines Quadrates → Flächeninhalt dieses Quadrates.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "proportional",
+        "correct": false
+       },
+       {
+        "text": "antiproportional",
+        "correct": false
+       },
+       {
+        "text": "keines von beidem",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "Die Zuordnung ist **weder** proportional noch antiproportional, da, z. B. bei einer Verdoppelung der Seitenlänge, die Fläche sich vervierfacht.\n\nKreuze entsprechend an.",
+     "points": 1,
+     "topic": "Zuordnungen & Dreisatz"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Zuordnung\n\n![Abbildung](/uploads/ex-15944ee95e4c.png)",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "proportional",
+        "correct": false
+       },
+       {
+        "text": "antiproportional",
+        "correct": true
+       },
+       {
+        "text": "keines von beidem",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "Die Zuordnung ist **antiproportional**, da bei Zunahme der einen Größe, die andere Größe im gleichen Maß abnimmt.\n\nKreuze entsprechend an.",
+     "points": 1,
+     "topic": "Zuordnungen & Dreisatz"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "80 Schülerinnen und Schülern haben jeweils eine Arbeitsgemeinschaft gewählt. Die Verteilung ist im Kreisdiagramm dargestellt\n\n![Abbildung](/uploads/ex-78c2ae355513.png)\n\nErgänze die folgenden Sätze.\n\nDie Arbeitsgemeinschaft „Theater“ haben ⟦1⟧ % der Schülerinnen und Schüler gewählt.\n\nVon den 80 Schülerinnen und Schülern haben 20 % die Arbeitsgemeinschaft „Kochen“ gewählt. Das sind ⟦2⟧ Schülerinnen und Schüler.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 25,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 16,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Beachte, die Fläche des Kreises entspricht $100\\ \\%$. - Bilde die Summe der bekannten Prozentsätze und subtrahiere diese Summe von $100\\ \\%$. - Berechne die Anzahl der  Schülerinnen und Schüler, die, die Arbeitsgemeinschaft \"Kochen\"gewählt haben mit der Formel: $\\mathrm{W=p\\cdot G}$.*\n\n**Berechnen des Anteils der Schülerinnen und Schüler, die, die  Arbeitsgemeinschaft \"Theater\" gewählt haben.**\n\n$\\mathrm{100\\ \\%-(45\\ \\%+10\\ \\%+20\\ \\%)=25\\ \\%}$\n\n$\\boxed{25\\ \\%}$ der Schülerinnen und Schüler haben die Arbeitsgemeinschaft \"Theater\" gewählt.\n\nErgänze den entsprechenden Satz.\n\n**Berechnen der Anzahl der Schülerinnen und Schüler, die, die Arbeitsgemeinschaft \"Kochen\"gewählt haben.**\n\nBerechnen der Anzahl der Schülerinnen und Schüler mithilfe der [Prozentformel](/2193).\n\nBekannt sind folgende Größen:\n\n**Grundwert:** $\\ \\ 80$ Schülerinnen und Schüler\n\n**Prozentsatz:** $20\\ \\%$\n\nZu berechnen ist dann der **Prozentwert**.\n\nDie Formel zur Berechnung des Prozentwertes lautet:\n\n$\\mathrm{W=p\\cdot G}$\n\nEinsetzen der bekannten Werte.\n\n$\\mathrm{W=\\dfrac{20}{100\\ }\\cdot80\\ \\Rightarrow\\ W=16}$ Schülerinnen und Schüler\n\nEs sind $\\boxed{16}$ Schülerinnen und Schüler, die, die Arbeitsgemeinschaft \"Kochen\" gewählt haben.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "Die Lehrerin Frau Meier hat eine Klassenarbeit korrigiert und alle Noten unsortiert aufgeschrieben.\n\n$2\\ \\ 3\\ \\ 4\\ \\ 3\\ \\ 1\\ \\ 2\\ \\ \\ 3\\ \\ 4\\ \\ 2\\ \\ 4\\ \\ 3\\ \\ 4\\ \\ 5\\ \\ 3\\ \\ 5\\ \\ 3\\ \\ 3\\ \\ 6\\ \\ 2\\ \\ 3$",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Vervollständige die Tabelle.\n\n![Abbildung](/uploads/ex-0fd410db4fc7.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Die Klasse hat insgesamt 20 Schülerinnen und Schüler. - Bilde die Summe Anzahlen aus der Tabelle, subtrahiere diese Summe von 20. - Schreibe das Ergebnis unter die Note 3 in der Tabelle. Vervollständigen der Tabelle. ![Abbildung](/uploads/ex-a3155bb50eac.png)"
+     },
+     "solution": "*- Die Klasse hat insgesamt $20$ Schülerinnen und Schüler. - Bilde die Summe Anzahlen aus der Tabelle, subtrahiere diese Summe von $20$. - Schreibe das Ergebnis unter die Note 3 in der Tabelle.*\n\n**Vervollständigen der Tabelle.**\n\n![Abbildung](/uploads/ex-a3155bb50eac.png)",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Frau Meier berechnet den Mittelwert M der erreichten Noten mit folgender Rechenvorschrift.\n\n$\\mathrm{M = (1a + 2b + 3c + 4d + 5e + 6f) : 20}$\n\nErgänze die folgenden Sätze.\n\nFrau Meier setzt für den Buchstaben $\\textbf{e}$ die Anzahl der Schülerinnen und Schüler ein, die\n\n\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\n\nFrau Meier teilt durch 20, weil\n\n\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\n\n\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_",
+     "answer": {
+      "type": "free",
+      "sample": "Ergänzen der folgenden Sätze. Frau Meier setzt für den Buchstaben textbf{e} die Anzahl der Schülerinnen und Schüler ein, die eine textbf{5} geschrieben haben. Frau Meier teilt durch 20, weil textbf{20} Schülerinnen und Schüler die Klassenarbeit geschrieben haben."
+     },
+     "solution": "**Ergänzen der folgenden Sätze.**\n\nFrau Meier setzt für den Buchstaben $\\textbf{e}$ die Anzahl der Schülerinnen und Schüler ein, die eine $\\textbf{5}$ geschrieben haben.\n\nFrau Meier teilt durch $20$, weil $\\textbf{20}$ Schülerinnen und Schüler die Klassenarbeit geschrieben haben.",
+     "points": 2,
+     "topic": "Daten & Statistik"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne einen Winkel $\\mathrm{α = 110°}$.",
+     "answer": {
+      "type": "free",
+      "sample": "- Zeichne den Winkel mathrm{α = 110°} mithilfe des Geodreiecks. Zeichnen des Winkels mathrm{α = 110°}. ![Abbildung](/uploads/ex-1cbdc57f1f41.png)"
+     },
+     "solution": "*- Zeichne den Winkel $\\mathrm{α = 110°}$ mithilfe des Geodreiecks.*\n\n**Zeichnen des Winkels $\\mathrm{α = 110°}$.**\n\n![Abbildung](/uploads/ex-1cbdc57f1f41.png)",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Winkels $β$.\n\n![Abbildung](/uploads/ex-86018cf0fb4c.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 116,
+        "tolerance": 0,
+        "unit": "°",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechne die Größe des Winkels $β$.**\n\nDer Winkel $\\beta$ und der Winkel $64^\\circ$ sind Nebenwinkel, die Summe von zwei Nebenwinkeln beträgt $180^\\circ.$\n\nBerechnen des Winkels $\\beta$.\n\n$\\beta=180^\\circ-64^\\circ$\n\n$\\beta=116^\\circ$\n\nDie Größe des Winkels $β$ beträgt, $\\boxed{116^\\circ}.$",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Björn behauptet: „Ich kann ein Nebenwinkelpaar zeichnen, das aus zwei spitzen Winkeln besteht.“\n\nBegründe, dass Björns Behauptung falsch ist.\n\n\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\n\n\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\n\n\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_",
+     "answer": {
+      "type": "free",
+      "sample": "Begründung, dass Björns Behauptung falsch ist. Spitze Winkel sind kleiner als 90° und Nebenwinkel ergänzen sich zu 180°. Zwei Winkel, die kleiner als 90° sind, können zusammen nicht 180° ergeben."
+     },
+     "solution": "**Begründung, dass Björns Behauptung falsch ist.**\n\nSpitze Winkel sind kleiner als $90°$ und Nebenwinkel ergänzen sich zu $180°$.\n\nZwei Winkel, die kleiner als $90°$ sind, können zusammen nicht $180°$ ergeben.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 8,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ergänze die Abbildung zu einem Quadernetz.\n\n![Abbildung](/uploads/ex-acf138814558.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Ergänzen der Abbildung zu einem Quadernetz. ![Abbildung](/uploads/ex-8802ff6d5033.png)"
+     },
+     "solution": "**Ergänzen der Abbildung zu einem Quadernetz.**\n\n![Abbildung](/uploads/ex-8802ff6d5033.png)",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Das untenstehende Netz wird zu einem Würfel gefaltet.\n\nMarkiere in dem Netz diejenige Kante, welche die drei Punkte berührt.\n\n![Abbildung](/uploads/ex-713cdbde4d31.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Markieren der Kante im Netz, welche die drei Punkte berührt. ![Abbildung](/uploads/ex-5f97fbd9c739.png)"
+     },
+     "solution": "**Markieren der Kante im Netz, welche die drei Punkte berührt.**\n\n![Abbildung](/uploads/ex-5f97fbd9c739.png)",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 9,
+   "context": "Der Flächeninhalt der abgebildeten Figur soll berechnet werden.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne eine passende Zerlegung oder Ergänzung in die Skizze ein, um den Flächeninhalt zu berechnen.\n\n![Abbildung](/uploads/ex-cba88f535377.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Zeichnen einer passenden Ergänzung. ![Abbildung](/uploads/ex-81be02fa04cc.png) Hinweis: Es sind auch andere Zerlegungen oder Ergänzungen möglich."
+     },
+     "solution": "**Zeichnen einer passenden Ergänzung.**\n\n![Abbildung](/uploads/ex-81be02fa04cc.png)\n\n**Hinweis:**\n\nEs sind auch andere Zerlegungen oder Ergänzungen möglich.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne den Flächeninhalt der Figur.\n\n$A=$⟦1⟧ $\\cm^2$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 24,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Flächeninhalt des Rechtecks. - Berechne den Flächeninhalt des schraffierten Dreiecks. - Subtrahiere vom Flächeninhalt des Rechtecks den Flächeninhalt des Dreiecks.*\n\n**Berechnen des Flächeninhalts der Figur.**\n\n**Berechnen des Flächeninhalts des Rechtecks.**\n\nDie Formel zur Berechnung des Flächeninhalts eines Rechtecks lautet:\n\n$\\mathrm{A_{Rechteck}=l\\cdot b}$\n\nBekannte Größen:\n\n$\\mathrm{l=8\\cm\\qquad b=4\\cm}$\n\nEinsetzen der Zahlenwerte in die Formel.\n\n$\\mathrm{A_{Rechteck}=8\\cdot 4\\ \\ [cm^2]}$\n\n$\\mathrm{A_{Rechteck}=32\\cm^2}$\n\n**Berechnen des Flächeninhalts des Dreiecks.**\n\nDie Formel zur Berechnung des Flächeninhalts eines Dreiecks lautet:\n\n$\\mathrm{A_{Dreieck}=\\dfrac{g\\cdot h}{2}}$\n\nBekannte Größen:\n\n$\\mathrm{g=4\\cm\\qquad h=4\\cm}$\n\nEinsetzen der Zahlenwerte in die Formel.\n\n$\\mathrm{A_{Dreieck}=\\dfrac{4\\cdot 4}{2}\\ \\ [cm^2]}$\n\n$\\mathrm{A_{Dreieck}=8\\cm^2}$\n\nDer Flächeninhalt der Figur ist dann:\n\n$\\mathrm{A_{Figur}=A_{Rechteck}-A_{Dreieck}}$\n\n$\\mathrm{A_{Figur}=32-8\\ \\ [cm^2]}$\n\n$\\mathrm{A_{Figur}=24\\cm^2}$\n\nDer Flächeninhalt der Figur beträgt, $\\boxed{24\\cm^2}.$",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib eine allgemeine Formel zur Berechnung des Flächeninhaltes der Figur in Abhängigkeit von $\\text{x}$ an.\n\n![Abbildung](/uploads/ex-e4aad323ab97.png)\n\n$A_{Figur}=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "6x²",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Aufstellen einer allgemeinen Formel zur Berechnung des Flächeninhaltes der Figur in Abhängigkeit von $\\text{x}$.**\n\n$\\mathrm{A_{Figur}=l\\cdot b-\\dfrac{g\\cdot h}{2}}$\n\n$\\mathrm{A_{Figur}(x)=4x\\cdot 2x-\\dfrac{2x\\cdot2x}{2}}$\n\n$\\mathrm{A_{Figur}(x)=8x^2-\\dfrac{4x^2}{2}}$\n\n$\\mathrm{A_{Figur}(x)=8x^2-2x^2}$\n\n$\\mathrm{A_{Figur}(x)=6x^2}$",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 10,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Stelle die Formel nach $\\h$ um.\n\n$\\mathrm{A = \\dfrac{g\\cdot h}{2}}$\n\n$h=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "2A/g",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Umstellen der Formel nach $\\text{h}.$**\n\n$$\\begin{aligned}\n\\text{A} &= \\mathrm{\\dfrac{g\\cdot h}{2}} \\qquad |\\; \\cdot2 \\\\\n\\mathrm{2A} &= \\mathrm{g\\cdot h} \\qquad |\\; :\\text{g} \\\\\n\\text{h} &= \\mathrm{\\dfrac{2A}{g}}\n\\end{aligned}$$",
+     "points": 1,
+     "topic": "Terme, Gleichungen & Formeln"
+    }
+   ]
+  }
+ ]
+}

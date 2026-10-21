@@ -1,0 +1,399 @@
+{
+ "school": "rs",
+ "schoolLabel": "Realschule",
+ "year": 2024,
+ "part": "Wahlteil",
+ "folderId": 315305,
+ "url": "https://de.serlo.org/mathe/315305/wahlteil",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Eine Firma stellt die abgebildete Praline her. Alle Längen sind in$\\mm$ angegeben.\n\n![Abbildung](/uploads/ex-cdfbf1f2efba.png)\n\n![Abbildung](/uploads/ex-bcb8080f398f.png)\n\nAuf der Praline befindet sich ein zylinderförmiger Schokoladendeckel.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen des Schokoladendeckels.\n\nDas Volumen des Schokodeckels beträgt ungefähr ⟦1⟧ $\\mm^3$ .",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 902.58,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Der Schokoladendeckel hat die Form einer Scheibe. - Berechne den Radius r der Scheibe. - Berechne das Volumen der Scheibe.*\n\n**Berechnen des Volumens des Schokoladendeckels.**\n\n**Berechnen des Radius des Schokoladendeckels.**\n\nFolgende Größen sind bekannt:\n\n$\\ \\mathrm{Durchmesser_{Praline}=30\\mm}$\n\n$\\hspace{10mm}\\mathrm{Breite\\ Rand=2\\mm}$\n\n$\\mathrm{Höhe\\ Schokodeckel=1,7\\mm}$\n\n$\\mathrm{r_{Schokodeckel}=\\dfrac{30}{2}-2}$\n\n$\\mathrm{r_{Schokodeckel}=13}$\n\n$\\mathrm{V_{Schokodeckel}=r^2\\cdot\\pi\\cdot 1,7}$\n\n$\\mathrm{V_{Schokodeckel}=169\\pi\\cdot1,7\\ \\Rightarrow\\ V_{Schokodeckel}\\approx902,58\\mm^3}$\n\nDas Volumen des Schokodeckels beträgt ungefähr $\\ 902,58\\mm^3$ .",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Das Volumen der kugelförmigen Nuss beträgt $V = 300 \\mm^3$.\n\nBerechne den Durchmesser der Nuss.\n\nDer Durchmesser der Nuss beträgt ungefähr ⟦1⟧ $\\mm$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 8.31,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Löse die Formel $\\mathrm{V_{Kugel}=\\dfrac{1}{6}\\cdot\\pi\\cdot d^3}$ nach $\\text{d}$ auf und berechne den Durchmesser der Kugel.*\n\n**Berechnen des Durchmessers der Nuss.**\n\nDie Formel zur Berechnung des Volumens einer Kugel lautet:\n\n$\\mathrm{V_{Kugel}=\\dfrac{1}{6}\\cdot\\pi\\cdot d^3}$\n\nauflösen der Formel nach $\\text{d}$ und berechnen des Durchmessers.\n\n$\\mathrm{d=\\sqrt[3]{\\dfrac{6\\cdot V}{\\pi}}}$\n\n$\\mathrm{d=\\sqrt[3]{\\dfrac{6\\cdot 300}{\\pi}}}$\n\n$\\mathrm{d\\approx8,31\\mm}$\n\nDer Durchmesser der Nuss beträgt ungefähr: $\\boxed{8,31\\mm}$",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen der Schokoladenfüllung.\n\nDas Volumen der Schokoladenfüllung beträgt ⟦1⟧ $\\mm³$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4301.39,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne das Volumen der Halbkugel. - Subtrahiere das Volumen der Nuss.*\n\n**Berechnen des Volumen der Schokoladenfüllung.**\n\nBerechnen des Volumens der Halbkugel.\n\n$\\mathrm{V_{Halbkugel}=\\dfrac{1}{2}\\cdot \\left(\\dfrac{4}{3}\\cdot\\pi\\cdot r^3\\right)}$\n\n$\\mathrm{V_{Halkugel}=\\dfrac{1}{2}\\left(\\dfrac{4}{3}\\cdot\\pi\\cdot 13^3\\right)}$\n\n$\\mathrm{V_{Halkugel}=\\dfrac{1}{2}\\left(\\dfrac{4}{3}\\cdot\\pi\\cdot 2197\\right)}$\n\n$\\mathrm{V_{Halkugel}\\approx4601,39\\mm^3}$\n\nBerechnen des Volumens der Schokoladenfüllung.\n\n$\\mathrm{V_{Schokofüllung}=V_{Halbkugel}-V_{Nuss}}$\n\n$\\mathrm{V_{Schokofüllung}=4601,39-300}$ ($\\ \\mathrm{V_{Nuss}}$ siehe Teilaufgabe $\\mathrm{1b)}$\n\n$\\mathrm{V_{Schokofüllung}\\approx4301,39\\mm^3}$\n\nDas Volumen der Schokoladenfüllung beträgt: $\\ \\boxed{4301,39\\mm^3}$",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Eine Firma stellt eine Sonderedition dieser Praline mit doppeltem Radius her. Die Nuss bleibt dabei gleich groß.\n\nJörn behauptet: „Dann ist auch das Volumen der Schokoladenfüllung doppelt so groß.“\n\nHat Jörn recht? Begründe deine Entscheidung.\n\n⟦1⟧ ja/nein",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "nein",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Setze für $\\text{r},\\ 2\\text{r}$ in die Volumenformel der Kugel ein und löse die Potenz auf.*\n\nWenn der Radius einer Halbkugel verdoppelt wird, dann\n\nverachtfacht sich das Volumen der Halbkugel.\n\nDa das Volumen der Nuss gleich bleibt , ist das Volumen der Schokoladenfüllung ungefähr achtmal so groß.\n\n**Jörn hat also nicht recht.**",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Die Abbildung zeigt einen Carport.\n\n![Abbildung](/uploads/ex-b55b6606f721.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Ergänze das fehlende Maß in der Skizze.",
+     "answer": {
+      "type": "free",
+      "sample": "- Ziehe von der Höhe der oberen Dachkante die Höhe der unteren Dachkante ab. - Schreibe das Ergebnis in den Kreis. Ergänzen des fehlenden Maßes in der Skizze. ![Abbildung](/uploads/ex-10c7c1f3af0f.png)"
+     },
+     "solution": "*- Ziehe von der Höhe der oberen Dachkante die Höhe der unteren Dachkante ab. - Schreibe das Ergebnis in den Kreis.*\n\n**Ergänzen des fehlenden Maßes in der Skizze.**\n\n![Abbildung](/uploads/ex-10c7c1f3af0f.png)",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge $x$ eines Dachbalkens.\n\n$x\\approx$ ⟦1⟧ $\\cm$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 439.32,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne mithilfe des Satzes des Pythagoras die Länge der Hypotenuse $\\text{x}$ .*\n\n**Berechnen der Länge $\\text{x}$ eines Dachbalkens.**\n\nX ist die Hypotenuse des rechtwinkligen Dreiecks die Katheten sind:\n\n$\\mathrm{Gegenkathete=90\\cm}$\n\n$\\mathrm{Ankathete\\ \\ \\ \\ \\ \\ =430\\cm}$\n\nDer Satz des Pythagoras lautet, angewandt auf unser rechtwinkliges Dreieck:\n\n$\\mathrm{x^2=(Gegenkathete)^2+(Ankathete)^2}$\n\nauflösen nach $\\text{x}$ und einsetzen der bekannten Größen\n\n$\\mathrm{x=\\sqrt{90^2+430^2}}$\n\n$\\mathrm{x\\approx439,32\\cm}$\n\nDie Länge eines Dachbalkens beträgt ungefähr: $\\ \\boxed{439,32\\cm}$",
+     "points": 3,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne den Winkel $α$.\n\n$\\alpha\\approx$ ⟦1⟧ °.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 11.82,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Winkel $\\alpha$ mithilfe des Tangens im rechtwinkligem Dreieck.*\n\n**Berechnen des Winkels $\\alpha$ .**\n\nWir berechnen den Winkel $\\alpha$ mit dem Tangens im rechtwinkligen Dreieck.\n\nDer Tangens im rechtwinkligen Dreieck ist definiert als:\n\n$\\tan (\\alpha )=\\dfrac{\\text{Gegenkathete}}{\\text{Ankathete}}$\n\nDie Maße entnehmen wir der Skizze der Lösung zu Teilaufgabe 2a)\n\n$\\mathrm{\\tan(\\alpha )=\\dfrac{90}{430}\\ \\Rightarrow\\ tan^{-1}(\\alpha)\\approx11,82^\\circ}$\n\nDer Winkel $α$ beträgt ungefähr: $\\ \\boxed{11,82^\\circ}$\n\n**Anmerkung:**\n\nDa die Hypotenuse bekannt ist (siehe Teilaufgabe 2b), kannst Du den Winkel $\\alpha$ auch mit dem Sinus oder dem Kosinus berechnen.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": "zeichnen",
+     "prompt": "Auf das Dach des Carports soll eine Solaranlage mit einem Winkel von $37°$ gebaut werden. Tilo möchte die maximale Länge $s$ der Solaranlage bestimmen und hat eine Skizze\n\nangefertigt.\n\n![Abbildung](/uploads/ex-8b963670def9.png)\n\nZeichne dafür ein geeignetes rechtwinkliges Dreieck und bestimme die maximale Länge $s$ der Solaranlage.\n\n(Wähle für $100 \\cm$ in der Wirklichkeit $1 \\cm$ in der Zeichnung.)\n\n$s\\approx$ ⟦1⟧ $\\cm$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 538,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Zeichne ein rechtwinkliges Dreieck mit, $\\mathrm{Ankathete=430\\cm}$ und dem Winkel $\\mathrm{\\alpha_s}=37^\\circ$*\n\n**Zeichnen des rechtwinkligen Dreiecks.**\n\n![Abbildung](/uploads/ex-d87e0a4497c6.png)\n\n**Bestimmen der maximalen Länge $s$ der Solaranlage.**\n\nBerechnen der Länge $\\textbf{s}$ mithilfe des Kosinus.\n\nDer Kosinus im rechtwinkligen Dreieck ist definiert als:\n\n$\\mathrm{\\cos{(\\alpha)}=\\dfrac{Ankathete}{Hypotenuse}}$\n\nIn unserem Dreieck gilt dann:\n\n$\\mathrm{\\cos(37^\\circ)=\\dfrac{430}{s}}$\n\nAuflösen der Gleichung nach $\\text{s}$ :\n\n$\\mathrm{s=\\dfrac{430}{cos(37^\\circ)}\\ \\Rightarrow\\ s\\approx538\\cm}$\n\nDie Länge $\\text{s}$ der Solaranlage beträgt ungefähr: $\\ \\boxed{538\\cm}$.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Tilo behauptet: „Wenn der $37°$-Winkel halbiert wird, dann halbiert sich auch die maximale Länge der Solaranlage.“\n\nZeige zeichnerisch oder rechnerisch, dass Tilos Behauptung falsch ist.",
+     "answer": {
+      "type": "free",
+      "sample": "- Berechne text{s}, indem du fur den Winkel mathrm{alpha_s}=18,5^circ einsetzt. Rechnerischer Nachweis, dass Tilos Behauptung falsch ist. mathrm{s=dfrac{430}{cos(18,5^circ)} Rightarrow sapprox453cm} Tilos Behauptung ist falsch, da die Länge text{s} bei bei einer Halbierung des 37^circ -Winkels ungefähr 453cm beträgt, das ist mehr als dfrac{538}{2}=269cm ."
+     },
+     "solution": "*- Berechne $\\text{s}$, indem du fur den Winkel $\\mathrm{\\alpha_s}=18,5^\\circ$ einsetzt.*\n\n**Rechnerischer Nachweis, dass Tilos Behauptung falsch ist.**\n\n$\\mathrm{s=\\dfrac{430}{\\cos(18,5^\\circ)}\\ \\Rightarrow\\ s\\approx453\\cm}$\n\nTilos Behauptung ist falsch, da die Länge $\\text{s}$ bei bei einer Halbierung des\n\n$37^\\circ$ -Winkels ungefähr $453\\cm$ beträgt, das ist mehr als $\\ \\dfrac{538}{2}=269\\cm$ .",
+     "points": 1,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Paul möchte sich ein neues Fahrrad kaufen. Sein Vater macht ein besonderes Angebot: „Ich lege ein Konto an und verdoppele jeden Monat den Kontostand.“\n\n![Abbildung](/uploads/ex-c187dac8e660.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ergänze die Wertetabelle.\n\n![Abbildung](/uploads/ex-d370bafefc1b.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Verdopple den Kontostand des Vormonats und schreibe den jeweiligen Wert in das entsprechende leere Feld. Ergänzen der Wertetabelle. ![Abbildung](/uploads/ex-581d16ae7db3.png)"
+     },
+     "solution": "*- Verdopple den Kontostand des Vormonats und schreibe den jeweiligen Wert in das entsprechende leere Feld.*\n\n**Ergänzen der Wertetabelle.**\n\n![Abbildung](/uploads/ex-581d16ae7db3.png)",
+     "points": 2,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne ein Koordinatensystem und trage die Werte ein.\n\n(Wähle bei der $x$-Achse 1 $\\cm$ für 1 Monat und bei der $y$-Achse $1 \\cm$ für $100$ €.)",
+     "answer": {
+      "type": "free",
+      "sample": "Eintragen der Werte in ein Koordinatensystem. ![Abbildung](/uploads/ex-6373fcc43ce9.png)"
+     },
+     "solution": "**Eintragen der Werte in ein Koordinatensystem.**\n\n![Abbildung](/uploads/ex-6373fcc43ce9.png)",
+     "points": 3,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze die Art des Wachstumsprozesses an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "lineares Wachstum",
+        "correct": false
+       },
+       {
+        "text": "quadratisches Wachstum",
+        "correct": false
+       },
+       {
+        "text": "exponentielles Wachstum",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "**Ankreuzen der Art des Wachstumsprozesses.**\n\n![Abbildung](/uploads/ex-5ef49cb7e427.png)\n\nEs handelt sich hier um ein exponentielles Wachstum, da der Kontostand sich jeden Monat um den gleichen Faktor ändert. Der Kontostand verdoppelt sich jeden Monat, also ist der Änderungsfaktor $2$ .",
+     "points": 1,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Von seinen Großeltern erhält Paul folgendes Angebot.\n\n![Abbildung](/uploads/ex-0d9af88b8266.png)\n\nPaul behauptet: „Dann habe ich nach vier Monaten schon $300$ € von meinen Großeltern bekommen.“\n\nZeige, dass Paul recht hat.",
+     "answer": {
+      "type": "free",
+      "sample": "- Multipliziere 50 mit 4 und addiere 100. Zeigen, dass Paul recht hat. Paul bekommt am Anfang 100 € dann bekommt er jeden Monat 50 € . Also hat er nach 4 Monaten: 50cdot4+100=300 € Paul hat recht, er hat nach 4 Monaten 300 € von seinen Großeltern bekommen."
+     },
+     "solution": "*- Multipliziere $50$ mit $4$ und addiere $100$.*\n\n**Zeigen, dass Paul recht hat.**\n\nPaul bekommt am Anfang $100\\ €$ dann bekommt er jeden Monat $50\\ €$ .\n\nAlso hat er nach 4 Monaten:\n\n$50\\cdot4+100=300\\ €$\n\nPaul hat recht, er hat nach 4 Monaten $300\\ €$ von seinen Großeltern bekommen.",
+     "points": 1,
+     "topic": "Terme, Gleichungen & Formeln"
+    },
+    {
+     "label": "e)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Der Geldbetrag von den Großeltern wächst linear an.\n\nGib die Funktionsgleichung in der Form $y=mx+b$ an.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "y=5x+100",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         "5x+100"
+        ]
+       }
+      ]
+     },
+     "solution": "*- Überlege welchen Wert du für $\\text{m}$ und welchen Wert du für $\\text{b}$ in die Funktionsgleichung einsetzen kannst.*\n\n**Aufstellen der Funktionsgleichung.**\n\nDie allgemeine Form einer Funktionsgleichung lautet:\n\n$\\mathrm{y=mx+b}$\n\nsetze für $\\text{m}=50$ und für $\\text{b}=100$ in die allgemeine Form ein.\n\n$\\boxed{\\mathrm{y=50x+100}}$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "f)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Paul behauptet: „Nach 11 Monaten ist der Geldbetrag von meinem Vater größer.“\n\nBegründe, dass Pauls Behauptung richtig ist.",
+     "answer": {
+      "type": "free",
+      "sample": "- Lies den Betrag, den Paul in 11 Monaten von seinem Vater erhalten hat, aus der Tabelle ab. - Berechne den Betrag, den Paul in 11 Monaten von seinen Großeltern bekommen hat mithilfe der Funktionsgleichung. - Vergleich die Werte. Begründen, dass Pauls Behauptung richtig ist. In 11 Monaten hat Paul 1024 € von seinem Vater bekommen, (siehe Tabelle). Berechnen des Wertes, den Paul in 11 Monaten von seinen Großeltern bekommen hat. mathrm{y=50cdot11+100 Rightarrow y=650 €} In 11 Monaten hat Paul 650 € von seinen Großeltern bekommen. Paul hat also recht, da der Betrag, den er von seinem Vater bekomm"
+     },
+     "solution": "*- Lies den Betrag, den Paul in 11 Monaten von seinem Vater erhalten hat, aus der Tabelle ab. - Berechne den Betrag, den Paul in 11 Monaten von seinen Großeltern bekommen hat mithilfe der Funktionsgleichung. - Vergleich die Werte.*\n\n**Begründen, dass Pauls Behauptung richtig ist.**\n\nIn 11 Monaten hat Paul $1024\\ €$ von seinem Vater bekommen, (siehe Tabelle).\n\nBerechnen des Wertes, den Paul in 11 Monaten von seinen Großeltern bekommen hat.\n\n$\\mathrm{y=50\\cdot11+100\\ \\Rightarrow\\ y=650\\ €}$\n\nIn 11 Monaten hat Paul $650\\ €$ von seinen Großeltern bekommen.\n\nPaul hat also recht, da der Betrag, den er von seinem Vater bekommen hat größer ist als der Betrag, den er von seinen Großeltern bekommen hat.",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "In einer Schale sind Kugeln mit den Ziffern 2, 3 und 5.\n\n![Abbildung](/uploads/ex-6610a663835d.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Es wurden noch keine Kugeln gezogen. Beschrifte die Kugeln in der Schale.\n\n![Abbildung](/uploads/ex-20e64dad5333.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Bestimme, wie viele Kugeln insgesamt in der Schale liegen. - Errechne die Wahrscheinlichkeiten für die einzelnen Ziffern. ![Abbildung](/uploads/ex-c4d51bb1114c.png) Insgesamt sind 10 Kugeln in der Schale. Die Wahrscheinlichkeit für jede Kugel beträgt somit dfrac{1}{10}. Die Wahrscheinlichkeit eine 2 zu ziehen beträgt dfrac{1}{2}=dfrac{5}{10}. Es sind 5 Kugeln mit der Ziffer 2 in der Schale. Die Wahrscheinlichkeit eine 3 zu ziehen beträgt dfrac{2}{5}=dfrac{4}{10}. Es sind 4 Kugeln mit der Ziffer 3 in der Schale. Die Wahrscheinlichkeit eine 5 zu ziehen beträgt dfrac{1}{10}. Es ist 1 Kugel mit "
+     },
+     "solution": "*- Bestimme, wie viele Kugeln insgesamt in der Schale liegen. - Errechne die Wahrscheinlichkeiten für die einzelnen Ziffern.*\n\n![Abbildung](/uploads/ex-c4d51bb1114c.png)\n\nInsgesamt sind $10$ Kugeln in der Schale. Die Wahrscheinlichkeit für jede Kugel beträgt somit $\\dfrac{1}{10}$.\n\nDie Wahrscheinlichkeit eine $2$ zu ziehen beträgt $\\dfrac{1}{2}=\\dfrac{5}{10}$.\n\nEs sind $5$ Kugeln mit der Ziffer 2 in der Schale.\n\nDie Wahrscheinlichkeit eine $3$ zu ziehen beträgt $\\dfrac{2}{5}=\\dfrac{4}{10}$.\n\nEs sind $4$ Kugeln mit der Ziffer 3 in der Schale.\n\nDie Wahrscheinlichkeit eine $5$ zu ziehen beträgt $\\dfrac{1}{10}$.\n\nEs ist $1$ Kugel mit der Ziffer 5 in der Schale.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Osman zieht nacheinander zwei Kugeln aus der Schale. Er zeichnet ein Baumdiagramm.\n\n![Abbildung](/uploads/ex-223a06f0954f.png)\n\nHat Osman die erste gezogene Kugel zurückgelegt? Begründe deine Entscheidung.",
+     "answer": {
+      "type": "free",
+      "sample": "Prüfe anhand der im Baumdiagramm angegebenen Wahrscheinlichkeiten für den zweiten Zug, wie viele Kugeln in der Schale liegen. Alle im Baumdiagramm angegebenen Wahrscheinlichkeiten für das Ziehen der zweiten Kugel haben im Nenner eine 9. Das bedeutet, dass beim zweiten Zug nur noch 9 Kugeln in der Schale sind. Osman hat die erste gezogene Kugel nicht zurückgelegt."
+     },
+     "solution": "*Prüfe anhand der im Baumdiagramm angegebenen Wahrscheinlichkeiten für den zweiten Zug, wie viele Kugeln in der Schale liegen.*\n\nAlle im Baumdiagramm angegebenen Wahrscheinlichkeiten für das Ziehen der zweiten Kugel haben im Nenner eine $9$. Das bedeutet, dass beim zweiten Zug nur noch $9$ Kugeln in der Schale sind.\n\nOsman hat die erste gezogene Kugel **nicht** zurückgelegt.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Osman berechnet die Wahrscheinlichkeit für ein Ereignis: $\\displaystyle P=\\frac{1}{10}\\cdot\\frac{4}{9}.$\n\nBeschreibe ein passendes Ereignis.",
+     "answer": {
+      "type": "free",
+      "sample": "Gegeben: Wahrscheinlichkeit für ein Ereignis P=dfrac{1}{10}cdotdfrac{4}{9}P=dfrac{1}{10}cdotdfrac{4}{9} Erster Zug Die Wahrscheinlichkeit beim ersten Zug beträgt dfrac{1}{10}. Insgesamt befinden sich 10 Kugeln in der Schale, davon hat eine Kugel die Ziffer 5. Die Wahrscheinlichkeit, die Kugel mit der Ziffer 5 zu ziehen, beträgt dfrac{1}{10}. Zweiter Zug Die erste gezogene Kugel wird nicht zurückgelegt. Es befinden sich dann noch 9 Kugeln in der Schale. 5 Kugeln mit der Ziffer 2 und 4 Kugeln mit der Ziffer 3. Die Wahrscheinlichkeit, eine Kugel mit der Ziffer 3 zu ziehen, beträgt dfrac{4}{9}. Er"
+     },
+     "solution": "Gegeben: Wahrscheinlichkeit für ein Ereignis $P=\\dfrac{1}{10}\\cdot\\dfrac{4}{9}P=\\dfrac{1}{10}\\cdot\\dfrac{4}{9}$\n\n**Erster Zug**\n\nDie Wahrscheinlichkeit beim ersten Zug beträgt $\\dfrac{1}{10}$.\n\nInsgesamt befinden sich $10$ Kugeln in der Schale, davon hat eine Kugel die Ziffer 5.\n\nDie Wahrscheinlichkeit, die Kugel mit der Ziffer 5 zu ziehen, beträgt $\\dfrac{1}{10}$.\n\n**Zweiter Zug**\n\nDie erste gezogene Kugel wird nicht zurückgelegt. Es befinden sich dann noch $9$ Kugeln in der Schale. $5$ Kugeln mit der Ziffer 2 und $4$ Kugeln mit der Ziffer 3.\n\nDie Wahrscheinlichkeit, eine Kugel mit der Ziffer 3 zu ziehen, beträgt $\\dfrac{4}{9}$.\n\n**Ergebnis**\n\nDie Wahrscheinlichkeit $P=\\dfrac{1}{10}\\cdot\\dfrac{4}{9}$ beschreibt das Ereignis:\n\nOsman zieht im ersten Zug die Kugel mit der Ziffer 5 und im zweiten Zug eine Kugel mit der Ziffer 3.",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Osman gewinnt, wenn die Ziffern auf zwei Kugeln die Summe 5 ergeben.\n\nBerechne die Wahrscheinlichkeit.\n\nDie Wahrscheinlichkeit, dass die Summe der Ziffern auf zwei Kugeln $5$ ergibt, beträgt ⟦1⟧ .",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.4,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme alle Möglichkeiten bei zweimaligem Ziehen als Summe der Ziffern $5$ zu erhalten. - Lies die Wahrscheinlichkeiten aus dem Baumdiagramm ab und addiere.*\n\nEs gibt zwei Möglichkeiten, dass die Summe der Ziffern auf zwei nacheinander gezogenen Kugeln $5$ ergibt.\n\nMöglichkeit 1\n\nErster Zug eine $2$ und zweiter Zug eine $3$\n\n$P(2;3)=\\dfrac{1}{2}\\cdot\\dfrac{4}{9}=\\dfrac{2}{9}$\n\nMöglichkeit 2\n\nErster Zug eine 3 und zweiter Zug eine 2\n\n$P(3;2)=\\dfrac{2}{5}\\cdot\\dfrac{4}{9}=\\dfrac{8}{45}$\n\n$P(\\text{Summe 5})=P(2;3)+P(3;2)=\\dfrac{2}{9}+\\dfrac{8}{45}=\\dfrac{2}{5}$\n\nDie Wahrscheinlichkeit, dass die Summe der Ziffern auf zwei Kugeln $5$ ergibt, beträgt $\\dfrac{2}{5}$.",
+     "points": 3,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Alle Kugeln werden wieder in die Schale zurückgelegt. Osman zieht aus der Schale eine Kugel und legt sie nach dem ersten Ziehen wieder zurück.\n\nZeichne ein passendes Baumdiagramm für zwei Ziehungen.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-fffb1304ac0a.svg) Da die Kugel nach dem ersten Ziehen wieder zurückgelegt wird, sind beim zweiten Ziehen die gleichen Kugeln in der Schale und die Wahrscheinlichkeiten sind gleich."
+     },
+     "solution": "![Abbildung](/uploads/ex-fffb1304ac0a.svg)\n\nDa die Kugel nach dem ersten Ziehen wieder zurückgelegt wird, sind beim zweiten Ziehen die gleichen Kugeln in der Schale und die Wahrscheinlichkeiten sind gleich.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  }
+ ]
+}

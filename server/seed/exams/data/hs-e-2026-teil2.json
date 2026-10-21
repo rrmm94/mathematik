@@ -1,0 +1,394 @@
+{
+ "school": "hs-e",
+ "schoolLabel": "Hauptschule E-Kurs",
+ "year": 2026,
+ "part": "Teil 2",
+ "folderId": 334262,
+ "url": "https://de.serlo.org/mathe/334262/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Es wurden 18 600 Frauen nach ihrer Lieblingssportart gefragt.\n\n![Abbildung](/uploads/ex-2efa569a3482.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Fülle die Lücken aus.\n\nDie beliebteste Sportart ist ⟦1⟧\n\nNordic Walking betreiben am liebsten ⟦2⟧ %\n\nder befragten Frauen.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Fitness",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 21,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Nordic Walking: $100\\%-35\\%-25\\%-8\\%-11\\%=21\\%$\n\nBeliebteste Sportart: Fitness mit $35\\%$",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Anzahl der befragten Frauen, die am liebsten Yoga betreiben.\n\n⟦1⟧ Frauen betreiben am liebsten Yoga.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1488,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "18 600 Frauen wurden befragt. $8\\%$ betreiben Yoga.\n\n$\\displaystyle\\frac{18600}{100}\\cdot8=1488$\n\n$8\\% \\widehat{=}1488$",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Auch Männer wurden nach ihrer Lieblingssportart gefragt.\n\nBerechne zuerst die Winkelgrößen in der Tabelle.\n\nZeichne die fehlende Unterteilung in das Kreisdiagramm ein.\n\n![Abbildung](/uploads/ex-37755057fa00.png)\n\n| Sportart | Anteil | Winkelgröße im Kreisdiagramm |\n|---|---|---|\n| Fußball | $25\\ \\%$ | ⟦1⟧ $°$ |\n| Basketball | $15\\ \\%$ | ⟦2⟧ $°$ |",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 90,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 54,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$\\displaystyle\\frac{360}{100}\\cdot25=90$\n\n$25\\% \\widehat{=}90°$\n\n$\\displaystyle\\frac{360}{100}\\cdot15=54$\n\n$15\\% \\widehat{=}54°$\n\n![Abbildung](/uploads/ex-e99300f9b2e9.png)\n\n![Abbildung](/uploads/ex-bd077e6287dc.png)",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "d)",
+     "kind": "textAreaExercise",
+     "skip": null,
+     "prompt": "Kathrin behauptet: „Mehr Männer als Frauen haben angegeben, dass ihre Lieblingssport Joggen ist.“\n\nNimm Stellung zu Kathrins Behauptung.",
+     "answer": {
+      "type": "free",
+      "sample": "Stellungsnahme zu Kathrins Behauptung. z. B.: 35 % sind zwar mehr als 25 %, allerdings weiß man nicht, wie viele Männer insgesamt befragt wurden. Deshalb kann Kathrins Behauptung richtig sein oder falsch."
+     },
+     "solution": "**Stellungsnahme zu Kathrins Behauptung.**\n\n**z. B.:**\n\n35 % sind zwar mehr als 25 %, allerdings weiß man nicht, wie\n\nviele Männer insgesamt befragt wurden. Deshalb kann Kathrins Behauptung\n\nrichtig sein oder falsch.",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "„Super Marion“ ist ein Videospiel. Es erscheinen zufällig die Hindernisse Wolke (W), Stein (S) oder Blitz (B), denen „Super\n\nMarion“ ausweichen muss.\n\nDas Baumdiagramm zeigt die Wahrscheinlichkeiten für das\n\nErscheinen der Hindernisse.\n\n![Abbildung](/uploads/ex-548a1b6e6983.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Trage die fehlende Wahrscheinlichkeit in den Kreis ein.\n\n![Abbildung](/uploads/ex-e1ffb5daa71e.png)",
+     "answer": {
+      "type": "free",
+      "sample": "displaystylefrac{4}{5}=frac{16}{20} displaystyle 1-dfrac{16}{20}-dfrac{3}{20}=dfrac{1}{20} ![Abbildung](/uploads/ex-909c9389b735.png)"
+     },
+     "solution": "$\\displaystyle\\frac{4}{5}=\\frac{16}{20}$\n\n$\\displaystyle 1-\\dfrac{16}{20}-\\dfrac{3}{20}=\\dfrac{1}{20}$\n\n![Abbildung](/uploads/ex-909c9389b735.png)",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Super Marion“ trifft nacheinander auf zwei Hindernisse.\n\nBerechne die Wahrscheinlichkeit, dass „Super Marion“ zuerst auf eine Wolke (W) und dann auf einen Stein (S) trifft.\n\nDie Wahrscheinlichkeit, dass „Super Marion“ zuerst auf eine Wolke (W) und dann\n\nauf einen Stein (S) trifft, beträgt: ⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.12,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "P(Wolke und dann Stein)$=\\displaystyle\\dfrac{4}{5}\\cdot \\dfrac{3}{20}=\\dfrac{12}{100}$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, dass sie auf zwei gleiche Hindernisse trifft.\n\n$\\large($Wenn du die Teilaufgabe a) nicht gelöst hast, dann rechne mit $\\dfrac{2}{20}$ weiter.$\\large)$\n\nDie Wahrscheinlichkeit, dass sie auf zwei gleiche Hindernisse trifft beträgt:\n\n⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.665,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         0.6725
+        ]
+       }
+      ]
+     },
+     "solution": "P(zwei gleiche Hindernisse)=P( 2 mal Wolke) + P(2 mal Stein) + P(2 mal Blitz)\n\nP(zwei gleiche Hindernisse)=$\\displaystyle\\dfrac{4}{5}\\cdot \\dfrac{4}{5}+\\dfrac{3}{20}\\cdot \\dfrac{3}{20}+\\displaystyle \\dfrac{1}{20}\\cdot \\dfrac{1}{20}=\\dfrac{256}{400}+\\dfrac{9}{400}+\\dfrac{1}{400}=\\dfrac{266}{400}$",
+     "points": 3,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Abgebildet ist die quadratische Funktion $y_1.$",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze die zugehörige Funktionsgleichung für $y_1$ an.\n\n![Abbildung](/uploads/ex-619081640f13.png)",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$\\mathrm{y_1=(x+2)^2+3}$",
+        "correct": false
+       },
+       {
+        "text": "$\\mathrm{y_1=(x+2)^2-3}$",
+        "correct": false
+       },
+       {
+        "text": "$\\mathrm{y_1=(x-2)^2+3}$",
+        "correct": false
+       },
+       {
+        "text": "$\\mathrm{y_1=(x-2)^2-3}$",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "allgemeine Scheitelform: $f(x)=a\\cdot(x-d)^2+e$\n\nScheitelpunkt: $S(d|e)$\n\nFunktionsgleichung: $y_1=(x-2)^2-3$\n\nScheitelpunkt: $S(2|-3)$",
+     "points": 1,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Eine andere Funktion hat die Funktionsgleichung $\\mathrm{y_2 = (x + 1)²–4}$.\n\nZeichne den Graphen der Funktion $y_2$ in das Koordinatensystem ein.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-a7086b42bacc.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-a7086b42bacc.png)",
+     "points": 2,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Murat soll die Nullstellen der Funktion $y_2$ berechnen. Er beginnt seine Rechnung so:\n\n$\\boxed{\\mathrm{y_2 = (x + 1)²–4}}$\n\nBeende Murats Rechnung.",
+     "answer": {
+      "type": "free",
+      "sample": "Allgemeine Form: x^2+px+q=0; Lösungen: x_{1,2}=displaystyle-frac{p}{2}pmsqrt{left(frac{p}{2}right)^2-q} y_2=(x+1)^2-4=x^2+2x+1-4=x^2+2x-3 x^2+2x-3=0 x_{1,2}=displaystyle-frac{2}{2}pmsqrt{left(frac{2}{2}right)^2-(-3)} x_{1,2}=displaystyle -1pmsqrt{1+3} x_{1,2}=-1pm2 x_1=-3 x_2=1"
+     },
+     "solution": "Allgemeine Form: $x^2+px+q=0\\;$\n\nLösungen: $x_{1,2}=\\displaystyle-\\frac{p}{2}\\pm\\sqrt{\\left(\\frac{p}{2}\\right)^2-q}$\n\n$y_2=(x+1)^2-4=x^2+2x+1-4=x^2+2x-3$\n\n$x^2+2x-3=0$\n\n$x_{1,2}=\\displaystyle-\\frac{2}{2}\\pm\\sqrt{\\left(\\frac{2}{2}\\right)^2-(-3)}$\n\n$x_{1,2}=\\displaystyle -1\\pm\\sqrt{1+3}$\n\n$x_{1,2}=-1\\pm2$\n\n$x_1=-3$\n\n$x_2=1$",
+     "points": 3,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "d)",
+     "kind": "textAreaExercise",
+     "skip": null,
+     "prompt": "Der Graph einer quadratischen Funktion $y_3$ soll so verlaufen, dass sich die Graphen von $y_2$ und $y_3$ nicht schneiden.\n\nGib eine Funktionsgleichung für $y_3$ an.\n\nBegründe, dass es mehrere mögliche Funktionsgleichungen gibt.",
+     "answer": {
+      "type": "free",
+      "sample": "Mögliche Begründung: Jede nach unten geöffnete Parabel, die unterhalb von mathrm{y_2} liegt, kann beliebig gestreckt und gestaucht werden."
+     },
+     "solution": "**Mögliche Begründung:**\n\nJede nach unten geöffnete Parabel, die unterhalb von $\\mathrm{y_2}$ liegt,\n\nkann beliebig gestreckt und gestaucht werden.",
+     "points": 2,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Die Abbildung zeigt den Kopf einer Stehlampe.\n\nDie Größe der kreisförmigen Fläche $\\textcircled{1}$ beträgt $346,36\\cm^2$.\n\n![Abbildung](/uploads/ex-c4e83f187c55.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Radius r.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 10.5,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$A=r^2\\cdot\\pi$\n\nSetze die bekannten Werte ein.\n\n$346,36=r^2\\cdot3,14$\n\n$r^2=346,36:3,14=110,31$\n\n$r=\\sqrt{110,31}=10,50$\n\nDer Radius $r$ beträgt $10,50\\cm.$",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Fläche $\\textcircled{2}$ hat die Form eines $\\dfrac{3}{4}$\\- Kreisringes.\n\nBerechne den Flächeninhalt der Fläche $\\textcircled{2}$.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 191.44,
+        "tolerance": 0,
+        "unit": "cm²",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Berechne die Fläche des Kreises mit dem Durchmesser $35\\cm$. Ziehe davon die Fläche des Kreises mit dem Durchmesser $30\\cm$ ab. Multipliziere das Ergebnis mit $\\displaystyle\\dfrac{3}{4}$.*\n\n$A=r^2\\cdot\\pi$\n\n$A_{35}=\\left(\\displaystyle\\frac{35}{2}\\right)^2\\cdot \\pi=962,11$\n\n$A_{30}=\\left(\\displaystyle\\frac{30}{2}\\right)^2\\cdot\\pi=706,86$\n\n$A_{35}-A_{30}=255,25$\n\n$\\displaystyle\\dfrac{3}{4}\\cdot 255,25=191,44$",
+     "points": 4,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Stelle eine allgemeine Formel zur Berechnung des Flächeninhalts der Fläche $\\textcircled{2}$ auf.",
+     "answer": {
+      "type": "free",
+      "sample": "A_{(2)}=displaystyledfrac{3}{4}cdot(r_{(35/2)}^2cdot pi-r_{(30/2)}^2cdot pi)"
+     },
+     "solution": "$A_{(2)}=\\displaystyle\\dfrac{3}{4}\\cdot(r_{(35/2)}^2\\cdot \\pi-r_{(30/2)}^2\\cdot \\pi)$",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "Die Spitze eines Spielgerätes ist von außen mit vier gleichen Blech-Dreiecken verkleidet. Das Blech soll erneuert werden.\n\n![Abbildung](/uploads/ex-891b24b20723.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Blechbedarf in m².",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.59,
+        "tolerance": 0,
+        "unit": "m²",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Berechne den Flächeninhalt eines Dreiecks und multipliziere diesen mit 4.*\n\n$A_{Dreieck}=\\displaystyle\\frac{1}{2}\\cdot g\\cdot h$\n\n$A_{Dreieck}=\\displaystyle\\frac{1}{2}\\cdot 0,35\\cdot 0,84$\n\n$A_{Dreieck}=0,147$\n\n$A_{Blech}=4\\cdot0,147=0,59$\n\nEs werden $0,59\\m^2$ Blech benötigt.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Skizze und das Foto zeigen das komplette Spielgerät. Es hat die Form einer Pyramide mit quadratischer Grundfläche.\n\nBerechne die Länge der Diagonalen d.\n\n![Abbildung](/uploads/ex-0247a4d06374.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2.57,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$d^2=a^2+a^2$\n\n$d^2=6,62$\n\n$d=\\sqrt{6,62}\\approx2,57$\n\nDie Länge der Diagonalen beträgt $2,57\\m$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Größe des Winkels $\\alpha$ beträgt 73°.\n\nBerechne die Länge s.\n\n$\\large($Wenn du die Teilaufgabe b) nicht gelöst hast, dann rechne mit $\\mathrm{d = 2,53\\m}$ weiter.$\\large)$",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4.4,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": [
+         4.33
+        ]
+       }
+      ]
+     },
+     "solution": "$\\cos (\\alpha )=\\displaystyle\\frac{\\text{Ankathete}}{\\text{Hypotenuse}}$\n\n$\\cos (73° )=\\displaystyle\\dfrac{\\dfrac{d}{2}}{s}$\n\n$cos (73° )=\\displaystyle\\frac{1,285}{s}$\n\n$s=\\displaystyle\\frac{1,285}{\\cos\\left(73°\\right)}$\n\n$s=\\displaystyle\\frac{1,285}{0,292}=4,40$\n\nDie Länge $s$ beträgt $4,40\\m$.\n\nWenn du mit $d=2,53\\m$ gerechnet hast ergibt sich:\n\n$\\cos (\\alpha )=\\displaystyle\\frac{\\text{Ankathete}}{\\text{Hypotenuse}}$\n\n$\\cos (73° )=\\displaystyle\\dfrac{\\dfrac{d}{2}}{s}$\n\n$cos (73° )=\\displaystyle\\frac{1,265}{s}$\n\n$s=\\displaystyle\\frac{1,265}{\\cos\\left(73°\\right)}$\n\n$s=\\displaystyle\\frac{1,265}{0,292}=4,33$\n\nDie Länge $s$ beträgt $4,33\\m$.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  }
+ ]
+}

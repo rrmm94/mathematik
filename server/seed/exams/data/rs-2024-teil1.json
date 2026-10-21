@@ -1,0 +1,413 @@
+{
+ "school": "rs",
+ "schoolLabel": "Realschule",
+ "year": 2024,
+ "part": "Teil 1",
+ "folderId": 315303,
+ "url": "https://de.serlo.org/mathe/315303/teil-1",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Ergänze die fehlenden Zahlen in den Lücken.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$45:$⟦1⟧ $=9$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Schreibe 45 also Produkt zweier Zahlen, wobei eine Zahl die 9 ist. $45=5\\cdot9$*\n\n$45:5=9$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$0,32+1,6 =$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1.92,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$\\begin{array}{l}\\hphantom{ +\\; } 0,32\\\\\\underline{+\\;1,60}\\\\\\hphantom{ +\\;}1 ,92\\end{array}$\n\n$0,32+1,6=1,92$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$3+\\Large($⟦1⟧ $-5\\Large)\\ =\\ -2$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Schreibe für die Leerstelle in der Klammer ein $x$ und forme die Gleichung äquivalent um.*\n\n$$\\begin{aligned}\n3+\\left(x-5\\right) &= -2 \\qquad |\\; -3 \\\\\nx-5 &= -5 \\qquad |\\; +5 \\\\\nx &= 0\n\\end{aligned}$$\n\n$3+(0-5)=-2$",
+     "points": 1,
+     "topic": "Terme, Gleichungen & Formeln"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$3\\cdot \\dfrac{4}{5} =$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2.4,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Multipliziere den Zähler des Bruches mit der 3.*\n\n$\\displaystyle3\\cdot\\frac{4}{5}=\\frac{12}{5}$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Kreuze die passenden Angaben an.\n\n![Abbildung](/uploads/ex-190f56e77f17.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-ba7167865301.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-ba7167865301.png)",
+     "points": 3,
+     "topic": "Größen & Einheiten"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib die fehlenden Einheiten an.\n\n$1,42 \\km = 1\\,420$ ⟦1⟧\n\n$1,7 \\mathrm{~m}^{2}=17\\,000$ ⟦2⟧\n\n$256\\ \\mathrm{dm}^{3}=256\\,000$ ⟦3⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "m",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "cm²",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         "cm^2"
+        ]
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "cm³",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         "cm^3"
+        ]
+       }
+      ]
+     },
+     "solution": "$1 \\km=1000\\m$ $=>$\n\n$1,42 \\km = 1\\,420 \\m$\n\n$1\\m^2=10000\\cm^2$ $=>$\n\n$1,7 \\mathrm{~m}^{2}=17\\,000\\cm^2$\n\n$1\\dm^3=1000\\cm^3$ =\\>\n\n$256\\ \\mathrm{dm}^{3}=256\\,000\\cm^3$",
+     "points": 3,
+     "topic": "Größen & Einheiten"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib den grau gefärbten Anteil des Streifens als Bruch und als Prozentsatz an.\n\n![Abbildung](/uploads/ex-84a776420cac.png)\n\nBruch: ⟦1⟧\n\nProzentsatz: ⟦2⟧ $\\%$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.4,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 40,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Der Streifen hat 5 Anteile. 2 davon sind grau gefärbt.\n\n[**Bruchteil**](/1657)**:** $\\displaystyle\\frac{2}{5}$\n\n$2:5=0,4$ $=>$\n\n[**Prozentsatz**](/1627): $40\\%$",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Färbe $75 \\%$ im abgebildeten Quadrat.\n\n![Abbildung](/uploads/ex-5b5ec1e26f74.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Unterteile das Quadrat in 4 gleiche Teile. - Färbe 3 Teile des Quadrats. z.B. ![Abbildung](/uploads/ex-abb28487d09c.png)"
+     },
+     "solution": "*- Unterteile das Quadrat in 4 gleiche Teile. - Färbe 3 Teile des Quadrats.*\n\nz.B.\n\n![Abbildung](/uploads/ex-abb28487d09c.png)",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Der Flächeninhalt des Quadrates beträgt $16 \\mathrm{~cm}^{2}$. Es sind $75 \\%$ der Fläche gefärbt.\nErgänze:\n\nDie gefärbte Fläche ist ⟦1⟧ $\\mathrm{cm}^{2}$ groß.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 12,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "W: Prozentwert\n\np: Prozentsatz\n\nG: Grundwert\n\n$W=p\\cdot G$\n\n$0,75\\cdot16=12$\n\nDie gefärbte Fläche ist $12\\cm^2$ groß.",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Alina bietet einen Sportkurs an. Jede Person muss pro Kursstunde einen festen Betrag bezahlen. An der letzten Kursstunde haben 8 Personen teilgenommen. Alina hatte Einnahmen von $40\\ €$.\n\nErgänze die Überschriften in der ersten Zeile.\nBerechne die Einnahmen, wenn 14 Personen am Kurs teilnehmen.\n\n| ⟦1⟧ | ⟦2⟧ |\n|---|---|\n| $\\hspace{26mm}$8 | $\\hspace{12mm}$40 € |\n| $\\hspace{24mm}$14 | $\\hspace{7mm}$⟦3⟧ € |",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Anzahl der Personen",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Einnahmen",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 70,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$8 \\mathop{\\widehat{=}}40$ €\n\n$1\\mathop{\\widehat{=}}5$ €\n\n$14\\mathop{\\widehat{=}}70$ €\n\nWenn 14 Personen zum Kurs kommen, betragen die Einnahmen $70$ €.\n\n![Abbildung](/uploads/ex-de5b8d4575ec.png)",
+     "points": 3,
+     "topic": "Zuordnungen & Dreisatz"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Verbinde die Rechenvorschriften mit dem jeweils passenden Term.\n\n![Abbildung](/uploads/ex-7a95adfb9c68.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-28e8cc40ba09.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-28e8cc40ba09.png)",
+     "points": 2,
+     "topic": "Terme, Gleichungen & Formeln"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Wert des Terms $6x-(8+10x)$ für $x=\\frac{1}{2}$.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": -10,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Setze für $x$ den Wert $\\displaystyle\\frac{1}{2}$ in den Term ein ein.\n\n$6\\cdot\\frac{1}{2}-(8+10\\cdot\\frac{1}{2})=3-\\left(8+5\\right)=-10$",
+     "points": 2,
+     "topic": "Terme, Gleichungen & Formeln"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Die Summe der Augenzahlen von zwei gegenüberliegenden Seiten eines Würfels beträgt immer 7 .\n\n![Abbildung](/uploads/ex-4d5f5725f4ad.png)\n\nZeichne die fehlenden Augenzahlen in des Würfelnetz ein.\n\n![Abbildung](/uploads/ex-736d3e8b52b3.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Überlege, wie du das Netz falten musst. ![Abbildung](/uploads/ex-5c45b6724e54.png)"
+     },
+     "solution": "*Überlege, wie du das Netz falten musst.*\n\n![Abbildung](/uploads/ex-5c45b6724e54.png)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "Der Flächeninhalt der abgebildeten Figur soll berechnet werden.\n\n![Abbildung](/uploads/ex-2660d3c5aa61.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne eine geeignete Zerlegung oder Ergänzung in die Figur ein.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-0fa6cbb09925.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-0fa6cbb09925.png)",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne den Flächeninhalt der Figur.\n\nDer Flächeninhalt der Figur beträgt ⟦1⟧ $\\mathrm{cm}^{2}$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 16,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Der Flächeninhalt der Figur entspricht dem Flächeninhalt des Quadrates, da das zusätzliche Dreieck links oben, dem fehlenden Dreieck links unten entspricht.\n\n$4\\cdot4=16$\n\nDer Flächeninhalt der Figur beträgt $16\\cm^2$.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Stelle einen allgemeinen Term für die Berechnung des Flächeninhaltes in Abhängigkeit von $a$ auf.\n\n![Abbildung](/uploads/ex-f3a763936477.png)\n\n$\\text{A}\\ =$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$A=2a\\cdot2a=4a^2$",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  }
+ ]
+}

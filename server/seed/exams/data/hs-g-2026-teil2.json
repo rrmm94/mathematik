@@ -1,0 +1,367 @@
+{
+ "school": "hs-g",
+ "schoolLabel": "Hauptschule G-Kurs",
+ "year": 2026,
+ "part": "Teil 2",
+ "folderId": 334259,
+ "url": "https://de.serlo.org/mathe/334259/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Es wurden $18\\,600$ Frauen nach ihrer Lieblingssportart gefragt.\n\n![Abbildung](/uploads/ex-f03c2cd2a814.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Fülle die Lücken aus.\n\nDie beliebteste Sportart ist ⟦1⟧.\n\nNordic Walking betreiben am liebsten ⟦2⟧ % der befragten Frauen.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Fitness",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 21,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Nordic Walking: $100\\ \\%-35\\ \\%-25\\ \\%-8\\ \\%-11\\ \\%=21\\ \\%$\n\nBeliebteste Sportart: Fitness mit $35\\ \\%$.",
+     "points": 0,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Anzahl der befragten Frauen, die am liebsten Yoga betreiben.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1488,
+        "tolerance": 0,
+        "unit": "Frauen",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnung der Anzahl der befragten Frauen, die am liebsten Yoga betreiben.**\n\n$18\\ 600$ Frauen wurden befragt. $8\\ \\%$ betreiben Yoga.\n\n$\\displaystyle\\frac{18600}{100}\\cdot8=1488$\n\n$8\\ \\% \\widehat{=}1488$",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Auch Männer wurden nach ihrer Lieblingssportart gefragt.\n\nBerechne zuerst die zwei fehlenden Längenangaben in der Tabelle.\n\nVervollständige dann das Streifendiagramm.\n\n![Abbildung](/uploads/ex-9a775d516bd0.png)\n\n![Abbildung](/uploads/ex-9e2dc7c55343.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Berechnen der fehlenden Längenangaben in der Tabelle. Fussball rightarrow 25 % 5 %widehat{=}0,6cm Rightarrow 25 %widehat{=}5cdot0,6cm boxed{25 %widehat{=}3cm} Fitness rightarrow 20 % 5 %widehat{=}0,6cm Rightarrow 20 %widehat{=}4cdot0,6cm boxed{20 %widehat{=}2,4cm} Ergänzen der Tabelle. ![Abbildung](/uploads/ex-4bfa5725e272.png) Vervollständigen des Streifendiagramms. ![Abbildung](/uploads/ex-3b3ec62c77dc.png)"
+     },
+     "solution": "**Berechnen der fehlenden Längenangaben in der Tabelle.**\n\nFussball $\\rightarrow\\ 25\\ \\%$\n\n$5\\ \\%\\widehat{=}0,6\\cm\\ \\Rightarrow\\ 25\\ \\%\\widehat{=}5\\cdot0,6\\cm$\n\n$\\boxed{25\\ \\%\\widehat{=}3\\cm}$\n\nFitness $\\rightarrow\\ 20\\ \\%$\n\n$5\\ \\%\\widehat{=}0,6\\cm\\ \\Rightarrow\\ 20\\ \\%\\widehat{=}4\\cdot0,6\\cm$\n\n$\\boxed{20\\ \\%\\widehat{=}2,4\\cm}$\n\n**Ergänzen der Tabelle.**\n\n![Abbildung](/uploads/ex-4bfa5725e272.png)\n\n**Vervollständigen des Streifendiagramms.**\n\n![Abbildung](/uploads/ex-3b3ec62c77dc.png)",
+     "points": 3,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "„Super Marion\" ist ein Videospiel. Es erscheinen zufällig die Hindernisse Wolke (W), Stein (S) oder Blitz (B), denen „Super Marion\" ausweichen muss.\n\n![Abbildung](/uploads/ex-62ae5d0ea8f3.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Das Baumdiagramm zeigt die Wahrscheinlichkeiten für das Erscheinen der Hindernisse.\n\nTrage die fehlende Wahrscheinlichkeit in den Kreis ein.\n\n![Abbildung](/uploads/ex-96717799e4ed.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Ergänzen des Baumdiagramms. Die Wahrscheinlichkeiten der Ereignisse Wolke, Stein und Blitz ergeben 1. Also: mathrm{P_{Wolke}+P_{Stein}+P_{Blitz}=1} mathrm{P_{Stein}=1-P_{Wolke}-P_{Blitz}} mathrm{P_{Stein}=1-dfrac{55}{100}-dfrac{1}{100}} mathrm{P_{Stein}=dfrac{100}{100}-dfrac{56}{100}} underline{underline{mathrm{P_{Stein}=dfrac{44}{100}}}} Ergänze das Baumdiagramm entsprechend. ![Abbildung](/uploads/ex-9582069803c1.png)"
+     },
+     "solution": "**Ergänzen des Baumdiagramms.**\n\nDie Wahrscheinlichkeiten der Ereignisse Wolke, Stein und Blitz ergeben $1.$\n\nAlso:\n\n$\\mathrm{P_{Wolke}+P_{Stein}+P_{Blitz}=1}$\n\n$\\mathrm{P_{Stein}=1-P_{Wolke}-P_{Blitz}}$\n\n$\\mathrm{P_{Stein}=1-\\dfrac{55}{100}-\\dfrac{1}{100}}$\n\n$\\mathrm{P_{Stein}=\\dfrac{100}{100}-\\dfrac{56}{100}}$\n\n$\\underline{\\underline{\\mathrm{P_{Stein}=\\dfrac{44}{100}}}}$\n\nErgänze das Baumdiagramm entsprechend.\n\n![Abbildung](/uploads/ex-9582069803c1.png)",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "„Super Marion“ trifft nacheinander auf zwei Hindernisse.\n\nBerechne die Wahrscheinlichkeit in Prozent, dass „Super Marion“ zuerst auf eine Wolke (W) und dann auf einen Blitz(B) trifft.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.55,
+        "tolerance": 0,
+        "unit": "%",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Wahrscheinlichkeit mit Hilfe der 1. Pfadregel (Produktregel)*\n\n**Berechnen der Wahrscheinlichkeit in Prozent.**\n\nAnwenden der 1. Pfadregel:\n\n$\\mathrm{P_{1.Wolke\\ 2.Blitz}=\\dfrac{55}{100}\\cdot\\dfrac{1}{100}}$\n\n$\\mathrm{P_{1.Wolke\\ 2.Blitz}=\\dfrac{55}{10000}}$\n\n$\\mathrm{P_{1.Wolke\\ 2.Blitz}=0,55\\ \\%}$\n\nDie Wahrscheinlichkeit, dass „Super Marion“ zuerst auf eine Wolke (W) und dann auf einen Blitz(B) trifft beträgt: $\\boxed{0,55\\ \\%}$",
+     "points": 3,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "„Super Marion“ trifft zweimal nacheinander auf eine Wolke (W) oder zweimal nacheinander auf einen Blitz (B).\n\nMarkiere die passenden Pfade und berechne die Wahrscheinlichkeit für das Ereignis.",
+     "answer": {
+      "type": "free",
+      "sample": "- Berechne die Wahrscheinlichkeit mit Hilfe der 1. Pfadregel (Produktregel) und der 2. Pfadregel (Summenregel) Markieren des Pfads. ![Abbildung](/uploads/ex-91e6a55c8dbb.png) Berechnen der Wahrscheinlichkeit. Anwenden der 1. Pfadregel: mathrm{P_{Wolke Wolke}=dfrac{55}{100}cdotdfrac{55}{100}hspace{30mm}P_{Wolke Wolke}=dfrac{3025}{10000}} mathrm{P_{Blitz Blitz}=dfrac{1}{100}cdotdfrac{1}{100}hspace{35mm}P_{Blitz Blitz}=dfrac{1}{10000}} Anwenden der 2. Pfadregel: mathrm{P_{gesamt}=dfrac{3025}{10000}+dfrac{1}{10000}} mathrm{P_{gesamt}=dfrac{3026}{10000}} Die Wahrscheinlichkeit zweimal nacheinander "
+     },
+     "solution": "*- Berechne die Wahrscheinlichkeit mit Hilfe der 1. Pfadregel (Produktregel) und der 2. Pfadregel (Summenregel)*\n\n**Markieren des Pfads.**\n\n![Abbildung](/uploads/ex-91e6a55c8dbb.png)\n\n**Berechnen der Wahrscheinlichkeit.**\n\nAnwenden der 1. Pfadregel:\n\n$\\mathrm{P_{Wolke\\ Wolke}=\\dfrac{55}{100}\\cdot\\dfrac{55}{100}\\hspace{30mm}P_{Wolke\\ Wolke}=\\dfrac{3025}{10000}}$\n\n$\\mathrm{P_{Blitz\\ Blitz}=\\dfrac{1}{100}\\cdot\\dfrac{1}{100}\\hspace{35mm}P_{Blitz\\ Blitz}=\\dfrac{1}{10000}}$\n\nAnwenden der 2. Pfadregel:\n\n$\\mathrm{P_{gesamt}=\\dfrac{3025}{10000}+\\dfrac{1}{10000}}$\n\n$\\mathrm{P_{gesamt}=\\dfrac{3026}{10000}}$\n\nDie Wahrscheinlichkeit zweimal nacheinander auf eine Wolke (W) oder zweimal\n\nnacheinander auf einen Blitz (B) zu treffen beträgt:\n\n$\\dfrac{3026}{10000}$ oder $30,26\\ \\%$.",
+     "points": 3,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "![Abbildung](/uploads/ex-6b5668c9089d.png)\n\nAbgebildet ist die lineare Funktion $\\mathrm{y}_{1}$.\n\nKreuze die zugehörige Funktionsgleichung für $y_1$ an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$y_1=2x+3$",
+        "correct": false
+       },
+       {
+        "text": "$y_1=2x-3$",
+        "correct": true
+       },
+       {
+        "text": "$y_1=-2x+3$",
+        "correct": false
+       },
+       {
+        "text": "$y_1=-2x-3$",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "**Ermitteln der Funktionsgleichung $\\textbf{y}_{\\textbf{1}}$.**\n\n![Abbildung](/uploads/ex-b6ea6273c041.png)\n\nDie allgemeine Form einer linearen Funktion lautet,\n\n$\\mathrm{\\large{{y=mx+t}}}$\n\nwobei $\\textbf{m}$ = Steigung der Geraden\n\n$\\hspace{15mm}\\textbf{t}$ = $\\text{y}$-Achsenabschnitt\n\nBerechnung der Steigung $\\textbf{m}$\n\n$\\mathrm{m=\\dfrac{y_2-y_1}{x_2-x_1}}$\n\n$\\mathrm{m=\\dfrac{4-0}{3,5-1,5}}$\n\n$\\mathrm{m=2}$\n\nDen $\\text{y}$-Achsenabschnitt lesen wir aus der Skizze ab.\n\n$\\mathrm{t=-3}$\n\nWir erhalten dann die folgende Funktionsgleichung:\n\n$\\mathrm{y_1=2x-3}$\n\nKreuze entsprechend an.",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Eine andere Funktion hat die Funktionsgleichung $\\mathrm{y}_{2}=-\\frac{1}{2} \\mathrm{x}+4$.\n\nZeichne den Graphen der Funktion $\\mathrm{y}_{2}$ in das Koordinatensystem ein.",
+     "answer": {
+      "type": "free",
+      "sample": "Einzeichne des Graphen der Funktion textbf{y}_{textbf{2}} in das Koordinatensystem. ![Abbildung](/uploads/ex-c55db84f1f0e.png)"
+     },
+     "solution": "**Einzeichne des Graphen der Funktion $\\textbf{y}_{\\textbf{2}}$ in das Koordinatensystem.**\n\n![Abbildung](/uploads/ex-c55db84f1f0e.png)",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Prüfe mithilfe einer Rechnung, ob der Punkt P $(10 \\mid-1)$ auf dem Graphen der Funktion $\\mathrm{y}_{2}$ liegt.",
+     "answer": {
+      "type": "free",
+      "sample": "Prüfen, ob der Punkt P left(textbf{10} midtextbf{-1}right) auf dem Graphen der Funktion mathrm{y}_{2} liegt. Möglichkeit 1: (Berechnen von text{x}) begin{aligned} mathrm{-1} &= mathrm{-dfrac{1}{2}x+4} qquad |; cdot2 mathrm{-2} &= mathrm{-x+8} qquad |; -8 -10 &= mathrm{-x} qquad |; cdot(-1) text{x} &= 10 end{aligned} Möglichkeit 2: Large(Berechnen von mathrm{y_2} Large) mathrm{y_2=-dfrac{1}{2}cdot10+4} mathrm{y_2=-5+4} mathrm{y_2=-1} Der Punkt text{P}left(10 mid-1right) liegt also auf auf dem Graphen der Funktion mathrm{y}_{2}."
+     },
+     "solution": "**Prüfen, ob der Punkt P $\\left(\\textbf{10} \\mid\\textbf{-1}\\right)$ auf dem Graphen der Funktion $\\mathrm{y}_{2}$ liegt.**\n\nMöglichkeit 1:\n\n(Berechnen von $\\text{x}$)\n\n$$\\begin{aligned}\n\\mathrm{-1} &= \\mathrm{-\\dfrac{1}{2}x+4} \\qquad |\\; \\cdot2 \\\\\n\\mathrm{-2} &= \\mathrm{-x+8} \\qquad |\\; -8 \\\\\n-10 &= \\mathrm{-x} \\qquad |\\; \\cdot(-1) \\\\\n\\text{x} &= 10\n\\end{aligned}$$\n\nMöglichkeit 2:\n\n$\\Large($Berechnen von $\\mathrm{y_2}\\ \\Large)$\n\n$\\mathrm{y_2=-\\dfrac{1}{2}\\cdot10+4}$\n\n$\\mathrm{y_2=-5+4}$\n\n$\\mathrm{y_2=-1}$\n\nDer Punkt $\\text{P}\\left(10 \\mid-1\\right)$ liegt also auf auf dem Graphen der Funktion $\\mathrm{y}_{2}$.",
+     "points": 3,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Der Graph einer linearen Funktion $\\mathrm{y}_{3}$ soll parallel zu $\\mathrm{y}_{2}$ verlaufen.\n\nGib zwei mögliche Funktionsgleichungen für $\\mathrm{y}_{3}$ an.",
+     "answer": {
+      "type": "free",
+      "sample": "Angeben von zwei mögliche Funktionsgleichungen für textbf{y}_{textbf{3}}. Die allgemeine Geradengleichung lautet: mathrm{y=mx+t} Die Graphen zweier linearer Funktionen sind parallel, wenn gilt: mathrm{m_1=m_2} und mathrm{t_1neq t_2} Zwei mögliche Funktionsgleichungen für mathrm{y_3} sind dann z. B.: 1. boxed{mathrm{y_3=-dfrac{1}{2}x+2}} 2. boxed{mathrm{y_3=-dfrac{1}{2}x-2}}"
+     },
+     "solution": "**Angeben von zwei mögliche Funktionsgleichungen für $\\textbf{y}_{\\textbf{3}}$.**\n\nDie allgemeine Geradengleichung lautet:\n\n$\\mathrm{y=mx+t}$\n\nDie Graphen zweier linearer Funktionen sind parallel, wenn gilt:\n\n$\\mathrm{m_1=m_2}$ und $\\mathrm{t_1\\neq t_2}$\n\nZwei mögliche Funktionsgleichungen für $\\mathrm{y_3}$ sind dann z. B.:\n\n1. $\\boxed{\\mathrm{y_3=-\\dfrac{1}{2}x+2}}$\n2. $\\boxed{\\mathrm{y_3=-\\dfrac{1}{2}x-2}}$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Die Abbildung zeigt den Kopf einer Stehlampe.\n\nDer Radius r der kreisförmigen Fläche (1) beträgt 10,50 cm.\n\n![Abbildung](/uploads/ex-5b6620611fa2.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Umfang der Fläche (1).",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 65.97,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen des Umfangs der Fläche (1).**\n\nDie Formel zur Berechnung des Umfang eines Kreises Lautet:\n\n$\\mathrm{U_{Kreis}=d\\cdot\\pi}\\quad$oder$\\quad\\mathrm{{U_{Kreis}=2\\cdot r\\cdot\\pi}}$\n\nBekannte Größe:\n\n$\\mathrm{r=10,50\\cm}$\n\nEinsetzen von $\\text{r}$ in die entsprechende Formel.\n\n$\\mathrm{{U_{Kreis}=2\\cdot10,5\\cdot\\pi}}$\n\n$\\underline{\\underline{\\mathrm{U_{Kreis}=65,97\\cm}}}$",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die Fläche (2) hat die Form eines Kreisrings.\n\nBerechne den Flächeninhalt der Fläche (2).\n\n⟦1⟧ $\\cm^2$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 255.25,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen des Flächeninhalts der Fläche (2).**\n\nDie Formel zur Berechnung des Flächeninhalts eines Kreisrings lautet:\n\n$\\mathrm{A_{Kreisring}=\\pi\\cdot\\left(R^2-r^2\\right)}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{R=17,5\\cm;\\quad r=15\\cm}$\n\nEinsetzen der bekannten Größen in die Formel.\n\n$\\mathrm{A_{Kreisring}=\\pi\\cdot\\left(17,5^2-15^2\\right)}$\n\n$\\mathrm{A_{Kreisring}=81,25\\pi}$\n\n$\\underline{\\underline{\\mathrm{A_{Kreisring}=255,25\\cm^2}}}$",
+     "points": 3,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "![Abbildung](/uploads/ex-1c26ff5ade73.png)\n\nKreuze **zwei** Formeln an, mit denen du die Größe der Fläche (2) berechnen kannst.",
+     "answer": {
+      "type": "choice",
+      "multiple": true,
+      "options": [
+       {
+        "text": "$\\mathrm{A}=\\pi \\cdot \\mathrm{r}_{\\mathrm{a}}^{2}-\\pi \\cdot \\mathrm{r}_{\\mathrm{i}}^{2}$",
+        "correct": true
+       },
+       {
+        "text": "$\\mathrm{A}=2 \\cdot \\pi \\cdot \\mathrm{ra}_{\\mathrm{a}}{ }^{2}-\\mathrm{r_i}^{2}$",
+        "correct": false
+       },
+       {
+        "text": "$\\mathrm{A}=\\pi \\cdot\\left(\\mathrm{r}_{\\mathrm{a}}-\\mathrm{r}_{\\mathrm{i}}\\right)^{2}$",
+        "correct": false
+       },
+       {
+        "text": "$\\mathrm{A}=\\pi \\cdot\\left(\\mathrm{r}_{\\mathrm{a}}{ }^{2}-\\mathrm{r}_{\\mathrm{i}}{ }^{2}\\right)$",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "**Formeln zur Berechnung der Fläche (2).**\n\n$\\mathrm{A_{2}=\\pi\\cdot {r_a}^2-\\pi\\cdot {r_i}^2}\\quad$oder$\\quad\\mathrm{A_{2}=\\pi\\cdot\\left({r_a}^2-{r_i}^2\\right)}$\n\nKreuze entsprechend an.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Die Spitze eines Spielgerätes ist von außen mit vier gleichen Blech-Dreiecken verkleidet. Das Blech soll erneuert werden.\n\n![Abbildung](/uploads/ex-5942dc601b7d.png)\n\nZeige mithilfe einer Rechnung, dass man etwa $0,6\\m^2$ Blech benötigt.",
+     "answer": {
+      "type": "free",
+      "sample": "Berechne den Flächeninhalt eines Dreiecks und multipliziere diesen mit 4. A_{Dreieck}=displaystylefrac{1}{2}cdot gcdot h A_{Dreieck}=displaystylefrac{1}{2}cdot 0,35cdot 0,84 A_{Dreieck}=0,147 A_{Blech}=4cdot0,147=0,59 Es werden 0,6m^2 Blech benötigt."
+     },
+     "solution": "*Berechne den Flächeninhalt eines Dreiecks und multipliziere diesen mit 4.*\n\n$A_{Dreieck}=\\displaystyle\\frac{1}{2}\\cdot g\\cdot h$\n\n$A_{Dreieck}=\\displaystyle\\frac{1}{2}\\cdot 0,35\\cdot 0,84$\n\n$A_{Dreieck}=0,147$\n\n$A_{Blech}=4\\cdot0,147=0,59$\n\nEs werden $0,6\\m^2$ Blech benötigt.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die Skizze und das Foto zeigen das komplette Spielgerät. Es hat die Form einer Pyramide mit quadratischer Grundfläche.\n\n![Abbildung](/uploads/ex-9dfab4f635a8.png)\n\nBerechne die Länge der Diagonalen d.\n\n$d\\approx$⟦1⟧m",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2.57,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$d^2=a^2+a^2$\n\n$d^2=6,62$\n\n$d=\\sqrt{6,62}\\approx2,57$\n\nDie Länge der Diagonalen beträgt $2,57\\m$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die Größe des Winkels $\\alpha$ beträgt 73°.\n\nBerechne die Körperhöhe $h_K$.\n\n(Wenn du Teilaufgabe b) nicht gelöst hast, dann rechne mit $d=2,53\\m$ weiter.)\n\n$h_k\\approx$ ⟦1⟧ m\n\nWenn du mit $d=2,53\\m$ gerechnet hast, ergibt sich\n\n$h_k\\approx$⟦2⟧ m",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4.21,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4.14,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Betrachte das Dreieck, mit den Seiten Aussenkante, halber Durchmesser und $h_k$ .*\n\n$\\tan(\\alpha)=\\frac{\\text{Gegenkathete}}{\\text{Ankathete}}$\n\n$\\tan (73° )=\\displaystyle\\frac{h_k}{\\dfrac{d}{2}}$\n\n$\\tan (73° )=\\displaystyle\\frac{h_k}{1,29}$\n\n$h_k=1,29\\cdot3,270$\n\n$h_k=4,21$\n\nDie Körperhöhe beträgt $4,21\\m$.\n\nWenn du mit $d=2,53\\m$ gerechnet hast ergibt sich:\n\n$\\tan (73° )=\\displaystyle\\frac{h_k}{1,265}$\n\n$h_k=1,265\\cdot3,270$\n\n$h_k=4,14$\n\nDie Körperhöhe beträgt $4,14\\m$.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  }
+ ]
+}

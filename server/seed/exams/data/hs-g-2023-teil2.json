@@ -1,0 +1,455 @@
+{
+ "school": "hs-g",
+ "schoolLabel": "Hauptschule G-Kurs",
+ "year": 2023,
+ "part": "Teil 2",
+ "folderId": 315344,
+ "url": "https://de.serlo.org/mathe/315344/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "In einer Umfrage wurden 1100 Personen befragt.\n\n![Abbildung](/uploads/ex-20c9b2776189.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Beurteile die Aussagen mit Hilfe des Balkendiagramms. Kreuze an.\n\n![Abbildung](/uploads/ex-fd322c1984ae.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Aussage 1 Die Aussage ist richtig, da laut der Umfrage 56 % der Befragten eine Katze haben. 50 % ist die Hälfte, also haben mehr als die Hälfte der Personen eine Katze. Aussage 2 Die zweite Aussage ist richtig. Wenn die man die einzelnen Prozente addiert, ergibt sich eine Gesamtsumme von mehr als 100 %: 56 % + 48 % + 14 % + 9 % + 12% = 139 % Hätte jede Person genau ein Haustier, würde die Summe der Prozente genau 100 % ergeben, also müssen manche Personen mehrere Haustiere haben. ![Abbildung](/uploads/ex-c9ffbcc66249.png)"
+     },
+     "solution": "**Aussage 1**\n\nDie Aussage ist richtig, da laut der Umfrage $56 \\%$ der Befragten eine Katze haben. $50 \\%$ ist die Hälfte, also haben mehr als die Hälfte der Personen eine Katze.\n\n**Aussage 2**\n\nDie zweite Aussage ist richtig. Wenn die man die einzelnen Prozente addiert, ergibt sich eine Gesamtsumme von mehr als $100 \\%$:\n\n$56 \\% + 48 \\% + 14 \\% + 9 \\% + 12\\% = 139 \\%$\n\nHätte jede Person genau ein Haustier, würde die Summe der Prozente genau $100 \\%$ ergeben, also müssen manche Personen mehrere Haustiere haben.\n\n![Abbildung](/uploads/ex-c9ffbcc66249.png)",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Anzahl der Personen, die einen Hund haben.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 528,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "- Die Anzahl der Personen, die einen Hund haben, ist der **Prozentwert**\n- Die Anzahl der Befragten $(1100)$ ist der **Grundwert**\n- Der Anteil der Befragten, die einen Hund haben $(48 \\%)$, ist der **Prozentsatz**\n\nUm den Prozentwert zu berechnen, muss man den Grundwert mit dem Prozentsatz multiplizieren:\n\n$1100 \\cdot 0,48 = 528$\n\n$\\Rightarrow$ $528$ Befragte haben einen Hund.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "132 Personen haben Fische.\n\nBerechne den prozentualen Anteil der Personen, die Fische haben.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 12,
+        "tolerance": 0,
+        "unit": "%",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "- Der Anteil der Befragten, die Fische haben, ist der **Prozentsatz**\n- Die Anzahl der Personen, die Fische haben $(132)$, ist der **Prozentwert**\n- Die Anzahl der Befragten $(1100)$ ist der **Grundwert**\n\nUm den Prozentsatz zu berechnen, muss man den Prozentwert durch den Grundwert dividieren:\n\n$132 : 1100 = 0,12 = 12 \\%$\n\n$\\Rightarrow$ $12 \\%$ der Befragten haben Fische.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Die Sitzfläche eines kreisrunden Hockers wird mit Leder bezogen.\n\n![Abbildung](/uploads/ex-c8f8152813c2.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe der Sitzfläche.\n\n$A_{Sitzfläche}\\approx$ ⟦1⟧ $\\cm^2$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 11309.73,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Verwende die Formel zur Berechnung einer Kreisfläche.*\n\nDie Sitzfläche ist ein Kreis mit Durchmesser $d=120$.\n\nDer Radius $r$ ist $r=\\dfrac{d}{2}=\\dfrac{120}{2}=60$.\n\nKreisfläche\n\n$A_\\text{Kreis}=\\pi\\cdot r^2$\n\n$A_\\text{Kreis}=\\pi\\cdot 60^2=11\\,309,73$\n\nDie Sitzfläche ist $11\\,309,73\\cm^2$ groß.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Der Sitzhocker besteht im Innern komplett aus Schaumstoff und hat eine Höhe von $h_K = 40 \\cm.$\n\nBerechne die Menge an Schaumstoff, die zur Herstellung des Sitzhockers benötigt wird.\n\n(Solltest du die Teilaufgabe a) nicht gelöst haben, rechne mit $11312,68 \\cm^2$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 452389.34,
+        "tolerance": 0,
+        "unit": "cm³",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Verwende die Formel zur Berechnung des Zylindervolumens.*\n\nDer Sitzhocker bildet einen Zylinder.\n\nGegeben sind:\n\nDurchmesser: $d=120$. Daraus ergibt sich der Radius $r=60$.\n\nHöhe: $h_K=40$\n\nZylindervolumen\n\n$V_\\text{Zylinder}=r^2\\cdot\\pi\\cdot h_K$\n\n$V_\\text{Zylinder}=60^2 \\cdot \\pi \\cdot 40^2 \\approx 452\\,389,34$\n\nFür den Hocker werden $452\\,389,34\\cm^3$ Schaumstoff benötigt.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Den Hocker gibt es auch in einer Sonderausführung mit einer Sitzfläche in Form eines Dreiviertelkreises und\n\ngleicher Höhe ($h_K = 40 \\cm$).\n\n![Abbildung](/uploads/ex-89a33c4f0b7b.png)\n\nBerechne die Schaumstoffmenge für diesen Hocker.\n\n(Solltest du die Teilaufgabe b) nicht gelöst haben,\n\nrechne mit $451962,87 \\cm^3$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 339292.01,
+        "tolerance": 0,
+        "unit": "cm³",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Ziehe das Volumen des ausgeschnittenen Teils vom Gesamtvolumen ab.*\n\nAus dem Hocker ist ein Viertel ausgeschnitten.\n\nDas Volumen des Hockers ist dementsprechend um ein Viertel kleiner als das eines komplett runden Hockers.\n\n$V_\\text{Hocker}=\\dfrac{3}{4}\\cdot V_\\text{kompletter Hocker}$\n\n$V_\\text{Hocker}=\\dfrac{3}{4}\\cdot 452\\,389,34 \\approx 339\\,292,01$\n\nFür den Hocker in Sonderausführung werden $339\\,292,01\\cm^3$ Schaumstoff benötigt.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "![Abbildung](/uploads/ex-7201c223a51e.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Notiere die Funktionsgleichung der Geraden $g$.\n\n$y=$⟦1⟧ x + ⟦2⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Suche den Schnittpunkt mit der y-Achse. - Bestimme die Steigung*\n\nEine lineare Funktion hat die allgemeine Form\n\n$y=m\\cdot x + b$\n\n$b$ bezeichnet den Abschnitt auf der y-Achse, an dem der Graph die y-Achse schneidet.\n\n$m=\\dfrac{\\Delta y}{\\Delta x}$ gibt die [Steigung der Funktion](/1785) an.\n\nAus dem Diagramm kann man ablesen:\n\n$b=3$ und $m=\\dfrac{\\Delta y}{\\Delta x}=\\dfrac{1}{2}$\n\nDie Funktionsgleichung der Geraden $g$ lautet:\n\n$y=\\dfrac{1}{2}x+3$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne die Gerade $h$ mit der Funktionsgleichung\n\n$y=4x-2$",
+     "answer": {
+      "type": "free",
+      "sample": "- Bestimme den Schnittpunkt mit der y-Achse. - Bestimme die Steigung. - Zeichne den Graphen. ![Abbildung](/uploads/ex-18e8efdc3bd4.png) Der Wert -2 in der Funktionsgleichung gibt an, dass die Gerade die y-Achse im Punkt left(0|-2right) schneidet. Der Wert 4x in der Funktionsgleichung gibt die Steigung m=dfrac{Delta y}{Delta x}=dfrac{4}{1}=4 an."
+     },
+     "solution": "*- Bestimme den Schnittpunkt mit der y-Achse. - Bestimme die Steigung. - Zeichne den Graphen.*\n\n![Abbildung](/uploads/ex-18e8efdc3bd4.png)\n\nDer Wert $-2$ in der Funktionsgleichung gibt an, dass die Gerade die y-Achse im Punkt $\\left(0|-2\\right)$ schneidet.\n\nDer Wert $4x$ in der Funktionsgleichung gibt die Steigung $m=\\dfrac{\\Delta y}{\\Delta x}=\\dfrac{4}{1}=4$ an.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Familie Altan möchte Urlaub an der Nordsee machen. Der Vermieter einer Ferienwohnung verlangt $90\\ €$ pro Übernachtung und für die Endreinigung zusätzlich noch eine einmalige Gebühr\n\nvon $110\\ €$.\n\n![Abbildung](/uploads/ex-a52b367f2ce5.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Gesamtpreis für 10 Übernachtungen.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1010,
+        "tolerance": 0,
+        "unit": "€",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Der Gesamtpreis setzt sich zusammen aus einem festen Teil und einem variablen Teil.\n\nDer feste Teil ist die Endreinigung, die unabhängig von der Aufenthaltsdauer ist.\n\nDer variable Teil berechnet sich aus der Anzahl der Übernachtungen multipliziert mit dem Preis pro Übernachtung.\n\n$\\text{Gesamtpreis}=110+10\\cdot 90=1\\,010$\n\nFamilie Altan muss für $10$ Übernachtungen $1\\,010$ € zahlen.",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Stelle die Funktionsgleichung zur Berechnung des Gesamtpreises in der Form\n\n$y=m\\cdot x+b$ auf.\n\ny= ⟦1⟧ x + ⟦2⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 90,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 110,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "In der Funktionsgleichung bezeichnet\n\n- $x$ die Anzahl der Übernachtungen\n- $m$ der Preis pro Übernachtung\n- $b$ den festen Preis für die Endreinigung\n\nDie Funktionsgleichung lautet:\n\n$y=90\\cdot x+110$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Familie Altan hat $2000\\ €$ für eine Ferienwohnung zur Verfügung.\n\nBerechne die maximale Anzahl der Übernachtungen, die Familie Altan buchen kann.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 21,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Setze die bekannten Werte in die Funktionsgleichung ein und löse nach $x$ auf.*\n\nDer Gesamtpreis für die Ferienwohnung ist abhängig von der Anzahl der Übernachtungen.\n\nGesucht wird die Zahl der Übernachtungen $x$, sodass der Gesamtpreis $2\\,000$ € nicht übersteigt.\n\nEinsetzen der bekannten Werte in die Funktionsgleichung und Auflösen nach $x$.\n\n$2\\,000=90\\cdot x+110 \\\\\n1890=90\\cdot x \\\\\n21=x$\n\nFamilie Altan kann mit $2\\,000$ € maximal $21$ Übernachtungen bezahlen.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "Im Eimer befinden sich insgesamt 500 Lose: 70 Gewinne (G) und 430 Nieten (N). Timo zieht\n\nnacheinander zwei Lose.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Trage die fehlenden Wahrscheinlichkeiten in das Baumdiagramm ein.\n\n![Abbildung](/uploads/ex-f0c4c1123a92.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Wahrscheinlichkeit ein Gewinn-Los zu ziehen: Die Summe der ersten beiden Pfade muß 1 ergeben. displaystyle1-frac{430}{500}=frac{70}{500} Wahrscheinlichkeit zweimal hintereinander ein Gewinn-Los zu ziehen: 1. Zug: displaystylefrac{70}{500} 2. Zug: Es sind nur noch 499 Lose vorhanden. Davon sind 69 Gewinn-Lose. displaystylefrac{69}{499} ![Abbildung](/uploads/ex-aeeebb9c024b.png)"
+     },
+     "solution": "Wahrscheinlichkeit ein Gewinn-Los zu ziehen:\n\nDie Summe der ersten beiden Pfade muß 1 ergeben.\n\n$\\ \\displaystyle1-\\frac{430}{500}=\\frac{70}{500}$\n\nWahrscheinlichkeit zweimal hintereinander ein Gewinn-Los zu ziehen:\n\n\\1. Zug: $\\displaystyle\\frac{70}{500}$\n\n\\2. Zug: Es sind nur noch 499 Lose vorhanden. Davon sind 69 Gewinn-Lose. $\\displaystyle\\frac{69}{499}$\n\n![Abbildung](/uploads/ex-aeeebb9c024b.png)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, nacheinander zwei Nieten zu ziehen.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.739358717,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Verwende die Produktregel.*\n\nWahrscheinlichkeit, nacheinander zwei Nieten zu ziehen:\n\nBetrachte den unteren Pfad.\n\n$\\displaystyle\\frac{430}{500}\\cdot\\frac{429}{499}=\\frac{184470}{249500}$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "Abgebildet ist ein Bauplan für einen\n\nLenkdrachen.\n\n![Abbildung](/uploads/ex-8c2c76fced6d.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge einer Leitkante.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 142.91,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Leitkante $=a+112,5$\n\nBerechne a mit Hilfe des Satzes von Pythagoras.\n\n$a^2=22^2+21^2=484+441=925$\n\n$a=\\sqrt{925}=30,41$\n\nLeitkante$\\ =30,41+112,5=142,91$\n\nDie Leitkante ist $142,91\\cm$ lang.",
+     "points": 3,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Winkels α.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 43.67,
+        "tolerance": 0,
+        "unit": "°",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$\\sin(\\alpha)=\\displaystyle\\frac{\\text{Gegenkathete}}{\\text{Hypotenuse}}$\n\n$\\sin(\\alpha)=\\displaystyle\\frac{21}{30,41}=0,69$\n\n$α\\approx43,67°$",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "Die abgebildete Pyramide mit quadratischer Grundfläche besteht aus Kupfer. Die Körperhöhe $h_{K}$ beträgt 8 cm .\n$1 \\mathrm{~cm}^{3}$ Kupfer hat eine Masse von $8,9 \\mathrm{~g}$.\n\n![Abbildung](/uploads/ex-411aca12320f.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen der Pyramide und anschließend ihre Masse.\n\nDas Volumen der Pyramide ist ⟦1⟧ $\\cm³.$\n\nDie Masse der Pyramide ist ⟦2⟧ $\\ \\ g$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 130.67,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1162.96,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$V_{\\text{Pyramide}}=\\displaystyle\\frac{1}{3}\\cdot G\\cdot h$\n\nG: Grundfläche\n\nh: Höhe\n\n$V_{\\text{Pyramide}}=\\displaystyle\\frac{1}{3}\\cdot 7^2\\cdot 8=130,67$\n\nDas Volumen der Pyramide ist $130,67\\cm^3$.\n\n$130,67\\cdot8,9=1162,96$\n\nDie Masse der Pyramide ist $1162,96\\ g$.",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die Seitenhöhe $h_{a}$ ist $8,73 \\mathrm{~cm}$ lang.\n\nBerechne die Mantelfläche der Pyramide.\n\nDie Mantelfläche der Pyramide ist ⟦1⟧ $\\cm²$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 122.22,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Berechne die Summe der Seitenflächen der [Pyramide](/64697).*\n\nDie Mantelfläche der Pyramide besteht aus den 4 dreieckigen Seitenflächen der Pyramide\n\n$A_{Dreieck}=\\displaystyle\\frac{1}{2}\\cdot g\\cdot h$\n\ng: Grundlinie\n\nh: Höhe\n\n$A_{Dreieck}=\\displaystyle\\frac{1}{2}\\cdot 7\\cdot 8,73=30,55$\n\n$A_{Mantelfläche}=4\\cdot30,55=122,22$\n\nDie Mantelfläche der Pyramide ist $122,22\\cm^2$.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze die richtige Aussage an.\n\nWenn sich die Seitenhöhe $h_{a}$ halbiert und der Flächeninhalt der dreieckigen Seitenfläche unverändert bleibt, dann...",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "verdoppelt sich die Länge der Grundkante a.",
+        "correct": true
+       },
+       {
+        "text": "vervierfacht sich die Länge der Grundkante a.",
+        "correct": false
+       },
+       {
+        "text": "halbiert sich die Länge der Grundkante a.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  }
+ ]
+}

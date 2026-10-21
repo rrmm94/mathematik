@@ -1,0 +1,539 @@
+{
+ "school": "hs-g",
+ "schoolLabel": "Hauptschule G-Kurs",
+ "year": 2022,
+ "part": "Teil 2",
+ "folderId": 315347,
+ "url": "https://de.serlo.org/mathe/315347/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Für eine Studie wurden 1200 Jugendliche gefragt, welche technischen Geräte sie besitzen. Das\n\nErgebnis ist im Diagramm dargestellt.\n\n![Abbildung](/uploads/ex-76e3c58d89c4.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Fülle die Lücken aus.\n\nEs sind ⟦1⟧ Prozent der Jugendlichen im Besitz eines Smartphones.\n\nDie Hälfte der Jugendlichen hat ein ⟦2⟧ .",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 94,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Fernsehgerät",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Lies die Werte aus dem Diagramm ab (1. Balken und 4. Balken)*\n\nEs sind 94 Prozent der Jugendlichen im Besitz eines Smartphones.\n\nDie Hälfte der Jugendlichen hat ein Fernsehgerät.",
+     "points": 2,
+     "topic": "Zuordnungen & Dreisatz"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Anzahl der Jugendlichen, die ein Tablet besitzen.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 456,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$1200 \\mathop{\\widehat{=}} 100\\%$\n\n$12 \\mathop{\\widehat{=}} 1\\%$\n\n$12\\cdot 38 \\mathop{\\widehat{=}} 38\\%$\n\n$456 \\mathop{\\widehat{=}} 38\\%$\n\n$456$ Jugendliche besitzen ein Tablet.",
+     "points": 1,
+     "topic": "Zuordnungen & Dreisatz"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "240 Jugendliche sind im Besitz eines DVD-Players.\n\nBerechne den prozentualen Anteil der Jugendlichen, die ein solches Gerät besitzen.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 20,
+        "tolerance": 0,
+        "unit": "%",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$1200 \\mathop{\\widehat{=}} 100\\%$\n\n$120 \\mathop{\\widehat{=}} 10\\%$\n\n$240 \\mathop{\\widehat{=}} 20\\%$\n\n$20\\%$ der Jugendlichen besitzen einen DVD-Player.",
+     "points": 1,
+     "topic": "Zuordnungen & Dreisatz"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne den fehlenden Balken für den DVD-Player in das Diagramm ein.\n\n(Solltest du die Teilaufgabe c) nicht gelöst haben, verwende 25 %.)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-303f5835d199.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-303f5835d199.png)",
+     "points": 1,
+     "topic": "Zuordnungen & Dreisatz"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Eine Firma bietet folgende Fliese an:\n\n![Abbildung](/uploads/ex-31cf6b1cb9e2.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Flächeninhalt der Fliese.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1260,
+        "tolerance": 0,
+        "unit": "cm²",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$A_{\\text{Parallelogramm}}=a\\cdot h$\n\n$a=28\\cm$\n\n$h=45\\cm$\n\n$A=28\\cdot 45=1260$\n\nDie Fliese hat einen Flächeninhalt von $1260\\cm^2$.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Fliese hat einen Umfang von $162 \\cm$.\n\nBestimme die Länge der Seite **b**.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 53,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$U_{\\text{Parallelogramm}}=2\\cdot a+2\\cdot b$\n\n$U=162\\cm$\n\n$a=28\\cm$\n\n$$\\begin{aligned}\n162 &= 2\\cdot28+2\\cdot b \\\\\n162 &= 56+2\\cdot b \\qquad |\\; -56 \\\\\n106 &= 2\\cdot b \\qquad |\\; :2 \\\\\n53 &= b\n\\end{aligned}$$\n\nDie Seite $b$ hat die Länge $53\\cm$.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Simone näht eine Tischdecke für einen runden Tisch. Der Tisch hat einen Durchmesser von $85 \\cm$. Die runde Tischdecke soll überall gleichmäßig $15 \\cm$ über den Tischrand reichen.\n\n![Abbildung](/uploads/ex-492174ae366d.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Bestimme den Durchmesser der runden Tischdecke.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 115,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$d_\\text{Tisch}=85\\cm$\n\nNachdem die Tischecke rundum $15\\cm$ über den Tischrand reichen soll, ergibt sich:\n\n$d_{\\text{Tischdecke}}=d_{\\text{Tisch}}+2\\cdot15$\n\n$d_{\\text{Tischdecke}}=85+30=115$\n\nDie runde Tischdecke hat einen Durchmesser von $115\\cm$.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Simone schneidet die runde Tischdecke aus einem rechteckigen\n\nStück Stoff $\\left(A=15000\\;\\mathrm{cm}^2\\right)$ aus.\n\n![Abbildung](/uploads/ex-b393c19dec35.png)\n\nGib die Maße eines rechteckigen Stück Stoffes an, das für die runde Tischdecke geeignet ist.\n\nSeite a: ⟦1⟧$\\cm$\n\nSeite b: ⟦2⟧ $\\cm$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 115,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 115,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Bei der Längen- und Breitenangabe muss das Maß mindestens $115\\cm$ betragen, siehe Durchmesser der Tischdecke (Teilaufgabe a).\n\n$a=115\\cm$\n\n$b=115\\cm$",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Flächeninhalt der runden Tischdecke.\n\n(Solltest du die Teilaufgabe a) nicht gelöst haben, rechne mit $117 \\cm$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 10386.89,
+        "tolerance": 0,
+        "unit": "cm²",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$A_{\\text{Kreis}}=r^2\\cdot\\pi$\n\n$r=\\displaystyle\\frac{d}{2}$\n\n$r=\\displaystyle\\frac{115}{2}=57,5$\n\n$A_{\\text{Tischdecke}}=57,5^2\\cdot\\pi=10386,89$\n\nDie Tischdecke hat einen Flächeninhalt von $10386,89\\cm^2$.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Im Koordinatensystem sind zwei Graphen linearer Funktionen dargestellt.\n\n![Abbildung](/uploads/ex-ee2aee4e8784.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Ordne dem Graphen **g** die passende Funktionsgleichung zu. Kreuze an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$y=x+3$",
+        "correct": false
+       },
+       {
+        "text": "$y=-3x+3$",
+        "correct": false
+       },
+       {
+        "text": "$y=-x+3$",
+        "correct": true
+       },
+       {
+        "text": "$y=3x+3$",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "$y=m⋅x+b$\n\n$m$: Steigung der Geraden\n\n$b$: y-Achsenabschnitt\n\n$m=-1$\n\n$b=3$\n\n$y=-x+3$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib die Funktionsgleichung des Graphen **h** an.\n\n$y=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "0,5x+1",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$y=m⋅x+b$\n\n$m=0,5$\n\n$b=1$\n\n$y=0,5x+1$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne den Graphen der Funktion $y=3x-2$ in das Koordinatensystem.",
+     "answer": {
+      "type": "free",
+      "sample": "y=3x-2 Steigung: m=3 y-Achsenabschnitt: b=-2 ![Abbildung](/uploads/ex-b021b8b3c92e.png)"
+     },
+     "solution": "$y=3x-2$\n\nSteigung: $m=3$\n\ny-Achsenabschnitt: $b=-2$\n\n![Abbildung](/uploads/ex-b021b8b3c92e.png)",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "In einer Tüte Bonbons befinden sich drei verschiedene Geschmackssorten: Zitrone, Orange und Himbeere. Von jeder Sorte sind es genau 10 Stück.\n\n![Abbildung](/uploads/ex-a11eadb3193b.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gregor greift blind in die Tüte.\n\nBestimme die Wahrscheinlichkeit, dass er einen Orangen-Bonbon zieht.\n\n$\\text{P(Orangen-Bonbon)}$=⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.333333333,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "absolute Häufigkeit Orangen-Bonbons: $10$\n\nGesamtzahl Bonbons: $30$\n\n$\\text{P(Orangen-Bonbon)}=\\displaystyle\\dfrac{10}{30}$",
+     "points": 2,
+     "topic": "Daten & Statistik"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gregor hat tatsächlich einen Orangen-Bonbon gezogen und isst ihn auf. Danach greift er ein zweites Mal blind in die Tüte.\n\nBestimme die Wahrscheinlichkeit, dass er auch beim zweiten Mal einen Orangen-Bonbon zieht.\n\n$\\text{P(Orangen-Bonbon)}$ = ⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.310344828,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Beim zweiten Mal hat sich sowohl die absolute Häufigkeit als auch die Gesamtzahl der Bonbons um 1 verringert.\n\nabsolute Häufigkeit Orangen-Bonbons: $9$\n\nGesamtzahl Bonbons: $29$\n\n$\\text{P(Orangen-Bonbon)}=\\displaystyle\\dfrac{9}{29}$",
+     "points": 2,
+     "topic": "Daten & Statistik"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "Mehrere Teile eines Spielhauses müssen\n\nrepariert werden.\n\n![Abbildung](/uploads/ex-931a4cd226f5.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Dachkante **x**.\n\nDie Dachkante hat eine Länge von $\\approx$ ⟦1⟧$\\m$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1.82,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$a^2+b^2=c^2$\n\n$a=1,27\\m$\n\n$b=1,30\\m$\n\n$$\\begin{aligned}\n1,27^2+1,30^2 &= c^2 \\\\\n1,6129+1,69 &= c^2 \\\\\n3,3029 &= c^2 \\\\\nc= &= 1,8173...\n\\end{aligned}$$\n\nDie Dachkante hat eine Länge von $\\approx 1,82\\m$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge des Stützbalkens **y**.\n\nDer Stützbalken hat eine Länge von $\\approx$ ⟦1⟧ $\\m.$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.83,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$y^2+0,8^2=1,15^2$\n\n$$\\begin{aligned}\ny^2+0,64 &= 1,3225 \\qquad |\\; -0,64 \\\\\ny^2 &= 0,6825 \\\\\ny= &= 0,8261...\n\\end{aligned}$$\n\nDer Stützbalken hat eine Länge von $\\approx 0,83\\m$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "Das abgebildete Werkstück besteht aus einem Zylinder und einem aufgesetzten Halbzylinder. Beide Teilkörper haben einen Durchmesser von $d = 7 \\cm$.\n\n![Abbildung](/uploads/ex-608a86a94b23.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen des oberen Halbzylinders.\n\nDer obere Halbzylinder hat ein Volumen von ca. ⟦1⟧ $\\cm^3$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 57.73,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$V_{\\text{Zylinder}}=r^2\\cdot\\pi\\cdot h$\n\n$r=\\displaystyle\\dfrac{d}{2}$\n\n$r=\\frac{7}{2}=3,5$\n\n$h=3\\cm$\n\n$V=3,5^2\\cdot\\pi\\cdot3\\approx115,453$\n\n$V_{\\text{Halbzylinder}}=115,453:2\\approx57,73$\n\nDer obere Halbzylinder hat ein Volumen von $57,73\\cm^3$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Der untere Zylinder hat ein Volumen von $V=190\\;cm^3$.\n\nBerechne **h**.\n\nDer untere Zylinder hat eine Höhe von ca. ⟦1⟧ $\\cm$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4.94,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$V_{Zylinder}=r^2\\cdot\\pi\\cdot h$\n\n$V=190\\cm^3$\n\n$r=3,5\\cm$\n\n$190=3,5^2\\cdot\\pi\\cdot h$\n\n$h=\\displaystyle\\frac{190}{12,25\\cdot\\pi}$\n\n$h\\approx4,94$\n\nDer untere Zylinder hat eine Höhe von $\\approx 4,94\\cm.$",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Das Werkstück besteht aus Eisen. $1 \\cm^3$ Eisen hat die Masse $7,86$ g.\n\nBestimme die Masse des Werkstücks.\n\n(Solltest du die Teilaufgabe a) nicht gelöst haben, rechne mit $V=59,37\\;cm^3$ weiter.)\n\nDas Werkstück hat eine Masse von ⟦1⟧ g.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1947.16,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$V_{\\text{Werkstück}}=57,73+190=247,73$\n\nMasse: m\n\n$m_{\\text{Werkstück}}=247,73\\cdot7,86=1947,16$\n\n$_{ }$\n\nDas Werkstück hat eine Masse von $1947,16\\ g$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 8,
+   "context": "In der Abbildung ist ein Strommast dargestellt.\n\n![Abbildung](/uploads/ex-5a99687db026.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Strecke **a**.\n\n$a\\approx$ ⟦1⟧ m",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2.45,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Die Strecke $a$ ist eine Seite des Teildreiecks ganz links, das rechtwinklig ist und von dem die Länge einer Seite und zwei Winkel bekannt sind - Nutze mit diesem Wissen den Tangens, um die Länge der Seite $a$ zu berechnen*\n\nDie Länge der Strecke $a$ kann man mithilfe des kleinen Dreiecks ganz links berechnen. Da es rechtwinklig ist, kann man hier Sinus, Kosinus und Tangens anwenden.\n\n![Abbildung](/uploads/ex-98a97ed3355f.png)\n\nDer Tangens ist definiert als Gegenkathete geteilt durch Ankathete.\n\nDas heißt, dass der Tangens des 55°-Winkels gleich dem Bruch aus der $3,50 \\m$ langen Seite (= die Gegenkathete) und der Länge der Seite $a$ (= die Ankathete) ist.\n\n$$\\begin{aligned}\n\\tan\\ (55°) &= \\frac{3,50 \\m}{a} \\qquad |\\; \\cdot a \\\\\n\\tan \\ (55°) \\cdot a &= 3,50 \\m \\qquad |\\; : \\tan \\ (55°) \\\\\na &= \\frac{3,50 \\m}{\\tan \\ (55°)} \\\\\na &= \\frac{3,50 \\m}{1,428} \\\\\na &= 2,45 \\m\n\\end{aligned}$$\n\nDie Seite $a$ ist also ca. $2,45 \\m$ lang.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Winkels α.\n\n$\\alpha\\approx$ ⟦1⟧ °",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 15.26,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Der Winkel $\\alpha$ ist ein Winkel des gesamten Dreiecks, das rechtwinklig ist und von dem die Längen von zwei Seiten bekannt sind - Nutze den Sinus, um die Größe des Winkels $\\alpha$ zu berechnen*\n\nUm $\\alpha$ zu berechnen, geht man ähnlich vor wie bei Teilaufgabe a), nur wird hier das gesamte Dreieck betrachtet:\n\n![Abbildung](/uploads/ex-34787a6bc30b.png)\n\nDer Sinus ist definiert als Gegenkathete geteilt durch Hypotenuse.\n\nDas heißt, dass der Sinus von $\\alpha$ gleich dem Bruch aus der $3,50 \\m$ langen Seite (= die Gegenkathete) und der $13,30 \\m$ (= die Hypotenuse) ist.\n\n$$\\begin{aligned}\n\\sin\\ (\\alpha) &= \\frac{3,50 \\m}{13,30 \\m} \\qquad |\\; \\arcsin \\\\\n\\alpha &= \\arcsin \\ \\left(\\frac{3,50 \\m}{13,30 \\m}\\right) \\\\\n\\alpha &= 15,26°\n\\end{aligned}$$\n\nDer Winkel $\\alpha$ ist ca. $15,26°$ groß.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  }
+ ]
+}

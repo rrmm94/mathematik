@@ -1,0 +1,405 @@
+{
+ "school": "hs-e",
+ "schoolLabel": "Hauptschule E-Kurs",
+ "year": 2024,
+ "part": "Wahlteil",
+ "folderId": 315330,
+ "url": "https://de.serlo.org/mathe/315330/wahlteil",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Eine Firma stellt die abgebildete Praline her. Ein Teil der Praline ist von einer kreisförmigen Schokoladenplatte bedeckt.\n\n![Abbildung](/uploads/ex-174c55017e84.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Flächeninhalt der Schokoladenplatte.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 530.93,
+        "tolerance": 0,
+        "unit": "mm²",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Radius der Schokoladenplatte - Verwende den Radius in der Formel zur Berechnung  einer Kreisfläche und berechne die Fläche der Schokoladenplatte.*\n\nDie Schokoladenplatte bildet einen Kreis mit Radius $r$.\n\n**Radius der Schokoladenplatte**\n\n$r=\\dfrac{\\text{Durchmesser der Praline}}{2}-\\text{Rand}$\n\n$r=\\dfrac{30}{2}-2=13$\n\n**Flächeninhalt der Schokoladenplatte**\n\n$A_\\text{Schokoladenplatte}=r^2 \\cdot \\pi$\n\n$A_\\text{Schokoladenplatte}=13^2 \\cdot \\pi \\approx 530,93$\n\nDer Flächeninhalt der Schokoladenplatte beträgt $530,93\\mm^2$.",
+     "points": 3,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die kugelförmige Nuss hat einen Durchmesser von $6 \\mm.$\n\n![Abbildung](/uploads/ex-6684cad38725.png)\n\nBerechne das Volumen der Nuss.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 113.1,
+        "tolerance": 0,
+        "unit": "mm³",
+        "alternatives": [
+         113.04
+        ]
+       }
+      ]
+     },
+     "solution": "*- Verwende die Formel zur Volumenberechnung einer Kugel. - Beachte, dass in der Aufgabe der Durchmesser der Nuss gegeben ist. Für die Formel benötigt man den Radius.*\n\n**Volumen einer Kugel**\n\n$V_\\text{Kugel}=\\dfrac{4}{3}\\cdot\\pi\\cdot r^3$\n\n**Volumen der Nuss**\n\n$V_\\text{Nuss}=\\dfrac{4}{3}\\cdot\\pi\\cdot 3^3 \\approx 113,1$\n\nDie Nuss hat ein Volumen von $113,10\\mm^3$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen der Schokoladenfüllung.\n\n(Wenn du die Teilaufgabe b) nicht gelöst hast, dann rechne mit $112,98 \\mm^3$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4488.29,
+        "tolerance": 0,
+        "unit": "mm³",
+        "alternatives": [
+         4486.01
+        ]
+       }
+      ]
+     },
+     "solution": "*- Berechne das Volumen der Schokoladenfüllung ohne Beachtung der Nuss. - Beachte, dass die Füllung eine Halbkugel bildet. - Ziehe das Volumen der Nuss ab.*\n\nDie Schokoladenfüllung bildet eine Halbkugel. Davon muss noch das Volumen der Nuss abgezogen werden.\n\n**Volumen einer Kugel**\n\n$V_\\text{Kugel}=\\dfrac{4}{3}\\cdot\\pi\\cdot r^3$\n\n**Volumen der Schokoladenfüllung incl. Nuss**\n\n$V_\\text{Schoko incl. Nuss}=\\dfrac{\\dfrac{4}{3}\\cdot\\pi\\cdot 13^3}{2} \\approx 4\\,601,39$\n\n**Volumen der Schokoladenfüllung ohne Nuss**\n\n$V_\\text{Schoko ohne Nuss}=V_\\text{Schoko incl. Nuss}-V_\\text{Nuss}$\n\n$V_\\text{Schoko ohne Nuss}=4\\,601,39-113,1=4\\,488,29$\n\nDas Volumen der Schokoladenfüllung beträgt $4\\,488,29\\mm^3$.",
+     "points": 4,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Das Volumen der Praline ist immer gleich. Das Volumen der Schokoladenfüllung hängt nur von der Größe der Nuss ab.\n\nTimo behauptet: „Wird eine Nuss mit $10$ % mehr Volumen genommen, dann verringert sich das Volumen der Schokoladenfüllung auch um $10$ %.\n\nTimos Behauptung ist falsch. Begründe.",
+     "answer": {
+      "type": "free",
+      "sample": "Eine Prozentangabe beschreibt immer den Teil eines Ganzen. 10% der kleinen Nuss ist absolut betrachtet weniger als 10% der größeren Schokoladenfüllung. 10% des Nussvolumens sind 113,1 cdot 0,1=11,31mm^3 10% der Schokoladenfüllung sind 4,488,29 cdot 0,1=448,829 11,31<448,829 Bei einer 10%-gen Erhöhung des Nussvolumens verringert sich das Volumen der Schokoladenfüllung um deutlich weniger als 10%. Timos Behauptung ist also falsch."
+     },
+     "solution": "Eine Prozentangabe beschreibt immer den Teil eines Ganzen.\n\n$10\\%$ der kleinen Nuss ist absolut betrachtet weniger als $10\\%$ der größeren Schokoladenfüllung.\n\n$10\\%$ des Nussvolumens sind $113,1 \\cdot 0,1=11,31\\mm^3$\n\n$10\\%$ der Schokoladenfüllung sind $4\\,488,29 \\cdot 0,1=448,829$\n\n$11,31<448,829$\n\nBei einer $10\\%$-gen Erhöhung des Nussvolumens verringert sich das Volumen der Schokoladenfüllung um deutlich weniger als $10\\%$.\n\nTimos Behauptung ist also falsch.",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Ein Teich ist $80 \\m^2$ groß. Ein Bagger vergrößert die Fläche des Teichs pro Tag um $20 \\m^2$.\n\nNach 6 Tagen ist die Arbeit abgeschlossen.\n\n![Abbildung](/uploads/ex-de83757a5418.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ergänze die obere Tabelle.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-41009934895b.png) Der Bagger vergrößert die Fläche des Teichs täglich um 20m^2. In der Tabelle werden die Werte für die Fläche des Teichs deshalb täglich um 20 größer."
+     },
+     "solution": "![Abbildung](/uploads/ex-41009934895b.png)\n\nDer Bagger vergrößert die Fläche des Teichs täglich um $20\\m^2$. In der Tabelle werden die Werte für die Fläche des Teichs deshalb täglich um $20$ größer.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne den Graphen in das Koordinatensystem.\n\n![Abbildung](/uploads/ex-be45b11e27e4.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Bestimme 2 Punkte des Graphen - Verbinde die Punkte durch eine Gerade ![Abbildung](/uploads/ex-cdf02b82af9c.png) Zu Beginn ist der Teich 80m^2 groß, deshalb schneidet der Graph die y-Achse bei 80. Nach 6 Tagen ist der Teich 200m^2 groß. Der Punkt left(6|200right) liegt damit auf dem Graphen. Da der Teich täglich um die gleiche Fläche größer wird, liegt eine lineare Funktion vor. Der Graph wird gezeichnet, indem die Punkte left(0|80right) und left(6|200right) durch eine Gerade verbunden werden."
+     },
+     "solution": "*- Bestimme 2 Punkte des Graphen - Verbinde die Punkte durch eine Gerade*\n\n![Abbildung](/uploads/ex-cdf02b82af9c.png)\n\nZu Beginn ist der Teich $80\\m^2$ groß, deshalb schneidet der Graph die y-Achse bei $80$.\n\nNach $6$ Tagen ist der Teich $200\\m^2$ groß. Der Punkt $\\left(6|200\\right)$ liegt damit auf dem Graphen.\n\nDa der Teich täglich um die gleiche Fläche größer wird, liegt eine lineare Funktion vor.\n\nDer Graph wird gezeichnet, indem die Punkte $\\left(0|80\\right)$ und $\\left(6|200\\right)$ durch eine Gerade verbunden werden.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Der vergrößerte Teich ist ein Jahr später von Algen befallen. Die Algen bedecken zu Beginn $10 \\m^2$. Die von Algen bedeckte Fläche vergrößert sich täglich um $45$ %.\n\nTrage den fehlenden Wert in die Tabelle ein. Runde auf eine Nachkommastelle.\n\n![Abbildung](/uploads/ex-18e9148b0bbf.png)\n\nZeichne den Graphen in das untenstehende Koordinatensystem.\n\n![Abbildung](/uploads/ex-6e25c99e606f.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Berechne den fehlenden Wert der Tabelle durch Addition des Prozentwertes auf den Wert des Vortags. - Trage die Punkte des Graphen anhand der Werte aus der Tabelle in das Koordinatensystem ein und verbinde die Punkte zu einem Graphen. ![Abbildung](/uploads/ex-62226c5db70c.png) Um die mit Algen bedeckte Fläche eines Folgetags zu berechnen, wird auf die Fläche des aktuellen Tags 45% der Fläche addiert. Von Algen bedeckte Fläche am dritten Tag A_text{Fläche 3. Tag}+A_text{Fläche 3. Tag}cdot 0,45 =A_text{Fläche 3. Tag} cdot 1,45approx 30,5 Am dritten Tag sind 30,5m^2 mit Algen bedeckt. ![Abbildun"
+     },
+     "solution": "*- Berechne den fehlenden Wert der Tabelle durch Addition des Prozentwertes auf den Wert des Vortags. - Trage die Punkte des Graphen anhand der Werte aus der Tabelle in das Koordinatensystem ein und verbinde die Punkte zu einem Graphen.*\n\n![Abbildung](/uploads/ex-62226c5db70c.png)\n\nUm die mit Algen bedeckte Fläche eines Folgetags zu berechnen, wird auf die Fläche des aktuellen Tags $45\\%$ der Fläche addiert.\n\nVon Algen bedeckte Fläche am dritten Tag\n\n$A_\\text{Fläche 3. Tag}+A_\\text{Fläche 3. Tag}\\cdot 0,45 =A_\\text{Fläche 3. Tag} \\cdot 1,45\\approx 30,5$\n\nAm dritten Tag sind $30,5\\m^2$ mit Algen bedeckt.\n\n![Abbildung](/uploads/ex-a26af3ec6761.svg)\n\nTrage die Werte aus der Tabelle in das Koordinatensystem ein und verbinde die Punkte.\n\nBeachte dabei: Die Fläche vergrößert sich täglich um einen festen Prozentsatz im Vergleich zum Vortag, d.h. der Graph ist nicht linear.",
+     "points": 3,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Fülle die Lücken aus.\n\nNach etwa ⟦1⟧ Tagen ist die mit Algen bedeckte Fläche $25 \\m^2$ groß.\n\nNach $5,5$ Tagen ist die mit Algen bedeckte Fläche etwa ⟦2⟧$\\m^2$ groß.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 77.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Lies die Werte aus dem Graphen ab.*\n\nNach etwa $2,5$ Tagen ist die mit Algen bedeckte Fläche $25\\m^2$ groß.\n\nNach $5,5$ Tagen ist die mit Algen bedeckte Fläche etwa $77,5\\m^2$ groß.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Hadi behauptet: „Nach der doppelten Anzahl an Tagen ist auch die von Algen bedeckten Fläche doppelt so groß.“\n\nDie Behauptung stimmt nicht. Begründe.",
+     "answer": {
+      "type": "free",
+      "sample": "- Vergleiche zu Zunahme der von Algen bedeckte Fläche an den einzelnen Tagen. - Vergleiche und entscheide. Der dargestellte Zusammenhang ist nicht proportional. An jedem Tag vergrößert sich die mit Algen bedeckte Fläche um ein größeres Stück als am Vortag. Hadis Behauptung stimmt nicht."
+     },
+     "solution": "*- Vergleiche zu Zunahme der von Algen bedeckte Fläche an den einzelnen Tagen. - Vergleiche und entscheide.*\n\nDer dargestellte Zusammenhang ist nicht proportional.\n\nAn jedem Tag vergrößert sich die mit Algen bedeckte Fläche um ein größeres Stück als am Vortag.\n\nHadis Behauptung stimmt nicht.",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Larissa hat für ihre Party eine Playlist mit 100 Songs erstellt:\n\n\\- 50 Pop-Songs (P)\n\n\\- 30 Rock-Songs (R)\n\n\\- 20 Hip-Hop-Songs (H)\n\nDas Musikprogramm spielt die Songs nach dem Zufallsprinzip ohne\n\nWiederholungen ab.\n\n![Abbildung](/uploads/ex-31be1156baec.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Trage die fehlenden Wahrscheinlichkeiten in das Baumdiagramm ein.\n\n![Abbildung](/uploads/ex-bb968519d9d7.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-b3b613a344da.png) Erklärung zu dfrac{20}{100}: Von den insgesamt 100 Songs sind 20 Hip-Hop-Songs. Erklärung zu dfrac{49}{99}: Ein Pop Song wurde bereits gespielt. Es bleiben also nur noch 99 Songs zur Auswahl. Davon sind 49 Pop-Songs."
+     },
+     "solution": "![Abbildung](/uploads/ex-b3b613a344da.png)\n\nErklärung zu $\\dfrac{20}{100}$: Von den insgesamt $100$ Songs sind $20$ Hip-Hop-Songs.\n\nErklärung zu $\\dfrac{49}{99}$: Ein Pop Song wurde bereits gespielt. Es bleiben also nur noch $99$ Songs zur Auswahl. Davon sind 49 Pop-Songs.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Larissa startet die Wiedergabe.\n\nAls Erstes wird ein Pop-Song oder ein Rock-Song abgespielt. Gib die Wahrscheinlichkeit an.\n\nDie Wahrscheinlichkeit, dass als Erstes ein Pop-Song oder ein Rock-Song abgespielt wird, beträgt: ⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.8,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         80
+        ]
+       }
+      ]
+     },
+     "solution": "*- Bestimme den Anteil der Pop- und Rock-Songs an der Gesamtanzahl der Songs. - Berechne damit die Wahrscheinlichkeit.*\n\nInsgesamt sind $100$ Songs gespeichert, davon sind $50$ Pop-Songs und $30$ Rock-Songs.\n\n$(50+30=80)$\n\nDie Wahrscheinlichkeit, dass als Erstes ein Pop-Song oder ein Rock-Song abgespielt wird, beträgt also $\\dfrac{80}{100}$.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Als Erstes werden zwei Pop-Songs abgespielt.\n\nMarkiere den Pfad und berechne die Wahrscheinlichkeit.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-3e8845e978c8.png) Zur Berechnung der Wahrscheinlichkeiten entlang eines [Pfades](/189811) werden die Wahrscheinlichkeiten entlang des jeweiligen Pfades miteinander multipliziert. Pleft(text{2 Pop-Songs}right)=dfrac{50}{100}cdotdfrac{49}{99}=dfrac{2,450}{9,900}"
+     },
+     "solution": "![Abbildung](/uploads/ex-3e8845e978c8.png)\n\nZur Berechnung der Wahrscheinlichkeiten entlang eines [Pfades](/189811) werden die Wahrscheinlichkeiten entlang des jeweiligen Pfades miteinander multipliziert.\n\n$P\\left(\\text{2 Pop-Songs}\\right)=\\dfrac{50}{100}\\cdot\\dfrac{49}{99}=\\dfrac{2\\,450}{9\\,900}$",
+     "points": 3,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Nach einer Weile sind 12 Pop-Songs, 5 Rock-Songs und 3 Hip-Hop-Songs abgespielt worden. Als Nächstes wird ein Hip-Hop-Song abgespielt.\n\nBerechne die Wahrscheinlichkeit.\n\nDie Wahrscheinlichkeit, dass als Nächstes ein Hip-Hop-Song gespielt wird, beträgt : ⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.2125,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Anzahl der verbleibenden Songs. - Berechne die Anzahl der verbleibenden Hip-Hop-Songs - Berechne die Wahrscheinlichkeit.*\n\nAnzahl verbleibender Songs: $100-\\left(12+5+3\\right)=80$\n\nAnzahl verbleibender Hip-Hop-Songs: $\\left(20-3\\right)=17$\n\nDie Wahrscheinlichkeit, dass als Nächstes ein Hip-Hop-Song gespielt wird, beträgt dann: $\\dfrac{17}{80}$.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Larissa hört neuerdings gern Rap-Musik. Sie möchte 10 Rap-Songs in ihre Playlist einfügen.\n\nLarissa behauptet: „Durch die neuen Songs bleibt die Wahrscheinlichkeit, dass ein Pop-Song abgespielt wird, gleich.“\n\nHat Larissa recht? Begründe.",
+     "answer": {
+      "type": "free",
+      "sample": "Anzahl Songs insgesamt : 100+10=110 Anzahl Pop-Songs: 50 Wahrscheinlichkeit, dass ein Pop-Song abgespielt wird: dfrac{50}{110} Vorher war die Wahrscheinlichkeit, dass ein Pop-Song abgespielt wird: dfrac{50}{100} Larissas Behauptung stimmt nicht."
+     },
+     "solution": "Anzahl Songs insgesamt : $100+10=110$\n\nAnzahl Pop-Songs: $50$\n\nWahrscheinlichkeit, dass ein Pop-Song abgespielt wird: $\\dfrac{50}{110}$\n\nVorher war die Wahrscheinlichkeit, dass ein Pop-Song abgespielt wird: $\\dfrac{50}{100}$\n\nLarissas Behauptung stimmt nicht.",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Die Abbildung zeigt einen Carport.\n\n![Abbildung](/uploads/ex-103d308e292e.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Trage in den gestrichelten Kasten den fehlenden Wert ein.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-3ba4b70602fd.png) Die fehlende Länge berechnet sich: 310-220=90 Das Stück ist 90cm lang."
+     },
+     "solution": "![Abbildung](/uploads/ex-3ba4b70602fd.png)\n\nDie fehlende Länge berechnet sich:\n\n$310-220=90$\n\nDas Stück ist $90\\cm$ lang.",
+     "points": 1,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge **x** eines Dachbalkens.\n\n$\\text{x}=$ ⟦1⟧ $\\cm$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 439.32,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Zur Berechnung von $x$ verwende den Satz des Pythagoras.*\n\nDas Dach bildet ein rechtwinkliges Dreieck.\n\nNach dem Satz des Pythagoras gilt:\n\n$c^2=a^2+b^2$\n\nDie Seite $x$ bildet die Hypotenuse des Dreiecks.\n\nEinsetzen der bekannten Werte.\n\n$x^2=90^2+430^2 \\\\\nx^2=8\\,100+184\\,900 \\\\\nx^2=193\\,000 \\\\\nx=\\sqrt{193\\,000}\nx\\approx 439,32$\n\nDer Dachbalken ist $439,32\\cm$ lang.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Winkels α.\n\n{\n\n$\\alpha=$⟦1⟧ $°$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 11.82,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Sowohl Gegenkathete als auch Hypotenuse des rechtwinkligen Dreiecks sind bekannt.\n\nDamit kann $\\sin{\\alpha}$ berechnet werden.\n\n$\\sin{\\alpha}=\\dfrac{\\text{Gegenkathete}}{\\text{Hypotenuse}}$\n\n$\\sin{\\alpha}=\\dfrac{90}{439,32}\\approx 0,205$\n\n$\\alpha = 11,82^\\circ$\n\nDer Winkel $\\alpha$ hat $11,82^\\circ$.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Auf das Dach soll eine Solaranlage gebaut werden.\n\n![Abbildung](/uploads/ex-2e90ab85c172.png)\n\nBerechne die Größe des Winkels β.\n\n(Wenn du die Teilaufgabe c) nicht gelöst hast, dann rechne mit $α=11,67°$ weiter.)\n\n$\\beta=$⟦1⟧ $°$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 25.18,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Die Summe aller Innenwinkel eines Dreiecks beträgt immer $180^\\circ.$\n\n$180=90+53+11,82+\\beta \\\\\n180-90-53-11,82=\\beta \\\\\n25,18=\\beta$\n\nDer Winkel $\\beta$ hat $25,18^\\circ$.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "e)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge **s** der Solaranlage.\n\n$\\text{s}=$ ⟦1⟧ $\\cm$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 538.42,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Die Solaranlage bildet mit dem Dach ein [rechtwinkliges Dreieck](/36070), dessen Winkel und die Länge einer Kathete bekannt sind.\n\nDie Länge $s$ der Solaranlage bildet die Hypotenuse des Dreiecks.\n\nEs gilt:\n\n$\\cos\\left(\\alpha+\\beta\\right)=\\dfrac{\\text{Ankathete}}{\\text{Hypotenuse}}$\n\nWerte einsetzen\n\n$\\cos\\left(11,82^{\\circ} + 25,18^{\\circ} \\right)=\\dfrac{430}{s}$\n\n$\\cos\\left(37^\\circ\\right)=\\dfrac{430}{s}$\n\n$s=\\dfrac{430}{\\cos\\left(37^\\circ\\right)}\\approx 538,42$\n\nDie Länge $s$ der Solaranlage beträgt $538,42\\cm$.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "f)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Hanna behauptet: „Wenn der grau markierte Winkel (α + β) halbiert wird, dann halbiert sich auch die maximale Länge der Solaranlage.“\n\nHannas Behauptung ist falsch.\n\nPrüfe zeichnerisch oder rechnerisch.",
+     "answer": {
+      "type": "free",
+      "sample": "Länge s der Solaranlage bei Halbierung des Winkels left(alpha + betaright)=dfrac{37}{2}=18,5 cosleft(18,5^circright)=dfrac{430}{s} s=dfrac{430}{cosleft(18,5^circright)} approx 453,43 453,43 ne dfrac{561,79}{2}=280,895 Hannas Behauptung ist falsch. Hinweis ![Abbildung](/uploads/ex-cde6511e4bae.svg)"
+     },
+     "solution": "Länge $s$ der Solaranlage bei Halbierung des Winkels $\\left(\\alpha + \\beta\\right)=\\dfrac{37}{2}=18,5$\n\n$\\cos\\left(18,5^\\circ\\right)=\\dfrac{430}{s}$\n\n$s=\\dfrac{430}{\\cos\\left(18,5^\\circ\\right)} \\approx 453,43$\n\n$453,43 \\ne \\dfrac{561,79}{2}=280,895$\n\nHannas Behauptung ist falsch.\n\n> **Hinweis**\n>\n> ![Abbildung](/uploads/ex-cde6511e4bae.svg)",
+     "points": 1,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  }
+ ]
+}

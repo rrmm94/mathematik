@@ -1,0 +1,395 @@
+{
+ "school": "rs",
+ "schoolLabel": "Realschule",
+ "year": 2021,
+ "part": "Wahlteil",
+ "folderId": 300725,
+ "url": "https://de.serlo.org/mathe/300725/wahlteil",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Ein Kegel wird halbiert.\n\nDer halbe Kegel hat den Radius $r=6\\ cm$ und die Höhe $h_k=12\\ cm$.\n\n![Abbildung](/uploads/ex-cfa6fd1f0d59.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Mantellinie s.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 13.42,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme das rechtwinklige Dreieck, in dem $s$ die Hypotenuse ist. - Berechne $s$ in diesem Dreieck mit dem [Satz des Pythagoras](/1515).*\n\n**Rechtwinkliges Dreieck**\n\nDer Querschnitt, der in der Skizze oben grau dargestellt ist, enthält unser rechtwinkliges Dreieck.\n\nIn diesem rechtwinkligen Dreieck ist die Mantellinie $s$ die Hypotenuse.\n\n![Abbildung](/uploads/ex-d49467f6e18f.png)\n\n**Länge der Mantellinie $s$**\n\nMit dem Satz des Pythagoras gilt:\n\n$$\\begin{aligned}\ns^2 &= h_K^2+r^2 \\\\\n &= 12^2+6^2 \\\\\n &= 180 \\qquad |\\; \\sqrt{ } \\\\\ns &= \\sqrt{180} \\\\\n &= 13,416...\n\\end{aligned}$$\n\nDie Länge von $s$ beträgt etwa: $s=13,42~\\text{cm}$",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Oberfläche des abgebildeten Körpers (halber Kegel).\n\n(Solltest du Teilaufgabe a) nicht gelöst haben, rechne mit $s=13,21cm$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 255,
+        "tolerance": 0,
+        "unit": "cm²",
+        "alternatives": [
+         255.03
+        ]
+       }
+      ]
+     },
+     "solution": "*- Berechne die Mantelfläche des halben Kegels. - Berechne den dreieckigen Querschnitt mit der Grundlinie $s$ und Höhe $h_k$. - Berechne die Fläche der Grundseite (Halbkreis). - Addiere die drei Flächen, um die gesamte Oberfläche zu erhalten.*\n\n**Mantelfläche des halben Kegels**\n\n$$\\begin{aligned}\nA_{Mantel} &= \\frac{1}{2}\\pi\\cdot r\\cdot s \\\\\n &= \\frac{1}{2}\\pi\\cdot6\\cdot13,42 \\\\\n &= 126,48\n\\end{aligned}$$\n\nDie Mantelfläche beträgt etwa $126,48~\\text{cm}^2$.\n\n**Fläche des Dreiecks**\n\n$$\\begin{aligned}\nA_{\\Delta} &= \\frac{1}{2}\\cdot\\left(2r\\right)\\cdot h_k \\\\\n &= \\frac{1}{2}\\cdot12\\cdot12 \\\\\n &= 72\n\\end{aligned}$$\n\nDer dreieckige Querschnitt hat eine Fläche von: $A_\\Delta=36~\\text{cm}^2$\n\n**Fläche der Grundseite**\n\n$$\\begin{aligned}\nA_{Halbkreis} &= \\frac{1}{2}\\pi r^2 \\\\\n &= \\frac{1}{2}\\cdot\\pi\\cdot6^2 \\\\\n &= 56,55\n\\end{aligned}$$\n\nDie Grundseite hat eine Fläche von etwa $56,55~\\text{cm}^2$.\n\n**Gesamt**\n\nInsgesamt ergeben sich:\n\nDie Oberfläche hat einen Flächeninhalt von: $O=255,03~\\text{cm}^2$",
+     "points": 4,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen des halben Kegels.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 226.19,
+        "tolerance": 0,
+        "unit": "cm³",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Berechne das Volumen des ganzen Kegels und teile dabei durch $2$.*\n\nDas Volumen des Kegels beträgt:\n\n$$\\begin{aligned}\nV_{K/2} &= \\dfrac{\\frac{1}{3}\\cdot G\\cdot h}{2} \\\\\n &= \\frac{1}{6}\\cdot G\\cdot h \\\\\n &= \\frac{1}{6}\\cdot \\pi r^2\\cdot h \\\\\n &= \\frac{1}{6}\\cdot \\pi \\cdot6^2\\cdot 12 \\\\\n &= 226,19\n\\end{aligned}$$\n\nDas Volumen beträgt $V_{K/2}=226,19~\\text{cm}^3$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Stelle für einen anderen halben Kegel mit $h_k=2r$ eine allgemeine Volumenformel in Abhängigkeit von $r$ auf und fasse sie so weit wie möglich zusammen.",
+     "answer": {
+      "type": "free",
+      "sample": "- Bestimme das Volumen, wie in Aufgabenteil (c). - Verwende anstatt den Zahlenwerten h_K=2r und fasse zusammen. begin{aligned} V_{K/2} &= dfrac{frac{1}{3}cdot Gcdot h}{2} &= frac{1}{6}cdot Gcdot h &= frac{1}{6}cdot pi cdot r^2cdot 2r &= frac{1}{3}cdot pi r^3 end{aligned}"
+     },
+     "solution": "*- Bestimme das Volumen, wie in Aufgabenteil (c). - Verwende anstatt den Zahlenwerten $h_K=2r$ und fasse zusammen.*\n\n$$\\begin{aligned}\nV_{K/2} &= \\dfrac{\\frac{1}{3}\\cdot G\\cdot h}{2} \\\\\n &= \\frac{1}{6}\\cdot G\\cdot h \\\\\n &= \\frac{1}{6}\\cdot \\pi \\cdot r^2\\cdot 2r \\\\\n &= \\frac{1}{3}\\cdot \\pi r^3\n\\end{aligned}$$",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Lea steht an der Grundlinie eines Volleyballfeldes und schlägt den Ball auf.\n\nDer Graph im Diagramm beschreibt annähernd die parabelförmige Flugbahn dieses Volleyballs. Er hat die Funktionsgleichung $y=-0,02(x-6)^2+2,5$.\n\n![Abbildung](/uploads/ex-51aa6a776c23.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Ergänze den folgenden Satz.\n\nDer Volleyball erreicht nach ⟦1⟧ m seine maximale Höhe von ⟦2⟧ m.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 6,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Verwende die Skizze aus der Aufgabenstellung.* Lies den Scheitelpunkt der Parabel ab und fülle die Lücken aus.*\n\n**Richtiger Satz**\n\nDer Volleyball erreicht nach **6 m** seine maximale Höhe von **2,5 m**.\n\nDieser Punkt kann aus der Skizze abgelesen werden.\n\nDer Scheitel der Parabel liegt bei $(6\\mid 2,5)$.",
+     "points": 2,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Der Schnittpunkt mit der y-Achse ist die Aufschlaghöhe des Balles.\n\nBerechne die Aufschlaghöhe des Balles.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1.78,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Setze $x=0$ im Funktionsterm. - Berechne den Wert des y-Achsenabschnitts.*\n\n**Wert der Aufschlaghöhe**\n\n$$\\begin{aligned}\ny &= -0,02\\cdot(0-6)^2+2,5 \\\\\n &= -0,02\\cdot6^2+2,5 \\\\\n &= 1,78\n\\end{aligned}$$\n\nDie Aufschlaghöhe beträgt $1,78 ~\\text{m}$.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "In der Mitte des 18 m langen Spielfeldes steht das Volleyballnetz. Es ist 2,04 m hoch.\n\nFliegt der Ball über das Netz? Begründe deine Antwort mithilfe einer Rechnung.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "Der Ball fliegt über das Netz.",
+        "correct": true
+       },
+       {
+        "text": "Der Ball fliegt **nicht** über das Netz.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*- Setze für $x=9$ in den Funktionsterm ein. - Berechne den y-Wert. - Vergleiche mit der Höhe des Netzes.*\n\n**y-Wert bei** $x=9$\n\nDie Mitte des 18 m langen Volleyballfeldes liegt bei 9 m. Daher wird $x=9$ eingesetzt.\n\n$$\\begin{aligned}\ny &= -0,02\\cdot(9-6)^2+2,5 \\\\\n &= -0,02\\cdot3^2+2,5 \\\\\n &= 2,32\n\\end{aligned}$$\n\n**Vergleich mit der Netzhöhe**\n\nDie Höhe des Netzes beträgt $2,32~\\text{m}$. Damit fliegt er über das Netz, da $2,32>2,04$.",
+     "points": 3,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "d)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Entscheide mithilfe einer Rechnung, ob der Ball im Spielfeld landet.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "Der Ball landet im Spielfeld.",
+        "correct": true
+       },
+       {
+        "text": "Der Ball landet **nicht** im Spielfeld.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "**Wenn der Ball auf das Spielfeld auftrifft, hat er den y-Wert* $0$. - Setze den Funktionsterm gleich 0. - Berechne $x$ und vergleiche, ob der Wert innerhalb des Spielfelds liegt.*\n\n**x-Koordinate des Aufpralls**\n\n$$\\begin{aligned}\ny &= -0,02\\cdot(x-6)^2+2,5 \\\\\n0 &= -0,02\\cdot(x-6)^2+2,5 \\qquad |\\; -2,5 \\\\\n-2,5 &= -0,02\\cdot(x-6)^2 \\qquad |\\; \\cdot\\left(-1\\right) \\\\\n2,5 &= 0,02\\cdot(x-6)^2 \\qquad |\\; :0,02 \\\\\n125 &= (x-6)^2 \\qquad |\\; \\sqrt{ } \\\\\n\\sqrt{125} &= x-6 \\qquad |\\; +6 \\\\\nx &= \\sqrt{125}+6 \\\\\n &= 17,18\n\\end{aligned}$$\n\nDer Ball trifft den Boden bei $x=17,18$.\n\n**Vergleich mit der Länge des Spielfelds**\n\nDas Spielfeld hat eine Länge von $18~\\text{m}$. Damit trifft der Ball **innerhalb** des Spielfelds auf.",
+     "points": 3,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Lars spielt mit einem Kartenspiel aus 20 Karten. In dem Kartenspiel sind drei Karten „Joker“. Lars zieht nacheinander zwei Karten.\n\n![Abbildung](/uploads/ex-4db74216df12.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Entscheide anhand des Baumdiagramms, ob Lars die erste gezogene Karte in das Kartenspiel zurückgelegt hat oder nicht. Begründe deine Entscheidung.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "Lars hat die erste gezogene Karte zurückgelegt.",
+        "correct": false
+       },
+       {
+        "text": "Lars hat die erste gezogene Karte **nicht** zurückgelegt.",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "*- Betrachte die Wahrscheinlichkeit in der zweiten Stufe. - Entscheide ob hier mit oder ohne Zurücklegen gezogen wird.*\n\n**Wahrscheinlichkeit in der zweiten Stufe**\n\nDie Wahrscheinlichkeit für \"kein Joker\" in der zweiten Stufe beträgt $\\dfrac{16}{19}$.\n\nDer Nenner gibt an, dass sich nur noch $19$ Karten im Spiel befinden, wovon $16$ Joker sind.\n\n**Lars hat die erste Karte nicht zurückgelegt.**",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, dass Lars zweimal hintereinander keinen Joker zieht.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.715789474,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         71.58,
+         71.6
+        ]
+       }
+      ]
+     },
+     "solution": "**Verwende das Baumdiagramm aus Teilaufgabe (a).* Berechne das Produkt der einzelnen Wahrscheinlichkeiten.*\n\n**Wert der Wahrscheinlichkeit**\n\nIm Baumdiagramm entnehmen wir die beiden Werte für \"kein Joker\":\n\n- $\\dfrac{17}{20}$ im ersten Zug\n- $\\dfrac{16}{19}$ im zweiten Zug\n\nDie Wahrscheinlichkeit zweimal keinen Joker zu ziehen ist damit:\n\n$P(\"\\text{zwei mal keinen Joker}\")=\\dfrac{17}{20}\\cdot\\dfrac{16}{19}=\\dfrac{68}{95}\\approx 71,58 ~\\%$\n\n![Abbildung](/uploads/ex-4db74216df12.png)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Ergänze im Baumdiagramm die fehlenden Wahrscheinlichkeiten.",
+     "answer": {
+      "type": "free",
+      "sample": "Verwende die Knotenregel: Die Wahrscheinlichkeiten, die aus einem Knoten kommen, ergeben zusammen 1. Beachte, dass hier gezogen wird, ohne zurückzulegen. Vollständiges Baumdiagramm ![Abbildung](/uploads/ex-3cb5fa14626f.png) Baumdiagramm Die Wahrscheinlichkeiten aus einem Knoten ergeben zusammen immer 1. Beim Ziehen ohne Zurücklegen verändern sich die Wahrscheinlichkeiten."
+     },
+     "solution": "**Verwende die Knotenregel: Die Wahrscheinlichkeiten, die aus einem Knoten kommen, ergeben zusammen* $1$. Beachte, dass hier gezogen wird, ohne zurückzulegen.*\n\n**Vollständiges Baumdiagramm**\n\n![Abbildung](/uploads/ex-3cb5fa14626f.png)\n\n> **Baumdiagramm**\n>\n> Die Wahrscheinlichkeiten aus einem Knoten ergeben zusammen immer $1$.\n> \n> Beim Ziehen ohne Zurücklegen verändern sich die Wahrscheinlichkeiten.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Lars gewinnt, wenn er bei zweimaligem Ziehen mindestens einen Joker bekommt.\n\nBerechne die Wahrscheinlichkeit dafür, dass er gewinnt. Gib die Wahrscheinlichkeit in Prozent an.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 28.42,
+        "tolerance": 0,
+        "unit": "%",
+        "alternatives": [
+         28.4,
+         0.284210526
+        ]
+       }
+      ]
+     },
+     "solution": "*Bestimme das Gegenereignis. Du hast die Wahrscheinlichkeit hierfür bereits in Teilaufgabe (b) berechnet.*\n\n**Das Gegenereignis**\n\nDas Gegenereignis von \"Mindestens einen Joker\" ist \"Zweimal keinen Joker\".\n\n**Wahrscheinlichkeit des Ereignisses**\n\nMit der Formel für das Gegenereignis gilt:\n\n$$\\begin{aligned}\nP(\"\\text{Mindestens einen Joker}\") &= 1-P(\"\\text{keinen Joker}\") \\\\\n &= 1-\\frac{68}{95} \\\\\n &= \\frac{27}{95} \\\\\n &= 0,28421... \\\\\n &= 28,42\\%\n\\end{aligned}$$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Nora zieht Karten aus demselben Kartenspiel. Sie berechnet eine Wahrscheinlichkeit für ein Ereignis mit $P=1-\\frac{17}{20}\\cdot\\frac{16}{19}$.\n\nBeschreibe ein passendes Ereignis zu Noras Rechnung.",
+     "answer": {
+      "type": "free",
+      "sample": "- Bestimme den Pfad im Baumdiagramm mit den Wahrscheinlichkeiten frac{17}{20},~frac{16}{19} - Gib das Ereignis dieses Pfades an. Beachte, dass hier ein Gegenereignis formuliert ist. Das Baumdiagramm ![Abbildung](/uploads/ex-3cb5fa14626f.png) Die Wahrscheinlichkeit, die mit frac{17}{20}cdotfrac{16}{19} berechnet wird ist: \"kein Joker - kein Joker\" Das Ereignis Da hier ein Gegenereignis formuliert ist, ist das gesuchte Ereignis: Nora zieht zwei Karten und davon mindestens einen Joker."
+     },
+     "solution": "*- Bestimme den Pfad im Baumdiagramm mit den Wahrscheinlichkeiten $\\frac{17}{20},~\\frac{16}{19}$ - Gib das Ereignis dieses Pfades an. *Beachte, dass hier ein Gegenereignis formuliert ist.**\n\n**Das Baumdiagramm**\n\n![Abbildung](/uploads/ex-3cb5fa14626f.png)\n\nDie Wahrscheinlichkeit, die mit $\\frac{17}{20}\\cdot\\frac{16}{19}$ berechnet wird ist: \"kein Joker - kein Joker\"\n\n**Das Ereignis**\n\nDa hier ein Gegenereignis formuliert ist, ist das gesuchte Ereignis:\n\n**Nora zieht zwei Karten und davon mindestens einen Joker.**",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Der schiefe Turm von Pisa ist geneigt. Der Winkel $𝛼$ beträgt $4°$.\n\nDie Aussichtsplattform im 7. Stockwerk hat an der geneigten Seite eine Höhe von $h=47,27\\ m$ über dem Boden.\n\n![Abbildung](/uploads/ex-152f20e677fb.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Entfernung x vom Fußpunkt des Turmes bis zur Aussichtsplattform.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 47.39,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Stelle eine Gleichung mithilfe der Winkelfunktionen Sinus, Kosinus oder Tangens auf. - Berechne $x$ aus dieser Gleichung.*\n\n**Gleichung mit Kosinus**\n\nIm rechtwinkligen Dreieck sind\n\n- $h$, die Ankathete gegeben\n- $x$, die Hypotenuse gesucht\n\nWir verwenden Kosinus:\n\n$\\cos\\alpha=\\dfrac{h}{x}$\n\n![Abbildung](/uploads/ex-152f20e677fb.png)\n\n**Berechne die Länge $x$**\n\n$$\\begin{aligned}\n\\cos\\alpha &= \\frac{h}{x} \\qquad |\\; \\cdot x \\\\\n\\cos\\alpha\\cdot x &= h \\qquad |\\; :\\cos\\alpha \\\\\nx &= \\frac{h}{\\cos\\alpha} \\\\\n &= \\frac{47,27}{\\cos4°} \\\\\n &= 47,39\n\\end{aligned}$$\n\nDie Entfernung $x$ beträgt $47,39~\\text{m}$.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Überhang $y$ des Turmes.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3.31,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": [
+         3.37
+        ]
+       }
+      ]
+     },
+     "solution": "*Bestimme $y$ mithilfe der Winkelfunktionen oder dem Satz des Pythagoras.*\n\n**Überhang $y$**\n\nWir berechnen $y$ mit dem Satz des Pythagoras.\n\n$$\\begin{aligned}\nx^2 &= h^2+y^2 \\qquad |\\; -h^2 \\\\\ny^2 &= x^2-h^2 \\\\\n &= 47,39^2-47,27^2 \\qquad |\\; \\sqrt{ } \\\\\ny &= \\sqrt{47,39^2-47,27^2} \\\\\n &= 3,37\n\\end{aligned}$$\n\nDer Überhang $y$ beträgt $3,37~\\text{m}$.\n\n> **Wert des Ergebnis**\n>\n> Je nach Wahl der Rechenmethode und Rundungen, kann das Ergebnis etwas abweichen.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Der schiefe Turm von Suurhusen in Ostfriesland hat bei einer Höhe von 23,37 m über dem Boden einen\n\nÜberhang von 2,47 m.\n\nEntscheide mithilfe einer Rechnung, welcher der beiden Türme im Guinness-Buch der Rekorde als schiefster Turm stehen müsste.\n\n![Abbildung](/uploads/ex-cefb9c601bdd.jpg)",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "Der schiefe Turm von Pisa",
+        "correct": true
+       },
+       {
+        "text": "Der schiefe Turm von Suurhausen in Ostfriesland",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*- Bestimme ein rechtwinkliges Dreieck, wie in der Aufgabenstellung. - Berechne den Winkel $\\alpha$ in diesem Dreieck, um mit dem Winkel des Turms in Pisa zu vergleichen.*\n\n**Rechtwinkliges Dreieck**\n\n![Abbildung](/uploads/ex-2e72e48d83f0.png)\n\n**Winkel $\\alpha$**\n\n$$\\begin{aligned}\n\\tan\\alpha &= \\frac{2,47}{23,37} \\qquad |\\; \\tan^{-1}\\left(\\right) \\\\\n\\alpha &= \\tan^{-1}\\left(\\frac{2,47}{23,37}\\right) \\\\\n &= 6,03\n\\end{aligned}$$\n\nDer Winkel des **Turms in Suurhusen** ist größer als der des schiefen Turms von Pisa.\n\n**Streng genommen müsste dieser Turm im Guinessbuch der Rekorde stehen.**",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Zeige mithilfe der Abbildung, dass in jedem rechtwinkligen Dreieck ABC mit $γ=90°$ gilt:\n\n![Abbildung](/uploads/ex-e617e844120b.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Bestimme alpha aus Gegenkathete und Hypotenuse im rechtwinkligen Dreieck. - Bestimme beta aus Ankathete und Hypotenuse. Vergleiche sinalpha: Im rechtwinkligen Dreieck gilt: sinalpha=dfrac{text{Gegenkathete}}{Hypotenuse}=dfrac{a}{c} ![Abbildung](/uploads/ex-26674a5cf3ad.png) cosbeta: cosbeta=dfrac{text{Ankathete}}{Hypotenuse}=dfrac{a}{c} ![Abbildung](/uploads/ex-9301c2443a23.png) Insgesamt ist also:"
+     },
+     "solution": "*- Bestimme $\\alpha$ aus Gegenkathete und Hypotenuse im rechtwinkligen Dreieck. - Bestimme $\\beta$ aus Ankathete und Hypotenuse. *Vergleiche**\n\n**$\\sin\\alpha$:**\n\nIm rechtwinkligen Dreieck gilt:\n\n$\\sin\\alpha=\\dfrac{\\text{Gegenkathete}}{Hypotenuse}=\\dfrac{a}{c}$\n\n![Abbildung](/uploads/ex-26674a5cf3ad.png)\n\n**$\\cos\\beta$:**\n\n$\\cos\\beta=\\dfrac{\\text{Ankathete}}{Hypotenuse}=\\dfrac{a}{c}$\n\n![Abbildung](/uploads/ex-9301c2443a23.png)\n\nInsgesamt ist also:",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  }
+ ]
+}

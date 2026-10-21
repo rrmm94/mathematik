@@ -1,0 +1,385 @@
+{
+ "school": "hs-e",
+ "schoolLabel": "Hauptschule E-Kurs",
+ "year": 2024,
+ "part": "Teil 2",
+ "folderId": 315329,
+ "url": "https://de.serlo.org/mathe/315329/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Das Kreisdiagramm zeigt die prozentuale\n\nVerteilung der neu zugelassenen Autos in\n\nNorwegen im April 2022.\n\n![Abbildung](/uploads/ex-a61b9c2f5d21.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Prozentsatz der neu zugelassenen Benzin-Autos.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5.3,
+        "tolerance": 0,
+        "unit": "%",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Ziehe die prozentualen Anteile aller Autos, die nicht Benzinautos sind, von der Grundmenge 100% ab.*\n\nDie Summe der verkauften Autos entspricht 100%.\n\nZur Berechnung des Prozentsatzes der Benzin-Autos werden die prozentualen Anteile der anderen Autos von 100% abgezogen.\n\n1$00−74,1−17,4−3,2=5,3$\n\n$5,3\\ \\%$ der Autos waren Benzinautos.",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Im April 2022 wurden in Norwegen insgesamt $9\\,700$ Autos neu zugelassen.\n\nBerechne die Anzahl der neu zugelassenen Elektro-Autos.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 7188,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Lies den Prozentsatz der Elektro-Autos aus dem Kreisdiagramm ab. - Bestimme den Grundwert. - Berechne den Prozentwert der Elektro-Autos mittels der Formeln für die Prozentrechnung.*\n\nAus dem Kreisdiagramm kannst du entnehmen, dass 74,1% der verkauften Autos Elektro-Autos waren. Dies ist der Prozentsatz p.\n\nVerkauft wurden insgesamt 9700 Autos, dies ist der Grundwert G.\n\nGesucht ist der Prozentwert W der Elektro-Autos.\n\n$W=p⋅G$\n\n$W=0,741⋅9700=7187,7$\n\nEs wurden $7188$ Elektro-Autos verkauft.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Im Mai 2022 wurden in Norwegen $8\\,400$ Elektro-Autos neu zugelassen. Das war ein Anteil von etwa 73 %.\n\nBerechne die Anzahl aller im Mai 2022 neu zugelassenen Autos.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 11507,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Bestimme aus der Aufgabenstellung den Prozentwert und den Prozentsatz. Berechne den Grundwert mittels der Formeln zu Prozentrechnung*\n\nIm Mai wurden 8400 Elektro-Autos verkauft. Dies ist der Prozentwert\n\nW bei einem Prozentsatz $p=0,73$.\n\nGesucht ist die Anzahl aller verkauften Autos. Dies ist der Grundwert G.\n\n$\\displaystyle G=\\frac{W}{p}$\n\n$\\displaystyle G=\\frac{8400}{0,73}=11506,8..$\n\nIm Mai 2022 wurden insgesamt rund $11507$ Autos verkauft.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Im Mai 2022 wurden in Deutschland $208\\,000$ Autos neu zugelassen. Davon waren $14,1\\%$ Elektro-Autos. Anna sagt: „Der Prozentsatz der neu zugelassenen Elektro-Autos ist in Deutschland viel kleiner als in Norwegen.“\n\nTerje behauptet: „Deshalb ist die Anzahl der neu zugelassenen Elektro-Autos in Deutschland ebenfalls kleiner.“\n\nEntscheide, ob Terjes Behauptung stimmt. Begründe deine Entscheidung.",
+     "answer": {
+      "type": "free",
+      "sample": "- Berechne die Zahl der in Deutschland verkauften Elektro-Autos. - Vergleiche mit der Anzhal der in Norwegen verkauften Elektro-Autos und entscheide. Verkaufte Elektro-Autos in Deutschland W=p⋅G W=0,141⋅208000=29328 In Deutschland wurden im Mai 2022 29328 Elektro-Autos verkauft. Vergleich 8400<29328 In Norwegen wurden im Mai 2022 8400 Elektro-Autos verkauft. Dies sind weniger als 29328 Autos, die in Deutschland verkauft wurden. Terje hat also nicht recht."
+     },
+     "solution": "*- Berechne die Zahl der in Deutschland verkauften Elektro-Autos. - Vergleiche mit der Anzhal der in Norwegen verkauften Elektro-Autos und entscheide.*\n\nVerkaufte Elektro-Autos in Deutschland\n\n$W=p⋅G$\n\n$W=0,141⋅208000=29328$\n\nIn Deutschland wurden im Mai 2022 $29328$ Elektro-Autos verkauft.\n\nVergleich $8400<29328$\n\nIn Norwegen wurden im Mai 2022 $8400$ Elektro-Autos verkauft. Dies sind weniger als $29328$ Autos, die in Deutschland verkauft wurden.\n\nTerje hat also nicht recht.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Beim Elfmeter-Schießen im Fußball gibt es drei Möglichkeiten:\n\n\\- Der Spieler schießt ein Tor (T).\n\n\\- Der Spieler schießt den Ball am Tor vorbei (V).\n\n\\- Der Torwart hält den Ball (H).\n\n![Abbildung](/uploads/ex-518d278e2cd2.png)\n\nDas Baumdiagramm zeigt die Wahrscheinlichkeiten.\n\n![Abbildung](/uploads/ex-0d75a8fa07a7.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Ergänze den fehlenden Wert im Baumdiagramm.",
+     "answer": {
+      "type": "free",
+      "sample": "Die Summe der Wahrscheinlichkeiten der ersten 3 Pfade muß 1 ergeben. ![Abbildung](/uploads/ex-e33c9f4e6b21.png)"
+     },
+     "solution": "*Die Summe der Wahrscheinlichkeiten der ersten 3 Pfade muß 1 ergeben.*\n\n![Abbildung](/uploads/ex-e33c9f4e6b21.png)",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Es werden zwei Elfmeter geschossen.\n\nErgänze das Baumdiagramm für den zweiten Schuss.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-4429dc29317c.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-4429dc29317c.png)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Beide Elfmeter werden ein Tor.\n\nBerechne die Wahrscheinlichkeit.\n\nDie Wahrscheinlichkeit, dass beide Elfmeter ein Tor werden ist: ⟦1⟧ oder ⟦2⟧ $\\%$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.5625,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 56.25,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Berechne die Wahrscheinlichkeit mithilfe der Pfadregeln.*\n\nDie beiden Ereignissen \"1. Schuss\" und \"2. Schuss\" sind voneinander unabhängig.\n\nBerechnung der Wahrscheinlichkeit für das Ereignis \"1. Schuss\" und \"2. Schuss\" ein Tor nach der Pfadregel.\n\nP(1. Schuss und 2. Schuss Tor)=P(1. Schuss Tor)⋅P(2. Schuss Tor)\n\nP(1. Schuss und 2. Schuss Tor) = $\\dfrac{15}{20}\\cdot \\dfrac{15}{20}=\\dfrac{225}{400}$\n\nDie Wahrscheinlichkeit, dass beide Elfmeter ein Tor werden, beträgt $\\displaystyle\\frac{225}{400}$.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Eine Bank bietet für die Kontoführung drei unterschiedliche Tarife A, B und C an.\n\n![Abbildung](/uploads/ex-f60964eef741.png)\n\nIm Koordinatensystem ist Tarif B graphisch dargestellt.\n\n![Abbildung](/uploads/ex-f2bfb88a8905.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Fülle die Lücken in der Tabelle aus.\n\n| Tarif | Grundpreis pro Monat | Kosten pro Buchung |\n|---|---|---|\n| A | 4,50 € | 0,15 € |\n| B | 3,00 € | ⟦1⟧ € |\n| C | 7,50 € | 0 € |",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.25,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme den Grundpreis aus dem Schnittpunkt des Graphen mit der y-Achse. - Bestimme die Kosten pro Buchung aus der Steigung des Graphen.*\n\nAus dem Schnittpunkt des Graphen mit der y-Achse kann der Grundpreis abgelesen werden.\n\nEr beträgt $3$ €.\n\nAus der Steigung des Graphen sind die Kosten pro Buchung ablesbar.\n\nBeispiel: $0$ Buchungen kosten den Grundpreis pro Monat von $3$ €, $4$ Buchungen kosten $4$ €. Zieht man den Grundpreis ab, dann kosten $4$ Buchungen $1$ € bzw. $1$ Buchung kostet $\\frac{1}{4}=0,25$ €.\n\n![Abbildung](/uploads/ex-26470cab89d9.png)",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne den Graphen für Tarif A in das Koordinatensystem.",
+     "answer": {
+      "type": "free",
+      "sample": "Bestimme zwei Punkte des Graphen und zeichne. ![Abbildung](/uploads/ex-844dabe50932.png) Tarif A hat einen Grundpreis pro Monat von 4,50 €. Der Graph schneidet die y-Achse bei 4,5. Dies ist der Punkt left(0|4,5right). Die Kosten pro Buchung betragen 0,15 €, 10 Buchungen kosten 4,50+10cdot 0,15=6,00 €. Der Punkt left(10|6right) liegt also auch auf dem Graphen. Der Graph wird gezeichnet durch eine Gerade durch beide Punkte."
+     },
+     "solution": "*Bestimme zwei Punkte des Graphen und zeichne.*\n\n![Abbildung](/uploads/ex-844dabe50932.png)\n\nTarif A hat einen Grundpreis pro Monat von $4,50$ €. Der Graph schneidet die y-Achse bei $4,5$. Dies ist der Punkt $\\left(0|4,5\\right)$.\n\nDie Kosten pro Buchung betragen $0,15$ €, $10$ Buchungen kosten $4,50+10\\cdot 0,15=6,00$ €. Der Punkt $\\left(10|6\\right)$ liegt also auch auf dem Graphen.\n\nDer Graph wird gezeichnet durch eine Gerade durch beide Punkte.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Stelle für Tarif A eine Funktionsgleichung in der Form $y=m\\cdot x+b$ auf.",
+     "answer": {
+      "type": "free",
+      "sample": "Eine lineare Funktion hat die Form y=mcdot x+b. Der Grundpreis des Tarifs ist die Konstante b. Die Kosten pro Buchung werden durch die Steigung m dargestellt. Die Funktionsgleichung für Tarif A lautet: y=0,15cdot x+4,5"
+     },
+     "solution": "Eine lineare Funktion hat die Form $y=m\\cdot x+b$.\n\nDer Grundpreis des Tarifs ist die Konstante $b$.\n\nDie Kosten pro Buchung werden durch die Steigung $m$ dargestellt.\n\nDie Funktionsgleichung für Tarif A lautet:\n\n$y=0,15\\cdot x+4,5$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Die Bank bietet mit Tarif C eine Buchungs-Flatrate für 7,90 € im Monat an. Frau Weimann tätigt pro Monat durchschnittlich 25 Buchungen.\n\nEntscheide, welchen der drei Tarife sie wählen sollte. Begründe durch eine Rechnung.",
+     "answer": {
+      "type": "free",
+      "sample": "- Berechne die Kosten für 25 Buchungen im Tarif A und Tarif B. - Vergleiche mit den Kosten im Tarif C und entscheide. Kosten in den Tarifen A und B für 25 Buchungen y_A=0,15 cdot 25 + 4,5=8,25 y_B=0,25 cdot 25 +3,00=9,25 Vergleich y_A7,90 y_B7,90 Sowohl Tarif A als auch Tarif B sind bei 25 Buchungen teurer als Tarif C. Frau Weimann sollte Tarif C wählen."
+     },
+     "solution": "*- Berechne die Kosten für $25$ Buchungen im Tarif A und Tarif B. - Vergleiche mit den Kosten im Tarif C und entscheide.*\n\n**Kosten in den Tarifen A und B für** $25$ **Buchungen**\n\n$y_A=0,15 \\cdot 25 + 4,5=8,25$\n\n$y_B=0,25 \\cdot 25 +3,00=9,25$\n\n**Vergleich**\n\n$y_A>7,90$\n\n$y_B>7,90$\n\nSowohl Tarif A als auch Tarif B sind bei $25$ Buchungen teurer als Tarif C.\n\nFrau Weimann sollte Tarif C wählen.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Die abgebildete Figur stellt eine Fliese dar.\n\nDie Größe der rechteckigen Fläche **1** beträgt $920 \\cm^2$.\n\n![Abbildung](/uploads/ex-dbde8eab98d8.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne a.\n\n$\\text{a}=$ ⟦1⟧ $\\cm$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 11.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Die rechteckige Fläche **1** hat einen Flächeninhalt von $920 \\cm^2$.\n\nDie längere Seite der Fläche **1** ist $80 \\cm$ lang.\n\nDer Flächeninhalt des Rechtecks ist gleich dem Produkt der Seiten des Rechtecks.\n\n$$\\begin{aligned}\nA_{Rechteck} &= a \\cdot b \\\\\n920 \\cm^2 &= a \\cdot 80 \\cm \\qquad |\\; : 80 \\cm \\\\\n11,5 \\cm &= a\n\\end{aligned}$$\n\nDie Seite $a$ ist also $11,5 \\cm$ lang.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne y.\n\n(Wenn du die Teilaufgabe a) nicht gelöst hast, dann rechne mit $a = 11,31 \\cm$ weiter.)\n\n$\\text{y}=$ ⟦1⟧ $\\cm$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 29.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- $y$ lässt sich mithilfe von $a$ und $x$ berechnen - $x$ berechnet man mithilfe des Satzes des Pythagoras*\n\n$y$ ist so lang wie die Seite $a$ plus zweimal die Seite $x$.\n\nDie Länge der Seite $a$ ist bekannt, man muss also noch die Länge von $x$ ermitteln.\n\nDafür benutzt man das markierte, rechtwinklige Dreieck.\n\nDie Hypotenuse des Dreiecks ist $41 \\cm$ lang.\n\nDie längere der beiden Katheten ist halb so lang wie die längere Seite der Figur **1**, also $80 \\cm : 2 = 40 \\cm$ lang.\n\nDiese Werte kann man jetzt in den Satz des Pythagoras einsetzen, um die Länge von $x$ zu berechnen:\n\n$$\\begin{aligned}\n(40 \\cm)^2 + x^2 &= (41 \\cm)^2 \\\\\n1600 \\cm^2 + x^2 &= 1681 \\cm^2 \\qquad |\\; -1600 \\cm^2 \\\\\nx^2 &= 81 \\cm^2 \\qquad |\\; \\sqrt{\\ \\ \\ \\ \\ } \\\\\nx &= 9 \\cm\n\\end{aligned}$$\n\nMithilfe der Strecke $x$ kann man jetzt die Länge der Strecke $y$ berechnen:\n\n$y = a + 2x = 11,5 \\cm + 2 \\cdot 9 \\cm = 11,5 \\cm + 18 \\cm = 29,5 \\cm$\n\nDie Strecke $y$ ist $29,5 \\cm$ lang.",
+     "points": 3,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Abgebildet sind drei Reihen eines Verlegemusters mit rechteckigen Fliesen. Die rechteckigen Fliesen werden durch sechseckige Fliesen ersetzt.\n\n![Abbildung](/uploads/ex-d20ada23ba3f.png)\n\nÜbertrage das Verlegemuster auf sechseckige Fliesen (siehe oben).\n\nFertige eine Skizze mit drei Reihen an.",
+     "answer": {
+      "type": "free",
+      "sample": "Ersetzt man die Rechtecke durch Sechsecke, sodass die Kanten aneinander anliegen, so entsteht folgende Skizze: ![Abbildung](/uploads/ex-8312b7a405c5.png)"
+     },
+     "solution": "Ersetzt man die Rechtecke durch Sechsecke, sodass die Kanten aneinander anliegen, so entsteht folgende Skizze:\n\n![Abbildung](/uploads/ex-8312b7a405c5.png)",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ein anderes Verlegemuster für rechteckige Fliesen sieht wie folgt aus:\n\n![Abbildung](/uploads/ex-0c0da42eb077.png)\n\nErkläre, weshalb dieses Verlegemuster für die sechseckige Fliese nicht geeignet ist.",
+     "answer": {
+      "type": "free",
+      "sample": "Ordnet man die sechseckigen Fliesen nicht, wie in Teilaufgabe c), versetzt an, so liegen die Fliesen nur an den Ecken anstatt an den Kanten aneinander an. Dadurch bleibt zwischen den Fliesen Lücken, die dann mit anders geformten Fliesen ausgefüllt werden müssten. ![Abbildung](/uploads/ex-d075ce5e96e6.png)"
+     },
+     "solution": "Ordnet man die sechseckigen Fliesen nicht, wie in Teilaufgabe c), versetzt an, so liegen die Fliesen nur an den Ecken anstatt an den Kanten aneinander an.\n\nDadurch bleibt zwischen den Fliesen Lücken, die dann mit anders geformten Fliesen ausgefüllt werden müssten.\n\n![Abbildung](/uploads/ex-d075ce5e96e6.png)",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "Klara bastelt für ihre kleine Schwester zur Einschulung eine kegelförmige Schultüte mit $r = 12 \\cm$.\n\nSie beklebt den oberen Rand der Schultüte mit einem Band.\n\n![Abbildung](/uploads/ex-7c2a4b910788.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Im Bastelgeschäft kann sie Bänder mit unterschiedlichen Längen kaufen:\n\n$40 \\cm$, $60 \\cm$ oder $80 \\cm$.\n\nWelches Band soll Klara kaufen? Berechne und entscheide.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$40\\cm$",
+        "correct": false
+       },
+       {
+        "text": "$60\\cm$",
+        "correct": false
+       },
+       {
+        "text": "$80\\cm$",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "*- Berechne den Umfang der Öffnung der Schultüte. - Entscheide, welches Band lang genung ist.*\n\nDie obere Öffnung der Schultüte bildet einen Kreis.\n\n**Kreisumfang**\n\n$U=2\\cdot\\pi\\cdot r$\n\n**Werte einsetzen**\n\n$U=2\\cdot\\pi\\cdot 12\\approx 75,4$\n\nBand auswählen\n\nDer Umfang der Öffnung der Schultüte beträgt $75,4\\cm$.\n\nKlara sollte ein $80\\cm$ langes Band kaufen.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die Schultüte hat ein Volumen von $11310 \\cm^3$.\n\nBerechne die Höhe $h_K$ der Schultüte.\n\n$\\mathrm{h_K}=$⟦1⟧ $\\cm$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 75,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Verwende die Formel zur Berechnung des Kegelvolumens. - Löse die Gleichung nach $h_k$ auf.*\n\nDie Schultüte bildet einen Kegel.\n\n**Kegelvolumen**\n\nDas Volumen eines Kegels berechnet sich nach folgender Formel. Dabei bezeichnet G die Grundfläche des Kegels und $h_k$ seine Höhe.\n\n$V_\\text{Kegel}=\\dfrac{1}{3}\\cdot G\\cdot h_k$\n\nDie Grundfläche des Kegels ist ein [Kreis](/276459) mit Radius $r$, dessen Fläche $A$ berechnet wird mit der Formel\n\n$A_\\text{Kreis}=\\pi\\cdot r^2$\n\n**Volumen der Schultüte**\n\n$V_\\text{Schultüte}=\\dfrac{1}{3}\\cdot \\pi \\cdot r^2 \\cdot h_k$\n\n**Werte einsetzen**\n\n$$\\begin{aligned}\n11\\,310 &= \\dfrac{1}{3}\\cdot \\pi\\cdot 12^2\\cdot h_k \\\\\n11\\,310 &= \\dfrac{1}{3}\\cdot\\pi\\cdot 144\\cdot h_k  \\qquad |\\; \\cdot 3 \\\\\n33\\,930 &= \\pi\\cdot 144\\cdot h_k \\qquad |\\; : \\left(\\pi\\cdot 144\\right) \\\\\n75 &= h_k\n\\end{aligned}$$\n\nDie Höhe $h_k$ der Schultüte beträgt ungefähr $75\\cm$.",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Winkels α.\n\n(Wenn du die Teilaufgabe b) nicht gelöst hast, dann rechne mit $h_K = 75,51 \\cm$ weiter.)\n\n$\\alpha=$⟦1⟧ $°$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 9.09,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         9.1
+        ]
+       }
+      ]
+     },
+     "solution": "*Benutze die passende Winkelfunktion zur Berechnung des Winkels.*\n\nEs soll der Winkel $\\alpha$ in einem rechtwinkligen Dreieck berechnet werden.\n\nGegeben sind:\n\nGegenkathete $\\text{GK}=r=12\\cm$\n\nAnkathete $\\text{AK}=h_k​=75\\cm$\n\nDer Winkel $\\alpha$ beträgt dann\n\n$\\arctan\\left(\\dfrac{\\text{GK}}{\\text{AK}}\\right)=\\arctan\\left(\\dfrac{12}{75}\\right)=9,09^\\circ$\n\nDer Winkel $\\alpha$ hat $9,09^\\circ$.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  }
+ ]
+}
