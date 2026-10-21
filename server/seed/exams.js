@@ -35,7 +35,7 @@ const fingerprint = (s) => crypto.createHash('sha1').update(`${s.context}\n${s.p
 // „a)“ vor die Teilaufgabe, damit Verweise wie „Teilaufgabe a)“ verständlich bleiben (Tabellen und Bilder auf eigener Zeile).
 const withLabel = (label, prompt) => (label ? `**${label}**${/^[|!]/.test(prompt) ? '\n\n' : ' '}${prompt}` : prompt);
 
-function loadExams() {
+export function loadExams() {
   if (!fs.existsSync(path.join(DIR, 'data'))) return [];
   const out = [];
   for (const file of fs.readdirSync(path.join(DIR, 'data')).filter((f) => f.endsWith('.json')).sort()) {
@@ -54,7 +54,7 @@ function loadExams() {
   return out;
 }
 
-const sourceOf = (t) => `Abschlussprüfung ${t.year} · ${SCHOOL_LABEL[t.school]} · ${t.part} · Aufgabe ${t.no}${t.label ? ` ${t.label}` : ''}`;
+export const sourceOf = (t) => `Abschlussprüfung ${t.year} · ${SCHOOL_LABEL[t.school]} · ${t.part} · Aufgabe ${t.no}${t.label ? ` ${t.label}` : ''}`;
 
 // Kopiert die benötigten Bilder in den Upload-Ordner (einmalig je Datei).
 function ensureImages(tasks) {
@@ -120,7 +120,7 @@ export function seedExams() {
     const diagPool = new Map(); // `${topicId}|${group}|${difficulty}` -> Kandidaten
     for (const b of [...buckets.values()].sort((a, c) => a.topic.sort - c.topic.sort || a.level - c.level)) {
       const list = [...b.tasks.values()].sort((x, y) => y.year - x.year || PART_ORDER[x.part] - PART_ORDER[y.part] || x.no - y.no || x.order - y.order);
-      const mk = (t) => [{ ...t, source: [...new Set(t.sources)].join('  |  ') }, ...variantsFor(t)];
+      const mk = (t) => [{ ...t, source: [...new Set(t.sources)].join('  |  ') }, ...variantsFor(t).map((v) => ({ ...v, prompt: withLabel(t.label, v.prompt) }))];
 
       // Übungspakete: Teilaufgaben derselben Aufgabe bleiben zusammen
       const chunks = [];
@@ -170,7 +170,7 @@ export function seedExams() {
         const task = get("SELECT * FROM tasks WHERE kind = 'diagnose' AND topic_id = ? AND profile = ? AND difficulty = ?", Number(topicId), profile, Number(difficulty));
         if (!task) continue;
         let sort = (get('SELECT MAX(sort) AS m FROM task_variants WHERE task_id = ?', task.id).m ?? -1) + 1;
-        for (const c of picked) { addVariants(task.id, [c[0]], sort++); nDiag++; }
+        for (const c of picked) for (const v of c) { addVariants(task.id, [v], sort++); nDiag++; } // Original + Varianten mit neuen Zahlen
       }
     }
     setSetting(SETTING, '1');

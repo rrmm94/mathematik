@@ -37,8 +37,10 @@ function checkPart(part, given) {
     const tol = Number(part.tolerance) || 1e-9;
     return values.some((v) => Math.abs(n - v) <= tol + 1e-9);
   }
-  const accepted = [part.value, ...(part.alternatives || [])].map(normText);
-  return accepted.includes(normText(given));
+  // Terme wie „y = 0,5x + 1“: Leerzeichen, Malpunkt/Stern und Dezimalkomma/-punkt sind gleichwertig
+  const squash = (x) => normText(x).replace(/\s+/g, '').replace(/[·*]/g, '').replace(/,/g, '.');
+  const accepted = [part.value, ...(part.alternatives || [])].map(squash);
+  return accepted.includes(squash(given));
 }
 
 /**

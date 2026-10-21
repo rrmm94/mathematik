@@ -61,7 +61,8 @@ Beim ersten Start (auch bei bestehenden Installationen) werden die Abschlussprü
 - **Themenfreigabe:** Trigonometrie, Quadratische Funktionen und Wachstum bleiben der Realschule vorbehalten; Hauptschulkinder bekommen dazu keine Aufgaben.
 - **Zeichenaufgaben** („Zeichne …“, „Miss …“, „Verbinde …“) sind ausgelassen, sie lassen sich am Bildschirm nicht lösen.
 - Aufgaben mit Bildern, Tabellen und Lücken im Text sowie Punkte je Teilaufgabe werden wie in der Prüfung dargestellt.
-- **Varianten mit neuen Zahlen** zu einzelnen Aufgaben stehen in `server/seed/exam-variants.js`.
+- **Varianten mit neuen Zahlen:** Zu etwa 90 Aufgaben (Rechen- und Lückenaufgaben, Einheiten, Terme, Prozent und Zinsen, Wahrscheinlichkeit, Wertetabellen …) gibt es je zwei weitere Varianten; das Kind bekommt sie über „Neue Zahlen“, im Diagnosetest wechseln sie beim Wiederholungstest. Sie stehen in `server/seed/exam-variants.js`. Aufgaben, deren Zahlen in einem Bild stehen, haben nur die Originalfassung.
+- **Kontrolle:** `DATA_DIR=/tmp/x node --no-warnings scripts/check-exam-variants.mjs` rechnet jede Vorlage gegen die Originalaufgabe nach und prüft jede Variante auf eine bestehende eigene Lösung und fehlerfreie Formeln.
 
 Die Aufgaben wurden mit `scripts/serlo-import.mjs` aus Serlo (CC BY-SA 4.0) übernommen; Aufgabentexte: Niedersächsisches Kultusministerium.
 

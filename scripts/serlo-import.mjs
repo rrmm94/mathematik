@@ -204,18 +204,28 @@ function cleanAnswer(raw) {
   return String(raw ?? '').replace(/\\(?:,|;|:|!| \s*)/g, ' ').replace(/\\%/g, '%').replace(/\\text\{([^}]*)\}/g, '$1').replace(/\\(?:d)?frac\{([^}]*)\}\{([^}]*)\}/g, '$1/$2').replace(/[{}$]/g, '').trim();
 }
 
-// Zahl (mit evtl. Einheit dahinter) oder Text
+// Zahl (mit evtl. Einheit dahinter) oder Text. Sobald mindestens eine der richtigen Antworten eine Zahl ist, zählen alle Zahlen
+// (andere Schreibweisen wie „0,0193…“ oder „18 Mio.“ werden ignoriert bzw. auf die Zahl reduziert).
+// Zahl am Anfang, danach höchstens eine Einheit („63,13 cm^3“, „18 Mio.“, „90 °“) – Terme wie „3x+1“ sind keine Zahl.
+const NUM_RE = String.raw`-?\d{1,3}(?:[ .]\d{3})+(?:,\d+)?(?:\/-?\d[\d.,]*)?|-?\d[\d.,]*(?:\/-?\d[\d.,]*)?`;
+function numericValue(v) {
+  const m = v.replace(/−/g, '-').trim().match(new RegExp(`^(${NUM_RE})\\s*(.*)$`));
+  if (!m) return NaN;
+  const rest = m[2].trim();
+  const unitOk = !rest || /^(?:[°%€²³]|[a-zA-Zäöüß]{2,}\.?|[a-wA-W]\^?[23]?|[a-zA-Z]{1,3}\^[23])\s*$/.test(rest);
+  return unitOk ? parseNumber(m[1].replace(/\s+/g, '')) : NaN;
+}
+
 function answerPart(values, { label = '', unit = '' } = {}) {
   const cleaned = values.map(cleanAnswer).filter(Boolean);
-  const nums = cleaned.map((v) => {
-    const m = v.replace(/\s+/g, '').replace(/−/g, '-').match(/^-?[\d.,]+(?:\/-?[\d.,]+)?/);
-    return m && m[0].length >= v.replace(/\s+/g, '').length - 12 ? parseNumber(m[0]) : NaN;
-  });
-  if (cleaned.length && nums.every((n) => !Number.isNaN(n))) {
+  const nums = cleaned.map(numericValue).filter((n) => !Number.isNaN(n));
+  if (nums.length) {
     const uniq = [...new Set(nums.map(ROUND_TRIP))];
     return { label, kind: 'number', value: uniq[0], tolerance: 0, unit, alternatives: uniq.slice(1) };
   }
-  return { label, kind: 'text', value: cleaned[0] ?? '', tolerance: 0, unit, alternatives: [...new Set(cleaned.slice(1))] };
+  const alts = cleaned.slice(1);
+  for (const v of cleaned) { const m = v.match(/^(?:y|f\(x\))\s*=\s*(.+)$/i); if (m) alts.push(m[1]); } // „y=5x+100“ auch ohne „y=“
+  return { label, kind: 'text', value: cleaned[0] ?? '', tolerance: 0, unit, alternatives: [...new Set(alts)] };
 }
 
 const blankPart = (n) => ({ ...answerPart((n.correctAnswers || []).map((a) => a.answer)), _blank: true });
@@ -249,7 +259,10 @@ const TEXT_HINTS = [
   [/winkel|dreieck|fläche|umfang|kreis/i, 'Winkel, Dreiecke & Flächen'],
   [/umrechn|einheit|\bkm\b|\bkg\b|liter/i, 'Größen & Einheiten'],
 ];
-function topicOf(prereqs, text) {
+// Allgemeine Verweise, die nichts über das Thema verraten (z. B. „Wertetabelle“ bei einer Parabel)
+const WEAK = /wertetabelle|graph einer funktion|^funktionen$|koordinatensystem|diagramm|schnittpunkt|wie wertet|parallele geraden zeichnen|lot zeichnen|zahlengerade/i;
+function topicOf(prereqs, text, groupTopic = null) {
+  if (groupTopic && prereqs.every((p) => WEAK.test(p))) return groupTopic;
   const votes = {};
   for (const p of prereqs) {
     const hit = TOPICS.find(([, re]) => re.test(p));
@@ -318,10 +331,7 @@ async function convertSub(ex, label, many) {
   } else if (kind === 'inputExercise') {
     const correct = (inter.state.answers || []).filter((a) => a.isCorrect).map((a) => a.value);
     const unit = (inter.state.unit || '').trim();
-    const isText = inter.state.type !== 'input-number-exact-match-challenge';
-    const part = isText
-      ? { label: '', kind: 'text', value: cleanAnswer(correct[0]), tolerance: 0, unit, alternatives: [...new Set(correct.slice(1).map(cleanAnswer))] }
-      : answerPart(correct, { unit });
+    const part = answerPart(correct, { unit });
     answer = { type: 'fields', parts: [part] };
   }
 
@@ -331,6 +341,12 @@ async function convertSub(ex, label, many) {
     if (DRAW_RE.test(prompt)) out.skip = 'zeichnen';
   }
   if (answer.type === 'fields' && DRAW_RE.test(prompt) && /\b(miss|messe)\b/i.test(prompt)) out.skip = 'messen';
+  // Auch mit Lücken nicht lösbar, wenn erst etwas gezeichnet werden soll („Zeichne ein Koordinatensystem …“, „Verbinde …“)
+  // Steht die Lücke aber in einer Tabelle („Vervollständige die Wertetabelle und zeichne den Graphen“), bleibt die Aufgabe und der Zeichenauftrag entfällt.
+  if (answer.type !== 'free' && /\b(zeichne|zeichnen|verbinde|konstruiere|schraffiere|färbe)\b/i.test(prompt)) {
+    if (/^\|.*⟦\d+⟧/m.test(prompt)) prompt = prompt.replace(/\s*(?:und|,)\s*(?:zeichne|zeichnen)\b[^.\n|]*\.?/i, '.').replace(/\.\./g, '.');
+    else out.skip = out.skip || 'zeichnen';
+  }
   if (!prompt.trim()) out.skip = out.skip || 'leer';
   if (answer.type === 'choice' && (answer.options.length < 2 || !answer.options.some((o) => o.correct))) out.skip = out.skip || 'Auswahl ohne richtige Antwort';
   if (answer.type === 'fields' && answer.parts.some((p) => p.value === '' || p.value == null)) out.skip = out.skip || 'leere Lösung';
@@ -357,8 +373,11 @@ async function convertFolder(folder, meta) {
       subs.push(s);
     }
     const groupPrereqs = subs.flatMap((s) => s.prereqs || []);
+    const strong = {};
+    for (const s of subs) for (const p of s.prereqs || []) if (!WEAK.test(p)) { const t = topicOf([p], ''); strong[t] = (strong[t] || 0) + 1; }
+    const groupTopic = Object.entries(strong).sort((a, b) => b[1] - a[1])[0]?.[0] || null;
     for (const s of subs) {
-      s.topic = topicOf(s.prereqs?.length ? s.prereqs : groupPrereqs, `${context} ${s.prompt || ''}`);
+      s.topic = topicOf(s.prereqs?.length ? s.prereqs : groupPrereqs, `${context} ${s.prompt || ''}`, groupTopic);
       delete s.prereqs;
     }
     for (const s of subs) {
