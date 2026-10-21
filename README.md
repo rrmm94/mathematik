@@ -66,22 +66,31 @@ Beim ersten Start (auch bei bestehenden Installationen) werden die Abschlussprü
 
 Die Aufgaben wurden mit `scripts/serlo-import.mjs` aus Serlo (CC BY-SA 4.0) übernommen; Aufgabentexte: Niedersächsisches Kultusministerium.
 
-## Installation auf Unraid (Docker Compose)
+## Installation auf einem Ubuntu-Server (Docker Compose)
 
-➡️ **Ausführliche Schritt-für-Schritt-Anleitung: [UNRAID.md](UNRAID.md)**
+➡️ **Ausführliche Schritt-für-Schritt-Anleitung: [UBUNTU.md](UBUNTU.md)**
 
-1. Projektordner auf den Server kopieren nach `/mnt/user/appdata/mathematik` (oder per `git clone`).
+1. Docker installieren und das Projekt holen:
+   ```bash
+   cd /opt/stacks
+   git clone -b main https://github.com/rrmm94/mathematik.git mathematik
+   ```
 2. In `docker-compose.yml` mindestens `ADMIN_PASSWORD` ändern.
 3. Starten:
    ```bash
+   cd /opt/stacks/mathematik
    docker compose up -d --build
    ```
-4. Im Browser öffnen: `http://<server-ip>:3000` → mit `admin` und deinem Passwort anmelden.
+4. Im Browser öffnen: `http://<server-ip>:3141` → mit `admin` und deinem Passwort anmelden.
 5. Unter **Einstellungen** den Chatbot-Link und die Prüfungstermine eintragen.
 
-**Daten:** Datenbank und hochgeladene Bilder liegen im Unterordner `data` (`/mnt/user/appdata/mathematik/data`). Für ein Backup einfach den Ordner `/mnt/user/appdata/mathematik` sichern.
+Der Container heißt `mathematik`, der Port im Browser ist `3141`.
 
-**Zugriff von außen / HTTPS:** Am besten hinter einen Reverse Proxy (z. B. Nginx Proxy Manager oder SWAG auf Unraid) mit Let's-Encrypt-Zertifikat stellen und dann `COOKIE_SECURE: "true"` setzen.
+**Update:** `cd /opt/stacks/mathematik && git pull origin main && docker compose up -d --build`
+
+**Daten:** Datenbank und hochgeladene Bilder liegen im Unterordner `data` (`/opt/stacks/mathematik/data`). Für ein Backup den Container kurz stoppen und den Ordner `/opt/stacks/mathematik` sichern.
+
+**Zugriff von außen / HTTPS:** Am besten hinter einen Reverse Proxy (z. B. Caddy oder Nginx Proxy Manager) mit Let's-Encrypt-Zertifikat stellen und dann `COOKIE_SECURE: "true"` setzen.
 
 **iPad:** Die Seite lässt sich über „Teilen → Zum Home-Bildschirm“ wie eine App ablegen.
 
