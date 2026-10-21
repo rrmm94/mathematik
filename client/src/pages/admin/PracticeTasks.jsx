@@ -43,7 +43,7 @@ export default function PracticeTasks() {
         <nav className="card h-fit p-2">
           {topics.data.map((t) => (
             <button key={t.id} onClick={() => setParams({ topic: t.id })} className={`flex w-full items-center gap-2.5 rounded-lg px-2 py-1.5 text-left text-sm ${t.id === topicId ? 'bg-brand-50 font-semibold text-brand-700' : 'text-slate-600 hover:bg-slate-50'}`}>
-              <TopicIcon topic={t} size="sm" /> <span className="flex-1 truncate">{t.title}</span> <span className="text-xs text-slate-400">{t.counts.practice}</span>
+              <TopicIcon topic={t} size="sm" /> <span className="flex-1 truncate" title={t.source || t.title}>{t.source ? t.source.replace(/^Variante mit geänderten Zahlen zu: /, '').split('  |  ')[0] : t.title}</span> <span className="text-xs text-slate-400">{t.counts.practice}</span>
             </button>
           ))}
         </nav>

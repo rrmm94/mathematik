@@ -57,7 +57,7 @@ export default function DiagnoseTasks() {
                               <ChevronRight size={16} className="shrink-0 text-slate-400 group-hover:text-brand-600" />
                             </div>
                             <div className="mt-1 line-clamp-2 text-xs text-slate-500">{plain(x.preview)}</div>
-                            <div className="mt-2 flex items-center gap-1 text-[11px] font-medium text-slate-500"><Layers size={12} /> {x.variants} Varianten</div>
+                            <div className="mt-2 flex items-center gap-1 text-[11px] font-medium text-slate-500"><Layers size={12} /> {x.variants} Varianten{x.exam_variants > 0 && <span className="font-normal text-slate-400"> · davon {x.exam_variants} aus Abschlussprüfungen</span>}</div>
                           </Link>
                         ))}
                         {tasks.length === 0 && (

@@ -78,9 +78,21 @@ async function localImage(url) {
 // ---------------------------------------------------------------- Slate → Markdown
 const esc = (t) => t.replace(/\\/g, '\\\\').replace(/([*_`$<>|~\[\]])/g, '\\$1').replace(/^(#|-|\+|\d+\.)(\s)/, '\\$1$2');
 
+// Benachbarte Inline-Formeln (ohne Text dazwischen) werden zu einer Formel verbunden, sonst entsteht „$$“.
+function mergeMath(nodes) {
+  const out = [];
+  for (const n of nodes) {
+    const prev = out[out.length - 1];
+    if (n.type === 'math' && n.inline !== false && prev?.type === 'math' && prev.inline !== false) out[out.length - 1] = { ...prev, src: `${prev.src || ''}${n.src || ''}` };
+    else if (typeof n.text === 'string' && !n.text && prev?.type === 'math') continue; // leere Textknoten zwischen zwei Formeln
+    else out.push(n);
+  }
+  return out;
+}
+
 function inline(nodes, ctx) {
   let out = '';
-  for (const n of nodes) {
+  for (const n of mergeMath(nodes)) {
     if (typeof n.text === 'string') {
       if (!n.text) continue;
       let t = esc(n.text);
@@ -91,7 +103,7 @@ function inline(nodes, ctx) {
       }
       out += t;
     } else if (n.type === 'math') {
-      const src = (n.src || '').trim();
+      const src = (n.src || '').trim().replace(/(^|[^\\])\\$/, '$1').trim(); // ein einzelner Backslash am Ende ist ungültig
       if (!src || /^\\rule/.test(src)) continue; // Schreiblinien entfallen
       out += n.inline === false ? `\n\n$$${src}$$\n\n` : `$${src}$`;
     } else if (n.type === 'textBlank') {
@@ -250,11 +262,12 @@ function topicOf(prereqs, text) {
 }
 
 // ---------------------------------------------------------------- Aufgaben umwandeln
-const POINTS_RE = /\s*[\[(]\s*(\d+)\s*(?:Pkt|Pkte|P)\.?\s*[\])]/gi;
+// Punkte stehen als „[2 Pkte]“, „(2 Pkt.)“ oder „(1 BE)“ im Text (im Markdown sind eckige Klammern maskiert)
+const POINTS_RE = /\s*(?:\*\*)?\\?[\[(]\s*(\d+)\s*(?:Pkte|Pkt|BE|P)\.?\s*\\?[\])](?:\*\*)?/gi;
 function takePoints(md) {
   let points = 0;
   const cleaned = md.replace(POINTS_RE, (_, n) => { if (!points) points = Number(n); return ''; });
-  return { md: cleaned.replace(/\n{3,}/g, '\n\n').trim(), points };
+  return { md: cleaned.replace(/^\*\*(?:Wahl)?[Aa]ufgabe\s*\d+[^*]*\*\*\s*/, '').replace(/\n{3,}/g, '\n\n').trim(), points };
 }
 
 function findPrereqs(o, acc = []) {
@@ -273,7 +286,7 @@ async function solutionMd(sol, ctx) {
   return [strategy && `*${strategy.replace(/\n+/g, ' ')}*`, steps].filter(Boolean).join('\n\n').replace(/\n{3,}/g, '\n\n').trim();
 }
 
-const DRAW_RE = /\b(zeichne|zeichnen|markiere|markieren|färbe|schraffiere|konstruiere|miss|messe|male|schneide)\b|trage .{0,60}\bein\b|(ergänze|vervollständige).{0,70}(im|in der|in dem|im\b).{0,30}(koordinatensystem|diagramm|baumdiagramm|zeichnung|skizze|säulendiagramm|netz)|verbinde.{0,40}punkte|kreuze.{0,40}körper/i;
+const DRAW_RE = /\b(verbinde|zeichne|zeichnen|markiere|markieren|färbe|schraffiere|konstruiere|miss|messe|male|schneide)\b|trage .{0,60}\bein\b|(ergänze|vervollständige).{0,70}(im|in der|in dem|im\b).{0,30}(koordinatensystem|diagramm|baumdiagramm|zeichnung|skizze|säulendiagramm|netz)|verbinde.{0,40}punkte|kreuze.{0,40}körper/i;
 
 async function convertSub(ex, label, many) {
   const ctx = { blanks: [] };
@@ -319,6 +332,8 @@ async function convertSub(ex, label, many) {
   }
   if (answer.type === 'fields' && DRAW_RE.test(prompt) && /\b(miss|messe)\b/i.test(prompt)) out.skip = 'messen';
   if (!prompt.trim()) out.skip = out.skip || 'leer';
+  if (answer.type === 'choice' && (answer.options.length < 2 || !answer.options.some((o) => o.correct))) out.skip = out.skip || 'Auswahl ohne richtige Antwort';
+  if (answer.type === 'fields' && answer.parts.some((p) => p.value === '' || p.value == null)) out.skip = out.skip || 'leere Lösung';
   if (!sol && answer.type === 'free') out.skip = out.skip || 'ohne Lösung';
   return {
     ...out, prompt, answer, solution: sol, points,

@@ -1,6 +1,7 @@
 import { marked } from 'marked';
 import katex from 'katex';
 import DOMPurify from 'dompurify';
+import { KATEX_MACROS } from './katexMacros.js';
 
 marked.setOptions({ gfm: true, breaks: false });
 
@@ -13,7 +14,7 @@ export function renderMarkdown(src = '') {
   const stash = (tex, display) => {
     let html;
     try {
-      html = katex.renderToString(tex, { displayMode: display, throwOnError: false, strict: 'ignore', output: 'html' });
+      html = katex.renderToString(tex, { displayMode: display, throwOnError: false, strict: 'ignore', output: 'html', macros: { ...KATEX_MACROS } });
     } catch {
       html = `<code>${tex.replace(/</g, '&lt;')}</code>`;
     }

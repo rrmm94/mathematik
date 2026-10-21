@@ -304,7 +304,7 @@ function DiagnoseView({ student, runs, plan, onChanged }) {
                 </div>
                 {t.items.filter((i) => i.id === openItem).map((i) => (
                   <div key={i.id} className="mt-3 grid gap-4 rounded-xl bg-slate-50 p-4 md:grid-cols-2">
-                    <div><div className="label">Aufgabe</div><MathContent md={i.prompt} /></div>
+                    <div><div className="label">Aufgabe</div><MathContent md={i.prompt} />{i.source && <div className="mt-2 text-xs text-slate-400">Herkunft: {i.source}</div>}</div>
                     <div>
                       <div className="label">Antwort des Kindes</div>
                       <div className="rounded-lg bg-white p-3 font-mono text-sm">{formatGiven(i.answer, i.spec)}</div>

@@ -24,7 +24,7 @@ function normalizeSpec(spec) {
 }
 const showNum = (x) => (typeof x === 'number' ? String(x).replace('.', ',') : x ?? '');
 
-const emptyVariant = () => ({ prompt: '', context: '', points: 0, answer: { type: 'fields', parts: [{ label: '', kind: 'number', value: 0, tolerance: 0, unit: '', alternatives: [] }] }, solution: '', hint: '' });
+const emptyVariant = () => ({ prompt: '', context: '', points: 0, source: '', answer: { type: 'fields', parts: [{ label: '', kind: 'number', value: 0, tolerance: 0, unit: '', alternatives: [] }] }, solution: '', hint: '' });
 
 export default function TaskEditor() {
   const { id } = useParams();
@@ -177,6 +177,9 @@ export default function TaskEditor() {
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 rounded-xl bg-slate-50 px-3 py-2 text-xs text-slate-600">
             <label className="flex items-center gap-2">Punkte (wie in der Prüfung)
               <input type="number" min="0" max="20" className="input w-20 py-1" value={v.points || 0} onChange={(e) => updV({ points: Number(e.target.value) || 0 })} />
+            </label>
+            <label className="flex flex-1 items-center gap-2 sm:min-w-[320px]">Herkunft <span className="text-slate-400">(nur für Lehrkräfte sichtbar)</span>
+              <input className="input flex-1 py-1" placeholder="z. B. Abschlussprüfung 2025 · Realschule · Teil 2 · Aufgabe 3 b)" value={v.source || ''} onChange={(e) => updV({ source: e.target.value })} />
             </label>
             <span><b>Lückentext:</b> Schreibe <code className="rounded bg-white px-1">⟦1⟧</code>, <code className="rounded bg-white px-1">⟦2⟧</code> … in die Aufgabenstellung – an diese Stellen kommen die Eingabefelder (Typ „Zahl / Eingabefelder“, Haken „Felder im Text“).</span>
           </div>

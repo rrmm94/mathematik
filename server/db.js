@@ -94,6 +94,7 @@ CREATE TABLE IF NOT EXISTS task_variants (
   prompt TEXT DEFAULT '',        -- Markdown + LaTeX; Lücken im Text: ⟦1⟧, ⟦2⟧ …
   context TEXT DEFAULT '',       -- Ausgangssituation, steht über der Aufgabenstellung
   points INTEGER DEFAULT 0,
+  source TEXT DEFAULT '',        -- Herkunft der Aufgabe, nur für Lehrkräfte
   answer TEXT DEFAULT '{}',      -- JSON-Spezifikation der Lösung
   solution TEXT DEFAULT '',      -- Lösungsweg (Markdown + LaTeX)
   hint TEXT DEFAULT ''
@@ -196,6 +197,7 @@ addColumn('topics', 'example', "TEXT DEFAULT ''");
 addColumn('users', 'easy_topics', "TEXT DEFAULT '[]'");
 addColumn('task_variants', 'context', "TEXT DEFAULT ''"); // gemeinsame Ausgangssituation (Text, Bild, Tabelle)
 addColumn('task_variants', 'points', 'INTEGER DEFAULT 0'); // Punkte wie in der Prüfung (0 = keine Angabe)
+addColumn('task_variants', 'source', "TEXT DEFAULT ''"); // Herkunft (z. B. Abschlussprüfung 2025) – NUR für Lehrkräfte sichtbar
 if (addColumn('users', 'topics_asked', 'INTEGER DEFAULT 0')) {
   // Wer schon einen Test gemacht hat, wird nicht nachträglich gefragt.
   db.exec('UPDATE users SET topics_asked = 1 WHERE id IN (SELECT user_id FROM diag_runs)');
