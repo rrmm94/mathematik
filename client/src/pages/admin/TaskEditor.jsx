@@ -34,6 +34,8 @@ export default function TaskEditor() {
     const packages = d.task.kind === 'practice' ? await api.get(`/admin/topics/${d.task.topic_id}/packages`) : [];
     return { ...d, packages };
   }, [id]);
+  const [packages, setPackages] = useState([]);
+  const [sections, setSections] = useState([]);
   const [task, setTask] = useState(null);
   const [variants, setVariants] = useState([]);
   const [active, setActive] = useState(0);
@@ -43,6 +45,8 @@ export default function TaskEditor() {
   useEffect(() => {
     if (!data) return;
     setTask(data.task);
+    setPackages(data.packages);
+    setSections(data.sections);
     setVariants(data.variants.length ? data.variants : [emptyVariant()]);
     setActive(0);
     setDirty(false);
@@ -59,12 +63,26 @@ export default function TaskEditor() {
   if (!task) return <PageLoader />;
 
   const upd = (patch) => { setTask({ ...task, ...patch }); setDirty(true); };
+  // Thema wechseln: Pakete und Skript-Abschnitte des neuen Themas laden, erstes Paket gleicher Stufe vorwählen
+  const changeTopic = async (topicId) => {
+    const [pk, sec] = await Promise.all([
+      task.kind === 'practice' ? api.get(`/admin/topics/${topicId}/packages`) : [],
+      api.get(`/admin/topics/${topicId}/section-titles`),
+    ]);
+    const level = packages.find((p) => p.id === task.package_id)?.level ?? 0;
+    const target = pk.find((p) => p.level === level) || pk[0];
+    setPackages(pk);
+    setSections(sec);
+    upd({ topic_id: topicId, package_id: target?.id ?? null, script_section_id: null });
+  };
+  const level = packages.find((p) => p.id === task.package_id)?.level;
+  const changeLevel = (lv) => { const first = packages.find((p) => p.level === lv); if (first) upd({ package_id: first.id }); };
   const updV = (patch) => { setVariants(variants.map((v, i) => (i === active ? { ...v, ...patch } : v))); setDirty(true); };
   const v = variants[active];
 
   const save = async () => {
     await api.put(`/admin/tasks/${task.id}`, {
-      title: task.title, difficulty: task.difficulty, profile: task.profile, packageId: task.package_id,
+      topicId: task.topic_id, title: task.title, difficulty: task.difficulty, profile: task.profile, packageId: task.package_id,
       scriptSectionId: task.script_section_id || null, variants: variants.map((x) => ({ ...x, answer: normalizeSpec(x.answer) })),
     });
     toast('Aufgabe gespeichert');
@@ -128,18 +146,32 @@ export default function TaskEditor() {
             </div>
           </>
         ) : (
-          <div className="md:col-span-2">
-            <label className="label">Übungspaket</label>
-            <select className="input" value={task.package_id || ''} onChange={(e) => upd({ package_id: Number(e.target.value) })}>
-              {data.packages.map((p) => <option key={p.id} value={p.id}>{LEVELS[p.level]?.short} · {p.title}</option>)}
-            </select>
-          </div>
+          <>
+            <div>
+              <label className="label">Niveau</label>
+              <select className="input" value={level ?? ''} onChange={(e) => changeLevel(Number(e.target.value))}>
+                {LEVELS.filter((l) => packages.some((p) => p.level === l.id)).map((l) => <option key={l.id} value={l.id}>{l.label}</option>)}
+              </select>
+            </div>
+            <div>
+              <label className="label">Übungspaket</label>
+              <select className="input" value={task.package_id || ''} onChange={(e) => upd({ package_id: Number(e.target.value) })}>
+                {packages.filter((p) => p.level === level).map((p) => <option key={p.id} value={p.id}>{p.title}{p.profiles?.length ? ` · ${p.profiles.join('/')}` : ''} ({p.tasks?.length ?? 0})</option>)}
+              </select>
+            </div>
+          </>
         )}
+        <div className="md:col-span-2">
+          <label className="label">Themenbereich</label>
+          <select className="input" value={task.topic_id} onChange={(e) => changeTopic(Number(e.target.value))}>
+            {data.topics.map((t) => <option key={t.id} value={t.id}>{t.title}</option>)}
+          </select>
+        </div>
         <div className="md:col-span-2">
           <label className="label">„Skript“-Button springt zu …</label>
           <select className="input" value={task.script_section_id || ''} onChange={(e) => upd({ script_section_id: e.target.value ? Number(e.target.value) : null })}>
             <option value="">– kein Skript-Abschnitt –</option>
-            {data.sections.map((s) => <option key={s.id} value={s.id}>{s.title}</option>)}
+            {sections.map((s) => <option key={s.id} value={s.id}>{s.title}</option>)}
           </select>
         </div>
         {data.stats?.attempts > 0 && (
