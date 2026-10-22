@@ -162,6 +162,12 @@ export function CoordinateInput({ spec, value, onChange, status, disabled }) {
             const { X, Y } = geo;
             return (
               <>
+                {(spec.polygons || []).map((poly, i) => (
+                  <polygon key={`poly${i}`} points={poly.map(([px, py]) => `${X(px)},${Y(py)}`).join(' ')} fill="#e0e7ff" fillOpacity="0.55" stroke="#64748b" strokeWidth="2" strokeLinejoin="round" />
+                ))}
+                {spec.connect && pts.length > 1 && (
+                  <polygon points={pts.map((p) => `${X(p.x)},${Y(p.y)}`).join(' ')} fill="#fde68a" fillOpacity="0.5" stroke={stroke || '#f59e0b'} strokeWidth="2.5" strokeLinejoin="round" />
+                )}
                 {pairs.map((pr, k) => {
                   if (pr.length < 2 || Math.abs(pr[1].x - pr[0].x) < 1e-9) return null;
                   const m = (pr[1].y - pr[0].y) / (pr[1].x - pr[0].x);

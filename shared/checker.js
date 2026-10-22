@@ -201,8 +201,10 @@ const normText = (s) => String(s ?? '').trim().toLowerCase().replace(/\s+/g, ' '
 function checkPart(part, given) {
   const kind = part.kind || 'number';
   if (kind === 'number') {
-    const n = parseNumber(given);
+    let n = parseNumber(given);
     if (Number.isNaN(n)) return false;
+    // Wahrscheinlichkeit in %: auch als Bruch (z. B. 1/13) eingeben
+    if (part.pct && /\//.test(String(given))) n *= 100;
     const values = [part.value, ...(part.alternatives || [])].map(Number).filter((v) => !Number.isNaN(v));
     return values.some((v) => {
       const tol = Math.max(Number(part.tolerance) || 0, (Number(part.rel) || 0) * Math.abs(v), 1e-9);
@@ -241,6 +243,10 @@ function checkConstraint(c, given, parts) {
       const through = Math.abs(m * c.through[0] + b - c.through[1]) <= tol;
       const other = c.notSlope == null || Math.abs(m - c.notSlope) > 1e-9;
       return through && other;
+    }
+    case 'share': { // Anteil eines Feldes an der Summe aller Felder (z. B. 25 % blaue Kugeln)
+      const sum = nums.reduce((a, b) => a + b, 0);
+      return sum > 0 && Math.abs(nums[c.index || 0] / sum - c.value) <= 1e-9 && (!c.integers || nums.every(Number.isInteger));
     }
     default: return false;
   }
@@ -375,6 +381,8 @@ export function publicAnswerSpec(spec) {
       need: graphNeed(spec),
       given: spec.given || [],
       labels: spec.labels || [],
+      polygons: spec.polygons || [],
+      connect: !!spec.connect,
     };
   }
   return { type: 'free' };
@@ -409,6 +417,6 @@ function formatPart(p) {
 }
 
 function formatValue(v) {
-  if (typeof v === 'number') return String(Math.round(v * 1e6) / 1e6).replace('.', ',');
+  if (typeof v === 'number') return String(Math.abs(v) < 1 ? Math.round(v * 1e6) / 1e6 : Math.round(v * 1e3) / 1e3).replace('.', ',');
   return String(v ?? '');
 }

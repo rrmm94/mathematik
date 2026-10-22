@@ -3,10 +3,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { UPLOAD_DIR, run } from '../db.js';
+import { drawCore } from './drawcore.js';
 
 const STROKE = '#334155';
 const ACCENT = '#4f46e5';
-const FONT = "font-family='Inter, Arial, sans-serif' font-size='15' fill='#0f172a'";
 
 export function save(svg, name) {
   const hash = crypto.createHash('md5').update(svg).digest('hex').slice(0, 10);
@@ -22,7 +22,12 @@ export function save(svg, name) {
 const wrap = (w, h, body) =>
   `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${w} ${h}' width='${w}' height='${h}'>${body}</svg>`;
 
-const text = (x, y, t, anchor = 'middle', extra = '') => `<text x='${x}' y='${y}' text-anchor='${anchor}' ${FONT} ${extra}>${t}</text>`;
+// Standard-Schrift; fill/font-size aus `extra` überschreiben die Vorgaben (doppelte Attribute wären ungültiges SVG)
+const text = (x, y, t, anchor = 'middle', extra = '') => {
+  const size = extra.includes('font-size=') ? '' : " font-size='15'";
+  const fill = extra.includes('fill=') ? '' : " fill='#0f172a'";
+  return `<text x='${x}' y='${y}' text-anchor='${anchor}' font-family='Inter, Arial, sans-serif'${size}${fill} ${extra}>${t}</text>`;
+};
 
 // Rechtwinkliges Dreieck mit rechtem Winkel unten links
 export function rightTriangle({ a = 'a', b = 'b', c = 'c', alpha = '' } = {}) {
@@ -31,7 +36,7 @@ export function rightTriangle({ a = 'a', b = 'b', c = 'c', alpha = '' } = {}) {
     <rect x='40' y='152' width='18' height='18' fill='none' stroke='${STROKE}' stroke-width='1.5'/>
     ${text(150, 192, b)}${text(25, 110, a, 'end')}${text(165, 95, c, 'start')}
     ${alpha ? `<path d='M 225 170 A 35 35 0 0 0 231 153' fill='none' stroke='${ACCENT}' stroke-width='2'/>${text(210, 162, alpha, 'end', `fill='${ACCENT}'`)}` : ''}
-    <text x='278' y='182' ${FONT} font-size='11' fill='#64748b' text-anchor='end'>Skizze nicht maßstäblich</text>`);
+    ${text(278, 182, 'Skizze nicht maßstäblich', 'end', "font-size='11' fill='#64748b'")}`);
   return save(svg, 'dreieck');
 }
 
@@ -113,7 +118,7 @@ const t2 = (x, y, t, anchor = 'middle', attrs = '') => `<text x='${x}' y='${y}' 
 
 // Koordinatensystem mit Geraden/Punkten (für Aufgaben zum Ablesen und für Lösungswege).
 // lines: [{ m, b, label?, color? }], points: [{ x, y, label? }]
-export function plot({ title = '', xmin = -5, xmax = 5, ymin = -5, ymax = 5, xstep = 1, ystep = 1, lines = [], points = [], xlabel = 'x', ylabel = 'y', name = 'graph', width = 340 }) {
+export function plot({ polygons = [], title = '', xmin = -5, xmax = 5, ymin = -5, ymax = 5, xstep = 1, ystep = 1, lines = [], points = [], xlabel = 'x', ylabel = 'y', name = 'graph', width = 340 }) {
   const L = 34, R = 14, T = 18, B = 28;
   const iw = width - L - R;
   const ih = Math.round(Math.max(150, Math.min(300, iw * ((ymax - ymin) / (xmax - xmin)))));
@@ -138,11 +143,12 @@ export function plot({ title = '', xmin = -5, xmax = 5, ymin = -5, ymax = 5, xst
     const lab = l.label ? t2(X(xmax) - 6, Y(l.m * xmax + l.b) + (l.m * xmax + l.b > ymax - 1 ? 14 : -6), l.label, 'end', `font-size='13' font-weight='700' fill='${c}'`) : '';
     return `<line x1='${X(xmin)}' y1='${Y(l.m * xmin + l.b)}' x2='${X(xmax)}' y2='${Y(l.m * xmax + l.b)}' stroke='${c}' stroke-width='2.5' clip-path='url(#c)'/>${lab}`;
   }).join('');
+  const polys = polygons.map((pg) => `<polygon points='${pg.pts.map(([x, y]) => `${X(x)},${Y(y)}`).join(' ')}' fill='${pg.fill || '#e0e7ff'}' fill-opacity='0.6' stroke='${pg.color || '#475569'}' stroke-width='2'/>`).join('');
   const ps = points.map((p) => `<circle cx='${X(p.x)}' cy='${Y(p.y)}' r='4.5' fill='#0f172a'/>${p.label ? t2(X(p.x) + 7, Y(p.y) - 7, p.label, 'start', "font-size='13' font-weight='700'") : ''}`).join('');
   const svg = wrap(W, H, `<clipPath id='c'><rect x='${L}' y='${T}' width='${iw}' height='${ih}'/></clipPath>${g}
     <line x1='${L}' y1='${ay}' x2='${L + iw}' y2='${ay}' stroke='${STROKE}' stroke-width='1.5'/>
     <line x1='${ax}' y1='${T}' x2='${ax}' y2='${T + ih}' stroke='${STROKE}' stroke-width='1.5'/>
-    ${title ? t2(L + iw / 2, 13, title, 'middle', "font-size='15' font-weight='700' fill='#0f172a'") : ''}${ls}${ps}${t2(L + iw, H - 6, xlabel, 'end', "font-size='12' font-weight='600' fill='#475569'")}${t2(L - 28, 12, ylabel, 'start', "font-size='12' font-weight='600' fill='#475569'")}`);
+    ${title ? t2(L + iw / 2, 13, title, 'middle', "font-size='15' font-weight='700' fill='#0f172a'") : ''}${polys}${ls}${ps}${t2(L + iw, H - 6, xlabel, 'end', "font-size='12' font-weight='600' fill='#475569'")}${t2(L - 28, 12, ylabel, 'start', "font-size='12' font-weight='600' fill='#475569'")}`);
   return save(svg, name);
 }
 
@@ -164,4 +170,34 @@ export function pie({ slices, name = 'kreis' }) {
     a0 = a1;
   });
   return save(wrap(460, 260, body.replace(/<path /, '<g transform="translate(40 0)"><path ') + '</g>'), name);
+}
+
+// Baukasten für Skizzen: reine Bausteine (drawcore.js) plus Speichern als SVG-Datei
+export const draw = { ...drawCore, svg: (name, w, h, body) => save(wrap(w, h, body), name) };
+
+// Zweistufiges Baumdiagramm. branches: [{ label, p, kids: [{ label, p }] }]; p als Text (z. B. '3/5' oder '?')
+export function tree({ branches, name = 'baum' }) {
+  const leaves = branches.reduce((a, b) => a + b.kids.length, 0);
+  const rowH = 34;
+  const H = leaves * rowH + 30;
+  const W = 400;
+  const x0 = 20, x1 = 170, x2 = 340;
+  const yTop = 22;
+  let body = '';
+  let leafIdx = 0;
+  const rootY = H / 2;
+  body += draw.dot(x0, rootY);
+  branches.forEach((b) => {
+    const ys = b.kids.map(() => yTop + (leafIdx++) * rowH + rowH / 2);
+    const by = (ys[0] + ys[ys.length - 1]) / 2;
+    body += draw.ln(x0, rootY, x1 - 14, by);
+    body += draw.tx((x0 + x1) / 2 - 6, (rootY + by) / 2 + (by < rootY ? -6 : 14), b.p, 'middle', "font-size='12.5' fill='#4f46e5' font-weight='600'");
+    body += draw.tx(x1, by + 5, b.label, 'middle', "font-size='15' font-weight='700' fill='#0f172a'");
+    b.kids.forEach((k, i) => {
+      body += draw.ln(x1 + 14, by, x2 - 14, ys[i]);
+      body += draw.tx((x1 + x2) / 2 + 4, (by + ys[i]) / 2 + (ys[i] < by ? -4 : 13), k.p, 'middle', "font-size='12.5' fill='#4f46e5' font-weight='600'");
+      body += draw.tx(x2, ys[i] + 5, k.label, 'middle', "font-size='15' font-weight='700' fill='#0f172a'");
+    });
+  });
+  return save(wrap(W, H, body), name);
 }

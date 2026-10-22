@@ -7,10 +7,9 @@
 // - Bei einer neuen Version werden nur die zuvor importierten Pakete/Abschnitte ersetzt.
 import { get, run, tx, json, getSetting, setSetting } from '../db.js';
 import * as figures from './figures.js';
-import { buildAll as buildContent } from './grundlagen/index.js';
+import { buildAll as buildContent, buildGeometrie, buildDaten } from './grundlagen/index.js';
 
 export const IMPORT_VERSION = 1;
-const KEY = 'import_grundlagen';
 const DEFAULT_PROFILES = ['HS10'];
 
 function removePrevious(state) {
@@ -50,12 +49,19 @@ function ensureTopic(entry, state) {
   return topic;
 }
 
+// Mehrere unabhängige Importe – jeder merkt sich seine Version unter einem eigenen Schlüssel.
 export function importGrundlagen() {
-  const prev = json(getSetting(KEY, ''), null);
-  if (prev && prev.version === IMPORT_VERSION) return;
+  runImport('import_grundlagen', IMPORT_VERSION, 'Grundlagen-Training (Rechnen, Funktionen, Wachstum)', () => buildContent(figures));
+  runImport('import_geometrie', 1, 'Grundlagen-Training Geometrie', () => buildGeometrie(figures));
+  runImport('import_daten', 1, 'Grundlagen-Training Daten und Zufall', () => buildDaten(figures));
+}
 
-  const data = buildContent(figures);
-  const state = { version: IMPORT_VERSION, packageIds: [], sectionIds: [], topicIds: prev?.topicIds || [], profileChanges: prev?.profileChanges || {} };
+function runImport(KEY, version, label, build) {
+  const prev = json(getSetting(KEY, ''), null);
+  if (prev && prev.version === version) return;
+
+  const data = build();
+  const state = { version, packageIds: [], sectionIds: [], topicIds: prev?.topicIds || [], profileChanges: prev?.profileChanges || {} };
   let tasks = 0;
   let variants = 0;
 
@@ -68,7 +74,7 @@ export function importGrundlagen() {
         console.warn(`Grundlagen-Import: Thema „${entry.topic}“ nicht gefunden – übersprungen.`);
         continue;
       }
-      const profiles = entry.create?.profiles || DEFAULT_PROFILES;
+      const entryProfiles = entry.create?.profiles || DEFAULT_PROFILES;
 
       let sectionSort = get('SELECT COALESCE(MAX(sort), -1) AS m FROM script_sections WHERE topic_id = ?', topic.id).m;
       for (const s of entry.sections || []) {
@@ -84,7 +90,7 @@ export function importGrundlagen() {
       for (const pkg of entry.packages) {
         const pkgId = Number(run(
           'INSERT INTO packages (topic_id, title, description, level, profiles, sort) VALUES (?, ?, ?, ?, ?, ?)',
-          topic.id, pkg.title, pkg.description, pkg.level, JSON.stringify(profiles), ++pkgSort,
+          topic.id, pkg.title, pkg.description, pkg.level, JSON.stringify(pkg.profiles || entryProfiles), ++pkgSort,
         ).lastInsertRowid);
         state.packageIds.push(pkgId);
         pkg.tasks.forEach((t, i) => {
@@ -108,8 +114,5 @@ export function importGrundlagen() {
     setSetting(KEY, JSON.stringify(state));
   });
 
-  console.log(`Grundlagen-Training importiert: ${state.packageIds.length} Übungspakete, ${tasks} Aufgaben, ${variants} Varianten.`);
+  console.log(`${label} importiert: ${state.packageIds.length} Übungspakete, ${tasks} Aufgaben, ${variants} Varianten.`);
 }
-
-// Für die Oberfläche/Tests: wie viele Aufgaben stammen aus dem Import?
-export const importedPackageIds = () => json(getSetting(KEY, ''), { packageIds: [] }).packageIds;

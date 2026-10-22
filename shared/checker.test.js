@@ -120,3 +120,11 @@ test('öffentliche Spezifikation enthält keine Lösungen', () => {
   const g = JSON.stringify(publicAnswerSpec({ type: 'graph', mode: 'lines', view: {}, lines: [{ m: 7, b: 9 }] }));
   assert.ok(!g.includes('"m"'));
 });
+
+test('constraint share: Anteil an der Summe', () => {
+  const spec = { type: 'fields', parts: [part({}), part({})], constraint: { type: 'share', index: 0, value: 0.25, integers: true } };
+  assert.equal(ok(spec, ['5', '15']), true);
+  assert.equal(ok(spec, ['1', '3']), true);
+  assert.equal(ok(spec, ['5', '10']), false);
+  assert.equal(ok(spec, ['2,5', '7,5']), false);
+});

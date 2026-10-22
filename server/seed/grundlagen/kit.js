@@ -1,7 +1,7 @@
 // Bausteine für die Aufgaben aus dem „Grundlagen-Training“ (Hauptschule Klasse 10).
-import { rng, de as deBase, dt, round, num, txt, fields, choice, free } from '../helpers.js';
+import { rng, de as deBase, dt, round, num, txt, fields, choice, free, unordered } from '../helpers.js';
 
-export { rng, dt, round, num, txt, fields, choice, free };
+export { rng, dt, round, num, txt, fields, choice, free, unordered };
 // Zahl für LaTeX: Dezimalkomma als {,} (sonst setzt KaTeX ein Leerzeichen dahinter)
 export const de = (n, digits = 2) => deBase(n, digits).replace(/(?<!\\),/g, '{,}');
 // Geldbeträge mit zwei Nachkommastellen (Text bzw. LaTeX)
@@ -65,3 +65,6 @@ export function lin(m, b, v = 'x') {
 
 // einfache Sprache für Plural/Einheiten
 export const pick = (r, arr) => arr[Math.floor(r() * arr.length)];
+
+// Wahrscheinlichkeit/Anteil in Prozent; auch als Bruch eingebbar (1/13)
+export const pct = (value, label = '', tol = 0.011) => ({ ...approx(round(value, 6), { label, unit: '%', tol }), pct: true });

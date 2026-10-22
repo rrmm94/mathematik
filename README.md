@@ -56,7 +56,7 @@ Alle Beispielinhalte können im Editor geändert oder gelöscht werden.
 
 ## Grundlagen-Training (Hauptschule Klasse 10)
 
-Beim Start importiert die Plattform automatisch die Aufgaben aus dem „Grundlagen-Training“ (Zehnerpotenzen, Prozent & Zinseszins, lineare Funktionen, lineare Gleichungssysteme, lineares/exponentielles Wachstum) – 16 Übungspakete, ca. 80 Aufgaben mit über 150 Varianten, jeweils mit Tipp und Lösungsweg. Vorhandene Inhalte bleiben unberührt; der Import läuft nur einmal (`IMPORT_VERSION` in `server/seed/import-grundlagen.js`).
+Beim Start importiert die Plattform automatisch die Aufgaben aus dem „Grundlagen-Training“ für HS 10: Rechnen, Funktionen, Wachstum (`Grundlagen des Rechnens` usw.), Geometrie (Streckung, Strahlensätze, Pythagoras, Thales, Trigonometrie, Kreisteile, Körper) sowie Daten und Zufall (Statistik, Wahrscheinlichkeit) – 33 Übungspakete mit rund 185 Aufgaben und über 300 Varianten, jeweils mit Tipp und Lösungsweg. Vorhandene Inhalte bleiben unberührt; jeder der drei Importe läuft nur einmal (Version in `server/seed/import-grundlagen.js`). Die Aufgaben liegen in `server/seed/grundlagen/`.
 
 - Pakete sind für **HS 10** freigegeben (Thema „Wachstum“ wird dafür ebenfalls für HS 10 geöffnet, „Lineare Gleichungssysteme“ ist ein neues Thema).
 - Neue Antworttypen: Wertetabelle mit **Live-Graph**, **Koordinatensystem zum Anklicken** (Geraden/Punkte), **Karten sortieren**, **Termeingabe** (`2x+85`), **a·10ⁿ**-Felder, Auswahllisten, Aufgaben mit mehreren richtigen Lösungen. Im Aufgaben-Editor werden diese Typen als JSON bearbeitet.

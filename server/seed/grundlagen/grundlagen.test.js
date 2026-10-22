@@ -2,11 +2,12 @@
 // und die öffentliche Spezifikation darf keine Lösungen verraten.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildAll } from './index.js';
+import { buildAll, buildGeometrie, buildDaten } from './index.js';
+import { drawCore } from '../drawcore.js';
 import { checkAnswer, publicAnswerSpec } from '../../../shared/checker.js';
 
-const stubFig = { plot: ({ name }) => `/uploads/${name}.svg`, pie: ({ name }) => `/uploads/${name}.svg` };
-const data = buildAll(stubFig);
+const stubFig = { plot: ({ name }) => `/uploads/${name}.svg`, pie: ({ name }) => `/uploads/${name}.svg`, tree: ({ name }) => `/uploads/${name}.svg`, draw: { ...drawCore, svg: (name) => `/uploads/${name}.svg` } };
+const data = [...buildAll(stubFig), ...buildGeometrie(stubFig), ...buildDaten(stubFig)];
 
 const fmtNum = (v) => String(v).replace('.', ','); // so tippen Kinder Dezimalzahlen
 
@@ -18,6 +19,7 @@ function idealAnswer(spec) {
       if (c.type === 'product') return ['5', '4', '3'];
       if (c.type === 'weighted') return ['20', '20'];
       if (c.type === 'line') return ['1', '0'];
+      if (c.type === 'share') return ['5', '15'];
       throw new Error('unbekannte Bedingung');
     }
     return spec.parts.map((p) => {
@@ -28,6 +30,7 @@ function idealAnswer(spec) {
   }
   if (spec.type === 'choice') return spec.options.map((o, i) => (o.correct ? i : null)).filter((i) => i !== null);
   if (spec.type === 'order') return spec.items.map((_, pos) => spec.perm.indexOf(pos));
+  if (spec.type === 'graph' && spec.mode === 'points') return spec.points.map(([x, y]) => ({ x, y }));
   if (spec.type === 'graph') return spec.lines.flatMap((l) => [{ x: 0, y: l.b }, { x: 2, y: 2 * l.m + l.b }]);
   throw new Error(`Typ ${spec.type} nicht prüfbar`);
 }
@@ -37,7 +40,8 @@ for (const entry of data) for (const pkg of entry.packages) for (const t of pkg.
 
 test('es gibt Aufgaben für alle drei Themen', () => {
   assert.ok(all.length > 120, `nur ${all.length} Varianten`);
-  assert.deepEqual([...new Set(data.map((d) => d.topic))].sort(), ['Lineare Funktionen', 'Lineare Gleichungssysteme', 'Prozent & Zinsen', 'Wachstum & Exponentialfunktionen', 'Zahlen & Rechnen']);
+  const topics = new Set(data.map((d) => d.topic));
+  for (const t of ['Lineare Funktionen', 'Lineare Gleichungssysteme', 'Prozent & Zinsen', 'Wachstum & Exponentialfunktionen', 'Zahlen & Rechnen', 'Trigonometrie & Ähnlichkeit', 'Satz des Pythagoras', 'Körper: Oberfläche & Volumen', 'Daten & Statistik', 'Wahrscheinlichkeit']) assert.ok(topics.has(t), t);
 });
 
 for (const { t, v, i } of all) {
