@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { LifeBuoy, LogOut, Sigma, LayoutDashboard, Users, ClipboardList, BookOpen, Layers, CalendarDays, Settings, Home, Shapes, KeyRound } from 'lucide-react';
 import { MIN_STUDENT_PASSWORD } from '../../../shared/constants.js';
 import { useAuth, toast, Modal } from './ui.jsx';
@@ -57,6 +57,8 @@ export function StudentLayout() {
   const { user } = useAuth();
   const logout = useLogout();
   const [pwOpen, setPwOpen] = useState(false);
+  // Im Einstiegstest gibt es keine Hilfe – erst in der Übungsphase.
+  const inDiagnose = useLocation().pathname.startsWith('/diagnose');
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur">
@@ -68,7 +70,7 @@ export function StudentLayout() {
             )}
             <button onClick={() => setPwOpen(true)} className="btn-ghost" title="Passwort ändern"><KeyRound size={17} /><span className="hidden lg:inline">Passwort</span></button>
             <button onClick={logout} className="btn-ghost" title="Abmelden"><LogOut size={17} /><span className="hidden md:inline">Abmelden</span></button>
-            <HelpButton />
+            {!inDiagnose && <HelpButton />}
           </div>
         </div>
       </header>

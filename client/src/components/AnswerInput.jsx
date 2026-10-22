@@ -237,6 +237,26 @@ export function isEmptyAnswer(spec, value) {
   return !(Array.isArray(value) && value.some((v) => String(v ?? '').trim()));
 }
 
+// Teilaufgaben a), b), c) im Aufgabentext finden, damit jedes Feld direkt unter seiner Teilaufgabe steht.
+function splitSubtasks(prompt, spec) {
+  if (spec?.type !== 'fields' || spec.layout || spec.parts.length < 2 || spec.parts.some((p) => !p.label)) return null;
+  const norm = (t) => t.replace(/^[\s*$]+/, '').replace(/\s+/g, '');
+  const paras = prompt.split(/\n\s*\n/);
+  const starts = [];
+  let from = 0;
+  for (const p of spec.parts) {
+    const label = p.label.replace(/\s+/g, '');
+    const at = paras.findIndex((para, i) => i >= from && norm(para).startsWith(label));
+    if (at === -1) return null;
+    starts.push(at);
+    from = at + 1;
+  }
+  return {
+    intro: paras.slice(0, starts[0]).join('\n\n'),
+    segments: starts.map((st, i) => paras.slice(st, starts[i + 1] ?? paras.length).join('\n\n')),
+  };
+}
+
 // Aufgabentext + Antwortfelder. Bei Lückentexten stehen die Felder direkt im Text.
 export function TaskBody({ prompt, spec, value, onChange, status, disabled, onSubmit }) {
   const gaps = (String(prompt || '').match(/⟦\d+⟧/g) || []).length;
@@ -254,6 +274,27 @@ export function TaskBody({ prompt, spec, value, onChange, status, disabled, onSu
       );
     };
     return <MathContent md={prompt} slots={slot} />;
+  }
+  const split = splitSubtasks(String(prompt || '').replace(/⟦\d+⟧/g, '…'), spec);
+  if (split) {
+    const vals = Array.isArray(value) ? value : [];
+    return (
+      <div className="space-y-5">
+        {split.intro && <MathContent md={split.intro} />}
+        {split.segments.map((seg, i) => (
+          <div key={i} className="space-y-2.5">
+            <MathContent md={seg} />
+            <div className="pl-6">
+              <label className="flex items-center gap-2">
+                {spec.parts[i].label && <span className="text-sm font-medium text-slate-600"><Inline md={spec.parts[i].label} /></span>}
+                <PartField part={spec.parts[i]} i={i} value={vals[i]} onChange={(v) => { const next = [...vals]; next[i] = v; onChange(next); }} status={status} disabled={disabled} onSubmit={onSubmit} />
+                {spec.parts[i].unit && <span className="text-sm text-slate-500">{spec.parts[i].unit}</span>}
+              </label>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
   }
   return (
     <>
