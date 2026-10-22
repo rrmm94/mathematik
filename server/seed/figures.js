@@ -3,12 +3,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { UPLOAD_DIR, run } from '../db.js';
+import { drawCore } from './drawcore.js';
 
 const STROKE = '#334155';
 const ACCENT = '#4f46e5';
-const FONT = "font-family='Inter, Arial, sans-serif' font-size='15' fill='#0f172a'";
 
-function save(svg, name) {
+export function save(svg, name) {
   const hash = crypto.createHash('md5').update(svg).digest('hex').slice(0, 10);
   const filename = `seed-${name}-${hash}.svg`;
   const file = path.join(UPLOAD_DIR, filename);
@@ -382,3 +382,91 @@ export function frames({ ns }) {
 }
 
 export const img = (url, alt = 'Skizze') => `![${alt}](${url})`;
+
+const t2 = (x, y, t, anchor = 'middle', attrs = '') => `<text x='${x}' y='${y}' text-anchor='${anchor}' font-family='Inter, Arial, sans-serif' ${attrs}>${t}</text>`;
+
+// Koordinatensystem mit Geraden/Punkten (für Aufgaben zum Ablesen und für Lösungswege).
+// lines: [{ m, b, label?, color? }], points: [{ x, y, label? }]
+export function plot({ polygons = [], title = '', xmin = -5, xmax = 5, ymin = -5, ymax = 5, xstep = 1, ystep = 1, lines = [], points = [], xlabel = 'x', ylabel = 'y', name = 'graph', width = 340 }) {
+  const L = 34, R = 14, T = 18, B = 28;
+  const iw = width - L - R;
+  const ih = Math.round(Math.max(150, Math.min(300, iw * ((ymax - ymin) / (xmax - xmin)))));
+  const W = width, H = ih + T + B;
+  const X = (x) => L + ((x - xmin) / (xmax - xmin)) * iw;
+  const Y = (y) => T + ((ymax - y) / (ymax - ymin)) * ih;
+  const f = (n) => String(Math.round(n * 100) / 100).replace('.', ',').replace('-', '−');
+  let g = '';
+  for (let v = Math.ceil(xmin / xstep) * xstep; v <= xmax + 1e-9; v += xstep) {
+    g += `<line x1='${X(v)}' y1='${T}' x2='${X(v)}' y2='${T + ih}' stroke='#e2e8f0'/>`;
+    if (Math.abs(v) > 1e-9) g += t2(X(v), (ymin <= 0 && ymax >= 0 ? Y(0) : T + ih) + 14, f(v), 'middle', "font-size='11' fill='#64748b'");
+  }
+  for (let v = Math.ceil(ymin / ystep) * ystep; v <= ymax + 1e-9; v += ystep) {
+    g += `<line x1='${L}' y1='${Y(v)}' x2='${L + iw}' y2='${Y(v)}' stroke='#e2e8f0'/>`;
+    if (Math.abs(v) > 1e-9) g += t2((xmin <= 0 && xmax >= 0 ? X(0) : L) - 5, Y(v) + 4, f(v), 'end', "font-size='11' fill='#64748b'");
+  }
+  const ax = xmin <= 0 && xmax >= 0 ? X(0) : L;
+  const ay = ymin <= 0 && ymax >= 0 ? Y(0) : T + ih;
+  const cols = ['#4f46e5', '#f59e0b', '#10b981', '#e11d48'];
+  const ls = lines.map((l, i) => {
+    const c = l.color || cols[i % cols.length];
+    const lab = l.label ? t2(X(xmax) - 6, Y(l.m * xmax + l.b) + (l.m * xmax + l.b > ymax - 1 ? 14 : -6), l.label, 'end', `font-size='13' font-weight='700' fill='${c}'`) : '';
+    return `<line x1='${X(xmin)}' y1='${Y(l.m * xmin + l.b)}' x2='${X(xmax)}' y2='${Y(l.m * xmax + l.b)}' stroke='${c}' stroke-width='2.5' clip-path='url(#c)'/>${lab}`;
+  }).join('');
+  const polys = polygons.map((pg) => `<polygon points='${pg.pts.map(([x, y]) => `${X(x)},${Y(y)}`).join(' ')}' fill='${pg.fill || '#e0e7ff'}' fill-opacity='0.6' stroke='${pg.color || '#475569'}' stroke-width='2'/>`).join('');
+  const ps = points.map((p) => `<circle cx='${X(p.x)}' cy='${Y(p.y)}' r='4.5' fill='#0f172a'/>${p.label ? t2(X(p.x) + 7, Y(p.y) - 7, p.label, 'start', "font-size='13' font-weight='700'") : ''}`).join('');
+  const svg = wrap(W, H, `<clipPath id='c'><rect x='${L}' y='${T}' width='${iw}' height='${ih}'/></clipPath>${g}
+    <line x1='${L}' y1='${ay}' x2='${L + iw}' y2='${ay}' stroke='${STROKE}' stroke-width='1.5'/>
+    <line x1='${ax}' y1='${T}' x2='${ax}' y2='${T + ih}' stroke='${STROKE}' stroke-width='1.5'/>
+    ${title ? t2(L + iw / 2, 13, title, 'middle', "font-size='15' font-weight='700' fill='#0f172a'") : ''}${polys}${ls}${ps}${t2(L + iw, H - 6, xlabel, 'end', "font-size='12' font-weight='600' fill='#475569'")}${t2(L - 28, 12, ylabel, 'start', "font-size='12' font-weight='600' fill='#475569'")}`);
+  return save(svg, name);
+}
+
+// Kreisdiagramm: slices [{ label, value, color? }]
+export function pie({ slices, name = 'kreis' }) {
+  const palette = ['#334155', '#6366f1', '#38bdf8', '#f59e0b', '#94a3b8', '#10b981'];
+  const total = slices.reduce((a, s) => a + s.value, 0);
+  const cx = 150, cy = 130, r = 95;
+  let a0 = -Math.PI / 2;
+  let body = '';
+  slices.forEach((s, i) => {
+    const a1 = a0 + (s.value / total) * Math.PI * 2;
+    const large = a1 - a0 > Math.PI ? 1 : 0;
+    const P = (a) => `${(cx + r * Math.cos(a)).toFixed(1)} ${(cy + r * Math.sin(a)).toFixed(1)}`;
+    body += `<path d='M ${cx} ${cy} L ${P(a0)} A ${r} ${r} 0 ${large} 1 ${P(a1)} Z' fill='${s.color || palette[i % palette.length]}' stroke='white' stroke-width='2'/>`;
+    const am = (a0 + a1) / 2;
+    const lx = cx + (r + 8) * Math.cos(am), ly = cy + (r + 8) * Math.sin(am);
+    body += t2(lx, ly + 4, s.label, Math.cos(am) >= 0 ? 'start' : 'end', "font-size='12.5' fill='#0f172a'");
+    a0 = a1;
+  });
+  return save(wrap(460, 260, body.replace(/<path /, '<g transform="translate(40 0)"><path ') + '</g>'), name);
+}
+
+// Baukasten für Skizzen: reine Bausteine (drawcore.js) plus Speichern als SVG-Datei
+export const draw = { ...drawCore, svg: (name, w, h, body) => save(wrap(w, h, body), name) };
+
+// Zweistufiges Baumdiagramm. branches: [{ label, p, kids: [{ label, p }] }]; p als Text (z. B. '3/5' oder '?')
+export function probTree({ branches, name = 'baum' }) {
+  const leaves = branches.reduce((a, b) => a + b.kids.length, 0);
+  const rowH = 34;
+  const H = leaves * rowH + 30;
+  const W = 400;
+  const x0 = 20, x1 = 170, x2 = 340;
+  const yTop = 22;
+  let body = '';
+  let leafIdx = 0;
+  const rootY = H / 2;
+  body += draw.dot(x0, rootY);
+  branches.forEach((b) => {
+    const ys = b.kids.map(() => yTop + (leafIdx++) * rowH + rowH / 2);
+    const by = (ys[0] + ys[ys.length - 1]) / 2;
+    body += draw.ln(x0, rootY, x1 - 14, by);
+    body += draw.tx((x0 + x1) / 2 - 6, (rootY + by) / 2 + (by < rootY ? -6 : 14), b.p, 'middle', "font-size='12.5' fill='#4f46e5' font-weight='600'");
+    body += draw.tx(x1, by + 5, b.label, 'middle', "font-size='15' font-weight='700' fill='#0f172a'");
+    b.kids.forEach((k, i) => {
+      body += draw.ln(x1 + 14, by, x2 - 14, ys[i]);
+      body += draw.tx((x1 + x2) / 2 + 4, (by + ys[i]) / 2 + (ys[i] < by ? -4 : 13), k.p, 'middle', "font-size='12.5' fill='#4f46e5' font-weight='600'");
+      body += draw.tx(x2, ys[i] + 5, k.label, 'middle', "font-size='15' font-weight='700' fill='#0f172a'");
+    });
+  });
+  return save(wrap(W, H, body), name);
+}

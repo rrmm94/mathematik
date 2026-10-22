@@ -53,6 +53,15 @@ Freitext-Aufgaben zählen im Diagnosetest nicht für die Stufe. Eine KI-Bewertun
 
 Alle Beispielinhalte können im Editor geändert oder gelöscht werden.
 
+## Grundlagen-Training (Hauptschule Klasse 10)
+
+Beim Start importiert die Plattform automatisch die Aufgaben aus dem „Grundlagen-Training“ für HS 10: Rechnen, Funktionen, Wachstum (`Grundlagen des Rechnens` usw.), Geometrie (Streckung, Strahlensätze, Pythagoras, Thales, Trigonometrie, Kreisteile, Körper) sowie Daten und Zufall (Statistik, Wahrscheinlichkeit) – 33 Übungspakete mit rund 185 Aufgaben und über 300 Varianten, jeweils mit Tipp und Lösungsweg. Vorhandene Inhalte bleiben unberührt; jeder der drei Importe läuft nur einmal (Version in `server/seed/import-grundlagen.js`). Die Aufgaben liegen in `server/seed/grundlagen/`.
+
+- Pakete sind für **HS 10** freigegeben (Thema „Wachstum“ wird dafür ebenfalls für HS 10 geöffnet, „Lineare Gleichungssysteme“ ist ein neues Thema).
+- Neue Antworttypen: Wertetabelle mit **Live-Graph**, **Koordinatensystem zum Anklicken** (Geraden/Punkte), **Karten sortieren**, **Termeingabe** (`2x+85`), **a·10ⁿ**-Felder, Auswahllisten, Aufgaben mit mehreren richtigen Lösungen. Im Aufgaben-Editor werden diese Typen als JSON bearbeitet.
+- `npm test` prüft die Antwortlogik und dass jede importierte Aufgabe ihre eigene Musterlösung akzeptiert.
+
+
 ## Originalaufgaben aus den Abschlussprüfungen
 Beim ersten Start (auch bei bestehenden Installationen) werden die Abschlussprüfungen Niedersachsen 2021–2026 (Realschule, Hauptschule G- und E-Kurs) eingebunden:
 

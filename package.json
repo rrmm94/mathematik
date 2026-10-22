@@ -8,7 +8,8 @@
     "dev": "concurrently -n api,web \"node --watch --no-warnings server/index.js\" \"vite\"",
     "build": "vite build",
     "start": "node --no-warnings server/index.js",
-    "seed": "node --no-warnings server/seed/index.js"
+    "seed": "node --no-warnings server/seed/index.js",
+    "test": "node --test \"shared/**/*.test.js\" \"server/**/*.test.js\""
   },
   "dependencies": {
     "express": "^5.2.1",

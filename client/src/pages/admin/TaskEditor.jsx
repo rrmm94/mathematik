@@ -18,6 +18,7 @@ function normalizeSpec(spec) {
     parts: spec.parts.map((p) => {
       const alts = Array.isArray(p.alternatives) ? p.alternatives : String(p.alternatives || '').split(';').map((a) => a.trim()).filter(Boolean);
       if (p.kind === 'text') return { ...p, value: String(p.value ?? ''), tolerance: 0, alternatives: alts.map(String) };
+      if (p.kind && p.kind !== 'number') return p; // Term, a·10ⁿ, Auswahl: unverändert lassen
       return { ...p, value: toNum(p.value), tolerance: toNum(p.tolerance) || 0, alternatives: alts.map(toNum).filter((n) => !Number.isNaN(n)) };
     }),
   };
@@ -215,7 +216,7 @@ export default function TaskEditor() {
             </label>
             <span><b>Lückentext:</b> Schreibe <code className="rounded bg-white px-1">⟦1⟧</code>, <code className="rounded bg-white px-1">⟦2⟧</code> … in die Aufgabenstellung – an diese Stellen kommen die Eingabefelder (Typ „Zahl / Eingabefelder“, Haken „Felder im Text“).</span>
           </div>
-          <AnswerSpecEditor spec={v.answer} onChange={(answer) => updV({ answer })} />
+          <AnswerSpecEditor key={active} spec={v.answer} onChange={(answer) => updV({ answer })} />
           <div className="grid gap-5 lg:grid-cols-[1fr_320px]">
             <MarkdownEditor label="Lösungsweg / Musterlösung" value={v.solution} onChange={(solution) => updV({ solution })} rows={6} />
             <div>
@@ -259,9 +260,44 @@ function PreviewTask({ variant }) {
   );
 }
 
+// Aufgabentypen, die nicht über Formularfelder, sondern als JSON bearbeitet werden
+// (Tabellen, Terme, Auswahllisten, Koordinatensystem, Sortieraufgaben, Bedingungen).
+function isAdvanced(spec) {
+  if (!spec) return false;
+  if (spec.type === 'order' || spec.type === 'graph') return true;
+  if (spec.type === 'fields') return !!spec.layout || !!spec.constraint || spec.parts.some((p) => ['select', 'expr', 'sci'].includes(p.kind));
+  return false;
+}
+
+function JsonSpecEditor({ spec, onChange }) {
+  const [text, setText] = useState(() => JSON.stringify(spec, null, 2));
+  const [err, setErr] = useState('');
+  const names = { order: 'Sortieraufgabe', graph: 'Koordinatensystem', fields: 'Tabelle / Term / Auswahl' };
+  return (
+    <div>
+      <label className="label">Antwort & Musterlösung – {names[spec.type] || spec.type}</label>
+      <p className="mb-2 flex items-start gap-2 rounded-xl bg-sky-50 px-3 py-2 text-xs text-sky-900">
+        <Info size={14} className="mt-0.5 shrink-0" />
+        Dieser Aufgabentyp (aus dem Grundlagen-Training) wird als JSON bearbeitet. Mit „Als Kind testen“ siehst du sofort, wie die Aufgabe aussieht.
+      </p>
+      <textarea
+        className={`input min-h-64 font-mono text-xs ${err ? 'border-red-400' : ''}`}
+        spellCheck={false}
+        value={text}
+        onChange={(e) => {
+          setText(e.target.value);
+          try { onChange(JSON.parse(e.target.value)); setErr(''); } catch (x) { setErr(x.message); }
+        }}
+      />
+      {err && <p className="mt-1 text-xs text-red-600">Ungültiges JSON: {err} (wird erst nach Korrektur übernommen)</p>}
+    </div>
+  );
+}
+
 // Editor für die Musterlösung
 function AnswerSpecEditor({ spec, onChange }) {
   const type = spec?.type || 'fields';
+  if (isAdvanced(spec)) return <JsonSpecEditor spec={spec} onChange={onChange} />;
   const setType = (t) => {
     if (t === type) return;
     if (t === 'fields') onChange({ type: 'fields', parts: [{ label: '', kind: 'number', value: 0, tolerance: 0, unit: '', alternatives: [] }] });

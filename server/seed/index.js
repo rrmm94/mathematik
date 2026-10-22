@@ -7,6 +7,7 @@ import { buildPlanFromRun } from '../plan.js';
 import { rng } from './helpers.js';
 import { topicsA } from './topics-a.js';
 import { topicsB } from './topics-b.js';
+import { importGrundlagen } from './import-grundlagen.js';
 import { TOPIC_HINTS } from './topic-hints.js';
 import { seedExams } from './exams.js';
 
@@ -214,6 +215,8 @@ export function seedIfEmpty() {
   }
   seedTopicHints();
   seedExams();
+  // Zusätzliche Übungen aus dem Grundlagen-Training (läuft nur, wenn die Version neu ist)
+  importGrundlagen();
 }
 
 // Direkter Aufruf: npm run seed
