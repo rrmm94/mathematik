@@ -1,0 +1,517 @@
+{
+ "school": "hs-e",
+ "schoolLabel": "Hauptschule E-Kurs",
+ "year": 2022,
+ "part": "Wahlteil",
+ "folderId": 315336,
+ "url": "https://de.serlo.org/mathe/315336/wahlteil",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Im Spreewald (Brandenburg) steht die abgebildete Pyramide.\n\n![Abbildung](/uploads/ex-506cc945f20e.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne, wie viel Kubikmeter Erde für den Bau der Pyramide benötigt wurden.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5308.33,
+        "tolerance": 0,
+        "unit": "m³",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne das Volumen der Pyramide mit der entsprechenden Formel.*\n\n**Berechnen, wie viel Kubikmeter Erde für den Bau der Pyramide benötigt wurden.**\n\nDie Formel zur Berechnung des Volumeninhalts einer Pyramide lautet:\n\n$\\large\\mathrm{V_{Pyramide}=\\dfrac{1}{3}\\cdot G\\cdot h}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{h=13\\m}$\n\nDie Grundfläche $\\textbf{G}$ der Pyramide ist ein Quadrat mit der Seitenlänge $\\mathrm{a=35\\m\\Rightarrow}$\n\n$\\Rightarrow \\text{G} =35^2$\n\nEinsetzen der bekannten Größen in die Formel:\n\n$\\mathrm{V_{Pyramide}=\\dfrac{1}{3}\\cdot35^2\\cdot13}$\n\n$\\mathrm{V_{Pyramide}=\\dfrac{1}{3}\\cdot15925}$\n\n$\\mathrm{V_{Pyramide}=5308,33\\m^3}$\n\nFür den Bau der Pyramide wurden $\\boxed{5308,33\\m^3}$ Erde benötigt.",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Es führt eine Treppe die Pyramide hinauf. Jede Treppenstufe ist $20 \\cm$ hoch.\n\nBerechne die Anzahl der Treppenstufen.\n\n![Abbildung](/uploads/ex-3daa76171602.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 65,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Dividiere die Höhe der Pyramide durch die Höhe einer Treppenstufe. - Beachte die Einheiten.*\n\n**Berechnen der Anzahl der Treppenstufen.**\n\nFolgende Größen sind bekannt:\n\nHöhe der Pyramide: $\\hspace{8mm}\\mathrm{h_K}=13\\m$\n\nHöhe einer Treppenstufe: $\\mathrm{h_{T}=20\\cm}$\n\nWir rechnen die Höhe der Treppenstufe in Meter um,\n\nindem wir $20$ durch $100$ teilen.\n\n$\\mathrm{h_T=\\dfrac{20}{100}\\ \\Rightarrow\\ h_T=0,2\\m}$\n\n$\\mathrm{Anzahl_T=13:0,2}$\n\n$\\mathrm{Anzahl_T=65}$\n\nDie Anzahl der Treppenstufen beträgt: $\\ \\boxed{65}$.",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Treppenlänge **x**.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 21.8,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne Treppenlänge **x** mithilfe des Satzes des Pythagoras.*\n\n**Berechnen der Treppenlänge x.**\n\nDer Satz des Pythagoras lautet:\n\n$\\large\\mathrm{c^2=a^2+b^2}$\n\n![Abbildung](/uploads/ex-ea047d5f2d1b.png)\n\nDer Satz des Pythagoras angewandt auf das farbig markierte Dreieck:\n\n$\\mathrm{x^2={h_K}^2+\\left(\\dfrac{a}{2}\\right)^2\\ \\Rightarrow\\ x=\\sqrt{{h_K}^2+\\left(\\dfrac{a}{2}\\right)^2}}$\n\n$\\mathrm{x=\\sqrt{13^2+\\left(\\dfrac{35}{2}\\right)^2}}$\n\n$\\mathrm{x=\\sqrt{474,25}}$\n\n$\\text{x}\\approx21,80$\n\nDie Treppenlänge **x** beträgt ungefähr: $\\ \\boxed{21,80\\m}$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Pyramide ist mit Rasen bewachsen und muss regelmäßig gemäht werden.\n\nBerechne die Größe der zu mähenden Fläche (Die Treppe kann unberücksichtigt bleiben.).\n\n(Solltest du die Teilaufgabe c) nicht gelöst haben, rechne mit $21,60 \\m$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1526,
+        "tolerance": 0,
+        "unit": "m²",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Fläche eines Dreiecks. - Multipliziere die Fläche mit $4$.*\n\n**Berechnen der Größe der zu mähenden Fläche.**\n\nDie zu mähende Fläche entspricht der [Mantelfläche](/60970) der Pyramide.\n\nDie Mantelfläche besteht aus $4$ [Dreiecken](/1949).\n\n**Berechnen des Flächeninhalts eines Dreiecks.**\n\nDie Formel zur Berechnung des Flächeninhalts eines Dreiecks lautet:\n\n$\\mathrm{A_{Dreieck}=\\dfrac{g\\cdot h}{2}}$\n\nFolgende Größen sind bekannt:\n\n$\\text{g}=35\\m\\qquad\\h=21,80\\m$ (Treppenlänge $\\textbf{x}$, siehe Teilaufgabe 1c)\n\nEinsetzen der bekannten Größen in die Formel:\n\n$\\mathrm{A_{Dreieck}=\\dfrac{35\\cdot21,80}{2}}$\n\n$\\mathrm{A_{Dreieck}=\\dfrac{763}{2}}$\n\n$\\mathrm{A_{Dreieck}=381,5\\m^2}$\n\n$\\mathrm{A_{Mantelfläche}=4\\cdot A_{Dreieck}}$\n\n$\\mathrm{A_{Mantelfläche}=4\\cdot 381,5}$\n\n$\\mathrm{A_{Mantelfläche}=1526\\m^2}$\n\nDie Größe der zu mähenden Fläche beträgt: $\\boxed{1526\\m^2}$.\n\n**Hinweis:**\n\nWir haben hier für die Höhe $\\textbf{h}$ des Dreiecks mit dem auf $2$ Stellen nach dem Komma gerundeten Wert $21,80$ gerechnet, wenn du für $\\textbf{h}$ mit dem Wert rechnest, den der Rechner liefert, erhältst du $1526,02$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "e)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Neben der Pyramide soll ein Kegel gebaut werden. Die Grundflächen beider Körper sollen gleich groß sein.\n\nBerechne den Radius des Kegels.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 19.75,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Setze die Grundfläche der Pyramide gleich der Grundfläche des Kegels. - Löse die Formel zur Berechnung der Grundfläche des Kegels nach $\\textbf{r}$ auf.*\n\n**Berechnen des Radius des Kegels.**\n\n**Die Grundfläche eines Kegels ist ein Kreis.**\n\nDie Formel zur Berechnung des Flächeninhalts eines Kreises lautet:\n\n$\\large\\mathrm{A_{Kreis}=r^2\\cdot\\pi}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{G_{Kegel}=G_{Pyramide}=35^2=1225\\m^2}$\n\nEinsetzen der bekannten Größen und Auflösen der Formel nach $\\textbf{r}$:\n\n$\\mathrm{1225= r^2\\cdot\\pi}\\quad|:\\pi$\n\n$\\mathrm{\\dfrac{1225}{\\pi}=r^2}$\n\n$\\mathrm{389,93=r^2\\ \\Rightarrow\\ r=\\sqrt{389,93}}$\n\n$\\mathrm{r=19,75\\m}$\n\nDer Radius des Kegels beträgt: $\\ \\boxed{19,75\\m}$.",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "f)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze die richtige Aussage an.\n\nHaben beide Körper auch die gleiche Körperhöhe, dann ist die Treppenlänge des Kegels ...",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "... größer als bei der Pyramide.",
+        "correct": true
+       },
+       {
+        "text": "... kleiner als bei der Pyramide.",
+        "correct": false
+       },
+       {
+        "text": "... genauso groß wie bei der Pyramide.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*- Berechne die Länge $\\textbf{m}$ der Mantellinie des Kegels. - Vergleiche die Länge der Mantellinie des Kegels mit der der Treppenlänge der Pyramide.*\n\n**Vergleichen der Treppenlänge der Pyramide mit der Mantellinie des Kegels.**\n\n![Abbildung](/uploads/ex-66941e20377d.png)\n\nDer Radius $\\textbf{r}$ bildet mit der Höhe $\\textbf{h}$ und der Mantellinie $\\textbf{m}$ ein rechtwinkliges Dreieck.\n\nIn einem rechtwinkligem Dreieck gilt der Satz des Pythagoras.\n\nDer Satz des Pythagoras lautet:\n\n$\\mathrm{c^2=a^2+b^2}$\n\nDer Satz des Pythagoras angewandt auf das obige Dreieck:\n\n$\\mathrm{m^2=r^2+h^2}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{r=19,75\\m\\qquad h=13\\m}$\n\nEinsetzen der bekannten Größe in die Formel:\n\n$\\mathrm{m=\\sqrt{19,75^2+13^2}}$\n\n$\\mathrm{m=\\sqrt{559,06}}$\n\n$\\text{m}=23,64\\m$\n\nTreppenlänge der Pyramide: $21,80\\m$\n\nTreppenlänge des Kegels: $23,64\\m$\n\nDie Treppenlänge des Kegels ist größer als bei der Pyramide.\n\nKreuze entsprechend an.",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Nina mietet einen E-Scooter bei ScooterOne.\n\n![Abbildung](/uploads/ex-9a14b3744782.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ergänze die fehlenden Werte in der Tabelle.\n\n![Abbildung](/uploads/ex-d336404a8c2b.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Ergänzen der fehlenden Werte in der Tabelle. Berechnen der fehlenden Werte: Bekannte Werte: Fahrzeit: 3minqquadGrundgebühr: : 1,50 €qquadFahrpreis pro Minute: 0,25 € Gebühr für 3 Minuten: 1,50 €+3cdot0,25 €=2,25 € Fahrzeit für eine Gebühr von 4,75 €: mathrm{left(4,75 €-1,50 €right):0,25 dfrac{€}{min}=13min} Ergänzte Tabelle. ![Abbildung](/uploads/ex-d7aa2f7aef49.png)"
+     },
+     "solution": "**Ergänzen der fehlenden Werte in der Tabelle.**\n\n**Berechnen der fehlenden Werte:**\n\nBekannte Werte:\n\nFahrzeit: $\\ 3\\min\\qquad$Grundgebühr: : $\\ 1,50\\ €\\qquad$Fahrpreis pro Minute: $\\ 0,25\\ €$\n\nGebühr für 3 Minuten: $1,50\\ €+3\\cdot0,25\\ €=2,25\\ €$\n\nFahrzeit für eine Gebühr von $4,75\\ €$: $\\mathrm{\\left(4,75\\ €-1,50\\ €\\right):0,25\\ \\dfrac{€}{min}=13\\min}$\n\n**Ergänzte Tabelle.**\n\n![Abbildung](/uploads/ex-d7aa2f7aef49.png)",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Stelle die Funktionsgleichung für das Angebot von ScooterOne auf.\n\n$y=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "0,25x+1,50",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         "0,25x+1,5"
+        ]
+       }
+      ]
+     },
+     "solution": "*- Bestimme den Steigungsfaktor $\\textbf{m}$ und den $y$-Achsenabschnitt $\\textbf{b}$.*\n\n**Aufstellen der Funktionsgleichung für das Angebot von ScooterOne.**\n\nDie allgemeine Funktionsgleichung lautet:\n\n$\\mathrm{y=m\\cdot x+b}$\n\nDie Gebühr für die einmalige Freischaltung entspricht dem $y$-Achsenabschnitt $\\textbf{b}$.\n\n$\\textbf{b}=1,50$\n\nDer Fahrpreis pro Minute entspricht der Steigung $\\textbf{m}$.\n\n$\\textbf{m}=0,25$\n\nDie Funktionsgleichung lautet dann:\n\n$\\boxed{\\mathrm{y=0,25x+1,50}}$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Nina muss für ihre Fahrt $6,50$ € zahlen.\n\nBerechne die Fahrzeit.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 20,
+        "tolerance": 0,
+        "unit": "min",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Setze $\\text{y}=6,50$ in die Funktionsgleichung ein. - Berechne $\\text{x}$.*\n\n**Berechne die Fahrzeit.**\n\n$\\mathrm{y=0,25x+1,50}$\n\n$$\\begin{aligned}\n6,50 &= 0,25\\text{x}+1,50 \\qquad |\\; -1,50 \\\\\n5 &= 0,25\\text{x} \\qquad |\\; :0,25 \\\\\n\\text{x} &= 20\n\\end{aligned}$$\n\nFür $6,50\\ €$ kann Nina $\\textbf{20}$ Minuten mit dem Scooter fahren.",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Ninas Freundin Diana hat für die gleiche Fahrt einen E-Scooter von Roller2Go ausgewählt. Das Angebot von Roller2Go ist im Koordinatensystem grafisch dargestellt:\n\n![Abbildung](/uploads/ex-4da70ac50d27.png)\n\nErgänze im Koordinatensystem den Graphen der Funktion für das Angebot von ScooterOne.",
+     "answer": {
+      "type": "free",
+      "sample": "Ergänzen des Graphen der Funktion für das Angebot von ScooterOne im Koordinatensystem. ![Abbildung](/uploads/ex-9b1f55897e6b.png)"
+     },
+     "solution": "**Ergänzen des Graphen der Funktion für das Angebot von ScooterOne im Koordinatensystem.**\n\n![Abbildung](/uploads/ex-9b1f55897e6b.png)",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "e)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Bestimme die Fahrzeit, für die ScooterOne und Roller2Go den gleichen Preis verlangen.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 10,
+        "tolerance": 0,
+        "unit": "min",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Lies den Schnittpunkt der beiden Geraden im Koordinatensystem ab.*\n\n**Bestimmen der Fahrzeit, für die ScooterOne und Roller2Go den gleichen Preis verlangen.**\n\n![Abbildung](/uploads/ex-b90084d03696.png)\n\nDie Fahrzeit, für die ScooterOne und Roller2Go den gleichen Preis verlangen, beträgt: $\\boxed{10\\min}$.",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "f)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Nina betrachtet die beiden Graphen und stellt fest: „Jetzt kann ich auf einen Blick erkennen, für welche Fahrzeit ich welchen Anbieter nehmen sollte.“\n\nErkläre, was Nina damit meint.",
+     "answer": {
+      "type": "free",
+      "sample": "Erklärung, zu Ninas Aussage. Zum Beispiel: Links vom Schnittpunkt der Graphen ist ScooterOne günstiger, rechts vom Schnittpunkt Roller2Go."
+     },
+     "solution": "**Erklärung, zu Ninas Aussage.**\n\n**Zum Beispiel:**\n\nLinks vom Schnittpunkt der Graphen ist ScooterOne günstiger,\n\nrechts vom Schnittpunkt Roller2Go.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Die Klasse 10a bietet auf dem Schulfest ein Spiel mit Glücksrädern an.\n\nEin Spiel besteht aus zwei Drehungen: Zuerst wird Rad 1, danach Rad 2 gedreht.\n\n![Abbildung](/uploads/ex-eab1ab677857.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib an, welche Symbole mit der größten Wahrscheinlichkeit angezeigt werden.\n\nRad 1: ⟦1⟧\n\nRad 2: ⟦2⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Dreieck",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Kreis",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Erklärung, welche Symbole mit der größten Wahrscheinlichkeit angezeigt werden.**\n\nBei Rad 1 hat das **Dreieck** die größere Wahrscheinlichkeit angezeigt zu werden, da das Feld mit dem Dreieck dreimal so groß ist wie das Feld mit dem Stern.\n\nBei Rad 2 hat der **Kreis** die größere Wahrscheinlichkeit angezeigt zu werden, da das Feld mit dem Kreis doppelt so groß ist, wie das Feld mit dem Stern und wie das Feld mit dem Dreieck.",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ergänze die fehlenden Wahrscheinlichkeiten in den gestrichelten Kästchen.\n\n![Abbildung](/uploads/ex-90d9c16227d0.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Ergänzen der fehlenden Wahrscheinlichkeiten. ![Abbildung](/uploads/ex-70068c77d9db.png)"
+     },
+     "solution": "**Ergänzen der fehlenden Wahrscheinlichkeiten.**\n\n![Abbildung](/uploads/ex-70068c77d9db.png)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Ein Spieler gewinnt, wenn auf beiden Rädern ein Stern angezeigt wird .\n\nBerechne die Wahrscheinlichkeit für einen Gewinn.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.0625,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Wahrscheinlichkeit mithilfe der 1. Pfadregel (Produktregel).*\n\n**Berechnen der Wahrscheinlichkeit für einen Gewinn**\n\n![Abbildung](/uploads/ex-85a1b7729cb1.png)\n\nDie Wahrscheinlichkeit, dass auf beiden Rädern ein Stern angezeigt wird:\n\n$\\mathrm{P_{2xStern}=\\dfrac14\\cdot\\dfrac14=\\dfrac{1}{16}}$\n\nDie Wahrscheinlichkeit zu gewinnen, beträgt $\\boxed{\\dfrac{1}{16}}$.",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, dass zwei verschiedene Symbole angezeigt werden.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.75,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Wahrscheinlichkeit mithilfe der Pfagregeln.*\n\n**Berechnen der Wahrscheinlichkeit, dass zwei verschiedene Symbole angezeigt werden.**\n\n![Abbildung](/uploads/ex-92381e89d1d8.png)\n\nDie Wahrscheinlichkeit, dass zwei verschiedene Symbole angezeigt werden, berechnet sich wie folgt:\n\n$\\mathrm{P_{2\\ verschd. Symbole}=\\dfrac34\\cdot\\dfrac14+\\dfrac34\\cdot\\dfrac24+\\dfrac14\\cdot\\dfrac14+\\dfrac14\\cdot\\dfrac24}$\n\n$\\mathrm{P_{2\\ verschd. Symbole}=\\dfrac{3}{16}+\\dfrac{6}{16}+\\dfrac{1}{16}+\\dfrac{2}{16}}$\n\n$\\mathrm{P_{2\\ verschd. Symbole}=\\dfrac{12}{16}}$\n\nDie Wahrscheinlichkeit, dass zwei verschiedene Symbole angezeigt werden beträgt: $\\ \\boxed{\\dfrac{12}{16}}$.",
+     "points": 3,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Klasse 10a entscheidet, dass der Gewinn ein Eis ist. Sie geht davon aus, dass 1000-mal gespielt wird.\n\n![Abbildung](/uploads/ex-68d3f199ddf3.png)\n\nBerechne, wie viele Eis bei 1000 Spielen wahrscheinlich gewonnen werden.\n\n(Solltest du die Teilaufgabe c) nicht gelöst haben, rechne mit $\\displaystyle\\frac{1}{18}$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 62.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Dividiere $1000$ durch die Wahrscheinlichkeit zu gewinnen.*\n\n**Berechnen, wie viele Eis bei 1000 Spielen wahrscheinlich gewonnen werden.**\n\nDie Wahrscheinlichkeit 1 Spiel zu gewinnen beträgt $\\ \\dfrac{1}{16}$, (siehe Teilaufgabe 3c).\n\nBei 1000 Spielen gewinnt man dann wahrscheinlich: $1000\\cdot\\dfrac{1}{16}=62,5$\n\nBei 1000 Spielen gewinnt man wahrscheinlich $63$ Eis, (der Wert ist gerundet, da nur ganze Eis gewonnen werden).",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "f)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ein Jahr später sollen die Glücksräder mit den gleichen Spielregeln erneut zum Einsatz kommen. Das zweite Glücksrad wird so umgestaltet, dass die Gewinnwahrscheinlichkeit $\\displaystyle\\frac{1}{32}$ beträgt.\n\nGestalte das zweite Glücksrad so, dass die gewünschte Wahrscheinlichkeit erzielt wird.\n\n![Abbildung](/uploads/ex-391025b9f00d.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Gestalten des zweiten Glücksrad so, dass die gewünschte Wahrscheinlichkeit erzielt wird. ![Abbildung](/uploads/ex-4c06ba2f2e82.png) Die Gewinnwahrscheinlichkeit war im 1. Jahr dfrac{1}{16} Die Gewinnwahrscheinlichkeit soll im 2. Jahr dfrac{1}{32} sein. Das Feld mit dem Stern muss halbiert werden, der Anteil des Sterns muss dann ein Achtel betragen."
+     },
+     "solution": "**Gestalten des zweiten Glücksrad so, dass die gewünschte Wahrscheinlichkeit erzielt wird.**\n\n![Abbildung](/uploads/ex-4c06ba2f2e82.png)\n\nDie Gewinnwahrscheinlichkeit war im 1. Jahr $\\dfrac{1}{16}$\n\nDie Gewinnwahrscheinlichkeit soll im 2. Jahr $\\dfrac{1}{32}$ sein.\n\nDas Feld mit dem Stern muss halbiert werden, der Anteil des Sterns muss dann ein Achtel betragen.",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Dilara lässt ihre Drohne über einem freien Feld fliegen. Sie stellt drei Hütchen A, B und C auf.\n\nDie Drohne fliegt von A über B zu C.\n\n![Abbildung](/uploads/ex-19e9ad9fb9ac.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Strecke **x**.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 56.08,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Länge der Strecke **x** mithilfe des Satzes des Pythagoras..*\n\n**Berechnen der Länge der Strecke x.**\n\nDie Strecke **x** bildet mit der Strecke der Länge $46,6\\m$ und mit der Strecke der Länge $31,2\\m$ ein rechtwinkliges Dreieck. Wobei die Strecke **x** die Hypothenuse ist, die Strecke der Länge $46,6\\m$ und die Strecke der Länge $31,2\\m$ sind die Katheten.\n\nDer Satz des Pythagoras lautet:\n\n$\\mathrm{c^2=a^2+b^2}$\n\nDer Satz des Pythagoras angewandt auf unser Dreieck:\n\n$\\mathrm{x^2=31,2^2+46,6^2}$\n\n$\\mathrm{x=\\sqrt{3145}}$\n\n$\\mathrm{x\\approx56,08}$\n\nDie Länge der Strecke **x** beträgt ungefähr: $\\ \\boxed{56,08\\m}$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Strecke **y**.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 23.51,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Lange der Strecke $\\textbf{y}$ mithilfe des Tangens.*\n\n**Berechnen der Länge der Strecke y.**\n\nDer Tangens ist definiert als:\n\n$\\tan (\\alpha )=\\dfrac{\\text{Gegenkathete}}{\\text{Ankathete}}$\n\nIn unserem Dreieck (kleines Dreieck) gilt:\n\n$\\mathrm{Gegenkathete=y\\qquad Ankathede =31,2\\m\\qquad \\alpha=37^\\circ}$\n\n$\\mathrm{tan(37^\\circ)=\\dfrac{y}{31,2}\\quad \\Rightarrow\\quad y=31,2\\cdot tan{(37^\\circ)}}$\n\n$\\text{y}=31,2\\cdot0,7536$\n\n$\\text{y}\\approx23,51$\n\nDie Länge der Strecke **y** beträgt ungefähr: $\\ \\boxed{23,51\\m}$.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Dilara möchte die Drohne direkt über sich im Kreis fliegen lassen. Die Drohne soll aus ihrer Hand starten und auch dorthin wieder zurückfliegen. Der Akku hat noch eine Reichweite von 1000 m.\n\n![Abbildung](/uploads/ex-5467b23743e5.png)\n\nBerechne die Anzahl der vollen Umrundungen, bevor der Akku leer ist. Berücksichtige die Entfernung von Dilara zur Kreisbahn.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 6,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Umfang der Kreisbahn. - Bilde die Differenz von $1000$ und $2\\cdot38,42$ . - Dividiere den Umfang der Kreisbahn durch diese Differenz.*\n\n**Berechnen der Anzahl der vollen Umrundungen.**\n\nDie Formel zur Berechnung des Umfangs eines Kreises lautet:\n\n$\\mathrm{U_{Kreis}=2r\\cdot\\pi}$\n\nEinsetzen des Radius (siehe Skizze) in die Formel:\n\n$\\mathrm{U_{Kreisbahn}=2\\cdot24\\cdot\\pi}$\n\n$\\mathrm{U_{Kreisbahn}=150,80\\m}$\n\nDer Weg von Dilara zur Kreisbahn und zurück ist:\n\n$\\mathrm{Weg_{Dilara-Kreisb.}=2\\cdot38,42}$\n\n$\\mathrm{Weg_{Dilara-Kreisb.}=76,84\\m}$\n\nAnzahl der vollen Umrundungen:\n\n$\\mathrm{Anzahl_{Umrund.}=(1000-76,84):150,80}$\n\n$\\mathrm{Anzahl_{Umrund.}=6,12}$\n\n$\\mathrm{Anzahl_{volle\\ Umrund.}=6}$\n\nDer Akku der Drohne ist nach $\\boxed{6}$ vollen Umrundungen leer.",
+     "points": 3,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Winkels β.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 38.66,
+        "tolerance": 0,
+        "unit": "°",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Größe des Winkels β mithilfe des Sinus.*\n\n**Berechnen der Größe des Winkels β.**\n\nDas Dreieck mit den Seiten **r**, **h** und $\\textbf{38,42}$, ist ein rechtwinkliges Dreieck, wobei r die Gegenkathete des Winkles $\\beta$ ist. Die Seite $38,42$ ist die Hypothenuse.\n\nDer Sinus im rechtwinkligem Dreieck ist definiert als:\n\n$\\mathrm{\\sin{\\alpha}=\\dfrac{Gegenkathete}{Hypotenus}}$\n\nFür unser Dreieck gilt dann:\n\n$\\mathrm{\\sin{\\beta}=\\dfrac{24}{38,42}}$\n\n$\\mathrm{\\sin{\\beta}\\approx0,6247}$\n\n$\\hspace{4.7mm}\\beta\\approx38,66^\\circ$\n\nDer Winkel $\\beta$ beträgt ungefähr: $\\boxed{38,66^\\circ}$.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Vergrößert sich der Winkel β und die Flughöhe h bleibt gleich, dann...",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "...verringert sich die Anzahl der Umrundungen, bis der Akku leer ist.",
+        "correct": true
+       },
+       {
+        "text": "...erhöht sich die Anzahl der Umrundungen, bis der Akku leer ist.",
+        "correct": false
+       },
+       {
+        "text": "...bleibt die Anzahl der Umrundungen gleich, bis der Akku leer ist.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "Wenn der Winkel $\\beta$ größer wird und die Höhe $\\textbf{h}$ bleibt gleich, dann wird der Radius $\\textbf{r}$ der Kreisbahn größer.\n\nDie Kreisbahn wird größer, die Anzahl der Umrundungen verringert sich dann.\n\nKreuze entsprechend an.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  }
+ ]
+}

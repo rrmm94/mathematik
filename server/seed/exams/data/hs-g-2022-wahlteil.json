@@ -1,0 +1,520 @@
+{
+ "school": "hs-g",
+ "schoolLabel": "Hauptschule G-Kurs",
+ "year": 2022,
+ "part": "Wahlteil",
+ "folderId": 315348,
+ "url": "https://de.serlo.org/mathe/315348/wahlteil",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Im Spreewald (Brandenburg) steht die abgebildete Pyramide.\n\n![Abbildung](/uploads/ex-33961437bdf2.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne, wie viel Kubikmeter Erde für den Bau der Pyramide benötigt wurden.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5308.33,
+        "tolerance": 0,
+        "unit": "m³",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$V_{\\text{Pyramide}}=\\displaystyle\\frac{1}{3}\\cdot G\\cdot h$\n\n$G=35\\cdot35=1225$\n\n$h=13$\n\n$V=\\displaystyle\\dfrac{1}{3}\\cdot (1225\\cdot 13)=5308,33$\n\nFür den Bau der Pyramide wurden $5308,33\\m^3$ Erde benötigt.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Es führt eine Treppe die Pyramide hinauf. Jede Treppenstufe ist 0$,20\\m$ hoch.\n\n![Abbildung](/uploads/ex-d9ff9ac9c372.png)\n\nBerechne die Anzahl der Treppenstufen.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 65,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Teile die Höhe der Treppe durch die Höhe der einzelnen Treppenstufen.\n\nHöhe der Treppe: $13\\m$\n\nHöhe der einzelnen Treppenstufen: $0,20\\m$\n\n$13:0,2=65$\n\nDie Treppe hat 65 Treppenstufen.",
+     "points": 1,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Treppenlänge $x$.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 21.8,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$13^2+17,50^2=x^2$\n\n$$\\begin{aligned}\nx^2 &= 169+306,25 \\\\\nx^2 &= 475,25 \\\\\nx &= 21,80\n\\end{aligned}$$\n\nDie Treppenlänge $x$ ist $\\approx$ $21,80\\m$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die Pyramide ist mit Rasen bewachsen und muss regelmäßig gemäht werden.\n\nBerechne die Größe der zu mähenden Fläche (Die Treppe kann unberücksichtigt bleiben).\n\n(Solltest du die Teilaufgabe c) nicht gelöst haben, rechne mit $x = 21,60 \\m$ weiter.)\n\nDie zu mähende Fläche ist ⟦1⟧ $\\m^2$ groß.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1526,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Zu mähende Fläche: $M=4\\cdot\\displaystyle\\frac{a\\cdot x}{2}$\n\n$a=35\\m$\n\n$x=21,80\\m$\n\n$M=4\\cdot\\displaystyle\\frac{35\\cdot21,80}{2}=1526$\n\nDie zu mähende Fläche ist $1526\\m^2$ groß.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "e)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Steigungswinkels α.\n\n$\\alpha\\approx$ ⟦1⟧ °",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 36.61,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$\\sin(\\alpha)=\\ \\displaystyle\\frac{\\text{Gegenkathete}}{\\text{Hypotenuse}}$\n\n$\\sin(\\alpha)=\\ \\displaystyle\\frac{13}{21,80}$\n\n$\\sin(\\alpha)=0,60$\n\n$\\alpha\\ \\approx36,61°$",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "f)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze die richtige Aussage an.\n\nVerkleinert sich bei gleichbleibender Körperhöhe der Steigungswinkel α, dann...",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "...verkleinert sich die Treppenlänge **x**.",
+        "correct": false
+       },
+       {
+        "text": "...bleibt die Treppenlänge **x** gleich.",
+        "correct": false
+       },
+       {
+        "text": "...vergrößert sich die Treppenlänge **x**.",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Nina mietet einen E-Scooter bei ScooterOne.\n\n![Abbildung](/uploads/ex-ad8fd0233540.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ergänze die fehlenden Werte für das Angebot von ScooterOne in der Tabelle.\n\n![Abbildung](/uploads/ex-9278a75feb17.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Grundgebühr: 1 € Gebühr pro Minute (siehe Gebühr für 5 min): ( 2 €-1 €):5=0,20 € Gebühr für 3 Minuten: 1 €+3cdot0,20 €=1,60 € Gebühr 2,40 €: left(2,40 €-1 €right):0,20 €=7 ![Abbildung](/uploads/ex-f1889c1541cc.png)"
+     },
+     "solution": "Grundgebühr: $1\\ €$\n\nGebühr pro Minute (siehe Gebühr für 5 min): ( $2\\ €-1\\ €):5=0,20\\ €$\n\nGebühr für 3 Minuten: $1\\ €+3\\cdot0,20\\ €=1,60\\ €$\n\nGebühr $2,40\\ €$: $\\left(2,40\\ €-1\\ €\\right):0,20\\ €=7$\n\n![Abbildung](/uploads/ex-f1889c1541cc.png)",
+     "points": 2,
+     "topic": "Zuordnungen & Dreisatz"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Nina fährt 10 Minuten mit dem E-Scooter.\n\nBerechne die Gesamtkosten für diese Fahrt.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3,
+        "tolerance": 0,
+        "unit": "€",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Grundgebühr: $1\\ €$\n\nGebühr pro Minute: $0,20\\ €$\n\nGebühr für 10 Minuten: $1\\ €+10\\cdot0,20\\ €=3\\ €$\n\nDie Gesamtkosten für eine Fahrt von 10 Minuten betragen $3\\ €$.",
+     "points": 1,
+     "topic": "Zuordnungen & Dreisatz"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Stelle die Funktionsgleichung für das Angebot von ScooterOne in der Form\n\n$y=m\\cdot x+b$ auf.\n\n$y=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "0,2x+1",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         "0,20x+1"
+        ]
+       }
+      ]
+     },
+     "solution": "$y=m\\cdot x+b$\n\nSteigung: $m=0,2$\n\ny-Achsenabscnitt: $b=1$\n\n$y=0,20·x+1$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "In Ninas Heimatort gibt es einen zweiten Anbieter für E-Scooter (Roller2Go). Das Angebot von Roller2Go ist im Koordinatensystem grafisch dargestellt.\n\n![Abbildung](/uploads/ex-3c8620d6b947.png)\n\nErgänze im Koordinatensystem den Graphen der Funktion für das Angebot von ScooterOne.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-a25aa34b5fe2.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-a25aa34b5fe2.png)",
+     "points": 2,
+     "topic": "Zuordnungen & Dreisatz"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ergänze die fehlenden Werte im\n\nAngebotsschild von Roller2Go.\n\n![Abbildung](/uploads/ex-2beebf204c71.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-3361e3746a6e.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-3361e3746a6e.png)",
+     "points": 2,
+     "topic": "Zuordnungen & Dreisatz"
+    },
+    {
+     "label": "f)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Nina vergleicht die Angebote von ScooterOne und Roller2Go.\n\nKreuze die richtige Aussage an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "Für 3 € kann man bei ScooterOne länger fahren.",
+        "correct": false
+       },
+       {
+        "text": "Es gibt keine Fahrzeit, für die beide Angebote gleich teuer sind.",
+        "correct": false
+       },
+       {
+        "text": "Wenn man weniger als 10 Minuten fährt, ist Roller2Go teurer.",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Zuordnungen & Dreisatz"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Die Klasse 10a bietet auf dem Schulfest ein Spiel mit Glücksrädern an. Ein Spiel besteht aus zwei Drehungen: Zuerst wird Rad 1, danach Rad 2 gedreht.\n\n![Abbildung](/uploads/ex-c9c6ecd8fb9f.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib an, welche Symbole mit der größten Wahrscheinlichkeit angezeigt werden.\n\nRad 1: ⟦1⟧\n\nRad 2: ⟦2⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Dreieck",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Kreis",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Bei Rad 1 hat das **Dreieck** die größte Wahrscheinlichkeit angezeigt zu werden, da jedes Feld die gleiche Wahrscheinlichkeit hat, es aber drei Felder mit Dreiecken und nur eins mit einem Stern gibt.\n\nBei Rad 2 hat der **Kreis** die höchste Wahrscheinlichkeit angezeigt zu werden, da jedes Feld die gleiche Wahrscheinlichkeit hat, es aber zwei Felder mit Kreisen und nur eins mit einem Stern und eins mit einem Dreieck gibt.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ergänze die fehlenden Wahrscheinlichkeiten in den gestrichelten Kästchen.\n\n![Abbildung](/uploads/ex-f8a0bbe181fe.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Die Wahrscheinlichkeit, dass beim Drehen des ersten Glücksrades ein Dreieck angezeigt wird, ist frac{3}{4}, da 3 der 4 gleich großen Felder ein Dreieck zeigen. Die Wahrscheinlichkeit, dass beim Drehen des zweiten Glücksrades ein Dreieck angezeigt wird, ist immer gleich, egal, was beim ersten Glücksrad angezeigt wurde. Sie beträgt frac{1}{4}, da nur 1 der 4 gleich großen Felder ein Dreieck zeigt. Die Wahrscheinlichkeit, dass beim Drehen des zweiten Glücksrades ein Kreis angezeigt wird, ist frac{2}{4}, da 2 der 4 gleich großen Felder ein Dreieck zeigen. ![Abbildung](/uploads/ex-bd5a72279a11.png)"
+     },
+     "solution": "Die Wahrscheinlichkeit, dass beim Drehen des ersten Glücksrades ein Dreieck angezeigt wird, ist $\\frac{3}{4}$, da $3$ der $4$ gleich großen Felder ein Dreieck zeigen.\n\nDie Wahrscheinlichkeit, dass beim Drehen des zweiten Glücksrades ein Dreieck angezeigt wird, ist immer gleich, egal, was beim ersten Glücksrad angezeigt wurde. Sie beträgt $\\frac{1}{4}$, da nur $1$ der $4$ gleich großen Felder ein Dreieck zeigt.\n\nDie Wahrscheinlichkeit, dass beim Drehen des zweiten Glücksrades ein Kreis angezeigt wird, ist $\\frac{2}{4}$, da $2$ der $4$ gleich großen Felder ein Dreieck zeigen.\n\n![Abbildung](/uploads/ex-bd5a72279a11.png)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Ein Spieler gewinnt, wenn auf beiden Rädern ein Stern angezeigt wird .\n\nMarkiere im Baumdiagramm den Pfad für einen Gewinn und berechne die entsprechende Wahrscheinlichkeit.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-f69e7635b64a.png) Um die Wahrscheinlichkeit zu berechnen, dass beide Glücksräder einen Stern anzeigen, multipliziert man die Wahrscheinlichkeiten entlang des Pfades miteinander: dfrac{1}{4} cdot dfrac{1}{4} = dfrac{1}{16} = 0,0625 = 6,25 % Die Wahrscheinlichkeit zu gewinnen, beträgt also 6,25 %."
+     },
+     "solution": "![Abbildung](/uploads/ex-f69e7635b64a.png)\n\nUm die Wahrscheinlichkeit zu berechnen, dass beide Glücksräder einen Stern anzeigen, multipliziert man die Wahrscheinlichkeiten entlang des Pfades miteinander:\n\n$\\dfrac{1}{4} \\cdot \\dfrac{1}{4} = \\dfrac{1}{16} = 0,0625 = 6,25 \\%$\n\nDie Wahrscheinlichkeit zu gewinnen, beträgt also $6,25 \\%$.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, dass zwei verschiedene Symbole angezeigt werden.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 75,
+        "tolerance": 0,
+        "unit": "%",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Anhand des Glücksrades kann man sehen, dass bis auf zwei Ergebnisse (Dreieck, Dreieck und Stern, Stern) bei allen Ergebnissen zwei verschiedene Symbole angezeigt werden.\n\nMan kann jetzt die Wahrscheinlichkeit der beiden Ergebnisse berechnen, auf die das Kriterium nicht zutrifft und sie dann von der Gesamtwahrscheinlichkeit abziehen.\n\n1. $P(\\text{Dreieck, Dreieck)} = \\frac{3}{4} \\cdot \\frac{1}{4} = \\frac{3}{16} = 0,1875 = 18,75 \\%$\n2. $P(\\text{Kreis, Kreis) = 6,25 \\%}$\n\nDie Wahrscheinlichkeit, zweimal das gleiche Symbol zu drehen, beträgt $18,75 \\% + 6,25 \\% = 25 \\%$.\n\nDie Wahrscheinlichkeit, zwei unterschiedliche Symbole zu drehen, beträgt also $100 \\% - 25 \\% = 75 \\%$.",
+     "points": 3,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Ein Jahr später sollen die Glücksräder mit den gleichen Spielregeln erneut zum Einsatz kommen. Beide Glücksräder sind wie abgebildet umgestaltet worden.\n\n![Abbildung](/uploads/ex-a264bf8a3e30.png)\n\nKreuze die richtige Aussage an.\n\nDurch die Umgestaltung...",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "... erhöht sich die Wahrscheinlichkeit für einen Gewinn.",
+        "correct": false
+       },
+       {
+        "text": "... verringert sich die Wahrscheinlichkeit für einen Gewinn.",
+        "correct": false
+       },
+       {
+        "text": "... bleibt die Wahrscheinlichkeit für einen Gewinn gleich.",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "Die Wahrscheinlichkeit für einen Gewinn bleibt gleich.\n\nBeim ersten Glücksrad sind jetzt zwar weniger Felder auf dem Glücksrad, aber da das Feld mit dem Dreieck dreimal so groß ist wie das Feld mit dem Stern, ist die Wahrscheinlichkeit, dass der Stern angezeigt wird, immer noch $\\frac{1}{4}$.\n\nDas zweite Glücksrad hat jetzt mehr Felder, nämlich $8$. Da alle Felder gleich groß sind und $2$ davon einen Stern zeigen, ist die Wahrscheinlichkeit einen Stern angezeigt zu bekommen $\\frac{2}{8} = \\frac{1}{4}$.",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Dilara lässt ihre Drohne über einem freien Feld fliegen. Sie stellt drei Hütchen A, B und C auf.\n\nHütchen A ist von ihrem Standpunkt ( M ) $46,6 \\m$ entfernt. Hütchen B hat eine\n\nEntfernung von $31,2 \\m$.\n\n![Abbildung](/uploads/ex-30ddb9da4f0d.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Trage die fehlenden Werte in die gestrichelten Kästchen ein.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-9f8380343792.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-9f8380343792.png)",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Dilaras Drohne fliegt von A über B zu C.\n\nBerechne die Länge der Strecke **x**.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 56.08,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Die Strecke **x** bildet mit der Strecke der Länge $46,6\\m$ und mit der Strecke der Länge $31,2\\m$ ein rechtwinkliges Dreieck. Wobei die Strecke **x** die Hypothenuse ist, die Strecke der Länge $46,6\\m$ und die Strecke der Länge $31,2\\m$ sind die Katheten.\n\nDer Satz des Pythagoras lautet:\n\n$\\mathrm{c^2=a^2+b^2}$\n\nDer Satz des Pythagoras angewandt auf unser Dreieck:\n\n$\\mathrm{x^2=31,2^2+46,6^2}$\n\n$\\mathrm{x=\\sqrt{3145}}$\n\n$\\mathrm{x\\approx56,08}$\n\nDie Länge der Strecke **x** beträgt ungefähr $56,08\\m$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Strecke **y**.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 23.51,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$\\tan (\\alpha )=\\dfrac{\\text{Gegenkathete}}{\\text{Ankathete}}$\n\nIn dem rechten Dreieck gilt:\n\n$\\mathrm{Gegenkathete=y\\qquad Ankathete =31,2\\m\\qquad \\alpha=37^\\circ}$\n\n$\\mathrm{tan(37^\\circ)=\\dfrac{y}{31,2}\\quad \\Rightarrow\\quad y=31,2\\cdot tan{(37^\\circ)}}$\n\n$\\text{y}=31,2\\cdot0,7536$\n\n$\\text{y}\\approx23,51$\n\nDie Länge der Strecke **y** beträgt ungefähr $23,51\\m$.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Dilara möchte die Drohne direkt über sich im Kreis fliegen\n\nlassen.\n\nBerechne die Länge der Kreisbahn.\n\n![Abbildung](/uploads/ex-77645eddb156.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 150.8,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$\\mathrm{U_{Kreis}=2r\\cdot\\pi}$\n\n$\\mathrm{U_{Kreisbahn}=2\\cdot24\\cdot\\pi}=150,80$\n\nDie Länge der Kreisbahn beträgt $150,80\\m$.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "e)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Drohne soll aus Dilaras Hand starten und auch dorthin wieder zurückfliegen. Der Akku hat noch eine Reichweite von $1000 \\m$.\n\nBerechne die Anzahl der vollen Umrundungen, bevor der Akku leer ist.\n\n(Solltest du die Teilaufgabe d) nicht gelöst haben, rechne mit $140,70 \\m$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 6,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Der Weg von Dilara zur Kreisbahn und zurück ist:\n\n$\\mathrm{Weg_{Dilara-Kreisb.}=2\\cdot38,42}=76,84$\n\nAnzahl der vollen Umrundungen:\n\n$\\mathrm{Anzahl_{Umrund.}=(1000-76,84):150,80}=6,12$\n\n$\\mathrm{Anzahl_{volle\\ Umrund.}=6}$\n\nDer Akku der Drohne ist nach $6$ vollen Umrundungen leer.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "f)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Vergrößert sich der Radius r, dann...",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "...verringert sich die Anzahl der Umrundungen, bis der Akku leer ist.",
+        "correct": true
+       },
+       {
+        "text": "...erhöht sich die Anzahl der Umrundungen, bis der Akku leer ist.",
+        "correct": false
+       },
+       {
+        "text": "...bleibt die Anzahl der Umrundungen gleich, bis der Akku leer ist.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Satz des Pythagoras"
+    }
+   ]
+  }
+ ]
+}

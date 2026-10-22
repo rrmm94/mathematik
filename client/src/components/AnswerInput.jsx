@@ -1,5 +1,6 @@
 import { Check, RotateCcw, X } from 'lucide-react';
 import { renderMarkdown } from '../lib/markdown.js';
+import { MathContent } from './ui.jsx';
 import { CoordinateInput, LivePlot } from './GraphWidgets.jsx';
 
 const Inline = ({ md, className = '' }) => (
@@ -174,6 +175,7 @@ function OrderInput({ spec, value, onChange, status, disabled }) {
 
 // Eingabe je nach Antworttyp. value: Array (fields/choice/order/graph) oder String (free).
 // status: null | { correct, parts } für farbige Rückmeldung.
+// Lückentexte (spec.inline) werden von <TaskBody> direkt im Text dargestellt.
 export default function AnswerInput({ spec, value, onChange, status, disabled, onSubmit }) {
   if (!spec) return null;
 
@@ -233,4 +235,30 @@ export function isEmptyAnswer(spec, value) {
   if (spec.type === 'order') return !(Array.isArray(value) && value.length === spec.items.length);
   if (spec.type === 'graph') return !(Array.isArray(value) && value.length >= spec.need);
   return !(Array.isArray(value) && value.some((v) => String(v ?? '').trim()));
+}
+
+// Aufgabentext + Antwortfelder. Bei Lückentexten stehen die Felder direkt im Text.
+export function TaskBody({ prompt, spec, value, onChange, status, disabled, onSubmit }) {
+  const gaps = (String(prompt || '').match(/⟦\d+⟧/g) || []).length;
+  if (spec?.type === 'fields' && spec.inline && gaps >= spec.parts.length) {
+    const vals = Array.isArray(value) ? value : [];
+    const slot = (i) => {
+      const part = spec.parts[i];
+      if (!part) return null;
+      return (
+        <span className="mx-1 inline-flex items-center gap-1.5 align-middle">
+          <PartField part={part} i={i} value={vals[i]} status={status} disabled={disabled} onSubmit={onSubmit} compact
+            onChange={(v) => { const next = [...vals]; next[i] = v; onChange(next); }} />
+          {part.unit && <span className="text-sm text-slate-500">{part.unit}</span>}
+        </span>
+      );
+    };
+    return <MathContent md={prompt} slots={slot} />;
+  }
+  return (
+    <>
+      <MathContent md={String(prompt || '').replace(/⟦\d+⟧/g, '…')} />
+      <AnswerInput spec={spec} value={value} onChange={onChange} status={status} disabled={disabled} onSubmit={onSubmit} />
+    </>
+  );
 }

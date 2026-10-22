@@ -1,0 +1,519 @@
+{
+ "school": "hs-g",
+ "schoolLabel": "Hauptschule G-Kurs",
+ "year": 2021,
+ "part": "Wahlteil",
+ "folderId": 315351,
+ "url": "https://de.serlo.org/mathe/315351/wahlteil",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Abgebildet ist ein quaderförmiger Tab für die Spülmaschine. In der Mitte des Tabs befindet sich eine Kugel.\n\n![Abbildung](/uploads/ex-5f7f2648c6c6.png)\n\n![Abbildung](/uploads/ex-a018b2ff2d6c.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Länge $\\text{x}$ beträgt $1,10\\cm$.\n\nBerechne $\\text{a}$.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3.8,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Multipliziere $1,10\\cm$ mit $2.$ - Addiere zu diesem Ergebnis das Maß $1,60\\cm$.*\n\n**Berechnen von a.**\n\n$\\mathrm{a=2\\cdot x+1,60}$\n\n$\\mathrm{a=2\\cdot1,10+1,60\\ \\Rightarrow\\ a=2,20+1,60}$\n\n$\\mathrm{a=3,80}$\n\nDie Länge $\\textbf{a}$ beträgt: $\\ \\boxed{3,80\\cm}$.",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Grundfläche $\\text{G}$ des Tabs. (Solltest du die Teilaufgabe $a$) nicht gelöst haben, rechne mit $\\mathrm{a = 3,70\\cm}$ weiter.)\n\n![Abbildung](/uploads/ex-c727ec4fd125.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 10.26,
+        "tolerance": 0,
+        "unit": "cm²",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Die Grundfläche $\\text{G}$ des Tabs hat die Form eines Rechtecks. - Berechne die Grundfläche $\\text{G}$ des Tabs mit der entsprechenden Formel.*\n\n**Berechnen der Grundfläche $\\text{G}$ des Tabs.**\n\nDie Formel zur Berechnung des Flächeninhalts eines Rechtecks lautet:\n\n$\\mathrm{A_{Rechteck}=Länge\\cdot Breite}$\n\nFür die Grundfläche $\\text{G}$ des Tabs gilt dann:\n\n$\\mathrm{A_{Tab}=a\\cdot b}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{a=3,80\\cm\\qquad b=2,70cm}$\n\nEinsetzen der bekannten Größen:\n\n$\\mathrm{A_{Tab}=3,80\\cdot2,70}$\n\n$\\mathrm{A_{Tab}=10,26\\cm^2}$\n\nDie Grundfläche $\\textbf{G}$ des Tabs beträgt: $\\ \\boxed{10,26\\cm^2}$.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen der Kugel.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2.14,
+        "tolerance": 0,
+        "unit": "cm³",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen des Volumens der Kugel.**\n\nDie Formel zur Berechnung des Volumens einer Kugel lautet:\n\n$\\mathrm{V_{Kugel}=\\dfrac{4}{3}\\cdot r^3\\cdot\\pi}$\n\nEinsetzen der bekannten Größen:\n\n$\\mathrm{V_{Kugel}=\\dfrac{4}{3}\\cdot 0,80^3\\cdot\\pi}$\n\n$\\mathrm{V_{Kugel}=\\dfrac{4}{3}\\cdot 0,512\\cdot\\pi}$\n\n$\\mathrm{V_{Kugel}=2,14\\cm^3}$\n\nDas Volumen der Kugel beträgt: $\\boxed{2,14\\cm^3}$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen des gesamten Tabs.\n\n(Solltest du die Teilaufgaben $b$) und $\\mathrm{c}$) nicht gelöst haben, rechne mit $\\mathrm{G = 10,19\\cm^2}$ und $\\mathrm{V_{Kugel} = 2,36\\cm^3}$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 18.51,
+        "tolerance": 0,
+        "unit": "cm³",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Multipliziere die Grundfläche $\\text{G}$ des Tabs mit der Höhe $\\mathrm{h_k}$ des Tabs. - Berechne das Volumen der Halbkugel. - Addiere die beiden Ergebnisse.*\n\n**Berechnen des Volumens des gesamten Tabs.**\n\n$\\mathrm{V_{Tab_{gesamt}}=V_{Tab}+\\dfrac{V_{Kugel}}{2}}$\n\n$\\mathrm{V_{Tab}=G\\cdot h_k}$\n\n$\\mathrm{V_{Tab}=10,26\\cdot 1,70}$\n\n$\\mathrm{V_{Tab}=17,44\\cm^3}$\n\n$\\mathrm{\\dfrac{V_{Kugel}}{2}=\\dfrac{2,14}{2}}$\n\n$\\mathrm{\\dfrac{V_{Kugel}}{2}=1,07\\cm^3}$\n\n$\\mathrm{V_{Tab_{gesamt}}=17,44+1,07}$\n\n$\\mathrm{V_{Tab_{gesamt}}=18,51\\cm^3}$\n\nDas Volumen des gesamten Tabs beträgt: $\\ \\boxed{18,51\\cm^3}$.",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "e)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Der Hersteller der Tabs plant, die Kugel gegen einen Zylinder mit gleichem Durchmesser und gleichem Volumen auszutauschen.\n\nBerechne die Körperhöhe $\\mathrm{h_K}$ des Zylinders. (Solltest du die Teilaufgabe $c$) nicht gelöst haben, rechne mit $\\mathrm{V_{Kugel} = 2,36 cm^3}$ weiter.)\n\n![Abbildung](/uploads/ex-ed346d4202de.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1.06,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Setze für das Volumen des Zylinders, das Volumen der Kugel in die Formel,  $\\mathrm{V_{Zylinder}=r^2\\cdot\\pi\\cdot h_k}$, ein. - Löse die Formel nach $\\mathrm{h_k}$ auf. - Berechne $\\mathrm{h_k}$.*\n\n**Berechnen der Körperhöhe $\\mathrm{h_K}$ des Zylinders.**\n\nDie Formel zur Berechnung des Volumens eines Zylinders lautet:\n\n$\\mathrm{V_{Zylinder}=r^2\\cdot\\pi\\cdot h}$\n\nAuflösen der Formel nach $\\textbf{h}$:\n\n$\\mathrm{h=\\dfrac{V_{Zylinder}}{r^2\\cdot\\pi}}$\n\n$\\mathrm{h_K=\\dfrac{2,14}{0,8^2\\cdot\\pi}}$\n\n$\\mathrm{h_K=1,06\\cm}$\n\nDie Höhe des Zylinders beträgt: $\\ \\boxed{1,06\\cm}$.\n\n**Hinweis:**\n\nWir haben hier für das Volumen der Kugel mit dem gerundeten Wert $2,14$ gerechnet, wenn du mit dem Wert rechnest, den der Rechner liefert, erhältst du als Ergebnis für die Höhe $\\mathrm{h_K}$ des Zylinders, $1,07\\cm$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "f)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Ergänze eines der Wörter:\n\nverdoppelt / verdreifacht / vervierfacht / verachtfacht.\n\nVerdoppelt man den Durchmesser der Kugel, dann ⟦1⟧ sich ihr Volumen.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "verachtfacht",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Ergänzen des Satzes aus der Aufgabenstellung.**\n\n**Bei Verdoppelung des Durchmessers verdoppelt sich auch der Radius.**\n\nDie Formel zur Berechnung des Volumens einer Kugel lautet:\n\n$\\boxed{\\mathrm{V_{Kugel}=\\dfrac{4}{3}\\cdot r^3\\cdot\\pi}}$\n\nMultipliziert man den Radius $\\textbf{r}$ mit $2$, so wird das Volumen der Kugel immer mit $2^3$, also $\\textbf{8}$, vervielfacht. Das Volumen der Kugel **verachtfacht** sich bei Verdoppelung des Radius .\n\nErgänze den Satz entsprechend.",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Ein Maibaum besteht oft aus einem Stamm und mehreren ringförmigen Kränzen, die mit Seilen am Stamm befestigt sind.\n\n![Abbildung](/uploads/ex-9341968811bc.png)\n\n![Abbildung](/uploads/ex-ee090ce91246.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Der obere Kranz hat einen Radius $\\mathrm{r_a}$ von $1,20\\m$.\n\nBerechne den Umfang des oberen Kranzes.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 7.54,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen des Umfangs des oberen Kranzes.**\n\nDie Formel zur Berechnung des Umfangs eines Kreises lautet:\n\n$\\mathrm{U_{Kreis}=2\\cdot r\\cdot\\pi}$\n\nEinsetzen der bekannten Größe:\n\n$\\mathrm{U_{Kranz}=2\\cdot 1,20\\cdot\\pi}$\n\n$\\mathrm{U_{Kranz}=7,54\\m}$\n\nDer Umfang des oberen Kranzes beträgt: $\\ \\boxed{7,54\\m}$.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Seillänge $\\text{a}$.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Seillänge $\\textbf{a}$ des oberen Kranzes mithilfe des Satzes des Pythagoras.*\n\n**Berechnen der Seillänge $\\text{a}$ des oberen Kranzes.**\n\nDie Seillänge $\\textbf{a}$ bildet mit dem Radius $\\textbf{r}_\\textbf{a}$ und der Höhe $1,60\\m$ ein rechtwinkliges Dreieck, wobei die Seillänge $\\textbf{a}$ die Hypotenuse dieses Dreiecks ist.\n\nIm rechtwinkligem Dreieck gilt der Satz des Pythagoras.\n\nDer Satz des Pythagoras lautet:\n\n$\\boxed{\\mathrm{c^2=a^2+b^2}}$\n\nDer Satz des Pythagoras angewandt auf unser Dreieck:\n\n$\\mathrm{a^2=(r_a)^2+1,60^2}$\n\n$\\mathrm{a=\\sqrt{1,20^2+1,60^2}\\ \\Rightarrow\\ a=\\sqrt{1,44+2,56}}$\n\n$\\text{a}=2\\m$\n\nDie Seillänge $\\textbf{a}$ des oberen Kranzes beträgt: $\\ \\boxed{2\\m}$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Winkels α.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 53.13,
+        "tolerance": 0,
+        "unit": "°",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Winkel $\\alpha$ mithilfe des Tangens.*\n\n**Berechnen der Größe des Winkels $\\text{α}$.**\n\nDie Definition des Tangens im rechtwinkligem Dreieck lautet:\n\n$\\mathrm{\\tan(\\alpha )=\\dfrac{{Gegenkathete}}{{Ankathete}}}$\n\nAngewandt auf unser Dreieck:\n\n$\\tan (\\alpha )=\\dfrac{1,6}{1,2}$\n\n$\\tan (\\alpha )=\\dfrac{4}{3}\\ \\Rightarrow\\ \\alpha=53,13^\\circ$\n\nDer Winkel $\\alpha$ beträgt: $\\ \\boxed{53,13^\\circ}$.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Bestimme die Größe des Winkels δ.\n\n(Solltest du die Teilaufgabe $c$) nicht gelöst haben, rechne mit $\\mathrm{α = 52,12°}$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 36.87,
+        "tolerance": 0,
+        "unit": "°",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Winkel $\\delta$ mithilfe des Tangens.*\n\n**Berechnen der Größe des Winkels $\\delta$.**\n\nDie Definition des Tangens im rechtwinkligem Dreieck lautet:\n\n$\\mathrm{\\tan(\\alpha )=\\dfrac{{Gegenkathete}}{{Ankathete}}}$\n\nAngewandt auf unser Dreieck:\n\n$\\tan (\\delta )=\\dfrac{1,2}{1,6}$\n\n$\\tan (\\delta )=\\dfrac{3}{4}\\ \\Rightarrow\\ \\alpha=36,87^\\circ$\n\nDer Winkel $\\delta$ beträgt: $\\ \\boxed{36,87^\\circ}$.",
+     "points": 1,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Seillänge $\\text{b}$ beträgt $2,50\\m$.\n\nBerechne den Radius $\\mathrm{r_b}$ des unteren Kranzes.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2.4,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Radius $\\textbf{r}_\\textbf{b}$ des unteren Kranzes mithilfe des Kosinus.*\n\n![Abbildung](/uploads/ex-88a32b31ec5a.png)\n\n**Berechnen des Radius $\\textbf{r}_\\textbf{b}$ des unteren Kranzes.**\n\nDer Radius $\\textbf{r}_\\textbf{b}$ und die Höhe $\\textbf{h}_\\textbf{b}$ bilden mit der Seillänge $\\textbf{b}$ ein rechtwinkliges Dreieck, wobei der Radius $\\textbf{r}_\\textbf{b}$ die Ankathete des Winkels $16^\\circ$ ist.\n\nDie Definition des Kosinus im rechtwinkligem Dreieck lautet:\n\n$\\mathrm{\\cos(\\alpha)=\\dfrac{{Ankathete}}{{Hypotenuse}}}$\n\nAngewandt auf unser Dreieck:\n\n$\\mathrm{\\cos(16^\\circ)=\\dfrac{r_b}{b}\\ \\Rightarrow\\ r_b=b\\cdot{cos(16^\\circ)}}$\n\n$\\mathrm{r_b=2,50\\cdot0,9613}$\n\n$\\mathrm{r_b=2,40}\\m$\n\nDer Radius $\\textbf{r}_\\textbf{b}$ des unteren Kranzes beträgt: $\\ \\boxed{2,40\\m}$.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "f)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze an:\n\nWenn der Durchmesser eines Kranzes verdoppelt wird, dann ist sein Umfang anschließend…",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "…halb so groß",
+        "correct": false
+       },
+       {
+        "text": "…genau so groß.",
+        "correct": false
+       },
+       {
+        "text": "…doppelt so groß.",
+        "correct": true
+       },
+       {
+        "text": "…viermal so groß.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "Die Formel zur Berechnung des Umfangs eines Kreise lautet:\n\n$\\large{\\mathrm{U_{Kreis}=d\\cdot\\pi}}$\n\nVerdoppeln des Durchmessers:\n\n$\\mathrm{n\\cdot U_{Kreis}=2\\cdot d\\cdot\\pi}$\n\nErsetzen von $\\mathrm{U_{Kreis}}$ durch ($\\mathrm{d\\cdot\\pi}$)\n\n$\\mathrm{n\\cdot d\\cdot\\pi=2\\cdot d\\cdot\\pi}$\n\n$\\mathrm{n=\\dfrac{2\\cdot d\\cdot\\pi}{d\\cdot\\pi}\\ \\Rightarrow\\ n=2}$\n\nDann ist:\n\n$\\mathrm{\\textcolor{blue}2\\cdot U_{Kreis}=\\textcolor{blue}2\\cdot d\\cdot\\pi}$\n\nWenn der Durchmesser eines Kreises verdoppelt wird, dann wird sein Umfang doppelt so groß.\n\nKreuze entsprechend an.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Zwei Würfel sind wie folgt beschriftet:\n\n![Abbildung](/uploads/ex-a53527d1e1b5.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Fülle die Tabelle aus.\n\n![Abbildung](/uploads/ex-0d39e09980a7.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Ausfüllen der Tabelle. ![Abbildung](/uploads/ex-c3baed00b3f7.png)"
+     },
+     "solution": "**Ausfüllen der Tabelle.**\n\n![Abbildung](/uploads/ex-c3baed00b3f7.png)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Nun wird mit beiden Würfeln gleichzeitig geworfen.\n\nDie geworfenen Zahlen werden addiert.\n\nTrage die fehlenden Zahlen in das Baumdiagramm ein und berechne die Summen.\n\n![Abbildung](/uploads/ex-38f0bcb55c8d.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Eintragen der fehlenden Zahlen in das Baumdiagramm und berechnen der Summen. ![Abbildung](/uploads/ex-27a13c003b50.png)"
+     },
+     "solution": "**Eintragen der fehlenden Zahlen in das Baumdiagramm und berechnen der Summen.**\n\n![Abbildung](/uploads/ex-27a13c003b50.png)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, dass die Summe $13$ geworfen wird.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.166666667,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme die Wahrscheinlichkeit mit Würfel **A** eine **8** zu werfen. - Bestimme die Wahrscheinlichkeit mit Würfel **B** eine $5$ zu werfen. - Berechne die Wahrscheinlichkeit als Summe eine $13$ zu werfen mithilfe der       1. Pfadregel (Produktregel).*\n\n**Berechnen der Wahrscheinlichkeit, dass die Summe $13$ geworfen wird.**\n\n![Abbildung](/uploads/ex-014dc1084caf.png)\n\nWahrscheinlichkeit mit Würfel **A** eine $8$ zu werfen:\n\n$\\mathrm{P_{8}}=\\dfrac{2}{6}$\n\nWahrscheinlichkeit mit Würfel **B** eine $5$ zu werfen:\n\n$\\mathrm{P_{5}}=\\dfrac{3}{6}$\n\nWahrscheinlichkeit, dass die Summe $13$ geworfen wird:\n\n$\\mathrm{P_{Summe(13)}=\\dfrac{2}{6}\\cdot\\dfrac{3}{6}}$\n\n$\\mathrm{P_{Summe(13)}=\\dfrac{6}{36}}$\n\nDie Wahrscheinlichkeit, dass die Summe $13$ geworfen wird beträgt: $\\boxed{\\dfrac{6}{36}}$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Thomas und Moritz vereinbaren ein Spiel mit folgenden Regeln:\n\n− Thomas gewinnt, wenn eine Summe kleiner als $10$ geworfen wird.\n\n− Moritz gewinnt, wenn die Summe größer als $10$ ist.\n\n− Es gewinnt keiner, wenn die Summe $10$ ist.\n\nBerechne die Wahrscheinlichkeit, dass Thomas gewinnt.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.666666667,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Löse die Aufgabe mithilfe des Baumdiagramms.*\n\n![Abbildung](/uploads/ex-0b8a8b2cae29.png)\n\n**Wahrscheinlichkeit dass Thomas gewinnt:**\n\n$\\mathrm{P_{Thomas\\ gewinnt}=\\dfrac{4}{6}\\cdot\\dfrac{3}{6}+\\dfrac{4}{6}\\cdot\\dfrac{3}{6}\\ \\Rightarrow\\ P_{Thomas\\ gewinnt}=\\dfrac{12}{36}+\\dfrac{12}{36}}$\n\n$\\mathrm{P_{Thomas\\ gewinnt}=\\dfrac{24}{36}}$\n\nDie Wahrscheinlichkeit, dass Thomas gewinnt beträgt: $\\ \\boxed{\\dfrac{24}{36}}$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Begründe, dass das Spiel nicht fair ist.",
+     "answer": {
+      "type": "free",
+      "sample": "Begründung, dass das Spiel nicht fair ist. Die Wahrscheinlichkeit eine Summe kleiner als 10 zu werfen beträgt dfrac{24}{36}, dann beträgt die Wahrscheinlichkeit eine Summe größer als 10 zu werfen dfrac{12}{36}, also ist kann das Spiel nicht fair sein."
+     },
+     "solution": "**Begründung, dass das Spiel nicht fair ist.**\n\nDie Wahrscheinlichkeit eine Summe kleiner als $10$ zu werfen beträgt $\\dfrac{24}{36}$, dann\n\nbeträgt die Wahrscheinlichkeit eine Summe größer als $10$ zu werfen $\\dfrac{12}{36}$, also ist kann das Spiel nicht fair sein.",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "f)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Verändere die Spielregel so, dass ein faires Spiel entsteht.",
+     "answer": {
+      "type": "free",
+      "sample": "Verändern der Spielregel so, dass ein faires Spiel entsteht. Zum Beispiel: Moritz gewinnt bei den Summen 5 und 13, Thomas bei den Summen 7 und 11."
+     },
+     "solution": "**Verändern der Spielregel so, dass ein faires Spiel entsteht.**\n\n**Zum Beispiel:**\n\nMoritz gewinnt bei den Summen $5$ und $13$, Thomas bei den Summen $7$ und $11$.",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Familie Winter bekommt ihr Heizöl von einem Tankwagen geliefert. Der abgebildete Graph stellt den Füllvorgang des Haustanks dar.\n\n![Abbildung](/uploads/ex-1ff003a3ef70.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Fülle die Lücken aus.\n\nZu Beginn des Füllvorgangs befinden sich noch ⟦1⟧ Liter im Haustank.\n\nIn den Haustank werden ⟦2⟧ Liter Heizöl pro Minute gepumpt.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 500,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 250,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Der y-Achsenabschnitt des Graphen entspricht der Menge Heizöl, die sich zu Beginn des Füllvorgangs im Haustank befindet. Die Steigung des Graphen entspricht der Menge Heizöl in Litern, die pro Minute in den Haustank gepumpt werden. Berechne die Steigung des Graphen.*\n\n**Ablesen der Menge Heizöl, die sich am Anfang im Haustank befindet und berechnen der Steigung m des Graphen.**\n\nAm Anfang befinden sich $\\textbf{500}$ Liter Heizöl im Haustank.\n\nBerechnen der Steigung $\\textbf{m}$ des Graphen.\n\n$\\mathrm{m=\\dfrac{y_2-y_1}{x_2-x_1}}$\n\nWir wählen für:\n\n$\\mathrm{y_1=500}$\n\n$\\mathrm{y_2=1000}$\n\n$\\mathrm{x_1=0}$\n\n$\\mathrm{x_2=2}$\n\n$\\mathrm{m=\\dfrac{1000-500}{2-0}\\ \\Rightarrow\\ m=\\dfrac{500}{2}}$\n\n$\\text{m}=\\textbf{250}$\n\nEs werden pro Minute $\\textbf{250}$ Liter Heizöl in den Haustank gepumpt\n\n**Ausfüllen der Lücken.**\n\nZu Beginn des Füllvorgangs befinden sich **500** Liter Heizöl im Haustank.\n\nIn den Haustank werden **250** Liter Heizöl pro Minute gepumpt.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib die Funktionsgleichung des abgebildeten Graphen in der Form $\\mathrm{y = m\\cdot x + b}$ an.\n\n$y=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "250x+500",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Setze die Werte aus Teilaufgabe $\\mathrm{4a)}$ in die allgemeine Geradengleichung ein.*\n\n**Aufstellen  der Funktionsgleichung des abgebildeten Graphen.**\n\nDie allgemeine Geradengleichung lautet:\n\n$\\mathrm{y=m\\cdot x+b}$\n\nEinsetzen der Werte aus Teilaufgabe $\\mathrm{4a)}$ in die allgemeine Geradengleichung.\n\n$\\mathrm{y=250\\cdot x+500}$\n\nDie Funktionsgleichung des abgebildeten Graphen lautet dann:\n\n$\\boxed{\\mathrm{y=250x+500}}$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Füllmenge, die sich nach $4,5$ Minuten im Haustank befindet.\n\n(Solltest du die Teilaufgabe $b$) nicht gelöst haben, verwende $\\mathrm{y = 200\\cdot x + 725}.$)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1625,
+        "tolerance": 0,
+        "unit": "l",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Setze für $\\text{x}=4,5$ in die Funktionsgleichung ein und berechne $\\text{y}$.*\n\n**Berechne die Füllmenge, die sich nach $4,5$ Minuten im Haustank befindet.**\n\nEinsetzen von $\\text{x}=4,5$ in die Funktionsgleichung:\n\n$\\mathrm{y=250\\cdot4,5+500\\ \\Rightarrow\\ y=1125+50}$\n\n$\\mathrm{y=1625}$\n\nNach $\\boxed{4,5}$ Minuten befinden sich $1625$ Liter im Haustank.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Im Tankwagen befanden sich zu Beginn $5000$ Liter.\n\nDer Abpumpvorgang des Tankwagens wird durch die Funktionsgleichung\n\n$\\mathrm{y = –250\\cdot x + 5000}$ beschrieben.\n\nZeichne den Graphen für den Abpumpvorgang des Tankwagens in das Koordinatensystem.",
+     "answer": {
+      "type": "free",
+      "sample": "- Die Steigung des Graphen für den Abpumpvorgang des Tankwagens ist negativ Einzeichnen des Graphen für den Abpumpvorgang des Tankwagens in das obere Koordinatensystem. ![Abbildung](/uploads/ex-3c05af3df2db.png)"
+     },
+     "solution": "*- Die Steigung des Graphen für den Abpumpvorgang des Tankwagens ist negativ*\n\n**Einzeichnen des Graphen für den Abpumpvorgang des Tankwagens in das obere Koordinatensystem.**\n\n![Abbildung](/uploads/ex-3c05af3df2db.png)",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Wenn ein Füllvorgang für einen Zeitraum unterbrochen wird, verändert sich der Verlauf des Graphen.\n\nKreuze den Graphen an, der einen Füllvorgang mit Unterbrechung darstellt.\n\n![Abbildung](/uploads/ex-06af6d32e9a1.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Ankreuzen des Graphen, der einen Füllvorgang mit Unterbrechung darstellt. ![Abbildung](/uploads/ex-5079ad9f2c75.png)"
+     },
+     "solution": "**Ankreuzen des Graphen, der einen Füllvorgang mit Unterbrechung darstellt.**\n\n![Abbildung](/uploads/ex-5079ad9f2c75.png)",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "f)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Begründe deine Entscheidung.",
+     "answer": {
+      "type": "free",
+      "sample": "Begründen der Entscheidung. Im Unterbrechungszeitraum ist die Steigung des Graphen null, da die Füllmenge sich nicht ändert, die Zeit aber weiter läuft."
+     },
+     "solution": "**Begründen der Entscheidung.**\n\nIm Unterbrechungszeitraum ist die Steigung des Graphen null, da die Füllmenge sich nicht ändert, die Zeit aber weiter läuft.",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  }
+ ]
+}

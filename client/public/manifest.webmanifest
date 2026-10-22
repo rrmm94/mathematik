@@ -1,6 +1,6 @@
 {
-  "name": "Mathe-Prüfungstrainer – Fit für die Abschlussprüfung",
-  "short_name": "Mathe-Prüfungstrainer",
+  "name": "Mathematik-Prüfungstrainer – Fit für die Abschlussprüfung",
+  "short_name": "Mathematik-Prüfungstrainer",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f8fafc",

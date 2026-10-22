@@ -1,0 +1,410 @@
+{
+ "school": "hs-g",
+ "schoolLabel": "Hauptschule G-Kurs",
+ "year": 2024,
+ "part": "Teil 1",
+ "folderId": 315340,
+ "url": "https://de.serlo.org/mathe/315340/teil-1",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Ergänze die fehlenden Zahlen in den Lücken.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$45:$⟦1⟧ $=9$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Gesucht ist der Divisor\n\n$45:\\textcolor{ff6600}{5}=9$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$0,32+1,6=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1.92,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Gesucht ist die Summe der Addition zweier Dezimalzahlen\n\n$0,32+1,6=\\textcolor{ff6600}{1,92}$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$3+\\large($⟦1⟧ $-5\\large)=-2$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Finde die Zahl $x$, die von 3 abgezogen werden muss, um $-2$ zu erhalten. - Finde die Zahl, die in die Klammer eingesetzt werden muss, damit das Ergebnis der Klammer $x$ ergibt.*\n\nGesucht ist die Summe einer positiven Zahl und eines Klammerausdrucks\n\n$3+\\left(\\textcolor{ff6600}{0}-5\\right)=-2$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$3\\cdot\\dfrac{4}{5}=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2.4,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Gesucht ist das Produkt einer ganzen Zahl mit einem Bruch\n\n$3 \\cdot \\textcolor{ff6600}{\\dfrac{4}{5}}=\\dfrac{3 \\cdot \\textcolor{ff6600}{4}}{\\textcolor{ff6600}{5}}=\\dfrac{12}{5}$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Kreuze die passenden Angaben an.\n\n![Abbildung](/uploads/ex-e837a66ee870.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-6a73a26786ad.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-6a73a26786ad.png)",
+     "points": 3,
+     "topic": "Größen & Einheiten"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib die fehlenden Einheiten an.\n\n$1,42\\km=1420$ ⟦1⟧\n\n$1,7\\m^2=17000$ ⟦2⟧\n\n$256\\dm^3=256000$ ⟦3⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "m",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "cm²",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "cm³",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Unterscheide Längenmaße, Flächenmaße und Volumenmaße*\n\nUmrechnung vom $\\km$ in $\\m$ durch Multiplikation mit $1\\,000$\n\n$1,42\\km=1\\,420\\m$\n\nUmrechnung von $\\m^2$ in $\\cm^2$ durch Multiplikation mit $100^2 = 100 \\cdot 100 = 10\\,000$\n\n$1,7\\m^2 = 17\\,000\\cm^2$\n\nUmrechnung von $\\dm^3$ in $\\cm^3$ durch Multiplikation mit $10^3 = 10 \\cdot 10 \\cdot 10 =1000$\n\n$256\\dm^3=256\\,000\\cm^3$",
+     "points": 3,
+     "topic": "Größen & Einheiten"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib den grau gefärbten Anteil des Streifens als Bruch und als Prozentsatz an.\n\n![Abbildung](/uploads/ex-049ab876e91b.png)\n\nBruch: ⟦1⟧\n\nProzentsatz: ⟦2⟧ $\\%$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.4,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 40,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Von insgesamt $5$ Teilen des Streifens sind $2$ Teile grau gefärbt.\n\nBruch: $\\dfrac{2}{5}$\n\nProzentsatz: $\\dfrac{2}{5}=\\dfrac{40}{100}=40\\%$",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Färbe $75$ % im abgebildeten Quadrat.\n\n![Abbildung](/uploads/ex-87c573f11338.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Wandle 75% in einen Bruch um und färbe den entsprechenden Anteil des Quadrats ein ![Abbildung](/uploads/ex-a30f8bfc9941.svg) Umwandlung in einen Bruch 75%=dfrac{75}{100}=dfrac{3}{4} dfrac{3}{4} des Quadrats müssen grau eingefärbt werden."
+     },
+     "solution": "*Wandle $75\\%$ in einen Bruch um und färbe den entsprechenden Anteil des Quadrats ein*\n\n![Abbildung](/uploads/ex-a30f8bfc9941.svg)\n\n**Umwandlung in einen Bruch**\n\n$75\\%=\\dfrac{75}{100}=\\dfrac{3}{4}$\n\n$\\dfrac{3}{4}$ des Quadrats müssen grau eingefärbt werden.",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Der Flächeninhalt des Quadrates beträgt $16 \\cm^2$. Es sind $75$ % der Fläche gefärbt.\n\nErgänze: Die gefärbte Fläche ist ⟦1⟧ $\\cm^2$ groß.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 12,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne $1\\%$ der Fläche - Multipliziere mit $75$*\n\n$100\\% \\ \\hat{=} \\ 16\\cm^2 \\\\ \\phantom{x}\\\\\n\\hphantom{10}1\\% \\ \\hat{=} \\ \\dfrac{16}{100}=0,16\\cm^2 \\\\ \\phantom{x}\\\\\n\\hphantom{1}75\\% \\ \\hat{=} \\ 0,16\\cdot 75=12\\cm^2$",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Alina bietet einen Sportkurs an. Jede Person muss pro Kursstunde einen festen Betrag bezahlen. An der letzten Kursstunde haben 8 Personen teilgenommen. Alina hatte Einnahmen von $40$ €.\n\nErgänze die Überschriften in der ersten Zeile.\n\nBerechne die Einnahmen, wenn $14$ Personen am Kurs teilnehmen.\n\n| ⟦1⟧ | ⟦2⟧ |\n|---|---|\n| 8 | $\\hspace{4mm}$40 € |\n| 14 | ⟦3⟧ € |",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Anzahl der Personen",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         "Personen"
+        ]
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Einnahmen",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 70,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "| Anzahl der Personen | Einnahmen |\n|---|---|\n| $\\qquad\\qquad 8$ | $\\qquad 40$ € |\n| $\\qquad\\qquad 14$ | $\\qquad 70$ € |\n\nDie linke Spalte enthält die Anzahl der Personen.\n\nDie rechte Spalte enthält die Einnahmen.\n\nBei $8$ Personen betragen die Einnahmen $40$ €.\n\nPro Personen beträgt die Einnahme damit $\\dfrac{40}{8}=5$ €.\n\nBei $14$ Personen betragen die Einnahmen $14 \\cdot 5=70$ €.",
+     "points": 3,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Verbinde die Rechenvorschriften mit dem jeweils passenden Term.\n\n![Abbildung](/uploads/ex-4136e29f567d.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-7cff36e052b5.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-7cff36e052b5.png)",
+     "points": 2,
+     "topic": "Terme, Gleichungen & Formeln"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Wert des Terms $6x -(8 + 10x)$ für $x = \\displaystyle\\dfrac{1}{2}.$",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": -10,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Setze $x=\\dfrac{1}{2}$ und vereinfache der Term*\n\n$$\\begin{aligned}\n &= 6x-\\left(8+10x\\right) \\\\\n &= 6 \\cdot \\dfrac{1}{2}-\\left( 8+10 \\cdot \\dfrac{1}{2}\\right) \\\\\n &= 3-\\left(8+5\\right) \\\\\n &= 3-\\left(13\\right) \\\\\n &= -10\n\\end{aligned}$$",
+     "points": 2,
+     "topic": "Terme, Gleichungen & Formeln"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Die Summe der Augenzahlen von zwei gegenüberliegenden Seiten eines Würfels beträgt immer 7.\n\n![Abbildung](/uploads/ex-7f433e57efb0.png)\n\nZeichne die fehlenden Augenzahlen in des Würfelnetz ein.\n\n![Abbildung](/uploads/ex-7305ae802bbf.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-ceec2a44ca1d.svg) Die Abbildung zeigt eine mögliche Lösung. Hinweis ![Abbildung](/uploads/ex-e22bb03ed42d.svg)"
+     },
+     "solution": "![Abbildung](/uploads/ex-ceec2a44ca1d.svg)\n\nDie Abbildung zeigt eine mögliche Lösung.\n\n> **Hinweis**\n>\n> ![Abbildung](/uploads/ex-e22bb03ed42d.svg)",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "Der Flächeninhalt der abgebildeten Figur soll berechnet werden.\n\n![Abbildung](/uploads/ex-df6ae732d9dd.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne eine geeignete Zerlegung oder Ergänzung in die Figur ein.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-392d2e53291a.png) Das rot schraffierte Dreieck ist deckungsgleich mit dem blau schraffierte Dreieck. Wird die rot schraffierte Fläche auf die blau schraffierte Fläche verschoben, dann entsteht ein Quadrat, dessen Fläche leicht berechnet werden kann."
+     },
+     "solution": "![Abbildung](/uploads/ex-392d2e53291a.png)\n\nDas rot schraffierte Dreieck ist deckungsgleich mit dem blau schraffierte Dreieck.\n\nWird die rot schraffierte Fläche auf die blau schraffierte Fläche verschoben, dann entsteht ein Quadrat, dessen Fläche leicht berechnet werden kann.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne den Flächeninhalt der Figur.\n\nDer Flächeninhalt der Figur beträgt ⟦1⟧ $\\cm^2$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 16,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Nach Verschieben des Dreiecks (s. Teilaufgabe a) ist ein Quadrat entstanden, mit der Seitenlänge $s=2+2=4\\cm$.\n\nFläche des Quadrats\n\n$A_\\text{Quadrat}=s^2$\n\n$A_\\text{Quadrat}=4 \\cdot 4=16$\n\nDer Flächeninhalt der Figur beträgt $16\\cm^2$.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Stelle einen allgemeinen Term für die Berechnung des Flächeninhaltes in Abhängigkeit von $a$ auf.\n\n![Abbildung](/uploads/ex-a3af52538ae0.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "A = 4a²",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Nach Verschieben des Dreiecks (s. Teilaufgabe a) ist ein Quadrat entstanden, mit der Seitenlänge $s=2\\cdot a$\n\nFläche des Quadrats\n\n$A_\\text{Quadrat}=\\text{Seite}\\cdot \\text{Seite}=\\text{Seite}^2$\n\n$A_\\text{Quadrat}=\\left(2\\cdot a\\right)^2=4a^2$\n\nEin allgemeiner Term für die Berechnung des Flächeninhaltes in Abhängigkeit von $a$ ist $4a^2$.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  }
+ ]
+}

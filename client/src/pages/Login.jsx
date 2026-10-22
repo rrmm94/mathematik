@@ -32,8 +32,11 @@ export default function Login() {
       <div className="mx-auto flex max-w-6xl justify-end px-4 pt-4"><HelpButton /></div>
       <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 py-10 md:grid-cols-2 md:py-16">
         <div>
-          <div className="mb-6 grid h-14 w-14 place-items-center rounded-2xl bg-brand-600 text-white shadow-lg shadow-brand-600/30">
-            <Sigma size={30} strokeWidth={2.5} />
+          <div className="mb-6 flex items-center gap-3">
+            <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand-600 text-white shadow-lg shadow-brand-600/30">
+              <Sigma size={30} strokeWidth={2.5} />
+            </div>
+            <span className="text-lg font-bold text-slate-900">Mathematik-Prüfungstrainer</span>
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
             Fit für die <span className="text-brand-600">Mathe-Prüfung</span>.

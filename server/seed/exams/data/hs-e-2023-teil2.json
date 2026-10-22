@@ -1,0 +1,452 @@
+{
+ "school": "hs-e",
+ "schoolLabel": "Hauptschule E-Kurs",
+ "year": 2023,
+ "part": "Teil 2",
+ "folderId": 315332,
+ "url": "https://de.serlo.org/mathe/315332/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "In einer Umfrage wurden 1100 Personen befragt.\n\n1) Haben Sie Haustiere?\n\n2) Nur die Personen, die Haustiere haben, wurden gefragt: Welche Haustiere haben Sie?\n\n![Abbildung](/uploads/ex-3d56b4e9e667.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Anzahl der Personen, die Haustiere haben.\n\n⟦1⟧ Personen haben Haustiere.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 671,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$W=p\\cdot G$\n\nW: Prozentwert\n\nG: Grundwert\n\np: Prozentsatz\n\n$W=0,61\\cdot1100=671$\n\n671 Personen haben Haustiere.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "70 Personen haben Fische.\n\nBerechne den prozentualen Anteil der Haustierbesitzer, die Fische haben.\n\n(Solltest du die Teilaufgabe a) nicht gelöst haben, rechne mit 587 Personen weiter.)\n\n⟦1⟧ % der Haustierbesitzer haben Fische.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 10.43,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$p=\\displaystyle\\frac{W}{G}$\n\n$p=\\ \\displaystyle\\frac{70}{671}=0,1043$\n\n$10,43\\ \\%$ der Haustierbesitzer haben Fische.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Michael behauptet: „Bei einer Umfrage muss die Addition der Prozentsätze immer $100\\%$ ergeben.\"\n\nBegründe, dass Michael nicht recht hat.",
+     "answer": {
+      "type": "free",
+      "sample": "Michael hat nicht recht, da es bei einer Umfrage auch Mehrfachnennungen geben kann."
+     },
+     "solution": "Michael hat nicht recht, da es bei einer Umfrage auch Mehrfachnennungen geben kann.",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Die Sitzfläche eines Hockers hat die Form eines Dreiviertelkreises und wird mit Leder bezogen.\n\n![Abbildung](/uploads/ex-280110894833.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe der Sitzfläche.\n\nDie Größe der Sitzfläche beträgt ⟦1⟧ $\\cm^2$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 8482.3,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$A=r^2\\cdot\\pi$\n\n$r=\\frac{d}{2}$\n\n$r=60\\cm$\n\n$\\displaystyle\\frac{3}{4}\\cdot A=\\frac{3}{4}\\cdot(60^2\\cdot\\pi)=8482,30$\n\nDie Größe der Sitzfläche beträgt $8482,30\\ cm^2$.",
+     "points": 3,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die Sitzfläche wird mit einer Naht umfasst.\n\nBerechne die Länge der Naht.\n\nDie Länge der Naht beträgt ⟦1⟧ $\\cm$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 402.74,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne $\\frac{3}{4}$ des Kreisumfangs. - Addiere dazu $2\\cdot r$.*\n\n$U=2\\cdot r\\cdot\\pi$\n\n$U=2\\cdot60\\cdot\\pi$\n\n$\\displaystyle\\frac{3}{4}\\cdot U=\\displaystyle\\frac{3}{4}\\cdot 120\\cdot \\pi=282,74$\n\n$U_{gesamt}= \\displaystyle\\frac{3}{4}\\cdot U+ 2\\cdot r$\n\n$U_{gesamt}=282,6+2\\cdot60=402,74$\n\nDie Länge der Naht beträgt $402,74\\cm$.",
+     "points": 3,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Jana hat einen Term zur Berechnung der Länge der Naht aufgestellt: $\\qquad\\qquad\\frac{3}{4}\\cdot\\pi\\cdot2\\cdot r+r^2$\n\nIn ihrem Term befindet sich ein Fehler.\n\nMarkiere den Fehler.",
+     "answer": {
+      "type": "free",
+      "sample": "Richtiger Term: frac{3}{4}cdotpicdot2cdot r+2cdot r"
+     },
+     "solution": "Richtiger Term:\n\n$\\frac{3}{4}\\cdot\\pi\\cdot2\\cdot r+2\\cdot r$",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "In einem Eimer befinden sich insgesamt $500$ Lose. Davon sind $70$ Gewinne und der Rest Nieten.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Bestimme die Wahrscheinlichkeit, einen Gewinn zu ziehen. Gib die Wahrscheinlichkeit als Bruch an.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.14,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme die Zahl der möglichen Ereignisse. - Bestimme die Zahl der Gewinnmöglichkeiten.*\n\nDie Wahrscheinlichkeit einen Gewinn zu ziehen ist\n\n$P\\left(\\text{ein Gewinn}\\right)=\\dfrac{70}{500}$",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Du darfst als erste Person aus diesem Eimer ziehen.\n\nBerechne die Wahrscheinlichkeit, nacheinander zwei Gewinne zu ziehen. Gib die Wahrscheinlichkeit als Bruch an.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.019358717,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Beachte, dass es sich um zwei abhängige Ereignisse handelt*\n\nDie Wahrscheinlichkeit, beim ersten Ziehen einen Gewinn zu erhalten, beträgt\n\n$P\\left(\\text{1. Zug Gewinn}\\right)=\\dfrac{70}{500}$\n\nDanach sind nur noch $499$ Lose im Eimer. Davon sind $69$ Lose ein Gewinn.\n\nDie Wahrscheinlichkeit, auch beim zweiten Ziehen einen Gewinn zu erhalten, wenn bereits der erste Zug ein Gewinn war, beträgt nach der Produktregel\n\n$P\\left(\\text{beide Züge Gewinn}\\right)=\\dfrac{70}{500}\\cdot\\dfrac{69}{499}=\\dfrac{4\\,830}{249\\,500}$",
+     "points": 3,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "![Abbildung](/uploads/ex-09ffd10675c0.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Ergänze die Funktionsgleichung der Geraden $g$.\n\ny = ⟦1⟧ x + ⟦2⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme den Schnittpunkt mit der y-Achse und die Steigung. - Bilde daraus die Funktionsgleichung*\n\nDie Funktionsgleichung der Geraden $g$ beschreibt eine lineare Funktion der Form\n\n$y=m\\cdot x + b$.\n\nDie Gerade schneidet die y-Achse bei $1,5$ und hat eine Steigung von $\\displaystyle{\\frac{1}{2}}$.\n\nFunktionsgleichung der Geraden $g$:\n\n$y=\\dfrac{1}{2}\\cdot x+1,5$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne die Gerade $h$ mit der Funktionsgleichung $y=\\dfrac{3}{2} x+3$ in das Koordinatensystem.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-e90075c75f8e.png) Die Gerade h schneidet die y-Achse bei 3 und hat eine Steigung von displaystyle{frac{3}{2}}."
+     },
+     "solution": "![Abbildung](/uploads/ex-e90075c75f8e.png)\n\nDie Gerade $h$ schneidet die y-Achse bei $3$ und hat eine Steigung von $\\displaystyle{\\frac{3}{2}}$.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "Familie Altan möchte Urlaub an der Nordsee machen. Der Vermieter einer Ferienwohnung verlangt $89$ € pro Übernachtung und für die Endreinigung zusätzlich noch eine einmalige Gebühr von $150$ €.\n\n![Abbildung](/uploads/ex-fb719ab307a6.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Gesamtpreis für zehn Übernachtungen.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1040,
+        "tolerance": 0,
+        "unit": "€",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Der Gesamtpreis setzt sich zusammen aus einem festen Teil und einem variablen Teil.\n\nDer feste Teil ist die Endreinigung, die unabhängig von der Aufenthaltsdauer ist.\n\nDer variable Teil berechnet sich aus der Anzahl der Übernachtungen, multipliziert mit dem Preis pro Übernachtung.\n\n$\\text{Gesamtpreis}=150+10\\cdot 89=1\\,040$\n\nFamilie Altan muss für $10$ Übernachtungen $1\\,040$ € zahlen.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Stelle die Funktionsgleichung zur Berechnung des Gesamtpreises in der Form $y=m \\cdot x+b$ auf.\n\n$y=$⟦1⟧ $x+$ ⟦2⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 89,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 150,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "In der Funktionsgleichung bezeichnet\n\n- $x$ die Anzahl der Übernachtungen\n- $m$ den Preis pro Übernachtung\n- $b$ den festen Preis für die Endreinigung\n\nDie Funktionsgleichung lautet:\n\n$y=89\\cdot x + 150$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Familie Altan hat $1\\,800$ € für eine Ferienwohnung zur Verfügung.\n\nBerechne die maximale Anzahl der Übernachtungen, die Familie Altan buchen kann.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 18,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Setze die bekannten Werte in die Funktionsgleichung ein und löse nach $x$ auf.*\n\nDer Gesamtpreis für die Ferienwohnung ist abhängig von der Anzahl der Übernachtungen.\n\nGesucht wird die Zahl der Übernachtungen $x$, sodass der Gesamtpreis $1\\,800$ € nicht übersteigt.\n\nEinsetzen der bekannten Werte in die Funktionsgleichung und Auflösen nach $x$.\n\n$1\\,800=89\\cdot x + 150 \\\\\n1\\,650= 89\\cdot x \\\\\nx\\approx 18,54$\n\nFamilie Altan kann mit $1\\,800$ € maximal $18$ Übernachtungen bezahlen.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "Abgebildet ist ein Bauplan für einen Lenkdrachen.\n\n![Abbildung](/uploads/ex-df39b927443f.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Strecke $a$.\n\n$a\\ \\approx$ ⟦1⟧ $\\cm$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 84.9,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme Katheten und Hypotenuse eines rechtwinkligen Dreiecks - Verwende den Satz des [Pythagoras](/1515)*\n\nDie Strecke $a$ bildet die Hypotenuse eines rechtwinkligen Dreiecks mit den Katheten der Länge $66\\cm$ und $32,4+21=53,4\\cm$.\n\nNach dem Satz des Pythagoras gilt:\n\n$$\\begin{aligned}\nc^2 &= a^2+b^2 \\\\\nc^2 &= 66^2 + 53,4^2 \\\\\nc^2 &= 7\\,207,56^2 \\qquad |\\; \\sqrt{} \\\\\nc &= 84,9\n\\end{aligned}$$\n\nDie Strecke $a$ ist $84,90\\cm$ lang.",
+     "points": 3,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Winkels $\\alpha$.\n\n$\\alpha\\approx$ ⟦1⟧ °",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 51.02,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Es sind Hypotenuse und Gegenkathete eines rechtwinkligen Dreiecks bekannt.\n\nMithilfe einer trigonometrischen Funktion kann damit der Winkel $\\alpha$ berechnet werden.\n\n$\\sin{\\left(\\alpha\\right)}=\\dfrac{\\text{Gegenkathete}}{\\text{Hypotenuse}}=\\dfrac{66}{84,9}$\n\n$\\alpha\\approx 51,02^\\circ$",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Strecke $b$.\n(Solltest du die Teilaufgabe b) nicht gelöst haben, rechne mit $53,04^{\\circ}$ weiter.)\n\n$b\\approx$⟦1⟧ $\\cm$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 33.38,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Die Strecke $b$ ist die Hypotenuse eines rechtwinkligen Dreiecks, in dem der Winkel $\\alpha$ und die Ankathete bekannt sind.\n\n$\\cos\\left(\\alpha\\right)=\\dfrac{\\text{Ankathete}}{\\text{Hypotenuse}}$\n\n$\\cos\\left(51,02^\\circ\\right)=\\dfrac{21}{b}$\n\n$\\cos\\left(51,02^\\circ\\right)\\cdot b=21$\n\n$b=\\dfrac{21}{\\cos\\left(51,02^\\circ\\right)}\\approx 33,38$\n\nDie Länge der Strecke $b$ beträgt $33,38\\cm$.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "Eine Pyramide mit quadratischer Grundfläche hat ein Volumen von $150\\cm^{3}$. Die Grundkante a hat eine Länge von $5\\cm$ .\n\n![Abbildung](/uploads/ex-5e866280294e.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne $h_{k}$.\n\n$h_k=$⟦1⟧ $\\cm$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 18,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Grundfläche der Pyramide. - Verwende die Formel zur Berechnung des Volumens und löse nach $h_K$ auf.*\n\nMithilfe der Formel zur Berechnung des Volumens einer quadratischen Pyramide kann die gesuchte Höhe $h_K$ berechnet werden.\n\nVolumen der Pyramide\n\n$V=\\dfrac{1}{3}\\cdot \\text{Grundfläche}\\cdot h_K$\n\nGrundfläche\n\n$a^2=5^2=25$\n\nEinsetzen der bekannten Werte\n\n$150=\\dfrac{1}{3}\\cdot 25 \\cdot h_K$\n\n$\\dfrac{150\\cdot 3}{25}=h_K$\n\n$h_K=18$\n\nDie Höhe $h_K$ ist $18\\cm$.",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Gegeben sind zwei Pyramiden mit quadratischer Grundfläche und gleicher Körperhöhe $h_{k}$.\n\nDas Volumen der ersten Pyramide ist viermal so groß wie das Volumen der zweiten Pyramide.\n\nKreuze die richtige Aussage an.\n\nDie Grundkante der ersten Pyramide ist ..",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "doppelt so lang wie die Grundkante der zweiten Pyramide.",
+        "correct": true
+       },
+       {
+        "text": "dreimal so lang wie die Grundkante der zweiten Pyramide.",
+        "correct": false
+       },
+       {
+        "text": "viermal so lang wie die Grundkante der zweiten Pyramide.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "$a_1$ und $a_2$ sind die Grundkanten der ersten und zweiten Pyramide.\n\nDas Volumen $V_1$ der ersten Pyramide ist viermal so groß wie das Volumen $V_2$ der zweiten Pyramide.\n\n$$\\begin{aligned}\nV_1 &= 4\\cdot V_2 \\\\\n\\dfrac{1}{3}\\cdot a_1^2\\cdot h_K &= 4\\cdot \\dfrac{1}{3}\\cdot a_2^2\\cdot h_k \\qquad |\\; \\cdot \\dfrac{3}{h_K} \\\\\na_1^2 &= 4\\cdot a_2^2 \\qquad |\\; \\sqrt{} \\\\\na_1 &= \\sqrt{4\\cdot a_2^2} \\\\\na_1 &= 2\\cdot a_2\n\\end{aligned}$$\n\nDie Grundkante der ersten Pyramide ist doppelt so lang wie die Grundkante der zweiten Pyramide.\n\nDie erste Aussage ist korrekt.",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  }
+ ]
+}

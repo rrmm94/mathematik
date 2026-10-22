@@ -1,0 +1,397 @@
+{
+ "school": "rs",
+ "schoolLabel": "Realschule",
+ "year": 2023,
+ "part": "Wahlteil",
+ "folderId": 300722,
+ "url": "https://de.serlo.org/mathe/300722/wahlteil",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Die Abbildung zeigt einen kugelförmigen Gasspeicher in Braunschweig. Er hat den Außendurchmesser $d = 27 ~\\text{m}$.\n\n![Abbildung](/uploads/ex-1ea5722c4334.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Oberfläche des kugelförmigen Gasspeichers.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2290.22,
+        "tolerance": 0,
+        "unit": "m²",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Berechne die Oberfläche der Kugel mit der Formel: $O=4\\pi r^2$*\n\nDer Radius des kugelförmigen Gasspeichers beträgt: $r=\\dfrac{d}{2}=\\dfrac{27}{2}=13,5~\\text{m}$\n\n$$\\begin{aligned}\nO &= 4\\pi\\ r^2 \\\\\n &= 4\\pi\\ 13,5^2 \\\\\n &= 2290,221... \\\\\n &= 2290,22\\ m^2\n\\end{aligned}$$",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Der Pfeil zeigt auf einen Ring, der kreisförmig um die Mitte des Gasspeichers verläuft. Der Ring ist $90 ~\\text{m}$ lang.\n\nBerechne den Abstand zwischen dem Gasspeicher und dem Ring.\n\n![Abbildung](/uploads/ex-a3f4320bb739.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.82,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Radius des Ringes - Vergleiche den Radius des Ringes mit dem Radius der Kugel.*\n\n**Radius des Ringes**\n\nMit einem Umfang des Ringes von $U=90~\\text{m}$ ergibt sich der Radius:\n\n$$\\begin{aligned}\nU &= 2\\pi r \\qquad |\\; :2\\pi \\\\\nr &= \\frac{U}{2\\pi} \\\\\n &= \\frac{90}{2\\pi} \\\\\n &= 14,323... \\\\\n &= 14,32\\ m\n\\end{aligned}$$\n\n**Vergleich der Radien**\n\nDer Ring hat einen Radius von $14,32~\\text{m}$. Der Abstand beträgt somit",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Für Reparaturarbeiten am Gasspeicher wird ein Kran aufgestellt.\n\n![Abbildung](/uploads/ex-4dbb8a54f625.png)\n\nBerechne die Länge der Strecke x.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 8.49,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Verwende den Satz des Pythagoras, um $x$ im rechtwinkligen Dreieck zu berechnen.*\n\nIm rechtwinkligen Dreieck gilt mit dem Satz des Pythagoras:\n\n$$\\begin{aligned}\nx^2+17^2 &= 19^2 \\qquad |\\; -17^2 \\\\\nx^2 &= 19^2-17^2 \\qquad |\\; \\sqrt{ } \\\\\nx &= \\sqrt{19^2-17^2} \\\\\n &= 8,485... \\\\\n &= 8,49\\ m\n\\end{aligned}$$\n\nDer Kran muss in einem Abstand von $8,49~\\text{m}$ platziert werden.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Metallwand des Gasspeichers ist $0,03 ~\\text{m}$ dick.\n\nBerechne das innere Volumen des Gasspeichers.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 10237.44,
+        "tolerance": 0,
+        "unit": "m³",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne das Volumen der Kugel. Verwende dabei den verkleinerten Radius, der um $0,03~\\text{m}$ kleiner ist.*\n\n$$\\begin{aligned}\nV &= \\frac{4}{3}\\pi\\ r^3 \\\\\n &= \\frac{4}{3}\\pi\\ 13,47^3 \\\\\n &= 10237,440... \\\\\n &= 10237,44\\ m^3\n\\end{aligned}$$",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Der Radius eines anderen kugelförmigen Gasspeichers ist $\\sqrt[3]{2}$ - mal so groß wie der Radius des Gasspeichers in Braunschweig.\n\nZeige mithilfe einer Rechnung, dass das Volumen dieses Gasspeichers doppelt so groß ist.",
+     "answer": {
+      "type": "free",
+      "sample": "- Das Volumen muss gar nicht genau ausgerechnet werden. - Verwende die Formel für das Volumen: V=frac{4}{3}pi r^3 - Setze anstelle von r in Klammern (sqrt[3]{2}) ein. - Verwende die Potenzgesetze, um einen Faktor 2 in der Volumenformel zu erhalten. Das vergrößerte Volumen ist begin{aligned} V' &= frac{4}{3}pi r'^3 &= frac{4}{3}pi left(sqrt[3]{2}cdot rright)^3 &= frac{4}{3}pi cdotsqrt[3]{2}^3cdot r^3 &= frac{4}{3}pi cdot color{green}2color{black}cdot r^3 end{aligned} Das Volumen enthält jetzt einen Faktor 2. Damit ist es doppelt so groß, sobald der Radius um das sqrt[3]{2}-fache vergrößert ist."
+     },
+     "solution": "*- Das Volumen muss gar nicht genau ausgerechnet werden. - Verwende die Formel für das Volumen:   $V=\\frac{4}{3}\\pi \\ r^3$ - Setze anstelle von $r$ in Klammern $(\\sqrt[3]{2})$ ein. - Verwende die Potenzgesetze, um einen Faktor $2$ in der Volumenformel zu erhalten.*\n\nDas vergrößerte Volumen ist\n\n$$\\begin{aligned}\nV' &= \\frac{4}{3}\\pi\\ r'^3 \\\\\n &= \\frac{4}{3}\\pi\\ \\left(\\sqrt[3]{2}\\cdot r\\right)^3 \\\\\n &= \\frac{4}{3}\\pi\\ \\cdot\\sqrt[3]{2}^3\\cdot r^3 \\\\\n &= \\frac{4}{3}\\pi\\ \\cdot \\color{green}2\\color{black}\\cdot r^3\n\\end{aligned}$$\n\nDas Volumen enthält jetzt einen Faktor $2$. Damit ist es doppelt so groß, sobald der Radius um das $\\sqrt[3]{2}$-fache vergrößert ist.",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Pia und Lea trinken gerne Tee. Diese Teebeutel liegen unsortiert in einer Teebox:\n\n- 10 Beutel Kamillentee (K)\n- 4 Beutel Erdbeertee (E)\n- 6 Beutel Apfeltee (A).\n\n![Abbildung](/uploads/ex-2f05ef3ab7bb.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Pia greift ohne hinzusehen in die Teebox und zieht nacheinander zwei Teebeutel heraus.\n\nErgänze im Baumdiagramm die fehlenden Wahrscheinlichkeiten.\n\n![Abbildung](/uploads/ex-5fab67105913.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Verwende die Knotenregel. Die Wahrscheinlichkeiten aller Äste aus einem Knoten müssen zusammen 1 ergeben. ![Abbildung](/uploads/ex-4eb59615bdc0.png) In der ersten Stufe muss die Wahrscheinlichkeit: betragen. In der zweiten Stufe muss die Wahrscheinlichkeit: betragen."
+     },
+     "solution": "*Verwende die Knotenregel. Die Wahrscheinlichkeiten aller Äste aus einem Knoten müssen zusammen $1$ ergeben.*\n\n![Abbildung](/uploads/ex-4eb59615bdc0.png)\n\nIn der ersten Stufe muss die Wahrscheinlichkeit:\n\nbetragen.\n\nIn der zweiten Stufe muss die Wahrscheinlichkeit:\n\nbetragen.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, dass Pia erst Kamillentee und dann Apfeltee zieht.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 15.79,
+        "tolerance": 0,
+        "unit": "%",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Berechne die Wahrscheinlichkeit, indem du die einzelnen Wahrscheinlichkeiten entlang eines Pfades multiplizierst.*\n\nDie Wahrscheinlichkeit für Kamillentee ist:\n\n$P(K)=\\dfrac12$\n\nIm zweiten Zug Apfeltee zu ziehen, kann man im Baumdiagramm auslesen:\n\n$P(A)=\\dfrac{6}{19}$\n\nInsgesamt werden die Wahrscheinlichkeiten multipliziert:",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Pia und Lea mögen keinen Erdbeertee.\n\nBerechne die Wahrscheinlichkeit, dass Pia keinen Erdbeertee zieht.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.631578947,
+        "tolerance": 0,
+        "unit": "%",
+        "alternatives": [
+         63.16
+        ]
+       }
+      ]
+     },
+     "solution": "*- Verwende das Baumdiagramm. - Rechne mit dem [Gegenereignis](/1691), also mit allen Ereignissen in denen Erdbeertee gezogen wird.Berechne die Wahrscheinlichkeiten aller Äste, in denen Erdbeertee enthalten ist.Bestimme die Summe all dieser Wahrscheinlichkeiten - jetzt hast du die Wahrscheinlichkeit berechnet, bei zwei mal Ziehen mindestens einmal Erdbeertee zu ziehen.Berechne die Wahrscheinlichkeit des Gegenereignisses - keinen Erdbeertee zu ziehen - indem du die berechnete Wahrscheinlichkeit von 1 abziehst. **Alternativ**: - Berechne die Wahrscheinlichkeiten aller Äste, in denen kein Erdbeertee enthalten ist. - Bestimme die Summe all dieser Wahrscheinlichkeiten.*\n\n**Lösung über das Gegenereignis**\n\nDas Gegenereignis ist es, mindestens einmal Erdbeertee zu ziehen.\n\nDies ist möglich in fünf verschiedenen Ästen:\n\n$$\\begin{aligned}\nP(\\text{Erdbeertee}) &= P(KE)+P(EK)+P(EE)+P(EA)+P(AE) \\\\\n &= \\frac{1}{2}\\cdot\\frac{4}{19}+\\frac{1}{5}\\cdot\\frac{10}{19}+\\frac{1}{5}\\cdot\\frac{3}{19}+\\frac{1}{5}\\cdot\\frac{6}{19}+\\frac{3}{10}\\cdot\\frac{4}{19} \\\\\n &= \\frac{4}{38}+\\frac{10}{95}+\\frac{3}{95}+\\frac{6}{95}+\\frac{12}{190} \\\\\n &= \\frac{70}{190}\n\\end{aligned}$$\n\nDie Wahrscheinlichkeit in irgendeiner Weise Erdbeertee zu ziehen ist $P=\\frac{70}{190}$.\n\nDas Gegenereignis ist damit:",
+     "points": 3,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Lea berechnet die Wahrscheinlichkeit für ein Ereignis mit der folgenden Rechnung:\n\nGib das passende Ereignis an.",
+     "answer": {
+      "type": "free",
+      "sample": "- Der Term stellt ein Gegenereignis dar. - Die einzelnen Terme können im Baumdiagramme mit Teesorten abgeglichen werden. Die Wahrscheinlichkeit stellt folgendes Ereignis dar: Lea zieht keinen Kamillen- und Erdbeertee. P=1-left(underbrace{dfrac{1}{2}cdot dfrac{4}{19}}_{text{P(KE)}}+underbrace{dfrac{1}{5}cdot dfrac{10}{19}}_{text{P(EK)}}right)"
+     },
+     "solution": "*- Der Term stellt ein Gegenereignis dar. - Die einzelnen Terme können im Baumdiagramme mit Teesorten abgeglichen werden.*\n\nDie Wahrscheinlichkeit stellt folgendes Ereignis dar:\n\n*Lea zieht keinen Kamillen-* **und** *Erdbeertee.*\n\n$P=1-\\left(\\underbrace{\\dfrac{1}{2}\\cdot \\dfrac{4}{19}}_{\\text{P(KE)}}+\\underbrace{\\dfrac{1}{5}\\cdot \\dfrac{10}{19}}_{\\text{P(EK)}}\\right)$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Pia und Lea wollen mit dem abgebildeten Glücksrad entscheiden, welchen Tee sie als nächstes trinken. Sie drehen das Glücksrad zweimal.\n\nBegründe, dass das Zufallsexperiment nicht zum Baumdiagramm aus Aufgabenteil a) passt.\n\n![Abbildung](/uploads/ex-941b5b6076a1.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Vergleiche beide Zufallsexperimente:Beim Ziehen aus der Teebox - wird zurückgelegt oder nicht?Beim Drehen am Glücksrad - bleiben die Felder gleich oder nicht? Beim Ziehen aus der Teebox verändern sich die Wahrscheinlichkeit innerhalb der Stufen. Beim Drehen am Glücksrad verändert sich die Wahrscheinlichkeit nicht zwischen den Stufen. rightarrow Wenn sie das Glücksrad zweimal drehen, kann das Zufallsexperiment nicht gleich sein."
+     },
+     "solution": "*- Vergleiche beide Zufallsexperimente:Beim Ziehen aus der Teebox - wird zurückgelegt oder nicht?Beim Drehen am Glücksrad - bleiben die Felder gleich oder nicht?*\n\nBeim Ziehen aus der Teebox verändern sich die Wahrscheinlichkeit innerhalb der Stufen.\n\nBeim Drehen am Glücksrad verändert sich die Wahrscheinlichkeit nicht zwischen den Stufen.\n\n$\\rightarrow$ *Wenn sie das Glücksrad zweimal drehen, kann das Zufallsexperiment nicht gleich sein.*",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Eine Bergbahn im Harz fährt von einer Talstation zu einer Bergstation. Danny hat eine Skizze gezeichnet und einige Streckenlängen eingetragen.\n\n![Abbildung](/uploads/ex-f4add931480c.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Höhenunterschied $h$.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.67,
+        "tolerance": 0,
+        "unit": "km",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Verwende den Satz des Pythagoras, um $h$ im rechtwinkligen Dreieck auszurechnen.*\n\nIm rechtwinkligen Dreieck in der Skizze gilt mit dem Satz des Pythagoras:\n\n$$\\begin{aligned}\nh^2+5,53^2 &= 5,57^2 \\qquad |\\; -5,53^2 \\\\\nh^2 &= 5,57^2-5,53^2 \\qquad |\\; \\sqrt{ } \\\\\nh &= \\sqrt{5,57^2-5,53^2} \\\\\n &= 0,666... \\\\\n &= 0,67\\ km\n\\end{aligned}$$\n\nDer Höhenunterschied $h$ beträgt damit rund $0,67~\\text{km}$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Danny hat den Steigungswinkel $\\alpha$ der Bergbahn berechnet. Sein Ergebnis für $\\alpha$ ist ungefähr $7°$.\n\nBestätige mithilfe einer Rechnung, dass Dannys Ergebnis richtig ist.",
+     "answer": {
+      "type": "free",
+      "sample": "Verwende die Seitenlängen und die Winkelfunktionen Sinus, Kosinus und Tangens, um h zu berechnen. Im Dreieck gilt mit dem Kosinus: begin{aligned} cosalpha &= frac{5,53}{5,57} qquad |; cos^{-1}left(right) alpha &= cos^{-1}left(frac{5,53}{5,57}right) &= 6,870... &= 6,87° end{aligned} Dannys Ergebnis ist damit ungefähr richtig."
+     },
+     "solution": "*Verwende die Seitenlängen und die Winkelfunktionen Sinus, Kosinus und Tangens, um $h$ zu berechnen.*\n\nIm Dreieck gilt mit dem Kosinus:\n\n$$\\begin{aligned}\n\\cos\\alpha &= \\frac{5,53}{5,57} \\qquad |\\; \\cos^{-1}\\left(\\right) \\\\\n\\alpha &= \\cos^{-1}\\left(\\frac{5,53}{5,57}\\right) \\\\\n &= 6,870... \\\\\n &= 6,87°\n\\end{aligned}$$\n\nDannys Ergebnis ist damit ungefähr richtig.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Eine Bergbahn in den Alpen hat eine Steigung von 9 %.\n\n![Abbildung](/uploads/ex-aa0c5ddcc35e.png)\n\nEntscheide mithilfe einer Rechnung, welche Bergbahn die größere Steigung hat.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "Die Bergbahn in den Alpen",
+        "correct": false
+       },
+       {
+        "text": "Die Bergbahn im Harz",
+        "correct": true
+       },
+       {
+        "text": "Beide Steigungen sind gleich groß.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*- Eine $9~\\%$-ige Steigung entspricht einem rechtwinkligen Dreieck mit einer Grundseite von $100~\\text{m}$ und einem Höhenunterschied von $9~\\text{m}$. - Hier kann mit dem Tangens der Winkel berechnet werden.*\n\nEine $9~\\%$-ige Steigung entspricht dem Aufbau dieser Skizze.\n\nIn diesem rechtwinkligen Dreieck kann mit Tangens der Winkel berechnet werden:\n\n$$\\begin{aligned}\n\\tan\\beta &= \\frac{9}{100} \\qquad |\\; \\tan^{-1}\\left(\\right) \\\\\n\\beta &= \\tan^{-1}\\left(\\frac{9}{100}\\right) \\\\\n &= 5,142... \\\\\n &= 5,14°\n\\end{aligned}$$\n\n![Abbildung](/uploads/ex-d9d99c2c9b7e.png)\n\nDieser Winkel ist kleiner als im oberen Dreieck. **Die erste Bergbahn hatte also eine größere Steigung.**",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Danny behauptet: „Die Steigung einer Strecke kann höchstens $100 ~\\%$ betragen.“\n\nZeige, dass Dannys Behauptung falsch ist.",
+     "answer": {
+      "type": "free",
+      "sample": "- Welchem rechtwinkligen Dreieck entspricht der Aufgabe mit 100~% Steigung? - Bestimme den Winkel dieses Dreiecks. Kann der Winkel noch größer werden? 100~% Steigung entspricht dem Aufbau dieser Skizze. Da dies ein gleichschenkliges Dreieck mit rechtem Winkel ist, beträgt der Winkel gamma 45°. Definitiv kann der Winkel größer sein als 45°. Dannys Behauptung ist falsch. ![Abbildung](/uploads/ex-92f35a042099.png)"
+     },
+     "solution": "*- Welchem rechtwinkligen Dreieck entspricht der Aufgabe mit $100~\\%$ Steigung? - Bestimme den Winkel dieses Dreiecks. Kann der Winkel noch größer werden?*\n\n$100~\\%$ Steigung entspricht dem Aufbau dieser Skizze.\n\nDa dies ein gleichschenkliges Dreieck mit rechtem Winkel ist, beträgt der Winkel $\\gamma$ $45°$.\n\nDefinitiv kann der Winkel größer sein als $45°$. Dannys Behauptung ist falsch.\n\n![Abbildung](/uploads/ex-92f35a042099.png)",
+     "points": 1,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Damit Züge in Kurven schneller fahren können, werden die Gleise etwas geneigt. Die maximale Geschwindigkeit hängt vom Neigungswinkel $\\alpha$ ab.\n\nBestimme die maximale Geschwindigkeit, mit der ein Zug bei einem Höhenunterschied von $u = 217 ~\\text{mm}$ durch die Kurve fahren darf.\n\n![Abbildung](/uploads/ex-6ef360b3306b.png)\n\n![Abbildung](/uploads/ex-872fe66164b4.png)",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$60~\\dfrac{\\text{km}}{\\text{h}}$",
+        "correct": false
+       },
+       {
+        "text": "$80~\\dfrac{\\text{km}}{\\text{h}}$",
+        "correct": false
+       },
+       {
+        "text": "$90~\\dfrac{\\text{km}}{\\text{h}}$",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "*- Bestimme den Winkel $\\alpha$ mit einer Winkelfunktion. - Vergleiche mit den Werten in der Tabelle und gib die max. Geschwindigkeit an.*\n\nIm rechtwinkligen Dreieck gilt mit Sinus:\n\n$$\\begin{aligned}\n\\sin\\alpha &= \\frac{217}{1435} \\qquad |\\; \\sin^{-1}\\left(\\right) \\\\\n\\alpha &= \\sin^{-1}\\left(\\frac{217}{1435}\\right) \\\\\n &= 8,697... \\\\\n &= 8,70°\n\\end{aligned}$$\n\n![Abbildung](/uploads/ex-872fe66164b4.png)\n\nDieser Winkel liegt in der dritten Zeile der Tabelle. Die maximale Geschwindigkeit ist damit $90\\dfrac{km}{h}$.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Es wird eine Toreinfahrt in Form einer Parabel gebaut.\n\nDie Parabel hat die Funktionsgleichung $y = – x² + 4x – 1.$",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Ergänze den fehlenden Wert in der Wertetabelle.\n\n| x in m | 0,5 | 1 | 1,5 | 2 | 2,5 | 3 |\n|---|---|---|---|---|---|---|\n| y in m | ⟦1⟧ | 2 | 2,75 | 3 | 2,75 | 2 |",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.75,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Setze den Wert $x=0,5$ in die Funktion ein und berechne den Wert.*\n\nEingesetzt in die Funktion ist der Wert:\n\n$$\\begin{aligned}\ny &= -x^2+4x-1 \\\\\n &= -0,5^2+4\\cdot0,5-1 \\\\\n &= -0,25+2-1 \\\\\n &= 0,75\n\\end{aligned}$$",
+     "points": 1,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Skizziere die parabelförmige Toreinfahrt in das Koordinatensystem.\n\n![Abbildung](/uploads/ex-9301d9d21e5d.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Verwende die Wertetabelle aus Aufgabenteil (a) und skizziere die Parabel. ![Abbildung](/uploads/ex-ecb6b216119f.png)"
+     },
+     "solution": "*Verwende die Wertetabelle aus Aufgabenteil (a) und skizziere die Parabel.*\n\n![Abbildung](/uploads/ex-ecb6b216119f.png)",
+     "points": 2,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Notiere die Funktionsgleichung in der Scheitelpunktform.",
+     "answer": {
+      "type": "free",
+      "sample": "- Bestimme den Scheitel aus der Wertetabelle bzw. der Skizze oben. - Den Vorfaktor a in der Scheitelform y=a(x-d)^2+e ist der Öffnungsfaktor der Parabel. Aus der Wertetabelle bzw. der Skizze kann man den Scheitel bestimmen: Der Öffnungsfaktor der Parabel ist a=-1. Zusammen ergibt sich eingesetzt:"
+     },
+     "solution": "*- Bestimme den Scheitel aus der Wertetabelle bzw. der Skizze oben. - Den Vorfaktor $a$ in der Scheitelform  $y=a(x-d)^2+e$  ist der Öffnungsfaktor der Parabel.*\n\nAus der Wertetabelle bzw. der Skizze kann man den Scheitel bestimmen:\n\nDer Öffnungsfaktor der Parabel ist $a=-1$. Zusammen ergibt sich eingesetzt:",
+     "points": 2,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Michel hat begonnen, die Breite der Toreinfahrt am Boden zu berechnen.\n\nVervollständige Michels Rechnung und berechne die Breite der Toreinfahrt am Boden.\n\n$$\\begin{aligned}\n0 &= -x^2+4x-1 \\qquad |\\; :\\left(-1\\right) \\\\\n0 &= x^2-4x+1\n\\end{aligned}$$",
+     "answer": {
+      "type": "free",
+      "sample": "- Berechne die Lösung der Gleichung 0=x^2-4x+1 mithilfe der pq-Formel bzw. Mitternachtsformel. - Die Breite der Toreinfahrt ist der Abstand zwischen den Nullstellen. Nullstellen berechnen begin{aligned} 0 &= x^2-4x+1 x_{1,2} &= -frac{p}{2}pmsqrt{left(frac{p}{2}right)^2-q} &= -frac{left(-4right)}{2}pmsqrt{left(frac{-4}{2}right)^2-1} &= 2pmsqrt{3} Rightarrow x_1 &= 2+sqrt{3}=3,73 Rightarrow x_2 &= 2-sqrt{3}=0,27 end{aligned} Abstand der Nullstellen x_1-x_2=2+sqrt3-(2-sqrt3)=2+sqrt3-2+sqrt3=2sqrt3 Die Einfahrt hat eine Breite von:"
+     },
+     "solution": "*- Berechne die Lösung der Gleichung $0=x^2-4x+1$ mithilfe der pq-Formel bzw. Mitternachtsformel. - Die Breite der Toreinfahrt ist der Abstand zwischen den Nullstellen.*\n\n**Nullstellen berechnen**\n\n$$\\begin{aligned}\n0 &= x^2-4x+1 \\\\\nx_{1,2} &= -\\frac{p}{2}\\pm\\sqrt{\\left(\\frac{p}{2}\\right)^2-q} \\\\\n &= -\\frac{\\left(-4\\right)}{2}\\pm\\sqrt{\\left(\\frac{-4}{2}\\right)^2-1} \\\\\n &= 2\\pm\\sqrt{3} \\\\\n\\Rightarrow\\ x_1 &= 2+\\sqrt{3}=3,73\\  \\\\\n\\Rightarrow\\ x_2 &= 2-\\sqrt{3}=0,27\n\\end{aligned}$$\n\n**Abstand der Nullstellen**\n\n$x_1-x_2=2+\\sqrt3-(2-\\sqrt3)=2+\\sqrt3-2+\\sqrt3=2\\sqrt3$\n\nDie Einfahrt hat eine Breite von:",
+     "points": 4,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Um die Breite der Toreinfahrt am Boden zu berechnen, hat Michel die Gleichung $y = – x² + 4x – 1$ im ersten Schritt folgendermaßen geändert: $0 = – x² + 4x – 1$.\n\nBegründe Michels ersten Schritt.",
+     "answer": {
+      "type": "free",
+      "sample": "An den Schnittpunkten des Graphen mit der x-Achse ist der y-Wert 0. Also wird dieser 0 gesetzt und die Gleichung im Anschluss gelöst."
+     },
+     "solution": "An den Schnittpunkten des Graphen mit der $x$-Achse ist der $y$-Wert $0$.\n\nAlso wird dieser $0$ gesetzt und die Gleichung im Anschluss gelöst.",
+     "points": 1,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    }
+   ]
+  }
+ ]
+}

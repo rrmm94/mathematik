@@ -1,0 +1,413 @@
+{
+ "school": "hs-g",
+ "schoolLabel": "Hauptschule G-Kurs",
+ "year": 2023,
+ "part": "Wahlteil",
+ "folderId": 315345,
+ "url": "https://de.serlo.org/mathe/315345/wahlteil",
+ "groups": [
+  {
+   "no": 1,
+   "context": "In Braunschweig steht ein kugelförmiger Gasspeicher.\nDie Kugel hat einen Radius von $r=13 \\mathrm{~m}$.\n\n![Abbildung](/uploads/ex-86f060905707.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Oberfläche der Kugel.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2123.72,
+        "tolerance": 0,
+        "unit": "m²",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$O=4\\cdot r^2\\cdot\\pi$\n\n$O=4\\cdot13^2\\cdot\\pi=2123,72$\n\nDie Kugel hat eine Oberfläche von $2123,72\\m^2$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Der Pfeil zeigt auf einen Ring, der kreisförmig um die Mitte des Gasspeichers verläuft.\n\nDer Abstand zwischen Ring und Kugel beträgt $0,5\\m$.\n\n![Abbildung](/uploads/ex-95d0763e65d3.png)\n\nBerechne die Länge des Rings.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 84.82,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne zunächst den Radius des Ringes. - Berechne dann den Umfang des Ringes.*\n\n$r_{Ring}=13+0,5=13,5$\n\n$U_{Ring}=2\\cdot r\\cdot\\pi$\n\n$U_{Ring}=27\\cdot\\pi=84,82$\n\nDer Ring hat eine Länge von $84,82\\m$.",
+     "points": 3,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Für Reparaturarbeiten am Gasspeicher wird ein Kran aufgestellt.\n\n![Abbildung](/uploads/ex-37d4715d5b61.png)\n\nBerechne die Länge $x$.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 21.93,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$x^2=9^2+20^2$\n\n$x^2=481$\n\n$x=\\sqrt{481}$\n\n$x\\approx21,93$\n\n$x$ hat ein Länge von ca. $21,93\\m$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Metallwand des Gasspeichers ist 0,03 m dick.\n\n![Abbildung](/uploads/ex-a1aa5251b8fe.png)\n\nBerechne das Volumen des Hohlraums der Kugel.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 9139.21,
+        "tolerance": 0,
+        "unit": "m³",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$r_{Hohlraum\\ derKugel}=13-0,03=12,97$\n\n$V_{Kugel}=\\ \\displaystyle\\frac{4}{3}\\cdot r^3\\cdot\\pi$\n\n$V_{Kugel}=\\ \\displaystyle\\frac{4}{3}\\cdot 12,97^3\\cdot\\pi=9139,21$\n\nDer Hohlraum der Kugel hat ein Volumen von $9139,21\\m^3$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "e)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "In einer anderen Stadt steht ein weiterer kugelförmiger Gasspeicher, der einen doppelt so großen Durchmesser hat.\n\nKreuze an.\n\nDas Volumen dieses Gasspeichers ist...",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "... halb so groß",
+        "correct": false
+       },
+       {
+        "text": "... doppelt so groß",
+        "correct": false
+       },
+       {
+        "text": "... viermal so groß",
+        "correct": false
+       },
+       {
+        "text": "... achtmal so groß",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Ein Boiler dient zur Erwärmung von Wasser in Küche und Bad.\n\nWenn der Boiler eingeschaltet wird, erhöht sich die Wassertemperatur pro Minute um $15^{\\circ} \\mathrm{C}$.\n\n![Abbildung](/uploads/ex-593947da2daa.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Fülle die Lücken aus.\n\n![Abbildung](/uploads/ex-17a4a2ebc6f3.png)\n\nEs handelt es sich um ein \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ Wachstum.",
+     "answer": {
+      "type": "free",
+      "sample": "Spalte 4: 35+15=50 Spalte 6: (95-20):15=5 ![Abbildung](/uploads/ex-f6d2b9d02617.png) Es handelt sich um ein lineares Wachstum."
+     },
+     "solution": "Spalte 4: 35+15=50\n\nSpalte 6: (95-20):15=5\n\n![Abbildung](/uploads/ex-f6d2b9d02617.png)\n\nEs handelt sich um ein lineares Wachstum.",
+     "points": 3,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Nach Abschalten des Boilers um 12:00 Uhr fällt die Temperatur des Wassers pro Stunde um ca. $15\\%$.\n\nVervollständige die Tabelle.\n\n![Abbildung](/uploads/ex-b75c05f287d5.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Berechne den Prozentwert. - Subtrahiere diesen von dem Anfangswert um 12:00. Prozentwert: W=pcdot G W=0,15cdot80=12 80-12=68 Die Temperatur um 13:00 beträgt 68°. ![Abbildung](/uploads/ex-8db720b90377.png)"
+     },
+     "solution": "*- Berechne den Prozentwert. - Subtrahiere diesen von dem Anfangswert um 12:00.*\n\nProzentwert:\n\n$W=p\\cdot G$\n\n$W=0,15\\cdot80=12$\n\n$80-12=68$\n\nDie Temperatur um 13:00 beträgt $68°$.\n\n![Abbildung](/uploads/ex-8db720b90377.png)",
+     "points": 1,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": "zeichnen",
+     "prompt": "Ergänze im Koordinatensystem die fehlenden Wertepaare. Verbinde sinnvoll.\n\n![Abbildung](/uploads/ex-3c5ab4f70d40.png)\n\nFülle die Lücken aus.\n\nUm 15:30 Uhr beträgt die Temperatur ⟦1⟧ °C.\n\nUm etwa ⟦2⟧ Uhr beträgt die Temperatur $63^{\\circ} \\mathrm{C}$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 45,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "text",
+        "value": "13:30",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Tage die Wertepaare aus der Tabelle unter b) in das Koordinatensystem ein.\n\n![Abbildung](/uploads/ex-9ef6792362c2.png)\n\nLies nun die gesuchten Werte aus dem Koordinatensystem ab.\n\nUm 15:30 Uhr beträgt die Temperatur $45°C$.\n\nUm etwa 13:30 Uhr beträgt die Temperatur $63°C$.",
+     "points": 5,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "d)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze an.\n\nDie im Graph dargestellte Temperaturabnahme ist",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "linear.",
+        "correct": false
+       },
+       {
+        "text": "proportional.",
+        "correct": false
+       },
+       {
+        "text": "exponentiell.",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Wachstum & Exponentialfunktionen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Pia und Lea trinken gern Tee.\n\nSie haben diese Teebeutel unsortiert in einer Teebox:\n\n\\- 10 Beutel Kamillentee (K)\n\n\\- 4 Beutel Erdbeertee (E)\n\n\\- 6 Beutel Apfeltee (A)\n\n![Abbildung](/uploads/ex-f7766aef49b4.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Pia greift, ohne hinzusehen, in die Teebox und zieht nacheinander zwei Teebeutel heraus.\n\nErgänze im Baumdiagramm die fehlenden Wahrscheinlichkeiten.\n\n![Abbildung](/uploads/ex-c4f7bf6200a2.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Rechne mit der Knotenregel. Ausgehend von einem Knoten muss die Summe der mit diesem Knoten verknüpften Ereignisse 1 ergeben. 1. Knoten oben Mitte: 1-displaystyle(frac{10}{20}+frac{4}{20})=frac{6}{20} 1. Knoten K links: 1-displaystyle(dfrac{4}{19}+dfrac{6}{19})=dfrac{9}{19} ![Abbildung](/uploads/ex-de36c7f29e85.png)"
+     },
+     "solution": "*Rechne mit der Knotenregel.*\n\nAusgehend von einem Knoten muss die Summe der mit diesem Knoten verknüpften Ereignisse **1** ergeben.\n\n\\1. Knoten oben Mitte: $1-\\displaystyle(\\frac{10}{20}+\\frac{4}{20})=\\frac{6}{20}$\n\n\\1. Knoten K links: $1-\\displaystyle(\\dfrac{4}{19}+\\dfrac{6}{19})=\\dfrac{9}{19}$\n\n![Abbildung](/uploads/ex-de36c7f29e85.png)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Lea berechnet die Wahrscheinlichkeit für ein Ereignis mit der folgenden Rechnung:\n\n$\\qquad\\qquad P=\\left(\\dfrac{4}{20} \\cdot \\dfrac{3}{19}\\right)$\n\nGib das passende Ereignis an.",
+     "answer": {
+      "type": "free",
+      "sample": "Löse die Aufgabe mit Hilfe der Produktregel. Betrachte den Pfad vom ersten Knoten senkrecht nach unten. Es wird zweimal Erdbeertee gezogen. ![Abbildung](/uploads/ex-cadfeb1ec89f.png)"
+     },
+     "solution": "*Löse die Aufgabe mit Hilfe der Produktregel.*\n\nBetrachte den Pfad vom ersten Knoten senkrecht nach unten.\n\nEs wird zweimal Erdbeertee gezogen.\n\n![Abbildung](/uploads/ex-cadfeb1ec89f.png)",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, dass Pia erst Kamillentee und dann Apfeltee zieht. Schreibe die Wahrscheinlichkeit als Bruch.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.157894737,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Verwende für deine Berechnung die Produktregel.*\n\n![Abbildung](/uploads/ex-c04675d860a2.png)\n\n$P(K,A)=\\displaystyle(\\frac{10}{20}\\cdot\\frac{6}{19})=\\frac{60}{380}$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Pia möchte einen Erdbeertee und Lea einen Kamillentee trinken.\n\nMarkiere alle betreffenden Pfade und berechne die Wahrscheinlichkeit, dass ein Erdbeertee und ein Kamillentee gezogen werden.",
+     "answer": {
+      "type": "free",
+      "sample": "- Benutze zuerst die Produktregel - Danach die Summenregel. ![Abbildung](/uploads/ex-dd0ce3b97c02.png) P(K,E;E,K)= displaystylefrac{10}{20}cdotfrac{4}{19}+frac{4}{20}cdotfrac{10}{19}=frac{80}{380}"
+     },
+     "solution": "*- Benutze zuerst die Produktregel - Danach die Summenregel.*\n\n![Abbildung](/uploads/ex-dd0ce3b97c02.png)\n\n$P(K,E;E,K)=\\ \\displaystyle\\frac{10}{20}\\cdot\\frac{4}{19}+\\frac{4}{20}\\cdot\\frac{10}{19}=\\frac{80}{380}$",
+     "points": 4,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Pia hat ein Glücksrad gebaut und behauptet: „Statt zweimal aus der Teebox zu ziehen, können wir auch zweimal am Glücksrad drehen.\"\n\nKreuze die zutreffende Begründung an.\n\n![Abbildung](/uploads/ex-f5113b807094.png)\n\nDas Glücksrad passt nicht zum Baumdiagramm aus Aufgabenteil a), weil...",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "...das Glücksrad zu viele Felder hat.",
+        "correct": false
+       },
+       {
+        "text": "...die Anzahl der Felder für Erdbeertee falsch ist.",
+        "correct": false
+       },
+       {
+        "text": "...die Wahrscheinlichkeiten bei beiden Drehungen gleich sind.",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "Begründung:\n\nDas Glücksrad und die Teebox sind jeweils in 20 Teile unterteilt. Die Anzahl pro Teesorte stimmt auch überein.\n\n\\- 10 Beutel Kamillentee (K)\n\n\\- 4 Beutel Erdbeertee (E)\n\n\\- 6 Beutel Apfeltee (A)",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Die Bergbahn „Waldi\" fährt von der\n\nTalstation A zur Bergstation.\n\n![Abbildung](/uploads/ex-86540f0fb63d.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Höhenunterschied $h$. Gib das Ergebnis in $\\m$ an.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 666.33,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$h^2+5,53^2=5,57^2$\n\n$h^2=0,444$\n\n$h=\\sqrt{0,444}\\approx0,66633$\n\nDer Höhenunterschied beträgt ca. $666,33\\m$.",
+     "points": 3,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Steigungswinkels $\\alpha$.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 6.88,
+        "tolerance": 0,
+        "unit": "°",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$\\cos(\\alpha)=\\displaystyle\\frac{\\text{Ankathete}}{\\text{Hypotenuse}}$\n\n$\\cos(\\alpha)=\\displaystyle\\frac{5530}{5570}=0,9928$\n\n$\\alpha\\approx6,88°$\n\nDer Steigungswinkel $\\alpha\\approx6,88$°.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Bergbahn „Rosi\" fährt von der Talstation B zur Bergstation.\n\n![Abbildung](/uploads/ex-1a1856f9f908.png)\n\nBerechne $s$.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 7.99,
+        "tolerance": 0,
+        "unit": "km",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$\\cos(\\beta)=\\ \\displaystyle\\frac{\\text{Ankathete}}{\\text{Hypotenuse}}$\n\n$\\cos(3°)=\\ \\displaystyle\\frac{s}{8}$\n\n$0,9986=\\displaystyle\\frac{s}{8}$\n\n$s\\approx7,99$\n\nDie Strecke beträgt $s\\approx 7,99\\km$.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "![Abbildung](/uploads/ex-80d8cfec383f.png)\n\nBestimme die Steigung von Rosis Strecke in Prozent.\n\n(Solltest du die Teilaufgabe c) nicht gelöst haben, rechne mit $\\mathrm{s}=7,95 \\mathrm{~km}$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5.24,
+        "tolerance": 0,
+        "unit": "%",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Die Steigung wird durch den Tangens angegeben:\n\n$\\tan(3^\\circ)\\approx0,0524$\n\nDie Steigung beträgt rund $5,24\\;\\%$.\n\n> **Hinweis**\n>\n> Die Gegenkathete ist $x$. Dann ist $x=\\sqrt{8^2-7,99^2}\\approx0,3999$\n> \n> Die Steigung ist dann $\\tan(\\alpha)=\\dfrac{0,3999}{7,99}\\approx0,050$.\n> \n> Die Steigung beträgt rund $5,0\\;\\%$.\n> \n> (Abweichung zum genauen Ergebnis durch Rundungsfehler.)",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  }
+ ]
+}

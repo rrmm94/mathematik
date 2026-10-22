@@ -1,0 +1,397 @@
+{
+ "school": "hs-e",
+ "schoolLabel": "Hauptschule E-Kurs",
+ "year": 2025,
+ "part": "Wahlteil",
+ "folderId": 328648,
+ "url": "https://de.serlo.org/mathe/328648/wahlteil",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Mia bastelt einen Papierflieger. Dafür faltet sie zuerst ein DIN-A4-Blatt zweimal\n\n![Abbildung](/uploads/ex-ee50950c1466.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Begründe, dass die Größe des Winkels $\\alpha=22,5°$ beträgt.",
+     "answer": {
+      "type": "free",
+      "sample": "Der 90° Winkel an der Mittellinie wird durch jede der beiden Faltungen halbiert. alpha=90°:2:2=22,5°"
+     },
+     "solution": "Der $90°$ Winkel an der Mittellinie wird durch jede der beiden Faltungen halbiert.\n\n$\\alpha=90°:2:2=22,5°$",
+     "points": 1,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Strecke x.\n\n![Abbildung](/uploads/ex-043f8dd1bda3.png)\n\nDie Länge der Strecke $\\text{x}$ beträgt: ⟦1⟧ $\\mm$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 253.49,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         253.5
+        ]
+       }
+      ]
+     },
+     "solution": "*Berechne $x$ mit Hilfe des $\\tan(\\alpha)$.*\n\n$\\displaystyle\\tan(\\alpha)=\\frac{\\text{Gegenkathete}}{\\text{Ankathete}}$\n\n$\\displaystyle 0,4142=\\frac{105}{\\text{x}}$\n\n$\\displaystyle \\text{x}=\\frac{105}{0,4142}=253,49$\n\n$x$ ist so lang wie die Ankathede des $tan(\\alpha)$, also $253,49\\mm$.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Längen der Strecken y und z.\n\n![Abbildung](/uploads/ex-2da17b9bc218.png)\n\nDie Länge der Strecke $\\text{y}$ beträgt: ⟦1⟧ $\\mm$.\n\nDie Länge der Strecke $\\text{z}$ beträgt: ⟦2⟧ $\\mm$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 105,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 148.49,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         148.5
+        ]
+       }
+      ]
+     },
+     "solution": "$\\displaystyle\\tan(\\alpha)=\\frac{\\text{Gegenkathede}}{\\text{Ankathete}}$\n\n$\\displaystyle 1=\\frac{\\text{y}}{105}$\n\n$\\displaystyle \\text{y}=105$\n\n$y$ ist so lang wie die Gegenkathede des $tan(\\alpha)$, also $105\\mm$.\n\n[Satz des Pythagoras](/1515):\n\n$z^2=105^2+105^2$\n\n$z=\\sqrt{22050}=148,49$\n\n$z$ ist $148,49\\mm$ lang.",
+     "points": 4,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Zeige mithilfe einer Rechnung, dass der Punkt S die Mittellinie halbiert.\n\n(Wenn du die Teilaufgabe b) nicht gelöst hast, dann rechne\n\nmit $\\mathrm{x=253,42\\mm}$ weiter.)",
+     "answer": {
+      "type": "free",
+      "sample": "x-y=253,49-105=148,49 297:2=148,5 Also halbiert S bei 148,49mm die Mittellinie."
+     },
+     "solution": "$x-y=253,49-105=148,49$\n\n$297:2=148,5$\n\nAlso halbiert $S$ bei $148,49\\mm$ die Mittellinie.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Aus dem abgebildeten Zylinder wird von oben ein Kegel mit dem gleichen Radius ausgeschnitten.\n\nDie Höhe $\\mathrm{h_k}$ des Kegels beträgt $\\dfrac{2}{3}$ der Höhe des Zylinders.\n\n![Abbildung](/uploads/ex-5eb42dd5c0e3.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Gib die Höhe $\\mathrm{h_k}$ des Kegels an.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$h_k=\\displaystyle\\dfrac{2}{3}\\cdot 6=4$\n\nDie Höhe des Kegels beträgt $4\\cm$.",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die Oberfläche des neu entstandenen Körpers wird lackiert.\n\nBerechne diese Fläche.\n\nDie Oberfläche des neu entstandenen Körpers beträgt: ⟦1⟧ $\\cm^2$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 116.06,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         116.1
+        ]
+       }
+      ]
+     },
+     "solution": "[Oberfläche eines Zylinders:](/1555)\n\n$O_{Zylinder}=2\\cdot Grundfläche+Mantelfläche$\n\n$O_{\\text{Zylinder}}=2\\cdot r^2\\cdot\\pi+2\\cdot r\\cdot\\pi\\cdot h$\n\n[Oberfläche eines Kegels:](/1561)\n\n$O_{Kegel}=Grundfläche+Mantelfläche$\n\n$\\begin{array}{l}O_{Kegel}=\\mathrm G+M\\\\\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;=\\mathrm r^2\\cdot\\mathrm\\pi+\\mathrm r\\cdot m\\mathrm\\cdot \\pi\\end{array}$\n\nm: [Mantellinie](/1559) am Kegel\n\n$m=\\sqrt{r^2+h^2}$\n\nK16,06$Oberfläche_{\\left\\{Körper\\right\\}}=Grundfläche\\ Zylinder+Mantelfläche\\ Zylinder+Mantelfläche\\ Kegel$\n\n$r_Z=2\\cm$\n\n$h_Z=6\\ m$\n\n$r_K=2\\cm$\n\n$h_K=4\\cm$\n\n$m_K=\\sqrt{4+16}=4,47$\n\n$Oberfläche_{\\left\\{Körper\\right\\}}=r_z^2\\cdot\\pi+2\\cdot r_Z\\cdot\\pi\\cdot h_Z+r_K\\cdot m_K\\cdot\\pi$\n\n$Oberfläche_{\\left\\{Körper\\right\\}}=4\\cdot\\pi+24\\cdot\\pi+8,94\\cdot\\pi=116,06$\n\nDie Oberfläche des neu entstandenen Körpers hat $116,06\\cm^2$.",
+     "points": 5,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Das Volumen des ausgeschnittenen Kegels beträgt $\\mathrm{V_{Kegel}=16,76\\cm^3}$.\n\nBerechne das Volumen des neu entstandenen Körpers.\n\nDas Volumen des neu entstandenen Körpers beträgt: ⟦1⟧ $\\cm^3$.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 58.64,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         58.6
+        ]
+       }
+      ]
+     },
+     "solution": "$V_{Zylinder}=r^2\\cdot\\pi\\cdot h$\n\n$V_{Zylinder}=75,40$\n\n$V_{Kegel}=16,76$\n\n$V_{Körper}=75,40-16,76=58,64$\n\nDer neu entstandene Körper hat ein Volumen von $58,64\\cm^3$.",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Nadine behauptet: „$\\mathrm{V_{Kegel} = \\dfrac{2}{9}\\ V_{Zylinder}}$“\n\nZeige, dass sie recht hat.",
+     "answer": {
+      "type": "free",
+      "sample": "displaystyle V_{Kegel}=16,76=frac{2}{9}cdot75,40=frac{2}{9}cdot V_{Zylinder}"
+     },
+     "solution": "$\\ \\displaystyle V_{Kegel}=16,76=\\frac{2}{9}\\cdot75,40=\\frac{2}{9}\\cdot V_{Zylinder}$",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Der Graph zeigt die Bewegung eines Joggers. Seine Geschwindigkeit bleibt immer gleich groß.\n\n![Abbildung](/uploads/ex-f77959649049.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Gib eine passende Funktionsgleichung in der Form $\\mathrm{y=mx+b}$ an.\n\ny =",
+     "answer": {
+      "type": "free",
+      "sample": "Allgemeine Geradengleichung: y=mcdot x+b m: Steigung b: Achsenabschnitt Lies aus der Zeichnung ab: m=2 b=10 Funktionsgleichung: y=2cdot x+10"
+     },
+     "solution": "Allgemeine Geradengleichung:\n\n$y=m\\cdot x+b$\n\nm: Steigung\n\nb: Achsenabschnitt\n\nLies aus der Zeichnung ab:\n\n$m=2$\n\n$b=10$\n\nFunktionsgleichung: $y=2\\cdot x+10$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Die Bewegung eines Radfahrers lässt sich mit der Funktionsgleichung $\\mathrm{y=0,8·x²}$ beschreiben.\n\nSeine Geschwindigkeit wird in den ersten Sekunden der Fahrt gleichmäßig größer.\n\nErgänze die fehlenden Werte in der Wertetabelle.\n\n![Abbildung](/uploads/ex-d12147b77059.png)",
+     "answer": {
+      "type": "free",
+      "sample": "4. Spalte, 1. Zeile: 5=0,8cdot x^2 x^2=5:0,8=6.25 x=sqrt{6,25}=2,5 6.Spalte, 2.Zeile: y=0,8cdot3,5^2=9,8 ![Abbildung](/uploads/ex-c6f8d3a098b2.png)"
+     },
+     "solution": "**\\4. Spalte, 1. Zeile:**\n\n$5=0,8\\cdot x^2$\n\n$x^2=5:0,8=6.25$\n\n$x=\\sqrt{6,25}=2,5$\n\n**6.Spalte, 2.Zeile:**\n\n$y=0,8\\cdot3,5^2=9,8$\n\n![Abbildung](/uploads/ex-c6f8d3a098b2.png)",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Übertrage die Wertepaare in das Koordinatensystem aus Aufgabe a) und verbinde die Punkte sinnvoll.",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-faee4b608375.png)"
+     },
+     "solution": "![Abbildung](/uploads/ex-faee4b608375.png)",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Der Jogger und der Radfahrer sind auf demselben Weg unterwegs.\n\nGib an, nach welcher Zeit der Radfahrer den Jogger überholt\n\nDer Radfahrer überholt den Jogger nach ⟦1⟧ Sekunden.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Lies aus der Zeichnung ab.\n\nDer Radfahrer überholt den Jogger nach $5$ Sekunden.",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Die folgenden Funktionsgleichungen beschreiben die Bewegungen von einem anderen Jogger und einem anderen Radfahrer. Sie sind gleichzeitig auf demselben Weg unterwegs.\n\nJogger: $\\mathrm{y_1=3x+8}\\hspace{35mm}$ Radfahrer: $\\mathrm{y_2=0,5·x²}$\n\nJustus will berechnen, wann der Radfahrer den Jogger überholt, und beginnt so:\n\n\\1. Schritt $\\qquad\\mathrm{y_1=y_2}$\n\n\\2. Schritt $\\qquad\\mathrm{3x+8= 0,5·x²\\ |\\ : 0,5}$\n\n\\3. Schritt $\\qquad\\mathrm{6x+16=x²\\hspace{6.3mm}|\\ –6x–16}$\n\n\\4. Schritt $\\qquad\\mathrm{0=x²–6x–16}$\n\nJustus hat die beiden Funktionsgleichungen gleichsetzt.\n\nBegründe den 1. Schritt.",
+     "answer": {
+      "type": "free",
+      "sample": "Wenn der Radfahrer den Jogger überholt, sind die zurückgelegten Wege, also die y-Werte, gleich groß."
+     },
+     "solution": "Wenn der Radfahrer den Jogger überholt, sind die zurückgelegten Wege, also die y-Werte, gleich groß.",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "f)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Löse die quadratische Gleichung und gib an, nach wie vielen Sekunden der Radfahrer den Jogger überholt.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 8,
+        "tolerance": 0,
+        "unit": "Sek.",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Verwende für die Lösung die pq-Formel.*\n\nAllgemeine quadratische Gleichung:\n\n$x^2+px+q=0$\n\npq-Formel:\n\n$\\displaystyle x_{1,2}=-\\frac{p}{2}\\pm\\sqrt{\\left(\\frac{p}{2}\\right)^2-q}$\n\nSetze die bekannten Werte ein.\n\n$\\displaystyle x_{1,2}=-\\frac{-6}{2}\\pm\\sqrt{\\left(\\frac{-6}{2}\\right)^2-(-16)}$\n\n$\\displaystyle x_{1,2}=3\\pm\\sqrt{9+16}=3\\pm 5$\n\n$x_1=8$\n\n$x_2=-2$\n\nDer Radfahrer überholt den Jogger nach $8$ Sekunden.",
+     "points": 2,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "In einem Supermarkt liegen Schokoladen-Eier in einem Regal. In den Schokoladen-Eiern befindet sich entweder ein Puzzle (P) oder eine Figur (F).\n\n![Abbildung](/uploads/ex-67fd5fe82d78.png)\n\nLea kauft zwei Schokoladen-Eier. Das Baumdiagramm zeigt die Wahrscheinlichkeiten für den Inhalt dieser beiden Eier.\n\n![Abbildung](/uploads/ex-141a83dfd275.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Begründe mithilfe des Baumdiagramms, dass du bei $36$ Schokoladen-Eiern\n\n$5$ Figuren erwarten kannst.",
+     "answer": {
+      "type": "free",
+      "sample": "In der ersten Stufe im Baumdiagramm ist die Wahrscheinlichkeit für eine Figur mit displaystylefrac{5}{36} angegeben, d.h. in 5 Schokoladeneiern befindet sich eine Figur."
+     },
+     "solution": "In der ersten Stufe im Baumdiagramm ist die Wahrscheinlichkeit für eine Figur mit $\\displaystyle\\frac{5}{36}$ angegeben, d.h. in $5$ Schokoladeneiern befindet sich eine Figur.",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Begründe mithilfe des Baumdiagramms, dass das 1. Schokoladen-Ei nicht zurückgelegt wird.",
+     "answer": {
+      "type": "free",
+      "sample": "Die Angaben der Wahrscheinlichkeiten sind in der ersten und zweiten Stufe im Baumdiagramm für das Ereignis \"Eine Form ziehen\" verschieden. 1. Stufe: displaystyle P(F)=frac{5}{36}=frac{10}{72} 2. Stufe: displaystyle P(F)=dfrac{9}{71} Das 1. Schokoladenei wurde also nicht zurück gelegt."
+     },
+     "solution": "Die Angaben der Wahrscheinlichkeiten sind in der ersten und zweiten Stufe im Baumdiagramm für das Ereignis \"Eine Form ziehen\" verschieden.\n\n\\1. Stufe: $\\displaystyle P(F)=\\frac{5}{36}=\\frac{10}{72}$\n\n\\2. Stufe: $\\displaystyle P(F)=\\dfrac{9}{71}$\n\nDas 1. Schokoladenei wurde also nicht zurück gelegt.",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Lea kauft zwei Schokoladen-Eier.\n\nBerechne die Wahrscheinlichkeit, dass beide Schokoladen-Eier eine Figur enthalten.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.017605634,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$\\displaystyle P(F;F)=\\frac{5}{36}\\cdot\\frac{9}{71}=\\frac{5}{284}$\n\nDie Wahrscheinlichkeit, dass beide Schokoladeneier eine Figur enthalten ist $\\displaystyle\\dfrac{5}{284}.$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Lea berechnet die Wahrscheinlichkeit für ein Ereignis: $\\mathrm{\\displaystyle1-\\left(\\frac{31}{36}\\cdot\\frac{61}{71}+\\frac{5}{36}\\cdot\\frac{9}{71}\\right)}$.\n\nBeschreibe ein passendes Ereignis zu Leas Rechnung.",
+     "answer": {
+      "type": "free",
+      "sample": "displaystyle1-left(frac{31}{36}cdotfrac{61}{71}+frac{5}{36}cdotfrac{9}{71}right)=1-(P(P;P)+P(F;F)) Die beiden Schokoladeneier enthalten weder beide ein Puzzle noch beide eine Figur. Sie haben also unterschiedliche Inhalte."
+     },
+     "solution": "$\\displaystyle1-\\left(\\frac{31}{36}\\cdot\\frac{61}{71}+\\frac{5}{36}\\cdot\\frac{9}{71}\\right)=1-(P(P;P)+P(F;F))$\n\nDie beiden Schokoladeneier enthalten weder beide ein Puzzle noch beide eine Figur. Sie haben also unterschiedliche Inhalte.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Während einer Sonderaktion ist der Inhalt in $72$ Schokoladen-Eiern wie\n\nfolgt verteilt.\n\n![Abbildung](/uploads/ex-87fb0d2833d6.png)\n\nErgänze die fehlenden Wahrscheinlichkeiten im Baumdiagramm.\n\n![Abbildung](/uploads/ex-aa000dc5d8eb.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Erste Reihe, rechts oben: Anzahl Schokoladeneier: 72 Anzahl Glückssteine: 1 Wahrscheinlichkeit einen Glücksstein zu erhalten: displaystyle P(Glücksstein)=dfrac{1}{72} 2. Reihe Mitte: Die Summe der Wahrscheinlichkeiten nach der Abzweigung bei F muss displaystyle dfrac{71}{71} sein. displaystyle dfrac{71}{71}-dfrac{62}{71}-dfrac{8}{71}=dfrac{1}{71} ![Abbildung](/uploads/ex-8dc64c49ad8e.png)"
+     },
+     "solution": "**Erste Reihe, rechts oben:**\n\nAnzahl Schokoladeneier: 72\n\nAnzahl Glückssteine: 1\n\nWahrscheinlichkeit einen Glücksstein zu erhalten: $\\displaystyle P(Glücksstein)=\\dfrac{1}{72}$\n\n**\\2. Reihe Mitte:**\n\nDie Summe der Wahrscheinlichkeiten nach der Abzweigung bei $F$ muss $\\displaystyle \\dfrac{71}{71} sein.$\n\n$\\displaystyle \\dfrac{71}{71}-\\dfrac{62}{71}-\\dfrac{8}{71}=\\dfrac{1}{71}$\n\n![Abbildung](/uploads/ex-8dc64c49ad8e.png)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "f)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Ein Supermarkt hat während der Sonderaktion die dreifache Menge Schokoladen-Eier vorrätig. Maximilian kauft ein Schokoladen-Ei und behauptet: „Dadurch verdreifacht sich die Wahrscheinlichkeit, dass in diesem Schokoladen-Ei eine Figur enthalten ist.“\n\nEntscheide, ob Maximilian recht hat, und begründe deine Entscheidung.\n\nMaximilian hat recht ⟦1⟧ ja/nein.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "nein",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Die Behauptung von Maximilian ist falsch. Der Anteil der Figuren bleibt gleich und somit auch die Wahrscheinlichkeit eine Figur zu erhalten.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  }
+ ]
+}

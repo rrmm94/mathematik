@@ -44,6 +44,9 @@ export function txt(value, { label = '', alt = [] } = {}) {
   return { label, kind: 'text', value, alternatives: alt, unit: '' };
 }
 export const fields = (...parts) => ({ type: 'fields', parts });
+// Lückentext: Die Eingabefelder erscheinen im Aufgabentext an den Stellen ⟦1⟧, ⟦2⟧ …
+export const inlineFields = (...parts) => ({ type: 'fields', inline: true, parts });
+export const gap = (n) => `⟦${n}⟧`;
 export const unordered = (...parts) => ({ type: 'fields', unordered: true, parts });
 export const choice = (options, correct, multiple = false) => ({
   type: 'choice',

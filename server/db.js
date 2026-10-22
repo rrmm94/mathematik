@@ -24,10 +24,10 @@ CREATE TABLE IF NOT EXISTS users (
   role TEXT NOT NULL CHECK (role IN ('admin','student')),
   display_name TEXT NOT NULL,
   course_id INTEGER REFERENCES courses(id) ON DELETE SET NULL,
-  grade INTEGER,                 -- 9 oder 10
-  profile TEXT,                  -- HS9, RS9, HS10, RS10, ERS10
-  ge_course TEXT,                -- 'G' / 'E' (nur Info für Lehrkraft)
-  onboarded INTEGER DEFAULT 0,
+  profile TEXT,                  -- HS10, RS10, ERS10
+  onboarded INTEGER DEFAULT 0,   -- Abschluss gewählt
+  easy_topics TEXT DEFAULT '[]', -- JSON: Themen-IDs, die dem Kind nach eigener Aussage leichtfallen
+  topics_asked INTEGER DEFAULT 0, -- Themenauswahl beim ersten Login erledigt
   diag_unlocked INTEGER DEFAULT 1, -- darf (erneut) einen Diagnosetest starten
   note TEXT DEFAULT '',
   created_at TEXT DEFAULT CURRENT_TIMESTAMP,
@@ -52,7 +52,9 @@ CREATE TABLE IF NOT EXISTS topics (
   icon TEXT DEFAULT 'Sigma',
   color TEXT DEFAULT 'indigo',
   sort INTEGER DEFAULT 0,
-  profiles TEXT DEFAULT '[]'     -- JSON: Profile, für die das Thema gilt
+  profiles TEXT DEFAULT '[]',    -- JSON: Profile, für die das Thema gilt
+  keywords TEXT DEFAULT '',      -- Stichworte für die Themenauswahl beim ersten Login
+  example TEXT DEFAULT ''        -- Mini-Beispielaufgabe (Markdown + LaTeX), nur zur Ansicht
 );
 
 CREATE TABLE IF NOT EXISTS script_sections (
@@ -89,7 +91,10 @@ CREATE TABLE IF NOT EXISTS task_variants (
   id INTEGER PRIMARY KEY,
   task_id INTEGER NOT NULL REFERENCES tasks(id) ON DELETE CASCADE,
   sort INTEGER DEFAULT 0,
-  prompt TEXT DEFAULT '',        -- Markdown + LaTeX
+  prompt TEXT DEFAULT '',        -- Markdown + LaTeX; Lücken im Text: ⟦1⟧, ⟦2⟧ …
+  context TEXT DEFAULT '',       -- Ausgangssituation, steht über der Aufgabenstellung
+  points INTEGER DEFAULT 0,
+  source TEXT DEFAULT '',        -- Herkunft der Aufgabe, nur für Lehrkräfte
   answer TEXT DEFAULT '{}',      -- JSON-Spezifikation der Lösung
   solution TEXT DEFAULT '',      -- Lösungsweg (Markdown + LaTeX)
   hint TEXT DEFAULT ''
@@ -179,6 +184,24 @@ CREATE TABLE IF NOT EXISTS uploads (
   created_at TEXT DEFAULT CURRENT_TIMESTAMP
 );
 `);
+
+// Spalten nachrüsten, die in älteren Datenbanken fehlen.
+function addColumn(table, column, def) {
+  const cols = db.prepare(`PRAGMA table_info(${table})`).all().map((c) => c.name);
+  if (cols.includes(column)) return false;
+  db.exec(`ALTER TABLE ${table} ADD COLUMN ${column} ${def}`);
+  return true;
+}
+addColumn('topics', 'keywords', "TEXT DEFAULT ''");
+addColumn('topics', 'example', "TEXT DEFAULT ''");
+addColumn('users', 'easy_topics', "TEXT DEFAULT '[]'");
+addColumn('task_variants', 'context', "TEXT DEFAULT ''"); // gemeinsame Ausgangssituation (Text, Bild, Tabelle)
+addColumn('task_variants', 'points', 'INTEGER DEFAULT 0'); // Punkte wie in der Prüfung (0 = keine Angabe)
+addColumn('task_variants', 'source', "TEXT DEFAULT ''"); // Herkunft (z. B. Abschlussprüfung 2025) – NUR für Lehrkräfte sichtbar
+if (addColumn('users', 'topics_asked', 'INTEGER DEFAULT 0')) {
+  // Wer schon einen Test gemacht hat, wird nicht nachträglich gefragt.
+  db.exec('UPDATE users SET topics_asked = 1 WHERE id IN (SELECT user_id FROM diag_runs)');
+}
 
 // Hilfsfunktionen
 export const all = (sql, ...p) => db.prepare(sql).all(...p);

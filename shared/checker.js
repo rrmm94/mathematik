@@ -3,6 +3,7 @@
 // Formate:
 //  { type: 'fields', parts: [{ label, kind, value, tolerance, unit, alternatives: [] }], layout?, constraint?, unordered? }
 //      kind: 'number' (Standard) | 'text' | 'sci' (a·10ⁿ) | 'expr' (Term, z. B. 2x+85) | 'select' (Auswahlliste)
+//     inline: true -> die Felder stehen als Lücken ⟦1⟧, ⟦2⟧ … direkt im Aufgabentext
 //  { type: 'choice', multiple: bool, options: [{ text, correct }] }
 //  { type: 'order', items: [... in richtiger Reihenfolge], perm: [... Anzeigereihenfolge] }
 //  { type: 'graph', mode: 'lines'|'points', view: {...}, lines: [{ m, b }], points: [[x, y]], given: [[x, y, name]] }
@@ -224,8 +225,10 @@ function checkPart(part, given) {
     const all = [part.value, ...(part.alternatives || [])];
     return all.some((v) => exprEquals(given, v, part.vars || ['x']));
   }
-  const accepted = [part.value, ...(part.alternatives || [])].map(normText);
-  return accepted.includes(normText(given));
+  // Terme wie „y = 0,5x + 1“: Leerzeichen, Malpunkt/Stern und Dezimalkomma/-punkt sind gleichwertig
+  const squash = (x) => normText(x).replace(/\s+/g, '').replace(/[·*]/g, '').replace(/,/g, '.');
+  const accepted = [part.value, ...(part.alternatives || [])].map(squash);
+  return accepted.includes(squash(given));
 }
 
 // Bedingung über mehrere Zahlfelder (für Aufgaben mit vielen richtigen Lösungen)
@@ -354,6 +357,7 @@ export function publicAnswerSpec(spec) {
   if (spec.type === 'fields') {
     const out = {
       type: 'fields',
+      inline: !!spec.inline,
       parts: (spec.parts || []).map((p) => {
         const o = { label: p.label || '', unit: p.unit || '', kind: p.kind || 'number' };
         if (p.kind === 'select') o.options = p.options || [];

@@ -1,0 +1,473 @@
+{
+ "school": "rs",
+ "schoolLabel": "Realschule",
+ "year": 2022,
+ "part": "Teil 1",
+ "folderId": 300715,
+ "url": "https://de.serlo.org/mathe/300715/teil-1",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Ergänze die fehlenden Zahlen in den Lücken.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "⟦1⟧$\\cdot 6=72$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 12,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Schreibe in die Lücke ein $x$ und löse die Gleichung nach $x$ auf.*\n\n$$\\begin{aligned}\nx\\cdot6 &= 72 \\qquad |\\; :6 \\\\\nx &= 72:6 \\\\\nx &= 12\n\\end{aligned}$$\n\nDas Ergebnis ist $12$.",
+     "points": 0,
+     "topic": "Terme, Gleichungen & Formeln"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$2,7+1,6=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4.3,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "$2,7+1,6=4,3$",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "⟦1⟧$-(9+4)=17$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 30,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Schreibe ein $x$ in die Lücke. Löse danach die Gleichung nach $x$ auf.*\n\n$$\\begin{aligned}\nx-\\left(9+4\\right) &= 17 \\\\\nx-13 &= 17 \\qquad |\\; +13 \\\\\nx &= 17+13 \\\\\nx &= 30\n\\end{aligned}$$\n\nDas Ergebnis ist $30$.",
+     "points": 0,
+     "topic": "Terme, Gleichungen & Formeln"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$1/2 : 2=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.25,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Schreibe beide Zahlen als Brüche und nutze die Regeln der Division von Brüchen.*\n\n$$\\begin{aligned}\n &= \\frac{1}{2}:2 \\\\\n &= \\frac 12:\\frac 21 \\\\\n &= \\frac 12\\cdot\\frac 12 \\\\\n &= \\frac {1\\cdot 1}{2\\cdot 2} \\\\\n &= \\frac 14\n\\end{aligned}$$\n\nDas Ergebnis ist $\\frac 14$.",
+     "points": 0,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Berechne.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$2,3km+840m=$⟦1⟧$km$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3.14,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Rechne alle Zahlen in die Einheit km um. Addiere dann die Zahlen.*\n\n$$\\begin{aligned}\n &= 2,3km+840m \\\\\n &= 2,3km+0,84km \\\\\n &= 3,14\\ km\n\\end{aligned}$$",
+     "points": 0,
+     "topic": "Größen & Einheiten"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$0,5t+$⟦1⟧$kg=0,520t$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 20,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Schreibe ein $x$ in die Lücke. Schreibe alle Zahlen in der gleichen Einheit und löse nach $x$ auf.*\n\n$$\\begin{aligned}\n0,5t+x\\ kg &= 0,520t \\\\\n500kg+x\\ kg &= 520kg \\qquad |\\; -500kg \\\\\nx\\ kg &= 20\\ kg\n\\end{aligned}$$\n\nDas Ergebnis ist $20$.",
+     "points": 0,
+     "topic": "Größen & Einheiten"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze die richtige Größe für den Flächeninhalt eines DIN-A4-Blattes an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "6,24 cm²",
+        "correct": false
+       },
+       {
+        "text": "62,4 cm²",
+        "correct": false
+       },
+       {
+        "text": "624 cm²",
+        "correct": true
+       },
+       {
+        "text": "6240 cm²",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*Schätze die Seitenlängen eines DIN-A4-Blattes vor dir und berechne den Flächeninhalt des Rechtecks mit diesen Seitenlängen.*\n\nEin DIN-A4-Blatt ist ein Rechteck. Die Seitenlängen sind ca. 20cm und 30cm lang.\n\nDer Flächeninhalt eines Rechtecks mit Seitenlängen 20cm und 30cm ist\n\nEin DIN-A4-Blatt hat einen Flächeninhalt von ungefähr $600cm^2$. Deshalb ist $624cm^2$ richtig",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Der Pfeil zeigt auf eine Zahl.\n\n![Abbildung](/uploads/ex-b69aaa6d0da7.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Notiere die Zahl über dem Pfeil.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": -0.6,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Es sind nur die Zahlen -2, 0 und 2 auf dem Zahlenstrahl eingetragen. Trage zuerst ein, wo die Zahlen -1 und 1 liegen. Überlege dir, welche Abstände die kleinen Striche haben. Dann kannst du durch abzählen der Striche die Zahl herausfinden.*\n\nEs gibt 4 Striche zwischen der -1 und der 0. Deshalb braucht man 5 Schritte nach links, um von der 0 zur -1 zu kommen. Jeder kleine Schritt ist dann $\\frac 15$ groß.\n\nUm zum Pfeil zu kommen, müssen wir 3 kleine Schritte nach links gehen. Also ist die Zahl $-\\frac 35=-0,6$.\n\n![Abbildung](/uploads/ex-b2c7eeae326f.svg)",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne einen zweiten Pfeil ein, der auf die Zahl $\\frac45$ zeigt.",
+     "answer": {
+      "type": "free",
+      "sample": "Wir gehen 4 der kleinen Schritte nach rechts und tragen dort den Pfeil ein. ![Abbildung](/uploads/ex-db90df053585.svg)"
+     },
+     "solution": "Wir gehen 4 der kleinen Schritte nach rechts und tragen dort den Pfeil ein.\n\n![Abbildung](/uploads/ex-db90df053585.svg)",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Wert des Terms $7x + 12 – 5x$ für $x = 2$.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 16,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Setze $x=2$ ein und forme um.*\n\n$$\\begin{aligned}\n &= 7x+12-5x \\\\\n &= \\left(7\\cdot2\\right)+12-\\left(5\\cdot2\\right) \\\\\n &= 14+12-10 \\\\\n &= 14+2 \\\\\n &= 16\n\\end{aligned}$$",
+     "points": 2,
+     "topic": "Terme, Gleichungen & Formeln"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Lena hat begonnen, die Gleichung zu lösen. Führe den Rechenweg zu Ende.\n\n$$\\begin{aligned}\n-14+12x-47 &= 3x-16 \\qquad |\\; -3x \\\\\n-14+9x-47 &= -16\n\\end{aligned}$$",
+     "answer": {
+      "type": "free",
+      "sample": "begin{aligned} -14+12x-47 &= 3x-16 qquad |; -3x -14+9x-47 &= -16 9x-61 &= -16 qquad |; +61 9x &= -16+61 9x &= 45 qquad |; :9 x &= 5 end{aligned}"
+     },
+     "solution": "$$\\begin{aligned}\n-14+12x-47 &= 3x-16 \\qquad |\\; -3x \\\\\n-14+9x-47 &= -16 \\\\\n9x-61 &= -16 \\qquad |\\; +61 \\\\\n9x &= -16+61 \\\\\n9x &= 45 \\qquad |\\; :9 \\\\\nx &= 5\n\\end{aligned}$$",
+     "points": 3,
+     "topic": "Terme, Gleichungen & Formeln"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Thomas lädt seine drei Freunde ins Kino ein.\n\nEr kauft eine Tüte Popcorn für 13,60 € und vier Eintrittskarten.\n\nInsgesamt bezahlt Thomas 47,60 €.\n\n![Abbildung](/uploads/ex-09762a88f307.jpg)\n\nStelle eine Gleichung auf, mit der du den Preis für eine Kinokarte berechnen kannst.\n\nHinweis: Du musst die Gleichung nicht lösen.",
+     "answer": {
+      "type": "free",
+      "sample": "Die Unbekannte x ist der Preis der Konokarte. Die Summe aus den Preisen für Popkorn und Kinokarten ergeben das, was Thomas insgesamt bezahlt hat. Der Gesamtpreis 47,60€ setzt sich zusammen aus einmal Popkorn für 13,60€ und vier mal die Kinokarte mit dem Preis x. Die Gleichung ist"
+     },
+     "solution": "*Die Unbekannte $x$ ist der Preis der Konokarte. Die Summe aus den Preisen für Popkorn und Kinokarten ergeben das, was Thomas insgesamt bezahlt hat.*\n\nDer Gesamtpreis 47,60€ setzt sich zusammen aus einmal Popkorn für 13,60€ und vier mal die Kinokarte mit dem Preis $x$.\n\nDie Gleichung ist",
+     "points": 1,
+     "topic": "Terme, Gleichungen & Formeln"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "Auf dem Wochenmarkt verkauft Steffi Äpfel. Dafür legt sie eine Tabelle an, um schnell die Preise abzulesen.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Ergänze die Lücken in der Tabelle.\n\n| Menge | Preis \"Roter Boskop\" | Preis \"Jonagold\" |\n|---|---|---|\n| 1 kg | 2,80 € | 3,20 € |\n| 2 kg | 5,60 € | 6,40 € |\n| 3 kg | 8,40 € | ⟦1⟧ |\n| ⟦2⟧ | 14 € | 16 € |",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 9.6,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Zuerst berechnen wir den Preis für \"Jonagold\" fü 3 kg. Ein Kilogramm kostet 3,20 €. Deshalb kosten 3 kg drei mal so viel:\n\n$$\\begin{aligned}\n1\\ kg &= 3,20\\ \\ € \\qquad |\\; \\cdot3 \\\\\n3\\ kg &= 9,60\\ €\n\\end{aligned}$$\n\nFür die Menge in der letzten Zeile brauchen wir den Dreisatz. Wir wissen, was \"Roter Boskop\" 1 kg kostet und wollen berechnen, wie viele kg man für 14 € kaufen kann.\n\n$$\\begin{aligned}\n1\\ kg &= 2,80\\ € \\qquad |\\; \\cdot10 \\\\\n10\\ kg &= 28\\ € \\qquad |\\; :2 \\\\\n5\\ kg &= 14\\ €\n\\end{aligned}$$\n\n| Menge | Preis \"Roter Boskop\" | Preis \"Jonagold\" |\n|---|---|---|\n| 1 kg | 2,80 € | 3,20 € |\n| 2 kg | 5,60 € | 6,40 € |\n| 3 kg | 8,40 € | **9,60 €** |\n| **5 kg** | 14 € | 16 € |",
+     "points": 1,
+     "topic": "Zuordnungen & Dreisatz"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Als Alternative zur Tabelle zeichnet Steffi einen Graphen.\n\n![Abbildung](/uploads/ex-419fe685b1cf.png)\n\nErgänze die folgenden Sätze.\n\nDer Graph gehört zur Apfelsorte ⟦1⟧.\n\nFür 20 € dieser Apfelsorte erhält man etwa ⟦2⟧ kg Äpfel.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Jonagold",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 6.3,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Überlege, welche Preise in der Tabelle zu dem Graphen passt. Suche dir dafür einen Kilogramm-Wert aus und suche den entsprechenden Preis auf dem Graphen. Um die zweite Lücke zu füllen, finde den Wert auf der x-Achse, bei dem der Graph die 20€-Linie überschreitet.*\n\n**Lösung**\n\nDer Graph gehört zur Apfelsorte **Jonagold** .\n\nFür 20 € dieser Apfelsorte erhält man etwa **6,3** kg Äpfel.",
+     "points": 2,
+     "topic": "Zuordnungen & Dreisatz"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Steffi hat Schwierigkeiten, den Preis für 3,5 kg Äpfel mithilfe des Diagramms zu bestimmen.\n\nErkläre die Schwierigkeiten bei der Bestimmung des genauen Preises.",
+     "answer": {
+      "type": "free",
+      "sample": "Es gibt mehrere Antwortmöglichkeiten. Hier ist eine mögliche: Die Einteilung auf der y-Achse ist zu grob. Man kann nicht erkennen, welchen Wert zwischen 10€ und 15€ der Graph bei 3,5 kg hat."
+     },
+     "solution": "Es gibt mehrere Antwortmöglichkeiten. Hier ist eine mögliche:\n\nDie Einteilung auf der y-Achse ist zu grob. Man kann nicht erkennen, welchen Wert zwischen 10€ und 15€ der Graph bei 3,5 kg hat.",
+     "points": 2,
+     "topic": "Zuordnungen & Dreisatz"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "Der Flächeninhalt der abgebildeten Figur soll berechnet werden.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne in die Grafik ein, wie du die Figur zerlegen oder ergänzen kannst.\n\n![Abbildung](/uploads/ex-3d07728ae597.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Du solltest die Figur so zerlegen oder ergänzen, dass du damit den Flächeninhalt dadurch gut berechnen kannst. Du möchtest Figuren, wie Rechtecke und Dreiecke verwenden. Dann kannst du die Formel für die [Flächenberechnung von Dreiecken](/51490) und die [Flächenberechnung von Rechtecken](/1697) benutzen. Es gibt mehrere mögliche Zerlegungen oder Ergänzungen der Figur. Das ist eine Möglichkeit: ![Abbildung](/uploads/ex-015934cf3a3f.svg) Durch diese Zerlegung haben wir zwei Quadrate mit Seitenlängen 3 cm. Außerdem gibt es zwei rechtwinklige Dreiecke mit zwei gleich langen Seiten mit Länge 3 cm."
+     },
+     "solution": "*Du solltest die Figur so zerlegen oder ergänzen, dass du damit den Flächeninhalt dadurch gut berechnen kannst. Du möchtest Figuren, wie Rechtecke und Dreiecke verwenden. Dann kannst du die Formel für die [Flächenberechnung von Dreiecken](/51490) und die [Flächenberechnung von Rechtecken](/1697) benutzen.*\n\nEs gibt mehrere mögliche Zerlegungen oder Ergänzungen der Figur. Das ist eine Möglichkeit:\n\n![Abbildung](/uploads/ex-015934cf3a3f.svg)\n\nDurch diese Zerlegung haben wir zwei Quadrate mit Seitenlängen $3\\ cm$. Außerdem gibt es zwei rechtwinklige Dreiecke mit zwei gleich langen Seiten mit Länge $3\\ cm$.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne den Flächeninhalt der Figur.\n\n$A =$ ⟦1⟧ $\\text{cm}^2$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 27,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "Durch die Zerlegung in (a) haben wir zwei Quadrate mit Seitenlängen $3\\ cm$. Außerdem gibt es zwei rechtwinklige Dreiecke mit zwei gleich langen Seiten mit Länge $3\\ cm$.\n\nDie Quadrate haben jeweils Flächeninhalt\n\nDie Dreicke haben jeweils einen Flächeninhalt von\n\nWir haben zwei Quadrate und zwei Dreiecke. Deshalb ergibt sich dieser Flächeninhalt:\n\nDas rechnen wir zusammen:\n\n$$\\begin{aligned}\n &= 2\\cdot9cm^2+2\\cdot\\frac{9}{2}cm^2 \\\\\n &= 18cm^2+9cm^2 \\\\\n &= 27cm^2\n\\end{aligned}$$\n\nDer Flächeninhalt ist $27 cm^2$.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Gib eine allgemeine Formel zur Berechnung des Flächeninhaltes der Figur\n\nin Abhängigkeit von x an.\n\n![Abbildung](/uploads/ex-09a0980c7e88.png)\n\n$A=\\underline{\\qquad\\qquad\\qquad}$",
+     "answer": {
+      "type": "free",
+      "sample": "Gehe wie bei a) vor. Zerlege oder Ergänze die Figur in Rechtecke oder Dreicke. Nutze die Formel für die [Flächenberechnung von Dreiecken](/51490) und die [Flächenberechnung von Rechtecken](/1697). Wir nutzen die gleiche Zerlegung wie in a) ![Abbildung](/uploads/ex-26ffe6d370c2.svg) Es gibt zwei Quadrate mit Seitenlängen 2x. Es gibt zwei rechtwinklige Dreiecke. Die Dreicke haben zwei Seiten mit jeweils Länge 2x. Der Flächeninhalt eines Quadrats ist Der Flächeninhalt eines Dreiecks ist Es sind zwei Quadrate und zwei Dreiecke. Insgesamt hat die Figur deshalb einen Flächeninhalt von begin{aligned}"
+     },
+     "solution": "*Gehe wie bei a) vor. Zerlege oder Ergänze die Figur in Rechtecke oder Dreicke. Nutze die Formel für die [Flächenberechnung von Dreiecken](/51490) und die [Flächenberechnung von Rechtecken](/1697).*\n\nWir nutzen die gleiche Zerlegung wie in a)\n\n![Abbildung](/uploads/ex-26ffe6d370c2.svg)\n\nEs gibt zwei Quadrate mit Seitenlängen $2x$. Es gibt zwei rechtwinklige Dreiecke. Die Dreicke haben zwei Seiten mit jeweils Länge $2x$.\n\nDer Flächeninhalt eines Quadrats ist\n\nDer Flächeninhalt eines Dreiecks ist\n\nEs sind zwei Quadrate und zwei Dreiecke. Insgesamt hat die Figur deshalb einen Flächeninhalt von\n\n$$\\begin{aligned}\n &= 2\\cdot4x^2+2\\cdot2x^2 \\\\\n &= 8x^2+4x^2 \\\\\n &= 12x^2\n\\end{aligned}$$\n\nDas Ergebnis ist $A=12x^2$.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 8,
+   "context": "Max hat begonnen, ein Dreieck an der Geraden g zu spiegeln.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Vervollständige die Spiegelung.\n\n![Abbildung](/uploads/ex-5f3947b7e406.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-300a59bc2f8b.svg)"
+     },
+     "solution": "![Abbildung](/uploads/ex-300a59bc2f8b.svg)",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Der abgebildete Stern ist achsensymmetrisch.\n\nZeichne in den Stern alle Symmetrieachsen ein.\n\n![Abbildung](/uploads/ex-9008cf466b03.png)",
+     "answer": {
+      "type": "free",
+      "sample": "![Abbildung](/uploads/ex-28ea96f31540.svg)"
+     },
+     "solution": "![Abbildung](/uploads/ex-28ea96f31540.svg)",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Tim hat in das abgebildete Verkehrszeichen eine Gerade eingezeichnet.\n\nBegründe, dass diese Gerade keine Symmetrieachse des Verkehrszeichens ist.\n\n![Abbildung](/uploads/ex-47b9dd90a724.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Es gibt viele Möglichkeiten das zu begründen. Hier ist eine mögliche Erklärung: Die Pfeile sind nicht richtig an der Geraden gespiegelt. Wenn man einen der Pfeile an der Geraden spiegelt, passt er nicht an den anderen Pfeil."
+     },
+     "solution": "Es gibt viele Möglichkeiten das zu begründen. Hier ist eine mögliche Erklärung:\n\nDie Pfeile sind nicht richtig an der Geraden gespiegelt. Wenn man einen der Pfeile an der Geraden spiegelt, passt er nicht an den anderen Pfeil.",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  }
+ ]
+}

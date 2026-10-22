@@ -1,0 +1,412 @@
+{
+ "school": "hs-e",
+ "schoolLabel": "Hauptschule E-Kurs",
+ "year": 2021,
+ "part": "Teil 2",
+ "folderId": 315338,
+ "url": "https://de.serlo.org/mathe/315338/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Im Jahr 2015 fielen in Deutschland insgesamt $45,9$ Millionen Tonnen Hausmüll an.\n\nZu diesem Zeitpunkt lebten in Deutschland ca. $81,2$ Millionen Menschen.\n\n![Abbildung](/uploads/ex-2f233e08cf8f.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne, wie viele Tonnen Hausmüll jede Person in Deutschland durchschnittlich verursacht hat.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.57,
+        "tolerance": 0,
+        "unit": "t",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Dividiere die angefallenen Tonnen Hausmüll durch die Anzahl der Einwohner.*\n\n**Berechnen, wie viele Tonnen Hausmüll jede Person in Deutschland durchschnittlich verursacht hat.**\n\n$\\varnothing\\mathrm{{Hausmüll}_{2015}=\\dfrac{45,9}{81,2}}$\n\n$\\varnothing\\mathrm{{Hausmüll}_{2015}=0,57\\ t}$\n\nIm Jahr 2015 hat jede Person in Deutschland durchschnittlich $\\boxed{\\mathrm{0,57\\ t}}$ Hausmüll verursacht.",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne, wie viele Tonnen Papier im Hausmüll enthalten waren.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 8262000,
+        "tolerance": 0,
+        "unit": "t",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Prozentwert mit der Formel $\\mathrm{W=p\\cdot G}$.*\n\n**Berechnen, wie viele Tonnen Papier im Hausmüll enthalten waren.**\n\nDie Formel zur Berechnung des **Prozentwerts** lautet:\n\n$\\mathrm{W=p\\cdot G}$\n\nFolgende Größen sind bekannt:\n\nGrundwert $\\textbf{G}=45\\ 900\\ 000$\n\nProzentsatz $\\textbf{p}=18\\ \\%$\n\nEinsetzen der bekannten Größen in die Formel:\n\n$\\mathrm{W=\\dfrac{18}{100}\\cdot45\\ 900\\ 000}$\n\n$\\mathrm{W=8\\ 262\\ 000\\ t}$\n\nIm Hausmüll waren $\\boxed{\\mathrm{8\\ 262\\ 000\\ t}}$ Papier enthalten.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Vervollständige das Kreisdiagramm.\n\n![Abbildung](/uploads/ex-094f53636638.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Beachte, im Kreisdiagramm entsprechen 100 % einem Vollwinkel. - Ein Vollwinkel hat 360^circ. Vervollständigen des Kreisdiagramms. ![Abbildung](/uploads/ex-5549d9bd8a1b.png)"
+     },
+     "solution": "*- **Beachte,** im Kreisdiagramm entsprechen $100\\ \\%$ einem Vollwinkel. - Ein Vollwinkel hat $360^\\circ$.*\n\n**Vervollständigen des Kreisdiagramms.**\n\n![Abbildung](/uploads/ex-5549d9bd8a1b.png)",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Zum 14. Geburtstag ihres Enkels Erik legt Oma Ingrid ein Führerscheinkonto bei der Bank an. Sie zahlt $1500\\ €$ ein. Die Bank verzinst dieses Geld mit einem jährlichen Zinssatz von $0,6\\ \\%$. Bis zu Eriks 17. Geburtstag gibt es keine weiteren Ein- und Auszahlungen.\n\nBerechne das Kapital, das Erik an seinem 17. Geburtstag ausgezahlt bekommt.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1527.16,
+        "tolerance": 0,
+        "unit": "€",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- **Beachte,** hier handelt es sich um eine Zinseszinsrechnung. - Berechne mit der entsprechenden Formel das Kapital, das Erik an seinem - 17. Geburtstag ausgezahlt bekommt.*\n\n**Berechnen des Kapitals, das Erik an seinem 17. Geburtstag ausgezahlt bekommt.**\n\nDie Formel zur Berechnung des Zinseszins lautet:\n\n$\\mathrm{K_n=K_0\\cdot\\left(1+ p\\right)^n}$\n\nFolgende Werte sind bekannt:\n\n$\\mathrm{K_0=1500\\ €\\qquad p=0,6\\ \\%\\qquad n=3\\qquad (17-14)}$\n\nEinsetzen der bekannten Werte in die Formel:\n\n$\\mathrm{K_3=1500\\cdot\\left(1+ 0,006\\right)^3}$\n\n$\\mathrm{K_3=1527,16\\ €}$\n\nErik bekommt an seinem 17. Geburtstag $\\boxed{1527,16\\ €}$ ausgezahlt.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "In einem Café soll ein großes Schild als Dekoration an die Wand gehängt werden.\n\nDer Durchmesser des Schildes beträgt $1,50\\m$.\n\n![Abbildung](/uploads/ex-a0ac1a95ae55.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Flächeninhalt des Schildes.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1.77,
+        "tolerance": 0,
+        "unit": "m²",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen des Flächeninhalts des Schildes.**\n\nDie Formel zur Berechnung des Flächeninhalts eines Kreises lautet:\n\n$\\mathrm{A_{Kreis}=r^2\\cdot\\pi}$\n\n$\\mathrm{A_{Kreis}=\\left(\\dfrac{1,50}{2}\\right)^2\\cdot\\pi\\ \\ [m^2]}$\n\n$\\mathrm{A_{Kreis}=1,77\\m^2}$\n\nDer Flächeninhalt des Schildes beträgt, $\\boxed{1,77\\m^2}.$",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Um den Rand des Schildes soll eine LED-Lichterkette angebracht werden.\n\nÜberprüfe, ob eine $4\\m$ lange LED-Lichterkette dafür ausreicht. (ja/nein)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "nein",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Umfang des Schildes. - Vergleiche die Länge des Umfangs mit der Länge der Lichterkette.*\n\n**Überprüfen, ob eine $4\\m$ lange LED-Lichterkette ausreicht.**\n\nDie Formel zur Berechnung des Umfangs eines Kreises lautet:\n\n$\\mathrm{U_{Kreis}=d\\cdot\\pi}$\n\n$\\mathrm{U_{Kreis}=1,50\\cdot\\pi\\ \\ [m]}$\n\n$\\mathrm{U_{Kreis}=4,71\\m}$\n\nDer Umfang des Schildes beträgt $4,71\\m$, die LED-Lichterkette reicht also **nicht** aus.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Abgebildet ist ein Werkstück aus Kunststoff.\n\n![Abbildung](/uploads/ex-5f31fef6981b.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Seitenlänge $\\textbf{a}$ des Werkstücks.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 5.6,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Die Seite $\\mathrm{\\dfrac{a}{2}}$ bildet mit den Seiten $\\mathrm{h_a}$ und $\\mathrm{h_K}$ ein rechtwinkliges Dreieck.    (siehe Skizze} - Berechne mithilfe des Satzes des Pythagoras, $\\mathrm{\\dfrac{a}{2}}.$ - Verdopple das Ergebnis.*\n\n![Abbildung](/uploads/ex-a497ac7a3c62.png)\n\n**Berechnen der Seitenlänge $\\textbf{a}$ des Werkstücks.**\n\nDer Satz des Pythagoras lautet:\n\n$\\mathrm{c^2=a^2+b^2}$\n\nDer Satz des Pythagoras angewandt auf unser Dreieck:\n\n$\\mathrm{(h_a)^2=(h_K)^2+\\left(\\dfrac{a}{2}\\right)^2}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{h_a=4,8\\cm\\quad h_K=3,9\\cm}$\n\nAuflösen nach $\\mathrm{\\dfrac{a}{2}}$ und einsetzen der bekannten Größen:\n\n$\\mathrm{\\dfrac{a}{2}=\\sqrt{4,8^2-3,9^2}}$\n\n$\\mathrm{\\dfrac{a}{2}=2,80}$\n\nDann ist die Seitenlänge $\\text{a}=2\\cdot2,80\\ \\Rightarrow \\boxed{\\text{a}=5,60\\cm}$",
+     "points": 3,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Das Werkstück wird von außen abgeschliffen.\n\nBerechne die zu schleifende Fläche.\n\n(Solltest du die Teilaufgabe a) nicht gelöst haben, rechne mit $\\mathrm{a=5,53\\cm}$ weiter.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 85.12,
+        "tolerance": 0,
+        "unit": "cm²",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Das Werkstück hat die Form einer Pyramide. - Die Oberfläche dieser Pyramide besteht aus 4 gleichschenkligen Dreiecken und einem Quadrat. - Berechne die Flächeninhalte der 4 Dreiecke und den Flächeninhalt des Quadrates und addiere sie.*\n\n**Berechnen der zu schleifenden Fläche.**\n\nDie Formel zur Berechnung des Oberflächeninhalts einer Pyramide lautet:\n\n$\\mathrm{O_{Pyramide}=G\\cdot M}$\n\n$\\hspace{10mm}\\mathrm{G=a^2}$\n\n$\\hspace{10mm}\\mathrm{M=4\\cdot\\dfrac{a\\cdot h_a}{2}}$\n\n$\\mathrm{O_{Pyramide}=a^2+2\\cdot a\\cdot h_a}$\n\nEinsetzen der bekannten Größen:\n\n$\\mathrm{O_{Pyramide}=5,60^2+2\\cdot5,60\\cdot4,8}$\n\n$\\mathrm{O_{Pyramide}=31,36+53,76}$\n\n$\\mathrm{O_{Pyramide}=85,12\\cm^2}$\n\nDie zu schleifende Fläche beträgt: $85,12\\cm^2$\n\n**Hinweis:**\n\nWir haben hier für $\\textbf{a}$ mit dem gerundeten Wert $5,60$ gerechnet. Wenn du für $\\mathrm{a}$ mit dem Wert rechnest, den der Rechner liefert, erhältst du für den Oberflächeninhalt der Pyramide $85,05\\cm^2$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ordne den Funktionsgleichungen den passenden Graphen zu.\n\n![Abbildung](/uploads/ex-0b2a9dbfb2fe.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Vergleich die Steigungen der Funktionen. Zuordnen der passenden Graphen zu den Funktionsgleichungen. ![Abbildung](/uploads/ex-a9c9967c527a.png)"
+     },
+     "solution": "*- Vergleich die Steigungen der Funktionen.*\n\n**Zuordnen der passenden Graphen zu den Funktionsgleichungen.**\n\n![Abbildung](/uploads/ex-a9c9967c527a.png)",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Durch die Punkte $\\text{A}$ und $\\text{B}$ verläuft eine Gerade.\n\nTrage die Punkte $\\mathrm{A (0 | –1)}$ und $\\mathrm{B (5 | 2)}$ in das Koordinatensystem ein und zeichne die Gerade.\n\n![Abbildung](/uploads/ex-04272c0f5010.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Eintragen der Punkte textbf{A} und textbf{B} und zeichnen der Geraden. ![Abbildung](/uploads/ex-282edeffc078.png)"
+     },
+     "solution": "**Eintragen der Punkte $\\textbf{A}$ und $\\textbf{B}$ und zeichnen der Geraden.**\n\n![Abbildung](/uploads/ex-282edeffc078.png)",
+     "points": 1,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Bestimme die Funktionsgleichung der Geraden.\n\n$y=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "3/5x-1",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Lies den $\\textbf{y}$-Achsenabschnitt aus der Skizze ab. - Setze den $\\textbf{y}$-Achsenabschnitt und die Koordinaten des Punktes $\\textbf{B}$ in die allgemeine Geradengleichung ein. - Berechne die Steigung $\\textbf{m}.$ - Bestimme die Funktionsgleichung der Geraden.*\n\n**Bestimme die Funktionsgleichung der Geraden.**\n\nDie allgemeine Geradengleichung lautet:\n\n$\\ \\large{\\mathrm{y={m}\\cdot x+{t}}}$\n\nDen $\\textbf{y}$-Achsenabschnitt können wir aus der Skizze ablesen.\n\n$\\mathrm{t=-1}$\n\nEinsetzen der Koordinaten des Punktes $\\textbf{B}$ und des $\\textbf{y}$-Achsenabschnitts $\\textbf{t}$ in die allgemeine Geradengleichung.\n\n$$\\begin{aligned}\n2 &= \\text{m}\\cdot5-1 \\qquad |\\; +1 \\\\\n3 &= \\text{m}\\cdot5 \\qquad |\\; :5 \\\\\n\\text{m} &= \\dfrac{3}{5}\n\\end{aligned}$$\n\nDie Funktionsgleichung lautet dann:\n\n$\\boxed{\\mathrm{y=\\dfrac{3}{5}x-1}}$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Zwei andere Geraden $\\text{g}$ und $\\text{h}$ haben folgende Funktionsgleichungen:\n\n$\\mathrm{g: y =\\ 4x\\ -\\ 6}$\n\n$\\mathrm{h: y = –3x + 1}$\n\nBestimme den Schnittpunkt der beiden Geraden.\n\nS(⟦1⟧ \\|⟦2⟧ )",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": -2,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Setze die beiden Funktionsgleichungen gleich. - Berechne $\\textbf{x}$. - Setzte den Wert für $\\textbf{x}$ in eine der Funktionsgleichungen ein und berechne $\\textbf{y}$.*\n\n**Bestimme den Schnittpunkt der beiden Geraden.**\n\n$$\\begin{aligned}\n\\mathrm{4x-6} &= \\mathrm{-3x+1} \\qquad |\\; \\mathrm{+3x} \\\\\n\\mathrm{7x}-6 &= 1 \\qquad |\\; +6 \\\\\n\\mathrm{7x} &= 7 \\qquad |\\; :7 \\\\\n\\text{x} &= 1\n\\end{aligned}$$\n\nBerechnen von $\\textbf{y}$.\n\nEinsetzen des Wertes für x in z. B. die Funktionsgleichung der Geraden $\\text{g}$.\n\n$\\mathrm{y=4\\cdot1-6\\ \\Rightarrow\\ y=-2}$\n\nDie Geraden schneiden sich dann in dem Punkt$\\ \\boxed{\\mathrm{S(1|-2)}}$.",
+     "points": 3,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "Drei Radrennfahrer (Ali, Kai und Tom) fahren ein Radrennen.\n\nDas Radrennen besteht aus zwei Etappen.\n\nNach jeder Etappe wird ein Radrennfahrer zur Dopingkontrolle zufällig ausgelost.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Vervollständige das Baumdiagramm und schreibe die Wahrscheinlichkeiten an die Äste.\n\n![Abbildung](/uploads/ex-51a646afe072.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Vervollständigen des Baumdiagramms. ![Abbildung](/uploads/ex-af48976cc3cc.png)"
+     },
+     "solution": "**Vervollständigen des Baumdiagramms.**\n\n![Abbildung](/uploads/ex-af48976cc3cc.png)",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, dass zweimal derselbe Radrennfahrer ausgelost wird.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.333333333,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Wende die 1. Pfadregel (Produktregel) und die 2. Pfadregel (Summenregel) an.*\n\n**Berechnen der Wahrscheinlichkeit, dass zweimal derselbe Radrennfahrer ausgelost wird.**\n\nFür einen Radrennfahrer gilt, dass er zweimal ausgelost wird:\n\n$\\mathrm{P_{\\tiny{1}}=\\dfrac{1}{3}\\cdot\\dfrac{1}{3}=\\dfrac{1}{9}}\\qquad$ siehe Baumdiagramm Teilaufgabe 6a).\n\nDie Wahrscheinlichkeit, dass zweimal derselbe Radrennfahrer ausgelost wird ist dann:\n\n$\\mathrm{P_{\\tiny{3}}=\\dfrac{1}{9}+\\dfrac{1}{9}+\\dfrac{1}{9}=\\dfrac{3}{9}}$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Lea möchte ein Klassenfoto aufnehmen. Sie stellt sich mit ihrer Kamera mittig vor die Klasse.\n\nBerechne den Abstand $\\text{x}$, den Lea benötigt, um die gesamte Klasse aufs Foto zu bekommen.\n\n![Abbildung](/uploads/ex-4f2e34de49f7.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 6.3,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Abstand $\\textbf{x}$ mithilfe des Tangens.*\n\n**Berechnen des Abstands $\\textbf{x}$.**\n\nDer Tangens im rechtwinkligem Dreieck ist definiert als:\n\n$\\mathrm{tan{(\\alpha)}=\\dfrac{Gegenkathete}{Ankathete}}$\n\nFür die obige Skizze gilt dann:\n\n$\\mathrm{tan{(30^\\circ)}=\\dfrac{3,64}{x}}$\n\nAuflösen nach x:\n\n$\\mathrm{x=\\dfrac{3,64}{\\tan(30^\\circ)}}$\n\n$\\mathrm{x=\\dfrac{3,64}{0,5774}}$\n\n$\\mathrm{x=6,30}$\n\nDer Abstand $\\textbf{x}$, den Lea benötigt, um die gesamte Klasse aufs Foto zu bekommen, beträgt: $\\ \\boxed{6,30\\m}.$",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 8,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Eine Regentonne hat ein Fassungsvermögen von $800$ Litern.\n\nSie ist bis $15\\cm$ unter den Rand mit Wasser gefüllt.\n\nBerechne die Höhe h des Wasserstandes in der Tonne.\n\n$\\boxed{\\mathrm{{1\\ Liter=1000\\cm^3}}}$\n\n![Abbildung](/uploads/ex-c9bdf1cb7771.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 86.86,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Löse die Formel zur Berechnung des Volumeninhaltes eines Zylinders nach $\\textbf{h}$ auf. - Berechne $\\textbf{h}.$ - Subtrahiere $15\\cm$ von der Höhe $\\textbf{h}$. - Beachte die Einheiten.*\n\n**Berechnen der Höhe h des Wasserstandes in der Tonne.**\n\nDie Formel zur Berechnung des Volumeninhalts eines Zylinders lautet:\n\n$\\mathrm{V_{Zylinder}=r^2\\cdot\\pi\\cdot h}$\n\nFolgende Größen sind bekannt:\n\n$\\mathrm{r=50\\cm\\qquad V=800\\ l\\cdot1000\\dfrac{cm^3}{l}\\ \\Rightarrow V=800\\ 000\\cm^3}$\n\nAuflösen der Formel nach $\\textbf{h}$.\n\n$\\mathrm{h=\\dfrac{V}{r^2\\cdot\\pi}}$\n\nEinsetzen der bekannten Größen:\n\n$\\mathrm{h_{Tonne}=\\dfrac{800\\ 000}{50^2\\cdot\\pi}\\ \\Rightarrow\\ h_{Tonne}=\\dfrac{800\\ 000}{2500\\cdot\\pi}}$\n\n$\\mathrm{h_{Tonne}=101,86\\cm}$\n\n$\\mathrm{\\h_{Wasserstand}=101,86-15\\ \\ [cm]}$\n\n$\\mathrm{h_{Wasserstand}=86,86\\cm}$\n\nDie Höhe des Wasserstands in der Tonne beträgt:$\\ \\boxed{86,86\\cm}.$",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 9,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne $\\text{x}$.\n\n![Abbildung](/uploads/ex-082530059126.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 98.02,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne $\\textbf{x}$ mithilfe des 2. Strahlensatzes.*\n\n**Berechnen von $\\text{x}$.**\n\nAnwenden des 2. Strahlensatzes auf die obige Figur.\n\n$$\\begin{aligned}\n\\mathrm{\\dfrac{162+75}{x}} &= \\dfrac{162}{67} \\qquad |\\; \\cdot67 \\\\\n\\mathrm{\\dfrac{15879}{x}} &= 162 \\qquad |\\; \\cdot \\text{x} \\\\\n\\mathrm{162x} &= 15879 \\qquad |\\; :162 \\\\\n\\text{x} &= 98,02\n\\end{aligned}$$\n\nDie Länge $\\textbf{x}$ beträgt: $\\ \\boxed{98,02\\m}$.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  }
+ ]
+}

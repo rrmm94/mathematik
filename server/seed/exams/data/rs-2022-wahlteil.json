@@ -1,0 +1,457 @@
+{
+ "school": "rs",
+ "schoolLabel": "Realschule",
+ "year": 2022,
+ "part": "Wahlteil",
+ "folderId": 300717,
+ "url": "https://de.serlo.org/mathe/300717/wahlteil",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Die Abbildung zeigt den Übersichtsplan eines Stadtparks.\n\n![Abbildung](/uploads/ex-01bdc6d27674.png)\n\nAnna behauptet, dass der Winkel $β = 49°$ beträgt.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Zeige mithilfe einer Rechnung, dass Anna recht hat.",
+     "answer": {
+      "type": "free",
+      "sample": "- Bestimme das Dreieck, in dem beta liegt. - Die Winkelsumme in einem Dreieck beträgt immer 180°. - Verwende die Winkelsumme, um beta zu berechnen. Das Dreieck hat drei Winkel mit den Größen: - 41° - 90° - beta Da die Winkelsumme 180° beträgt, gilt: ![Abbildung](/uploads/ex-69497672ff8c.png) begin{aligned} 41°+90°+beta &= 180° qquad |; -41°-90° beta &= 49° end{aligned} Anne hat recht, der Winkel beta ist 49° groß."
+     },
+     "solution": "*- Bestimme das Dreieck, in dem $\\beta$ liegt. - Die Winkelsumme in einem Dreieck beträgt immer $180°$. - Verwende die Winkelsumme, um $\\beta$ zu berechnen.*\n\nDas Dreieck hat drei Winkel mit den Größen:\n\n- $41°$\n- $90°$\n- $\\beta$\n\nDa die Winkelsumme $180°$ beträgt, gilt:\n\n![Abbildung](/uploads/ex-69497672ff8c.png)\n\n$$\\begin{aligned}\n41°+90°+\\beta &= 180° \\qquad |\\; -41°-90° \\\\\n\\beta &= 49°\n\\end{aligned}$$\n\nAnne hat recht, der Winkel $\\beta$ ist $49°$ groß.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Anna beginnt mit der maßstäblichen Zeichnung des Übersichtsplans.\n\nVervollständige Annas Zeichnung.\n\n![Abbildung](/uploads/ex-43cdbff23b0c.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Skizziere eine Hilfslinie, die am Eingang im 49°-Winkel zur Strecke steht. - Zeichne beim Restaurant das Lot zur Strecke ein, sodass sich ein Schnittpunkt mit der Hilfslinie bildet. - Zeichne ein weiteres Lot ein, welches vom Eingang aus nach rechts geht. Die Länge der Strecke oben rechts muss im richtigen Maßstab zur ursprünglichen Strecke stehen. - Verbinde das Ende des Lots und das Ende der Strecke beim Restaurant. Skizziere eine Hilfslinie, die am Eingang im Winkel 49° zur Strecke steht. ![Abbildung](/uploads/ex-88fd33d901b3.png) Die zweite Hilfslinie steht senkrecht auf der Strecke. Sie"
+     },
+     "solution": "*- Skizziere eine Hilfslinie, die am Eingang im $49°$-Winkel zur Strecke steht. - Zeichne beim Restaurant das Lot zur Strecke ein, sodass sich ein Schnittpunkt mit der Hilfslinie bildet. - Zeichne ein weiteres Lot ein, welches vom Eingang aus nach rechts geht. Die Länge der Strecke oben rechts muss im richtigen Maßstab zur ursprünglichen Strecke stehen. - Verbinde das Ende des Lots und das Ende der Strecke beim Restaurant.*\n\nSkizziere eine Hilfslinie, die am Eingang im Winkel $49°$ zur Strecke steht.\n\n![Abbildung](/uploads/ex-88fd33d901b3.png)\n\nDie zweite Hilfslinie steht senkrecht auf der Strecke.\n\nSie schneidet die erste Hilfslinie, sodass sie zusammen das linke Dreieck bilden.\n\n![Abbildung](/uploads/ex-103e1efb3164.png)\n\n![Abbildung](/uploads/ex-8c3896d41be0.png)\n\nAuf der anderen Seite muss ein Lot am Eingang eingezeichnet werden.\n\nDie Länge dieses Lots muss im richtigen Verhältnis zur Strecke \"Eingang-Restaurant\" stehen.\n\n![Abbildung](/uploads/ex-0f069a0be87a.png)\n\n> **Wie findet man die Länge des Lots heraus?**\n>\n> Dieses Verhältnis ist $3:6,5$. Beträgt die Strecke \"Eingang-Restaurant\" zum Beispiel $3~cm$, muss das Lot die Länge $6,5~cm$ haben.\n> \n> Allgemein muss die Länge der Strecke \"Eingang-Restaurant\" mit $\\frac{13}{5}$ multipliziert werden. Dann hat das Lot die richtige Länge.\n\nIm letzten Schritt müssen die Enden der Strecken nur noch fertig verbunden werden.\n\n![Abbildung](/uploads/ex-c61da2135dab.png)",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze den Maßstab an, den Anna wählte.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "1 : 100",
+        "correct": false
+       },
+       {
+        "text": "1 : 1000",
+        "correct": false
+       },
+       {
+        "text": "1 : 10 000",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "*- Dividiere die Länge, die in der Skizze angegeben ist, durch die tatsächliche Länge auf dem Papier. - *Das sollte mit jeder Strecke funktionieren.**\n\nDie Strecke \"Eingang-Restaurant\" ist laut Skizze $300~m$ lang.\n\nAuf dem Papier misst die Strecke: $3~cm=0,03~m$\n\nDas entspricht einem Maßstab von:\n\n$$\\begin{aligned}\n &= 300:0,03 \\\\\n &= 10000\n\\end{aligned}$$\n\nDer verwendete Maßstab ist $1:10000$. Achte darauf, dass die Längen unterschiedliche Einheiten besitzen.",
+     "points": 1,
+     "topic": "Größen & Einheiten"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Größe des Winkels $\\alpha$.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 24.78,
+        "tolerance": 0,
+        "unit": "°",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme das rechtwinklige Dreieck, in dem sich $\\alpha$ befindet. - Verwende den Tangens, um $\\alpha$ zu berechnen.*\n\nIm rechtwinkligen Dreieck sind die Gegenkathete und Ankathete gegeben.\n\n$\\alpha$ kann also mit dem Tangens bestimmt werden:\n\n![Abbildung](/uploads/ex-ed5323160d3a.png)\n\n$$\\begin{aligned}\n\\tan\\alpha &= \\frac{Gegenkathete}{Ankathete} \\\\\n &= \\frac{300}{650} \\qquad |\\; \\tan^{-1} \\\\\n\\alpha &= \\tan^{-1}\\left(\\frac{300}{650}\\right) \\\\\n &= 24,775...° \\\\\n &= 24,78°\n\\end{aligned}$$\n\n$\\alpha$ ist etwa $24,78°$ groß.",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "e)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Strecke $x$.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 457.28,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Verwende das rechtwinklige Dreieck, in dem sich $x$ befindet. - Stelle mit dem Sinus oder Kosinus eine Gleichung auf, in dem $x$ und $300~m$ vorkommen. - Forme diese Gleichung um und berechne die Länge.*\n\nVom Winkel $41°$ aus gesehen entspricht $300~m$ der Länge der Gegenkathete.\n\nDie Länge der Hypotenuse $x$ ist gesucht.\n\nDie Gleichung lautet mithilfe des Sinus:\n\n![Abbildung](/uploads/ex-297b6ea1fe16.png)\n\n$$\\begin{aligned}\n\\sin41° &= \\frac{300}{x} \\qquad |\\; \\cdot x \\\\\n\\sin41^°\\cdot x &= 300 \\qquad |\\; :\\sin41° \\\\\nx &= \\frac{300}{\\sin41°} \\\\\nx &= 457,275... \\\\\n &= 457,28\n\\end{aligned}$$\n\nDie Strecke $x$ ist etwa $457,28~m$ lang.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "![Abbildung](/uploads/ex-f47742045aec.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Der abgebildete Schokokuss besteht annähernd aus zwei geometrischen Teilkörpern.\n\nKreuze diese beiden Teilkörper an.",
+     "answer": {
+      "type": "choice",
+      "multiple": true,
+      "options": [
+       {
+        "text": "Pyramide",
+        "correct": false
+       },
+       {
+        "text": "Kegel",
+        "correct": false
+       },
+       {
+        "text": "Kugel",
+        "correct": false
+       },
+       {
+        "text": "Halbkugel",
+        "correct": true
+       },
+       {
+        "text": "Zylinder",
+        "correct": true
+       },
+       {
+        "text": "Quader",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*Es ist hilfreich, den Schokokuss von verschiedenen Seiten anzusehen: - Von oben scheint der Schokokuss ein kreisförmiger Körper zu sein. - Von der Seite ist die Figur aus einem Rechteck und einem Halbkreis zusammengesetzt.*\n\nDer Körper ist aus einem Zylinder und einer Halbkugel zusammengesetzt.\n\n![Abbildung](/uploads/ex-c7834c8a548f.png)",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Abbildung zeigt den Querschnitt eines Schokokusses.\n\nEin Hersteller bietet Schokoküsse in einem quaderförmigen Karton an. Der Karton ist 20 cm lang, 16 cm breit und 19 cm hoch.\n\nBestimme die maximale Anzahl der Schokoküsse, die in diesem Karton verpackt sind.\n\n![Abbildung](/uploads/ex-578b6743f480.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 60,
+        "tolerance": 0,
+        "unit": "Stück",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme die Anzahl der Schokoküsse, die in die lange Seite passen. - Bestimme die Anzahl der Schokoküsse, die auf die kurze Seite passen. - Bestimme die Anzahl der Schokoküsse, die in die Höhe des Kartons gestapelt passen. - Multipliziere diese drei Werte miteinander.*\n\nWir gehen davon aus, dass der beste Weg, die Schokoküsse zu stapeln, folgender ist:\n\nDie Schokoküsse werden in Reihen gestellt und aufrecht aufeinander gestapelt.\n\nSie werden nicht schräg oder versetzt gestapelt. Das würde es sehr kompliziert machen.\n\n![Abbildung](/uploads/ex-7f3b27a572a6.png)\n\n**Lange Seite des Kartons**\n\nIn die lange Seite des Kartons kann man $20:3,8\\approx5,26$ Schokoküsse stellen.\n\nDas macht $5$ ganze Schokoküsse.\n\n![Abbildung](/uploads/ex-9544608a9c54.png)\n\n**Kurze Seite des Kartons**\n\nIn die kurze Seite des Kartons kann man $16:3,8\\approx 4,21$ Schokoküsse stellen.\n\nDas macht $4$ ganze Schokoküsse.\n\n![Abbildung](/uploads/ex-0e3606ceb876.png)\n\n**Höhe des Kartons**\n\nEs passen $19:6,2\\approx 3,06$ Schokoküsse aufeinander in den Karton.\n\nDas sind $3$ ganze Schokoküsse.\n\n![Abbildung](/uploads/ex-e7eea2ca4f0d.png)\n\n**Gesamtanzahl**\n\nInsgesamt passen $5\\cdot 4\\cdot 3=60$ Schokoküsse in den Karton.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen eines Schokokusses.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 63.13,
+        "tolerance": 0,
+        "unit": "cm³",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne das Volumen des Zylinders. - Berechne das Volumen der halben Kugel auf dem Zylinder. - Addiere die Werte der Volumina.*\n\n**Volumen des Zylinders**\n\n$$\\begin{aligned}\nV &= \\pi r^2\\cdot h \\\\\n &= \\pi\\cdot1,9^2\\cdot4,3 \\\\\n &= 48,766... \\\\\n &= 48,77\n\\end{aligned}$$\n\nDas Volumen des Zylinders beträgt etwa $V_\\text{Zylinder}=48,77~\\text{cm}^3$.\n\n**Volumen der Halbkugel**\n\n$$\\begin{aligned}\nV &= \\frac{\\frac{4}{3}\\pi\\cdot r^3}{2} \\\\\n &= \\frac{2}{3}\\pi\\cdot r^3 \\\\\n &= \\frac{2}{3}\\pi\\cdot1,9^3 \\\\\n &= 14,365... \\\\\n &= 14,37\n\\end{aligned}$$\n\nDas Volumen der halben Kugel ist etwa: $V_\\text{Halbkugel}=14,37 ~\\text{cm}^3$\n\n**Gesamtvolumen**\n\n$V_\\text{gesamt}=V_\\text{Zylinder}+V_\\text{Halbkugel}\\approx 63,13~\\text{cm}^3$",
+     "points": 5,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "In der Grafik ist ein anderer Schokokuss abgebildet.\n\nStelle eine allgemeine Formel auf, mit der du das Volumen in Abhängigkeit von r berechnen kannst.\n\n![Abbildung](/uploads/ex-18d2ba415257.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Stelle den Term für das Volumen des Zylinders auf, wie in Teilaufgabe (a).Setze für die Höhe h den Term 2r ein. - Übernimm die allgemeine Formel für das Volumen der Halbkugel. - Addiere die beiden Formeln und fasse so weit wie möglich zusammen. Zylindervolumen begin{aligned} V &= picdot r^2cdot h &= picdot r^2cdot2r &= 2picdot r^3 end{aligned} Halbkugelvolumen begin{aligned} V &= frac{2}{3}picdot r^3 end{aligned} Gesamtvolumen Addiere beide Formel für die Volumina. begin{aligned} V_{ges} &= 2picdot r^3+frac{2}{3}picdot r^3 &= frac{8}{3}picdot r^3 end{aligned}"
+     },
+     "solution": "*- Stelle den Term für das Volumen des Zylinders auf, wie in Teilaufgabe (a).Setze für die Höhe $h$ den Term $2r$ ein. - Übernimm die allgemeine Formel für das Volumen der Halbkugel. - Addiere die beiden Formeln und fasse so weit wie möglich zusammen.*\n\n**Zylindervolumen**\n\n$$\\begin{aligned}\nV &= \\pi\\cdot r^2\\cdot h \\\\\n &= \\pi\\cdot r^2\\cdot2r \\\\\n &= 2\\pi\\cdot r^3\n\\end{aligned}$$\n\n**Halbkugelvolumen**\n\n$$\\begin{aligned}\nV &= \\frac{2}{3}\\pi\\cdot r^3\n\\end{aligned}$$\n\n**Gesamtvolumen**\n\nAddiere beide Formel für die Volumina.\n\n$$\\begin{aligned}\nV_{ges} &= 2\\pi\\cdot r^3+\\frac{2}{3}\\pi\\cdot r^3 \\\\\n &= \\frac{8}{3}\\pi\\cdot r^3\n\\end{aligned}$$",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Um eine Bauchspeicheldrüse zu untersuchen, wird dem Patienten ein Farbstoff gespritzt.\n\nEine gesunde Bauchspeicheldrüse scheidet pro 10 Minuten ca. 30 % des jeweils noch vorhandenen Farbstoffes aus.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Vervollständige die Tabelle.\n\n| Zeit in Minuten | 0 | 10 | 20 | 30 | 40 | 50 | ... | 80 |\n|---|---|---|---|---|---|---|---|---|\n| Farbstoffmenge in % | 100 | 70 | ⟦1⟧ | 34,3 | 24,0 | 16,8 | ... | 5,8 |",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 49,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme den Faktor (Änderungsrate), um den sich die Konzentration alle 10 Minuten verringert. - Berechne den fehlenden Wert, indem $70$ mit der Änderungsrate multipliziert wird.*\n\n**Änderungsrate**\n\nAlle 10 Minuten gehen $30~\\%$ verloren. Das heißt, es bleiben nur $70~\\%$ übrig. Das ist die Änderungsrate des exponentiellen Zerfalls.\n\n**Fehlenden Wert berechnen**\n\nDer fehlende Wert ergibt sich durch: $70\\cdot 0,7=49$",
+     "points": 1,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne die Wertepaare in ein Koordinatensystem und verbinde sie sinnvoll. Wähle für die x-Achse 1 cm für 10 Minuten und für die y-Achse 1 cm für 10 %.",
+     "answer": {
+      "type": "free",
+      "sample": "- Zeichne ein Koordinatensystem.Die x-Achse gibt die Zeit an. 1cm entspricht 10 Minuten.Die y-Achse gibt die Farbstoffmenge in % an. 1cm entspricht 10%. - Trage alle Werte ein. - Verbinde die Werte so, dass eine durchgehende Kurve ohne Ecken entsteht. Lösung ![Abbildung](/uploads/ex-1b042e7e531d.png)"
+     },
+     "solution": "*- Zeichne ein Koordinatensystem.Die x-Achse gibt die Zeit an. 1cm entspricht 10 Minuten.Die y-Achse gibt die Farbstoffmenge in % an. 1cm entspricht 10%. - Trage alle Werte ein. - Verbinde die Werte so, dass eine durchgehende Kurve ohne Ecken entsteht.*\n\n**Lösung**\n\n![Abbildung](/uploads/ex-1b042e7e531d.png)",
+     "points": 4,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze die Art der Zuordnung an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "linear",
+        "correct": false
+       },
+       {
+        "text": "quadratisch",
+        "correct": false
+       },
+       {
+        "text": "exponentiell",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "Es liegt **exponentieller** Zerfall vor.\n\nBegründung: \"10 Minuten\" und \"Farbstoffmenge\" hängen durch eine konstante **Änderungsrate** zusammen.",
+     "points": 1,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "d)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Gib die Farbstoffmenge in % nach 25 Minuten an.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 41,
+        "tolerance": 0,
+        "unit": "%",
+        "alternatives": [
+         42,
+         43,
+         40,
+         39
+        ]
+       }
+      ]
+     },
+     "solution": "*- Bestimme den Wert durch die Skizze aus Teilaufgabe (b). - Lies den Funktionswert bei $x=2,5$ ab.*\n\nMit der Skizze aus Teilaufgabe (b) kann der Wert bei $x=2,5$ abgelesen werden.\n\nDie Farbstoffmenge liegt bei etwa:\n\n![Abbildung](/uploads/ex-1b042e7e531d.png)",
+     "points": 1,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "e)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Gib an, nach welcher Zeit noch 10 % des Farbstoffes vorhanden sind.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 65,
+        "tolerance": 0,
+        "unit": "min",
+        "alternatives": [
+         66,
+         67,
+         64,
+         63
+        ]
+       }
+      ]
+     },
+     "solution": "*- Bestimme den Wert durch die Skizze aus Teilaufgabe (b). - Schaue nach, bei welchem x-Wert der Funktionswert (y-Achse) 10 % beträgt.*\n\nMit der Skizze aus Teilaufgabe (b) kann der Wert bei $y=10~\\%$ abgelesen werden.\n\nNach etwa $65$ Minuten sind noch $10~\\%$ der Farbstoffmenge übrig.\n\n![Abbildung](/uploads/ex-1b042e7e531d.png)",
+     "points": 1,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "f)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Einem Patienten werden 0,2 g Farbstoff gespritzt. Nach 20 Minuten sind noch 0,1 g des Farbstoffes in der Bauchspeicheldrüse vorhanden.\n\nEntscheide, ob der Patient eine gesunde Bauchspeicheldrüse hat. Begründe deine Entscheidung.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "Der Patient hat eine gesunde Bauchspeicheldrüse.",
+        "correct": true
+       },
+       {
+        "text": "Der Patient hat keine gesunde Bauchspeicheldrüse.",
+        "correct": false
+       },
+       {
+        "text": "Man kann nicht feststellen, ob der Patient eine gesunde Bauchspeicheldrüse hat.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*- Berechne, wie viel Farbstoff nach 20 Minuten mit der Änderungsrate $0,7$ übrig wäre. - Vergleiche den Wert mit dem des Patienten.*\n\nNach 20 Minuten sind mit der Änderungsrate $0,7$ noch\n\n$0,2\\cdot 0,7^2=0,098$\n\nGramm des Farbstoffs übrig.\n\nDas stimmt näherungsweise mit dem Wert des Patienten überein.\n\n**Der Patient hat eine gesunde Bauchspeicheldrüse.**",
+     "points": 1,
+     "topic": "Wachstum & Exponentialfunktionen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Die Abbildung zeigt vier Graphen von quadratischen Funktionen.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "h5p",
+     "skip": "h5p",
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Eine andere quadratische Funktion hat die Funktionsgleichung $y = x^2 + 2x − 4.$\n\nVervollständige die Wertetabelle.\n\nKoordinatensystem.\n\n| x | -4 | -3 | -2 | -1 | 0 | 1 | 2 |\n|---|---|---|---|---|---|---|---|\n| $y=x^2+2x-4$ | 4 | -1 | ⟦1⟧ | -5 | -4 | -1 | 4 |",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": -4,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Setze den fehlenden x-Wert in die Funktionsgleichung ein. - Berechne den y-Wert und vervollständige die Tabelle. - Beim Einzeichnen in das Koordinatensystem können alle Punkte aus der Wertetabelle eingezeichnet werden. Die Parabel wird als Ausgleichungskurve durch alle Punkte gelegt.*\n\n**y-Wert**\n\nDer fehlende y-Wert ist:\n\n$$\\begin{aligned}\ny &= x^2+2x-4 \\\\\n &= \\left(-2\\right)^2-2\\cdot2-4 \\\\\n &= 4-4-4 \\\\\n &= -4\n\\end{aligned}$$\n\n**Wertetabelle**\n\nDie vollständige Wertetabelle ist:\n\n![Abbildung](/uploads/ex-71d3149ae515.png)\n\n**Skizze der Parabel**\n\n![Abbildung](/uploads/ex-987d07af3579.png)",
+     "points": 3,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib die Koordinaten des Scheitelpunktes der Funktion an.\n\n$\\large S($⟦1⟧$\\large \\mid$⟦2⟧$\\large)$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": -1,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": -5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Verwende die Skizze aus Aufgabenteil (c). - Lies den Scheitelpunkt im Koordinatensystem ab. - *Hinweis: Der Scheitel ist der tiefste bzw. höchste Punkt einer Parabel.**\n\nDer Scheitel ist der Punkt:\n\n$S(-1|-5)$\n\n![Abbildung](/uploads/ex-987d07af3579.png)",
+     "points": 1,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "d)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Berechne die Nullstellen der Funktion $y = x^2 + 2x − 4$.",
+     "answer": {
+      "type": "free",
+      "sample": "- Setze die Funktionsgleichung gleich null: 0=x^2+2x-4 - Berechne die Lösungen x der Gleichung. Verwende dazu z. B. die pq-Formel. Die Parabel hat den Funktionsterm y=x^2+2x-4. Setze den Funktionsterm gleich null: begin{aligned} 0 &= x^2+2x-4 x_{1,2} &= -frac{p}{2}pmsqrt{left(frac{p}{2}right)^2-q} &= -frac{2}{2}pmsqrt{left(frac{2}{2}right)^2-left(-4right)} &= -1pmsqrt{1+4} &= -1pmsqrt{5} Rightarrow x_1 &= -1+sqrt{5} Rightarrow x_2 &= -1-sqrt{5} end{aligned} Achte darauf, die Nullstellen exakt zu berechnen. Einen ungefähren Wert aus dem Koordinatensystem abzulesen, reicht nicht."
+     },
+     "solution": "*- Setze die Funktionsgleichung gleich null: $0=x^2+2x-4$ - Berechne die Lösungen $x$ der Gleichung. Verwende dazu z. B. die $pq$-Formel.*\n\nDie Parabel hat den Funktionsterm $y=x^2+2x-4$. Setze den Funktionsterm gleich null:\n\n$$\\begin{aligned}\n0 &= x^2+2x-4 \\\\\nx_{1,2} &= -\\frac{p}{2}\\pm\\sqrt{\\left(\\frac{p}{2}\\right)^2-q} \\\\\n &= -\\frac{2}{2}\\pm\\sqrt{\\left(\\frac{2}{2}\\right)^2-\\left(-4\\right)} \\\\\n &= -1\\pm\\sqrt{1+4} \\\\\n &= -1\\pm\\sqrt{5} \\\\\n\\Rightarrow\\ x_1 &= -1+\\sqrt{5} \\\\\n\\Rightarrow\\ x_2 &= -1-\\sqrt{5}\n\\end{aligned}$$\n\nAchte darauf, die Nullstellen exakt zu **berechnen.**\n\nEinen ungefähren Wert aus dem Koordinatensystem abzulesen, reicht nicht.",
+     "points": 3,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    },
+    {
+     "label": "e)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Verändere die Funktionsgleichung $y = x^2 + 2x − 4$ so, dass der Graph keine Nullstelle hat.",
+     "answer": {
+      "type": "free",
+      "sample": "- Gib einen Wert für q an, sodass die pq-Formel keine Lösung hat. In der Berechnung der Nullstelle kam es zum Term: sqrt{left(frac{2}{2}right)^2-underbrace{left(-4right)}_{q}} Wenn unter dieser Wurzel eine negative Zahl steht, hat die Parabel keine Nullstelle. Jeder Wert q1 macht den Wert unter der Wurzel negativ. Ein Beispiel wäre also q=2 (ein möglicher Wert reicht). y=x^2+4x+2 wäre eine mögliche Lösung."
+     },
+     "solution": "*- Gib einen Wert für $q$ an, sodass die $pq$-Formel keine Lösung hat.*\n\nIn der Berechnung der Nullstelle kam es zum Term: $\\sqrt{\\left(\\frac{2}{2}\\right)^2-\\underbrace{\\left(-4\\right)}_{q}}$\n\nWenn unter dieser Wurzel eine negative Zahl steht, hat die Parabel keine Nullstelle.\n\nJeder Wert $q>1$ macht den Wert unter der Wurzel negativ. Ein Beispiel wäre also $q=2$ (ein möglicher Wert reicht).\n\n$y=x^2+4x+2$ wäre eine mögliche Lösung.",
+     "points": 1,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    }
+   ]
+  }
+ ]
+}

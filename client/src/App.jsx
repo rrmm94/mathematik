@@ -28,7 +28,7 @@ function RequireStudent({ children }) {
   const loc = useLocation();
   if (!user) return <Navigate to="/login" replace />;
   if (user.role === 'admin') return <Navigate to="/admin" replace />;
-  if (!user.onboarded && loc.pathname !== '/start') return <Navigate to="/start" replace />;
+  if ((!user.onboarded || !user.topicsAsked) && loc.pathname !== '/start') return <Navigate to="/start" replace />;
   return children;
 }
 function RequireAdmin({ children }) {

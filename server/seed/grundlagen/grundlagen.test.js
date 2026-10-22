@@ -6,7 +6,7 @@ import { buildAll, buildGeometrie, buildDaten } from './index.js';
 import { drawCore } from '../drawcore.js';
 import { checkAnswer, publicAnswerSpec } from '../../../shared/checker.js';
 
-const stubFig = { plot: ({ name }) => `/uploads/${name}.svg`, pie: ({ name }) => `/uploads/${name}.svg`, tree: ({ name }) => `/uploads/${name}.svg`, draw: { ...drawCore, svg: (name) => `/uploads/${name}.svg` } };
+const stubFig = { plot: ({ name }) => `/uploads/${name}.svg`, pie: ({ name }) => `/uploads/${name}.svg`, probTree: ({ name }) => `/uploads/${name}.svg`, draw: { ...drawCore, svg: (name) => `/uploads/${name}.svg` } };
 const data = [...buildAll(stubFig), ...buildGeometrie(stubFig), ...buildDaten(stubFig)];
 
 const fmtNum = (v) => String(v).replace('.', ','); // so tippen Kinder Dezimalzahlen

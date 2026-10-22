@@ -23,18 +23,25 @@ export function runTopicScores(runId) {
   return out;
 }
 
+// Ab dieser Stufe (Regelstandard) gilt ein Thema im Test als „gekonnt“.
+export const GOOD_LEVEL = 2;
+
 // Erstellt den Lernplan aus dem ersten Diagnosetest: schwächste Themen zuerst.
+// Themen, die dem Kind nach eigener Aussage leichtfallen UND im Test mindestens
+// auf Regelstandard lagen, kommen ans Ende – sie müssen nicht zuerst geübt werden.
 export function buildPlanFromRun(userId, runId) {
   const scores = runTopicScores(runId);
-  const user = get('SELECT profile FROM users WHERE id = ?', userId);
+  const user = get('SELECT profile, easy_topics FROM users WHERE id = ?', userId);
+  const easy = new Set(json(user.easy_topics, []));
   const topics = topicsForProfile(user.profile);
   const items = topics.map((t) => {
     const s = scores[t.id];
     const level = s ? s.level : 1;
     const ratio = s && s.total ? s.correct / s.total : 0.5;
-    return { topic: t, level, ratio };
+    const confirmed = easy.has(t.id) && !!s && level >= GOOD_LEVEL;
+    return { topic: t, level, ratio, confirmed };
   });
-  items.sort((a, b) => a.ratio - b.ratio || a.level - b.level || a.topic.sort - b.topic.sort);
+  items.sort((a, b) => a.confirmed - b.confirmed || a.ratio - b.ratio || a.level - b.level || a.topic.sort - b.topic.sort);
   tx(() => {
     run('DELETE FROM plan_items WHERE user_id = ?', userId);
     items.forEach((it, i) => {

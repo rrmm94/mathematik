@@ -1,0 +1,405 @@
+{
+ "school": "rs",
+ "schoolLabel": "Realschule",
+ "year": 2022,
+ "part": "Teil 2",
+ "folderId": 300716,
+ "url": "https://de.serlo.org/mathe/300716/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Im Juli 2020 wurde die Mehrwertsteuer von 19 % auf 16 % gesenkt. Ein Auto kostet ohne Mehrwertsteuer 14 560 €.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Gesamtpreis für das Auto inklusive 16 % Mehrwertsteuer.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 16889.6,
+        "tolerance": 0,
+        "unit": "€",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Du brauchst den Preis des Autos plus $16\\%$ des Autopreises. Überlege dir, was $16\\%$ des Autopreises ist.*\n\n**Vorgehen**\n\nEs ist der Gesamtpreis gefragt. Das bedeutet der Autopreis plus $16\\%$ Mehrwertsteuer. Der Gesamtpreis ist also einmal der Autorpreis plus $16\\%$ des Autopreises.\n\n$16\\%$ von etwas nehmen, bedeutet mit $0,16$ multiplizieren.\n\n**Lösung**\n\n$$\\begin{aligned}\n &= 14560€\\cdot 1,16 \\\\\n &= 16889,60€\n\\end{aligned}$$",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Herr Aslan berechnet den Preis eines Motorrades nach der Steuersenkung: „Ich ziehe 3 % von 8900 € ab, denn 19 % − 16 % = 3 %. Das Motorrad kostet also 8633 €.“\n\n![Abbildung](/uploads/ex-db055326f6d4.png)\n\nZeige mithilfe einer Rechnung, dass Herr Aslan nicht recht hat.",
+     "answer": {
+      "type": "free",
+      "sample": "Berechne den Preis des Motorrads ohne Steuern, also ohne die 19%. Daraus kannst du den Preis mit der neuen 16% Mehrwertsteuer berechnen. Vergleiche dieses Ergebnis mit dem von Herrn Aslan. Zuerst berechnen wir den Preis ohne Mehrwertsteuer. Wir nennen den Preis vor Steuern x. Dann gilt Löse die Gleichung nach x auf begin{aligned} xcdot1,19 &= 8900€ qquad |; :1,19 x &= 8900€:1,19 x &= 7478,99€ end{aligned} Jetzt berechnen wir den Preis mit 16% Mehrwertsteuer: begin{aligned} &= 7478,99€cdot 1,16 &= 8675,63€ end{aligned} Der richtige Preis ist also 8675,63€ und nicht 8633 €."
+     },
+     "solution": "*Berechne den Preis des Motorrads ohne Steuern, also ohne die 19%. Daraus kannst du den Preis mit der neuen 16% Mehrwertsteuer berechnen. Vergleiche dieses Ergebnis mit dem von Herrn Aslan.*\n\nZuerst berechnen wir den Preis ohne Mehrwertsteuer.\n\nWir nennen den Preis vor Steuern $x$. Dann gilt\n\nLöse die Gleichung nach $x$ auf\n\n$$\\begin{aligned}\nx\\cdot1,19 &= 8900€ \\qquad |\\; :1,19 \\\\\nx &= 8900€:1,19 \\\\\nx &= 7478,99€\n\\end{aligned}$$\n\nJetzt berechnen wir den Preis mit 16% Mehrwertsteuer:\n\n$$\\begin{aligned}\n &= 7478,99€\\cdot 1,16 \\\\\n &= 8675,63€\n\\end{aligned}$$\n\nDer richtige Preis ist also $8675,63€$ und nicht $8633 €$.",
+     "points": 3,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "In einer Umfrage wurde ermittelt, wie sich das Kaufverhalten durch die Steuersenkung verändert hat.\n\nDas Ergebnis dieser Umfrage wurde in einem Säulendiagramm dargestellt.\n\nOlga behauptet: „Es haben viermal so viele Personen ‚mehr gekauft‘ als ‚weniger gekauft‘.“\n\n![Abbildung](/uploads/ex-02784964fb85.png)\n\nHat Olga die Informationen aus dem Säulendiagramm richtig interpretiert? Begründe deine Aussage.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "Olga hat recht.",
+        "correct": false
+       },
+       {
+        "text": "Olga hat **nicht** recht.",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "*Schreibe dir die konkreten Werte der Säulen auf. Überlege, ob wirklich viermal so viele Personen mehr gekauft haben, als weniger gekauft.*\n\n**Lösung**\n\nNein, Olga hat das nicht richtig interpretiert.\n\nDie Säule für \"mehr gekauft\" ist zwar vier mal so hoch, wie für \"weniger gekauft\", aber die Skala fängt nicht bei 0 sondern bei $400$ an.\n\nFür \"mehr gekauft\" sind es ca. $1370$ Personen und für \"weniger gekauft\" ungefähr $650$ Personen. Also haben eher doppelt so viele Personen mehr gekauft, als weniger gekauft.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Für ein Zufallsexperiment stehen vier Urnen zur Verfügung.\n\n![Abbildung](/uploads/ex-22bac9434f4c.png)\n\nAus den Urnen wird jeweils eine Kugel gezogen.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze alle Urnen an, für die gilt: P(weiß) = $\\frac14$.",
+     "answer": {
+      "type": "choice",
+      "multiple": true,
+      "options": [
+       {
+        "text": "\\1. Urne",
+        "correct": true
+       },
+       {
+        "text": "\\2. Urne",
+        "correct": false
+       },
+       {
+        "text": "\\3. Urne",
+        "correct": false
+       },
+       {
+        "text": "\\4. Urne",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "*Erinnere dich an die Berechnung der Wahrscheinlichkeit im Urnenmodell:*\n\n**Lösung**\n\nDie Wahrscheinlickeiten aller Urnen:\n\n\\1. Urne:\n\n\\2. Urne:\n\n\\3. Urne:\n\n\\4. Urne:\n\nDie Urnen 1 und 4 haben $P(\\text{weiß})=\\frac14$.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Lisa zieht aus der zweiten Urne nacheinander zwei Kugeln. Die erste gezogene Kugel legt sie nicht wieder zurück.\n\nErgänze die fehlenden Wahrscheinlichkeiten im Baumdiagramm.\n\n![Abbildung](/uploads/ex-d7604a12d33c.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Die Wahrscheinlichkeit die Kugeln einer bestimmten Farbe zu ziehen ist immer Zum Bestimmen der Wahrscheinlichkeiten musst du folgende Fragen beantworten: - Wie viele Kugeln der Farbe sind in der Urne? - Wie viele Kugeln sind insgesamt in der Urne? Rechenweg Wir starten mit der ersten Lücke rechts oben. Hier soll man die Wahrscheinlichkeit eine graue Kugel zu ziehen eintragen. Zur zweiten Lücke: Nach dem ersten Ziehen sind noch 7 Kugeln in der Urne. Wir sind in dem Fall, dass ein schwarze Kugel gezogen wurde. Deshalb sind noch 3 graue Kugeln in der Urne. Lösung ![Abbildung](/uploads/ex-6e2b65eb"
+     },
+     "solution": "*Die Wahrscheinlichkeit die Kugeln einer bestimmten Farbe zu ziehen ist immer Zum Bestimmen der Wahrscheinlichkeiten musst du folgende Fragen beantworten: - Wie viele Kugeln der Farbe sind in der Urne? - Wie viele Kugeln sind insgesamt in der Urne?*\n\n**Rechenweg**\n\nWir starten mit der ersten Lücke rechts oben. Hier soll man die Wahrscheinlichkeit eine graue Kugel zu ziehen eintragen.\n\nZur zweiten Lücke: Nach dem ersten Ziehen sind noch $7$ Kugeln in der Urne. Wir sind in dem Fall, dass ein schwarze Kugel gezogen wurde. Deshalb sind noch $3$ graue Kugeln in der Urne.\n\n**Lösung**\n\n![Abbildung](/uploads/ex-6e2b65eba93c.png)",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit dafür, dass Lisa eine schwarze und eine weiße Kugel in beliebiger Reihenfolge zieht.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.142857143,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": [
+         0.14
+        ]
+       }
+      ]
+     },
+     "solution": "Es gibt für Lisa zwei Möglichkeiten eine schwarze und eine weiße Kugel zu ziehen. Sie könnte zuerst eine schwarze und dann eine weiße ziehen. Oder sie könnte erst eine weiße und danach eine schwarze Kugel ziehen.\n\nDie Wahrscheinlichkeit erst eine schwarze Kugel und dann eine weiße zu ziehen, kann man aus dem Baumdiagramm berechnen:\n\nDie Wahrscheinlichkeit für erst weiß, dann schwarz können wir genauso berechnen:\n\nFür die Gesamtwahrscheinlichkeit muss man die beiden Wahrscheinlichkeiten addieren:\n\n$P(\\text{schwarz und weiß})=\\frac 1{14}+\\frac 1{14}=\\frac 17$",
+     "points": 3,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Die Abbildung zeigt den Graphen der linearen Funktion $y_1.$\n\n![Abbildung](/uploads/ex-4b24530388e8.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Gib die Funktionsgleichung der Funktion $y_1$ in der Form $y_1 = mx + b$ an.",
+     "answer": {
+      "type": "free",
+      "sample": "- Lies den y-Achsenabschnitt b der Gerade ab. Das ist die Stelle, an der die Gerade die y-Achse schneidet. - Skizziere ein Steigungsdreieck. Bestimme damit die Steigung m. - Füge m und b in die allgemeine Form y_1=mx+b ein. Lösung Aus der Skizze entnehmen wir: - b=2 der y-Achsenabschnitt - m=-frac12 die Steigung In die allgemeine Form eingesetzt: ![Abbildung](/uploads/ex-67315474914f.png)"
+     },
+     "solution": "*- Lies den $y$-Achsenabschnitt $b$ der Gerade ab. Das ist die Stelle, an der die Gerade die $y$-Achse schneidet. - Skizziere ein Steigungsdreieck. Bestimme damit die Steigung $m$. - Füge $m$ und $b$ in die allgemeine Form $y_1=mx+b$ ein.*\n\n**Lösung**\n\nAus der Skizze entnehmen wir:\n\n- $b=2$ der y-Achsenabschnitt\n- $m=-\\frac12$ die Steigung\n\nIn die allgemeine Form eingesetzt:\n\n![Abbildung](/uploads/ex-67315474914f.png)",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Eine andere Funktion hat die Funktionsgleichung $y_2 = \\frac 12 x – 1$.\n\nBestimme den Schnittpunkt der Graphen von $y_1$ und $y_2$.\n\n$\\large S($⟦1⟧$\\large |$⟦2⟧$\\large )$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Setze die Funktionen $y_1$ und $y_2$ gleich: $y_1=y_2$ - Berechne die Lösung $x$ der Gleichung. - Setze die Lösung $x$ in $y_1$ oder $y_2$ ein, um den $y$-Wert des Schnittpunkts zu berechnen. - Setze den berechneten Schnittpunkt in die Lücken ein und überprüfe dein Ergebnis.*\n\n**Lösung**\n\nUm den Schnittpunkt zu berechnen, setzen wir $y_1=y_2$ gleich.\n\n$$\\begin{aligned}\ny_1 &= y_2 \\\\\n-\\frac{1}{2}x+2 &= \\frac{1}{2}x-1 \\qquad |\\; +1 \\\\\n-\\frac{1}{2}x+3 &= \\frac{1}{2}x \\qquad |\\; +\\frac{1}{2}x \\\\\n3 &= \\frac{1}{2}x+\\frac{1}{2}x \\\\\n3 &= x \\\\\nx &= 3\n\\end{aligned}$$\n\nDie $x$-Koordinate ist $x=3$. Die $y$-Koordinate ergibt sich durch Einsetzen in $y_1$ oder $y_2$:\n\n$y_2=\\frac12 \\cdot 3-1=1,5-1=0,5$\n\nDer Schnittpunkt ist $S(3|0,5)$.",
+     "points": 3,
+     "topic": "Lineare Funktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Eine Gerade soll parallel zum Graphen der Funktion $y_2$ verlaufen, aber nicht auf ihm liegen.\n\nGib eine mögliche Funktionsgleichung für diese Gerade an.\n\n$y = \\underline{~~~~~~~~~~~~~~~~~~~~}$",
+     "answer": {
+      "type": "free",
+      "sample": "- Parallel bedeutet, die Geraden haben die gleiche Steigung. - Bestimme damit die Steigung m der gesuchten Gerade. - Wähle einen y-Achsenabschnitt b, damit die Geraden nicht aufeinander liegen. Lösungsvorschlag Parallel zum Graphen von y_2 bedeutet: m=frac12 Die gesuchte Gerade hat die gleiche Steigung m=frac12. Da die Gerade nicht auf dem Graphen von y_2 liegen soll, darf b nicht -1 betragen. Wähle zum Beispiel: y=dfrac12{x}-4"
+     },
+     "solution": "*- *Parallel bedeutet, die Geraden haben die gleiche Steigung.* - Bestimme damit die Steigung $m$ der gesuchten Gerade. - Wähle einen y-Achsenabschnitt $b$, damit die Geraden nicht aufeinander liegen.*\n\n**Lösungsvorschlag**\n\nParallel zum Graphen von $y_2$ bedeutet: $m=\\frac12$\n\nDie gesuchte Gerade hat die gleiche Steigung $m=\\frac12$.\n\nDa die Gerade nicht auf dem Graphen von $y_2$ liegen soll, darf $b$ nicht $-1$ betragen.\n\nWähle zum Beispiel:\n\n$y=\\dfrac12{x}-4$",
+     "points": 2,
+     "topic": "Lineare Funktionen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Die Abbildung zeigt eine zusammengesetzte Figur, die aus einem Halbkreis und einem rechtwinkligen Dreieck besteht.\n\n![Abbildung](/uploads/ex-b0203e539804.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Strecke a.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 8.94,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": [
+         8.944,
+         8.9
+        ]
+       }
+      ]
+     },
+     "solution": "*- Verwende den Satz des Pythagoras im rechtwinkligen Dreieck. - Bestimme $a$ aus dieser Gleichung.*\n\n**Lösung**\n\nIm rechtwinkligen Dreieck gilt mit dem Satz des Pythagoras:\n\n$$\\begin{aligned}\na^2+8^2 &= 12^2 \\qquad |\\; -8^2 \\\\\na^2 &= 12^2-8^2 \\qquad |\\; \\sqrt{ } \\\\\na &= \\sqrt{12^2-8^2} \\\\\n &= 8,944... \\\\\n &= 8,94\n\\end{aligned}$$",
+     "points": 3,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Flächeninhalt der abgebildeten Figur. (Solltest du Teilaufgabe a) nicht gelöst haben, rechne mit a = 8,34 cm.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 67.15,
+        "tolerance": 0,
+        "unit": "cm²",
+        "alternatives": [
+         67.19,
+         67.2,
+         60.67
+        ]
+       }
+      ]
+     },
+     "solution": "*- Bestimme die Fläche des rechtwinkligen Dreiecks. - Bestimme die Fläche des Halbkreises. - Addiere die beiden Flächeninhalte.*\n\n**Lösung**\n\n**Für** $a=8,94~\\text{cm}$\n\nFür das rechtwinklige Dreieck gilt:\n\n$$\\begin{aligned}\nA_{\\Delta} &= \\frac{1}{2}\\cdot a\\cdot8 \\\\\n &= 35,76\\ cm^2\n\\end{aligned}$$\n\nDie Fläche des Halbkreises ist:\n\n$$\\begin{aligned}\nA_{Halbkreis} &= \\frac{1}{2}\\cdot\\pi\\cdot r^2 \\\\\n &= \\frac{1}{2}\\cdot\\pi\\cdot\\left(\\frac{8,94}{2}\\right)^2 \\\\\n &= 31,385... \\\\\n &= 31,39\\ cm^2\n\\end{aligned}$$\n\nZusammengesetzt ist die Fläche der Figuren:\n\n$A_\\text{gesamt}=A_\\Delta+A_\\text{Halbkreis}\\approx 67,15~\\text{cm}^2$\n\n> **Runden**\n>\n> Durch Runden und weiterrechnen mit gerundeten Ergebnissen kann es zu kleinen Abweichungen kommen.\n\n> **Falls man mit a=8,34 rechnet**\n>\n> **Für** $a=8,34~\\text{cm}$:\n> \n> $$\\begin{aligned}\n> A_{\\Delta} &= \\frac{1}{2}\\cdot a\\cdot8 \\\\\n>  &= 33,36\\ cm^2\n> \\end{aligned}$$\n> \n> Die Fläche des Halbkreises ist:\n> \n> $$\\begin{aligned}\n> A_{Halbkreis} &= \\frac{1}{2}\\cdot\\pi\\cdot r^2 \\\\\n>  &= \\frac{1}{2}\\cdot\\pi\\cdot\\left(\\frac{8,34}{2}\\right)^2 \\\\\n>  &= 27,314... \\\\\n>  &= 27,31\\ cm^2\n> \\end{aligned}$$\n> \n> Zusammengesetzt ist die Fläche der Figuren:\n> \n> $A_\\text{gesamt}=A_\\Delta+A_\\text{Halbkreis}\\approx 60,67~\\text{cm}^2$",
+     "points": 5,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Der Flächeninhalt der Figur soll viermal so groß werden.\n\nKreuze die richtige Aussage an.\n\nDamit der Flächeninhalt der Figur viermal so groß wird, müssen alle Längen …",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "verdoppelt werden.",
+        "correct": true
+       },
+       {
+        "text": "verdreifacht werden.",
+        "correct": false
+       },
+       {
+        "text": "vervierfacht werden.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*- Die Fläche des Halbkreises ist $A_\\text{Halbkreis}=\\frac{1}{2}\\pi r^2$. - Was passiert mit $A_\\text{Halbkreis}$, wenn sich die Seitenlängen jeweils verdoppeln/verdreifachen... ? - Die Fläche eines Dreiecks ist $A_\\Delta=\\frac12\\cdot g\\cdot h$. - Was passiert mit $A_\\Delta$, wenn sich die Seitenlängen jeweils verdoppeln/verdreifachen... ?*\n\n**Lösung**\n\nDamit $A$ sich vervierfacht, müssen sich die Seitenlängen **verdoppeln**.\n\n**Erklärung**\n\nFür die Fläche des Halbkreises gilt: $A'_\\text{Halbkreis}=\\pi \\cdot (2\\cdot r)^2=\\pi\\cdot 4\\cdot r^2$\n\n$\\rightarrow$ Die Fläche vervierfacht sich, wenn der doppelte Radius verwendet wird.\n\nBeim Dreieck gilt: $A'_\\Delta=\\frac12\\cdot (2g)\\cdot (2h)=\\frac12\\cdot 4\\cdot g\\cdot h$\n\n$\\rightarrow$ Auch hier vervierfacht sich die Fläche, wenn jede Seite doppelt so lang ist.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "Gegeben ist das Dreieck ABC.\n\n![Abbildung](/uploads/ex-e4033b8184ca.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze die Formel an, mit der du die Größe des Winkels γ berechnen kannst.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$\\tan \\gamma = \\frac cb$",
+        "correct": true
+       },
+       {
+        "text": "$\\sin \\gamma = \\frac cb$",
+        "correct": false
+       },
+       {
+        "text": "$\\cos\\gamma = \\frac cb$",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*- Bestimme die **Ankathete**, **Gegenkathete** und **Hypotenuse** im Dreieck (ausgehend vom Winkel $\\gamma$). - Vergleiche, welche Gleichungen richtig aufgestellt wurden und welche nicht.*\n\n**Lösung**\n\nAusgehend vom Winkel $\\gamma$ sind die Seiten des Dreiecks:\n\n![Abbildung](/uploads/ex-df656758803d.png)\n\nRichtig aufgestellt ist nur:",
+     "points": 1,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne die Länge der Seite a.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 14.95,
+        "tolerance": 0,
+        "unit": "cm",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- $a$ *ist die Hypotenuse des Dreiecks.* - Verwende Sinus oder Kosinus, um $a$ mit einer Gleichung zu bestimmen.*\n\n**Lösungsvorschlag**\n\nEs gibt verschiedene Möglichkeiten. Mit dem Sinus gilt im Dreieck:\n\n$$\\begin{aligned}\n\\sin37° &= \\frac{9}{a} \\qquad |\\; \\cdot a \\\\\n\\sin37°\\cdot a &= 9 \\qquad |\\; :\\sin37° \\\\\na &= \\frac{9}{\\sin37°} \\\\\n &= 14,954... \\\\\n &= 14,95\\ cm\n\\end{aligned}$$",
+     "points": 2,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "Eine Firma stellt 5 m lange Kupferrohre her.\n\n![Abbildung](/uploads/ex-3c788b624708.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen des Kupfers vom abgebildeten Rohr.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 200,
+        "tolerance": 0,
+        "unit": "cm²",
+        "alternatives": [
+         200.28
+        ]
+       }
+      ]
+     },
+     "solution": "*- Berechne die Fläche des Kreisrings - das ist die Grundfläche der Figur. - Berechne das Volumen mit  $V=G\\cdot h$.*\n\n**Lösungsvorschlag**\n\nEs gibt verschiedene Möglichkeiten. Eine ist, dass zuerst die Fläche des [Kreisrings](/1553) berechnet wird:\n\n$$\\begin{aligned}\nA_{Kreisring} &= \\pi\\cdot\\left(r_{außen}^2-r_{innen}^2\\right) \\\\\n &= \\pi\\cdot\\left(1,3^2-1,25^2\\right) \\\\\n &= 0,400... \\\\\n &= 0,4\\ cm^2\n\\end{aligned}$$\n\nDas Volumen des Rohrs ist $V=G\\cdot h$. Die Höhe ist $h=5~m=500~cm$.\n\n$$\\begin{aligned}\nV &= G\\cdot h \\\\\n &= 0,4\\cdot500 \\\\\n &= 200\\ cm^3\n\\end{aligned}$$\n\n> **Runden**\n>\n> Durch Runden und Rechnen mit gerundeten Werten kann es zu leichten Abweichungen kommen.\n> \n> Falls hier ohne den Wert für $A_\\text{Kreisring}$ zu runden gerechnet wird, kommt $V=200,28~cm³$ heraus.",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Die Masse von 1 cm³ Kupfer beträgt 8,96 g.\n\nBerechne die Masse des Kupferrohres.\n\n(Solltest du Teilaufgabe a) nicht gelöst haben, rechne mit V = 273,45 cm³.)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1792,
+        "tolerance": 0,
+        "unit": "g",
+        "alternatives": [
+         1794.51,
+         2450.11
+        ]
+       }
+      ]
+     },
+     "solution": "*- $1~cm³$ entsprechen $8,96~g$. - Das Volumen des Rohrs wurde in (a) berechnet. Multipliziere mit dem Gesamtvolumen, um das gesamte Masse zu bestimmen.*\n\n**Lösung**\n\nFür $V=200~cm³\\quad\\Rightarrow$ $m=200~\\cdot 8,96=1792~g$\n\nFür $V=200,28~cm³\\quad\\Rightarrow$ $m=1794,508...\\approx 1794,51~g$\n\nFür $V=273,45~cm³\\quad\\Rightarrow$ $m=2450,112...\\approx 2450,11~g$",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  }
+ ]
+}

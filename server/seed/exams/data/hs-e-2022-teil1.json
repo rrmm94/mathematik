@@ -1,0 +1,447 @@
+{
+ "school": "hs-e",
+ "schoolLabel": "Hauptschule E-Kurs",
+ "year": 2022,
+ "part": "Teil 1",
+ "folderId": 315334,
+ "url": "https://de.serlo.org/mathe/315334/teil-1",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Ergänze die fehlenden Zahlen in den Lücken.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "⟦1⟧ $\\cdot6=72$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 12,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Überlege welche Zahl mit $6$ multipliziert $72$ ergibt.*\n\n**Berechnen:**\n\n$\\textcolor{teal}{12}\\cdot\\ 6=72$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$2,7+1,6=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4.3,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen:**\n\n$2,7+1,6=\\textcolor{teal}{4,3}$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "⟦1⟧ $-(9+4)=17$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 30,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Addiere die Zahlen in der Klammer. - Die gesuchte Zahl erhältst du, indem zur Summe der Klammer, $17$ addierst.*\n\n**Berechnen:**\n\n$\\textcolor{teal}{30}−(9+4)=17$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$\\displaystyle\\frac{1}{2}:2=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.25,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Beachte die Rechenregeln zur Division von Brüchen.*\n\n**Berechnen:**\n\n$\\displaystyle\\frac{1}{\\ 2}:2=\\textcolor{teal}{\\dfrac{1}{4}}$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "Berechne.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$2,3\\km+840\\m=$⟦1⟧ $\\km$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 3.14,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Wandle $840\\m$ in $\\km$ um, indem du $840$ durch $100$0 dividierst. - Addiere die Werte.*\n\n**Berechnen:**\n\nUmrechnen von $\\m$ in $\\km.$\n\n$840\\m=\\dfrac{840}{1000}=0,84\\km$\n\n$2,3\\km+0,84\\km=\\textcolor{teal}{3,14}\\km$",
+     "points": 1,
+     "topic": "Größen & Einheiten"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$0,5\\ t+$⟦1⟧ $kg$ $=0,520\\ t$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 20,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Subtrahiere $0,5$ von $0,520.$ - Multipliziere die Differenz mit $1000$.*\n\n**Berechnen:**\n\nErmitteln des gesuchten Wertes in $[\\text{t}]$.\n\n$0,520-0,5=0,02$\n\nErmitteln des gesuchten Wertes in $[\\text{kg}]$.\n\n$0,02\\cdot1000=20\\ \\text{kg}$\n\n$\\mathrm{0,5\\ t+\\textcolor{teal}{20}\\ kg=0,520\\ t}$",
+     "points": 1,
+     "topic": "Größen & Einheiten"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Kreuze die richtige Größe für den Flächeninhalt eines DIN-A4-Blattes an.\n\n![Abbildung](/uploads/ex-eb7d92ea9234.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Berechne den Flächeninhalt eines DIN-A4-Blattes. Die Abmessungen eines DIN-A4-Blatts sind: boxed{mathrm{21,0cm x 29,7cm}} Berechen des Flächeninhalts eines DIN-A4-Blatts: mathrm{A_{DIN-A4}=21,0cdot 29,7} mathrm{A_{DIN-A4}=623,7cm^2} Ankreuzen der richtigen Größe des Flächeninhalts eines DIN-A4-Blattes. ![Abbildung](/uploads/ex-e2d8fe109500.png)"
+     },
+     "solution": "*- Berechne den Flächeninhalt eines DIN-A4-Blattes.*\n\nDie Abmessungen eines DIN-A4-Blatts sind:\n\n$\\boxed{\\mathrm{21,0\\cm\\ x\\ 29,7\\cm}}$\n\n**Berechen des Flächeninhalts eines DIN-A4-Blatts:**\n\n$\\mathrm{A_{DIN-A4}=21,0\\cdot 29,7}$\n\n$\\mathrm{A_{DIN-A4}=623,7\\cm^2}$\n\n**Ankreuzen der richtigen Größe des Flächeninhalts eines DIN-A4-Blattes.**\n\n![Abbildung](/uploads/ex-e2d8fe109500.png)",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "Der Pfeil zeigt auf eine Zahl.\n\n![Abbildung](/uploads/ex-ead30021fea0.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Notiere die Zahl über dem Pfeil.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": -0.6,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme die Anzahl der Abschnitte bis zur $2$. - Dividiere $2$ durch die Anzahl der Abschnitte. - Zähle die Anzahl der Abschnitte bis zum Pfeil. - Beachte das Vorzeichen.*\n\n**Notieren der Zahl über dem Pfeil.**\n\n![Abbildung](/uploads/ex-6b1b3574b751.png)",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne einen zweiten Pfeil ein, der auf die Zahl $\\displaystyle\\frac{4}{5}$ zeigt.",
+     "answer": {
+      "type": "free",
+      "sample": "Zeichne eines zweiten Pfeils, der auf die Zahl displaystylefrac{4}{5} zeigt. ![Abbildung](/uploads/ex-ab162b795616.png)"
+     },
+     "solution": "**Zeichne eines zweiten Pfeils, der auf die Zahl $\\displaystyle\\frac{4}{5}$ zeigt.**\n\n![Abbildung](/uploads/ex-ab162b795616.png)",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Berechne den Wert des Terms $7x+12-5x$ für $x = 2$.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 16,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Setze för $\\text{x}=2$ ein und berechne den Wert des Terms.*\n\n**Berechnen des Werts des Terms.**\n\n$\\mathrm{7x+12-5x}$\n\neinsetzen von $\\text{x}=2$\n\n$\\mathrm{7\\cdot2+12-5\\cdot2=14+12-10=16}$\n\nDer Wert des Terms beträgt: $\\ \\boxed{16}$.",
+     "points": 2,
+     "topic": "Terme, Gleichungen & Formeln"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Lena hat begonnen, die Gleichung zu lösen. Führe den Rechenweg zu Ende.\n\n$-14+12x-47=3x-16\\quad|-3x$\n\n$-14+9x-47\\ =\\ \\ \\quad -16$",
+     "answer": {
+      "type": "free",
+      "sample": "Berechnen von Linas Gleichung. begin{aligned} -14+12text{x}-47 &= 3text{x}-16 qquad |; -3text{x} -14+9text{x}-47 &= -16 qquad |; +14+47 9text{x} &= 45 qquad |; :9 text{x} &= 5 end{aligned}"
+     },
+     "solution": "**Berechnen von Linas Gleichung.**\n\n$$\\begin{aligned}\n-14+12\\text{x}-47 &= 3\\text{x}-16 \\qquad |\\; -3\\text{x} \\\\\n-14+9\\text{x}-47 &= -16 \\qquad |\\; +14+47 \\\\\n9\\text{x}\t\n &= 45 \\qquad |\\; :9 \\\\\n\\text{x} &= 5\n\\end{aligned}$$",
+     "points": 3,
+     "topic": "Terme, Gleichungen & Formeln"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Thomas lädt seine drei Freunde ins Kino ein. Er kauft eine Tüte Popcorn für 13,60 € und vier Eintrittskarten.\n\nInsgesamt bezahlt Thomas 47,60 €.\n\n![Abbildung](/uploads/ex-b4b20fe0d152.png)\n\nStelle eine Gleichung auf, mit der du den Preis für eine Kinokarte berechnen kannst.\n\nHinweis: Du musst die Gleichung nicht lösen.",
+     "answer": {
+      "type": "free",
+      "sample": "Setze : - text{x}für den Preis der Eintrittskarten. - den Preis der Tüte Popcorn für den text{y}-Achsenabschnitt. - die Gesamtkosten für den Funktionswert text{y}. - die Anzahl der Eintrittskarten für die Steigung text{m}. Aufstellen der Gleichung. Die allgemeine Geradengleichung lautet: mathrm{y=mcdot x+b} Preis Eintrittskarte: text{x} Anzahl Eintrittskarten: 4 Preis Tüte Popcorn: 13,60 € Gesamtkosten: 47,60 € Einsetzen der Werte in die allgemeine Geradengleichung: 47,60=4x+13,60 Die Gleichung lautet dann: boxed{4text{x}+13,60=47,60}."
+     },
+     "solution": "***Setze :** - $\\text{x}$für den Preis der Eintrittskarten. - den Preis der Tüte Popcorn für den $\\text{y}$-Achsenabschnitt. - die Gesamtkosten für den Funktionswert $\\text{y}$. - die Anzahl der Eintrittskarten für die Steigung $\\text{m}$.*\n\n**Aufstellen der Gleichung.**\n\nDie allgemeine Geradengleichung lautet:\n\n$\\mathrm{y=m\\cdot x+b}$\n\nPreis Eintrittskarte: $\\text{x}$\n\nAnzahl Eintrittskarten: $4$\n\nPreis Tüte Popcorn: $13,60\\ €$\n\nGesamtkosten: $47,60\\ €$\n\nEinsetzen der Werte in die allgemeine Geradengleichung:\n\n$47,60=4x+13,60$\n\nDie Gleichung lautet dann: $\\ \\boxed{4\\text{x}+13,60=47,60}$.",
+     "points": 1,
+     "topic": "Terme, Gleichungen & Formeln"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "Auf dem Wochenmarkt verkauft Steffi Äpfel. Dafür legt sie eine Tabelle an, um schnell die\n\nPreise abzulesen.\n\n![Abbildung](/uploads/ex-b47b7d6d3cfe.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ergänze die Lücken in der Tabelle.",
+     "answer": {
+      "type": "free",
+      "sample": "Ergänzen der Lücken in der Tabelle. ![Abbildung](/uploads/ex-5e2f6caedfef.png)"
+     },
+     "solution": "**Ergänzen der Lücken in der Tabelle.**\n\n![Abbildung](/uploads/ex-5e2f6caedfef.png)",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Als Alternative zur Tabelle zeichnet Steffi einen Graphen.\n\n![Abbildung](/uploads/ex-328624452ba9.png)\n\nErgänze die folgenden Sätze.\n\nDer Graph gehört zur Apfelsorte ⟦1⟧ .\n\nFür 20 € dieser Apfelsorte erhält man etwa ⟦2⟧ kg Äpfel.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "Jonagold",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 6.3,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "![Abbildung](/uploads/ex-852a9767f621.png)\n\n**Ergänzen der folgenden Sätze.**\n\nDer Graph gehört zur Apfelsorte **Jonagold**.\n\nFür $20\\ €$ dieser Apfelsorte erhält man etwa **6,3** kg Äpfel. (Genauigkeit $±$ $0,1\\ \\text{kg}$.)",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Steffi hat Schwierigkeiten, den Preis für 3,5 kg Äpfel mithilfe des Diagramms zu bestimmen.\n\nErkläre die Schwierigkeiten bei der Bestimmung des genauen Preises.",
+     "answer": {
+      "type": "free",
+      "sample": "Erklären der Schwierigkeiten bei der Bestimmung des genauen Preises. Zum Beispiel: „Die Einteilung auf beiden Achsen lässt ein genaues Bestimmen von Zwischenwerten nicht zu.“"
+     },
+     "solution": "**Erklären der Schwierigkeiten bei der Bestimmung des genauen Preises.**\n\n**Zum Beispiel:**\n\n„Die Einteilung auf beiden Achsen lässt ein genaues Bestimmen\n\nvon Zwischenwerten nicht zu.“",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "Der Flächeninhalt der abgebildeten Figur soll berechnet werden.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne in die Grafik ein, wie du die Figur zerlegen oder ergänzen kannst.\n\n![Abbildung](/uploads/ex-941b639215f2.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Zeichnen der ergänzten Figur . ![Abbildung](/uploads/ex-2db0190b18ff.png) Hinweis: Es sind auch noch andere Zerlegungen möglich."
+     },
+     "solution": "**Zeichnen der ergänzten Figur .**\n\n![Abbildung](/uploads/ex-2db0190b18ff.png)\n\n**Hinweis:**\n\nEs sind auch noch andere Zerlegungen möglich.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne den Flächeninhalt der Figur.\n\n$A_{Figur}=$ ⟦1⟧ $\\cm^2$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 27,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne den Flächeninhalt des großen Quadrates. - Berechne den Flächeninhalt der farbig markierten rechtwinkligen Dreiecke. - Subtrahiere vom Flächeninhalt des großen Quadrates den Flächeninhalt der farbig markierten rechtwinkligen Dreiecke.*\n\n**Berechnen des Flächeninhaltes der Figur.**\n\n**Berechnen des Flächeninhaltes des großen Quadrates:**\n\n$\\mathrm{A_{Quadrat}=a\\cdot a}$\n\n$\\mathrm{a=3+3=6\\cm}\\quad$(siehe Zeichnung)\n\n$\\mathrm{A_{Quadrat}=6\\cdot6}$\n\n$\\mathrm{A_{Quadrat}=36\\cm^2}$\n\n**Berechnen des Flächeninhaltes der rechtwinkligen Dreiecke:**\n\n$\\mathrm{A_{Dreieck}=\\dfrac{Kathete_{1}\\cdot Kathete_{2}}{2}}$\n\n$\\mathrm{Kathete_{1}=Kathete_{2}=3\\cm}\\quad$(siehe Zeichnung)\n\n$\\mathrm{A_{Dreieck}=\\dfrac{3\\cdot3}{2}}$\n\n$\\mathrm{A_{Dreick}=4,5\\cm^2}$\n\nDer Flächeninhalt der Figur ist dann:\n\n$\\mathrm{A_{Figur}=A_{Quadrat}-2\\cdot A_{Dreieck}}$\n\n$\\mathrm{A_{Figur}=36-2\\cdot4,5}$\n\n$\\mathrm{A_{Figur}=27\\cm^2}$\n\nDie Figur hat einen Flächeninhalt von : $\\boxed{27\\cm^2}$.",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib eine allgemeine Formel zur Berechnung des Flächeninhaltes der Figur\n\nin Abhängigkeit von **x** an.\n\n![Abbildung](/uploads/ex-0e8c076d6974.png)\n\n$A_{Figur}=$⟦1⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "12x²",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Setze für die Seite $\\text{a}$ des Quadrates $4\\text{x}$. - Setze $\\mathrm{Kathete_{1}=}$ $\\mathrm{Kathete_{2}=2x}$. - Verwende die Formeln aus Teilaufgabe $\\mathrm{7b}$.*\n\n**Allgemeine Formel zur Berechnung des Flächeninhaltes der Figur in Abhängigkeit von x.**\n\n$\\mathrm{A_{Figur}(x)=4x\\cdot4x-2\\cdot\\dfrac{2x\\cdot2x}{2}}$\n\n$\\mathrm{A_{Figur}(x)=16x^2-4x^2}$\n\n$\\boxed{\\mathrm{A_{Figur}(x)=12x^2}}$",
+     "points": 1,
+     "topic": "Quadratische Funktionen & Gleichungen"
+    }
+   ]
+  },
+  {
+   "no": 8,
+   "context": "Max hat begonnen, ein Dreieck an der Geraden g zu spiegeln.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Vervollständige die Spiegelung.\n\n![Abbildung](/uploads/ex-cdb9cf1982ef.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Vervollständigen der Spiegelung. ![Abbildung](/uploads/ex-bb8447b7bb13.png)"
+     },
+     "solution": "**Vervollständigen der Spiegelung.**\n\n![Abbildung](/uploads/ex-bb8447b7bb13.png)",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Der abgebildete Stern ist achsensymmetrisch.\n\n![Abbildung](/uploads/ex-e0b7db6b47be.png)\n\nZeichne in den Stern alle Symmetrieachsen ein.",
+     "answer": {
+      "type": "free",
+      "sample": "Einzeichnen aller Symmetrieachsen in den Stern. ![Abbildung](/uploads/ex-3fb309b72a6c.png)"
+     },
+     "solution": "**Einzeichnen aller Symmetrieachsen in den Stern.**\n\n![Abbildung](/uploads/ex-3fb309b72a6c.png)",
+     "points": 2,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Tim hat in das abgebildete Verkehrszeichen eine Gerade eingezeichnet.\n\n![Abbildung](/uploads/ex-48ac0b4478d4.png)\n\nBegründe, dass diese Gerade keine Symmetrieachse des Verkehrszeichens ist.",
+     "answer": {
+      "type": "free",
+      "sample": "Begründung, dass diese Gerade keine Symmetrieachse des Verkehrszeichens ist. Zum Beispiel: „Bei der Spiegelung an dieser Geraden liegen die Pfeile nicht aufeinander.“"
+     },
+     "solution": "**Begründung, dass diese Gerade keine Symmetrieachse des Verkehrszeichens ist.**\n\n**Zum Beispiel:**\n\n„Bei der Spiegelung an dieser Geraden liegen die Pfeile nicht\n\naufeinander.“",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    }
+   ]
+  }
+ ]
+}

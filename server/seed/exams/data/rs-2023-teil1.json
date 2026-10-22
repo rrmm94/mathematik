@@ -1,0 +1,461 @@
+{
+ "school": "rs",
+ "schoolLabel": "Realschule",
+ "year": 2023,
+ "part": "Teil 1",
+ "folderId": 300720,
+ "url": "https://de.serlo.org/mathe/300720/teil-1",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Wandle in die angegebene Einheit um.",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$8~\\text{km}=~$⟦1⟧ m",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 8000,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Überlege, welchen Umrechnungsfaktor $\\text{km}\\to \\text{m}$ hat: Wie viele Meter passen in einen Kilometer? - Rechne diesen für $8~\\text{km}$ hoch.*\n\nIn einem Kilometer sind $1000$ Meter enthalten:\n\n$$\\begin{aligned}\n1\\ km &= 1000\\ m \\\\\n8\\ km &= 8000\\ m\n\\end{aligned}$$",
+     "points": 0,
+     "topic": "Größen & Einheiten"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$3,12~\\text{cm}^2=$ ⟦1⟧ $\\text{mm}^2$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 312,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Überlege, welchen Umrechnungsfaktor $\\text{cm}^2\\to \\text{mm}^2$ hat: Wie viele Quadratmillimeter passen in einen Quadratzentimeter? - Multipliziere mit $3,12$ für das Ergebnis.*\n\nIn einem $\\text{cm}^2$ sind $100$ $\\text{mm}^2$ enthalten:\n\n$$\\begin{aligned}\n1~\\text{cm}^2 &= 100~\\text{mm}^2 \\\\\n3,12~\\text{cm}^2 &= 312 ~\\text{mm}^2\n\\end{aligned}$$",
+     "points": 0,
+     "topic": "Größen & Einheiten"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$150~\\text{min}=~$⟦1⟧ h",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2.5,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- In einer Stunde sind $60~\\text{min}$ enthalten. - Löse mithilfe einer [Division](/1633).*\n\nIn einer Stunde sind $60~\\text{min}$ enthalten:\n\n$150:60= 2,5$\n\n$150$ Minuten entsprechen $2,5$ Stunden.",
+     "points": 0,
+     "topic": "Größen & Einheiten"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "![Abbildung](/uploads/ex-e337f4a952e4.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Frau Spar tankt $5$ Liter Benzin.\n\nBerechne den Preis.",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 10.19,
+        "tolerance": 0,
+        "unit": "€",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Multipliziere den Preis pro Liter mit der Anzahl an getankten Liter Benzin.*\n\n$5\\cdot 2,038=10,19$\n\nDas getankte Benzin kostet $10,19~€$.",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "An der Tankstelle müssen die Preise oft gerundet werden.\n\nRunde den Preis $34,2552~€$ auf zwei Nachkommastellen.\n\n$34,2552~€\\approx$ ⟦1⟧€",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 34.26,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Achte auf die dritte Nachkommastelle. Ab einem Zahlenwert von $5$ wird aufgerundet, ansonsten wird abgerundet.*\n\nDie dritte Nachkommastelle ist: $\\LARGE 34,25\\color{red}5\\color{black}2~€$\n\nDer Betrag wird für zwei Nachkommastellen aufgerundet:\n\n$\\LARGE 34,2\\color{green}6~\\color{black}€$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "Tasja hat von zwei Schokoladentafeln jeweils einen Teil gegessen. Die grau gefärbten Anteile sind übrig.\n\n![Abbildung](/uploads/ex-92bfcfeb0576.png)\n\n![Abbildung](/uploads/ex-93fd77698ebc.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib die grau gefärbten Anteile jeweils als Bruch an.\n\nTafel links: ⟦1⟧ Tafel rechts: ⟦2⟧",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.666666667,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.75,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Zähle die Anzahl der gefärbten Kästchen. - Teile durch die Anzahl der gesamten Kästchen, um den Anteil zu erhalten.*\n\n- $2$ gefärbte Teile\n- $3$ Teile insgesamt\n\n$\\Rightarrow \\large \\dfrac23$\n\n![Abbildung](/uploads/ex-92bfcfeb0576.png)\n\n- $3$ gefärbte Teile\n- $4$ Teile insgesamt\n\n$\\Rightarrow \\large \\dfrac34$\n\n![Abbildung](/uploads/ex-93fd77698ebc.png)",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Tasja behauptet: \"Wenn ich nur die übrig gebliebenen Anteile von beiden Schokoladentafeln esse, dann esse ich mehr als eine ganze Schokoladentafel.\"\n\nZeige, dass Tanja recht hat.",
+     "answer": {
+      "type": "free",
+      "sample": "- Addiere die Anteile, die in (a) berechnet wurden. In Teilaufgabe (a) wurden die Anteile dfrac23 und dfrac34 berechnet. Wenn Tasja beide Anteile an Schokolade isst, hat sie insgesamt dfrac23 + dfrac34 = dfrac{2color{orange}cdot 4}{3 color{orange}cdot 4}+dfrac{3color{orange}cdot 3}{4color{orange}cdot 3}=dfrac{8}{12}+dfrac{9}{12}=dfrac{17}{12} gegessen. Weil dieser Wert größer ist als ein Ganzes, hat Tasja somit mehr als eine ganze Schokolade gegessen."
+     },
+     "solution": "*- Addiere die Anteile, die in (a) berechnet wurden.*\n\nIn Teilaufgabe (a) wurden die Anteile $\\dfrac23$ und $\\dfrac34$ berechnet.\n\nWenn Tasja beide Anteile an Schokolade isst, hat sie insgesamt\n\n$\\dfrac23 + \\dfrac34 = \\dfrac{2\\color{orange}\\cdot 4}{3 \\color{orange}\\cdot 4}+\\dfrac{3\\color{orange}\\cdot 3}{4\\color{orange}\\cdot 3}=\\dfrac{8}{12}+\\dfrac{9}{12}=\\dfrac{17}{12}$\n\ngegessen.\n\nWeil dieser Wert größer ist als ein Ganzes, hat Tasja somit mehr als eine ganze Schokolade gegessen.",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "In der Abbildung ist ein Anteil grau gefärbt.\n\n![Abbildung](/uploads/ex-4a17003696b8.png)\n\nKreuze die vier richtigen Angaben für den grau gefärbten Anteil an.",
+     "answer": {
+      "type": "choice",
+      "multiple": true,
+      "options": [
+       {
+        "text": "$0,125$",
+        "correct": true
+       },
+       {
+        "text": "$1,25$",
+        "correct": false
+       },
+       {
+        "text": "$1,25~\\%$",
+        "correct": false
+       },
+       {
+        "text": "$12,5~\\%$",
+        "correct": true
+       },
+       {
+        "text": "$\\dfrac18$",
+        "correct": true
+       },
+       {
+        "text": "$\\dfrac14$",
+        "correct": false
+       },
+       {
+        "text": "$\\dfrac{125}{100}$",
+        "correct": false
+       },
+       {
+        "text": "$\\dfrac{125}{1000}$",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "*- Bestimme zuerst den Bruch, so wie in Teilaufgabe (a). - Wandle diesen Bruchteil anschließend in eine Dezimalzahl um. - Zuletzt bestimme die Prozentangabe.*\n\n**Bruch**\n\n- $1$ gefärbte Fläche\n- $8$ Flächen insgesamt\n\n$\\Rightarrow \\large \\dfrac18$\n\n**Dezimalzahl**\n\nAls Dezimalzahl erhalten wir durch eine Division:\n\n**Prozentangabe**\n\nDas Komma der Dezimalzahl wird um $2$ nach rechts verschoben:\n\nDer letzte Wert kann durch verschiedene Wege bestimmt werden. Mithilfe der Dezimalzahl $0,125$ ergibt sich:\n\n![Abbildung](/uploads/ex-4a17003696b8.png)\n\nRichtig sind also:",
+     "points": 2,
+     "topic": "Größen & Einheiten"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "In einer Eisdiele gibt es vier verschiedene Sorten Eis. Am Vormittag wurden $40$ Kugeln Eis verkauft.\n\nDas Diagramm zeigt die Anzahl der Kugeln für jede Sorte.\n\n![Abbildung](/uploads/ex-5b4e905f0b9d.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne die Säule für die Sorte „Erdbeere“ in das Diagramm ein.",
+     "answer": {
+      "type": "free",
+      "sample": "- Bestimme, wie viele Kugeln Erdbeeren verkauft wurden. - Zeichne die Säule in passenden Höhe ein. Es wurden insgesamt 40 Kugeln verkauft. Zieht man davon die anderen verkauften Sorten ab, sind es: 40-underbrace{8}_text{Vanille}-underbrace{16}_text{Schokolade}-underbrace{10}_text{Nuss}=6 Kugeln Erdbeereis ![Abbildung](/uploads/ex-089797f4ab2b.png)"
+     },
+     "solution": "*- Bestimme, wie viele Kugeln Erdbeeren verkauft wurden. - Zeichne die Säule in passenden Höhe ein.*\n\nEs wurden insgesamt $40$ Kugeln verkauft. Zieht man davon die anderen verkauften Sorten ab, sind es:\n\n$40-\\underbrace{8}_\\text{Vanille}-\\underbrace{16}_\\text{Schokolade}-\\underbrace{10}_\\text{Nuss}=6$ Kugeln Erdbeereis\n\n![Abbildung](/uploads/ex-089797f4ab2b.png)",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Erkläre, wie du die Anzahl der Kugeln der Sorte „Erdbeere“ berechnet hast.",
+     "answer": {
+      "type": "free",
+      "sample": "- Erkläre die Berechnung, die für Teilaufgabe (a) notwendig war. Mögliche Erklärung - Alle Sorten zusammen müssen 40 Kugeln ergeben - Diese Rechnung könnte man aufschreiben und x als Anzahl der Kugeln Erdbeereis verwenden: begin{aligned} 8+16+10+x &= 40 x &= 40-8-16-10 x &= 6 end{aligned}"
+     },
+     "solution": "*- Erkläre die Berechnung, die für Teilaufgabe (a) notwendig war.*\n\n**Mögliche Erklärung**\n\n- Alle Sorten zusammen müssen $40$ Kugeln ergeben\n- Diese Rechnung könnte man aufschreiben und $x$ als Anzahl der Kugeln Erdbeereis verwenden:\n\n$$\\begin{aligned}\n8+16+10+x &= 40 \\\\\nx &= 40-8-16-10 \\\\\nx &= 6\n\\end{aligned}$$",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Die Anzahl der Kugeln für jede Sorte wird in einem Kreisdiagramm dargestellt.\n\nKreuze das passende Kreisdiagramm an. Begründe deine Entscheidung.\n\n![Abbildung](/uploads/ex-80269d0a18d5.png)",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "1",
+        "correct": false
+       },
+       {
+        "text": "2",
+        "correct": true
+       },
+       {
+        "text": "3",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*- Berechne die Anteile der verkauften Eissorten. - Vergleiche mit der Größe der Kreisteile.*\n\n- Vanille: $\\frac{8}{40}=\\frac{1}{5}$\n- Schokolade: $\\frac{16}{40}=\\frac{2}{5}$\n- Nuss: $\\frac{10}{40}=\\frac{1}{4}$\n- Erdbeere: $\\frac{6}{40}=\\frac{3}{20}$\n\nDas erste Diagramm kann es nicht sein, weil kein Anteil so groß ist, wie die Hälfte.\n\nDas dritte Diagramm kann es auch nicht sein, weil es in dem Diagramm keinen Anteil gibt, der $\\frac14$ (Anteil Nuss-Eis) groß ist.\n\nDamit ist es das mittlere Diagramm.",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Nora bestellt zwei verschiedene Sorten Eis. Die Kugeln werden nebeneinander in eine Schale gelegt.\n\nErmittle die Anzahl der Möglichkeiten, eine Schale mit zwei verschiedenen Sorten Eis zusammenzustellen.\n\n![Abbildung](/uploads/ex-456644c2a43a.png)\n\nEs gibt ⟦1⟧ Möglichkeiten.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 6,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Bestimme die verschiedenen Möglichkeiten. Du kannst sie als Worte formulieren, wie: $\\text{Vanille},~\\text{Schokolade}$*\n\nDie Möglichkeiten sind:\n\n- $\\text{Vanille},~\\text{Schokolade}$\n- $\\text{Vanille},~\\text{Erdbeere}$\n- $\\text{Vanille},~\\text{Nuss}$\n- $\\text{Schokolade},~\\text{Erdbeere}$\n- $\\text{Schokolade},~\\text{Nuss}$\n- $\\text{Erdbeere},~\\text{Nuss}$\n\nDas sind insgesamt $6$ Möglichkeiten.",
+     "points": 1,
+     "topic": "Daten & Statistik"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "h5p",
+     "skip": "h5p",
+     "topic": "Zahlen & Rechnen"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "context": "Ein Quader wird so halbiert, dass das abgebildete Dreiecksprisma entsteht.\n\n![Abbildung](/uploads/ex-1581107a6c99.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne das Volumen des Dreiecksprismas.\n\n$V=$ ⟦1⟧ $\\text{cm}^3$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 36,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*- Berechne die Fläche der Grundseite $G$. Diese ist nicht die Seite, auf der der Prisma liegt, sondern das rechtwinklige Dreieck. - Berechne das Volumen mit der Formel $V=G\\cdot h$*\n\nDie Grundseite $G$ ist ein rechtwinkliges Dreieck. Die Fläche beträgt:\n\nDas Volumen ist mit der Formel $V=G\\cdot h$:",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Das Volumen eines anderen Dreiecksprismas soll berechnet werden.\n\n![Abbildung](/uploads/ex-17a0bd96ff75.png)\n\nStelle eine allgemeine Formel zur Berechnung des Volumens in Abhängigkeit von $x$ auf. Fasse die Formel so weit wie möglich zusammen.\n\n$V=$",
+     "answer": {
+      "type": "free",
+      "sample": "Gehe wie in Aufgabenteil (a) vor: Verwende V=Gcdot h und stelle einen Term auf, der das ganze Volumen beschreibt. Die Grundseite ist ein rechtwinkliges Dreieck. Die Fläche beträgt: Das Volumen ist mit der Formel V=Gcdot h:"
+     },
+     "solution": "*Gehe wie in Aufgabenteil (a) vor: Verwende $V=G\\cdot h$ und stelle einen Term auf, der das ganze Volumen beschreibt.*\n\nDie Grundseite ist ein rechtwinkliges Dreieck. Die Fläche beträgt:\n\nDas Volumen ist mit der Formel $V=G\\cdot h$:",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "context": "",
+   "subs": [
+    {
+     "label": "",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Zeichne das Netz des abgebildeten Dreiecksprismas.\n\n![Abbildung](/uploads/ex-39898fd1c53f.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Es gibt verschiedene Lösungswege. - \"Rolle\" z. B. das Prisma über eine Seite ab und skizziere die einzelnen Flächen. - Ein guter Check ist es, die Flächen des Netzes nochmal mit dem ursprünglichen Körper zu vergleichen. Eine mögliche Lösung Ein mögliches Körpernetz erhält man, wenn man das Prisma über eine lange Kante abrollt: ![Abbildung](/uploads/ex-250ef520c6b4.png)"
+     },
+     "solution": "*Es gibt verschiedene Lösungswege. - \"Rolle\" z. B. das Prisma über eine Seite ab und skizziere die einzelnen Flächen. - Ein guter Check ist es, die Flächen des Netzes nochmal mit dem ursprünglichen Körper zu vergleichen.*\n\n**Eine mögliche Lösung**\n\nEin mögliches Körpernetz erhält man, wenn man das Prisma über eine lange Kante abrollt:\n\n![Abbildung](/uploads/ex-250ef520c6b4.png)",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 8,
+   "context": "Die Abbildung zeigt die ersten drei Figuren eines Musters.\n\n![Abbildung](/uploads/ex-567f14a41e64.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": "zeichnen",
+     "prompt": "Vervollständige die unten abgebildete Figur 4 des Musters. Achte auf genaues Zeichnen.\n\n![Abbildung](/uploads/ex-ac322ec55b7b.png)",
+     "answer": {
+      "type": "free",
+      "sample": "- Vervollständige zuerst den Umriss. - Ergänze die Dreiecke. - Färbe die Seiten links und rechts, sowie jedes zweite Dreieck, das von der Grundlinie nach oben zeigt. ![Abbildung](/uploads/ex-19df6afaf9cd.png)"
+     },
+     "solution": "*- Vervollständige zuerst den Umriss. - Ergänze die Dreiecke. - Färbe die Seiten links und rechts, sowie jedes zweite Dreieck, das von der Grundlinie nach oben zeigt.*\n\n![Abbildung](/uploads/ex-19df6afaf9cd.png)",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Gib die Anzahl der schwarzen Dreiecke der nicht abgebildeten Figur 6 des Musters an.\n\nIn der Figur 6 gibt es ⟦1⟧ schwarze Dreiecke.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 19,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "*Schreibe die Anzahl der schwarzen Dreiecke hintereinander auf: $4,7,10,...$ Welches Muster ergibt sich daraus und welches ist die 6. Zahl?*\n\nDie Anzahl der schwarzen Dreiecke erhöht sich von einer zur nächsten Figur um 3:\n\n$4,7,10,13,16,\\color{green}19\\color{black},...$\n\nIn der Figur 6 gibt es somit 19 schwarze Dreiecke.",
+     "points": 1,
+     "topic": "Winkel, Dreiecke & Flächen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Lucas möchte die Anzahl der schwarzen Dreiecke in einer beliebigen Figur $x$ des Musters bestimmen. Dafür hat er vier Terme zur Auswahl.\n\nKreuze den passenden Term an.",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$3x+1$",
+        "correct": true
+       },
+       {
+        "text": "$x+3$",
+        "correct": false
+       },
+       {
+        "text": "$4x-3$",
+        "correct": false
+       },
+       {
+        "text": "$3x+4$",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "*- Wie viele Dreiecke kommen jedes mal dazu? - Diese Zahl muss bei $x$ stehen, zum Beispiel $2x$ \"Zwei Dreiecke kommen jedes Mal dazu.\" - Mache eine Probe, ob für $x=1$ zum Beispiel die gewünschten $4$ Dreiecke herauskommen.*\n\nDer Term $3x+1$ beschreibt die gesuchten Dreiecke in Abhängigkeit von $x$.\n\n- Denn jedes mal kommen $3$ Dreiecke hinzu, wenn $x$ um $1$ größer wird\n- Für den Anfangswert $x=1$ kommen $4$ Dreiecke heraus.",
+     "points": 1,
+     "topic": "Terme, Gleichungen & Formeln"
+    }
+   ]
+  }
+ ]
+}

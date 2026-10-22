@@ -1,11 +1,12 @@
 services:
-  mathe-pruefungstrainer:
+  mathematik:
     build: .
-    image: mathe-pruefungstrainer:latest
-    container_name: mathe-pruefungstrainer
+    image: mathematik:latest
+    container_name: mathematik
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      # links: Port im Browser (http://<Server-IP>:3141), rechts: Port im Container (nicht ändern)
+      - "3141:3000"
     environment:
       # Zugangsdaten der Lehrkraft beim allerersten Start (danach in den Einstellungen änderbar)
       ADMIN_USER: admin
@@ -13,11 +14,11 @@ services:
       # Nur im Notfall auf "true" setzen: setzt das Admin-Passwort beim Start auf ADMIN_PASSWORD zurück
       ADMIN_RESET: "false"
       # Demo-Kurs mit Beispielkindern anlegen? (true/false)
-      SEED_DEMO: "true"
+      SEED_DEMO: "false"
       # Auf "true" setzen, wenn die Seite per HTTPS (z. B. über einen Reverse Proxy) erreichbar ist
       COOKIE_SECURE: "false"
       TZ: Europe/Berlin
     volumes:
       # Datenbank + hochgeladene Bilder – im Unterordner "data" neben dieser Datei
-      # (auf Unraid also /mnt/user/appdata/mathematik/data)
+      # (auf dem Server also /opt/stacks/mathematik/data)
       - ./data:/data

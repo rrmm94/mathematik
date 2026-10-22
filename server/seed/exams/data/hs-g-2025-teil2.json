@@ -1,0 +1,486 @@
+{
+ "school": "hs-g",
+ "schoolLabel": "Hauptschule G-Kurs",
+ "year": 2025,
+ "part": "Teil 2",
+ "folderId": 328876,
+ "url": "https://de.serlo.org/mathe/328876/teil-2",
+ "groups": [
+  {
+   "no": 1,
+   "context": "Jedes Jahr werden $1200$ Jugendliche gefragt: „Hast du in diesem Jahr Bücher gelesen?“\n\n![Abbildung](/uploads/ex-35f8e1be9e01.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "scMcExercise",
+     "skip": "Auswahl ohne richtige Antwort",
+     "prompt": "Kreuze an.",
+     "answer": {
+      "type": "choice",
+      "multiple": true,
+      "options": [
+       {
+        "text": "Der Anteil der Jugendlichen, die Bücher lesen, hat sich von Jahr zu Jahr verringert.",
+        "correct": false
+       },
+       {
+        "text": "Der Unterschied zwischen dem höchsten und dem niedrigsten Teil beträgt 6%.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "**Ankreuzen ob wahr oder falsch.**\n\n|   | wahr | falsch |\n|---|---|---|\n| Der Anteil der Jungendlichen, die Bücher lesen, hat sich von Jahr zu Jahr verringert. |   | $\\\\\\hspace{4mm}{\\Large{\\textbf{x}}}$ |\n| Der Unterschied zwischen dem höchsten und dem niedrigsten Anteil beträgt $6\\ \\%$. |   | $\\\\\\hspace{4mm}{\\Large{\\textbf{x}}}$ |",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne, wie viele der befragten Jugendlichen im Jahr 2018 Bücher gelesen haben\n\nIm Jahr 2018 haben ⟦1⟧ der befragten Jugendlichen Bücher gelesen.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 468,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen, wie viele der befragten Jugendlichen im Jahr 2018 Bücher gelesen haben.**\n\nDie Anzahl der befragten Jugendlichen entspricht dem Grundwert $\\text{G}$.\n\nDen Prozentsatz entnehmen wir der Grafik.\n\nIm Jahr 2018 haben $39\\ \\%$ der befragten Jugendlichen Bücher gelesen.\n\nDen Prozentwert berechnen wir mit der folgenden Formel:\n\n$\\mathrm{W=G\\cdot p}$\n\nEinsetzen der bekannten Größen in die Formel.\n\n$\\mathrm{W=1200\\cdot\\dfrac{39}{100}\\ \\Rightarrow\\ W=1200\\cdot0,39}$\n\n$\\underline{\\underline{\\mathrm{W=468}}}$\n\nIm Jahr 2018 haben $\\textbf{468}$ der befragten Jugendlichen Bücher gelesen.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Im Jahr 2023 haben $420$ der befragten $1200$ Jugendlichen Bücher gelesen.\n\nBerechne den prozentualen Anteil.\n\nIm Jahr 2023 haben ⟦1⟧ $\\%$ der befragten Jugendlichen Bücher gelesen.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 35,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechne den prozentualen Anteil.**\n\nDie Anzahl der befragten Jugendlichen entspricht dem Grundwert $\\textbf{G}$.\n\nDie Anzahl der Jugendlichen die im Jahr 2023 Bücher gelesen haben entspricht dem Prozentwert $\\textbf{W}$.\n\nDen Prozentsatz berechnen wir mit der folgenden Formel:\n\n$\\mathrm{p=\\dfrac{W}{G}\\cdot100}$\n\nEinsetzen der bekannten Größen in die Formel.\n\n$\\mathrm{p=\\dfrac{420}{1200}\\cdot100\\ \\Rightarrow\\ p=0,35\\cdot100}$\n\n$\\underline{\\underline{\\mathrm{p=35\\ \\%}}}$\n\nIm Jahr 2023 haben $\\textbf{35\\ \\%}$ der befragten Jugendlichen Bücher gelesen.",
+     "points": 2,
+     "topic": "Prozent & Zinsen"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "context": "In einem Computerchip befinden sich Bauteile, die Informationen verarbeiten.\n\nDer Amerikaner Gordon Moore untersuchte vor etwa 60 Jahren die Entwicklung solcher Computerchips und stellte fest:\n\n„Die Anzahl der Bauteile in einem Computerchip verdoppelt sich von Jahr zu Jahr.“\n\n![Abbildung](/uploads/ex-23991c8b194a.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Ergänze die fehlenden Werte für die Jahre 1961 und 1964.\n\n![Abbildung](/uploads/ex-c38934bc8aa3.png)",
+     "answer": {
+      "type": "free",
+      "sample": "Ergänzen der fehlenden Werte für die Jahre 1961 und 1964. ![Abbildung](/uploads/ex-bb462839bbee.png)"
+     },
+     "solution": "**Ergänzen der fehlenden Werte für die Jahre 1961 und 1964.**\n\n![Abbildung](/uploads/ex-bb462839bbee.png)",
+     "points": 2,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "b)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Im Koordinatensystem sind bereits zwei Wertepaare eingezeichnet.\n\n![Abbildung](/uploads/ex-da1a32372795.png)\n\nErgänze die übrigen Wertepaare.",
+     "answer": {
+      "type": "free",
+      "sample": "Ergänzen der übrigen Wertepaare. ![Abbildung](/uploads/ex-52e42a7a619b.png)"
+     },
+     "solution": "**Ergänzen der übrigen Wertepaare.**\n\n![Abbildung](/uploads/ex-52e42a7a619b.png)",
+     "points": 2,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "c)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Kreuze an.\n\nDie Anzahl der Bauteile wächst …",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "… quadratisch.",
+        "correct": false
+       },
+       {
+        "text": "… linear.",
+        "correct": false
+       },
+       {
+        "text": "… exponentiell.",
+        "correct": true
+       }
+      ]
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Wachstum & Exponentialfunktionen"
+    },
+    {
+     "label": "d)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Seit 1959 sind bis heute $66$ Jahre vergangen.\n\nKreuze den Term an, mit dem du die Anzahl der Bauteile für das Jahr 2025 berechnen kannst",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "$2\\cdot2^{66}$",
+        "correct": true
+       },
+       {
+        "text": "$2\\cdot66^2$",
+        "correct": false
+       },
+       {
+        "text": "$66\\cdot2^2$",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "",
+     "points": 1,
+     "topic": "Wachstum & Exponentialfunktionen"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "inputExercise",
+     "skip": null,
+     "prompt": "Hausmeister Karl lehnt eine Leiter an eine Hauswand.\n\nBerechne die Länge der Leiter.\n\n![Abbildung](/uploads/ex-c21ecd48021d.png)",
+     "answer": {
+      "type": "fields",
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 2.4,
+        "tolerance": 0,
+        "unit": "m",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen der Länge der Leiter.**\n\nDas oben abgebildete Dreieck ist ein rechtwinkliges Dreieck.\n\nIn rechtwinkligen Dreiecken gilt der Satz des Pythagoras.\n\nDer Satz des Pythagoras lautet:\n\n$\\mathrm{c^2=a^2+b^2}$\n\nFür das obige Dreieck ist dann:\n\n$\\mathrm{Leiter^2=0,96^2+2,20^2}$\n\n$\\mathrm{Leiter=\\sqrt{0,96^2+2,20^2}\\ \\Rightarrow\\ Leiter=\\sqrt{5,7616}}$\n\n$\\underline{\\underline{\\text{Leiter}=2,40}}$\n\nDie Länge der Leiter beträgt: $\\boxed{2,40\\m}$.",
+     "points": 2,
+     "topic": "Satz des Pythagoras"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Karl behauptet: „Die Größe des Winkels α beträgt $70°$“.\n\nÜberprüfe mithilfe einer Rechnung, ob seine Behauptung stimmt.\n\nKarls Behauptung stimmt: ⟦1⟧ (ja/nein)",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "text",
+        "value": "nein",
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Überprüfen von Karls Behauptung.**\n\nÜberprüfen von Karls Behauptung mithilfe des Tangens im rechtwinkligem Dreieck.\n\nDer Tangens im rechtwinkligem Dreieck ist definiert als:\n\n$\\mathrm{\\tan{(\\sphericalangle)}=\\dfrac{Gegenkathete}{Ankathete}}$\n\nFür das obige Dreieck ist das dann:\n\n$\\mathrm{\\tan{(\\alpha)}=\\dfrac{2,20}{0,96}\\ \\Rightarrow tan(\\alpha)\\approx2,2917}$\n\n$\\mathrm{tan^{-1}(\\alpha)\\approx71,1°}$\n\nKarls Behauptung ist falsch, der Winkel $\\alpha$ beträgt, gerundet auf eine Stelle hinter dem Komma, $\\boxed{71,1°}$.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Für niedrigere Höhen nutzt Karl eine Klappleiter.\n\nBerechne die Höhe h.\n\n![Abbildung](/uploads/ex-98c1eaded407.png)\n\n$\\text{h}=$ ⟦1⟧$\\m$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 1.31,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen der Höhe h.**\n\nBerechnen der Höhe h mithilfe des Kosinus im rechtwinkligem Dreieck.\n\nDer Kosinus im rechtwinkligem Dreieck ist definiert als:\n\n$\\mathrm{\\cos{(\\sphericalangle)}=\\dfrac{Ankathete}{Hypotenuse}}$\n\nFür das obige Dreieck ist das dann:\n\n$\\mathrm{\\cos{(25°)}=\\dfrac{h}{1,45}\\ \\Rightarrow h=cos(25°)\\cdot1,45}$\n\n$\\mathrm{h=0,9063\\cdot1,45}$\n\n$\\mathrm{h\\approx1,31\\m}$\n\nDie Höhe der Klappleiter beträgt ca.: $\\boxed{1,31\\m}$.",
+     "points": 3,
+     "topic": "Trigonometrie & Ähnlichkeit"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "context": "",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "In der Industrie werden mit eingeschmolzenen Kunststoffkugeln Körper hergestellt.\n\nEs gibt zwei Sorten Kunststoffkugeln.\n\nBerechne das Volumen einer Kunststoffkugel der Sorte A.\n\n![Abbildung](/uploads/ex-67cf273bb090.png)\n\nDas Volumen einer Wachskugel der Sorte A beträgt: ⟦1⟧ $\\cm^3$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.11,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen des Volumens einer Kunststoffkugel der Sorte A.**\n\nDie Formel zur Berechnung des Volumens einer Kugel lautet:\n\n$\\mathrm{V_{{Kugel}}=\\dfrac43 \\cdot \\pi \\cdot r^3}$\n\nEinsetzen des Zahlenwerts für den Radius in die Formel.\n\n$\\mathrm{V_{Kugel}=\\dfrac43 \\cdot \\pi \\cdot 0,3^3}$\n\n$\\mathrm{V_{Kugel}=\\dfrac43 \\cdot0,027\\cdot\\pi\\ \\Rightarrow\\ V_{Kugel}=0,036\\cdot\\pi}$\n\n$\\mathrm{V_{Kugel}=0,11\\cm^3}$\n\nDas Volumen einer Kunststoffkugel der Sorte A beträgt: $\\boxed{0,11\\cm^3}$.",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Aus eingeschmolzenen Kunststoffkugeln der Sorte A wird eine Pyramide mit einem Volumen von $\\mathrm{V=38\\cm^3}$ hergestellt.\n\n![Abbildung](/uploads/ex-e743ed3892f7.png)\n\nBerechne die Anzahl der benötigten Kunststoffkugeln der Sorte A.\n\n(Wenn du Teilaufgabe a) nicht gelöst hast, dann rechne mit\n\n$0,12\\cm^3$ weiter.)\n\nZur Herstellung der Pyramide werden ⟦1⟧ Kunststoffkugeln der Sorte A benötigt.",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 317,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen der  benötigten Kunststoffkugeln der Sorte A.**\n\nWir berechnen die Anzahl der benötigten Kunststoffkugeln, indem wir das Volumen der Pyramide durch das Volumen einer Kunststoffkugel dividieren.\n\nAlso:\n\n$\\mathrm{Anzahl_{Kugeln}=\\dfrac{V_{Pyramide}}{V_{Kugel}}}$\n\n$\\mathrm{Anzahl_{Kugeln}=\\dfrac{38}{0,11}}$\n\n$\\mathrm{Anzahl_{Kugeln}\\approx345,5}$\n\nZur Herstellung der Pyramide werden $\\boxed{346}$ Kunststoffkugeln gebraucht.\n\nOder:\n\n$\\mathrm{Anzahl_{Kugeln}=\\dfrac{38}{0,12}}$\n\n$\\mathrm{Anzahl_{Kugeln}\\approx316,7}$\n\nDas sind dann $317$ Kunststoffkugeln.",
+     "points": 2,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "$1\\cm^3$ Kunststoff hat die Masse $1,3\\ \\text{g}$.\n\nBerechne die Masse der Pyramide.\n\nDie Masse der Pyramide beträgt: ⟦1⟧ $\\text{g}$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 49.4,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen der Masse der Pyramide.**\n\nDie Formel zur Berechnung der Masse eines Körpers lautet:\n\n$\\mathrm{m=V\\cdot\\rho}$\n\nEinsetzen der bekannten Größen in die Formel:\n\n$\\mathrm{m=38\\cm^3\\cdot1,3\\ \\dfrac{g}{cm^3}\\ \\Rightarrow\\ m=49,40\\cdot\\dfrac{{\\cancel{cm^3}\\cdot g}}{\\cancel{cm^3}}}$\n\n$\\underline{\\underline{\\mathrm{m=49,40\\ g}}}$\n\nDie Masse der Pyramide beträgt: $\\boxed{49,40\\ \\text{g}}$.",
+     "points": 1,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die hergestellte Pyramide hat die Kantenlänge $\\mathrm{a=5\\cm}$.\n\nBerechne die Körperhöhe $\\mathrm{h_K}$ der Pyramide.\n\n$\\mathrm{h_K}=$⟦1⟧ $\\cm$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 4.56,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen der Körperhöhe $\\large{\\textbf{h}_\\textbf{K}}$ der Pyramide.**\n\nDie Formel zur Berechnung des Volumens einer Pyramide lautet:\n\n$\\mathrm{V_{Pyramide}=\\dfrac{1}{3}\\cdot G\\cdot h}$\n\nDa unsere Pyramide eine quadratische Grundfläche mit der\n\nKantenlänge $\\mathrm{a=5\\cm}$ hat, ist die Grundfläche: $\\mathrm{G=5\\cdot5=25\\cm^2}$\n\nAuflösen der Formel nach h.\n\n$\\mathrm{h=\\dfrac{3\\cdot V_{Pyramide}}{G}}$\n\n$\\mathrm{h_K=\\dfrac{3\\cdot38}{25}\\ \\Rightarrow\\ \\h_K=\\dfrac{114}{25}}$\n\n$\\underline{\\underline{\\mathrm{h_K=4,56\\cm}}}$\n\nDie Höhe der Pyramide beträgt: $\\boxed{4,56\\cm}$.",
+     "points": 3,
+     "topic": "Körper: Oberfläche & Volumen"
+    },
+    {
+     "label": "e)",
+     "kind": "scMcExercise",
+     "skip": null,
+     "prompt": "Ein anderer Hersteller verwendet für die Herstellung der Pyramide Kunststoffkugeln der Sorte B.\n\nDer Radius dieser Kunststoffkugeln ist halb so groß wie bei Sorte A.\n\nKreuze an.\n\n„Für die Herstellung werden nun ...",
+     "answer": {
+      "type": "choice",
+      "multiple": false,
+      "options": [
+       {
+        "text": "2-mal so viele Kunststoffkugeln wie bei Sorte A benötigt.",
+        "correct": false
+       },
+       {
+        "text": "4-mal so viele Kunststoffkugeln wie bei Sorte A benötigt.",
+        "correct": false
+       },
+       {
+        "text": "8-mal so viele Kunststoffkugeln wie bei Sorte A benötigt.",
+        "correct": true
+       },
+       {
+        "text": "16-mal so viele Kunststoffkugeln wie bei Sorte A benötigt.",
+        "correct": false
+       }
+      ]
+     },
+     "solution": "**Ankreuzen der richtigen Antwort.**\n\nDie Formel zur Berechnung des Volumens einer Kugel lautet:\n\n$\\mathrm{V_{Kugel}=\\dfrac{4}{3}\\cdot r^3\\cdot\\pi}$\n\nDa der Radius r in der 3. Potenz in der Formel steht, verkleinert sich das Volumen um das $8$ -fache, wenn der Radius halbiert wird.\n\n$\\hspace{60mm} \\mathrm{\\left(\\dfrac{1}{2}\\right)^3=\\dfrac{1}{8}}$\n\nEs werden also $8$-mal so viele Kunststoffkugeln, wie bei Sorte A, benötigt.\n\nKreuze entsprechend an.\n\n$\\qquad\\bigcirc\\ 2-\\text{mal}\\hspace{18mm}\\bigcirc\\ 4-\\text{mal}\\hspace{18mm}\\textcircled{\\textbf{x}}\\ 8-\\text{mal}\\hspace{18mm}\\bigcirc\\ 16-\\text{mal}$",
+     "points": 2,
+     "topic": "Körper: Oberfläche & Volumen"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "context": "Bei einer Werbeaktion verschenkt ein Spielwarengeschäft insgesamt $400$ Glücksbringer.\n\nDie Glücksbringer befinden sich in einem Karton\n\n![Abbildung](/uploads/ex-1210fd849897.png)",
+   "subs": [
+    {
+     "label": "a)",
+     "kind": "frei",
+     "skip": null,
+     "prompt": "Berechne die fehlende Anzahl in der Tabelle.",
+     "answer": {
+      "type": "free",
+      "sample": "Berechnen der fehlenden Anzahl in der Tabelle. mathrm{Anzahl_{Kleeblatt}=400-113-125} mathrm{Anzahl_{Kleeblatt}=162} Ergänze die Tabelle. ![Abbildung](/uploads/ex-859d7ded2e76.png)"
+     },
+     "solution": "**Berechnen der fehlenden Anzahl in der Tabelle.**\n\n$\\mathrm{Anzahl_{Kleeblatt}=400-113-125}$\n\n$\\mathrm{Anzahl_{Kleeblatt}=162}$\n\nErgänze die Tabelle.\n\n![Abbildung](/uploads/ex-859d7ded2e76.png)",
+     "points": 1,
+     "topic": "Zahlen & Rechnen"
+    },
+    {
+     "label": "b)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die Kunden ziehen nach ihrem Einkauf zufällig einen Glücksbringer aus dem Karton.\n\nBestimme die Wahrscheinlichkeit, dass als Erstes ein $\\textcircled{\\ \\ \\textcolor{red}{Schweinchen}\\ \\ }$ gezogen wird.\n\nGib die Wahrscheinlichkeit sowohl als Bruch als auch in Prozent an.\n\nDie Wahrscheinlichkeit, dass als Erstes ein $\\textcircled{\\ \\ \\textcolor{red}{Schweinchen}\\ \\ }$ gezogen wird beträgt: ⟦1⟧ oder ⟦2⟧ $\\%$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.3125,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 31.25,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Bestimmen der Wahrscheinlichkeit, dass als Erstes ein Schweinchen gezogen wird.**\n\nIm Karton befinden sich $400$ Glücksbringer, davon sind $125$ Schweinchen.\n\nDie Wahrscheinlichkeit als Erstes ein Schweinchen zu ziehen ist dann:\n\n$\\mathrm{P_{Schweinchen}=\\dfrac{125}{400}=31,25\\ \\%}$\n\nDie Wahrscheinlichkeit als Erstes ein Schweinchen zu ziehen\n\nist als Bruch $\\dfrac{125}{400}$, in Prozent ist das $31,25\\ \\%$.",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "c)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Berechne die Wahrscheinlichkeit, dass als Erstes ein $\\textcircled{\\ \\ \\textcolor{red}{Kleeblatt}\\ \\ }$ oder ein $\\textcircled{\\ \\ \\textcolor{red}{Fliegenpilz}\\ \\ }$ gezogen wird.\n\nDie Wahrscheinlichkeit, dass als Erstes ein $\\textcircled{\\ \\ \\textcolor{red}{Kleeblatt}\\ \\ }$ oder ein $\\textcircled{\\ \\ \\textcolor{red}{Fliegenpilz}\\ \\ }$ gezogen wird beträgt: ⟦1⟧ oder ⟦2⟧ $\\%$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.6875,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 68.75,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Berechnen der Wahrscheinlichkeit, dass als Erstes ein Kleeblatt oder ein Fliegenpilz gezogen wird.**\n\nIm Karton befinden sich $400$ Glücksbringer, davon sind $162$ Kleeblätter\n\nund $113$ Fliegenpilze.\n\nDie Wahrscheinlichkeit als Erstes ein Kleeblatt oder einen Fliegenpilz zu ziehen ist dann:\n\n$\\mathrm{P_{Kleebl./Fliegenp.}=\\dfrac{162+113}{400}}$\n\n$\\mathrm{P_{Kleebl./Fliegenp.}=\\dfrac{275}{400}}$\n\nDie Wahrscheinlichkeit als Erstes ein Kleeblatt oder einen Fliegenpilz zu ziehen\n\nbeträgt: $\\ \\dfrac{275}{400}$",
+     "points": 1,
+     "topic": "Wahrscheinlichkeit"
+    },
+    {
+     "label": "d)",
+     "kind": "blanksExercise",
+     "skip": null,
+     "prompt": "Die ersten Kunden haben fünf $\\textcircled{\\ \\ \\textcolor{red}{Fliegenpilze}\\ \\ }$ , acht $\\textcircled{\\ \\ \\textcolor{red}{Kleeblätter}\\ \\ }$ und drei $\\textcircled{\\ \\ \\textcolor{red}{Schweinchen}\\ \\ }$ gezogen.\n\nGib die Wahrscheinlichkeit an, dass als Nächstes ein $\\textcircled{\\ \\ \\textcolor{red}{Schweinchen}\\ \\ }$ gezogen wird\n\nDie Wahrscheinlichkeit, dass als Nächstes ein $\\textcircled{\\ \\ \\textcolor{red}{Schweinchen}\\ \\ }$ gezogen wird beträgt: ⟦1⟧ oder ⟦2⟧ $\\%$",
+     "answer": {
+      "type": "fields",
+      "inline": true,
+      "parts": [
+       {
+        "label": "",
+        "kind": "number",
+        "value": 0.317708333,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       },
+       {
+        "label": "",
+        "kind": "number",
+        "value": 31.77,
+        "tolerance": 0,
+        "unit": "",
+        "alternatives": []
+       }
+      ]
+     },
+     "solution": "**Bestimmen der Wahrscheinlichkeit, dass als Nächstes ein Schweinchen  gezogen wird.**\n\nEs wurden $5$ Fliegenpilze, $8$ Kleeblatter und $3$ Schweinchen gezogen.\n\nIm Karton befinden sich dann noch $(400-5-8-3)$ = $\\textbf{384}$ Glücksbringer, davon sind $(125-3)=\\textbf{122}$ Schweinchen\n\nDie Wahrscheinlichkeit als Nächstes ein Schweinchen ziehen ist dann:\n\n$\\mathrm{P_{Schweinchen}=\\dfrac{122}{384}}$\n\nDie Wahrscheinlichkeit, als Nächstes ein Schweinchen zu ziehen\n\nbeträgt: $\\ \\dfrac{122}{384}$",
+     "points": 2,
+     "topic": "Wahrscheinlichkeit"
+    }
+   ]
+  }
+ ]
+}

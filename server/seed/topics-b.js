@@ -3,7 +3,7 @@ import { de, round, num, fields, unordered, choice, free, relTol } from './helpe
 import { cuboid, cylinder, rightTriangle, img } from './figures.js';
 
 const L = String.raw;
-const ALL = ['HS9', 'RS9', 'HS10', 'RS10', 'ERS10'];
+const ALL = ['HS10', 'RS10', 'ERS10'];
 const deg = (x) => (x * Math.PI) / 180;
 const probHint = 'Gib die Wahrscheinlichkeit als Bruch (z. B. 3/8), als Dezimalzahl oder in Prozent an.';
 const prob = (p, label = 'P =') => num(p, { label, tol: 0.006, alt: [p * 100] });

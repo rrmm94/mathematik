@@ -153,11 +153,11 @@ export function build({ fig }) {
     const n = s + w;
     const withP = (s * w * 2) / (n * n);
     const withoutP = (s * w * 2) / (n * (n - 1));
-    const url = fig.tree({ name: `kugeln-${s}-${w}`, branches: [
+    const url = fig.probTree({ name: `kugeln-${s}-${w}`, branches: [
       { label: 's', p: `${s}/${n}`, kids: [{ label: 's', p: `${s}/${n}` }, { label: 'w', p: `${w}/${n}` }] },
       { label: 'w', p: `${w}/${n}`, kids: [{ label: 's', p: `${s}/${n}` }, { label: 'w', p: `${w}/${n}` }] },
     ] });
-    const url2 = fig.tree({ name: `kugeln-ohne-${s}-${w}`, branches: [
+    const url2 = fig.probTree({ name: `kugeln-ohne-${s}-${w}`, branches: [
       { label: 's', p: `${s}/${n}`, kids: [{ label: 's', p: `${s - 1}/${n - 1}` }, { label: 'w', p: `${w}/${n - 1}` }] },
       { label: 'w', p: `${w}/${n}`, kids: [{ label: 's', p: `${s}/${n - 1}` }, { label: 'w', p: `${w - 1}/${n - 1}` }] },
     ] });
@@ -175,7 +175,7 @@ export function build({ fig }) {
     solution: 'Es gibt $6\\cdot6=36$ gleich wahrscheinliche Ergebnispaare.\n\nSumme 6: (1;5), (2;4), (3;3), (4;2), (5;1) → 5 Pfade mit je $\\frac{1}{6}\\cdot\\frac{1}{6}=\\frac{1}{36}$\n\n$P=\\frac{5}{36}\\approx13{,}89\\,\\%$',
     hint: 'Schreibe alle Paare auf, die zusammen 6 ergeben, und zähle sie.',
   };
-  const coinUrl = fig.tree({ name: 'muenze', branches: [{ label: 'K', p: '1/2', kids: [{ label: 'K', p: '1/2' }, { label: 'Z', p: '1/2' }] }, { label: 'Z', p: '1/2', kids: [{ label: 'K', p: '1/2' }, { label: 'Z', p: '1/2' }] }] });
+  const coinUrl = fig.probTree({ name: 'muenze', branches: [{ label: 'K', p: '1/2', kids: [{ label: 'K', p: '1/2' }, { label: 'Z', p: '1/2' }] }, { label: 'Z', p: '1/2', kids: [{ label: 'K', p: '1/2' }, { label: 'Z', p: '1/2' }] }] });
   const t132a = {
     prompt: 'Eine Münze wird zweimal nacheinander geworfen (Kopf K, Zahl Z).\n\na) Das Baumdiagramm zeigt alle Möglichkeiten. Berechne mit den Pfadregeln: Wie wahrscheinlich ist „zweimal Kopf“, wie wahrscheinlich „genau einmal Zahl“? (In Prozent.)',
     answer: fields(pct(25, 'zweimal Kopf:'), pct(50, 'genau einmal Zahl:')),
@@ -217,7 +217,7 @@ export function build({ fig }) {
     solution: '$25\\,\\%=\\frac{1}{4}$: Von vier Kugeln ist eine blau. Es gibt unendlich viele Möglichkeiten, z. B.:\n\n- 1 blaue, 3 andere (zusammen 4)\n- 5 blaue, 15 andere (zusammen 20)\n- 10 blaue, 30 andere (zusammen 40)\n\nDie anderen Kugeln müssen **dreimal so viele** sein wie die blauen.',
     hint: '$25\\,\\%$ ist ein Viertel: Wenn es $b$ blaue Kugeln gibt, müssen es insgesamt $4b$ Kugeln sein.',
   };
-  const lostUrl = fig.tree({ name: 'lostrommel137', branches: [
+  const lostUrl = fig.probTree({ name: 'lostrommel137', branches: [
     { label: 'N', p: '?', kids: [{ label: 'N', p: '' }, { label: 'T', p: '' }, { label: 'H', p: '' }] },
     { label: 'T', p: '60/200', kids: [{ label: 'N', p: '' }, { label: 'T', p: '' }, { label: 'H', p: '' }] },
     { label: 'H', p: '10 %', kids: [{ label: 'N', p: '' }, { label: 'T', p: '' }, { label: 'H', p: '' }] },

@@ -113,6 +113,9 @@ function DiagnoseStart({ diagnose, first }) {
       <button className="btn-primary mt-7 px-8 py-3 text-base" disabled={busy} onClick={a ? () => navigate('/diagnose') : start}>
         {a ? 'Test fortsetzen' : 'Einstiegstest starten'} <ArrowRight size={18} />
       </button>
+      {!a && !diagnose.isRetest && (
+        <div className="mt-4"><Link to="/start" className="text-sm font-medium text-slate-500 hover:text-brand-700">Themen, die dir leichtfallen, noch einmal ändern</Link></div>
+      )}
     </div>
   );
 }

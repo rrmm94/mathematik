@@ -4,10 +4,10 @@ import { Copy, Plus, Save, Trash2, CopyPlus, FlaskConical, CheckCircle2, XCircle
 import { PROFILES, DIFFICULTIES, LEVELS } from '../../../../shared/constants.js';
 import { checkAnswer, publicAnswerSpec, parseNumber } from '../../../../shared/checker.js';
 import { api } from '../../lib/api.js';
-import { useLoad, PageLoader, ErrorBox, toast, MathContent, Modal } from '../../components/ui.jsx';
+import { useLoad, PageLoader, ErrorBox, toast, MathContent, TaskContext, Modal } from '../../components/ui.jsx';
 import { PageHeader } from '../../components/Layout.jsx';
 import MarkdownEditor from '../../components/MarkdownEditor.jsx';
-import AnswerInput from '../../components/AnswerInput.jsx';
+import { TaskBody } from '../../components/AnswerInput.jsx';
 
 // Eingaben (evtl. mit Komma, als Text) in saubere Zahlen umwandeln
 const toNum = (x) => (typeof x === 'number' ? x : parseNumber(x));
@@ -25,7 +25,7 @@ function normalizeSpec(spec) {
 }
 const showNum = (x) => (typeof x === 'number' ? String(x).replace('.', ',') : x ?? '');
 
-const emptyVariant = () => ({ prompt: '', answer: { type: 'fields', parts: [{ label: '', kind: 'number', value: 0, tolerance: 0, unit: '', alternatives: [] }] }, solution: '', hint: '' });
+const emptyVariant = () => ({ prompt: '', context: '', points: 0, source: '', answer: { type: 'fields', parts: [{ label: '', kind: 'number', value: 0, tolerance: 0, unit: '', alternatives: [] }] }, solution: '', hint: '' });
 
 export default function TaskEditor() {
   const { id } = useParams();
@@ -35,6 +35,8 @@ export default function TaskEditor() {
     const packages = d.task.kind === 'practice' ? await api.get(`/admin/topics/${d.task.topic_id}/packages`) : [];
     return { ...d, packages };
   }, [id]);
+  const [packages, setPackages] = useState([]);
+  const [sections, setSections] = useState([]);
   const [task, setTask] = useState(null);
   const [variants, setVariants] = useState([]);
   const [active, setActive] = useState(0);
@@ -44,6 +46,8 @@ export default function TaskEditor() {
   useEffect(() => {
     if (!data) return;
     setTask(data.task);
+    setPackages(data.packages);
+    setSections(data.sections);
     setVariants(data.variants.length ? data.variants : [emptyVariant()]);
     setActive(0);
     setDirty(false);
@@ -60,12 +64,26 @@ export default function TaskEditor() {
   if (!task) return <PageLoader />;
 
   const upd = (patch) => { setTask({ ...task, ...patch }); setDirty(true); };
+  // Thema wechseln: Pakete und Skript-Abschnitte des neuen Themas laden, erstes Paket gleicher Stufe vorwählen
+  const changeTopic = async (topicId) => {
+    const [pk, sec] = await Promise.all([
+      task.kind === 'practice' ? api.get(`/admin/topics/${topicId}/packages`) : [],
+      api.get(`/admin/topics/${topicId}/section-titles`),
+    ]);
+    const level = packages.find((p) => p.id === task.package_id)?.level ?? 0;
+    const target = pk.find((p) => p.level === level) || pk[0];
+    setPackages(pk);
+    setSections(sec);
+    upd({ topic_id: topicId, package_id: target?.id ?? null, script_section_id: null });
+  };
+  const level = packages.find((p) => p.id === task.package_id)?.level;
+  const changeLevel = (lv) => { const first = packages.find((p) => p.level === lv); if (first) upd({ package_id: first.id }); };
   const updV = (patch) => { setVariants(variants.map((v, i) => (i === active ? { ...v, ...patch } : v))); setDirty(true); };
   const v = variants[active];
 
   const save = async () => {
     await api.put(`/admin/tasks/${task.id}`, {
-      title: task.title, difficulty: task.difficulty, profile: task.profile, packageId: task.package_id,
+      topicId: task.topic_id, title: task.title, difficulty: task.difficulty, profile: task.profile, packageId: task.package_id,
       scriptSectionId: task.script_section_id || null, variants: variants.map((x) => ({ ...x, answer: normalizeSpec(x.answer) })),
     });
     toast('Aufgabe gespeichert');
@@ -129,18 +147,32 @@ export default function TaskEditor() {
             </div>
           </>
         ) : (
-          <div className="md:col-span-2">
-            <label className="label">Übungspaket</label>
-            <select className="input" value={task.package_id || ''} onChange={(e) => upd({ package_id: Number(e.target.value) })}>
-              {data.packages.map((p) => <option key={p.id} value={p.id}>{LEVELS[p.level]?.short} · {p.title}</option>)}
-            </select>
-          </div>
+          <>
+            <div>
+              <label className="label">Niveau</label>
+              <select className="input" value={level ?? ''} onChange={(e) => changeLevel(Number(e.target.value))}>
+                {LEVELS.filter((l) => packages.some((p) => p.level === l.id)).map((l) => <option key={l.id} value={l.id}>{l.label}</option>)}
+              </select>
+            </div>
+            <div>
+              <label className="label">Übungspaket</label>
+              <select className="input" value={task.package_id || ''} onChange={(e) => upd({ package_id: Number(e.target.value) })}>
+                {packages.filter((p) => p.level === level).map((p) => <option key={p.id} value={p.id}>{p.title}{p.profiles?.length ? ` · ${p.profiles.join('/')}` : ''} ({p.tasks?.length ?? 0})</option>)}
+              </select>
+            </div>
+          </>
         )}
+        <div className="md:col-span-2">
+          <label className="label">Themenbereich</label>
+          <select className="input" value={task.topic_id} onChange={(e) => changeTopic(Number(e.target.value))}>
+            {data.topics.map((t) => <option key={t.id} value={t.id}>{t.title}</option>)}
+          </select>
+        </div>
         <div className="md:col-span-2">
           <label className="label">„Skript“-Button springt zu …</label>
           <select className="input" value={task.script_section_id || ''} onChange={(e) => upd({ script_section_id: e.target.value ? Number(e.target.value) : null })}>
             <option value="">– kein Skript-Abschnitt –</option>
-            {data.sections.map((s) => <option key={s.id} value={s.id}>{s.title}</option>)}
+            {sections.map((s) => <option key={s.id} value={s.id}>{s.title}</option>)}
           </select>
         </div>
         {data.stats?.attempts > 0 && (
@@ -173,7 +205,17 @@ export default function TaskEditor() {
             <Info size={14} className="mt-0.5 shrink-0" />
             Jedes Kind bekommt zufällig eine der Varianten (z. B. mit anderen Zahlen). Bei den Übungen kann das Kind mit „Neue Zahlen“ eine andere Variante ziehen.
           </p>
+          <MarkdownEditor label="Ausgangssituation (optional) – Text, Bild oder Tabelle, die über der Aufgabenstellung steht" value={v.context || ''} onChange={(context) => updV({ context })} rows={4} />
           <MarkdownEditor label="Aufgabenstellung" value={v.prompt} onChange={(prompt) => updV({ prompt })} rows={9} />
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 rounded-xl bg-slate-50 px-3 py-2 text-xs text-slate-600">
+            <label className="flex items-center gap-2">Punkte (wie in der Prüfung)
+              <input type="number" min="0" max="20" className="input w-20 py-1" value={v.points || 0} onChange={(e) => updV({ points: Number(e.target.value) || 0 })} />
+            </label>
+            <label className="flex flex-1 items-center gap-2 sm:min-w-[320px]">Herkunft <span className="text-slate-400">(nur für Lehrkräfte sichtbar)</span>
+              <input className="input flex-1 py-1" placeholder="z. B. Abschlussprüfung 2025 · Realschule · Teil 2 · Aufgabe 3 b)" value={v.source || ''} onChange={(e) => updV({ source: e.target.value })} />
+            </label>
+            <span><b>Lückentext:</b> Schreibe <code className="rounded bg-white px-1">⟦1⟧</code>, <code className="rounded bg-white px-1">⟦2⟧</code> … in die Aufgabenstellung – an diese Stellen kommen die Eingabefelder (Typ „Zahl / Eingabefelder“, Haken „Felder im Text“).</span>
+          </div>
           <AnswerSpecEditor key={active} spec={v.answer} onChange={(answer) => updV({ answer })} />
           <div className="grid gap-5 lg:grid-cols-[1fr_320px]">
             <MarkdownEditor label="Lösungsweg / Musterlösung" value={v.solution} onChange={(solution) => updV({ solution })} rows={6} />
@@ -204,8 +246,8 @@ function PreviewTask({ variant }) {
   const spec = publicAnswerSpec(variant.answer);
   return (
     <div className="space-y-5">
-      <MathContent md={variant.prompt} />
-      <AnswerInput spec={spec} value={val} onChange={(x) => { setVal(x); setRes(null); }} status={spec.type === 'free' ? null : res} onSubmit={() => setRes(checkAnswer(variant.answer, val))} />
+      <TaskContext md={variant.context} />
+      <TaskBody prompt={variant.prompt} spec={spec} value={val} onChange={(x) => { setVal(x); setRes(null); }} status={spec.type === 'free' ? null : res} onSubmit={() => setRes(checkAnswer(variant.answer, val))} />
       {res && variant.answer.type !== 'free' && (
         <div className={`flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium ${res.correct ? 'bg-emerald-50 text-emerald-800' : 'bg-red-50 text-red-700'}`}>
           {res.correct ? <CheckCircle2 size={18} /> : <XCircle size={18} />} {res.correct ? 'Würde als richtig gewertet.' : 'Würde als falsch gewertet.'}
@@ -304,6 +346,9 @@ function AnswerSpecEditor({ spec, onChange }) {
             <button type="button" className="btn-secondary btn-sm" onClick={() => onChange({ ...spec, parts: [...spec.parts, { label: '', kind: 'number', value: 0, tolerance: 0, unit: '', alternatives: [] }] })}><Plus size={14} /> Feld hinzufügen</button>
             <label className="flex items-center gap-2 text-sm text-slate-600">
               <input type="checkbox" checked={!!spec.unordered} onChange={(e) => onChange({ ...spec, unordered: e.target.checked })} /> Reihenfolge egal (z. B. x₁ und x₂)
+            </label>
+            <label className="flex items-center gap-2 text-sm text-slate-600">
+              <input type="checkbox" checked={!!spec.inline} onChange={(e) => onChange({ ...spec, inline: e.target.checked })} /> Felder im Text (Lückentext ⟦1⟧ …)
             </label>
           </div>
           <p className="text-xs text-slate-500">Komma oder Punkt werden akzeptiert, ebenso Brüche wie „3/4“. Toleranz z. B. 0,01 für auf zwei Stellen gerundete Ergebnisse.</p>

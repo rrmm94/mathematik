@@ -1,6 +1,7 @@
 import { marked } from 'marked';
 import katex from 'katex';
 import DOMPurify from 'dompurify';
+import { KATEX_MACROS } from './katexMacros.js';
 
 marked.setOptions({ gfm: true, breaks: false });
 
@@ -13,7 +14,7 @@ export function renderMarkdown(src = '') {
   const stash = (tex, display) => {
     let html;
     try {
-      html = katex.renderToString(tex, { displayMode: display, throwOnError: false, strict: 'ignore', output: 'html' });
+      html = katex.renderToString(tex, { displayMode: display, throwOnError: false, strict: 'ignore', output: 'html', macros: { ...KATEX_MACROS } });
     } catch {
       html = `<code>${tex.replace(/</g, '&lt;')}</code>`;
     }
@@ -28,6 +29,8 @@ export function renderMarkdown(src = '') {
   let html = marked.parse(text);
   html = DOMPurify.sanitize(html, { ADD_ATTR: ['target'] });
   html = html
+    // Lücken ⟦1⟧ im Aufgabentext: Platzhalter, in den die Oberfläche ein Eingabefeld setzt
+    .replace(/⟦(\d+)⟧/g, '<span class="blank-slot" data-blank="$1"></span>')
     .replace(/<p>%%MATH(\d+)%%<\/p>/g, (_, i) => math[+i])
     .replace(/%%MATH(\d+)%%/g, (_, i) => math[+i]);
   if (cache.size > 500) cache.clear();
