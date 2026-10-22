@@ -7,6 +7,7 @@ import { buildPlanFromRun } from '../plan.js';
 import { rng } from './helpers.js';
 import { topicsA } from './topics-a.js';
 import { topicsB } from './topics-b.js';
+import { importGrundlagen } from './import-grundlagen.js';
 
 export const TOPICS = [...topicsA, ...topicsB];
 
@@ -202,6 +203,8 @@ export function seedIfEmpty() {
     const c = get("SELECT (SELECT COUNT(*) FROM tasks WHERE kind='diagnose') AS d, (SELECT COUNT(*) FROM tasks WHERE kind='practice') AS p, (SELECT COUNT(*) FROM task_variants) AS v");
     console.log(`Fertig: ${TOPICS.length} Themen, ${c.d} Diagnoseaufgaben, ${c.p} Übungsaufgaben, ${c.v} Varianten.`);
   }
+  // Zusätzliche Übungen aus dem Grundlagen-Training (läuft nur, wenn die Version neu ist)
+  importGrundlagen();
 }
 
 // Direkter Aufruf: npm run seed

@@ -54,6 +54,14 @@ Freitext-Aufgaben zählen im Diagnosetest nicht für die Stufe. Eine KI-Bewertun
 
 Alle Beispielinhalte können im Editor geändert oder gelöscht werden.
 
+## Grundlagen-Training (Hauptschule Klasse 10)
+
+Beim Start importiert die Plattform automatisch die Aufgaben aus dem „Grundlagen-Training“ (Zehnerpotenzen, Prozent & Zinseszins, lineare Funktionen, lineare Gleichungssysteme, lineares/exponentielles Wachstum) – 16 Übungspakete, ca. 80 Aufgaben mit über 150 Varianten, jeweils mit Tipp und Lösungsweg. Vorhandene Inhalte bleiben unberührt; der Import läuft nur einmal (`IMPORT_VERSION` in `server/seed/import-grundlagen.js`).
+
+- Pakete sind für **HS 10** freigegeben (Thema „Wachstum“ wird dafür ebenfalls für HS 10 geöffnet, „Lineare Gleichungssysteme“ ist ein neues Thema).
+- Neue Antworttypen: Wertetabelle mit **Live-Graph**, **Koordinatensystem zum Anklicken** (Geraden/Punkte), **Karten sortieren**, **Termeingabe** (`2x+85`), **a·10ⁿ**-Felder, Auswahllisten, Aufgaben mit mehreren richtigen Lösungen. Im Aufgaben-Editor werden diese Typen als JSON bearbeitet.
+- `npm test` prüft die Antwortlogik und dass jede importierte Aufgabe ihre eigene Musterlösung akzeptiert.
+
 ## Installation auf Unraid (Docker Compose)
 
 ➡️ **Ausführliche Schritt-für-Schritt-Anleitung: [UNRAID.md](UNRAID.md)**
