@@ -12,7 +12,7 @@ const verbose = process.argv.includes('-v');
 const seen = new Map();
 for (const t of loadExams()) {
   const key = `${t.context}\n${t.prompt}`;
-  if (seen.has(key)) seen.get(key).sources.push(sourceOf(t)); else seen.set(key, { ...t, sources: [sourceOf(t)] });
+  if (seen.has(key)) seen.get(key).sources.push(sourceOf(t)); else seen.set(key, { ...t, ...t.raw, sources: [sourceOf(t)] }); // raw: Originaltext vor der Aufbereitung
 }
 const tasks = [...seen.values()].filter((t) => t.answer.type !== 'free');
 
@@ -57,6 +57,24 @@ for (const t of tasks) {
 }
 console.log(`\nAufgaben mit Variante: ${withVariants} von ${tasks.length} prüfbaren (${nVariants} Varianten)`);
 for (const [k, v] of Object.entries(perEntry)) console.log(`  ${k.padEnd(26)} ${String(v.tasks).padStart(3)} Aufgaben, ${String(v.variants).padStart(3)} Varianten`);
+// 3. Alle aufbereiteten Originalaufgaben: eigene Lösung besteht, Lücken = Felder, Auswahl hat richtige Antwort, KaTeX fehlerfrei
+let nOrig = 0;
+for (const t of loadExams()) {
+  if (t.answer.type === 'free') continue;
+  nOrig++;
+  const where = `${sourceOf(t)}`;
+  if (t.answer.type === 'fields') {
+    const gapsN = (t.prompt.match(/⟦\d+⟧/g) || []).length;
+    if (t.answer.inline && gapsN < t.answer.parts.length) problems.push(`${where}: ${gapsN} Lücken, ${t.answer.parts.length} Felder`);
+    if (!checkAnswer(t.answer, valuesOf(t.answer)).correct) problems.push(`${where}: eigene Lösung besteht nicht`);
+  } else if (t.answer.type === 'choice') {
+    const right = t.answer.options.filter((o) => o.correct).length;
+    if (!right) problems.push(`${where}: keine richtige Antwort markiert`);
+    if (!t.answer.multiple && right !== 1) problems.push(`${where}: Einfachauswahl mit ${right} richtigen Antworten`);
+  }
+  mathOk(`${t.context}\n${t.prompt}\n${t.answer.type === 'choice' ? t.answer.options.map((o) => o.text).join('\n') : ''}`, where);
+}
+console.log(`Originalaufgaben geprüft: ${nOrig}`);
 if (notes.length) console.log(`\nVorlage passt nicht (keine Variante, in Ordnung):\n${[...new Set(notes)].slice(0, 20).join('\n')}`);
 console.log(problems.length ? `\n${problems.length} PROBLEME:\n${[...new Set(problems)].slice(0, 60).join('\n')}` : '\nKeine Probleme.');
 process.exit(problems.length ? 1 : 0);
