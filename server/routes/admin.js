@@ -365,6 +365,10 @@ r.get('/diagnose-tasks', (req, res) => {
   res.json({ profile, topics });
 });
 
+r.get('/topics/:id/section-titles', (req, res) => {
+  res.json(all('SELECT id, title FROM script_sections WHERE topic_id = ? ORDER BY sort, id', id(req.params.id)));
+});
+
 r.get('/tasks/:id', (req, res) => {
   const t = get('SELECT * FROM tasks WHERE id = ?', id(req.params.id));
   if (!t) return res.status(404).json({ error: 'Nicht gefunden.' });
@@ -373,7 +377,8 @@ r.get('/tasks/:id', (req, res) => {
   const topic = get('SELECT id, title FROM topics WHERE id = ?', t.topic_id);
   const pkg = t.package_id ? get('SELECT id, title, level FROM packages WHERE id = ?', t.package_id) : null;
   const stats = get('SELECT COUNT(*) AS attempts, SUM(correct) AS correct, AVG(time_ms) AS avg_ms FROM attempts WHERE task_id = ?', t.id);
-  res.json({ task: t, variants, sections, topic, package: pkg, stats });
+  const topics = all('SELECT id, title FROM topics ORDER BY sort, id');
+  res.json({ task: t, variants, sections, topic, topics, package: pkg, stats });
 });
 
 function saveVariants(taskId, variants) {
@@ -412,10 +417,15 @@ r.put('/tasks/:id', (req, res) => {
   const t = get('SELECT * FROM tasks WHERE id = ?', id(req.params.id));
   if (!t) return res.status(404).json({ error: 'Nicht gefunden.' });
   const b = req.body || {};
+  // Anderes Thema: Paket (bei Übungsaufgaben) muss zum neuen Thema gehören, der Skript-Abschnitt ebenso
+  const topicId = b.topicId ? id(b.topicId) : t.topic_id;
+  if (topicId !== t.topic_id && !get('SELECT id FROM topics WHERE id = ?', topicId)) return bad(res, 'Thema unbekannt.');
+  if (t.kind === 'practice' && (topicId !== t.topic_id || b.packageId) && !get('SELECT id FROM packages WHERE id = ? AND topic_id = ?', b.packageId ?? t.package_id, topicId)) return bad(res, 'Bitte ein Übungspaket des gewählten Themas wählen.');
+  const sectionId = b.scriptSectionId === undefined ? t.script_section_id : b.scriptSectionId || null;
   tx(() => {
-    run('UPDATE tasks SET title = ?, difficulty = ?, profile = ?, package_id = ?, script_section_id = ?, sort = ? WHERE id = ?',
-      b.title ?? t.title, b.difficulty ?? t.difficulty, b.profile ?? t.profile, b.packageId === undefined ? t.package_id : b.packageId,
-      b.scriptSectionId === undefined ? t.script_section_id : b.scriptSectionId || null, b.sort ?? t.sort, t.id);
+    run('UPDATE tasks SET topic_id = ?, title = ?, difficulty = ?, profile = ?, package_id = ?, script_section_id = ?, sort = ? WHERE id = ?',
+      topicId, b.title ?? t.title, b.difficulty ?? t.difficulty, b.profile ?? t.profile, b.packageId === undefined ? t.package_id : b.packageId,
+      sectionId && get('SELECT id FROM script_sections WHERE id = ? AND topic_id = ?', sectionId, topicId) ? sectionId : null, b.sort ?? t.sort, t.id);
     if (Array.isArray(b.variants)) saveVariants(t.id, b.variants);
   });
   res.json({ ok: true });
