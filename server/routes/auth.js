@@ -46,6 +46,8 @@ export function publicUser(u) {
     goalLabel: u.profile ? PROFILES[u.profile]?.label : null,
     onboarded: !!u.onboarded,
     topicsAsked: !!u.topics_asked,
+    // Hilfe-Button erst nach abgegebenem Einstiegstest
+    diagDone: u.role === 'student' && !!get("SELECT 1 AS x FROM diag_runs WHERE user_id = ? AND status = 'done'", u.id),
   };
 }
 

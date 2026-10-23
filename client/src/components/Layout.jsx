@@ -66,7 +66,7 @@ export function StudentLayout() {
   const { user } = useAuth();
   const logout = useLogout();
   const [pwOpen, setPwOpen] = useState(false);
-  // Im Einstiegstest gibt es keine Hilfe – erst in der Übungsphase.
+  // Hilfe gibt es erst nach abgegebenem Einstiegstest (und nie währenddessen, auch nicht beim Wiederholungstest).
   const inDiagnose = useLocation().pathname.startsWith('/diagnose');
   return (
     <div className="min-h-screen">
@@ -79,7 +79,7 @@ export function StudentLayout() {
             )}
             <button onClick={() => setPwOpen(true)} className="btn-ghost" title="Passwort ändern"><KeyRound size={17} /><span className="hidden lg:inline">Passwort</span></button>
             <button onClick={logout} className="btn-ghost" title="Abmelden"><LogOut size={17} /><span className="hidden md:inline">Abmelden</span></button>
-            {!inDiagnose && <HelpButton />}
+            {user?.diagDone && !inDiagnose && <HelpButton />}
           </div>
         </div>
       </header>

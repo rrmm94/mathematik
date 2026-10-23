@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Sigma, LogIn, Target, Route as RouteIcon, BookOpen } from 'lucide-react';
 import { api } from '../lib/api.js';
 import { useAuth, ErrorBox } from '../components/ui.jsx';
-import { HelpButton, LegalLinks } from '../components/Layout.jsx';
+import { LegalLinks } from '../components/Layout.jsx';
 
 export default function Login() {
   const { setUser } = useAuth();
@@ -29,7 +29,6 @@ export default function Login() {
 
   return (
     <div className="min-h-screen">
-      <div className="mx-auto flex max-w-6xl justify-end px-4 pt-4"><HelpButton /></div>
       <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 py-10 md:grid-cols-2 md:py-16">
         <div>
           <div className="mb-6 flex items-center gap-3">

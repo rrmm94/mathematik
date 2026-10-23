@@ -2,11 +2,12 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Check, ArrowRight, Pause, Send, SkipForward } from 'lucide-react';
 import { api } from '../../lib/api.js';
-import { useLoad, PageLoader, ErrorBox, TaskContext, TopicIcon, ProgressBar, Modal } from '../../components/ui.jsx';
+import { useLoad, useAuth, PageLoader, ErrorBox, TaskContext, TopicIcon, ProgressBar, Modal } from '../../components/ui.jsx';
 import { TaskBody, isEmptyAnswer } from '../../components/AnswerInput.jsx';
 
 export default function Diagnose() {
   const navigate = useNavigate();
+  const { refresh } = useAuth();
   const { data, error, loading } = useLoad(() => api.get('/student/diagnose'));
   const [idx, setIdx] = useState(null);
   const [answers, setAnswers] = useState({});
@@ -73,6 +74,7 @@ export default function Diagnose() {
   const finish = async () => {
     setBusy(true);
     const result = await api.post('/student/diagnose/finish');
+    await refresh();
     navigate('/auswertung', { state: result, replace: true });
   };
 
