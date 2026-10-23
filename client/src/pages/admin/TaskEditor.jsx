@@ -36,6 +36,8 @@ export default function TaskEditor() {
     return { ...d, packages };
   }, [id]);
   const [packages, setPackages] = useState([]);
+  const [dragFrom, setDragFrom] = useState(null);
+  const [dragOver, setDragOver] = useState(null);
   const [sections, setSections] = useState([]);
   const [task, setTask] = useState(null);
   const [variants, setVariants] = useState([]);
@@ -103,6 +105,17 @@ export default function TaskEditor() {
     const nv = copy ? { ...structuredClone(v), id: undefined } : emptyVariant();
     setVariants([...variants, nv]);
     setActive(variants.length);
+    setDirty(true);
+  };
+  // Tabs per Drag & Drop umsortieren; die aktive Variante bleibt dieselbe.
+  const moveVariant = (from, to) => {
+    if (from === null || from === to) return;
+    const next = [...variants];
+    const [m] = next.splice(from, 1);
+    next.splice(to, 0, m);
+    const cur = variants[active];
+    setVariants(next);
+    setActive(next.indexOf(cur));
     setDirty(true);
   };
   const removeVariant = () => {
@@ -188,7 +201,17 @@ export default function TaskEditor() {
       <div className="card overflow-hidden">
         <div className="flex flex-wrap items-center gap-1 border-b border-slate-200 bg-slate-50 px-3 pt-3">
           {variants.map((_, i) => (
-            <button key={i} onClick={() => setActive(i)} className={`rounded-t-lg border border-b-0 px-4 py-2 text-sm font-semibold transition ${active === i ? 'border-slate-200 bg-white text-brand-700' : 'border-transparent text-slate-500 hover:text-slate-800'}`}>
+            <button
+              key={i}
+              draggable={variants.length > 1}
+              onDragStart={(e) => { setDragFrom(i); e.dataTransfer.effectAllowed = 'move'; }}
+              onDragOver={(e) => { if (dragFrom !== null) { e.preventDefault(); setDragOver(i); } }}
+              onDrop={(e) => { e.preventDefault(); moveVariant(dragFrom, i); setDragFrom(null); setDragOver(null); }}
+              onDragEnd={() => { setDragFrom(null); setDragOver(null); }}
+              onClick={() => setActive(i)}
+              title={variants.length > 1 ? 'Ziehen, um die Reihenfolge zu ändern' : undefined}
+              className={`rounded-t-lg border border-b-0 px-4 py-2 text-sm font-semibold transition ${variants.length > 1 ? 'cursor-grab' : ''} ${dragFrom === i ? 'opacity-40' : ''} ${dragOver === i && dragFrom !== null && dragFrom !== i ? 'border-l-2 !border-l-brand-500' : ''} ${active === i ? 'border-slate-200 bg-white text-brand-700' : 'border-transparent text-slate-500 hover:text-slate-800'}`}
+            >
               Variante {i + 1}
             </button>
           ))}

@@ -29,14 +29,14 @@ export function HelpButton() {
   );
 }
 
-function Logo({ to = '/' }) {
+function Logo({ to = '/', wrap = false }) {
   return (
     <Link to={to} className="flex min-w-0 items-center gap-2.5">
       <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-600 text-white shadow-sm shadow-brand-600/30">
         <Sigma size={20} strokeWidth={2.5} />
       </span>
       <span className="leading-tight">
-        <span className="block text-[13px] font-bold text-slate-900 sm:whitespace-nowrap sm:text-[15px]">Mathematik-<wbr />Prüfungstrainer</span>
+        <span className={`block text-[13px] font-bold text-slate-900 ${wrap ? '' : 'sm:whitespace-nowrap'} sm:text-[15px]`}>Mathematik-<wbr />Prüfungstrainer</span>
         <span className="hidden text-[11px] font-medium text-slate-500 sm:block">Fit für die Abschlussprüfung</span>
       </span>
     </Link>
@@ -136,7 +136,7 @@ export function AdminLayout() {
     <div className="min-h-screen lg:flex">
       <aside className="border-b border-slate-200 bg-white lg:sticky lg:top-0 lg:h-screen lg:w-64 lg:shrink-0 lg:border-b-0 lg:border-r">
         <div className="flex items-center justify-between px-5 py-4">
-          <Logo to="/admin" />
+          <Logo to="/admin" wrap />
         </div>
         <div className="px-5 pb-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400">Lehrkraft</div>
         <nav className="flex flex-wrap gap-1 px-3 pb-3 lg:flex-col lg:flex-nowrap">

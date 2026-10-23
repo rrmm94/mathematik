@@ -1,7 +1,9 @@
 import { useRef, useState } from 'react';
-import { Bold, Image, Sigma, Table, Divide, Superscript, Radical, Loader2, Eye, Pencil, Columns2 } from 'lucide-react';
+import { Bold, Image, Sigma, Table, Divide, Superscript, Radical, TextCursorInput, Loader2, Eye, Pencil, Columns2 } from 'lucide-react';
 import { api } from '../lib/api.js';
 import { MathContent, toast } from './ui.jsx';
+
+const CdotIcon = ({ size = 16 }) => <span className="grid place-items-center font-bold leading-none" style={{ width: size, height: size, fontSize: size + 2 }}>·</span>;
 
 // Textfeld für Freitext + LaTeX ($…$) + Bilder/SVG mit Live-Vorschau.
 export default function MarkdownEditor({ value, onChange, rows = 8, placeholder, label }) {
@@ -38,6 +40,22 @@ export default function MarkdownEditor({ value, onChange, rows = 8, placeholder,
     }
   };
 
+  // Malpunkt: innerhalb einer Formel nur \cdot, sonst als eigene Formel.
+  const insertCdot = () => {
+    const el = ref.current;
+    const v = value || '';
+    const pos = el ? el.selectionStart : v.length;
+    const dollars = (v.slice(0, pos).replace(/\\\$/g, '').match(/\$/g) || []).length;
+    if (dollars % 2 === 1) insert('\\cdot ');
+    else insert('$\\cdot$');
+  };
+
+  // Lücke ⟦n⟧ mit der nächsten freien Nummer.
+  const insertGap = () => {
+    const nums = [...(value || '').matchAll(/⟦(\d+)⟧/g)].map((m) => Number(m[1]));
+    insert(`⟦${Math.max(0, ...nums) + 1}⟧`);
+  };
+
   const tools = [
     { icon: Bold, title: 'Fett', fn: () => insert('**', '**', 'Text') },
     { icon: Sigma, title: 'Formel im Text  $…$', fn: () => insert('$', '$', 'x^2') },
@@ -45,6 +63,8 @@ export default function MarkdownEditor({ value, onChange, rows = 8, placeholder,
     { icon: Divide, title: 'Bruch', fn: () => insert('$\\frac{', '}{4}$', '3') },
     { icon: Superscript, title: 'Potenz', fn: () => insert('$', '^{2}$', 'x') },
     { icon: Radical, title: 'Wurzel', fn: () => insert('$\\sqrt{', '}$', '2') },
+    { icon: CdotIcon, title: 'Malpunkt  \\cdot', fn: insertCdot },
+    { icon: TextCursorInput, title: 'Lücke hinzufügen  ⟦1⟧, ⟦2⟧ …', fn: insertGap },
     { icon: Table, title: 'Tabelle', fn: () => insert('\n| $x$ | 1 | 2 | 3 |\n|---|---|---|---|\n| $y$ | 2 | 4 | 6 |\n') },
   ];
 
