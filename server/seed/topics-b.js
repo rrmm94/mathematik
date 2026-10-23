@@ -24,7 +24,7 @@ export const topicsB = [
 | Quader | $V = a \cdot b \cdot c$ | $O = 2ab + 2ac + 2bc$ |
 | Würfel | $V = a^3$ | $O = 6a^2$ |
 
-Die **Oberfläche** ist die Summe aller Flächen des Netzes – stell dir vor, du würdest den Körper aufschneiden und flach ausbreiten.`,
+Die **Oberfläche** ist die Summe aller Flächen des Netzes. Stell dir vor, du würdest den Körper aufschneiden und flach ausbreiten.`,
       },
       {
         title: 'Prisma und Zylinder',
@@ -69,7 +69,7 @@ ${img(cuboid({ a: `${a} cm`, b: `${b} cm`, c: `${c} cm` }), 'Quader')}`,
           section: 0,
           prompt: L`Ein Geschenkkarton ist $${a}\text{ cm}$ lang, $${b}\text{ cm}$ breit und $${c}\text{ cm}$ hoch. Wie viel $\text{cm}^2$ Pappe braucht man mindestens für den Karton (Oberfläche)?`,
           answer: fields(num(O, { label: 'O =', unit: 'cm²' })),
-          hint: 'Ein Quader hat 6 Flächen – je zwei sind gleich groß.',
+          hint: 'Ein Quader hat 6 Flächen, je zwei davon sind gleich groß.',
           solution: L`$O = 2 \cdot ${a} \cdot ${b} + 2 \cdot ${a} \cdot ${c} + 2 \cdot ${b} \cdot ${c} = ${2 * a * b} + ${2 * a * c} + ${2 * b * c} = ${O}\text{ cm}^2$`,
         };
       },
@@ -134,8 +134,8 @@ b) $r = \sqrt[3]{\frac{3V}{4\pi}} = \sqrt[3]{\frac{3 \cdot ${de(Vs)}}{4\pi}} \ap
 
 $$a^2 + b^2 = c^2$$
 
-- $c$ ist die **Hypotenuse** – die längste Seite, sie liegt **gegenüber vom rechten Winkel**.
-- $a$ und $b$ sind die **Katheten** – sie bilden den rechten Winkel.
+- $c$ ist die **Hypotenuse**. Das ist die längste Seite, sie liegt **gegenüber vom rechten Winkel**.
+- $a$ und $b$ sind die **Katheten**. Sie bilden den rechten Winkel.
 
 **Achtung:** Die Buchstaben können anders heißen! Suche immer zuerst den rechten Winkel.`,
       },
@@ -149,7 +149,7 @@ $$a^2 + b^2 = c^2$$
         title: 'Kathete berechnen',
         md: L`$$a = \sqrt{c^2 - b^2}$$
 
-Bei der Kathete wird **subtrahiert** – die Hypotenuse ist ja die längste Seite.
+Bei der Kathete wird **subtrahiert**, denn die Hypotenuse ist ja die längste Seite.
 
 > $c = 13\text{ cm}$, $b = 5\text{ cm}$: $a = \sqrt{169 - 25} = \sqrt{144} = 12\text{ cm}$`,
       },
@@ -251,7 +251,7 @@ Raumdiagonale: $e = \sqrt{d^2 + ${c}^2} = \sqrt{${a * a + b * b + c * c}} \appro
       },
       {
         title: 'Median und Spannweite',
-        md: L`**Median (Zentralwert):** Werte der Größe nach ordnen – der Wert in der **Mitte** ist der Median. Bei gerader Anzahl: Mittelwert der beiden mittleren Werte.
+        md: L`**Median (Zentralwert):** Werte der Größe nach ordnen. Der Wert in der **Mitte** ist der Median. Bei gerader Anzahl: Mittelwert der beiden mittleren Werte.
 
 **Spannweite:** größter Wert − kleinster Wert
 
@@ -516,7 +516,7 @@ $y = x^2 + e$: Die Parabel ist um $e$ nach **oben/unten** verschoben.`,
         title: 'Quadratische Gleichungen und p-q-Formel',
         md: L`**Rein quadratisch:** $x^2 = 49 \Rightarrow x_1 = 7,\; x_2 = -7$
 
-**Normalform** $x^2 + px + q = 0$ – dann hilft die **p-q-Formel**:
+**Normalform** $x^2 + px + q = 0$. Dann hilft die **p-q-Formel**:
 
 $$x_{1,2} = -\frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 - q}$$
 
@@ -556,7 +556,7 @@ Der Ausdruck unter der Wurzel (Diskriminante) entscheidet: $> 0$ zwei Lösungen,
 $$y = (x ${d >= 0 ? '- ' + d : '+ ' + -d})^2 ${e >= 0 ? '+ ' + e : '- ' + -e}$$`,
           answer: fields(num(d, { label: 'S (x-Wert):' }), num(e, { label: 'S (y-Wert):' })),
           hint: 'Scheitelpunktform y = (x − d)² + e → S(d | e). Achte auf das Vorzeichen in der Klammer.',
-          solution: L`$S(${d} \mid ${e})$ – in der Klammer steht $x ${d >= 0 ? '- ' + d : '+ ' + -d}$, also $d = ${d}$.`,
+          solution: L`$S(${d} \mid ${e})$. In der Klammer steht $x ${d >= 0 ? '- ' + d : '+ ' + -d}$, also $d = ${d}$.`,
         };
       },
       (r) => {

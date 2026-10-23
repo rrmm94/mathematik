@@ -107,7 +107,7 @@ export function build({ fig }) {
     prompt: 'Von 1 500 Personen wählen 600 die Partei A, 300 die Partei B, 300 die Partei C, 150 die Partei D und 150 die Partei E.\n\nb) Für das **Kreisdiagramm** brauchst du die Winkel der Kreisausschnitte. Berechne sie ($100\\,\\%\\ \\hat{=}\\ 360^\\circ$).',
     answer: fields(...'ABCDE'.split('').map((p, i) => approx((shares[i] / 1500) * 360, { label: `Partei ${p}:`, unit: '°', tol: 0.6 }))),
     solution: shares.map((s, i) => `Partei ${'ABCDE'[i]}: $${f2((s / 1500) * 100)}\\,\\%$ → $${de((s / 1500) * 360, 1)}^\\circ$`).join('\n\n'),
-    hint: 'Anteil mal $360^\\circ$ – z. B. $40\\,\\%$ sind $144^\\circ$.',
+    hint: 'Anteil mal $360^\\circ$, z. B. $40\\,\\%$ sind $144^\\circ$.',
   };
   const t127c = {
     prompt: 'Bei der Umfrage unter 1 500 Personen ergaben sich folgende Anteile: Partei A $40\\,\\%$, B $20\\,\\%$, C $20\\,\\%$, D $10\\,\\%$, E $10\\,\\%$.\n\nc) Berechne die Stimmenverteilung bei $30\\,000$ Wählern.',
@@ -144,7 +144,7 @@ export function build({ fig }) {
   const t130 = {
     prompt: 'Ein Würfel wird 60-mal geworfen.\n\nWie müssten sich die Ergebnisse des Experiments verteilen? Gib an, wie oft jede Augenzahl zu erwarten ist, und nimm kritisch Stellung.',
     answer: fields(num(10, { label: 'Erwartung je Augenzahl:', unit: 'mal', tol: 0 }), sel(['Jede Augenzahl fällt genau 10-mal.', 'Jede Augenzahl fällt ungefähr 10-mal; Abweichungen sind normal.', 'Die Sechs fällt am seltensten.'], 'Jede Augenzahl fällt ungefähr 10-mal; Abweichungen sind normal.', 'Stellungnahme:')),
-    solution: 'Bei einem fairen Würfel hat jede Augenzahl die Wahrscheinlichkeit $\\frac{1}{6}$. Bei 60 Würfen erwartet man $60\\cdot\\frac{1}{6}=10$ Treffer je Augenzahl.\n\n**Kritisch:** Es handelt sich um einen Zufallsversuch – die tatsächlichen Häufigkeiten schwanken (z. B. 7, 12, 9 …). Erst bei sehr vielen Würfen nähern sich die relativen Häufigkeiten $\\frac{1}{6}$ an.',
+    solution: 'Bei einem fairen Würfel hat jede Augenzahl die Wahrscheinlichkeit $\\frac{1}{6}$. Bei 60 Würfen erwartet man $60\\cdot\\frac{1}{6}=10$ Treffer je Augenzahl.\n\n**Kritisch:** Es handelt sich um einen Zufallsversuch, die tatsächlichen Häufigkeiten schwanken (z. B. 7, 12, 9 …). Erst bei sehr vielen Würfen nähern sich die relativen Häufigkeiten $\\frac{1}{6}$ an.',
     hint: 'Welche Wahrscheinlichkeit hat jede Zahl? Wie oft passiert das also bei 60 Würfen im Durchschnitt?',
   };
 
@@ -267,9 +267,9 @@ export function build({ fig }) {
             { title: 'Grundlagen Beispiel c: relative Häufigkeit', section: 'Häufigkeiten und Diagramme', variants: relHVars },
             { title: 'Grundlagen Beispiel d: Kreisdiagramm', section: 'Häufigkeiten und Diagramme', variants: anglesVars },
             { title: 'Grundlagen 126: Geschwindigkeitskontrolle', section: 'Häufigkeiten und Diagramme', variants: [t126] },
-            { title: 'Grundlagen 127 a: Wahlumfrage – Tabelle', section: 'Häufigkeiten und Diagramme', variants: [t127a] },
-            { title: 'Grundlagen 127 b: Wahlumfrage – relative Häufigkeiten', section: 'Häufigkeiten und Diagramme', variants: [t127b] },
-            { title: 'Grundlagen 127 b: Wahlumfrage – Kreisdiagramm', section: 'Häufigkeiten und Diagramme', variants: [t127b2] },
+            { title: 'Grundlagen 127 a: Wahlumfrage · Tabelle', section: 'Häufigkeiten und Diagramme', variants: [t127a] },
+            { title: 'Grundlagen 127 b: Wahlumfrage · relative Häufigkeiten', section: 'Häufigkeiten und Diagramme', variants: [t127b] },
+            { title: 'Grundlagen 127 b: Wahlumfrage · Kreisdiagramm', section: 'Häufigkeiten und Diagramme', variants: [t127b2] },
             { title: 'Grundlagen 127 c: Stimmenverteilung', section: 'Häufigkeiten und Diagramme', variants: [t127c] },
           ],
         },
@@ -313,8 +313,8 @@ export function build({ fig }) {
           level: 3,
           tasks: [
             { title: 'Grundlagen 136: 25 % blaue Kugeln', section: 'Laplace-Experimente', variants: [t136] },
-            { title: 'Grundlagen 137 a: Lostrommel – fehlender Wert', section: 'Ziehen ohne Zurücklegen', variants: [t137a] },
-            { title: 'Grundlagen 137 b: Lostrommel – kein Hauptgewinn', section: 'Ziehen ohne Zurücklegen', variants: [t137b] },
+            { title: 'Grundlagen 137 a: Lostrommel · fehlender Wert', section: 'Ziehen ohne Zurücklegen', variants: [t137a] },
+            { title: 'Grundlagen 137 b: Lostrommel · kein Hauptgewinn', section: 'Ziehen ohne Zurücklegen', variants: [t137b] },
             { title: 'Grundlagen 137 c: Anderer Stand', section: 'Gegenereignis', variants: [t137c] },
           ],
         },

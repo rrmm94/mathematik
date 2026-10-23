@@ -24,7 +24,7 @@ export const TOPIC_HINTS = {
   },
   'Lineare Funktionen': {
     keywords: 'Steigung, y-Achsenabschnitt, Geraden, Wertetabelle',
-    example: '$y = 2x + 1$ – wo schneidet die Gerade die y-Achse?',
+    example: 'Wo schneidet die Gerade $y = 2x + 1$ die y-Achse?',
   },
   'Winkel, Dreiecke & Flächen': {
     keywords: 'Winkelsumme, Rechteck, Dreieck, Kreis, Umfang',

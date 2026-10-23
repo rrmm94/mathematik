@@ -40,7 +40,7 @@ export default function Login() {
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
             Fit für die <span className="text-brand-600">Mathe-Prüfung</span>.
           </h1>
-          <p className="mt-4 max-w-md text-lg text-slate-600">Dein persönlicher Lernplan, passende Übungen und ein Skript zum Nachschlagen – alles an einem Ort.</p>
+          <p className="mt-4 max-w-md text-lg text-slate-600">Dein persönlicher Lernplan, passende Übungen und ein Skript zum Nachschlagen. Alles an einem Ort.</p>
           <ul className="mt-8 space-y-3 text-sm text-slate-600">
             {[
               [Target, 'Ein kurzer Einstiegstest zeigt, womit du am besten startest.'],

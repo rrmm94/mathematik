@@ -34,7 +34,7 @@ export default function Practice() {
         <div className="card animate-pop flex items-center gap-4 border-emerald-200 bg-emerald-50 p-5">
           <PartyPopper className="text-emerald-600" size={28} />
           <div className="flex-1">
-            <div className="font-semibold text-emerald-900">Paket geschafft – super gemacht!</div>
+            <div className="font-semibold text-emerald-900">Paket geschafft, super gemacht!</div>
             <div className="text-sm text-emerald-800">Mit „Neue Zahlen“ kannst du jede Aufgabe noch einmal üben.</div>
           </div>
           <Link to={`/thema/${topic.id}`} className="btn-secondary">Weiter</Link>
@@ -112,7 +112,7 @@ function TaskCard({ task, index, topicId, onUpdate }) {
         {status && !isFree && (
           <div className={`animate-pop flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium ${status.correct ? 'bg-emerald-50 text-emerald-800' : 'bg-red-50 text-red-700'}`}>
             {status.correct ? <CheckCircle2 size={18} /> : <XCircle size={18} />}
-            {status.correct ? 'Richtig! Sehr gut.' : 'Noch nicht ganz. Versuch es noch einmal – oder schau dir einen Tipp an.'}
+            {status.correct ? 'Richtig! Sehr gut.' : 'Noch nicht ganz. Versuch es noch einmal oder schau dir einen Tipp an.'}
           </div>
         )}
         {status && isFree && (

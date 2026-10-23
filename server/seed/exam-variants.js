@@ -143,7 +143,7 @@ const equationFamily = {
     const prompt = `${l ? `$${l}$ ` : ''}⟦1⟧${rr ? ` $${rr}$` : ''}`;
     const filled = full.replace('§', fmtValue(x));
     const solution = alone
-      ? `Rechne Schritt für Schritt – Klammern zuerst, Punkt vor Strich:\n\n$${tex(O, '')} = ${fmtValue(x)}$`
+      ? `Rechne Schritt für Schritt: Klammern zuerst, dann Punkt vor Strich.\n\n$${tex(O, '')} = ${fmtValue(x)}$`
       : `Gesucht ist die Zahl, bei der die Rechnung stimmt. Rechne rückwärts (Umkehraufgabe) oder probiere aus.\n\nProbe: $${filled}$ ✓`;
     return { prompt, answer: gaps(part(x)), solution };
   },
@@ -494,7 +494,7 @@ const textEntries = [
         answer: gaps(part(v, { tol: 0.0006 })),
         solution: p.both
           ? `Jede Auslosung: $\\frac{1}{${n}}$. Beide: $\\frac{1}{${n}}\\cdot\\frac{1}{${n}} = \\frac{1}{${n * n}}$`
-          : `Egal, wer bei der ersten Kontrolle gezogen wird – bei der zweiten muss derselbe gezogen werden: $\\frac{1}{${n}}$`,
+          : `Egal, wer bei der ersten Kontrolle gezogen wird: Bei der zweiten muss derselbe gezogen werden: $\\frac{1}{${n}}$`,
       };
     },
     vary: (r, p) => { const all = ['Ali', 'Kai', 'Tom', 'Ben', 'Eda', 'Joe', 'Max']; const n = r.pick([4, 5]); return { names: ['Ali', ...r.shuffle(all.slice(1)).slice(0, n - 1)], both: p.both }; },

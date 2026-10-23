@@ -121,7 +121,7 @@ function PlanEditor({ student, plan, onSaved }) {
   return (
     <div>
       <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
-        <p className="text-sm text-slate-500">Reihenfolge per Ziehen oder Pfeilen ändern. Klicke Niveaustufen an, um Übungspakete freizuschalten – mehrere Stufen gleichzeitig sind möglich.</p>
+        <p className="text-sm text-slate-500">Reihenfolge per Ziehen oder Pfeilen ändern. Klicke Niveaustufen an, um Übungspakete freizuschalten. Mehrere Stufen gleichzeitig sind möglich.</p>
         <div className="flex gap-2">
           {dirty && <button className="btn-secondary" onClick={() => setItems(plan)}>Verwerfen</button>}
           <button className="btn-primary" disabled={!dirty} onClick={save}><Save size={16} /> Speichern</button>
@@ -268,7 +268,7 @@ function DiagnoseView({ student, runs, plan, onChanged }) {
 
       <div className="card overflow-hidden">
         <div className="border-b border-slate-100 bg-slate-50/70 px-5 py-3 text-sm text-slate-600">
-          So wurde der Lernplan berechnet: <b>0 richtig → Basis</b>, <b>1 → Mindest</b>, <b>2 → Regel</b>, <b>3 → Experte</b>. Themen mit dem geringsten Anteil richtiger Antworten stehen oben. Themen mit <Star size={12} className="inline fill-amber-400 text-amber-500" /> hat das Kind als „leicht“ angehakt – waren sie im Test mindestens auf Regelstandard, stehen sie am Ende.
+          So wurde der Lernplan berechnet: <b>0 richtig → Basis</b>, <b>1 → Mindest</b>, <b>2 → Regel</b>, <b>3 → Experte</b>. Themen mit dem geringsten Anteil richtiger Antworten stehen oben. Themen mit <Star size={12} className="inline fill-amber-400 text-amber-500" /> hat das Kind als „leicht“ angehakt. Waren sie im Test mindestens auf Regelstandard, stehen sie am Ende.
         </div>
         <div className="divide-y divide-slate-100">
           {byTopic.map((t) => {
@@ -323,7 +323,7 @@ function DiagnoseView({ student, runs, plan, onChanged }) {
 }
 
 function formatGiven(answer, spec) {
-  if (answer == null) return '— (keine Antwort)';
+  if (answer == null) return '(keine Antwort)';
   if (spec?.type === 'choice') return (Array.isArray(answer) ? answer : [answer]).map((i) => spec.options?.[i]?.text ?? i).join(', ');
   if (Array.isArray(answer)) return answer.map((a, i) => `${spec?.parts?.[i]?.label || ''} ${a ?? '—'}`).join('   ');
   return String(answer);

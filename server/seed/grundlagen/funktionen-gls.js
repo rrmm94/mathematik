@@ -102,13 +102,13 @@ export function build({ fig }) {
         prompt: `Löse das Gleichungssystem **zeichnerisch**.\n\n$$\\text{I}\\quad ${eq1}\\qquad\\text{II}\\quad ${eq2}$$\n\nForme zuerst beide Gleichungen nach $y$ um und zeichne dann beide Geraden: je zwei Punkte, zuerst für Gleichung I (blau), dann für Gleichung II (gelb).`,
         answer: graph({ view: V(-6, 6, -6, 6), lines: [l1, l2], labels: ['Gleichung I', 'Gleichung II'] }),
         solution: `Nach $y$ umgestellt:\n\n${norm}\n\n![Graphen](${url})`,
-        hint: 'Gleichung nach $y$ auflösen, dann $b$ als Startpunkt auf der $y$-Achse und das Steigungsdreieck – oder zwei Punkte aus einer Wertetabelle.',
+        hint: 'Gleichung nach $y$ auflösen, dann $b$ als Startpunkt auf der $y$-Achse und das Steigungsdreieck. Du kannst auch zwei Punkte aus einer Wertetabelle nehmen.',
       },
       {
         prompt: `Du hast die beiden Geraden gezeichnet:\n\n$$\\text{I}\\quad ${eq1}\\qquad\\text{II}\\quad ${eq2}$$\n\nLies am **Schnittpunkt** $S(x\\mid y)$ die Lösung des Gleichungssystems ab.`,
         answer: solveFields(x0, y0),
-        solution: `Die Geraden schneiden sich in $S(${de(x0)}\\mid${de(y0)})$.\n\n![Graphen](${url})\n\n**Probe:** in I und II einsetzen – beide Gleichungen stimmen für $x=${de(x0)}$, $y=${de(y0)}$.`,
-        hint: 'Der Schnittpunkt liegt auf beiden Geraden – seine Koordinaten sind die Lösung.',
+        solution: `Die Geraden schneiden sich in $S(${de(x0)}\\mid${de(y0)})$.\n\n![Graphen](${url})\n\n**Probe:** in I und II einsetzen. Beide Gleichungen stimmen für $x=${de(x0)}$, $y=${de(y0)}$.`,
+        hint: 'Der Schnittpunkt liegt auf beiden Geraden. Seine Koordinaten sind die Lösung.',
       },
     ];
   };
@@ -261,7 +261,7 @@ export function build({ fig }) {
     prompt: 'Axel war zweimal in der Trampolinhalle.\n\n- Einmal hat er mit seiner Frau und seinem Sohn $32\\ €$ bezahlt.\n- Einmal war er mit seinem Sohn und seinen 2 Töchtern da und hat $36\\ €$ bezahlt.\n\nBestimme, wie hoch die Eintrittspreise für Erwachsene und für Kinder sind.',
     answer: fields(money(12, 'Erwachsene:'), money(8, 'Kinder:')),
     solution: '$x$: Eintritt Erwachsene, $y$: Eintritt Kinder\n\n$\\text{I}\\quad 2x+y=32$ (zwei Erwachsene, ein Kind)\n\n$\\text{II}\\quad x+3y=36$ (ein Erwachsener, drei Kinder)\n\nAus I: $y=32-2x$. Einsetzen in II: $x+96-6x=36 \\Rightarrow -5x=-60 \\Rightarrow x=12$. Dann $y=8$.\n\nErwachsene zahlen **12 €**, Kinder **8 €**.',
-    hint: 'Axel selbst ist ein Erwachsener – in beiden Besuchen!',
+    hint: 'Axel selbst ist ein Erwachsener, und zwar in beiden Besuchen!',
   };
 
   // 26: Autoverleih
@@ -317,7 +317,7 @@ export function build({ fig }) {
   const gls = [
     {
       title: 'Was ist ein lineares Gleichungssystem?',
-      md: L`Manchmal sind **zwei Größen** gesucht ($x$ und $y$), und du kennst **zwei Bedingungen**. Dann stellst du zwei Gleichungen auf – ein **lineares Gleichungssystem**:
+      md: L`Manchmal sind **zwei Größen** gesucht ($x$ und $y$), und du kennst **zwei Bedingungen**. Dann stellst du zwei Gleichungen auf. Das ist ein **lineares Gleichungssystem**:
 
 $$\text{I}\quad y=m_1x+b_1 \qquad \text{II}\quad y=m_2x+b_2$$
 
@@ -392,7 +392,7 @@ Lösung: $x=6$ und $y=4$.
       title: 'Vom Text zum Gleichungssystem',
       md: L`**So gehst du vor:**
 1. **Gegeben** und **gesucht** aufschreiben.
-2. Variablen festlegen ($x$, $y$ – oder passende Buchstaben).
+2. Variablen festlegen ($x$, $y$ oder passende Buchstaben).
 3. Zwei Gleichungen aufstellen (z. B. eine für die **Anzahl**, eine für das **Geld**).
 4. Lösen, **Probe** machen, Antwortsatz schreiben.
 
@@ -509,13 +509,13 @@ Lösung: $x=6$ und $y=4$.
                 prompt: 'Zeichne die Graphen von $g\\colon y=2x+2$ und $h\\colon y=-4x+7$ in ein gemeinsames Koordinatensystem. Zeichne zuerst $g$ (2 Punkte), dann $h$ (2 Punkte).',
                 answer: graph({ view: V(-5, 5, -10, 10, { ystep: 2, snapY: 1 }), lines: [{ m: 2, b: 2 }, { m: -4, b: 7 }], labels: ['g', 'h'] }),
                 solution: `$g$: Start bei $(0\\mid2)$, dann 1 nach rechts und 2 nach oben → $(1\\mid4)$.\n\n$h$: Start bei $(0\\mid7)$, dann 1 nach rechts und 4 nach unten → $(1\\mid3)$.\n\n![Graphen](${fig.plot({ xmin: -5, xmax: 5, ymin: -10, ymax: 10, ystep: 2, name: 'lf13', lines: [{ m: 2, b: 2, label: 'g' }, { m: -4, b: 7, label: 'h' }] })})`,
-                hint: 'Beide Funktionen stehen schon in Normalform – lies $b$ und $m$ ab.',
+                hint: 'Beide Funktionen stehen schon in Normalform. Lies $b$ und $m$ ab.',
               }],
             },
             { title: 'Beispiel Kerze', section: 'Lineare Funktionen in Sachaufgaben', variants: kerze },
             { title: 'Grundlagen 14: Busreise', section: 'Lineare Funktionen in Sachaufgaben', variants: [bus] },
             {
-              title: 'Grundlagen 15 a: Pool – Graph',
+              title: 'Grundlagen 15 a: Pool · Graph',
               section: 'Lineare Funktionen in Sachaufgaben',
               variants: [{
                 prompt: `${pool}\n\na) Zeichne einen Funktionsgraphen, der den Abpumpvorgang beschreibt (x: Stunden, y: Wassermenge in m³). Die beiden bekannten Punkte sind schon markiert.`,
@@ -525,7 +525,7 @@ Lösung: $x=6$ und $y=4$.
               }],
             },
             {
-              title: 'Grundlagen 15 b/c: Pool – leer und Anfangsmenge',
+              title: 'Grundlagen 15 b/c: Pool · leer und Anfangsmenge',
               section: 'Lineare Funktionen in Sachaufgaben',
               variants: [{
                 prompt: `${pool}\n\nb) Bestimme, nach wie vielen Stunden der Pool vollständig entleert ist.\n\nc) Bestimme, wie viele Liter Wasser anfangs im Pool waren.`,
@@ -541,7 +541,7 @@ Lösung: $x=6$ und $y=4$.
                 prompt: 'Durch die Punkte $E(-2\\mid6)$ und $F(2\\mid2)$ verläuft eine lineare Funktion.\n\na) Zeichne die Gerade $h$, die durch die Punkte $E$ und $F$ verläuft. Tippe dazu die Punkte $E$ und $F$ an.',
                 answer: graph({ view: V(-4, 6, -2, 8), lines: [{ m: -1, b: 4 }], given: [[-2, 6, 'E'], [2, 2, 'F']] }),
                 solution: `![Gerade h](${efUrl})`,
-                hint: 'Die Punkte $E$ und $F$ sind markiert – tippe sie an und zeichne die Gerade durch beide.',
+                hint: 'Die Punkte $E$ und $F$ sind markiert. Tippe sie an und zeichne die Gerade durch beide.',
               }],
             },
             {
@@ -562,7 +562,7 @@ Lösung: $x=6$ und $y=4$.
           level: 3,
           tasks: [
             {
-              title: 'Grundlagen 15 d: Pool – mögliche Maße',
+              title: 'Grundlagen 15 d: Pool · mögliche Maße',
               section: 'Lineare Funktionen in Sachaufgaben',
               variants: [{
                 prompt: `${pool}\n\nd) Gib mögliche Maße für den quaderförmigen Pool an (Länge, Breite und Tiefe in Metern).`,
@@ -588,7 +588,7 @@ Lösung: $x=6$ und $y=4$.
     {
       topic: 'Lineare Gleichungssysteme',
       create: {
-        description: 'Gleichungssysteme zeichnerisch, mit Wertetabelle und rechnerisch lösen – und Angebote vergleichen',
+        description: 'Gleichungssysteme zeichnerisch, mit Wertetabelle und rechnerisch lösen und Angebote vergleichen',
         icon: 'SquareFunction',
         color: 'blue',
         profiles: ['HS10', 'RS10', 'ERS10'],
@@ -627,7 +627,7 @@ Lösung: $x=6$ und $y=4$.
         },
         {
           title: 'Gleichungssysteme aufstellen und lösen',
-          description: 'Vom Text zum Gleichungssystem – Rätsel, Preise, Eintritt',
+          description: 'Vom Text zum Gleichungssystem: Rätsel, Preise, Eintritt',
           level: 2,
           tasks: [
             { title: 'Grundlagen 22 a: Summe und Produkt', section: 'Vom Text zum Gleichungssystem', variants: [t22[0]] },
@@ -641,19 +641,19 @@ Lösung: $x=6$ und $y=4$.
         },
         {
           title: 'Angebote vergleichen',
-          description: 'Streaming, Autoverleih und Skiverleih – wann ist welches Angebot günstiger?',
+          description: 'Streaming, Autoverleih und Skiverleih: Wann ist welches Angebot günstiger?',
           level: 3,
           tasks: [
-            { title: 'Grundlagen 23 a: Streaming – Tabelle', section: 'Vom Text zum Gleichungssystem', variants: [t23[0]] },
-            { title: 'Grundlagen 23 b: Streaming – Graph', section: 'Vom Text zum Gleichungssystem', variants: [t23[1]] },
-            { title: 'Grundlagen 23 c: Streaming – Gleichungssystem', section: 'Vom Text zum Gleichungssystem', variants: [t23[2]] },
-            { title: 'Grundlagen 23 d: Streaming – Entscheidung', section: 'Vom Text zum Gleichungssystem', variants: [t23[3]] },
-            { title: 'Grundlagen 26 a: Autoverleih – Graph', section: 'Vom Text zum Gleichungssystem', variants: [t26[0]] },
-            { title: 'Grundlagen 26 b: Autoverleih – Entscheidung', section: 'Vom Text zum Gleichungssystem', variants: [t26[1]] },
-            { title: 'Grundlagen 28 a: Skiverleih – Tabelle', section: 'Vom Text zum Gleichungssystem', variants: [t28[0]] },
-            { title: 'Grundlagen 28 b: Skiverleih – gleich teuer', section: 'Vom Text zum Gleichungssystem', variants: [t28[1]] },
-            { title: 'Grundlagen 28 c: Skiverleih – Prozent sparen', section: 'Vom Text zum Gleichungssystem', variants: [t28[2]] },
-            { title: 'Grundlagen 28 d: Skiverleih – eigenes Angebot', section: 'Vom Text zum Gleichungssystem', variants: [t28[3]] },
+            { title: 'Grundlagen 23 a: Streaming · Tabelle', section: 'Vom Text zum Gleichungssystem', variants: [t23[0]] },
+            { title: 'Grundlagen 23 b: Streaming · Graph', section: 'Vom Text zum Gleichungssystem', variants: [t23[1]] },
+            { title: 'Grundlagen 23 c: Streaming · Gleichungssystem', section: 'Vom Text zum Gleichungssystem', variants: [t23[2]] },
+            { title: 'Grundlagen 23 d: Streaming · Entscheidung', section: 'Vom Text zum Gleichungssystem', variants: [t23[3]] },
+            { title: 'Grundlagen 26 a: Autoverleih · Graph', section: 'Vom Text zum Gleichungssystem', variants: [t26[0]] },
+            { title: 'Grundlagen 26 b: Autoverleih · Entscheidung', section: 'Vom Text zum Gleichungssystem', variants: [t26[1]] },
+            { title: 'Grundlagen 28 a: Skiverleih · Tabelle', section: 'Vom Text zum Gleichungssystem', variants: [t28[0]] },
+            { title: 'Grundlagen 28 b: Skiverleih · gleich teuer', section: 'Vom Text zum Gleichungssystem', variants: [t28[1]] },
+            { title: 'Grundlagen 28 c: Skiverleih · Prozent sparen', section: 'Vom Text zum Gleichungssystem', variants: [t28[2]] },
+            { title: 'Grundlagen 28 d: Skiverleih · eigenes Angebot', section: 'Vom Text zum Gleichungssystem', variants: [t28[3]] },
           ],
         },
       ],

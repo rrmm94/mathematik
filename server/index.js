@@ -8,6 +8,7 @@ import studentRoutes from './routes/student.js';
 import adminRoutes from './routes/admin.js';
 import { seedIfEmpty } from './seed/index.js';
 import { fixFigures } from './seed/fix-figures.js';
+import { applyDashFixes } from './seed/dash-fixes.js';
 
 const PORT = Number(process.env.PORT || 3000);
 const app = express();
@@ -21,7 +22,7 @@ if (!get("SELECT id FROM users WHERE role = 'admin'")) {
   const user = process.env.ADMIN_USER || 'admin';
   const pw = process.env.ADMIN_PASSWORD || 'admin1234';
   run("INSERT INTO users (username, password_hash, role, display_name, onboarded) VALUES (?, ?, 'admin', ?, 1)", user, hashPassword(pw), 'Lehrkraft');
-  console.log(`Admin-Konto angelegt: ${user} (Passwort aus ADMIN_PASSWORD bzw. Standard "admin1234" – bitte ändern!)`);
+  console.log(`Admin-Konto angelegt: ${user} (Passwort aus ADMIN_PASSWORD bzw. Standard "admin1234". Bitte ändern!)`);
 }
 // Notfall: Admin-Passwort zurücksetzen (ADMIN_RESET=true + ADMIN_PASSWORD setzen, Container neu starten)
 if (process.env.ADMIN_RESET === 'true' && process.env.ADMIN_PASSWORD) {
@@ -31,6 +32,7 @@ if (process.env.ADMIN_RESET === 'true' && process.env.ADMIN_PASSWORD) {
 }
 seedIfEmpty();
 fixFigures();
+applyDashFixes();
 
 app.use('/api', authRoutes);
 app.use('/api/student', studentRoutes);

@@ -188,7 +188,7 @@ export default function TaskEditor() {
         <div className="md:col-span-2">
           <label className="label">„Skript“-Button springt zu …</label>
           <select className="input" value={task.script_section_id || ''} onChange={(e) => upd({ script_section_id: e.target.value ? Number(e.target.value) : null })}>
-            <option value="">– kein Skript-Abschnitt –</option>
+            <option value="">Kein Skript-Abschnitt</option>
             {sections.map((s) => <option key={s.id} value={s.id}>{s.title}</option>)}
           </select>
         </div>
@@ -233,7 +233,7 @@ export default function TaskEditor() {
             <Info size={14} className="mt-0.5 shrink-0" />
             Jedes Kind bekommt zufällig eine der Varianten (z. B. mit anderen Zahlen). Bei den Übungen kann das Kind mit „Neue Zahlen“ eine andere Variante ziehen.
           </p>
-          <MarkdownEditor label="Ausgangssituation (optional) – Text, Bild oder Tabelle, die über der Aufgabenstellung steht" value={v.context || ''} onChange={(context) => updV({ context })} rows={4} />
+          <MarkdownEditor label="Ausgangssituation (optional): Text, Bild oder Tabelle, die über der Aufgabenstellung steht" value={v.context || ''} onChange={(context) => updV({ context })} rows={4} />
           <MarkdownEditor label="Aufgabenstellung" value={v.prompt} onChange={(prompt) => updV({ prompt })} rows={9} />
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 rounded-xl bg-slate-50 px-3 py-2 text-xs text-slate-600">
             <label className="flex items-center gap-2">Punkte (wie in der Prüfung)
@@ -242,7 +242,7 @@ export default function TaskEditor() {
             <label className="flex flex-1 items-center gap-2 sm:min-w-[320px]">Herkunft <span className="text-slate-400">(nur für Lehrkräfte sichtbar)</span>
               <input className="input flex-1 py-1" placeholder="z. B. Abschlussprüfung 2025 · Realschule · Teil 2 · Aufgabe 3 b)" value={v.source || ''} onChange={(e) => updV({ source: e.target.value })} />
             </label>
-            <span><b>Lückentext:</b> Schreibe <code className="rounded bg-white px-1">⟦1⟧</code>, <code className="rounded bg-white px-1">⟦2⟧</code> … in die Aufgabenstellung – an diese Stellen kommen die Eingabefelder (Typ „Zahl / Eingabefelder“, Haken „Felder im Text“).</span>
+            <span><b>Lückentext:</b> Schreibe <code className="rounded bg-white px-1">⟦1⟧</code>, <code className="rounded bg-white px-1">⟦2⟧</code> … in die Aufgabenstellung. An diese Stellen kommen die Eingabefelder (Typ „Zahl / Eingabefelder“, Haken „Felder im Text“).</span>
           </div>
           <AnswerSpecEditor key={active} spec={v.answer} onChange={(answer) => updV({ answer })} />
           <div className="grid gap-5 lg:grid-cols-[1fr_320px]">
@@ -262,7 +262,7 @@ export default function TaskEditor() {
       )}
 
       {copyOpen && <CopyVariantModal open onClose={() => setCopyOpen(false)} variant={v} currentTask={task} topics={data.topics} onDone={() => {}} />}
-      <Modal open={preview} onClose={() => setPreview(false)} title={`Vorschau – Variante ${active + 1}`} wide>
+      <Modal open={preview} onClose={() => setPreview(false)} title={`Vorschau: Variante ${active + 1}`} wide>
         <PreviewTask variant={{ ...v, answer: normalizeSpec(v.answer) }} />
       </Modal>
     </div>
@@ -282,7 +282,7 @@ function PreviewTask({ variant }) {
           {res.correct ? <CheckCircle2 size={18} /> : <XCircle size={18} />} {res.correct ? 'Würde als richtig gewertet.' : 'Würde als falsch gewertet.'}
         </div>
       )}
-      {res && variant.answer.type === 'free' && <div className="rounded-xl bg-sky-50 px-4 py-3 text-sm text-sky-900">Freitext wird nicht automatisch bewertet – das Kind sieht die Musterlösung.</div>}
+      {res && variant.answer.type === 'free' && <div className="rounded-xl bg-sky-50 px-4 py-3 text-sm text-sky-900">Freitext wird nicht automatisch bewertet. Das Kind sieht die Musterlösung.</div>}
       <div className="flex justify-end"><button className="btn-primary" onClick={() => setRes(checkAnswer(variant.answer, val))}>Prüfen</button></div>
       {variant.solution && <div className="rounded-xl bg-brand-50/50 p-4"><div className="label">Lösungsweg</div><MathContent md={variant.solution} /></div>}
     </div>
@@ -304,7 +304,7 @@ function JsonSpecEditor({ spec, onChange }) {
   const names = { order: 'Sortieraufgabe', graph: 'Koordinatensystem', fields: 'Tabelle / Term / Auswahl' };
   return (
     <div>
-      <label className="label">Antwort & Musterlösung – {names[spec.type] || spec.type}</label>
+      <label className="label">Antwort & Musterlösung: {names[spec.type] || spec.type}</label>
       <p className="mb-2 flex items-start gap-2 rounded-xl bg-sky-50 px-3 py-2 text-xs text-sky-900">
         <Info size={14} className="mt-0.5 shrink-0" />
         Dieser Aufgabentyp (aus dem Grundlagen-Training) wird als JSON bearbeitet. Mit „Als Kind testen“ siehst du sofort, wie die Aufgabe aussieht.

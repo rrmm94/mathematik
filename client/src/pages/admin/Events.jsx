@@ -61,7 +61,7 @@ export default function Events() {
                 const t = topics.find((x) => String(x.id) === e.target.value);
                 setEdit({ ...edit, topicId: e.target.value, title: edit.title || (t ? `Wiederholung: ${t.title}` : '') });
               }}>
-                <option value="">– ohne Thema –</option>
+                <option value="">Ohne Thema</option>
                 {topics.map((t) => <option key={t.id} value={t.id}>{t.title}</option>)}
               </select>
             </div>

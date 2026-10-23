@@ -100,7 +100,7 @@ export function seedContent() {
           const sample = gen(rng(seedOf('title', ti, rungNo)));
           const pkgId = Number(run(
             'INSERT INTO packages (topic_id, title, description, level, profiles, sort) VALUES (?, ?, ?, ?, ?, ?)',
-            topicId, sample.title, `${TASKS_PER_PACKAGE} Aufgaben zum Üben – jede auch mit neuen Zahlen`, Number(level), JSON.stringify(profiles), pkgSort++,
+            topicId, sample.title, `${TASKS_PER_PACKAGE} Aufgaben zum Üben, jede auch mit neuen Zahlen`, Number(level), JSON.stringify(profiles), pkgSort++,
           ).lastInsertRowid);
           for (let k = 0; k < TASKS_PER_PACKAGE; k++) {
             const variants = makeVariants(gen, seedOf('practice', ti, profiles.join(), rungNo, k));
@@ -136,7 +136,7 @@ function seedSettings() {
 // Demo-Kurs mit Beispielkindern, damit man die Plattform sofort ausprobieren kann.
 export function seedDemo() {
   const pw = hashPassword('demo1234');
-  const c10 = Number(run('INSERT INTO courses (name, description) VALUES (?, ?)', '10a Mathe (Demo)', 'Beispielkurs – kann gelöscht werden').lastInsertRowid);
+  const c10 = Number(run('INSERT INTO courses (name, description) VALUES (?, ?)', '10a Mathe (Demo)', 'Beispielkurs, kann gelöscht werden').lastInsertRowid);
   const mk = (username, name, course, profile) => Number(run(
     `INSERT INTO users (username, password_hash, role, display_name, course_id, profile, onboarded, topics_asked) VALUES (?, ?, 'student', ?, ?, ?, ?, ?)`,
     username, pw, name, course, profile, profile ? 1 : 0, profile ? 1 : 0,
@@ -177,7 +177,7 @@ export function seedDemo() {
   }
   if (leaPlan[0]) {
     run('INSERT INTO feedback (user_id, topic_id, text) VALUES (?, ?, ?)', lea, leaPlan[0].topic_id,
-      'Super, dass du hier schon so fleißig geübt hast! Schau dir im Skript noch einmal das Beispiel an – dann klappt auch die letzte Aufgabe. 💪');
+      'Super, dass du hier schon so fleißig geübt hast! Schau dir im Skript noch einmal das Beispiel an, dann klappt auch die letzte Aufgabe. 💪');
   }
 
   // Termine (Input-Veranstaltungen)
@@ -207,7 +207,7 @@ export function seedIfEmpty() {
     seedContent();
     if (process.env.SEED_DEMO !== 'false' && get("SELECT COUNT(*) AS n FROM users WHERE role = 'student'").n === 0) {
       tx(seedDemo);
-      console.log('Demo-Kurs angelegt (Kennungen: peter, lea, ali – Passwort: demo1234)');
+      console.log('Demo-Kurs angelegt (Kennungen: peter, lea, ali, Passwort: demo1234)');
     }
     const c = get("SELECT (SELECT COUNT(*) FROM tasks WHERE kind='diagnose') AS d, (SELECT COUNT(*) FROM tasks WHERE kind='practice') AS p, (SELECT COUNT(*) FROM task_variants) AS v");
     console.log(`Fertig: ${TOPICS.length} Themen, ${c.d} Diagnoseaufgaben, ${c.p} Übungsaufgaben, ${c.v} Varianten.`);

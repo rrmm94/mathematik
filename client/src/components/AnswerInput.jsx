@@ -33,7 +33,7 @@ function PartField({ part, i, value, onChange, status, disabled, onSubmit, compa
     return (
       <span className="relative">
         <select className={`input ${compact ? 'w-auto' : 'w-auto min-w-44 max-w-full'} pr-8 font-medium ${state}`} value={value ?? ''} disabled={disabled} onChange={(e) => onChange(e.target.value)}>
-          <option value="">– wählen –</option>
+          <option value="">Bitte wählen</option>
           {(part.options || []).map((o) => <option key={o} value={o}>{o}</option>)}
         </select>
         <Mark status={status} i={i} />

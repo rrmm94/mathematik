@@ -38,7 +38,7 @@ export default function PracticeTasks() {
 
   return (
     <div className="max-w-7xl">
-      <PageHeader title="Übungsaufgaben" subtitle="Übungspakete je Themenbereich und Niveaustufe. Die Kinder sehen nur die Pakete ihrer freigeschalteten Stufen – ohne Stufenangabe." />
+      <PageHeader title="Übungsaufgaben" subtitle="Übungspakete je Themenbereich und Niveaustufe. Die Kinder sehen nur die Pakete ihrer freigeschalteten Stufen, aber ohne Stufenangabe." />
       <div className="grid gap-6 lg:grid-cols-[260px_1fr]">
         <nav className="card h-fit p-2">
           {topics.data.map((t) => (

@@ -97,7 +97,7 @@ function DiagnoseStart({ diagnose, first }) {
       <p className="mx-auto mt-3 max-w-md text-slate-600">
         {a
           ? 'Du hast den Einstiegstest schon angefangen. Mach einfach dort weiter, wo du aufgehört hast.'
-          : 'Starte mit dem Einstiegstest. Er zeigt uns, wo du gerade stehst – danach bekommst du deinen persönlichen Lernplan.'}
+          : 'Starte mit dem Einstiegstest. Er zeigt uns, wo du gerade stehst. Danach bekommst du deinen persönlichen Lernplan.'}
       </p>
       {a && (
         <div className="mx-auto mt-5 max-w-xs">
@@ -106,7 +106,7 @@ function DiagnoseStart({ diagnose, first }) {
         </div>
       )}
       <ul className="mx-auto mt-6 grid max-w-md gap-2 text-left text-sm text-slate-600">
-        <li className="flex gap-2"><span className="text-brand-600">✓</span> Kein Zeitdruck – du kannst jederzeit pausieren.</li>
+        <li className="flex gap-2"><span className="text-brand-600">✓</span> Kein Zeitdruck. Du kannst jederzeit pausieren.</li>
         <li className="flex gap-2"><span className="text-brand-600">✓</span> Es gibt keine Noten. Wenn du etwas nicht weißt, lass es einfach leer.</li>
         <li className="flex gap-2"><span className="text-brand-600">✓</span> Taschenrechner, Stift und Papier bereitlegen.</li>
       </ul>
@@ -276,7 +276,7 @@ function RetestResult({ retest }) {
               </div>
             </>
           ) : (
-            <div className="font-semibold text-slate-900">Danke fürs Mitmachen beim Test! Bleib dran – Übung macht den Unterschied.</div>
+            <div className="font-semibold text-slate-900">Danke fürs Mitmachen beim Test! Bleib dran, denn Übung macht den Unterschied.</div>
           )}
           <p className="mt-3 text-sm text-slate-600">Deine Lehrkraft sieht dein Ergebnis und kann dir bei Bedarf auch schwierigere Aufgaben freischalten.</p>
         </div>

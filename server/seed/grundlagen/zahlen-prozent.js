@@ -39,7 +39,7 @@ function writeAsPower(items, original) {
     prompt: `Schreibe die Zahlen als Zehnerpotenz der Form $a\\cdot10^{n}$ mit $1\\le a<10$. Trage links den Faktor $a$ und rechts den Exponenten $n$ ein.`,
     answer: fields(...parts),
     solution: items.map((it, i) => `${LETTERS[i]}) $${it.big ? bigStr(it.m, it.n) : smallStr(it.m, it.n)} = ${mant(it.m)}\\cdot10^{${it.big ? it.n : -it.n}}$`).join('\n\n')
-      + '\n\n**Merke:** Bei großen Zahlen zählst du, um wie viele Stellen das Komma nach links wandert (positiver Exponent). Bei kleinen Zahlen wandert das Komma nach rechts – der Exponent ist negativ.',
+      + '\n\n**Merke:** Bei großen Zahlen zählst du, um wie viele Stellen das Komma nach links wandert (positiver Exponent). Bei kleinen Zahlen wandert das Komma nach rechts. Der Exponent ist dann negativ.',
     hint: 'Der Faktor $a$ muss zwischen 1 und 10 liegen. Zähle, um wie viele Stellen du das Komma verschieben musst.',
   };
 }
@@ -79,7 +79,7 @@ const ordering = (title, items) => ({
     prompt: 'Ordne die Zahlen der Größe nach. **Beginne mit der kleinsten.**',
     answer: order(items.map((x) => `$${x[0]}$`)),
     solution: 'Wandle zuerst alle Zahlen in dieselbe Schreibweise um, dann kannst du sie vergleichen:\n\n' + items.map((x) => `- $${x[0]}$ $= ${x[1]}$`).join('\n'),
-    hint: 'Schreibe jede Zahl ohne Zehnerpotenz auf – dann siehst du sofort, welche am größten ist.',
+    hint: 'Schreibe jede Zahl ohne Zehnerpotenz auf. Dann siehst du sofort, welche am größten ist.',
   }],
 });
 
@@ -116,7 +116,7 @@ function t7(G, p, extra) {
     prompt: `Ein Bauer baut Weizen an. Durch eine andere Weizenart konnte er seinen Ertrag um ${p} % steigern. Das entspricht einem zusätzlichen Ertrag von ${dt(extra)} t.\n\nBerechne, wie hoch sein Ertrag **vor** der Umstellung war.`,
     answer: fields(approx(before, { label: 'Ertrag vorher:', unit: 't', tol: 0.011 })),
     solution: `Gesucht ist der Grundwert $G$ (= der Ertrag vorher). Gegeben: Prozentwert $W=${dt(extra)}\\,\\text{t}$ und Prozentsatz $p\\,\\%=${p}\\,\\%$.\n\n$$G = W\\cdot\\frac{100}{p} = ${dt(extra)}\\cdot\\frac{100}{${p}} = ${dt(before)}\\,\\text{t}$$\n\nVor der Umstellung betrug der Ertrag **${dt(before)} t**.`,
-    hint: 'Die 16 % Steigerung beziehen sich auf den Ertrag vorher – das ist der Grundwert. Die 60 t sind der Prozentwert.',
+    hint: 'Die 16 % Steigerung beziehen sich auf den Ertrag vorher. Das ist der Grundwert. Die 60 t sind der Prozentwert.',
   };
 }
 const t7vars = [t7(null, 16, 60), ...distinct((r) => { const p = r.pick([8, 12, 15, 20, 25]); const before = r.pick([120, 200, 250, 320, 400, 500]); return t7(null, p, round((before * p) / 100, 2)); }, 3, 22)];
@@ -148,7 +148,7 @@ function t10(total, share) {
   return {
     prompt: `Jeder Mensch in Deutschland verbraucht durchschnittlich eine bestimmte Menge Wasser pro Tag. Das Kreisdiagramm zeigt, wie sich dieser Wasserverbrauch aufschlüsselt.\n\n![Kreisdiagramm Wasserverbrauch](%PIE%)\n\nBerechne, welcher Wassermenge das **komplette** Kreisdiagramm entspricht, wenn die Toilettenspülung ${dt(part)} Liter ausmacht.`,
     answer: fields(approx(total, { label: 'Gesamter Wasserverbrauch:', unit: 'Liter', tol: 0.011 })),
-    solution: `Die Toilettenspülung macht $27\\,\\%$ aus – das ist der Prozentwert $W=${dt(part)}\\,\\text{l}$. Gesucht ist der Grundwert $G$ (das ganze Diagramm = 100 %).\n\n$$G = W\\cdot\\frac{100}{p} = ${dt(part)}\\cdot\\frac{100}{27} = ${dt(total)}\\,\\text{l}$$\n\nPro Tag verbraucht ein Mensch etwa **${dt(total)} Liter** Wasser.`,
+    solution: `Die Toilettenspülung macht $27\\,\\%$ aus. Das ist der Prozentwert $W=${dt(part)}\\,\\text{l}$. Gesucht ist der Grundwert $G$ (das ganze Diagramm = 100 %).\n\n$$G = W\\cdot\\frac{100}{p} = ${dt(part)}\\cdot\\frac{100}{27} = ${dt(total)}\\,\\text{l}$$\n\nPro Tag verbraucht ein Mensch etwa **${dt(total)} Liter** Wasser.`,
     hint: 'Lies im Diagramm ab, wie viel Prozent die Toilettenspülung ausmacht. Diese Prozentzahl gehört zu der angegebenen Wassermenge.',
   };
 }
@@ -230,13 +230,13 @@ export function build({ fig }) {
       packages: [
         {
           title: 'Zehnerpotenzen schreiben und lesen',
-          description: 'Große und kleine Zahlen als Zehnerpotenz – und zurück',
+          description: 'Große und kleine Zahlen als Zehnerpotenz und zurück',
           level: 1,
           tasks: [
-            { title: 'Grundlagen 1 a–d: Große Zahlen als Zehnerpotenz', section: 'Zehnerpotenzen im Überblick', variants: t1big },
-            { title: 'Grundlagen 1 e–h: Kleine Zahlen als Zehnerpotenz', section: 'Zehnerpotenzen im Überblick', variants: t1small },
-            { title: 'Grundlagen 2 a–d: Große Zahlen ausschreiben', section: 'Zehnerpotenzen im Überblick', variants: t2big },
-            { title: 'Grundlagen 2 e–h: Kleine Zahlen ausschreiben', section: 'Zehnerpotenzen im Überblick', variants: t2small },
+            { title: 'Grundlagen 1 a bis d: Große Zahlen als Zehnerpotenz', section: 'Zehnerpotenzen im Überblick', variants: t1big },
+            { title: 'Grundlagen 1 e bis h: Kleine Zahlen als Zehnerpotenz', section: 'Zehnerpotenzen im Überblick', variants: t1small },
+            { title: 'Grundlagen 2 a bis d: Große Zahlen ausschreiben', section: 'Zehnerpotenzen im Überblick', variants: t2big },
+            { title: 'Grundlagen 2 e bis h: Kleine Zahlen ausschreiben', section: 'Zehnerpotenzen im Überblick', variants: t2small },
           ],
         },
         {

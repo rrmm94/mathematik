@@ -27,7 +27,7 @@ export const topicsA = [
 
 > **Beispiel:** $1{,}5 + 2 \cdot 3 = 1{,}5 + 6 = 7{,}5$
 >
-> Falsch wäre: $(1{,}5 + 2) \cdot 3 = 10{,}5$ – das ist eine andere Aufgabe!
+> Falsch wäre: $(1{,}5 + 2) \cdot 3 = 10{,}5$. Das ist eine andere Aufgabe!
 
 **Tipp:** Unterstreiche zuerst alle Mal- und Geteilt-Rechnungen. Die rechnest du zuerst aus.`,
       },
@@ -452,7 +452,7 @@ b) $Z = ${de(K, 0)} \cdot \frac{${de(zp)}}{100} \cdot \frac{${m}}{12} = ${de(Z)}
     sections: [
       {
         title: 'Proportionale Zuordnungen',
-        md: L`**Je mehr, desto mehr** – und zwar im gleichen Verhältnis.
+        md: L`**Je mehr, desto mehr**, und zwar im gleichen Verhältnis.
 
 - Verdoppelt sich $x$, verdoppelt sich auch $y$.
 - Alle Paare sind **quotientengleich**: $\frac{y}{x} = k$ (immer gleich)
@@ -466,7 +466,7 @@ $\frac{5}{2} = \frac{15}{6} = \frac{25}{10} = 2{,}5$ → proportional ✓`,
       },
       {
         title: 'Antiproportionale Zuordnungen',
-        md: L`**Je mehr, desto weniger** – im umgekehrten Verhältnis.
+        md: L`**Je mehr, desto weniger**, und zwar im umgekehrten Verhältnis.
 
 - Verdoppelt sich $x$, **halbiert** sich $y$.
 - Alle Paare sind **produktgleich**: $x \cdot y = k$ (immer gleich)
@@ -512,9 +512,9 @@ Bei **antiproportionalen** Zuordnungen rechnest du auf der rechten Seite **umgek
           answer: choice(['proportional', 'antiproportional', 'keines von beidem'], type),
           hint: 'Prüfe, ob alle Quotienten y : x oder alle Produkte x · y gleich sind.',
           solution: type === 0
-            ? L`Quotienten: ${xs.map((x, i) => `$${ys[i]}:${x} = ${ys[i] / x}$`).join(', ')} – alle gleich → **proportional**.`
+            ? L`Quotienten: ${xs.map((x, i) => `$${ys[i]}:${x} = ${ys[i] / x}$`).join(', ')}. Alle gleich, also **proportional**.`
             : type === 1
-              ? L`Produkte: ${xs.map((x, i) => `$${x}\cdot${ys[i]} = ${x * ys[i]}$`).join(', ')} – alle gleich → **antiproportional**.`
+              ? L`Produkte: ${xs.map((x, i) => `$${x}\cdot${ys[i]} = ${x * ys[i]}$`).join(', ')}. Alle gleich, also **antiproportional**.`
               : L`Quotienten (${xs.map((x, i) => de(ys[i] / x)).join('; ')}) und Produkte (${xs.map((x, i) => x * ys[i]).join('; ')}) sind nicht gleich → **keines von beidem**.`,
         };
       },
@@ -591,7 +591,7 @@ Becken 2 ist $${de(f)}$-mal so groß: $${de((p1 * t1) / p2)} \cdot ${de(f)} = ${
         prompt: L`Tim sagt: „Je länger ich lerne, desto weniger Fehler mache ich. Also ist die Zuordnung *Lernzeit → Fehler* antiproportional.“
 
 Nimm Stellung zu Tims Aussage und begründe.`,
-        answer: free('Die Aussage ist nicht (unbedingt) richtig: „Je mehr, desto weniger“ reicht nicht aus. Antiproportional wäre die Zuordnung nur, wenn das Produkt Lernzeit · Fehler immer gleich bleibt – also z. B. bei doppelter Lernzeit genau halb so viele Fehler. Das ist in der Realität nicht so.'),
+        answer: free('Die Aussage ist nicht (unbedingt) richtig: „Je mehr, desto weniger“ reicht nicht aus. Antiproportional wäre die Zuordnung nur, wenn das Produkt Lernzeit · Fehler immer gleich bleibt. Das hieße z. B. bei doppelter Lernzeit genau halb so viele Fehler. Das ist in der Realität nicht so.'),
         solution: L`Eine Zuordnung ist nur dann **antiproportional**, wenn **alle Produkte gleich** sind (doppelt so viel $x$ → halb so viel $y$). „Je mehr, desto weniger“ allein reicht nicht als Begründung.`,
       },
     ],
@@ -618,7 +618,7 @@ $$3x + 4 + 2x - 1 = 5x + 3$$
       },
       {
         title: 'Gleichungen lösen',
-        md: L`Eine Gleichung ist wie eine **Waage** – was du auf einer Seite machst, musst du auch auf der anderen Seite machen.
+        md: L`Eine Gleichung ist wie eine **Waage**: Was du auf einer Seite machst, musst du auch auf der anderen Seite machen.
 
 $$\begin{aligned} 5x - 7 &= 2x + 8 && \mid -2x \\ 3x - 7 &= 8 && \mid +7 \\ 3x &= 15 && \mid :3 \\ x &= 5 \end{aligned}$$
 
@@ -783,7 +783,7 @@ Schnittpunkt: $S(2 \mid 5)$`,
 
 ${img(coordLine({ m, b }), 'Graph einer Geraden')}`,
           answer: fields(num(m, { label: 'm =' }), num(b, { label: 'b =' })),
-          hint: 'b: Wo schneidet die Gerade die y-Achse? m: Gehe 1 nach rechts – wie viel nach oben/unten?',
+          hint: 'b: Wo schneidet die Gerade die y-Achse? m: Wie viel musst du nach oben oder unten gehen, wenn du 1 nach rechts gehst?',
           solution: L`Die Gerade schneidet die y-Achse bei $b = ${b}$. Geht man 1 nach rechts, geht es ${Math.abs(m)} nach ${m > 0 ? 'oben' : 'unten'}: $m = ${m}$.
 
 Also $y = ${m === 1 ? '' : m === -1 ? '-' : m}x ${b >= 0 ? '+ ' + b : '- ' + -b}$`,
@@ -856,7 +856,7 @@ Einsetzen: $y = ${de(m1)} \cdot ${xs} ${b1 >= 0 ? '+' : '-'} ${de(Math.abs(b1))}
 | stumpf | $90° < \alpha < 180°$ |
 | gestreckt | $\alpha = 180°$ |
 
-> Zwei spitze Winkel sind zusammen immer **kleiner als 180°** – deshalb können Nebenwinkel nie beide spitz sein.`,
+> Zwei spitze Winkel sind zusammen immer **kleiner als 180°**. Deshalb können Nebenwinkel nie beide spitz sein.`,
       },
       {
         title: 'Winkelsumme im Dreieck',
@@ -882,7 +882,7 @@ $$\alpha + \beta + \gamma = 180°$$
         title: 'Kreis',
         md: L`$$A = \pi \cdot r^2 \qquad u = 2 \cdot \pi \cdot r = \pi \cdot d$$
 
-$\pi \approx 3{,}14$ – nutze die $\pi$-Taste deines Taschenrechners.
+Nutze die $\pi$-Taste deines Taschenrechners oder rechne mit $\pi \approx 3{,}14$.
 
 > $r = 5\text{ cm}$: $A = \pi \cdot 25 \approx 78{,}54\text{ cm}^2$, $u = 2 \cdot \pi \cdot 5 \approx 31{,}42\text{ cm}$
 
@@ -968,7 +968,7 @@ Gesamt: $A \approx ${de(A)}\text{ cm}^2$`,
         prompt: L`Björn behauptet: „Ich kann ein Nebenwinkelpaar zeichnen, das aus zwei spitzen Winkeln besteht.“
 
 Begründe, dass Björns Behauptung falsch ist.`,
-        answer: free('Nebenwinkel ergänzen sich immer zu 180°. Spitze Winkel sind kleiner als 90°. Zwei spitze Winkel sind zusammen also kleiner als 180° – sie können keine Nebenwinkel sein.'),
+        answer: free('Nebenwinkel ergänzen sich immer zu 180°. Spitze Winkel sind kleiner als 90°. Zwei spitze Winkel sind zusammen also kleiner als 180° und können deshalb keine Nebenwinkel sein.'),
         solution: L`Nebenwinkel ergeben zusammen **immer 180°**. Ein spitzer Winkel ist **kleiner als 90°**, zwei spitze Winkel ergeben also zusammen **weniger als 180°**. Daher können Nebenwinkel nie beide spitz sein.`,
       },
     ],

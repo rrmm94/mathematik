@@ -12,7 +12,7 @@ export const PROFILE_KEYS = Object.keys(PROFILES);
 export const GOAL_OPTIONS = [
   { profile: 'HS10', title: 'Hauptschulabschluss nach Klasse 10', text: 'Ich schreibe am Ende von Klasse 10 die Hauptschulprüfung.' },
   { profile: 'RS10', title: 'Realschulabschluss', text: 'Ich schreibe die Realschulprüfung.' },
-  { profile: 'ERS10', title: 'Erweiterter Realschulabschluss', text: 'Ich möchte den erweiterten Realschulabschluss – mit Blick auf Oberstufe/Abitur.' },
+  { profile: 'ERS10', title: 'Erweiterter Realschulabschluss', text: 'Ich möchte den erweiterten Realschulabschluss, mit Blick auf Oberstufe/Abitur.' },
 ];
 
 // Mindestlänge für Schülerpasswörter.

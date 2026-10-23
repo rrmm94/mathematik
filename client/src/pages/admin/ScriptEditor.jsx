@@ -32,7 +32,7 @@ export default function ScriptEditor() {
 
   return (
     <div className="max-w-7xl">
-      <PageHeader title="Skript" subtitle="Erklärungen zu jedem Themenbereich – mit Text, LaTeX-Formeln, Bildern, GeoGebra-SVGs, Videos und Links mit QR-Code." />
+      <PageHeader title="Skript" subtitle="Erklärungen zu jedem Themenbereich mit Text, LaTeX-Formeln, Bildern, GeoGebra-SVGs, Videos und Links mit QR-Code." />
       <div className="grid gap-6 lg:grid-cols-[260px_1fr]">
         <nav className="card h-fit p-2">
           {topics.data.map((t) => (
@@ -170,7 +170,7 @@ function BlockEditor({ block, onChange }) {
       <div className="grid gap-2 sm:grid-cols-2">
         <input className="input" placeholder="YouTube-Link, z. B. https://youtu.be/…" value={block.url} onChange={(e) => onChange({ url: e.target.value })} />
         <input className="input" placeholder="Titel (optional)" value={block.title || ''} onChange={(e) => onChange({ title: e.target.value })} />
-        {block.url && <p className={`text-xs sm:col-span-2 ${ok ? 'text-emerald-600' : 'text-amber-600'}`}>{ok ? 'Video erkannt – es wird datenschutzfreundlich über youtube-nocookie.com eingebettet.' : 'Kein YouTube-Link erkannt – es wird als normaler Link angezeigt.'}</p>}
+        {block.url && <p className={`text-xs sm:col-span-2 ${ok ? 'text-emerald-600' : 'text-amber-600'}`}>{ok ? 'Video erkannt. Es wird datenschutzfreundlich über youtube-nocookie.com eingebettet.' : 'Kein YouTube-Link erkannt. Es wird als normaler Link angezeigt.'}</p>}
       </div>
     );
   }

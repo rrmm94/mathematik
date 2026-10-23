@@ -46,7 +46,7 @@ export default function CopyVariantModal({ open, onClose, variant, currentTask, 
   return (
     <Modal open onClose={onClose} title="Variante kopieren nach …" wide>
       <div className="space-y-4">
-        <p className="text-sm text-slate-600">Kopiert die aktuelle Variante (so wie sie gerade im Editor steht) – entweder als weitere Variante an eine bestehende Aufgabe oder als neue Aufgabe in einer Gruppe. Die Originalvariante bleibt unverändert.</p>
+        <p className="text-sm text-slate-600">Kopiert die aktuelle Variante (so wie sie gerade im Editor steht). Du kannst sie als weitere Variante an eine bestehende Aufgabe hängen oder als neue Aufgabe in einer Gruppe anlegen. Die Originalvariante bleibt unverändert.</p>
         <div>
           <label className="label">Thema</label>
           <select className="input" value={topicId} onChange={(e) => setTopicId(Number(e.target.value))}>
@@ -77,7 +77,7 @@ export default function CopyVariantModal({ open, onClose, variant, currentTask, 
                       </div>
                       <button
                         className="btn-secondary btn-sm shrink-0" disabled={busy || t.variants >= 8 || t.id === currentTask.id}
-                        title={t.id === currentTask.id ? 'Das ist die aktuelle Aufgabe – dafür gibt es „kopieren“ neben den Varianten' : t.variants >= 8 ? 'Schon 8 Varianten' : undefined}
+                        title={t.id === currentTask.id ? 'Das ist die aktuelle Aufgabe. Dafür gibt es „kopieren“ neben den Varianten' : t.variants >= 8 ? 'Schon 8 Varianten' : undefined}
                         onClick={() => run(() => api.post(`/admin/tasks/${t.id}/variants`, { variant: clean() }), t.title || 'Aufgabe')}
                       ><CopyPlus size={14} /> Als Variante</button>
                     </li>

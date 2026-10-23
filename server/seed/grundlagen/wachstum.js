@@ -16,7 +16,7 @@ function distinct(gen, count, seed) {
 const LIN = 'linear';
 const EXP = 'exponentiell';
 const KINDS = [LIN, EXP];
-const REASONS = ['linear – in gleichen Zeitspannen kommt immer derselbe Betrag dazu', 'exponentiell – in gleichen Zeitspannen wird immer mit demselben Faktor multipliziert'];
+const REASONS = ['linear: In gleichen Zeitspannen kommt immer derselbe Betrag dazu', 'exponentiell: In gleichen Zeitspannen wird immer mit demselben Faktor multipliziert'];
 
 const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
 const cellsOf = (values, tol = 0) => values.map((v) => approx(v, { tol: Number.isInteger(v) && !tol ? 0 : tol || 0.011 }));
@@ -63,7 +63,7 @@ export function build() {
   const t30 = {
     prompt: 'Entscheide, ob es sich um ein **lineares** oder **exponentielles** Wachstum handelt. Wähle jeweils auch die passende Begründung.\n\n' + stmts.map((s) => `- ${s[0]}`).join('\n'),
     answer: fields(...stmts.map((s) => sel(REASONS, REASONS[s[1]], s[0].slice(0, 2)))),
-    solution: '- a) **exponentiell** – „vervielfachen“ heißt: mit einem Faktor multiplizieren.\n- b) **linear** – jeden Monat kommen gleich viele (10) dazu.\n- c) **exponentiell** – Zunahme um einen festen Prozentsatz bedeutet Multiplikation mit $q=1{,}12$.\n- d) **linear** – jede Stunde werden gleich viele Liter (2 000) addiert.\n- e) **exponentiell** – 15 % Wertzuwachs pro Jahr bedeutet Multiplikation mit $q=1{,}15$.',
+    solution: '- a) **exponentiell**, denn „vervielfachen“ heißt: mit einem Faktor multiplizieren.\n- b) **linear**, denn jeden Monat kommen gleich viele (10) dazu.\n- c) **exponentiell**, denn Zunahme um einen festen Prozentsatz bedeutet Multiplikation mit $q=1{,}12$.\n- d) **linear**, denn jede Stunde werden gleich viele Liter (2 000) addiert.\n- e) **exponentiell**, denn 15 % Wertzuwachs pro Jahr bedeutet Multiplikation mit $q=1{,}15$.',
     hint: 'Linear: immer **dasselbe addiert**. Exponentiell: immer **mit demselben Faktor multipliziert** (z. B. prozentuale Änderung).',
   };
 

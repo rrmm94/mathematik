@@ -87,7 +87,7 @@ export default function Diagnose() {
           <div className="text-xs font-semibold uppercase tracking-wider text-brand-600">{data.run.retest ? 'Wiederholungstest' : 'Einstiegstest'}</div>
           <div className="text-sm text-slate-500">{doneCount} von {items.length} Aufgaben bearbeitet</div>
         </div>
-        <button className="btn-secondary btn-sm" onClick={() => navigate('/')}><Pause size={14} /> Pause – später weitermachen</button>
+        <button className="btn-secondary btn-sm" onClick={() => navigate('/')}><Pause size={14} /> Pause machen und später weitermachen</button>
       </div>
       <ProgressBar value={(doneCount / items.length) * 100} height="h-2.5" className="mb-6" />
 

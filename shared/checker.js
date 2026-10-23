@@ -396,7 +396,7 @@ export function publicAnswerSpec(spec) {
 export function answerSummary(spec) {
   if (!spec) return '';
   if (spec.type === 'fields') {
-    if (spec.constraint) return spec.sample || 'Mehrere Lösungen möglich – siehe Lösungsweg.';
+    if (spec.constraint) return spec.sample || 'Mehrere Lösungen möglich. Siehe Lösungsweg.';
     return (spec.parts || []).map((p) => `${p.label ? p.label + ' ' : ''}${formatPart(p)}${p.unit ? ' ' + p.unit : ''}`).join('   ·   ');
   }
   if (spec.type === 'choice') {

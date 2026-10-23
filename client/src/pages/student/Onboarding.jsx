@@ -110,9 +110,9 @@ function TopicsStep({ onBack, onDone }) {
     <div className="space-y-4">
       <div className="text-center">
         <h2 className="text-lg font-semibold text-slate-800">Welche Themen sind dir bisher leichtgefallen?</h2>
-        <p className="mt-1 text-sm text-slate-500">Hake alle Themen an, die du gut kannst. Du kannst auch keins anhaken – kein Problem.</p>
+        <p className="mt-1 text-sm text-slate-500">Hake alle Themen an, die du gut kannst. Du kannst auch keins anhaken. Das ist kein Problem.</p>
       </div>
-      {!data.editable && <p className="rounded-xl bg-amber-50 px-4 py-2 text-center text-sm text-amber-800">Du hast den Test schon gestartet – die Auswahl kann jetzt nicht mehr geändert werden.</p>}
+      {!data.editable && <p className="rounded-xl bg-amber-50 px-4 py-2 text-center text-sm text-amber-800">Du hast den Test schon gestartet. Die Auswahl kann jetzt nicht mehr geändert werden.</p>}
       <div className="grid gap-3 sm:grid-cols-2">
         {data.topics.map((t) => {
           const on = selected.has(t.id);

@@ -71,7 +71,7 @@ function runImport(KEY, version, label, build) {
     for (const entry of data) {
       const topic = ensureTopic(entry, state);
       if (!topic) {
-        console.warn(`Grundlagen-Import: Thema „${entry.topic}“ nicht gefunden – übersprungen.`);
+        console.warn(`Grundlagen-Import: Thema „${entry.topic}“ nicht gefunden, übersprungen.`);
         continue;
       }
       const entryProfiles = entry.create?.profiles || DEFAULT_PROFILES;

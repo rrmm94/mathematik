@@ -266,7 +266,7 @@ export function build({ fig }) {
     prompt: `Berechne die fehlenden Seiten und den fehlenden Winkel. Das Dreieck ist bei $B$ rechtwinklig; $c=18{,}5\\ \\text{m}$ und $\\gamma=70^\\circ$.\n\n![Dreieck](${url90b})\n\n${NOTE}`,
     answer: fields(angle(20, 'α ='), val(a90, 'a =', 'm'), val(b90, 'b =', 'm')),
     solution: `$\\alpha=90^\\circ-70^\\circ=20^\\circ$\n\n$c$ ist die Gegenkathete von $\\gamma$, $a$ die Ankathete, $b$ die Hypotenuse.\n\n$\\tan\\gamma=\\frac{c}{a} \\Rightarrow a=\\frac{c}{\\tan 70^\\circ}=\\frac{18{,}5}{\\tan 70^\\circ}\\approx${f2(a90)}\\ \\text{m}$\n\n$\\sin\\gamma=\\frac{c}{b} \\Rightarrow b=\\frac{c}{\\sin 70^\\circ}\\approx${f2(b90)}\\ \\text{m}$`,
-    hint: 'Hier liegt der rechte Winkel bei $B$ – die Hypotenuse ist also $b$.',
+    hint: 'Hier liegt der rechte Winkel bei $B$. Die Hypotenuse ist also $b$.',
   };
 
   const t91 = [
@@ -471,7 +471,7 @@ export function build({ fig }) {
   const t88c = {
     prompt: 'Konstruiere **ein** rechtwinkliges Dreieck mit **Hypotenuse $c=6\\ \\text{cm}$ und Höhe $h_c=2{,}5\\ \\text{cm}$** (Parallele zu $c$ im Abstand $2{,}5\\ \\text{cm}$ schneidet den Thaleskreis). Gib die Längen der beiden Katheten an.',
     answer: { ...unordered(approx(round(l1, 6), { label: 'Kathete 1:', unit: 'cm', tol: 0.15 }), approx(round(l2, 6), { label: 'Kathete 2:', unit: 'cm', tol: 0.15 })) },
-    solution: `Die Parallele zu $c$ im Abstand $2{,}5\\ \\text{cm}$ schneidet den Thaleskreis in zwei Punkten – es gibt **zwei** (spiegelbildliche) Dreiecke.\n\nRechnerisch: Der Höhenfußpunkt teilt $c$ in $p$ und $q$ mit $p\\cdot q=h_c^2=6{,}25$ und $p+q=6$. Das ergibt $p\\approx${f2(hcP)}$, $q\\approx${f2(hcQ)}$.\n\nKatheten: $\\sqrt{2{,}5^2+${f2(hcP)}^2}\\approx${f2(l1)}\\ \\text{cm}$ und $\\sqrt{2{,}5^2+${f2(hcQ)}^2}\\approx${f2(l2)}\\ \\text{cm}$`,
+    solution: `Die Parallele zu $c$ im Abstand $2{,}5\\ \\text{cm}$ schneidet den Thaleskreis in zwei Punkten. Es gibt also **zwei** (spiegelbildliche) Dreiecke.\n\nRechnerisch: Der Höhenfußpunkt teilt $c$ in $p$ und $q$ mit $p\\cdot q=h_c^2=6{,}25$ und $p+q=6$. Das ergibt $p\\approx${f2(hcP)}$, $q\\approx${f2(hcQ)}$.\n\nKatheten: $\\sqrt{2{,}5^2+${f2(hcP)}^2}\\approx${f2(l1)}\\ \\text{cm}$ und $\\sqrt{2{,}5^2+${f2(hcQ)}^2}\\approx${f2(l2)}\\ \\text{cm}$`,
     hint: 'Der Eckpunkt $C$ muss auf dem Thaleskreis liegen und $2{,}5\\ \\text{cm}$ über der Hypotenuse.',
   };
   const t89a = {
@@ -492,7 +492,7 @@ export function build({ fig }) {
     prompt: 'Im Dreieck $ABC$ ist die Kathete $b=5{,}4\\ \\text{cm}$ lang (Koordinaten wie oben, 1 Einheit = 1 cm).\n\nc) Entnimm die Länge der Hypotenuse aus der Zeichnung und berechne die Länge der fehlenden Kathete.',
     answer: fields(val(6.5, 'Hypotenuse c =', 'cm'), val(a89, 'Kathete a =', 'cm')),
     solution: `Die Hypotenuse $c=\\overline{AB}=3{,}5-(-3)=6{,}5\\ \\text{cm}$.\n\n$a=\\sqrt{c^2-b^2}=\\sqrt{6{,}5^2-5{,}4^2}=\\sqrt{${f2(6.5 ** 2 - b89 ** 2)}}\\approx${f2(a89)}\\ \\text{cm}$`,
-    hint: 'Die längste Seite (Hypotenuse) liegt dem rechten Winkel gegenüber – hier ist es $\\overline{AB}$.',
+    hint: 'Die längste Seite (Hypotenuse) liegt dem rechten Winkel gegenüber. Hier ist es $\\overline{AB}$.',
   };
 
   // ======================================================================== Kreisteile
@@ -599,7 +599,7 @@ export function build({ fig }) {
       prompt: `Ein Kegel hat den Radius $r=${dt(r)}\\ \\text{cm}$ und die Körperhöhe $h_K=${dt(h)}\\ \\text{cm}$.\n\nBerechne die Oberfläche des Kegels. (Tipp: Zuerst die Seitenlinie $s$ mit Pythagoras.)`,
       answer: fields(val(s, 's =', 'cm'), val(O, 'O =', 'cm²')),
       solution: `$s^2=r^2+h_K^2=${dt(r)}^2+${dt(h)}^2=${f2(s * s)} \\Rightarrow s=${f2(s)}\\ \\text{cm}$\n\n$O=G+M=\\pi r^2+\\pi r s=\\pi\\cdot${dt(r)}^2+\\pi\\cdot${dt(r)}\\cdot${f2(s)}\\approx${f2(O)}\\ \\text{cm}^2$`,
-      hint: '$O=\\pi r^2+\\pi r s$ – die Seitenlinie $s$ ist die Hypotenuse im Dreieck aus $r$ und $h_K$.',
+      hint: '$O=\\pi r^2+\\pi r s$. Die Seitenlinie $s$ ist die Hypotenuse im Dreieck aus $r$ und $h_K$.',
     };
   };
   const coneOVars = [coneO(2.5, 6), coneO(5, 7.5), ...distinct((r) => coneO(r.pick([3, 4, 6]), r.pick([4, 8, 9])), 2, 104)];
@@ -655,7 +655,7 @@ export function build({ fig }) {
     prompt: 'Die Abbildung zeigt eine kegelförmige Kerze, die $25\\ \\text{cm}$ hoch ist und einen Radius von $r=4\\ \\text{cm}$ hat.\n\nBestimme, wie viel Wachs man zum Herstellen der Kerze benötigt.',
     answer: fields(val((PI * 16 * 25) / 3, 'Wachs:', 'cm³')),
     solution: `$V=\\frac{1}{3}\\pi r^2 h=\\frac{1}{3}\\pi\\cdot4^2\\cdot25\\approx${f2((PI * 16 * 25) / 3)}\\ \\text{cm}^3$`,
-    hint: 'Die Kerze ist ein Kegel – Volumenformel des Kegels.',
+    hint: 'Die Kerze ist ein Kegel. Nutze die Volumenformel des Kegels.',
   };
   const t108b = {
     prompt: 'Die Abbildung zeigt eine pyramidenförmige Kerze (quadratische Grundfläche, Grundkante $a=12\\ \\text{cm}$), die $25\\ \\text{cm}$ hoch ist.\n\nBestimme, wie viel Wachs man zum Herstellen der Kerze benötigt.',
@@ -813,7 +813,7 @@ Eine zentrische Streckung wird durch das **Streckungszentrum $Z$** und den **Str
 **Eigenschaften:**
 - Original- und Bildpunkt liegen auf einer Geraden durch $Z$.
 - Original- und Bildstrecke sind **parallel**.
-- Das Längenverhältnis Bild : Original ist $k$ – die **Fläche** ändert sich mit $k^2$.
+- Das Längenverhältnis Bild : Original ist $k$. Die **Fläche** ändert sich mit $k^2$.
 - Original- und Bildwinkel sind gleich groß.
 
 **Konstruktion:** Zeichne von $Z$ aus Halbgeraden durch die Eckpunkte. Die Bildpunkte liegen darauf im $k$-fachen Abstand von $Z$.
@@ -881,7 +881,7 @@ Bei einem rechtwinkligen Dreieck wird der Kosinussatz wegen $\cos 90^\circ=0$ zu
         },
         {
           title: 'Trigonometrie und Strahlensatz verbinden',
-          description: 'Ein Dreieck im Dreieck – Längen berechnen',
+          description: 'Ein Dreieck im Dreieck: Längen berechnen',
           level: 3,
           tasks: [{ title: 'Grundlagen 96: s und w', section: 'Strahlensatz und Peilen', variants: [t96] }],
         },
@@ -909,7 +909,7 @@ Bei einem rechtwinkligen Dreieck wird der Kosinussatz wegen $\cos 90^\circ=0$ zu
 **Konstruktion** (Hypotenuse $c=4\ \text{cm}$, Kathete $a=2{,}5\ \text{cm}$):
 1. Strecke $c$ zeichnen, Mittelpunkt $M$ bestimmen.
 2. Thaleskreis über $c$ zeichnen (Radius $2\ \text{cm}$ um $M$).
-3. Kreis um $B$ mit Radius $2{,}5\ \text{cm}$ zeichnen – der Schnittpunkt mit dem Thaleskreis ist $C$.
+3. Kreis um $B$ mit Radius $2{,}5\ \text{cm}$ zeichnen. Der Schnittpunkt mit dem Thaleskreis ist $C$.
 
 **Rechnerisch prüfen:** Liegt $C$ auf dem Thaleskreis, hat $C$ von $M$ den Abstand $\frac{c}{2}$.`,
       }],
@@ -920,7 +920,7 @@ Bei einem rechtwinkligen Dreieck wird der Kosinussatz wegen $\cos 90^\circ=0$ zu
           level: 2,
           tasks: [
             { title: 'Grundlagen Beispiel: Gleichschenkliges Dreieck', section: 'Anwendungen im Raum und Alltag', variants: exIsoVars },
-            { title: 'Grundlagen 84: Quader – Flächen- und Raumdiagonale', section: 'Anwendungen im Raum und Alltag', variants: quaderVars },
+            { title: 'Grundlagen 84: Quader · Flächen- und Raumdiagonale', section: 'Anwendungen im Raum und Alltag', variants: quaderVars },
             { title: 'Grundlagen 85 a: Dreieck zeichnen', section: 'Der Satz des Pythagoras', variants: [t85a] },
             { title: 'Grundlagen 85 b: Streckenlänge c', section: 'Der Satz des Pythagoras', variants: [t85b] },
             { title: 'Grundlagen 86 a: Sechseck', section: 'Anwendungen im Raum und Alltag', variants: [t86a] },
@@ -1009,9 +1009,9 @@ Bei einem rechtwinkligen Dreieck wird der Kosinussatz wegen $\cos 90^\circ=0$ zu
           tasks: [
             { title: 'Grundlagen Beispiel: Kegelvolumen', section: 'Pyramide, Kegel und Kugel', variants: coneVars },
             { title: 'Grundlagen 104 b: Pyramidenvolumen', section: 'Pyramide, Kegel und Kugel', variants: pyrVars },
-            { title: 'Grundlagen 105 a: Faschingshut – Volumen', section: 'Pyramide, Kegel und Kugel', variants: [t105a] },
-            { title: 'Grundlagen 106 a: Kegel – Höhe', section: 'Pyramide, Kegel und Kugel', variants: [t106[0]] },
-            { title: 'Grundlagen 106 b: Kegel – Radius', section: 'Pyramide, Kegel und Kugel', variants: [t106[1]] },
+            { title: 'Grundlagen 105 a: Faschingshut · Volumen', section: 'Pyramide, Kegel und Kugel', variants: [t105a] },
+            { title: 'Grundlagen 106 a: Kegel · Höhe', section: 'Pyramide, Kegel und Kugel', variants: [t106[0]] },
+            { title: 'Grundlagen 106 b: Kegel · Radius', section: 'Pyramide, Kegel und Kugel', variants: [t106[1]] },
             { title: 'Grundlagen 107: Pyramide', section: 'Pyramide, Kegel und Kugel', variants: [t107] },
             { title: 'Grundlagen 108 a: Kegelkerze', section: 'Pyramide, Kegel und Kugel', variants: [t108a] },
             { title: 'Grundlagen 108 b: Pyramidenkerze', section: 'Pyramide, Kegel und Kugel', variants: [t108b] },
@@ -1040,9 +1040,9 @@ Bei einem rechtwinkligen Dreieck wird der Kosinussatz wegen $\cos 90^\circ=0$ zu
           description: 'Maurerlot, Kuchenformen, Geschenkverpackung',
           level: 3,
           tasks: [
-            { title: 'Grundlagen 122 a: Maurerlot – Masse', section: 'Zusammengesetzte und unregelmäßige Körper', variants: [t122a] },
-            { title: 'Grundlagen 123 a: Kuchenform – Teig', section: 'Prisma und Zylinder', variants: [t123[0]] },
-            { title: 'Grundlagen 123 b: Kuchen – Fondant', section: 'Prisma und Zylinder', variants: [t123[1]] },
+            { title: 'Grundlagen 122 a: Maurerlot · Masse', section: 'Zusammengesetzte und unregelmäßige Körper', variants: [t122a] },
+            { title: 'Grundlagen 123 a: Kuchenform · Teig', section: 'Prisma und Zylinder', variants: [t123[0]] },
+            { title: 'Grundlagen 123 b: Kuchen · Fondant', section: 'Prisma und Zylinder', variants: [t123[1]] },
             { title: 'Grundlagen 123 c: Hochzeitstorte', section: 'Prisma und Zylinder', variants: [t123[2]] },
             { title: 'Grundlagen 124 a: Geschenkpapier', section: 'Prisma und Zylinder', variants: [t124[0]] },
             { title: 'Grundlagen 124 b: Geschenkband', section: 'Prisma und Zylinder', variants: [t124[1]] },
@@ -1055,8 +1055,8 @@ Bei einem rechtwinkligen Dreieck wird der Kosinussatz wegen $\cos 90^\circ=0$ zu
           profiles: ['HS10', 'RS10', 'ERS10'],
           tasks: [
             { title: 'Grundlagen Beispiel b / 103 c: Kegeloberfläche', section: 'Pyramide, Kegel und Kugel', variants: coneOVars },
-            { title: 'Grundlagen 105 b: Faschingshut – Pappe', section: 'Pyramide, Kegel und Kugel', variants: [t105b] },
-            { title: 'Grundlagen 122 b: Maurerlot – Oberfläche', section: 'Zusammengesetzte und unregelmäßige Körper', variants: [t122b] },
+            { title: 'Grundlagen 105 b: Faschingshut · Pappe', section: 'Pyramide, Kegel und Kugel', variants: [t105b] },
+            { title: 'Grundlagen 122 b: Maurerlot · Oberfläche', section: 'Zusammengesetzte und unregelmäßige Körper', variants: [t122b] },
           ],
         },
       ],

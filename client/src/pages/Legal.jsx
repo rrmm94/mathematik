@@ -78,7 +78,7 @@ function Datenschutz() {
       </Section>
       <Section title="2. Allgemeines">
         <p>Diese Plattform („Mathematik-Prüfungstrainer“) ist ein Lernangebot zur Vorbereitung auf die Mathematik-Abschlussprüfung an der Friedensschule Osnabrück. Sie läuft auf einem selbst betriebenen Server und ist sowohl im lokalen Netzwerk als auch von außerhalb über eine eigene Domain erreichbar (Näheres unter Punkt 3 e).</p>
-        <p>Die Plattform bindet keine Analyse- oder Tracking-Tools, Werbenetzwerke oder externe Schriftarten ein, die automatisch im Hintergrund Daten an Dritte übertragen würden – alle dafür nötigen Programmbibliotheken werden direkt vom eigenen Server ausgeliefert. Über den Button „Benötigst du Hilfe?“ gelangst du zu einem externen KI-Chatbot von <SchulKI />. Dieser wird nicht von dieser Plattform betrieben; beim Anklicken öffnet sich ein neuer Tab und es gelten die Datenschutzbestimmungen von schulKI – siehe auch „Haftung für Links“ im Impressum. Von dieser Plattform werden dabei keine Daten an schulKI übermittelt. Bitte gib im Chat keine persönlichen Daten (z. B. Namen, Adresse) ein.</p>
+        <p>Die Plattform bindet keine Analyse- oder Tracking-Tools, Werbenetzwerke oder externe Schriftarten ein, die automatisch im Hintergrund Daten an Dritte übertragen würden. Alle dafür nötigen Programmbibliotheken werden direkt vom eigenen Server ausgeliefert. Über den Button „Benötigst du Hilfe?“ gelangst du zu einem externen KI-Chatbot von <SchulKI />. Dieser wird nicht von dieser Plattform betrieben; beim Anklicken öffnet sich ein neuer Tab und es gelten die Datenschutzbestimmungen von schulKI. Siehe auch „Haftung für Links“ im Impressum. Von dieser Plattform werden dabei keine Daten an schulKI übermittelt. Bitte gib im Chat keine persönlichen Daten (z. B. Namen, Adresse) ein.</p>
       </Section>
       <Section title="3. Welche Daten werden verarbeitet?">
         <Sub>a) Zugangsdaten</Sub>
@@ -99,7 +99,7 @@ function Datenschutz() {
         <p>Die Verarbeitung erfolgt im Rahmen der schulischen Aufgabenwahrnehmung (Art. 6 Abs. 1 lit. e DSGVO i. V. m. den einschlägigen niedersächsischen schulrechtlichen Vorschriften).</p>
       </Section>
       <Section title="6. Weitergabe an Dritte">
-        <p>Die Lernergebnisse werden ausschließlich von dir selbst und den betreuenden Lehrkräften eingesehen – eine Weitergabe an sonstige Dritte findet nicht statt. Ausnahmen sind der Hilfe-Chat von schulKI (nur, wenn du ihn selbst öffnest; siehe Punkt 2) und die unter 3 e beschriebene technisch bedingte Verarbeitung von Verbindungsdaten durch Cloudflare beim Zugriff von außerhalb.</p>
+        <p>Die Lernergebnisse werden ausschließlich von dir selbst und den betreuenden Lehrkräften eingesehen. Eine Weitergabe an sonstige Dritte findet nicht statt. Ausnahmen sind der Hilfe-Chat von schulKI (nur, wenn du ihn selbst öffnest; siehe Punkt 2) und die unter 3 e beschriebene technisch bedingte Verarbeitung von Verbindungsdaten durch Cloudflare beim Zugriff von außerhalb.</p>
       </Section>
       <Section title="7. Speicherdauer">
         <p>Die Daten werden gespeichert, solange sie für die Prüfungsvorbereitung benötigt werden, längstens bis zum Ende des laufenden Schuljahres. Die Lehrkraft kann einzelne Konten und Ergebnisse jederzeit löschen.</p>

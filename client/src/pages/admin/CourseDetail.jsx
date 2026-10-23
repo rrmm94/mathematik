@@ -176,14 +176,14 @@ function EditStudentForm({ student, courses, onClose, onSaved }) {
         <div>
           <label className="label">Kurs</label>
           <select className="input" value={s.courseId || ''} onChange={(e) => setS({ ...s, courseId: e.target.value ? Number(e.target.value) : null })}>
-            <option value="">– kein Kurs –</option>
+            <option value="">Kein Kurs</option>
             {courses.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
           </select>
         </div>
         <div>
           <label className="label">Ziel / Abschluss</label>
           <select className="input" value={s.profile || ''} onChange={(e) => setS({ ...s, profile: e.target.value })}>
-            <option value="">– offen –</option>
+            <option value="">Offen</option>
             {Object.entries(PROFILES).map(([k, p]) => <option key={k} value={k}>{p.label}</option>)}
           </select>
         </div>
@@ -226,7 +226,7 @@ function AddStudents({ open, onClose, courseId, courseName }) {
     if (!w) return;
     const esc = (t) => String(t).replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[ch]);
     const cards = created.map((c) => `<div class="c"><div class="n">${esc(c.displayName)}</div><div>Kennung: <b>${esc(c.username)}</b></div><div>Passwort: <b>${esc(c.password)}</b></div><div class="u">${esc(location.origin)}</div></div>`).join('');
-    w.document.write(`<!doctype html><meta charset="utf-8"><title>Zugangsdaten ${esc(courseName)}</title><style>body{font-family:system-ui,sans-serif;margin:24px}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}.c{border:1px dashed #94a3b8;border-radius:10px;padding:14px;font-size:14px;line-height:1.6}.n{font-weight:700;font-size:16px}.u{color:#64748b;font-size:12px}</style><h2>Zugangsdaten – ${esc(courseName)}</h2><div class="g">${cards}</div><script>print()</script>`);
+    w.document.write(`<!doctype html><meta charset="utf-8"><title>Zugangsdaten ${esc(courseName)}</title><style>body{font-family:system-ui,sans-serif;margin:24px}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}.c{border:1px dashed #94a3b8;border-radius:10px;padding:14px;font-size:14px;line-height:1.6}.n{font-weight:700;font-size:16px}.u{color:#64748b;font-size:12px}</style><h2>Zugangsdaten: ${esc(courseName)}</h2><div class="g">${cards}</div><script>print()</script>`);
     w.document.close();
   };
 

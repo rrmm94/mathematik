@@ -84,7 +84,7 @@ export function LivePlot({ plot, rows, values }) {
         {series.length > 1 && series.map((s, i) => (
           <span key={i} className="flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-full" style={{ background: COLORS[i % COLORS.length] }} />{s.label}</span>
         ))}
-        {!hasData && <span>– trage Werte in die Tabelle ein, dann erscheint der Graph.</span>}
+        {!hasData && <span>Trage Werte in die Tabelle ein, dann erscheint der Graph.</span>}
       </div>
       <Frame view={view}>
         {({ X, Y }) => series.map((s, i) => (

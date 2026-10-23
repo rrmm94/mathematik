@@ -52,7 +52,7 @@ export default function PlanBuilding() {
         <h1 className="text-2xl font-bold text-slate-900">
           {done ? (retest ? 'Auswertung fertig!' : 'Dein Lernplan ist fertig!') : retest ? 'Dein Test wird ausgewertet …' : 'Dein individueller Lernplan wird erstellt …'}
         </h1>
-        <p className="mt-2 text-sm text-slate-500">{done ? (retest ? 'Schau dir an, was sich getan hat.' : 'Er passt genau zu dir und deinem Ziel.') : 'Einen Moment bitte – wir suchen die besten Aufgaben für dich heraus.'}</p>
+        <p className="mt-2 text-sm text-slate-500">{done ? (retest ? 'Schau dir an, was sich getan hat.' : 'Er passt genau zu dir und deinem Ziel.') : 'Einen Moment bitte, wir suchen die besten Aufgaben für dich heraus.'}</p>
 
         <ul className="mx-auto mt-8 max-w-sm space-y-3 text-left">
           {steps.map((s, i) => {
@@ -79,7 +79,7 @@ export default function PlanBuilding() {
                 </div>
               </>
             ) : (
-              <div className="font-semibold text-emerald-800">Danke fürs Mitmachen! Bleib dran – jede Übung zählt.</div>
+              <div className="font-semibold text-emerald-800">Danke fürs Mitmachen! Bleib dran, denn jede Übung zählt.</div>
             )}
             <p className="mt-3 text-sm text-slate-600">Deine Lehrkraft sieht dein Ergebnis und kann dir bei Bedarf auch schwierigere Aufgaben freischalten.</p>
           </div>
