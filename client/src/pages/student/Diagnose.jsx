@@ -102,12 +102,11 @@ export default function Diagnose() {
               key={t.id}
               title={t.title}
               onClick={() => setIdx(items.findIndex((x) => x.topic.id === t.id))}
-              className={`flex min-w-16 flex-1 flex-col items-center gap-1 rounded-xl border px-2 py-2 transition ${current ? 'border-brand-500 bg-brand-50 ring-4 ring-brand-500/10' : complete ? 'border-brand-200 bg-brand-50/50 hover:bg-brand-50' : 'border-slate-200 bg-white hover:bg-slate-50'}`}
+              className={`flex min-w-12 flex-1 items-center justify-center rounded-xl border px-2 py-2.5 transition ${current ? 'border-brand-500 bg-brand-50 ring-4 ring-brand-500/10' : complete ? 'border-brand-200 bg-brand-50/50 hover:bg-brand-50' : 'border-slate-200 bg-white hover:bg-slate-50'}`}
               aria-label={`Thema ${i + 1}: ${t.title}`}
               aria-current={current}
             >
               <TopicIcon topic={t} size="sm" />
-              <span className="max-w-full truncate text-[11px] font-medium leading-tight text-slate-600">{t.title}</span>
             </button>
           );
         })}
