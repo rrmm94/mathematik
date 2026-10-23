@@ -129,7 +129,6 @@ function seedSettings() {
     exam_date_HS10: '2027-05-06',
     exam_date_RS10: '2027-05-06',
     exam_date_ERS10: '2027-05-06',
-    ai_check_enabled: 'false',
   };
   for (const [k, v] of Object.entries(defaults)) if (!getSetting(k, '')) setSetting(k, v);
 }

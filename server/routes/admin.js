@@ -507,7 +507,7 @@ r.delete('/events/:id', (req, res) => {
 });
 
 // ---------- Einstellungen ----------
-const SETTING_KEYS = ['chatbot_url', 'school_name', 'ai_check_enabled', 'ai_api_url', ...PROFILE_KEYS.map((p) => `exam_date_${p}`)];
+const SETTING_KEYS = ['chatbot_url', 'school_name', ...PROFILE_KEYS.map((p) => `exam_date_${p}`)];
 r.get('/settings', (_req, res) => {
   const out = {};
   for (const k of SETTING_KEYS) out[k] = getSetting(k, '');

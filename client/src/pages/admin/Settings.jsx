@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Save, LifeBuoy, CalendarClock, KeyRound, Bot } from 'lucide-react';
+import { Save, LifeBuoy, CalendarClock, KeyRound } from 'lucide-react';
 import { PROFILES, PROFILE_KEYS } from '../../../../shared/constants.js';
 import { api } from '../../lib/api.js';
 import { useLoad, PageLoader, ErrorBox, toast, useAuth } from '../../components/ui.jsx';
@@ -54,15 +54,6 @@ export default function SettingsPage() {
             </div>
           ))}
         </div>
-      </section>
-
-      <section className="card space-y-4 p-6">
-        <h2 className="flex items-center gap-2 font-semibold text-slate-900"><Bot size={18} className="text-violet-600" /> KI-Bewertung von Freitext (Vorbereitung)</h2>
-        <label className="flex items-center gap-2 text-sm text-slate-700">
-          <input type="checkbox" checked={s.ai_check_enabled === 'true'} onChange={(e) => setS({ ...s, ai_check_enabled: e.target.checked ? 'true' : 'false' })} disabled />
-          Freitext-Antworten per KI einschätzen lassen <span className="chip bg-slate-100 text-slate-500">demnächst</span>
-        </label>
-        <p className="text-xs text-slate-500">Die Schnittstelle ist im Code vorbereitet (server/ai.js). Vor der Aktivierung sollte der Datenschutz (Auftragsverarbeitung) geklärt werden.</p>
       </section>
 
       <section className="card space-y-4 p-6">

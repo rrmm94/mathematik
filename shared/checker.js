@@ -345,7 +345,7 @@ export function checkAnswer(spec, given) {
     return { correct: checkGraph(spec, given) };
   }
   if (spec.type === 'free') {
-    // Platzhalter für eine spätere KI-Bewertung (siehe server/ai.js)
+    // Freitext wird nicht automatisch bewertet
     return { correct: null };
   }
   return { correct: null };

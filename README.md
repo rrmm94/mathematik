@@ -43,7 +43,7 @@ Eine Lernplattform für die Oberschule (Haupt- und Realschulzweig), mit der sich
 | 2 | Regelstandard |
 | 3 | Expertenstandard |
 
-Freitext-Aufgaben zählen im Diagnosetest nicht für die Stufe. Eine KI-Bewertung von Freitext ist in `server/ai.js` vorbereitet, aber noch nicht aktiv.
+Freitext-Aufgaben zählen im Diagnosetest nicht für die Stufe.
 
 ## Startinhalt
 - 14 Themenbereiche mit Symbolen und Skript (Zahlen & Rechnen, Größen, Prozent & Zinsen, Zuordnungen, Terme & Gleichungen, Lineare Funktionen, Winkel & Flächen, Körper, Pythagoras, Statistik, Wahrscheinlichkeit, Quadratische Funktionen, Trigonometrie, Wachstum)
