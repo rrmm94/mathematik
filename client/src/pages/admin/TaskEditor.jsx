@@ -50,8 +50,10 @@ export default function TaskEditor() {
     setTask(data.task);
     setPackages(data.packages);
     setSections(data.sections);
-    setVariants(data.variants.length ? data.variants : [emptyVariant()]);
-    setActive(0);
+    const vs = data.variants.length ? data.variants : [emptyVariant()];
+    setVariants(vs);
+    // Nach dem Speichern bleibt die aktuelle Variante gewählt; beim Wechsel zu einer anderen Aufgabe geht es bei Variante 1 los
+    setActive((a) => (task && task.id === data.task.id ? Math.min(a, vs.length - 1) : 0));
     setDirty(false);
   }, [data]);
 

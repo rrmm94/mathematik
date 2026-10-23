@@ -31,6 +31,9 @@ const text = (x, y, t, anchor = 'middle', extra = '') => {
   return `<text x='${x}' y='${y}' text-anchor='${anchor}' ${a}>${t}</text>`;
 };
 
+// Höhenbeschriftung: links neben der gestrichelten Höhe, mit weißem Rand – so liegt sie nicht auf einer Dreiecksseite
+const HALO = `fill='${ACCENT}' stroke='white' stroke-width='4' paint-order='stroke'`;
+
 // Rechtwinkliges Dreieck mit rechtem Winkel unten links
 export function rightTriangle({ a = 'a', b = 'b', c = 'c', alpha = '' } = {}) {
   const svg = wrap(300, 200, `
@@ -71,7 +74,7 @@ export function triangleGH({ g, h }) {
     <polygon points='30,160 270,160 190,30' fill='#eef2ff' stroke='${STROKE}' stroke-width='2'/>
     <line x1='190' y1='30' x2='190' y2='160' stroke='${ACCENT}' stroke-width='2' stroke-dasharray='6 4'/>
     <rect x='176' y='146' width='14' height='14' fill='none' stroke='${ACCENT}' stroke-width='1.5'/>
-    ${text(150, 182, g)}${text(198, 100, h, 'start', `fill='${ACCENT}'`)}`);
+    ${text(150, 182, g)}${text(182, 130, h, 'end', HALO)}`);
   return save(svg, 'dreieck-gh');
 }
 
@@ -347,7 +350,7 @@ export function gable({ b, h, s }) {
   const W = 320, H = 210;
   let g = `<polygon points='30,170 290,170 160,50' fill='#eef2ff' stroke='${STROKE}' stroke-width='2'/>`;
   g += `<line x1='160' y1='50' x2='160' y2='170' stroke='${ACCENT}' stroke-width='2' stroke-dasharray='6 4'/><rect x='160' y='156' width='14' height='14' fill='none' stroke='${ACCENT}' stroke-width='1.5'/>`;
-  g += text(160, 192, b) + text(168, 118, h, 'start', `fill='${ACCENT}'`) + text(82, 100, s, 'end');
+  g += text(160, 192, b) + text(152, 128, h, 'end', HALO) + text(82, 100, s, 'end');
   g += `${text(312, 204, 'Skizze nicht maßstäblich', 'end', "font-size='11' fill='#64748b'")}`;
   return save(wrap(W, H, g), 'dach');
 }

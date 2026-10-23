@@ -7,6 +7,7 @@ import authRoutes from './routes/auth.js';
 import studentRoutes from './routes/student.js';
 import adminRoutes from './routes/admin.js';
 import { seedIfEmpty } from './seed/index.js';
+import { fixFigures } from './seed/fix-figures.js';
 
 const PORT = Number(process.env.PORT || 3000);
 const app = express();
@@ -29,6 +30,7 @@ if (process.env.ADMIN_RESET === 'true' && process.env.ADMIN_PASSWORD) {
   console.log('Admin-Passwort wurde aus ADMIN_PASSWORD zurückgesetzt. Bitte ADMIN_RESET wieder entfernen.');
 }
 seedIfEmpty();
+fixFigures();
 
 app.use('/api', authRoutes);
 app.use('/api/student', studentRoutes);
