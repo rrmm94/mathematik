@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, Pause, Send, SkipForward } from 'lucide-react';
+import { ArrowLeft, Check, ArrowRight, Pause, Send, SkipForward } from 'lucide-react';
 import { api } from '../../lib/api.js';
 import { useLoad, PageLoader, ErrorBox, TaskContext, TopicIcon, ProgressBar, Modal } from '../../components/ui.jsx';
 import { TaskBody, isEmptyAnswer } from '../../components/AnswerInput.jsx';
@@ -112,11 +112,29 @@ export default function Diagnose() {
       </div>
 
       <div key={item.id} className="card animate-pop overflow-hidden">
-        <div className="flex items-center gap-3 border-b border-slate-100 bg-slate-50/70 px-6 py-4">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-3 border-b border-slate-100 bg-slate-50/70 px-6 py-4">
           <TopicIcon topic={item.topic} size="sm" />
-          <div className="min-w-0 flex-1">
+          <div className="min-w-48 flex-1">
             <div className="truncate font-semibold text-slate-900">{item.topic.title}</div>
             <div className="text-xs text-slate-500">Thema {topicNo} von {topics.length} · Aufgabe {posInTopic} von {inTopic.length}</div>
+          </div>
+          <div className="flex flex-wrap justify-end gap-1.5">
+            {inTopic.map((x, n) => {
+              const cur = x.id === item.id;
+              const done = answered[x.id];
+              return (
+                <button
+                  key={x.id}
+                  onClick={() => setIdx(items.findIndex((y) => y.id === x.id))}
+                  aria-label={`Aufgabe ${n + 1}${done ? ' (bearbeitet)' : ' (offen)'}`}
+                  aria-current={cur}
+                  className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-semibold transition ${cur ? 'border-brand-600 bg-brand-600 text-white shadow-sm' : done ? 'border-emerald-300 bg-emerald-50 text-emerald-700 hover:bg-emerald-100' : 'border-slate-300 bg-white text-slate-500 hover:border-slate-400 hover:text-slate-700'}`}
+                >
+                  {done && !cur && <Check size={12} strokeWidth={3} />}
+                  <span><span className="hidden sm:inline">Aufgabe </span>{n + 1}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
         <div className="space-y-6 p-6">
