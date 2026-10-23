@@ -7,7 +7,6 @@ import { requireAdmin, hashPassword } from '../auth.js';
 import { runTopicScores, buildPlanFromRun, topicsForProfile, topicProgress, syncPlan } from '../plan.js';
 import { PROFILE_KEYS, MIN_STUDENT_PASSWORD } from '../../shared/constants.js';
 
-import { LEGAL_KEYS } from '../legal.js';
 const r = Router();
 r.use(requireAdmin);
 
@@ -508,7 +507,7 @@ r.delete('/events/:id', (req, res) => {
 });
 
 // ---------- Einstellungen ----------
-const SETTING_KEYS = ['chatbot_url', 'school_name', ...LEGAL_KEYS, 'ai_check_enabled', 'ai_api_url', ...PROFILE_KEYS.map((p) => `exam_date_${p}`)];
+const SETTING_KEYS = ['chatbot_url', 'school_name', 'ai_check_enabled', 'ai_api_url', ...PROFILE_KEYS.map((p) => `exam_date_${p}`)];
 r.get('/settings', (_req, res) => {
   const out = {};
   for (const k of SETTING_KEYS) out[k] = getSetting(k, '');
