@@ -6,6 +6,15 @@ import { useAuth, toast, Modal } from './ui.jsx';
 import { api } from '../lib/api.js';
 
 // "Benötigst du Hilfe?" – auf allen Seiten gleich, oben rechts.
+export function LegalLinks({ className = '' }) {
+  return (
+    <nav className={`flex justify-center gap-4 text-xs text-slate-500 ${className}`}>
+      <Link className="hover:text-slate-800 hover:underline" to="/impressum">Impressum</Link>
+      <Link className="hover:text-slate-800 hover:underline" to="/datenschutz">Datenschutz</Link>
+    </nav>
+  );
+}
+
 export function HelpButton() {
   const { chatbotUrl } = useAuth();
   const onClick = (e) => {
@@ -77,6 +86,7 @@ export function StudentLayout() {
       <main className="mx-auto max-w-6xl px-4 py-6 sm:py-8">
         <Outlet />
       </main>
+      <LegalLinks className="pb-6" />
       {pwOpen && <ChangePassword onClose={() => setPwOpen(false)} />}
     </div>
   );

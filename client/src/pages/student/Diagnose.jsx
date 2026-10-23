@@ -111,7 +111,7 @@ export default function Diagnose() {
         })}
       </div>
 
-      <div key={item.id} className="card animate-pop overflow-hidden">
+      <div key={item.id} className="card animate-soft overflow-hidden">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-3 border-b border-slate-100 bg-slate-50/70 px-6 py-4">
           <TopicIcon topic={item.topic} size="sm" />
           <div className="min-w-48 flex-1">
@@ -128,7 +128,7 @@ export default function Diagnose() {
                   onClick={() => setIdx(items.findIndex((y) => y.id === x.id))}
                   aria-label={`Aufgabe ${n + 1}${done ? ' (bearbeitet)' : ' (offen)'}`}
                   aria-current={cur}
-                  className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-semibold transition ${cur ? 'border-brand-600 bg-brand-600 text-white shadow-sm' : done ? 'border-emerald-300 bg-emerald-50 text-emerald-700 hover:bg-emerald-100' : 'border-slate-300 bg-white text-slate-500 hover:border-slate-400 hover:text-slate-700'}`}
+                  className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-semibold transition ${cur ? 'border-brand-600 bg-brand-600 text-white shadow-sm' : done ? 'border-slate-200 bg-slate-100 text-slate-600 hover:bg-slate-200' : 'border-slate-300 bg-white text-slate-500 hover:border-slate-400 hover:text-slate-700'}`}
                 >
                   {done && !cur && <Check size={12} strokeWidth={3} />}
                   <span><span className="hidden sm:inline">Aufgabe </span>{n + 1}</span>

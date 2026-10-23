@@ -60,6 +60,10 @@ body {
 
 @keyframes pop { 0% { transform: scale(.9); opacity: 0 } 100% { transform: scale(1); opacity: 1 } }
 .animate-pop { animation: pop .25s ease-out; }
+/* Sanfter Wechsel zwischen Aufgaben */
+@keyframes soft-in { 0% { opacity: 0; transform: translateY(6px) } 100% { opacity: 1; transform: translateY(0) } }
+.animate-soft { animation: soft-in .45s ease-out; }
+@media (prefers-reduced-motion: reduce) { .animate-soft, .animate-pop { animation: none; } }
 @keyframes shake { 0%,100% { transform: translateX(0) } 25% { transform: translateX(-4px) } 75% { transform: translateX(4px) } }
 .animate-shake { animation: shake .3s ease-in-out; }
 

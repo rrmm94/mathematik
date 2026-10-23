@@ -6,6 +6,7 @@ import { StudentLayout, AdminLayout } from './components/Layout.jsx';
 import Login from './pages/Login.jsx';
 import Onboarding from './pages/student/Onboarding.jsx';
 import Dashboard from './pages/student/Dashboard.jsx';
+import Legal from './pages/Legal.jsx';
 import Diagnose from './pages/student/Diagnose.jsx';
 import PlanBuilding from './pages/student/PlanBuilding.jsx';
 import Topic from './pages/student/Topic.jsx';
@@ -51,6 +52,8 @@ export default function App() {
     <AuthContext.Provider value={ctx}>
       <Routes>
         <Route path="/login" element={state.user ? <Navigate to={state.user.role === 'admin' ? '/admin' : '/'} replace /> : <Login />} />
+        <Route path="/impressum" element={<Legal kind="impressum" />} />
+        <Route path="/datenschutz" element={<Legal kind="datenschutz" />} />
         <Route element={<RequireStudent><StudentLayout /></RequireStudent>}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/start" element={<Onboarding />} />

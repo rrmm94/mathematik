@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Sigma, LogIn, Target, Route as RouteIcon, BookOpen } from 'lucide-react';
 import { api } from '../lib/api.js';
 import { useAuth, ErrorBox } from '../components/ui.jsx';
-import { HelpButton } from '../components/Layout.jsx';
+import { HelpButton, LegalLinks } from '../components/Layout.jsx';
 
 export default function Login() {
   const { setUser } = useAuth();
@@ -69,6 +69,7 @@ export default function Login() {
           <button className="btn-primary w-full py-3 text-base" disabled={busy}><LogIn size={18} /> Anmelden</button>
         </form>
       </div>
+      <LegalLinks className="pb-8" />
     </div>
   );
 }

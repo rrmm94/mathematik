@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { get, run, getSetting } from '../db.js';
 import { verifyPassword, createSession, destroySession, setSessionCookie, clearSessionCookie } from '../auth.js';
 import { PROFILES } from '../../shared/constants.js';
+import { LEGAL_KEYS } from '../legal.js';
 
 const r = Router();
 
@@ -30,6 +31,13 @@ r.post('/logout', (req, res) => {
   if (req.sessionToken) destroySession(req.sessionToken);
   clearSessionCookie(res);
   res.json({ ok: true });
+});
+
+// Impressum/Datenschutz müssen ohne Anmeldung lesbar sein.
+r.get('/legal', (_req, res) => {
+  const out = {};
+  for (const k of LEGAL_KEYS) out[k] = getSetting(k, '');
+  res.json(out);
 });
 
 r.get('/me', (req, res) => {
