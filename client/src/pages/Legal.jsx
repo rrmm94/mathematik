@@ -102,7 +102,7 @@ function Datenschutz() {
         <p>Die Lernergebnisse werden ausschließlich von dir selbst und den betreuenden Lehrkräften eingesehen – eine Weitergabe an sonstige Dritte findet nicht statt. Ausnahmen sind der Hilfe-Chat von schulKI (nur, wenn du ihn selbst öffnest; siehe Punkt 2) und die unter 3 e beschriebene technisch bedingte Verarbeitung von Verbindungsdaten durch Cloudflare beim Zugriff von außerhalb.</p>
       </Section>
       <Section title="7. Speicherdauer">
-        <p>Die Daten werden gespeichert, solange sie für die Prüfungsvorbereitung benötigt werden, in der Regel nicht länger als bis zum Ende des jeweiligen Schuljahres bzw. bis zur Abschlussprüfung. Die Lehrkraft kann einzelne Konten und Ergebnisse jederzeit löschen.</p>
+        <p>Die Daten werden gespeichert, solange sie für die Prüfungsvorbereitung benötigt werden, längstens bis zum Ende des laufenden Schuljahres. Die Lehrkraft kann einzelne Konten und Ergebnisse jederzeit löschen.</p>
       </Section>
       <Section title="8. Datensicherheit">
         <p>Der Zugang ist durch Kennung und Passwort geschützt. Fehlerhafte Anmeldeversuche werden serverseitig automatisch begrenzt. Passwörter können von den Kindern selbst geändert werden.</p>
@@ -136,6 +136,7 @@ export default function Legal({ kind }) {
         <div className="card space-y-6 p-6 text-[15px] leading-relaxed text-slate-700 sm:p-8">
           {kind === 'impressum' ? <Impressum /> : <Datenschutz />}
         </div>
+        {kind === 'impressum' && <p className="mt-4 text-center text-xs text-slate-400">Mathematik-Prüfungstrainer · Version {__APP_VERSION__}</p>}
         <nav className="mt-6 flex gap-4 text-sm text-slate-500">
           <Link className="hover:text-slate-800 hover:underline" to="/impressum">Impressum</Link>
           <Link className="hover:text-slate-800 hover:underline" to="/datenschutz">Datenschutz</Link>
