@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Copy, Plus, Save, Trash2, CopyPlus, FlaskConical, CheckCircle2, XCircle, Info } from 'lucide-react';
+import { Copy, Share2, Plus, Save, Trash2, CopyPlus, FlaskConical, CheckCircle2, XCircle, Info } from 'lucide-react';
 import { PROFILES, DIFFICULTIES, LEVELS } from '../../../../shared/constants.js';
 import { checkAnswer, publicAnswerSpec, parseNumber } from '../../../../shared/checker.js';
 import { api } from '../../lib/api.js';
 import { useLoad, PageLoader, ErrorBox, toast, MathContent, TaskContext, Modal } from '../../components/ui.jsx';
 import { PageHeader } from '../../components/Layout.jsx';
+import CopyVariantModal from './CopyVariantModal.jsx';
 import MarkdownEditor from '../../components/MarkdownEditor.jsx';
 import { TaskBody } from '../../components/AnswerInput.jsx';
 
@@ -44,6 +45,7 @@ export default function TaskEditor() {
   const [active, setActive] = useState(0);
   const [dirty, setDirty] = useState(false);
   const [preview, setPreview] = useState(false);
+  const [copyOpen, setCopyOpen] = useState(false);
 
   useEffect(() => {
     if (!data) return;
@@ -223,7 +225,8 @@ export default function TaskEditor() {
               <button onClick={() => addVariant(false)} className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-500 hover:bg-white hover:text-slate-800"><Plus size={14} /> leer</button>
             </>
           )}
-          {variants.length > 1 && <button onClick={removeVariant} className="ml-auto mb-1 flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs font-medium text-red-600 hover:bg-red-50"><Trash2 size={14} /> Variante löschen</button>}
+          <button onClick={() => setCopyOpen(true)} className={`ml-auto mb-1 flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-slate-900`} title="Diese Variante in eine andere Aufgabe oder ein anderes Paket kopieren"><Share2 size={14} /> kopieren nach …</button>
+          {variants.length > 1 && <button onClick={removeVariant} className="mb-1 flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs font-medium text-red-600 hover:bg-red-50"><Trash2 size={14} /> Variante löschen</button>}
         </div>
         <div className="space-y-6 p-5">
           <p className="flex items-start gap-2 rounded-xl bg-sky-50 px-3 py-2 text-xs text-sky-900">
@@ -258,6 +261,7 @@ export default function TaskEditor() {
         </div>
       )}
 
+      {copyOpen && <CopyVariantModal open onClose={() => setCopyOpen(false)} variant={v} currentTask={task} topics={data.topics} onDone={() => {}} />}
       <Modal open={preview} onClose={() => setPreview(false)} title={`Vorschau – Variante ${active + 1}`} wide>
         <PreviewTask variant={{ ...v, answer: normalizeSpec(v.answer) }} />
       </Modal>

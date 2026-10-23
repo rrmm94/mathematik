@@ -431,6 +431,30 @@ r.put('/tasks/:id', (req, res) => {
   res.json({ ok: true });
 });
 
+// Alle Aufgaben mit Gruppe (Diagnose: Abschluss + Schwierigkeit, Übung: Paket) als Ziele zum Kopieren einer Variante
+r.get('/task-targets', (_req, res) => {
+  res.json(all(
+    `SELECT t.id, t.title, t.kind, t.profile, t.difficulty, t.topic_id, t.package_id, pk.title AS package_title,
+            (SELECT COUNT(*) FROM task_variants v WHERE v.task_id = t.id) AS variants,
+            (SELECT prompt FROM task_variants v WHERE v.task_id = t.id ORDER BY sort, id LIMIT 1) AS preview
+     FROM tasks t LEFT JOIN packages pk ON pk.id = t.package_id
+     ORDER BY t.kind, t.profile, t.difficulty, t.sort, t.id`,
+  ));
+});
+
+// Eine Variante als neue (letzte) Variante an eine bestehende Aufgabe hängen
+r.post('/tasks/:id/variants', (req, res) => {
+  const t = get('SELECT id FROM tasks WHERE id = ?', id(req.params.id));
+  if (!t) return res.status(404).json({ error: 'Nicht gefunden.' });
+  const n = get('SELECT COUNT(*) AS n FROM task_variants WHERE task_id = ?', t.id).n;
+  if (n >= 8) return bad(res, 'Diese Aufgabe hat schon 8 Varianten.');
+  const v = req.body?.variant || {};
+  run('INSERT INTO task_variants (task_id, prompt, answer, solution, hint, context, points, source, sort) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+    t.id, v.prompt || '', JSON.stringify(v.answer || { type: 'free' }), v.solution || '', v.hint || '', v.context || '',
+    Math.max(0, Math.min(Number(v.points) || 0, 20)), String(v.source || '').slice(0, 500), n);
+  res.json({ ok: true, variants: n + 1 });
+});
+
 r.post('/tasks/:id/duplicate', (req, res) => {
   const t = get('SELECT * FROM tasks WHERE id = ?', id(req.params.id));
   if (!t) return res.status(404).json({ error: 'Nicht gefunden.' });

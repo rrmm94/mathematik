@@ -1,6 +1,6 @@
 {
   "name": "mathe-pruefungstrainer",
-  "version": "0.2.7",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "description": "Lernplattform zur Vorbereitung auf die Mathematik-Abschlussprüfungen (HS/RS, Niedersachsen)",
