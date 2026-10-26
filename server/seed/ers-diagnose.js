@@ -16,6 +16,7 @@ import * as A from './ers-gen-a.js';
 import * as B from './ers-gen-b.js';
 
 const SETTING = 'ers_diagnose_v1';
+const PATCH_SCHNITT = 'ers_patch_schnittpunkt_v1';
 
 // Schlüssel: Thema|Stufe|Titel der RS10-Aufgabe → Liste von [Vorlage, Anzahl]
 const Z = 'Zahlen & Rechnen', G = 'Größen & Einheiten', P = 'Prozent & Zinsen', T = 'Terme, Gleichungen & Formeln', D = 'Zuordnungen & Dreisatz', LF = 'Lineare Funktionen';
@@ -92,8 +93,28 @@ export function authoredVariants(key) {
 
 const COLS = 'prompt, context, points, answer, solution, hint, source';
 
+// Nachbesserung: Bei „Schnittpunkt zweier Geraden“ wird nur der Schnittpunkt berechnet (ohne Zusatzfrage).
+// Ersetzt bei ERS10 nur die erzeugten Varianten dieser Aufgabe, alles andere bleibt.
+function patchSchnittpunkt() {
+  if (getSetting(PATCH_SCHNITT, '')) return;
+  const tasks = all("SELECT t.id FROM tasks t JOIN topics tp ON tp.id = t.topic_id WHERE t.kind = 'diagnose' AND t.profile = 'ERS10' AND tp.title = ? AND t.title = 'Schnittpunkt zweier Geraden'", LF);
+  if (!tasks.length) return;
+  tx(() => {
+    for (const t of tasks) {
+      const used = all('SELECT variant_id FROM diag_items WHERE task_id = ?', t.id).map((x) => x.variant_id);
+      for (const v of all("SELECT id FROM task_variants WHERE task_id = ? AND source = ''", t.id)) if (!used.includes(v.id)) run('DELETE FROM task_variants WHERE id = ?', v.id);
+      let sort = (get('SELECT MAX(sort) AS m FROM task_variants WHERE task_id = ?', t.id).m ?? -1) + 1;
+      for (const v of authoredVariants(`${LF}|3|Schnittpunkt zweier Geraden`)) {
+        run(`INSERT INTO task_variants (task_id, sort, ${COLS}) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`, t.id, sort++, v.prompt, '', 0, JSON.stringify(v.answer), v.solution || '', v.hint || '', '');
+      }
+    }
+    setSetting(PATCH_SCHNITT, '1');
+  });
+  console.log('Einstiegstest erw. RS: „Schnittpunkt zweier Geraden“ nachgebessert (nur Schnittpunkt).');
+}
+
 export function seedErsDiagnose() {
-  if (getSetting(SETTING, '')) return;
+  if (getSetting(SETTING, '')) { patchSchnittpunkt(); return; }
   const rsTasks = all("SELECT t.*, tp.title AS topic FROM tasks t JOIN topics tp ON tp.id = t.topic_id WHERE t.kind = 'diagnose' AND t.profile = 'RS10' ORDER BY tp.sort, t.difficulty, t.sort, t.id");
   if (!rsTasks.length) return;
   let nTasks = 0, nCopied = 0, nNew = 0, nArchived = 0, nDeleted = 0;
@@ -126,6 +147,7 @@ export function seedErsDiagnose() {
       }
     }
     setSetting(SETTING, '1');
+    setSetting(PATCH_SCHNITT, '1'); // die neue Fassung ist schon enthalten
   });
   console.log(`Einstiegstest erw. RS aus RS10 abgeleitet: ${nTasks} Aufgaben, ${nCopied} Varianten übernommen, ${nNew} schwierigere Varianten neu (${nDeleted} alte Aufgaben ersetzt, ${nArchived} mit Testergebnissen als „ERS10-alt“ aufgehoben).`);
   if (unmatched.length) console.log(`  ohne schwierigere Vorlage, unverändert von RS10 übernommen: ${unmatched.join('; ')}`);

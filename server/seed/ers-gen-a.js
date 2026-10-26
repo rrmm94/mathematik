@@ -261,16 +261,15 @@ export function linNullstelle(r) {
 }
 
 export function linSchnittpunkt(r) {
-  const xs = r.int(-3, 6), ys = r.int(-4, 8), m1 = r.pick([-2, -1.5, -0.5, 0.5, 1, 1.5, 2, 3]), m2 = r.pick([-3, -1, -0.5, 0.5, 1, 2, 2.5]);
+  const xs = r.int(-4, 8), ys = r.int(-5, 9), m1 = r.pick([-2.5, -1.5, -0.75, -0.5, 0.5, 0.75, 1.5, 2.5, 3]), m2 = r.pick([-3, -1.25, -1, 0.25, 1, 1.25, 2, 3.5]);
   if (m1 === m2) return null;
   const b1 = r6(ys - m1 * xs), b2 = r6(ys - m2 * xs);
-  if (Math.abs(b1) > 12 || Math.abs(b2) > 12 || b1 === 0 || b2 === 0) return null;
-  const bigger = m1 > m2 ? 'y₁' : 'y₂';
+  if (Math.abs(b1) > 14 || Math.abs(b2) > 14 || b1 === 0 || b2 === 0 || !Number.isInteger(b1 * 4) || !Number.isInteger(b2 * 4)) return null;
   return V(
-    `Gegeben sind die Geraden $y_1=${lin(m1, b1)}$ und $y_2=${lin(m2, b2)}$.\n\na) Berechne die Koordinaten des Schnittpunkts.\n\nb) Welcher Funktionswert ist für $x>${de(xs)}$ größer?`,
-    fields(num(xs, { label: 'a) x =' }), num(ys, { label: 'y =' }), sel(['y₁', 'y₂'], bigger, `b) Für x > ${dt(xs)} ist größer:`)),
-    `a) Gleichsetzen: $${lin(m1, b1)}=${lin(m2, b2)} \\Rightarrow ${de(m1 - m2)}x=${de(b2 - b1)} \\Rightarrow x=${de(xs)}$\n\nEinsetzen: $y=${de(m1)}\\cdot${par(xs)}${b1 < 0 ? '-' : '+'}${de(Math.abs(b1))}=${de(ys)}$, also $S(${de(xs)}\\mid ${de(ys)})$.\n\nb) Die Gerade mit der **größeren Steigung** liegt rechts vom Schnittpunkt oben: $m_1=${de(m1)}$, $m_2=${de(m2)}$, also ist ${bigger} größer.`,
-    'Zum Schnittpunkt: beide rechten Seiten gleichsetzen. Rechts vom Schnittpunkt liegt die steilere Gerade oben.',
+    `Berechne die Koordinaten des Schnittpunkts der beiden Geraden.\n\n$$y_1=${lin(m1, b1)}\\qquad y_2=${lin(m2, b2)}$$`,
+    fields(num(xs, { label: 'x =' }), num(ys, { label: 'y =' })),
+    `Gleichsetzen: $${lin(m1, b1)}=${lin(m2, b2)} \\Rightarrow ${de(m1 - m2)}x=${de(r6(b2 - b1))} \\Rightarrow x=${de(xs)}$\n\nEinsetzen in $y_1$: $y=${de(m1)}\\cdot${par(xs)}${b1 < 0 ? '-' : '+'}${de(Math.abs(b1))}=${de(ys)}$\n\nDer Schnittpunkt ist $S(${de(xs)}\\mid ${de(ys)})$.`,
+    'Zum Schnittpunkt: beide rechten Seiten gleichsetzen.',
   );
 }
 

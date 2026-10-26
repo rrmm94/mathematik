@@ -74,3 +74,18 @@ test('Ableitung: ERS10 bekommt die Aufgaben von RS10, ersetzt die alten und hebt
   seedErsDiagnose();
   assert.equal(get('SELECT COUNT(*) AS n FROM tasks').n, n);
 });
+
+test('Schnittpunkt zweier Geraden (erw. RS): nur der Schnittpunkt, Nachbesserung ersetzt alte Varianten', () => {
+  const task = get("SELECT t.* FROM tasks t WHERE t.kind = 'diagnose' AND t.profile = 'ERS10' AND t.title = 'Schnittpunkt zweier Geraden'");
+  assert.ok(task);
+  const vs = all("SELECT * FROM task_variants WHERE task_id = ? AND source = ''", task.id);
+  assert.ok(vs.length >= 3);
+  for (const v of vs) assert.equal(JSON.parse(v.answer).parts.length, 2, 'nur x und y');
+  // alte Fassung simulieren und Nachbesserung erneut laufen lassen
+  run("DELETE FROM settings WHERE key = 'ers_patch_schnittpunkt_v1'");
+  run("UPDATE task_variants SET prompt = prompt || ' b) alt' WHERE task_id = ? AND source = ''", task.id);
+  seedErsDiagnose();
+  const after = all("SELECT * FROM task_variants WHERE task_id = ? AND source = ''", task.id);
+  assert.equal(after.length, vs.length);
+  assert.ok(after.every((v) => !v.prompt.includes('alt') && JSON.parse(v.answer).parts.length === 2));
+});
