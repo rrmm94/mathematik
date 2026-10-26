@@ -10,6 +10,7 @@ import { topicsB } from './topics-b.js';
 import { importGrundlagen } from './import-grundlagen.js';
 import { TOPIC_HINTS } from './topic-hints.js';
 import { seedExams } from './exams.js';
+import { seedDiagGlsWachstum } from './diag-gls-wachstum.js';
 
 export const TOPICS = [...topicsA, ...topicsB];
 
@@ -216,6 +217,8 @@ export function seedIfEmpty() {
   seedExams();
   // Zusätzliche Übungen aus dem Grundlagen-Training (läuft nur, wenn die Version neu ist)
   importGrundlagen();
+  // Einstiegstest: Aufgaben zu Gleichungssystemen und Wachstum für RS und erw. RS (braucht die Themen aus dem Grundlagen-Import)
+  seedDiagGlsWachstum();
 }
 
 // Direkter Aufruf: npm run seed

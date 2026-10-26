@@ -247,6 +247,10 @@ function checkConstraint(c, given, parts) {
       const other = c.notSlope == null || Math.abs(m - c.notSlope) > 1e-9;
       return through && other;
     }
+    case 'parallel': { // Felder: Achsenabschnitt b der ersten Gerade, Steigung m der zweiten; parallel, aber nicht identisch
+      const [b, m] = nums;
+      return Math.abs(m - c.slope) <= tol && Math.abs(b - c.notIntercept) > tol;
+    }
     case 'share': { // Anteil eines Feldes an der Summe aller Felder (z. B. 25 % blaue Kugeln)
       const sum = nums.reduce((a, b) => a + b, 0);
       return sum > 0 && Math.abs(nums[c.index || 0] / sum - c.value) <= 1e-9 && (!c.integers || nums.every(Number.isInteger));

@@ -1,3 +1,12 @@
+Lege Beispielinhalte an …
+Demo-Kurs angelegt (Kennungen: peter, lea, ali, Passwort: demo1234)
+Fertig: 14 Themen, 114 Diagnoseaufgaben, 305 Übungsaufgaben, 1247 Varianten.
+Originalaufgaben eingebunden: 129 Übungspakete, 645 Aufgaben, 265 Diagnose-Varianten (58 für die Hauptschule nicht freigeschaltete Zuordnungen und 173 am Bildschirm nicht sinnvoll lösbare Aufgaben ausgelassen).
+Gesamt jetzt: 950 Übungsaufgaben, 114 Diagnoseaufgaben, davon 1164 Varianten aus Abschlussprüfungen.
+Grundlagen-Training (Rechnen, Funktionen, Wachstum) importiert: 16 Übungspakete, 81 Aufgaben, 154 Varianten.
+Grundlagen-Training Geometrie importiert: 12 Übungspakete, 76 Aufgaben, 123 Varianten.
+Grundlagen-Training Daten und Zufall importiert: 5 Übungspakete, 29 Aufgaben, 41 Varianten.
+Einstiegstest ergänzt (Lineare Gleichungssysteme, Wachstum): 9 neue Aufgaben, 112 Varianten.
 # Einstiegstest – Übersicht der Aufgaben
 
 Je Thema drei Plätze: **leicht**, **mittel**, **schwer**. Jedes Kind bekommt pro Platz eine der Varianten (Zufall).
@@ -113,6 +122,37 @@ Erzeugte Aufgaben stehen für jeden Platz zur Verfügung, dazu die hier aufgefü
 **schwer** – 3 erzeugte Variante(n), 0 Originalaufgabe(n)
 
 - erzeugt: Berechne die Koordinaten des Schnittpunkts der beiden Geraden. $$y_1 = −2x - 4 \qquad y_2 = x + 2$$ → *x = -2   ·   y = 0*
+
+### Lineare Gleichungssysteme
+
+**leicht** – 4 erzeugte Variante(n), 2 Originalaufgabe(n)
+
+- erzeugt: Löse das Gleichungssystem mit dem **Gleichsetzungsverfahren**. $$\text{I}\quad y=3x+8\qquad\text{II}\quad y=-x+12$$ → *x = 1   ·   y = 11*
+- Schulbuch · Aufgabe 96 a) (2 Zahlenfelder): Löse das Gleichungssystem mit dem **Gleichsetzungsverfahren**. $$\text{I}\quad y=3x+5\qquad\text{II}\quad y=2x-4$$ → *x = -9 · y = -22*
+- Schulbuch · Aufgabe 95 a) (2 Zahlenfelder): Löse das Gleichungssystem mit dem **Einsetzungsverfahren**. $$\text{I}\quad x=2y-6\qquad\text{II}\quad -4x-7y=9$$ → *x = -4 · y = 1*
+
+**mittel** – 2 erzeugte Variante(n), 8 Originalaufgabe(n)
+
+- erzeugt: Löse das Gleichungssystem mit dem **Additionsverfahren**. $$\text{I}\quad 2x+2y=12\qquad\text{II}\quad 3x-2y=−17$$ → *x = -1   ·   y = 7*
+- Schulbuch · Aufgabe 97 a) (2 Zahlenfelder): Löse das Gleichungssystem mit dem **Additionsverfahren**. $$\text{I}\quad 3x+4y=10\qquad\text{II}\quad 2x-4y=0$$ → *x = 2 · y = 1*
+- Schulbuch · Aufgabe 97 b) (2 Zahlenfelder): Löse das Gleichungssystem mit dem **Additionsverfahren**. $$\text{I}\quad 2x+3y=20\qquad\text{II}\quad 5x-y=33$$ → *x = 7 · y = 2*
+- Schulbuch · Aufgabe 98 a) (2 Zahlenfelder): Löse das Gleichungssystem mit einem Verfahren deiner Wahl. $$\text{I}\quad 2x-3y=9\qquad\text{II}\quad 2x+4y=2$$ → *x = 3 · y = -1*
+- Schulbuch · Aufgabe 98 b) (2 Zahlenfelder): Löse das Gleichungssystem mit einem Verfahren deiner Wahl. $$\text{I}\quad 2x-7y=0\qquad\text{II}\quad x+4y=30$$ → *x = 14 · y = 4*
+- Schulbuch · Aufgabe 98 c) (2 Zahlenfelder): Löse das Gleichungssystem mit einem Verfahren deiner Wahl. $$\text{I}\quad x-3y=-15\qquad\text{II}\quad x-2y=-9$$ → *x = 3 · y = 6*
+- Schulbuch · Aufgabe 98 d) (2 Zahlenfelder): Löse das Gleichungssystem mit einem Verfahren deiner Wahl. $$\text{I}\quad 4x-8y=-20\qquad\text{II}\quad y=4x-8$$ → *x = 3 · y = 4*
+- Schulbuch · Aufgabe 95 b) (2 Zahlenfelder): Löse das Gleichungssystem mit dem **Einsetzungsverfahren**. $$\text{I}\quad 3x+y=14\qquad\text{II}\quad 4x+2y=20$$ → *x = 4 · y = 2*
+- Schulbuch · Aufgabe 96 b) (2 Zahlenfelder): Löse das Gleichungssystem mit dem **Gleichsetzungsverfahren**. $$\text{I}\quad -3x-6y=-30\qquad\text{II}\quad 2x-6y=-60$$ → *x = -6 · y = 8*
+
+**schwer** – 6 erzeugte Variante(n), 7 Originalaufgabe(n)
+
+- erzeugt: Familie Demir war im Schwimmbad. Beim ersten Besuch haben zwei Erwachsene und ein Kind 57 € bezahlt. Beim zweiten Besuch haben eine Erwachsene und vie → *Eintritt Erwachsene: 25 €   ·   Eintritt Kind: 7 €*
+- Schulbuch · Aufgabe 99 (2 Zahlenfelder): Marta überlegt, wie teuer die Eintrittspreise für Kinder und Erwachsene im Zoo waren. - Einmal hat sie für zwei Erwachsene und ein Kind 68 € bezahlt. - Einmal hat sie für → *Eintritt Erwachsene: 25 € · Eintritt Kind: 18 €*
+- Schulbuch · Aufgabe 100 (2 Zahlenfelder): Jamal kauft Apfelsaft zum Preis von 1,00 € pro Flasche und Kirschsaft zum Preis von 1,50 € pro Flasche. Für 18 Flaschen zahlt er 21 €. Stelle ein Gleichungssystem auf und → *Flaschen Apfelsaft: 12 · Flaschen Kirschsaft: 6*
+- Schulbuch · Aufgabe 101 (2 Zahlenfelder): Markus will das Alter seiner Nachbarinnen Leyla und Lisa wissen. Leyla antwortet ihm: „Zusammen sind wir beide 34 Jahre alt. Lisa ist 6 Jahre jünger als ich.“ Stelle ein  → *Leyla ist 20 Jahre · Lisa ist 14 Jahre*
+- Schulbuch · Aufgabe 102 (3 Zahlenfelder): Ein Rechteck hat einen Umfang von 24 cm. Die Seite $a$ ist doppelt so lang wie $b$. Stelle ein Gleichungssystem auf und löse es. Wie groß ist der Flächeninhalt des Rechte → *Seite a = 8 cm · Seite b = 4 cm · Flächeninhalt A = 32 cm²*
+- Schulbuch · Aufgabe 103 (2 Zahlenfelder): Die Klasse 10a fährt in eine Jugendherberge. Im Internet liest sie, dass es - nur Doppelzimmer und Vierbettzimmer gibt, - in zehn Zimmern insgesamt 28 Betten gibt. Stelle → *Doppelzimmer: 6 · Vierbettzimmer: 4*
+- 2020 · Realschule · Wahlaufgabe 3 a) bis d) (7 Zahlenfelder): Eine Ferienwohnung kostet pro Tag 75 €. Die Endreinigung kostet 50 €. **a)** Bestimme die Kosten der Ferienwohnung für 7 Tage. **b)** Stelle eine Funktionsgleichung in de → *a) Kosten für 7 Tage: 575 € · b) y = m·x + b mit m = 75 · b *
+- 2020 · Realschule · Wahlaufgabe 3 e) (2 Zahlenfelder): Ergänze das folgende Gleichungssystem, sodass es **keine Lösung** gibt. Trage in jede Lücke eine Zahl ein. $$\text{I}\quad y=50x+\underline{\quad b\quad} \qquad \text{II} → *z. B. b = 10 und m = 50*
 
 ### Winkel, Dreiecke & Flächen
 
@@ -247,6 +287,32 @@ Erzeugte Aufgaben stehen für jeden Platz zur Verfügung, dazu die hier aufgefü
 - erzeugt: Eine Rampe soll einen Höhenunterschied von $1,11\text{ m}$ überwinden. Der Steigungswinkel darf höchstens $6°$ betragen. a) Wie lang muss die Rampe (s → *a) 10,62 m   ·   b) 10,56 m*
 - 2024 · Realschule · Wahlteil · Aufgabe 2 c) (Zahlenfeld): Die Abbildung zeigt einen Carport. [Bild] Berechne den Winkel $α$. $\alpha\approx$ ___ °. → *11,82*
 - 2026 · Realschule · Wahlteil · Aufgabe 4 b) (Zahlenfeld): Die Abbildung zeigt den Landeanflug des Flugzeuges 1. Der Landeanflug beginnt auf der Flughöhe $\mathrm{h}=10 \mathrm{~km}$. Beim Landeanflug legt das Flugzeug 1 eine hor → *191,07*
+
+### Wachstum & Exponentialfunktionen
+
+**leicht** – 7 erzeugte Variante(n), 3 Originalaufgabe(n)
+
+- erzeugt: Eine Bakterienkultur besteht aus $800$ Bakterien. Die Anzahl verdoppelt sich jede Stunde. Wie viele Bakterien sind es nach $5$ Stunden? → *Anzahl: 25600*
+- 2025 · Realschule · Teil 2 · Aufgabe 2 b) (Auswahl): In einem Computerchip befinden sich Bauteile, die Informationen verarbeiten. Der Amerikaner Gordon Moore untersuchte vor etwa 60 Jahren die Entwicklung solcher Computerch → *exponentiell*
+- Schulbuch · Aufgabe 155 (4 Zahlenfelder): Bestimme den Verlauf der Graphen. Wähle jeweils: steigend, fallend oder waagerecht. - a) $y=1{,}2^x$ - b) $y=\left(\frac{4}{5}\right)^x$ - c) $y=3\cdot\left(\frac{7}{6}\r → *a) y = 1,2ˣ: steigend · b) y = (4/5)ˣ: fallend · c) y = 3·(7*
+- Schulbuch · Aufgabe 158 a) (3 Zahlenfelder): Die Anzahl $y$ der Bakterien einer Bakterienkultur wird durch die Exponentialfunktion $y=500\cdot1{,}8^x$ beschrieben ($x$ in Stunden). Gib den Anfangswert, den Wachstums → *Anfangswert: 500 · Wachstumsfaktor q = 1,8 · Wachstumsrate p*
+
+**mittel** – 9 erzeugte Variante(n), 6 Originalaufgabe(n)
+
+- erzeugt: Ein Auto kostet neu $25\,000$ €. Es verliert jedes Jahr $10\,\%$ seines Wertes. Wie viel ist es nach $3$ Jahren noch wert? → *Wert: 18225 €*
+- 2022 · Realschule · Wahlteil · Aufgabe 3 a) (Zahlenfeld): Um eine Bauchspeicheldrüse zu untersuchen, wird dem Patienten ein Farbstoff gespritzt. Eine gesunde Bauchspeicheldrüse scheidet pro 10 Minuten ca. 30 % des jeweils noch v → *49*
+- Schulbuch · Aufgabe 154 (4 Zahlenfelder): Ordne die Funktionsgleichungen dem passenden Graphen zu. **Zu zwei Gleichungen gibt es keinen passenden Graphen.** [Bild] Gleichungen zur Auswahl: $y = 0{,}8^x$ · $y = 1{ → *Graph A: y = 0,8ˣ · Graph B: y = 2·0,8ˣ · Graph C: y = 2·1,2*
+- Schulbuch · Aufgabe 154, andere Zahlen (4 Zahlenfelder): Ordne die Funktionsgleichungen dem passenden Graphen zu. **Zu zwei Gleichungen gibt es keinen passenden Graphen.** [Bild] Gleichungen zur Auswahl: $y = 0{,}5^x$ · $y = 1{ → *Graph A: y = 1,5ˣ · Graph B: y = 3·0,5ˣ · Graph C: y = 0,5ˣ *
+- Schulbuch · Aufgabe 158 b) (7 Zahlenfelder): Die Anzahl $y$ der Bakterien einer Bakterienkultur in Abhängigkeit von der Zeit $x$ (in Stunden) wird durch $y=500\cdot1{,}8^x$ beschrieben. Erstelle für die ersten sechs → *500 · 900 · 1620 · 2916 · 5248,8 · 9447,84 · 17006,112*
+- Schulbuch · Aufgabe 159 (Zahlenfeld): In einem verdorbenen Lebensmittel befinden sich um 13:00 Uhr ca. 60 Salmonellen. Bei 25 °C verdoppelt sich die Anzahl der Salmonellen alle 15 Minuten. Berechne die Anzahl → *Anzahl nach 3 h: 245760*
+- Schulbuch · Aufgabe 160 a) (3 Zahlenfelder): Die Halbwertszeit von Koffein im Blutkreislauf beträgt ca. vier Stunden. Lars trinkt um 8:00 Uhr morgens eine Tasse Kaffee mit 80 mg Koffein. Wie viel Koffein hat er um 1 → *Nach 4 Stunden: 40 mg · Nach 8 Stunden: 20 mg · Nach 12 Stun*
+
+**schwer** – 10 erzeugte Variante(n), 3 Originalaufgabe(n)
+
+- erzeugt: Ein Kapital wird jährlich mit $4\,\%$ verzinst (Zinseszins). Nach wie vielen **ganzen Jahren** hat es sich zum ersten Mal mindestens verdoppelt? → *Jahre: 18*
+- Schulbuch · Aufgabe 156 a) bis c) (3 Zahlenfelder): Ein Kapital von 1 000 € wird mit einer jährlichen Verzinsung von 4,5 % angelegt. **a)** Stelle die Exponentialfunktion auf, die diesen Wachstumsvorgang beschreibt ($x$ in → *a) y = 1000*1.045^x · b) Guthaben nach 12 Jahren: 1695,881 €*
+- Schulbuch · Aufgabe 157, angepasst (5 Zahlenfelder): Der Neupreis eines Autos beträgt 45 600 €. Im ersten Jahr ist der Wertverlust 25 % des Neupreises. In den folgenden Jahren beträgt der Wertverlust jährlich 10 % vom jewei → *a) Restwert nach dem 1. Jahr: 34200 € · a) y = 34200*0.9^x ·*
+- Schulbuch · Aufgabe 160 b) (2 Zahlenfelder): Die Halbwertszeit von Koffein im Blutkreislauf beträgt ca. vier Stunden. Lars trinkt um 8:00 Uhr morgens eine Tasse Kaffee mit 80 mg Koffein. **a)** Stelle eine passende  → *a) y = 80*0.5^(x/4) · b) Menge nach 6 h: 28,284 mg*
 
 ## Hauptschule (HS10)
 

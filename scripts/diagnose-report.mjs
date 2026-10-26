@@ -23,12 +23,12 @@ for (const profile of ['RS10', 'HS10']) {
     if (t.topic !== topic) { topic = t.topic; out.push(`### ${topic}`, ''); }
     const vs = all('SELECT * FROM task_variants WHERE task_id = ? ORDER BY sort', t.id);
     const gen = vs.filter((v) => !v.source);
-    const orig = vs.filter((v) => v.source.startsWith('Abschlussprüfung'));
+    const orig = vs.filter((v) => v.source.startsWith('Abschlussprüfung') || v.source.startsWith('Schulbuch'));
     out.push(`**${LEVEL[t.difficulty]}** – ${gen.length} erzeugte Variante(n), ${orig.length} Originalaufgabe(n)`, '');
     if (gen[0]) out.push(`- erzeugt: ${short(gen[0].prompt)} → *${answerSummary(json(gen[0].answer, {}))}*`);
     for (const v of orig) {
       const a = json(v.answer, {});
-      out.push(`- ${v.source.replace('Abschlussprüfung ', '')} (${kind(a)}): ${short(`${v.context} ${v.prompt}`, 170)} → *${short(answerSummary(a), 60)}*`);
+      out.push(`- ${v.source.replace('Abschlussprüfung ', '').replace('Schulbuch Training', 'Schulbuch')} (${kind(a)}): ${short(`${v.context} ${v.prompt}`, 170)} → *${short(answerSummary(a), 60)}*`);
     }
     out.push('');
   }
