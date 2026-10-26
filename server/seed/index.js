@@ -11,6 +11,7 @@ import { importGrundlagen } from './import-grundlagen.js';
 import { TOPIC_HINTS } from './topic-hints.js';
 import { seedExams } from './exams.js';
 import { seedDiagGlsWachstum } from './diag-gls-wachstum.js';
+import { seedErsDiagnose } from './ers-diagnose.js';
 
 export const TOPICS = [...topicsA, ...topicsB];
 
@@ -219,6 +220,8 @@ export function seedIfEmpty() {
   importGrundlagen();
   // Einstiegstest: Aufgaben zu Gleichungssystemen und Wachstum für RS und erw. RS (braucht die Themen aus dem Grundlagen-Import)
   seedDiagGlsWachstum();
+  // Einstiegstest der erw. RS: aus den (angepassten) RS10-Aufgaben abgeleitet, mit schwierigeren Zahlen und vertiefenden Fragen
+  seedErsDiagnose();
 }
 
 // Direkter Aufruf: npm run seed

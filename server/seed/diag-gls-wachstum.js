@@ -13,7 +13,7 @@ const GLS = 'Lineare Gleichungssysteme';
 const WACHSTUM = 'Wachstum & Exponentialfunktionen';
 const BOOK = 'Schulbuch Training';
 
-function distinct(gen, count, seed) {
+export function distinct(gen, count, seed) {
   const out = [];
   const seen = new Set();
   for (let i = 0; out.length < count && i < count * 20; i++) {
@@ -308,7 +308,7 @@ function wachstumLevel1() {
 
 // ---- 154: Funktionsgleichungen den Graphen zuordnen
 const FARBE = { schwarz: '#0f172a', rot: '#dc2626' };
-function expFigure(spec) {
+export function expFigure(spec) {
   const { xmin, xmax, ymax, curves } = spec;
   const W = 520, H = 330, Lm = 40, R = 18, T = 14, B = 30;
   const X = (x) => Lm + ((x - xmin) / (xmax - xmin)) * (W - Lm - R);
@@ -330,7 +330,7 @@ function expFigure(spec) {
   return save(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${W} ${H}' width='${W}' height='${H}'>${g}</svg>`, 'expzuordnung');
 }
 const eqText = (a, q) => `y = ${a === 1 ? '' : `${plain(a)}·`}${plain(q)}ˣ`;
-function zuordnenTask({ figure, drawn, extra, source }) {
+export function zuordnenTask({ figure, drawn, extra, source }) {
   const options = [...drawn.map((c) => eqText(c.a, c.q)), ...extra.map((c) => eqText(c.a, c.q))].sort((p, q) => p.localeCompare(q, 'de'));
   const url = expFigure(figure);
   return {
@@ -342,7 +342,7 @@ function zuordnenTask({ figure, drawn, extra, source }) {
   };
 }
 const why = (a, q) => `Der Graph schneidet die $y$-Achse bei ${a} und ${q > 1 ? 'steigt' : 'fällt'}, also ist $a=${a}$ und $q${q > 1 ? '>' : '<'}1$.`;
-function curve(name, a, q, color, dashed, lx) { return { name, a, q, color, dashed, lx, why: why(a, q) }; }
+export function curve(name, a, q, color, dashed, lx) { return { name, a, q, color, dashed, lx, why: why(a, q) }; }
 
 function wachstumLevel2() {
   const out = [];
