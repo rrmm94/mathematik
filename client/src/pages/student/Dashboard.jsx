@@ -177,7 +177,7 @@ function FeedbackBox({ feedback, onRead }) {
               <button onClick={() => show(f)} className="flex w-full items-start gap-3 px-5 py-3 text-left hover:bg-slate-50">
                 <span className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${f.read_at ? 'bg-slate-200' : 'bg-rose-500'}`} />
                 <span className="min-w-0">
-                  <span className="block text-xs font-medium text-slate-500">{f.topic_title || 'Allgemein'} · {formatDate(f.created_at)}</span>
+                  <span className="block text-xs font-medium text-slate-500">{f.topic_title || 'Allgemein'}{f.task ? ` · Aufgabe ${f.task.no}` : ''} · {formatDate(f.created_at)}</span>
                   <span className={`line-clamp-2 text-sm ${f.read_at ? 'text-slate-600' : 'font-medium text-slate-900'}`}>{f.text}</span>
                 </span>
               </button>
@@ -187,9 +187,13 @@ function FeedbackBox({ feedback, onRead }) {
       )}
       <Modal open={!!open} onClose={() => setOpen(null)} title={open?.topic_title ? `Feedback zu „${open.topic_title}“` : 'Feedback'}>
         <p className="whitespace-pre-wrap text-slate-700">{open?.text}</p>
-        {open?.topic_id && (
-          <div className="mt-5 flex justify-end">
-            <Link to={`/thema/${open.topic_id}`} className="btn-primary">Zum Thema <ArrowRight size={16} /></Link>
+        {open?.task && (
+          <p className="mt-3 text-sm text-slate-500">Zu Aufgabe {open.task.no} im Übungspaket „{open.task.packageTitle}“</p>
+        )}
+        {(open?.task || open?.topic_id) && (
+          <div className="mt-5 flex justify-end gap-2">
+            {open.task && <Link to={`/ueben/${open.task.packageId}#aufgabe-${open.task.id}`} className="btn-primary">Zur Aufgabe <ArrowRight size={16} /></Link>}
+            {open.topic_id && <Link to={`/thema/${open.topic_id}`} className={open.task ? 'btn-secondary' : 'btn-primary'}>Zum Thema <ArrowRight size={16} /></Link>}
           </div>
         )}
       </Modal>

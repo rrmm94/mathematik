@@ -23,6 +23,7 @@ import ScriptEditor from './pages/admin/ScriptEditor.jsx';
 import Topics from './pages/admin/Topics.jsx';
 import Events from './pages/admin/Events.jsx';
 import SettingsPage from './pages/admin/Settings.jsx';
+import Reports from './pages/admin/Reports.jsx';
 
 function RequireStudent({ children }) {
   const { user } = useAuth();
@@ -75,6 +76,7 @@ export default function App() {
           <Route path="skript/:topicId" element={<ScriptEditor />} />
           <Route path="themen" element={<Topics />} />
           <Route path="termine" element={<Events />} />
+          <Route path="rueckmeldungen" element={<Reports />} />
           <Route path="einstellungen" element={<SettingsPage />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />

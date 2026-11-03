@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { LifeBuoy, LogOut, Sigma, LayoutDashboard, Users, ClipboardList, BookOpen, Layers, CalendarDays, Settings, Home, Shapes, KeyRound } from 'lucide-react';
+import { LifeBuoy, LogOut, Sigma, LayoutDashboard, Users, ClipboardList, BookOpen, Layers, CalendarDays, Settings, Home, Shapes, KeyRound, Flag } from 'lucide-react';
 import { MIN_STUDENT_PASSWORD } from '../../../shared/constants.js';
 import { useAuth, toast, Modal } from './ui.jsx';
 import { api } from '../lib/api.js';
@@ -137,6 +137,7 @@ const adminNav = [
   { to: '/admin/skript', label: 'Skript', icon: BookOpen },
   { to: '/admin/themen', label: 'Themenbereiche', icon: Shapes },
   { to: '/admin/termine', label: 'Termine', icon: CalendarDays },
+  { to: '/admin/rueckmeldungen', label: 'Rückmeldungen', icon: Flag },
   { to: '/admin/einstellungen', label: 'Einstellungen', icon: Settings },
 ];
 

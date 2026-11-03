@@ -73,6 +73,11 @@ export default function Topic() {
                   <div key={f.id} className="rounded-xl bg-rose-50/70 p-3 text-sm text-slate-700">
                     <div className="mb-1 text-xs text-slate-500">{formatDate(f.created_at)}</div>
                     <p className="whitespace-pre-wrap">{f.text}</p>
+                    {f.task && (
+                      <Link to={`/ueben/${f.task.packageId}#aufgabe-${f.task.id}`} className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-rose-700 hover:underline">
+                        Zu Aufgabe {f.task.no} in „{f.task.packageTitle}“ <ChevronRight size={12} />
+                      </Link>
+                    )}
                   </div>
                 ))}
               </div>

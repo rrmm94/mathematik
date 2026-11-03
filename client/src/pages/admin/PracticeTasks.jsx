@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import { Plus, Pencil, ChevronRight, Layers, Trash2, PackagePlus } from 'lucide-react';
+import { Plus, Pencil, ChevronRight, Layers, Trash2, PackagePlus, ThumbsUp, ThumbsDown, Flag } from 'lucide-react';
 import { LEVELS, PROFILES, PROFILE_KEYS } from '../../../../shared/constants.js';
 import { api } from '../../lib/api.js';
 import { useLoad, PageLoader, ErrorBox, TopicIcon, Modal, toast, Empty } from '../../components/ui.jsx';
@@ -72,6 +72,7 @@ export default function PracticeTasks() {
                             <div className="flex items-start gap-2">
                               <div className="min-w-0 flex-1">
                                 <div className="font-semibold text-slate-800">{p.title}</div>
+                                {p.openReports > 0 && <Link to="/admin/rueckmeldungen" className="mt-0.5 inline-flex items-center gap-1 text-xs font-semibold text-amber-700 hover:underline"><Flag size={11} /> {p.openReports} offene Meldung{p.openReports === 1 ? '' : 'en'}</Link>}
                                 <div className="mt-0.5 flex flex-wrap gap-1">
                                   {(p.profiles.length ? p.profiles : PROFILE_KEYS).map((k) => <span key={k} className="chip bg-slate-100 text-[10px] text-slate-600">{PROFILES[k]?.short}</span>)}
                                 </div>
@@ -84,6 +85,9 @@ export default function PracticeTasks() {
                                 <li key={t.id}>
                                   <Link to={`/admin/aufgabe/${t.id}`} className="group flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-brand-700">
                                     <span className="flex-1 truncate">{t.title}</span>
+                                    {t.open_reports > 0 && <span className="flex items-center gap-0.5 text-[11px] font-semibold text-amber-600" title="Offene Problem-Meldungen"><Flag size={11} /> {t.open_reports}</span>}
+                                    {t.up > 0 && <span className="flex items-center gap-0.5 text-[11px] text-emerald-600" title="Fanden die Aufgabe gut"><ThumbsUp size={11} /> {t.up}</span>}
+                                    {t.down > 0 && <span className="flex items-center gap-0.5 text-[11px] text-rose-600" title="Fanden die Aufgabe nicht so gut"><ThumbsDown size={11} /> {t.down}</span>}
                                     <span className="flex items-center gap-1 text-[11px] text-slate-400"><Layers size={11} /> {t.variants}</span>
                                     <ChevronRight size={14} className="text-slate-300 group-hover:text-brand-600" />
                                   </Link>

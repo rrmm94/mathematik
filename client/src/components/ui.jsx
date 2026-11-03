@@ -140,7 +140,7 @@ export function Modal({ open, onClose, title, children, wide = false }) {
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-slate-900/40 p-4 backdrop-blur-sm sm:items-center" onMouseDown={onClose}>
-      <div className={`card animate-pop w-full ${wide ? 'max-w-3xl' : 'max-w-lg'} p-6`} onMouseDown={(e) => e.stopPropagation()}>
+      <div className={`card animate-pop w-full ${wide === 'xl' ? 'max-w-5xl' : wide ? 'max-w-3xl' : 'max-w-lg'} p-6`} onMouseDown={(e) => e.stopPropagation()}>
         <div className="mb-4 flex items-center justify-between gap-4">
           <h2 className="text-lg font-bold text-slate-900">{title}</h2>
           <button className="btn-ghost btn-sm" onClick={onClose} aria-label="Schließen"><X size={18} /></button>

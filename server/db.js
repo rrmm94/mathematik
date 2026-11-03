@@ -176,6 +176,27 @@ CREATE TABLE IF NOT EXISTS events (
   note TEXT DEFAULT ''
 );
 
+-- Freiwillige Bewertung einer Übungsaufgabe durch das Kind (Daumen hoch/runter)
+CREATE TABLE IF NOT EXISTS task_ratings (
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  task_id INTEGER NOT NULL REFERENCES tasks(id) ON DELETE CASCADE,
+  value INTEGER NOT NULL,        -- 1 = gut, -1 = nicht so gut
+  updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (user_id, task_id)
+);
+
+-- Vom Kind gemeldete Probleme zu einem Übungspaket (optional zu einer Aufgabe)
+CREATE TABLE IF NOT EXISTS reports (
+  id INTEGER PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  package_id INTEGER REFERENCES packages(id) ON DELETE CASCADE,
+  task_id INTEGER REFERENCES tasks(id) ON DELETE SET NULL,
+  task_no INTEGER,               -- Nummer der Aufgabe im Paket, wie das Kind sie gesehen hat
+  text TEXT NOT NULL,
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  resolved_at TEXT
+);
+
 CREATE TABLE IF NOT EXISTS uploads (
   id INTEGER PRIMARY KEY,
   filename TEXT NOT NULL,
@@ -198,6 +219,10 @@ addColumn('users', 'easy_topics', "TEXT DEFAULT '[]'");
 addColumn('task_variants', 'context', "TEXT DEFAULT ''"); // gemeinsame Ausgangssituation (Text, Bild, Tabelle)
 addColumn('task_variants', 'points', 'INTEGER DEFAULT 0'); // Punkte wie in der Prüfung (0 = keine Angabe)
 addColumn('task_variants', 'source', "TEXT DEFAULT ''"); // Herkunft (z. B. Abschlussprüfung 2025) – NUR für Lehrkräfte sichtbar
+addColumn('diag_runs', 'current_item', 'INTEGER'); // zuletzt geöffnete Aufgabe, dort geht es nach einer Pause weiter
+addColumn('task_progress', 'draft', 'TEXT'); // JSON {variantId, answer}: zuletzt eingegebene, noch nicht geprüfte Antwort
+addColumn('task_progress', 'solution_variant', 'INTEGER'); // Variante, zu der die Lösung bereits angezeigt wurde
+addColumn('feedback', 'task_id', 'INTEGER REFERENCES tasks(id) ON DELETE SET NULL'); // Feedback zu einer einzelnen Aufgabe
 if (addColumn('users', 'topics_asked', 'INTEGER DEFAULT 0')) {
   // Wer schon einen Test gemacht hat, wird nicht nachträglich gefragt.
   db.exec('UPDATE users SET topics_asked = 1 WHERE id IN (SELECT user_id FROM diag_runs)');

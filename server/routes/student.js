@@ -93,10 +93,10 @@ r.get('/dashboard', (req, res) => {
   });
 
   const feedback = all(
-    `SELECT f.id, f.text, f.created_at, f.read_at, t.title AS topic_title, t.id AS topic_id, t.icon
+    `SELECT f.id, f.text, f.created_at, f.read_at, f.task_id, t.title AS topic_title, t.id AS topic_id, t.icon
      FROM feedback f LEFT JOIN topics t ON t.id = f.topic_id WHERE f.user_id = ? ORDER BY f.created_at DESC LIMIT 20`,
     u.id,
-  );
+  ).map((f) => ({ ...f, task: feedbackTask(u, f.task_id) }));
 
   const events = all(
     `SELECT e.id, e.title, e.date, e.time, e.room, e.note, t.title AS topic_title, t.icon, t.id AS topic_id
@@ -127,6 +127,16 @@ r.get('/dashboard', (req, res) => {
     retest,
   });
 });
+
+// Verweis auf die Aufgabe, zu der die Lehrkraft Feedback gegeben hat (nur wenn das Paket freigeschaltet ist).
+function feedbackTask(u, taskId) {
+  if (!taskId) return null;
+  const t = get("SELECT id, package_id FROM tasks WHERE id = ? AND kind = 'practice'", taskId);
+  if (!t || !allowedPackage(u, t.package_id)) return null;
+  const ids = all("SELECT id FROM tasks WHERE package_id = ? AND kind = 'practice' ORDER BY sort, id", t.package_id).map((x) => x.id);
+  const pkg = get('SELECT title FROM packages WHERE id = ?', t.package_id);
+  return { id: t.id, packageId: t.package_id, packageTitle: pkg?.title || '', no: ids.indexOf(t.id) + 1 };
+}
 
 function runProgress(runId) {
   const r2 = get('SELECT COUNT(*) AS total, SUM(CASE WHEN answered_at IS NOT NULL THEN 1 ELSE 0 END) AS answered FROM diag_items WHERE run_id = ?', runId);
@@ -188,7 +198,7 @@ r.get('/diagnose', (req, res) => {
     active.id,
   );
   res.json({
-    run: { id: active.id, retest: active.number > 1 },
+    run: { id: active.id, retest: active.number > 1, currentItem: active.current_item || null },
     items: items.map((i) => ({
       id: i.id,
       topic: { id: i.topic_id, title: i.topic_title, icon: i.icon, color: i.color },
@@ -209,12 +219,33 @@ r.post('/diagnose/items/:id', (req, res) => {
   );
   if (!item) return res.status(404).json({ error: 'Aufgabe nicht gefunden.' });
   const answer = req.body?.answer ?? null;
+  const ms = clampTime(req.body?.time_ms);
+  // Zwischenspeichern während der Eingabe: Eine leere Eingabe macht eine Aufgabe nicht zu „bearbeitet“
+  // (außer sie wurde vorher bewusst mit „Weiß ich (noch) nicht“ übersprungen).
+  if (req.body?.draft && answer === null) {
+    run(
+      `UPDATE diag_items SET time_ms = time_ms + ?,
+         answered_at = CASE WHEN answer IS NULL OR answer = 'null' THEN answered_at ELSE NULL END,
+         answer = NULL, correct = NULL WHERE id = ?`,
+      ms, item.id,
+    );
+    return res.json({ ok: true, answered: !!get('SELECT answered_at FROM diag_items WHERE id = ?', item.id).answered_at });
+  }
   const { correct } = checkAnswer(json(item.spec, {}), answer);
   run(
     'UPDATE diag_items SET answer = ?, correct = ?, time_ms = time_ms + ?, answered_at = CURRENT_TIMESTAMP WHERE id = ?',
-    JSON.stringify(answer), correct === null ? null : correct ? 1 : 0, clampTime(req.body?.time_ms), item.id,
+    JSON.stringify(answer), correct === null ? null : correct ? 1 : 0, ms, item.id,
   );
-  res.json({ ok: true }); // bewusst ohne Richtig/Falsch-Rückmeldung
+  res.json({ ok: true, answered: true }); // bewusst ohne Richtig/Falsch-Rückmeldung
+});
+
+// Merkt sich, bei welcher Aufgabe das Kind gerade ist (Weitermachen nach einer Pause).
+r.post('/diagnose/position', (req, res) => {
+  const active = get("SELECT * FROM diag_runs WHERE user_id = ? AND status = 'active'", req.user.id);
+  if (!active) return res.status(404).json({ error: 'Kein laufender Test.' });
+  const item = get('SELECT id FROM diag_items WHERE id = ? AND run_id = ?', Number(req.body?.itemId), active.id);
+  if (item) run('UPDATE diag_runs SET current_item = ? WHERE id = ?', item.id, active.id);
+  res.json({ ok: true });
 });
 
 r.post('/diagnose/finish', (req, res) => {
@@ -250,7 +281,8 @@ r.get('/topics/:id', (req, res) => {
     return { id: p.id, title: p.title, description: p.description, total: s.total, solved: s.solved || 0 };
   });
   const sections = all('SELECT id, title FROM script_sections WHERE topic_id = ? ORDER BY sort, id', topic.id);
-  const feedback = all('SELECT id, text, created_at, read_at FROM feedback WHERE user_id = ? AND topic_id = ? ORDER BY created_at DESC', u.id, topic.id);
+  const feedback = all('SELECT id, text, created_at, read_at, task_id FROM feedback WHERE user_id = ? AND topic_id = ? ORDER BY created_at DESC', u.id, topic.id)
+    .map((f) => ({ ...f, task: feedbackTask(u, f.task_id) }));
   const events = all('SELECT id, title, date, time, room FROM events WHERE topic_id = ? AND (course_id = ? OR course_id IS NULL) AND date >= ? ORDER BY date', topic.id, u.course_id, today());
   res.json({ topic: topicPublic(topic), progress: topicProgress(u.id, topic.id, u.profile, levels), packages: pkgs, sections, feedback, events });
 });
@@ -279,6 +311,13 @@ function taskView(u, task, forceNew = false) {
     );
     prog = get('SELECT * FROM task_progress WHERE user_id = ? AND task_id = ?', u.id, task.id);
   }
+  // Versuche mit der aktuellen Variante (für Lösungsfreigabe und Wiederherstellung)
+  const tries = all('SELECT answer, correct FROM attempts WHERE user_id = ? AND task_id = ? AND variant_id = ? ORDER BY id', u.id, task.id, variant.id);
+  const last = tries[tries.length - 1];
+  const spec = json(variant.answer, {});
+  const draft = json(prog?.draft, null);
+  const solutionShown = prog?.solution_variant === variant.id;
+  const rating = get('SELECT value FROM task_ratings WHERE user_id = ? AND task_id = ?', u.id, task.id);
   return {
     id: task.id,
     title: task.title,
@@ -293,7 +332,25 @@ function taskView(u, task, forceNew = false) {
     topicId: task.topic_id,
     solved: !!prog?.solved,
     attempts: prog?.attempts || 0,
+    wrong: tries.filter((t) => t.correct === 0).length,
+    solutionUnlocked: solutionUnlocked(spec, tries),
+    // zuletzt eingegebene Antwort (Entwurf oder letzter Versuch) + Ergebnis des letzten Versuchs
+    draft: draft && draft.variantId === variant.id ? draft.answer : last ? json(last.answer, null) : null,
+    lastResult: last && (!draft || draft.variantId !== variant.id || JSON.stringify(draft.answer) === last.answer)
+      ? { correct: last.correct === null ? null : !!last.correct, parts: checkAnswer(spec, json(last.answer, null)).parts || null }
+      : null,
+    solution: solutionShown || (spec.type === 'free' && tries.length) ? { solution: variant.solution, summary: answerSummary(spec) } : null,
+    rating: rating?.value || 0,
   };
+}
+
+// Lösung + Erklärung gibt es erst nach zwei falschen Versuchen mit denselben Zahlen
+// (oder wenn die Aufgabe richtig gelöst bzw. eine Freitext-Antwort abgegeben wurde).
+const SOLUTION_AFTER_WRONG = 2;
+function solutionUnlocked(spec, tries) {
+  if (tries.some((t) => t.correct === 1)) return true;
+  if (spec.type === 'free') return tries.length > 0;
+  return tries.filter((t) => t.correct === 0).length >= SOLUTION_AFTER_WRONG;
 }
 
 r.get('/packages/:id', (req, res) => {
@@ -333,8 +390,10 @@ r.post('/tasks/:id/check', (req, res) => {
          time_ms = time_ms + excluded.time_ms, updated_at = CURRENT_TIMESTAMP`,
       u.id, task.id, solvedNow ? 1 : 0, ms, variant.id,
     );
+    run('UPDATE task_progress SET draft = NULL WHERE user_id = ? AND task_id = ?', u.id, task.id);
   });
-  const out = { correct: result.correct, parts: result.parts || null };
+  const tries = all('SELECT correct FROM attempts WHERE user_id = ? AND task_id = ? AND variant_id = ?', u.id, task.id, variant.id);
+  const out = { correct: result.correct, parts: result.parts || null, wrong: tries.filter((t) => t.correct === 0).length, solutionUnlocked: solutionUnlocked(spec, tries) };
   if (spec.type === 'free') Object.assign(out, { solution: variant.solution, summary: answerSummary(spec) });
   res.json(out);
 });
@@ -345,12 +404,69 @@ r.post('/tasks/:id/solution', (req, res) => {
   if (!task) return res.status(404).json({ error: 'Aufgabe nicht gefunden.' });
   const variant = get('SELECT * FROM task_variants WHERE id = ? AND task_id = ?', Number(req.body?.variantId), task.id);
   if (!variant) return res.status(400).json({ error: 'Variante unbekannt.' });
+  const spec = json(variant.answer, {});
+  const tries = all('SELECT correct FROM attempts WHERE user_id = ? AND task_id = ? AND variant_id = ?', u.id, task.id, variant.id);
+  if (!solutionUnlocked(spec, tries)) {
+    return res.status(403).json({ error: 'Die Lösung kannst du dir anschauen, wenn du es zweimal versucht hast. Probier es zuerst selbst oder schau dir den Tipp an.' });
+  }
   run(
-    `INSERT INTO task_progress (user_id, task_id, solution_viewed, variant_id) VALUES (?, ?, 1, ?)
-     ON CONFLICT(user_id, task_id) DO UPDATE SET solution_viewed = 1, updated_at = CURRENT_TIMESTAMP`,
-    u.id, task.id, variant.id,
+    `INSERT INTO task_progress (user_id, task_id, solution_viewed, solution_variant, variant_id) VALUES (?, ?, 1, ?, ?)
+     ON CONFLICT(user_id, task_id) DO UPDATE SET solution_viewed = 1, solution_variant = excluded.solution_variant, updated_at = CURRENT_TIMESTAMP`,
+    u.id, task.id, variant.id, variant.id,
   );
   res.json({ solution: variant.solution, summary: answerSummary(json(variant.answer, {})) });
+});
+
+// Zwischenspeichern der aktuellen Eingabe, damit nach dem Schließen des Browsers nichts verloren geht.
+r.post('/tasks/:id/draft', (req, res) => {
+  const u = req.user;
+  const task = allowedTask(u, Number(req.params.id));
+  if (!task) return res.status(404).json({ error: 'Aufgabe nicht gefunden.' });
+  const variantId = Number(req.body?.variantId);
+  if (!get('SELECT 1 FROM task_variants WHERE id = ? AND task_id = ?', variantId, task.id)) return res.status(400).json({ error: 'Variante unbekannt.' });
+  const answer = req.body?.answer ?? null;
+  const draft = JSON.stringify({ variantId, answer });
+  if (draft.length > 20000) return res.status(400).json({ error: 'Eingabe zu lang.' });
+  run(
+    `INSERT INTO task_progress (user_id, task_id, variant_id, draft, time_ms) VALUES (?, ?, ?, ?, ?)
+     ON CONFLICT(user_id, task_id) DO UPDATE SET draft = excluded.draft, time_ms = time_ms + excluded.time_ms`,
+    u.id, task.id, variantId, draft, clampTime(req.body?.time_ms),
+  );
+  res.json({ ok: true });
+});
+
+// Freiwillige Bewertung: 1 = fand ich gut, -1 = fand ich nicht so gut, 0 = zurücknehmen
+r.post('/tasks/:id/rating', (req, res) => {
+  const u = req.user;
+  const task = allowedTask(u, Number(req.params.id));
+  if (!task) return res.status(404).json({ error: 'Aufgabe nicht gefunden.' });
+  const value = Math.sign(Number(req.body?.value) || 0);
+  if (value === 0) run('DELETE FROM task_ratings WHERE user_id = ? AND task_id = ?', u.id, task.id);
+  else {
+    run(
+      `INSERT INTO task_ratings (user_id, task_id, value) VALUES (?, ?, ?)
+       ON CONFLICT(user_id, task_id) DO UPDATE SET value = excluded.value, updated_at = CURRENT_TIMESTAMP`,
+      u.id, task.id, value,
+    );
+  }
+  res.json({ rating: value });
+});
+
+// Problem melden (z. B. „Bei Aufgabe 5 passt das Bild nicht“)
+r.post('/packages/:id/report', (req, res) => {
+  const u = req.user;
+  const p = allowedPackage(u, Number(req.params.id));
+  if (!p) return res.status(404).json({ error: 'Übungspaket nicht gefunden.' });
+  const text = String(req.body?.text || '').trim().slice(0, 4000);
+  if (!text) return res.status(400).json({ error: 'Bitte beschreibe kurz das Problem.' });
+  let taskId = null, taskNo = null;
+  if (req.body?.taskId) {
+    const ids = all("SELECT id FROM tasks WHERE package_id = ? AND kind = 'practice' ORDER BY sort, id", p.id).map((t) => t.id);
+    const idx = ids.indexOf(Number(req.body.taskId));
+    if (idx >= 0) { taskId = ids[idx]; taskNo = idx + 1; }
+  }
+  run('INSERT INTO reports (user_id, package_id, task_id, task_no, text) VALUES (?, ?, ?, ?, ?)', u.id, p.id, taskId, taskNo, text);
+  res.json({ ok: true });
 });
 
 r.post('/tasks/:id/new-variant', (req, res) => {

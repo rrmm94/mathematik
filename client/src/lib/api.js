@@ -1,5 +1,5 @@
-async function request(method, url, body) {
-  const opts = { method, headers: {}, credentials: 'same-origin' };
+async function request(method, url, body, { keepalive = false } = {}) {
+  const opts = { method, headers: {}, credentials: 'same-origin', keepalive };
   if (body instanceof FormData) opts.body = body;
   else if (body !== undefined) {
     opts.headers['Content-Type'] = 'application/json';
@@ -18,7 +18,7 @@ async function request(method, url, body) {
 
 export const api = {
   get: (u) => request('GET', `/api${u}`),
-  post: (u, b = {}) => request('POST', `/api${u}`, b),
+  post: (u, b = {}, opts) => request('POST', `/api${u}`, b, opts),
   put: (u, b = {}) => request('PUT', `/api${u}`, b),
   del: (u) => request('DELETE', `/api${u}`),
   upload: (file) => {

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Users, ClipboardList, Layers, Shapes, ArrowRight, Activity } from 'lucide-react';
+import { Users, ClipboardList, Layers, Shapes, ArrowRight, Activity, Flag } from 'lucide-react';
 import { api } from '../../lib/api.js';
 import { useLoad, PageLoader, ErrorBox, Empty, formatDate } from '../../components/ui.jsx';
 import { PageHeader } from '../../components/Layout.jsx';
@@ -8,7 +8,7 @@ export default function AdminOverview() {
   const { data, error, loading } = useLoad(() => api.get('/admin/overview'));
   if (loading) return <PageLoader />;
   if (error) return <ErrorBox error={error} />;
-  const { counts, courses, recent } = data;
+  const { counts, courses, recent, openReports } = data;
   const stats = [
     { label: 'Kinder', value: counts.students, icon: Users, to: '/admin/kurse', color: 'text-indigo-600 bg-indigo-50' },
     { label: 'Themenbereiche', value: counts.topics, icon: Shapes, to: '/admin/themen', color: 'text-teal-600 bg-teal-50' },
@@ -18,6 +18,11 @@ export default function AdminOverview() {
   return (
     <div className="max-w-6xl">
       <PageHeader title="Übersicht" subtitle="Alles Wichtige auf einen Blick." />
+      {openReports > 0 && (
+        <Link to="/admin/rueckmeldungen" className="card mb-4 flex items-center gap-3 border-amber-200 bg-amber-50/70 px-5 py-3 text-sm font-medium text-amber-900 hover:bg-amber-50">
+          <Flag size={18} /> {openReports === 1 ? 'Ein Kind hat ein Problem gemeldet.' : `Die Kinder haben ${openReports} Probleme gemeldet.`} <ArrowRight size={16} className="ml-auto" />
+        </Link>
+      )}
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {stats.map((s) => (
           <Link key={s.label} to={s.to} className="card flex items-center gap-4 p-5 transition hover:border-slate-300">

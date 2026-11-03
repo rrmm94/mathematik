@@ -2,12 +2,14 @@ import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   ArrowDown, ArrowUp, Check, Star, ChevronDown, ChevronRight, Clock, Eye, KeyRound, MessageSquarePlus, Pencil, RotateCcw, Save, Trash2, Unlock, X, Minus, ArrowUpRight, ArrowDownRight,
+  ThumbsUp, ThumbsDown, Flag, MessageSquare,
 } from 'lucide-react';
 import { LEVELS, PROFILES, DIFFICULTIES } from '../../../../shared/constants.js';
 import { api } from '../../lib/api.js';
-import { useLoad, PageLoader, ErrorBox, TopicIcon, ProgressBar, toast, formatDate, formatDuration, MathContent, Empty } from '../../components/ui.jsx';
+import { useLoad, PageLoader, ErrorBox, TopicIcon, ProgressBar, toast, formatDate, formatDuration, Empty } from '../../components/ui.jsx';
 import { PageHeader } from '../../components/Layout.jsx';
 import { EditStudent, SetPassword } from './CourseDetail.jsx';
+import StudentTaskDetail, { AnswerReview, CorrectBadge, SolutionBox } from './StudentTaskDetail.jsx';
 
 export function LevelBadge({ level, small }) {
   if (level == null) return <span className="text-xs text-slate-400">–</span>;
@@ -70,14 +72,14 @@ export default function StudentDetail() {
       {s.note && <div className="mb-4 rounded-xl bg-amber-50 px-4 py-2 text-sm text-amber-900">📝 {s.note}</div>}
 
       <div className="mb-5 flex gap-1 rounded-xl bg-slate-100 p-1 sm:inline-flex">
-        {[['plan', 'Lernplan & Fortschritt'], ['diag', `Diagnosetests (${detail.runs.length})`], ['feedback', `Feedback (${detail.feedback.length})`]].map(([k, l]) => (
-          <button key={k} onClick={() => setTab(k)} className={`flex-1 rounded-lg px-4 py-2 text-sm font-semibold transition ${tab === k ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}>{l}</button>
+        {[['plan', 'Lernplan & Fortschritt'], ['diag', `Diagnosetests (${detail.runs.length})`], ['feedback', `${detail.reports.length ? 'Feedback & Meldungen' : 'Feedback'} (${detail.feedback.length + detail.reports.length})`]].map(([k, l]) => (
+          <button key={k} onClick={() => setTab(k)} className={`flex-1 whitespace-nowrap rounded-lg px-4 py-2 text-sm font-semibold transition ${tab === k ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}>{l}</button>
         ))}
       </div>
 
       {tab === 'plan' && <PlanEditor student={s} plan={detail.plan} onSaved={reload} />}
       {tab === 'diag' && <DiagnoseView student={s} runs={detail.runs} plan={detail.plan} onChanged={reload} />}
-      {tab === 'feedback' && <FeedbackView student={s} plan={detail.plan} feedback={detail.feedback} onChanged={reload} />}
+      {tab === 'feedback' && <FeedbackView student={s} plan={detail.plan} feedback={detail.feedback} reports={detail.reports} onChanged={reload} />}
 
       <EditStudent student={edit} courses={courses} onClose={() => setEdit(null)} onSaved={() => { setEdit(null); reload(); }} />
       <SetPassword student={pwFor} onClose={() => setPwFor(null)} />
@@ -89,6 +91,7 @@ export default function StudentDetail() {
 function PlanEditor({ student, plan, onSaved }) {
   const [items, setItems] = useState(plan);
   const [open, setOpen] = useState(null);
+  const [taskId, setTaskId] = useState(null);
   const [dragIdx, setDragIdx] = useState(null);
   useEffect(() => setItems(plan), [plan]);
   const dirty = JSON.stringify(items.map((i) => [i.topicId, i.levels])) !== JSON.stringify(plan.map((i) => [i.topicId, i.levels]));
@@ -179,20 +182,28 @@ function PlanEditor({ student, plan, onSaved }) {
                 {it.tasks.length === 0 ? <p className="py-3 text-sm text-slate-500">Noch keine Aufgaben bearbeitet.</p> : (
                   <table className="w-full text-sm">
                     <thead className="text-left text-xs uppercase text-slate-500">
-                      <tr><th className="py-2">Aufgabe</th><th>Stufe</th><th>Versuche</th><th>Zeit</th><th>Status</th><th>Zuletzt</th></tr>
+                      <tr><th className="py-2">Aufgabe</th><th>Stufe</th><th>Versuche</th><th>Zeit</th><th>Status</th><th>Bewertung</th><th>Zuletzt</th><th /></tr>
                     </thead>
                     <tbody className="divide-y divide-slate-200/70">
                       {it.tasks.map((t) => (
-                        <tr key={t.id}>
+                        <tr key={t.id} onClick={() => setTaskId(t.id)} className="cursor-pointer hover:bg-white" title="Aufgabe, Eingaben und Lösung ansehen">
                           <td className="py-2 pr-3"><div className="font-medium text-slate-800">{t.title}</div><div className="text-xs text-slate-500">{t.package_title}</div></td>
                           <td><LevelBadge level={t.level} small /></td>
-                          <td className="tabular-nums">{t.attempts}×</td>
+                          <td className="tabular-nums">{t.attempts || 0}×{t.wrong > 0 && <span className="ml-1 text-xs text-red-600">({t.wrong} falsch)</span>}</td>
                           <td className="tabular-nums">{formatDuration(t.time_ms)}</td>
                           <td>
                             {t.solved ? <span className="chip bg-emerald-100 text-emerald-700"><Check size={12} /> gelöst</span> : <span className="chip bg-slate-200 text-slate-600">offen</span>}
                             {t.solution_viewed ? <span className="chip ml-1 bg-amber-100 text-amber-800"><Eye size={12} /> Lösung angesehen</span> : null}
                           </td>
+                          <td>
+                            {t.rating > 0 && <ThumbsUp size={15} className="text-emerald-600" aria-label="fand die Aufgabe gut" />}
+                            {t.rating < 0 && <ThumbsDown size={15} className="text-rose-600" aria-label="fand die Aufgabe nicht so gut" />}
+                          </td>
                           <td className="text-xs text-slate-500">{formatDate(t.updated_at)}</td>
+                          <td className="text-right">
+                            {t.feedback_count > 0 && <MessageSquare size={14} className="mr-2 inline text-rose-400" aria-label="Feedback gegeben" />}
+                            <ChevronRight size={16} className="inline text-slate-400" />
+                          </td>
                         </tr>
                       ))}
                     </tbody>
@@ -205,8 +216,9 @@ function PlanEditor({ student, plan, onSaved }) {
       </div>
       <div className="mt-3 flex flex-wrap gap-3 text-xs text-slate-500">
         {LEVELS.map((l) => <span key={l.id} className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full" style={{ background: l.color }} />{l.label}</span>)}
-        <span>· Für das Kind sind die Stufen nicht sichtbar.</span>
+        <span>· Für das Kind sind die Stufen nicht sichtbar. Klicke eine bearbeitete Aufgabe an, um die Eingaben des Kindes zu sehen.</span>
       </div>
+      <StudentTaskDetail student={student} taskId={taskId} onClose={() => setTaskId(null)} onChanged={onSaved} />
     </div>
   );
 }
@@ -303,13 +315,22 @@ function DiagnoseView({ student, runs, plan, onChanged }) {
                   ))}
                 </div>
                 {t.items.filter((i) => i.id === openItem).map((i) => (
-                  <div key={i.id} className="mt-3 grid gap-4 rounded-xl bg-slate-50 p-4 md:grid-cols-2">
-                    <div><div className="label">Aufgabe</div><MathContent md={i.prompt} />{i.source && <div className="mt-2 text-xs text-slate-400">Herkunft: {i.source}</div>}</div>
-                    <div>
-                      <div className="label">Antwort des Kindes</div>
-                      <div className="rounded-lg bg-white p-3 font-mono text-sm">{formatGiven(i.answer, i.spec)}</div>
-                      <div className="label mt-3">Erwartet</div>
-                      <div className="rounded-lg bg-white p-3 font-mono text-sm">{formatExpected(i.spec)}</div>
+                  <div key={i.id} className="mt-3 grid gap-5 rounded-xl bg-slate-50 p-4 lg:grid-cols-[1fr_320px]">
+                    <div className="min-w-0 rounded-xl border border-slate-200 bg-white p-4">
+                      <div className="mb-3 flex flex-wrap items-center gap-2">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Aufgabe mit Antwort des Kindes</span>
+                        <CorrectBadge correct={i.correct} answered={!!i.answeredAt} />
+                      </div>
+                      <AnswerReview prompt={i.prompt} context={i.context} spec={i.publicSpec} answer={i.answer} correct={i.answer == null ? null : i.correct} parts={i.parts} />
+                      {i.answeredAt && i.answer == null && <p className="mt-3 text-sm text-slate-500">Das Kind hat „Weiß ich (noch) nicht“ gewählt.</p>}
+                      {i.source && <div className="mt-3 text-xs text-slate-400">Herkunft: {i.source}</div>}
+                    </div>
+                    <div className="space-y-3">
+                      <div>
+                        <div className="label">Antwort des Kindes</div>
+                        <div className="rounded-lg bg-white p-3 font-mono text-sm">{formatGiven(i.answer, i.spec)}</div>
+                      </div>
+                      <SolutionBox summary={i.summary || formatExpected(i.spec)} solution={i.solution} />
                     </div>
                   </div>
                 ))}
@@ -325,6 +346,7 @@ function DiagnoseView({ student, runs, plan, onChanged }) {
 function formatGiven(answer, spec) {
   if (answer == null) return '(keine Antwort)';
   if (spec?.type === 'choice') return (Array.isArray(answer) ? answer : [answer]).map((i) => spec.options?.[i]?.text ?? i).join(', ');
+  if (spec?.type === 'order' || spec?.type === 'graph') return '(siehe Darstellung)';
   if (Array.isArray(answer)) return answer.map((a, i) => `${spec?.parts?.[i]?.label || ''} ${a ?? '—'}`).join('   ');
   return String(answer);
 }
@@ -336,7 +358,7 @@ function formatExpected(spec) {
 }
 
 // ---------------------------------------------------------------- Feedback
-function FeedbackView({ student, plan, feedback, onChanged }) {
+function FeedbackView({ student, plan, feedback, reports, onChanged }) {
   const [topicId, setTopicId] = useState(plan[0]?.topicId || '');
   const [text, setText] = useState('');
   const send = async () => {
@@ -366,14 +388,34 @@ function FeedbackView({ student, plan, feedback, onChanged }) {
           <textarea className="input" rows={5} value={text} onChange={(e) => setText(e.target.value)} placeholder="z. B. Achte bei der Prozentrechnung darauf, was der Grundwert ist." />
         </div>
         <button className="btn-primary w-full" disabled={!text.trim()} onClick={send}>Senden</button>
-        <p className="text-xs text-slate-500">Das Kind sieht auf der Startseite, dass es neues Feedback gibt.</p>
+        <p className="text-xs text-slate-500">Das Kind sieht auf der Startseite, dass es neues Feedback gibt. Feedback zu einer einzelnen Aufgabe gibst du unter „Lernplan & Fortschritt“, indem du die Aufgabe anklickst.</p>
       </div>
+      <div className="space-y-6">
+      {reports.length > 0 && (
+        <div className="card overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-slate-100 px-5 py-3 font-semibold text-slate-900"><Flag size={16} className="text-amber-600" /> Gemeldete Probleme</div>
+          <div className="divide-y divide-slate-100">
+            {reports.map((r) => (
+              <div key={r.id} className="px-5 py-3">
+                <div className="mb-1 flex flex-wrap items-center gap-2 text-xs text-slate-500">
+                  <span className="font-semibold text-slate-700">{r.package_title || 'Paket gelöscht'}</span>
+                  {r.task_no && <span>Aufgabe {r.task_no}{r.task_title ? ` (${r.task_title})` : ''}</span>}
+                  <span>{formatDate(r.created_at)}</span>
+                  {r.resolved_at ? <span className="chip bg-emerald-100 text-emerald-700">erledigt</span> : <span className="chip bg-amber-100 text-amber-800">offen</span>}
+                </div>
+                <p className="whitespace-pre-wrap text-sm text-slate-700">{r.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
       <div className="card divide-y divide-slate-100">
         {feedback.length === 0 ? <Empty title="Noch kein Feedback gegeben" /> : feedback.map((f) => (
           <div key={f.id} className="flex gap-4 px-5 py-4">
             <div className="min-w-0 flex-1">
               <div className="mb-1 flex flex-wrap items-center gap-2 text-xs text-slate-500">
                 <span className="font-semibold text-slate-700">{f.topic_title || 'Allgemein'}</span>
+                {f.task_title && <span className="chip bg-rose-50 text-rose-700">Aufgabe: {f.task_title}</span>}
                 <span>{formatDate(f.created_at)}</span>
                 {f.read_at ? <span className="chip bg-emerald-100 text-emerald-700">gelesen</span> : <span className="chip bg-slate-100 text-slate-500">ungelesen</span>}
               </div>
@@ -382,6 +424,7 @@ function FeedbackView({ student, plan, feedback, onChanged }) {
             <button className="btn-ghost btn-sm text-red-600" onClick={() => remove(f)}><Trash2 size={14} /></button>
           </div>
         ))}
+      </div>
       </div>
     </div>
   );

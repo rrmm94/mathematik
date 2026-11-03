@@ -6,6 +6,7 @@ import { all, get, run, json, tx, getSetting, setSetting, UPLOAD_DIR } from '../
 import { requireAdmin, hashPassword } from '../auth.js';
 import { runTopicScores, buildPlanFromRun, topicsForProfile, topicProgress, syncPlan } from '../plan.js';
 import { PROFILE_KEYS, MIN_STUDENT_PASSWORD } from '../../shared/constants.js';
+import { checkAnswer, publicAnswerSpec, answerSummary } from '../../shared/checker.js';
 
 const r = Router();
 r.use(requireAdmin);
@@ -29,7 +30,8 @@ r.get('/overview', (_req, res) => {
     `SELECT u.id, u.display_name, MAX(a.created_at) AS last, COUNT(*) AS n FROM attempts a JOIN users u ON u.id = a.user_id
      WHERE a.created_at >= datetime('now', '-7 days') GROUP BY u.id ORDER BY last DESC LIMIT 10`,
   );
-  res.json({ courses, counts, recent });
+  const openReports = get('SELECT COUNT(*) AS n FROM reports WHERE resolved_at IS NULL').n;
+  res.json({ courses, counts, recent, openReports });
 });
 
 // ---------- Kurse ----------
@@ -193,13 +195,14 @@ r.get('/students/:id', (req, res) => {
 
   const runs = all('SELECT * FROM diag_runs WHERE user_id = ? ORDER BY number', u.id).map((d) => {
     const items = all(
-      `SELECT i.*, t.title AS task_title, v.prompt, v.context, v.source, v.answer AS spec, v.sort AS variant_sort, tp.title AS topic_title
+      `SELECT i.*, t.title AS task_title, v.prompt, v.context, v.source, v.solution, v.answer AS spec, v.sort AS variant_sort, tp.title AS topic_title
        FROM diag_items i JOIN tasks t ON t.id = i.task_id JOIN task_variants v ON v.id = i.variant_id JOIN topics tp ON tp.id = i.topic_id
        WHERE i.run_id = ? ORDER BY i.sort`,
       d.id,
     ).map((i) => ({
       id: i.id, taskId: i.task_id, topicId: i.topic_id, topicTitle: i.topic_title, taskTitle: i.task_title, difficulty: i.difficulty,
-      source: i.source || '', variant: i.variant_sort + 1, prompt: i.context ? `${i.context}\n\n${i.prompt}` : i.prompt, answer: json(i.answer), spec: json(i.spec, {}), correct: i.correct, timeMs: i.time_ms, answeredAt: i.answered_at,
+      source: i.source || '', variant: i.variant_sort + 1, prompt: i.prompt, context: i.context || '', answer: json(i.answer), spec: json(i.spec, {}), correct: i.correct, timeMs: i.time_ms, answeredAt: i.answered_at,
+      ...answerView(json(i.spec, {}), json(i.answer)), solution: i.solution || '',
     }));
     return { ...d, items, scores: runTopicScores(d.id) };
   });
@@ -210,25 +213,77 @@ r.get('/students/:id', (req, res) => {
   ).map((p) => {
     const levels = json(p.levels, [1]);
     const tasks = all(
-      `SELECT t.id, t.title, pk.title AS package_title, pk.level, tp.attempts, tp.solved, tp.solution_viewed, tp.time_ms, tp.updated_at
+      `SELECT t.id, t.title, pk.title AS package_title, pk.level, tp.attempts, tp.solved, tp.solution_viewed, tp.time_ms, tp.updated_at,
+              (SELECT COUNT(*) FROM attempts a WHERE a.user_id = ? AND a.task_id = t.id AND a.correct = 0) AS wrong,
+              (SELECT value FROM task_ratings r WHERE r.user_id = ? AND r.task_id = t.id) AS rating,
+              (SELECT COUNT(*) FROM feedback f WHERE f.user_id = ? AND f.task_id = t.id) AS feedback_count
        FROM tasks t JOIN packages pk ON pk.id = t.package_id
        LEFT JOIN task_progress tp ON tp.task_id = t.id AND tp.user_id = ?
        WHERE t.kind = 'practice' AND t.topic_id = ? ORDER BY pk.level, pk.sort, t.sort, t.id`,
-      u.id, p.topic_id,
+      u.id, u.id, u.id, u.id, p.topic_id,
     );
     return {
       topicId: p.topic_id, title: p.title, icon: p.icon, color: p.color, sort: p.sort,
       diagLevel: p.diag_level, levels,
       progress: topicProgress(u.id, p.topic_id, u.profile, levels),
-      tasks: tasks.filter((t) => t.attempts || t.solution_viewed),
+      tasks: tasks.filter((t) => t.attempts || t.solution_viewed || t.rating),
     };
   });
 
   const feedback = all(
-    `SELECT f.*, t.title AS topic_title FROM feedback f LEFT JOIN topics t ON t.id = f.topic_id WHERE f.user_id = ? ORDER BY f.created_at DESC`,
+    `SELECT f.*, t.title AS topic_title, tk.title AS task_title FROM feedback f LEFT JOIN topics t ON t.id = f.topic_id
+     LEFT JOIN tasks tk ON tk.id = f.task_id WHERE f.user_id = ? ORDER BY f.created_at DESC`,
     u.id,
   );
-  res.json({ student: studentSummary(u), runs, plan, feedback });
+  const reports = all(
+    `SELECT r.*, pk.title AS package_title, t.title AS task_title FROM reports r LEFT JOIN packages pk ON pk.id = r.package_id
+     LEFT JOIN tasks t ON t.id = r.task_id WHERE r.user_id = ? ORDER BY r.created_at DESC`,
+    u.id,
+  );
+  res.json({ student: studentSummary(u), runs, plan, feedback, reports });
+});
+
+// Antwort so aufbereiten, wie das Kind sie gesehen hat (öffentliche Spezifikation + Markierung je Feld).
+function answerView(spec, answer) {
+  const res = answer == null ? { correct: null } : checkAnswer(spec, answer);
+  return { publicSpec: publicAnswerSpec(spec), parts: res.parts || null, summary: answerSummary(spec) };
+}
+
+// Eine Übungsaufgabe eines Kindes im Detail: Aufgabe, alle Eingaben der Reihe nach, Lösung, Bewertung, Feedback.
+r.get('/students/:id/tasks/:taskId', (req, res) => {
+  const u = get("SELECT * FROM users WHERE id = ? AND role = 'student'", id(req.params.id));
+  const t = get("SELECT * FROM tasks WHERE id = ? AND kind = 'practice'", id(req.params.taskId));
+  if (!u || !t) return res.status(404).json({ error: 'Nicht gefunden.' });
+  const pkg = get('SELECT id, title, level FROM packages WHERE id = ?', t.package_id);
+  const topic = get('SELECT id, title, icon, color FROM topics WHERE id = ?', t.topic_id);
+  const ids = all("SELECT id FROM tasks WHERE package_id = ? AND kind = 'practice' ORDER BY sort, id", t.package_id).map((x) => x.id);
+  const variants = new Map(all('SELECT * FROM task_variants WHERE task_id = ? ORDER BY sort, id', t.id).map((v, i) => [v.id, { ...v, no: i + 1 }]));
+  const prog = get('SELECT * FROM task_progress WHERE user_id = ? AND task_id = ?', u.id, t.id);
+  const attempts = all('SELECT * FROM attempts WHERE user_id = ? AND task_id = ? ORDER BY id', u.id, t.id).map((a) => {
+    const v = variants.get(a.variant_id);
+    const spec = json(v?.answer, {});
+    const answer = json(a.answer, null);
+    return { id: a.id, variantId: a.variant_id, correct: a.correct, timeMs: a.time_ms, createdAt: a.created_at, answer, ...answerView(spec, answer) };
+  });
+  // Varianten, die das Kind gesehen hat (bearbeitet oder aktuell zugeteilt)
+  const seen = [...new Set([...attempts.map((a) => a.variantId), prog?.variant_id].filter((x) => variants.has(x)))];
+  const draft = json(prog?.draft, null);
+  res.json({
+    task: { id: t.id, title: t.title, no: ids.indexOf(t.id) + 1 },
+    package: pkg,
+    topic,
+    progress: prog ? { attempts: prog.attempts, solved: !!prog.solved, solutionViewed: !!prog.solution_viewed, timeMs: prog.time_ms, updatedAt: prog.updated_at, variantId: prog.variant_id } : null,
+    variants: seen.map((vid) => {
+      const v = variants.get(vid);
+      const spec = json(v.answer, {});
+      return { id: v.id, no: v.no, prompt: v.prompt, context: v.context || '', hint: v.hint || '', solution: v.solution || '', source: v.source || '', points: v.points || 0, publicSpec: publicAnswerSpec(spec), summary: answerSummary(spec) };
+    }),
+    attempts,
+    draft: draft && variants.has(draft.variantId) ? { variantId: draft.variantId, answer: draft.answer, ...answerView(json(variants.get(draft.variantId).answer, {}), draft.answer) } : null,
+    rating: get('SELECT value, updated_at FROM task_ratings WHERE user_id = ? AND task_id = ?', u.id, t.id) || null,
+    feedback: all('SELECT * FROM feedback WHERE user_id = ? AND task_id = ? ORDER BY created_at DESC', u.id, t.id),
+    reports: all('SELECT * FROM reports WHERE user_id = ? AND task_id = ? ORDER BY created_at DESC', u.id, t.id),
+  });
 });
 
 // Lernplan anpassen: Reihenfolge + Stufen
@@ -269,7 +324,42 @@ r.post('/students/:id/plan/from-run/:runId', (req, res) => {
 r.post('/students/:id/feedback', (req, res) => {
   const text = String(req.body?.text || '').trim();
   if (!text) return bad(res, 'Text fehlt.');
-  run('INSERT INTO feedback (user_id, topic_id, text) VALUES (?, ?, ?)', id(req.params.id), req.body?.topicId ? id(req.body.topicId) : null, text);
+  const task = req.body?.taskId ? get('SELECT id, topic_id FROM tasks WHERE id = ?', id(req.body.taskId)) : null;
+  const topicId = task ? task.topic_id : req.body?.topicId ? id(req.body.topicId) : null;
+  run('INSERT INTO feedback (user_id, topic_id, task_id, text) VALUES (?, ?, ?, ?)', id(req.params.id), topicId, task?.id ?? null, text);
+  res.json({ ok: true });
+});
+
+// ---------- Rückmeldungen der Kinder: gemeldete Probleme + Bewertungen ----------
+r.get('/reports', (_req, res) => {
+  const reports = all(
+    `SELECT r.*, u.display_name, u.course_id, pk.title AS package_title, pk.level, pk.topic_id, tp.title AS topic_title, t.title AS task_title
+     FROM reports r JOIN users u ON u.id = r.user_id LEFT JOIN packages pk ON pk.id = r.package_id
+     LEFT JOIN topics tp ON tp.id = pk.topic_id LEFT JOIN tasks t ON t.id = r.task_id
+     ORDER BY r.resolved_at IS NOT NULL, r.created_at DESC`,
+  );
+  const ratings = all(
+    `SELECT t.id, t.title, pk.id AS package_id, pk.title AS package_title, pk.level, tp.id AS topic_id, tp.title AS topic_title,
+            SUM(CASE WHEN r.value > 0 THEN 1 ELSE 0 END) AS up, SUM(CASE WHEN r.value < 0 THEN 1 ELSE 0 END) AS down,
+            MAX(r.updated_at) AS last
+     FROM task_ratings r JOIN tasks t ON t.id = r.task_id JOIN packages pk ON pk.id = t.package_id JOIN topics tp ON tp.id = t.topic_id
+     GROUP BY t.id ORDER BY down DESC, up ASC, last DESC`,
+  ).map((x) => {
+    const ids = all("SELECT id FROM tasks WHERE package_id = ? AND kind = 'practice' ORDER BY sort, id", x.package_id).map((y) => y.id);
+    const voters = all(
+      'SELECT u.id, u.display_name, r.value FROM task_ratings r JOIN users u ON u.id = r.user_id WHERE r.task_id = ? ORDER BY r.value, u.display_name',
+      x.id,
+    );
+    return { ...x, no: ids.indexOf(x.id) + 1, voters };
+  });
+  res.json({ reports, ratings });
+});
+r.put('/reports/:id', (req, res) => {
+  run(`UPDATE reports SET resolved_at = ${req.body?.resolved === false ? 'NULL' : 'CURRENT_TIMESTAMP'} WHERE id = ?`, id(req.params.id));
+  res.json({ ok: true });
+});
+r.delete('/reports/:id', (req, res) => {
+  run('DELETE FROM reports WHERE id = ?', id(req.params.id));
   res.json({ ok: true });
 });
 r.delete('/feedback/:id', (req, res) => {
@@ -323,7 +413,13 @@ r.get('/topics/:id/packages', (req, res) => {
   const pkgs = all('SELECT * FROM packages WHERE topic_id = ? ORDER BY level, sort, id', id(req.params.id)).map((p) => ({
     ...p,
     profiles: json(p.profiles, []),
-    tasks: all("SELECT id, title, sort, (SELECT COUNT(*) FROM task_variants v WHERE v.task_id = tasks.id) AS variants, (SELECT source FROM task_variants v WHERE v.task_id = tasks.id AND v.source != '' ORDER BY sort, id LIMIT 1) AS source FROM tasks WHERE package_id = ? ORDER BY sort, id", p.id),
+    tasks: all(`SELECT id, title, sort, (SELECT COUNT(*) FROM task_variants v WHERE v.task_id = tasks.id) AS variants,
+                       (SELECT source FROM task_variants v WHERE v.task_id = tasks.id AND v.source != '' ORDER BY sort, id LIMIT 1) AS source,
+                       (SELECT COUNT(*) FROM task_ratings r WHERE r.task_id = tasks.id AND r.value > 0) AS up,
+                       (SELECT COUNT(*) FROM task_ratings r WHERE r.task_id = tasks.id AND r.value < 0) AS down,
+                       (SELECT COUNT(*) FROM reports r WHERE r.task_id = tasks.id AND r.resolved_at IS NULL) AS open_reports
+                FROM tasks WHERE package_id = ? ORDER BY sort, id`, p.id),
+    openReports: get('SELECT COUNT(*) AS n FROM reports WHERE package_id = ? AND resolved_at IS NULL', p.id).n,
   }));
   res.json(pkgs);
 });

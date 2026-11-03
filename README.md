@@ -8,9 +8,11 @@ Eine Lernplattform für die Oberschule (Haupt- und Realschulzweig), mit der sich
 - **Login mit Kennung + Passwort** (vergeben durch die Lehrkraft, keine E-Mail-Adressen); das Passwort können die Kinder selbst ändern (Schlüssel-Symbol oben)
 - **Erster Login:** angestrebten Abschluss wählen – Hauptschulabschluss nach Klasse 10, Realschulabschluss oder erweiterter Realschulabschluss (entfällt, wenn die Lehrkraft den Abschluss schon eingetragen hat), danach **„Welche Themen sind dir bisher leichtgefallen?“** – Themen mit Stichworten und Mini-Beispielaufgabe zum Anhaken (freiwillig, bis zum Teststart änderbar)
 - **Einstiegstest (Diagnose):** je Thema 3 Aufgaben (leicht/mittel/schwer), pausierbar, ohne Richtig/Falsch-Rückmeldung
+- **Alles wird automatisch zwischengespeichert** (Diagnosetest und Übungsaufgaben): Wird der Browser mittendrin geschlossen, geht es nach dem nächsten Login genau dort weiter
 - **Animation „Dein Lernplan wird erstellt …“** nach dem Test
 - **Individueller Lernplan:** schwächste Themen zuerst; Themen, die das Kind als leicht angehakt hat **und** im Test mindestens auf Regelstandard lagen, stehen am Ende. Alle Themen frei wählbar, Fortschrittsbalken je Thema
-- **Übungspakete** mit Eingabefeldern, Multiple Choice oder Freitext; unbegrenzte Versuche, Tipp, Lösung auf Wunsch, „Neue Zahlen“ (Varianten)
+- **Übungspakete** mit Eingabefeldern, Multiple Choice oder Freitext; unbegrenzte Versuche, Tipp, **Lösung + Erklärung erst nach zwei falschen Versuchen**, „Neue Zahlen“ (Varianten)
+- **Daumen hoch / runter** an jeder Übungsaufgabe (freiwillige Bewertung) und **„Problem melden“** je Übungspaket bzw. Aufgabe
 - **„Skript“-Button** an jeder Aufgabe springt zum passenden Abschnitt im interaktiven Skript
 - **Startseite:** Ziel, Countdown bis zur Prüfung, Lernplan, Feedback der Lehrkraft, nächste Termine
 - **„Benötigst du Hilfe?“** oben rechts auf allen Seiten (Link zum KI-Chatbot)
@@ -20,13 +22,15 @@ Eine Lernplattform für die Oberschule (Haupt- und Realschulzweig), mit der sich
 ### Für die Lehrkraft (`/admin`)
 - **Kurse & Kinder** anlegen (mehrere Namen auf einmal mit gemeinsamem Startpasswort, Zugangsdaten druckbar), Abschluss bearbeiten, Passwort von Hand neu setzen
 - **Detailansicht je Kind:**
-  - Diagnose-Ergebnis je Aufgabe inkl. Antwort und **Bearbeitungszeit**
+  - Diagnose-Ergebnis je Aufgabe: Aufgabe so, wie das Kind sie gesehen hat, mit seiner Antwort, richtiger Lösung, Lösungsweg und **Bearbeitungszeit**
   - berechnete Niveaustufe je Thema (Basis / Mindest / Regel / Experte)
   - ⭐ „leicht“-Markierung bei Themen, die das Kind selbst als leicht angehakt hat
   - Lernplan anpassen: **Reihenfolge per Drag & Drop**, **mehrere Stufen gleichzeitig freischalten**
-  - Fortschritt, **Anzahl der Versuche und Zeit je Übungsaufgabe**, „Lösung angesehen“
+  - Fortschritt, **Anzahl der Versuche und Zeit je Übungsaufgabe**, „Lösung angesehen“, Bewertung des Kindes
+  - Klick auf eine Übungsaufgabe: **Verlauf aller Eingaben** (1. Versuch falsch, 2. Versuch …), richtige Lösung, Lösungsweg und **Feedback direkt zu dieser Aufgabe**
   - Vergleich Einstiegstest ↔ Wiederholungstest, Stufen per Klick übernehmen
-  - **Feedback je Thema**
+  - **Feedback je Thema oder je Aufgabe** (das Kind bekommt einen Link direkt zur Aufgabe)
+- **Rückmeldungen:** gemeldete Probleme der Kinder (als erledigt markieren) und Übersicht der Daumen-Bewertungen je Aufgabe
 - **Diagnosetest-Editor:** je Profil und Thema die Aufgaben leicht/mittel/schwer
 - **Übungsaufgaben-Editor:** Themen → Übungspakete (je Niveaustufe) → Aufgaben
 - **Aufgaben-Editor:** Freitext + **LaTeX** (`$…$`) mit Live-Vorschau, **Bilder und GeoGebra-SVG** (Hochladen, Einfügen per Drag & Drop oder Zwischenablage), **mehrere Varianten** (Tabs), Musterlösung, Lösungsweg, Tipp, Test „als Kind“
