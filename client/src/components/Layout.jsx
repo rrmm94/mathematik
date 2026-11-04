@@ -29,7 +29,7 @@ export function HelpButton() {
       target="_blank"
       rel="noopener noreferrer"
       onClick={onClick}
-      className="btn border-brand-400 bg-brand-400 px-3.5 font-bold text-[#1b0c03] hover:brightness-105"
+      className="btn border-brand-500 bg-brand-500 px-3.5 font-bold text-white hover:bg-brand-600"
     >
       <LifeBuoy size={18} />
       <span className="hidden sm:inline">Benötigst du Hilfe?</span>

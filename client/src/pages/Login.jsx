@@ -72,7 +72,7 @@ export default function Login() {
             <input id="p" type="password" className="input border-night-line bg-night-2 text-night-ink" autoComplete="current-password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} required />
           </div>
           <ErrorBox error={error} />
-          <button className="btn min-h-11 w-full border-brand-400 bg-brand-400 text-base font-bold text-[#1b0c03] hover:brightness-105" disabled={busy}><LogIn size={18} /> Anmelden</button>
+          <button className="btn min-h-11 w-full border-brand-500 bg-brand-500 text-base font-bold text-white hover:bg-brand-600" disabled={busy}><LogIn size={18} /> Anmelden</button>
         </form>
       </div>
       <LegalLinks className="pb-8" />
