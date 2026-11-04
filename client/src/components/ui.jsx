@@ -80,10 +80,11 @@ export function Icon({ name, ...props }) {
 
 export function TopicIcon({ topic, size = 'md' }) {
   const c = colorOf(topic?.color);
-  const dims = size === 'lg' ? 'h-14 w-14 rounded-2xl' : size === 'sm' ? 'h-8 w-8 rounded-lg' : 'h-11 w-11 rounded-xl';
-  const icon = size === 'lg' ? 28 : size === 'sm' ? 16 : 22;
+  // xs: rund und ohne Rand, passt in eine Kapsel („Chip“) neben Text
+  const dims = size === 'lg' ? 'h-14 w-14 rounded-2xl' : size === 'sm' ? 'h-8 w-8 rounded-lg' : size === 'xs' ? 'h-6 w-6 rounded-full' : 'h-11 w-11 rounded-xl';
+  const icon = size === 'lg' ? 28 : size === 'sm' ? 16 : size === 'xs' ? 13 : 22;
   return (
-    <div className={`${dims} ${c.bg} ${c.text} ring-4 ${c.ring} grid shrink-0 place-items-center`}>
+    <div className={`${dims} ${c.bg} ${c.text} ${size === 'xs' ? '' : `ring-4 ${c.ring}`} grid shrink-0 place-items-center`}>
       <Icon name={topic?.icon} size={icon} strokeWidth={2} />
     </div>
   );
