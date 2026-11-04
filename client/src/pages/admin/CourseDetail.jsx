@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { UserPlus, KeyRound, Pencil, Unlock, Printer, Trash2, ArrowUpRight, ArrowDownRight, ArrowRight, Check, Eye, Target } from 'lucide-react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { UserPlus, KeyRound, Pencil, Unlock, Printer, Trash2, ChevronRight, ArrowUpRight, ArrowDownRight, ArrowRight, Check, Eye, Target } from 'lucide-react';
 import { PROFILES, LEVELS, MIN_STUDENT_PASSWORD } from '../../../../shared/constants.js';
 import { api } from '../../lib/api.js';
 import { useLoad, PageLoader, ErrorBox, Modal, toast, Empty, ProgressBar, formatDate } from '../../components/ui.jsx';
@@ -44,7 +44,10 @@ export function LevelMix({ counts, className = 'w-28' }) {
 }
 
 export function StudentTable({ students, courses, onChange }) {
+  const navigate = useNavigate();
   const [edit, setEdit] = useState(null);
+  // Klick (oder Doppelklick) auf eine Zeile öffnet die Details – außer auf Knöpfe und Links in der Zeile
+  const open = (e, s) => { if (!e.target.closest('button, a')) navigate(`/admin/kinder/${s.id}`); };
   const [pwFor, setPwFor] = useState(null);
 
   const unlock = async (s) => {
@@ -74,9 +77,9 @@ export function StudentTable({ students, courses, onChange }) {
           </thead>
           <tbody className="divide-y divide-slate-100">
             {students.map((s) => (
-              <tr key={s.id} className="hover:bg-slate-50/60">
+              <tr key={s.id} onClick={(e) => open(e, s)} title="Klicken, um alle Details zu sehen" className="group cursor-pointer hover:bg-brand-50/40">
                 <td className="px-3 py-3">
-                  <Link to={`/admin/kinder/${s.id}`} className="whitespace-nowrap font-semibold text-slate-900 hover:text-brand-700">{s.displayName}</Link>
+                  <Link to={`/admin/kinder/${s.id}`} className="inline-flex items-center gap-0.5 whitespace-nowrap font-semibold text-slate-900 group-hover:text-brand-700">{s.displayName}<ChevronRight size={15} className="text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-600" /></Link>
                   <div className="whitespace-nowrap text-xs text-slate-500">{s.username}{s.lastLogin && ` · zuletzt ${formatDate(s.lastLogin)}`}</div>
                 </td>
                 <td className="px-3 py-3">{s.profile ? <span className="chip bg-brand-50 text-brand-700">{PROFILES[s.profile]?.short}</span> : <span className="text-slate-400">offen</span>}</td>
@@ -93,7 +96,7 @@ export function StudentTable({ students, courses, onChange }) {
                 </td>
                 <td className="px-3 py-3"><FirstTryCell p={s.practice?.firstTry} /></td>
                 <td className="px-3 py-3"><SolutionCell p={s.practice?.solution} /></td>
-                <td className="whitespace-nowrap px-3 py-3 text-right">
+                <td className="whitespace-nowrap px-3 py-3 text-right" onClick={(e) => e.stopPropagation()}>
                   <button className="btn-ghost btn-sm" onClick={() => setEdit({ ...s })} title="Bearbeiten"><Pencil size={14} /></button>
                   <button className="btn-ghost btn-sm" onClick={() => setPwFor(s)} title="Passwort ändern"><KeyRound size={14} /></button>
                   {s.diagnose?.count > 0 && (
