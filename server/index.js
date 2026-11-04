@@ -6,6 +6,8 @@ import { loadUser, hashPassword } from './auth.js';
 import authRoutes from './routes/auth.js';
 import studentRoutes from './routes/student.js';
 import adminRoutes from './routes/admin.js';
+import examRoutes from './routes/exams.js';
+import { ensureExamImages } from './exams/index.js';
 import { seedIfEmpty } from './seed/index.js';
 import { fixFigures } from './seed/fix-figures.js';
 import { applyDashFixes } from './seed/dash-fixes.js';
@@ -33,8 +35,10 @@ if (process.env.ADMIN_RESET === 'true' && process.env.ADMIN_PASSWORD) {
 seedIfEmpty();
 fixFigures();
 applyDashFixes();
+ensureExamImages();
 
 app.use('/api', authRoutes);
+app.use('/api/student/pruefung', examRoutes);
 app.use('/api/student', studentRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api', (_req, res) => res.status(404).json({ error: 'Unbekannte Anfrage.' }));

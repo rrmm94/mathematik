@@ -333,16 +333,6 @@ r.get('/nachtest/:runId', (req, res) => {
   });
 });
 
-// ---------- Prüfungen (originale Abschlussprüfungen) ----------
-r.get('/exams', (req, res) => {
-  const u = req.user;
-  const state = progressState(u);
-  const exams = state.exam.unlocked
-    ? all('SELECT e.id, e.title, e.year, e.description, (SELECT COUNT(*) FROM exam_items x WHERE x.exam_id = e.id) AS tasks FROM exams e WHERE e.profile = ? AND e.published = 1 ORDER BY e.sort, e.year DESC, e.id', u.profile)
-    : [];
-  res.json({ unlocked: state.exam.unlocked, progress: state.progress, milestone: state.milestone, nachtestDone: state.nachtest.count > 0, exams });
-});
-
 // ---------- Themen & Übungen ----------
 function planLevels(userId, topicId) {
   const p = get('SELECT levels, extra_levels FROM plan_items WHERE user_id = ? AND topic_id = ?', userId, topicId);

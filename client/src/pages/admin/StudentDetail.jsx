@@ -6,7 +6,8 @@ import {
 } from 'lucide-react';
 import { LEVELS, PROFILES, DIFFICULTIES } from '../../../../shared/constants.js';
 import { api } from '../../lib/api.js';
-import { useLoad, PageLoader, ErrorBox, TopicIcon, ProgressBar, toast, formatDate, formatDuration, Empty } from '../../components/ui.jsx';
+import { useLoad, PageLoader, ErrorBox, TopicIcon, ProgressBar, toast, formatDate, formatDuration, Empty, Modal } from '../../components/ui.jsx';
+import { ExamReview, fmtPts } from '../../components/ExamReview.jsx';
 import { PageHeader } from '../../components/Layout.jsx';
 import { EditStudent, SetPassword } from './CourseDetail.jsx';
 import StudentTaskDetail, { AnswerReview, CorrectBadge, SolutionBox } from './StudentTaskDetail.jsx';
@@ -73,13 +74,14 @@ export default function StudentDetail() {
       {detail.plan.length > 0 && <ProgressSummary student={s} runs={detail.runs} onOpenRun={() => setTab('diag')} />}
 
       <div className="mb-5 flex gap-1 rounded-xl bg-slate-100 p-1 sm:inline-flex">
-        {[['plan', 'Lernplan & Fortschritt'], ['diag', `Diagnosetests (${detail.runs.length})`], ['feedback', `${detail.reports.length ? 'Feedback & Meldungen' : 'Feedback'} (${detail.feedback.length + detail.reports.length})`]].map(([k, l]) => (
+        {[['plan', 'Lernplan & Fortschritt'], ['diag', `Diagnosetests (${detail.runs.length})`], ['exams', `Prüfungen (${detail.exams.length})`], ['feedback', `${detail.reports.length ? 'Feedback & Meldungen' : 'Feedback'} (${detail.feedback.length + detail.reports.length})`]].map(([k, l]) => (
           <button key={k} onClick={() => setTab(k)} className={`flex-1 whitespace-nowrap rounded-lg px-4 py-2 text-sm font-semibold transition ${tab === k ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}>{l}</button>
         ))}
       </div>
 
       {tab === 'plan' && <PlanEditor student={s} plan={detail.plan} onSaved={reload} />}
       {tab === 'diag' && <DiagnoseView student={s} runs={detail.runs} plan={detail.plan} onChanged={reload} />}
+      {tab === 'exams' && <ExamsView student={s} exams={detail.exams} />}
       {tab === 'feedback' && <FeedbackView student={s} plan={detail.plan} feedback={detail.feedback} reports={detail.reports} onChanged={reload} />}
 
       <EditStudent student={edit} courses={courses} onClose={() => setEdit(null)} onSaved={() => { setEdit(null); reload(); }} />
@@ -135,6 +137,57 @@ function ProgressSummary({ student: s, runs, onOpenRun }) {
         </button>
       )}
     </div>
+  );
+}
+
+// ---------------------------------------------------------------- Prüfungen
+function ExamsView({ student, exams }) {
+  const [openId, setOpenId] = useState(null);
+  if (!exams.length) {
+    return <div className="card"><Empty title="Noch keine Prüfung bearbeitet">{student.exam.unlocked ? `${student.displayName} kann die Prüfungen schon starten.` : 'Die Prüfungen werden ab 50 % Lernplan-Fortschritt und nach dem Nachtest freigeschaltet.'}</Empty></div>;
+  }
+  const dur = (ms) => (ms ? formatDuration(ms) : '–');
+  return (
+    <div className="card overflow-hidden">
+      <table className="w-full text-sm">
+        <thead className="bg-slate-50 text-left text-xs uppercase text-slate-500">
+          <tr><th className="px-4 py-2.5">Prüfung</th><th>Datum</th><th>Hauptteil 1</th><th>Hauptteil 2</th><th>Wahlteil</th><th>Gesamt</th><th /></tr>
+        </thead>
+        <tbody className="divide-y divide-slate-100">
+          {exams.map((a) => (
+            <tr key={a.id} onClick={() => setOpenId(a.id)} className="cursor-pointer hover:bg-slate-50">
+              <td className="px-4 py-3">
+                <div className="font-medium text-slate-900">{a.title}</div>
+                <div className="text-xs text-slate-500">{a.status === 'active' ? 'läuft gerade' : a.sections.length === 2 ? 'komplett' : a.sections[0] === 'teil1' ? 'nur Hauptteil 1' : 'Hauptteil 2 + Wahlteil'}{a.selfOpen > 0 && a.status === 'done' ? ` · ${a.selfOpen} Selbsteinschätzungen offen` : ''}</div>
+              </td>
+              <td className="text-xs text-slate-500">{formatDate(a.finishedAt || a.startedAt, { day: '2-digit', month: '2-digit', year: 'numeric' })}</td>
+              {['teil1', 'teil2', 'wahl'].map((k) => (
+                <td key={k} className="tabular-nums">
+                  {a.parts[k] ? <>{fmtPts(a.parts[k].score)} / {fmtPts(a.parts[k].max)}<div className="text-[11px] text-slate-400">{k === 'wahl' ? `Aufg. ${a.choice.join(' + ')}` : dur(a.durations[k === 'teil1' ? 'teil1' : 'teil2'])}</div></> : <span className="text-slate-300">–</span>}
+                </td>
+              ))}
+              <td className="font-semibold tabular-nums text-slate-900">{a.status === 'done' ? `${fmtPts(a.total)} / ${a.max}` : '–'}</td>
+              <td className="pr-4 text-right"><ChevronRight size={16} className="inline text-slate-400" /></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <ExamAttemptModal student={student} id={openId} onClose={() => setOpenId(null)} />
+    </div>
+  );
+}
+
+function ExamAttemptModal({ student, id, onClose }) {
+  const { data, error, loading } = useLoad(() => (id ? api.get(`/admin/students/${student.id}/exam-attempts/${id}`) : Promise.resolve(null)), [id]);
+  return (
+    <Modal open={!!id} onClose={onClose} title={data ? `${data.exam.title}: ${fmtPts(data.score.total)} von ${data.score.max} Punkten` : 'Prüfung'} wide="xl">
+      {loading && !data ? <PageLoader /> : error ? <ErrorBox error={error} /> : data && (
+        <div className="space-y-4">
+          <p className="text-sm text-slate-500">Antworten des Kindes mit automatischer Bewertung. Aufgaben auf Papier hat das Kind selbst eingeschätzt (blau).</p>
+          <ExamReview data={data} readOnly />
+        </div>
+      )}
+    </Modal>
   );
 }
 

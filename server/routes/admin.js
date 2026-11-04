@@ -7,6 +7,8 @@ import { requireAdmin, hashPassword } from '../auth.js';
 import { runTopicScores, buildPlanFromRun, topicsForProfile, topicProgress, syncPlan, progressState, compareRuns, previousRun } from '../plan.js';
 import { PROFILE_KEYS, MIN_STUDENT_PASSWORD } from '../../shared/constants.js';
 import { checkAnswer, publicAnswerSpec, answerSummary } from '../../shared/checker.js';
+import { attemptSummary, attemptSections } from './exams.js';
+import { examByKey, scoreAttempt, reviewPart, SECTIONS, PART_TITLES } from '../exams/index.js';
 
 const r = Router();
 r.use(requireAdmin);
@@ -181,7 +183,7 @@ r.post('/courses/:id/unlock-diagnose', (req, res) => {
 r.post('/students/:id/reset', (req, res) => {
   const uid = id(req.params.id);
   tx(() => {
-    for (const t of ['diag_runs', 'plan_items', 'attempts', 'task_progress']) run(`DELETE FROM ${t} WHERE user_id = ?`, uid);
+    for (const t of ['diag_runs', 'plan_items', 'attempts', 'task_progress', 'exam_attempts']) run(`DELETE FROM ${t} WHERE user_id = ?`, uid);
     run('UPDATE users SET diag_unlocked = 1, milestone_at = NULL WHERE id = ?', uid);
   });
   res.json({ ok: true });
@@ -244,7 +246,23 @@ r.get('/students/:id', (req, res) => {
      LEFT JOIN tasks t ON t.id = r.task_id WHERE r.user_id = ? ORDER BY r.created_at DESC`,
     u.id,
   );
-  res.json({ student: studentSummary(u), runs, plan, feedback, reports });
+  const exams = all('SELECT * FROM exam_attempts WHERE user_id = ? ORDER BY id DESC', u.id).map(attemptSummary).filter(Boolean);
+  res.json({ student: studentSummary(u), runs, plan, feedback, reports, exams });
+});
+
+// Ein Prüfungsdurchlauf im Detail: Antworten, Punkte je Teilaufgabe, Musterlösungen
+r.get('/students/:id/exam-attempts/:aid', (req, res) => {
+  const a = get('SELECT * FROM exam_attempts WHERE id = ? AND user_id = ?', id(req.params.aid), id(req.params.id));
+  const exam = a && examByKey(a.exam_key);
+  if (!exam) return res.status(404).json({ error: 'Nicht gefunden.' });
+  const sections = a.status === 'done' ? attemptSections(a) : [a.section === 'teil2' ? 'teil2' : 'teil1'];
+  const partKeys = sections.flatMap((s) => SECTIONS.find((x) => x.key === s).parts);
+  const answers = json(a.answers, {});
+  res.json({
+    exam: { key: exam.key, title: exam.title }, attempt: attemptSummary(a), answers, self: json(a.self, {}),
+    score: scoreAttempt(exam, { answers, self: json(a.self, {}), choice: json(a.choice, []), sections }),
+    review: Object.fromEntries(partKeys.map((pk) => [pk, { title: PART_TITLES[pk], groups: reviewPart(exam, pk) }])),
+  });
 });
 
 // Antwort so aufbereiten, wie das Kind sie gesehen hat (öffentliche Spezifikation + Markierung je Feld).

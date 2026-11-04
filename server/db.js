@@ -197,23 +197,21 @@ CREATE TABLE IF NOT EXISTS reports (
   resolved_at TEXT
 );
 
--- Originale Abschlussprüfungen zum Durchrechnen (freigeschaltet ab 50 % Lernplan + Nachtest).
--- Inhalte werden später ergänzt; die Aufgaben verweisen auf vorhandene Übungsaufgaben.
-CREATE TABLE IF NOT EXISTS exams (
+-- Durchläufe der originalen Abschlussprüfungen (Inhalte: server/exams). Antworten, Selbsteinschätzung und
+-- Wahlteil-Auswahl als JSON. section: teil1 | between (Hauptteil 1 abgegeben) | teil2 | done
+CREATE TABLE IF NOT EXISTS exam_attempts (
   id INTEGER PRIMARY KEY,
-  profile TEXT NOT NULL,         -- HS10, RS10, ERS10
-  title TEXT NOT NULL,           -- z. B. „Abschlussprüfung 2025“
-  year INTEGER,
-  description TEXT DEFAULT '',
-  sort INTEGER DEFAULT 0,
-  published INTEGER DEFAULT 0
-);
-
-CREATE TABLE IF NOT EXISTS exam_items (
-  exam_id INTEGER NOT NULL REFERENCES exams(id) ON DELETE CASCADE,
-  task_id INTEGER NOT NULL REFERENCES tasks(id) ON DELETE CASCADE,
-  sort INTEGER DEFAULT 0,
-  PRIMARY KEY (exam_id, task_id)
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  exam_key TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'active',
+  section TEXT NOT NULL,
+  answers TEXT DEFAULT '{}',
+  self TEXT DEFAULT '{}',
+  choice TEXT DEFAULT '[]',
+  s1_started TEXT, s1_finished TEXT,
+  s2_started TEXT, s2_finished TEXT,
+  started_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  finished_at TEXT
 );
 
 CREATE TABLE IF NOT EXISTS uploads (
@@ -224,6 +222,9 @@ CREATE TABLE IF NOT EXISTS uploads (
   created_at TEXT DEFAULT CURRENT_TIMESTAMP
 );
 `);
+
+// Platzhalter-Tabellen aus Version 0.7 (nie befüllt), ersetzt durch server/exams + exam_attempts
+db.exec('DROP TABLE IF EXISTS exam_items; DROP TABLE IF EXISTS exams;');
 
 // Spalten nachrüsten, die in älteren Datenbanken fehlen.
 function addColumn(table, column, def) {

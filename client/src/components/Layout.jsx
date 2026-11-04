@@ -66,8 +66,10 @@ export function StudentLayout() {
   const { user } = useAuth();
   const logout = useLogout();
   const [pwOpen, setPwOpen] = useState(false);
-  // Hilfe gibt es erst nach abgegebenem Einstiegstest (und nie währenddessen, auch nicht beim Wiederholungstest).
-  const inDiagnose = useLocation().pathname.startsWith('/diagnose');
+  // Hilfe gibt es erst nach abgegebenem Einstiegstest (und nie währenddessen, auch nicht beim Nachtest
+  // oder während einer Prüfung).
+  const path = useLocation().pathname;
+  const inDiagnose = path.startsWith('/diagnose') || path.startsWith('/pruefung/durchlauf');
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur">

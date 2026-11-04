@@ -206,6 +206,8 @@ function checkPart(part, given) {
     if (Number.isNaN(n)) return false;
     // Wahrscheinlichkeit in %: auch als Bruch (z. B. 1/13) eingeben
     if (part.pct && /\//.test(String(given))) n *= 100;
+    // Wahrscheinlichkeit als Bruch/Dezimalzahl: auch in Prozent (z. B. 12 %) eingeben
+    if (part.prob && /%/.test(String(given))) n /= 100;
     const values = [part.value, ...(part.alternatives || [])].map(Number).filter((v) => !Number.isNaN(v));
     return values.some((v) => {
       const tol = Math.max(Number(part.tolerance) || 0, (Number(part.rel) || 0) * Math.abs(v), 1e-9);
