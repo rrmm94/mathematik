@@ -26,6 +26,8 @@ function PartField({ part, i, value, onChange, status, disabled, onSubmit, compa
   const state = stateClass(status, i);
   const common = {
     disabled, autoCorrect: 'off', autoCapitalize: 'off', spellCheck: false, autoComplete: 'off',
+    // Volle Tastatur auf dem Handy (nicht nur Ziffern), damit auch /, -, Komma und Einheiten gehen
+    inputMode: 'text', enterKeyHint: 'done',
     onKeyDown: (e) => e.key === 'Enter' && onSubmit?.(),
   };
 
@@ -46,9 +48,9 @@ function PartField({ part, i, value, onChange, status, disabled, onSubmit, compa
     const set = (na, nn) => onChange(na === '' && nn === '' ? '' : `${na}e${nn}`);
     return (
       <span className="relative inline-flex items-center gap-1.5">
-        <input className={`input w-24 text-center text-base font-medium tabular-nums ${state}`} value={a} placeholder="a" inputMode="decimal" {...common} onChange={(e) => set(e.target.value.replace(/e/gi, ''), n)} />
+        <input className={`input w-24 text-center text-base font-medium tabular-nums ${state}`} value={a} placeholder="a" {...common} onChange={(e) => set(e.target.value.replace(/e/gi, ''), n)} />
         <span className="font-medium text-slate-600">· 10</span>
-        <input className={`input w-16 -translate-y-2 text-center text-sm font-medium tabular-nums ${state}`} value={n} placeholder="n" inputMode="numeric" {...common} onChange={(e) => set(a, e.target.value.replace(/e/gi, ''))} />
+        <input className={`input w-16 -translate-y-2 text-center text-sm font-medium tabular-nums ${state}`} value={n} placeholder="n" {...common} onChange={(e) => set(a, e.target.value.replace(/e/gi, ''))} />
         <Mark status={status} i={i} />
       </span>
     );
@@ -61,7 +63,6 @@ function PartField({ part, i, value, onChange, status, disabled, onSubmit, compa
         className={`input ${compact ? 'w-20 px-1 text-center' : kind === 'expr' ? 'w-52 pr-8' : 'w-36 pr-8'} text-base font-medium tabular-nums ${state}`}
         value={value ?? ''}
         placeholder={placeholder}
-        inputMode={kind === 'number' ? 'decimal' : undefined}
         {...common}
         onChange={(e) => onChange(e.target.value)}
       />
