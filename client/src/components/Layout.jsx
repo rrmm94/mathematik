@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { LifeBuoy, LogOut, Sigma, LayoutDashboard, Users, ClipboardList, BookOpen, Layers, CalendarDays, Settings, Home, Shapes, KeyRound, Flag } from 'lucide-react';
+import { LifeBuoy, LogOut, Sigma, LayoutDashboard, Users, ClipboardList, BookOpen, Layers, CalendarDays, Settings, Shapes, KeyRound, Flag } from 'lucide-react';
 import { MIN_STUDENT_PASSWORD } from '../../../shared/constants.js';
 import { useAuth, toast, Modal } from './ui.jsx';
 import { api } from '../lib/api.js';
@@ -29,7 +29,7 @@ export function HelpButton() {
       target="_blank"
       rel="noopener noreferrer"
       onClick={onClick}
-      className="btn bg-amber-400 px-3.5 py-2 text-amber-950 shadow-sm shadow-amber-500/30 hover:bg-amber-300"
+      className="btn border-brand-400 bg-brand-400 px-3.5 font-bold text-[#1b0c03] hover:brightness-105"
     >
       <LifeBuoy size={18} />
       <span className="hidden sm:inline">Benötigst du Hilfe?</span>
@@ -40,13 +40,13 @@ export function HelpButton() {
 
 function Logo({ to = '/', wrap = false }) {
   return (
-    <Link to={to} className="flex min-w-0 items-center gap-2.5">
-      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-600 text-white shadow-sm shadow-brand-600/30">
-        <Sigma size={20} strokeWidth={2.5} />
+    <Link to={to} className="flex min-w-0 items-center gap-3 py-2.5">
+      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[#1c2b39] text-white">
+        <Sigma size={20} strokeWidth={2.4} />
       </span>
       <span className="leading-tight">
-        <span className={`block text-[13px] font-bold text-slate-900 ${wrap ? '' : 'sm:whitespace-nowrap'} sm:text-[15px]`}>Mathematik-<wbr />Prüfungstrainer</span>
-        <span className="hidden text-[11px] font-medium text-slate-500 sm:block">Fit für die Abschlussprüfung</span>
+        <span className={`block text-[.95rem] font-bold text-slate-900 ${wrap ? '' : 'sm:whitespace-nowrap'} sm:text-[1.06rem]`}>Mathematik-<wbr />Prüfungstrainer</span>
+        <span className="hidden text-[.74rem] text-slate-500 sm:block">Fit für die Abschlussprüfung</span>
       </span>
     </Link>
   );
@@ -70,20 +70,22 @@ export function StudentLayout() {
   const inDiagnose = useLocation().pathname.startsWith('/diagnose');
   return (
     <div className="min-h-screen">
-      <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-3 sm:gap-3 sm:px-4">
-          <Logo />
-          <div className="flex shrink-0 items-center gap-1 sm:gap-2">
-            {user?.onboarded && (
-              <Link to="/" className="btn-ghost hidden md:inline-flex"><Home size={17} /> Startseite</Link>
-            )}
-            <button onClick={() => setPwOpen(true)} className="btn-ghost" title="Passwort ändern"><KeyRound size={17} /><span className="hidden lg:inline">Passwort</span></button>
-            <button onClick={logout} className="btn-ghost" title="Abmelden"><LogOut size={17} /><span className="hidden md:inline">Abmelden</span></button>
+      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white">
+        <div className="flex min-h-[62px] items-center gap-x-7 gap-y-1 px-[var(--gutter)]">
+          <div className="mr-auto min-w-0"><Logo /></div>
+          {user?.onboarded && (
+            <nav className="hidden self-stretch md:flex" aria-label="Bereiche">
+              <NavLink to="/" end className={({ isActive }) => `tab ${isActive ? 'active' : ''}`}>Mein Lernplan</NavLink>
+            </nav>
+          )}
+          <div className="flex shrink-0 items-center gap-2 py-2.5">
+            <button onClick={() => setPwOpen(true)} className="icon-btn" title="Passwort ändern" aria-label="Passwort ändern"><KeyRound size={17} /></button>
+            <button onClick={logout} className="icon-btn" title="Abmelden" aria-label="Abmelden"><LogOut size={17} /></button>
             {user?.diagDone && !inDiagnose && <HelpButton />}
           </div>
         </div>
       </header>
-      <main className="mx-auto max-w-6xl px-4 py-6 sm:py-8">
+      <main className="mx-auto max-w-[80rem] px-[var(--gutter)] pt-[clamp(24px,3.4vw,48px)] pb-16">
         <Outlet />
       </main>
       <LegalLinks className="pb-6" />
@@ -144,30 +146,23 @@ const adminNav = [
 export function AdminLayout() {
   const logout = useLogout();
   return (
-    <div className="min-h-screen lg:flex">
-      <aside className="border-b border-slate-200 bg-white lg:sticky lg:top-0 lg:h-screen lg:w-64 lg:shrink-0 lg:border-b-0 lg:border-r">
-        <div className="flex items-center justify-between px-5 py-4">
-          <Logo to="/admin" wrap />
+    <div className="min-h-screen">
+      {/* Kopfleiste mit Reitern wie in der 3D-Druck Werkstatt */}
+      <header className="sticky top-0 z-40 flex flex-wrap items-center gap-x-7 border-b border-slate-200 bg-white px-[var(--gutter)]">
+        <div className="mr-auto min-w-0"><Logo to="/admin" /></div>
+        <div className="flex items-center gap-2 py-2.5 2xl:order-last">
+          <span className="rounded-lg bg-brand-50 px-2.5 py-1 text-[.74rem] font-bold text-brand-600">Lehrkraft</span>
+          <button onClick={logout} className="icon-btn" title="Abmelden" aria-label="Abmelden"><LogOut size={17} /></button>
         </div>
-        <div className="px-5 pb-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400">Lehrkraft</div>
-        <nav className="flex flex-wrap gap-1 px-3 pb-3 lg:flex-col lg:flex-nowrap">
+        <nav className="order-last -mx-[var(--gutter)] flex basis-[calc(100%+2*var(--gutter))] gap-1 self-stretch overflow-x-auto border-t border-slate-200 px-[calc(var(--gutter)-10px)] [scrollbar-width:none] 2xl:order-none 2xl:m-0 2xl:basis-auto 2xl:border-t-0 2xl:p-0" aria-label="Bereiche">
           {adminNav.map((n) => (
-            <NavLink
-              key={n.to}
-              to={n.to}
-              end={n.end}
-              className={({ isActive }) => `flex shrink-0 items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium transition ${isActive ? 'bg-brand-50 text-brand-700' : 'text-slate-600 hover:bg-slate-100'}`}
-            >
-              <n.icon size={18} />
+            <NavLink key={n.to} to={n.to} end={n.end} className={({ isActive }) => `tab ${isActive ? 'active' : ''}`}>
               {n.label}
             </NavLink>
           ))}
-          <button onClick={logout} className="flex shrink-0 items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 lg:mt-4">
-            <LogOut size={18} /> Abmelden
-          </button>
         </nav>
-      </aside>
-      <main className="min-w-0 flex-1 px-4 py-6 sm:px-8 lg:py-8">
+      </header>
+      <main className="mx-auto min-w-0 max-w-[92rem] px-[var(--gutter)] pt-[clamp(24px,3.4vw,48px)] pb-16">
         <Outlet />
       </main>
     </div>
@@ -176,11 +171,11 @@ export function AdminLayout() {
 
 export function PageHeader({ title, subtitle, children, back }) {
   return (
-    <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
-      <div>
-        {back && <Link to={back.to} className="mb-1 inline-block text-sm font-medium text-brand-600 hover:underline">← {back.label}</Link>}
-        <h1 className="text-2xl font-bold tracking-tight text-slate-900">{title}</h1>
-        {subtitle && <p className="mt-1 text-sm text-slate-500">{subtitle}</p>}
+    <div className="mb-8 flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
+      <div className="min-w-0 flex-[1_1_30rem]">
+        {back && <Link to={back.to} className="mb-2 inline-block text-sm font-semibold text-brand-600 underline-offset-4 hover:underline">← {back.label}</Link>}
+        <h1 className="display mb-[.3em] text-slate-900">{title}</h1>
+        {subtitle && <p className="max-w-[58ch] text-[1.05rem] leading-relaxed text-slate-500">{subtitle}</p>}
       </div>
       {children && <div className="flex flex-wrap items-center gap-2">{children}</div>}
     </div>

@@ -80,10 +80,10 @@ export function Icon({ name, ...props }) {
 
 export function TopicIcon({ topic, size = 'md' }) {
   const c = colorOf(topic?.color);
-  const dims = size === 'lg' ? 'h-14 w-14 rounded-2xl' : size === 'sm' ? 'h-8 w-8 rounded-lg' : 'h-11 w-11 rounded-xl';
+  const dims = size === 'lg' ? 'h-14 w-14 rounded-xl' : size === 'sm' ? 'h-8 w-8 rounded-lg' : 'h-11 w-11 rounded-xl';
   const icon = size === 'lg' ? 28 : size === 'sm' ? 16 : 22;
   return (
-    <div className={`${dims} ${c.bg} ${c.text} ring-4 ${c.ring} grid shrink-0 place-items-center`}>
+    <div className={`${dims} ${c.bg} ${c.text} grid shrink-0 place-items-center`}>
       <Icon name={topic?.icon} size={icon} strokeWidth={2} />
     </div>
   );
@@ -123,8 +123,8 @@ export function ErrorBox({ error }) {
 export function Empty({ icon = 'Inbox', title, children }) {
   return (
     <div className="flex flex-col items-center justify-center gap-2 px-6 py-10 text-center text-slate-500">
-      <Icon name={icon} size={28} className="text-slate-300" />
-      <div className="font-medium text-slate-600">{title}</div>
+      <Icon name={icon} size={26} className="text-slate-400" />
+      <div className="text-[1.05rem] font-bold text-slate-900">{title}</div>
       {children && <div className="text-sm">{children}</div>}
     </div>
   );
@@ -147,15 +147,15 @@ export function Modal({ open, onClose, title, children, wide = false }) {
   // Das Fenster ist nie höher als der Bildschirm: Kopfzeile (mit Schließen-Button) bleibt
   // immer sichtbar, nur der Inhalt darunter scrollt.
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-2 backdrop-blur-sm sm:p-4" onMouseDown={onClose}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/45 p-2 sm:p-4" onMouseDown={onClose}>
       <div
-        className={`card animate-pop flex max-h-full w-full flex-col overflow-hidden ${wide === 'xl' ? 'max-w-5xl' : wide ? 'max-w-3xl' : 'max-w-lg'}`}
+        className={`card animate-pop flex max-h-full w-full flex-col overflow-hidden rounded-2xl shadow-[0_24px_50px_-24px_rgb(20_32_44/0.35)] ${wide === 'xl' ? 'max-w-5xl' : wide ? 'max-w-3xl' : 'max-w-lg'}`}
         role="dialog"
         aria-modal="true"
         onMouseDown={(e) => e.stopPropagation()}
       >
-        <div className="flex shrink-0 items-center justify-between gap-4 border-b border-slate-100 px-4 py-3 sm:px-6 sm:py-4">
-          <h2 className="min-w-0 text-lg font-bold text-slate-900">{title}</h2>
+        <div className="flex shrink-0 items-center justify-between gap-4 border-b border-slate-200 px-4 py-3 sm:px-6 sm:py-4">
+          <h2 className="min-w-0 text-[1.25rem] font-bold text-slate-900">{title}</h2>
           <button className="btn-ghost btn-sm shrink-0" onClick={onClose} aria-label="Schließen"><X size={18} /></button>
         </div>
         <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-4 sm:px-6 sm:py-5">
@@ -200,7 +200,7 @@ export function Toaster() {
   if (!t) return null;
   return (
     <div className="fixed bottom-5 left-1/2 z-[60] -translate-x-1/2">
-      <div className={`animate-pop flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium text-white shadow-lg ${t.type === 'error' ? 'bg-red-600' : 'bg-slate-900'}`}>
+      <div className={`animate-pop flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold text-white shadow-lg ${t.type === 'error' ? 'bg-red-700' : 'bg-slate-900'}`}>
         {t.type === 'error' ? <AlertCircle size={16} /> : <Check size={16} />}
         {t.msg}
       </div>

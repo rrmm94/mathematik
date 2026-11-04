@@ -24,23 +24,21 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <GoalBanner data={data} />
       {data.feedback.some((f) => !f.read_at) && (
-        <a href="#feedback" className="card flex items-center gap-3 border-rose-200 bg-rose-50/70 px-5 py-3 text-sm font-medium text-rose-800 hover:bg-rose-50">
+        <a href="#feedback" className="card flex items-center gap-3 border-l-4 border-l-brand-400 px-5 py-3 text-[.94rem] font-semibold text-slate-900 hover:border-slate-300">
           <MessageSquareHeart size={18} /> Du hast neues Feedback von deiner Lehrkraft! <ArrowRight size={16} className="ml-auto" />
         </a>
       )}
       {data.retest && <RetestResult retest={data.retest} />}
       {(diagnose.canStart || diagnose.active) && <RetestCard diagnose={diagnose} />}
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+      <div className="grid grid-cols-1 gap-x-14 gap-y-8 pt-2 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
         <section className="min-w-0">
-          <div className="mb-3 flex items-end justify-between">
-            <div>
-              <h2 className="text-lg font-bold text-slate-900">Dein Lernplan</h2>
-              <p className="text-sm text-slate-500">Oben steht, womit du am besten anfängst. Du kannst aber jedes Thema frei wählen.</p>
-            </div>
+          <div className="sec-head mb-4">
+            <h2 className="text-[1.3rem] font-bold text-slate-900">Dein Lernplan</h2>
+            <span className="text-[.86rem] text-slate-500">Oben steht, womit du am besten anfängst. Du kannst aber jedes Thema frei wählen.</span>
           </div>
           <div className="space-y-3">
             {plan.map((p, i) => <PlanCard key={p.topic.id} item={p} index={i} />)}
@@ -59,24 +57,20 @@ function GoalBanner({ data, compact }) {
   const { user, goal, daysLeft, examDate } = data;
   const first = user.displayName.split(' ')[0];
   return (
-    <div className={`card relative overflow-hidden ${compact ? 'mb-6 p-5' : 'p-6'} bg-gradient-to-br from-brand-600 to-indigo-700 text-white`}>
-      <div className="pointer-events-none absolute -right-10 -top-10 text-[180px] font-black leading-none text-white/5 select-none">∑</div>
-      <div className="relative flex flex-wrap items-center justify-between gap-6">
-        <div>
-          {!compact && <p className="text-sm font-medium text-indigo-200">Hallo {first}!</p>}
-          <div className="mt-1 flex items-center gap-2 text-indigo-100"><Target size={18} /> <span className="text-sm">Dein Ziel</span></div>
-          <div className="text-2xl font-bold tracking-tight sm:text-3xl">{goal}</div>
-        </div>
-        {daysLeft != null && (
-          <div className="flex items-center gap-4 rounded-2xl bg-white/10 px-5 py-3 ring-1 ring-white/20 backdrop-blur">
-            <CalendarClock size={28} className="text-indigo-200" />
-            <div>
-              <div className="text-3xl font-extrabold tabular-nums leading-none">{Math.max(0, daysLeft)}</div>
-              <div className="text-xs text-indigo-100">{daysLeft === 1 ? 'Tag' : 'Tage'} bis zur Prüfung{examDate && <> · {formatDate(examDate, { day: '2-digit', month: '2-digit', year: 'numeric' })}</>}</div>
-            </div>
-          </div>
-        )}
+    <div className={`grid items-end gap-x-14 gap-y-6 ${compact ? 'mb-8' : ''} ${daysLeft != null && !compact ? 'lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]' : ''}`}>
+      <div>
+        {!compact && <p className="mb-2 font-mono text-[.8rem] font-medium text-brand-600">Hallo {first}!</p>}
+        <div className="mb-1 flex items-center gap-2 text-[.95rem] text-slate-500"><Target size={17} /> Dein Ziel</div>
+        <h1 className={`${compact ? 'text-[2rem] font-bold leading-tight tracking-tight' : 'display'} max-w-[18ch] text-slate-900`}>{goal}</h1>
       </div>
+      {daysLeft != null && (
+        <div className="night-card p-5 sm:p-6">
+          <div className="flex items-center gap-2 text-[.86rem] text-night-muted"><CalendarClock size={16} /> Countdown</div>
+          <div className="mt-3 font-mono text-[2.6rem] font-semibold leading-none tracking-wide">{Math.max(0, daysLeft)}</div>
+          <div className="mt-1.5 border-b border-night-line pb-3 text-[.8rem] text-night-muted">{daysLeft === 1 ? 'Tag' : 'Tage'} bis zur Prüfung</div>
+          {examDate && <div className="mt-3 text-[.9rem] text-night-ink">Prüfung am <b>{formatDate(examDate, { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' })}</b></div>}
+        </div>
+      )}
     </div>
   );
 }
@@ -91,9 +85,9 @@ function DiagnoseStart({ diagnose, first }) {
   };
   const a = diagnose.active;
   return (
-    <div className="card p-8 text-center">
-      <div className="mx-auto mb-5 grid h-16 w-16 place-items-center rounded-2xl bg-brand-50 text-brand-600 ring-8 ring-brand-50/60"><ClipboardCheck size={32} /></div>
-      <h1 className="text-2xl font-bold text-slate-900">{a ? `Weiter geht’s, ${first}!` : `Willkommen, ${first}!`}</h1>
+    <div className="card rounded-2xl p-8 text-center">
+      <div className="mx-auto mb-5 grid h-14 w-14 place-items-center rounded-xl bg-[#1c2b39] text-white"><ClipboardCheck size={28} /></div>
+      <h1 className="text-[1.8rem] font-bold tracking-tight text-slate-900">{a ? `Weiter geht’s, ${first}!` : `Willkommen, ${first}!`}</h1>
       <p className="mx-auto mt-3 max-w-md text-slate-600">
         {a
           ? 'Du hast den Einstiegstest schon angefangen. Mach einfach dort weiter, wo du aufgehört hast.'
@@ -105,10 +99,10 @@ function DiagnoseStart({ diagnose, first }) {
           <div className="mt-1 text-xs text-slate-500">{a.answered} von {a.total} Aufgaben bearbeitet</div>
         </div>
       )}
-      <ul className="mx-auto mt-6 grid max-w-md gap-2 text-left text-sm text-slate-600">
-        <li className="flex gap-2"><span className="text-brand-600">✓</span> Kein Zeitdruck. Du kannst jederzeit pausieren.</li>
-        <li className="flex gap-2"><span className="text-brand-600">✓</span> Es gibt keine Noten. Wenn du etwas nicht weißt, lass es einfach leer.</li>
-        <li className="flex gap-2"><span className="text-brand-600">✓</span> Taschenrechner, Stift und Papier bereitlegen.</li>
+      <ul className="mx-auto mt-6 grid max-w-md divide-y divide-slate-200 border-t-2 border-slate-900 text-left text-[.95rem] text-slate-700 [&>li]:py-2.5">
+        <li className="flex gap-2"><span className="font-mono text-brand-600">01</span> Kein Zeitdruck. Du kannst jederzeit pausieren.</li>
+        <li className="flex gap-2"><span className="font-mono text-brand-600">02</span> Es gibt keine Noten. Wenn du etwas nicht weißt, lass es einfach leer.</li>
+        <li className="flex gap-2"><span className="font-mono text-brand-600">03</span> Taschenrechner, Stift und Papier bereitlegen.</li>
       </ul>
       <button className="btn-primary mt-7 px-8 py-3 text-base" disabled={busy} onClick={a ? () => navigate('/diagnose') : start}>
         {a ? 'Test fortsetzen' : 'Einstiegstest starten'} <ArrowRight size={18} />
@@ -125,16 +119,14 @@ function PlanCard({ item, index }) {
   const c = colorOf(topic.color);
   const done = progress.total > 0 && progress.solved >= progress.total;
   return (
-    <div className="card group flex flex-col gap-4 p-4 transition hover:border-slate-300 sm:flex-row sm:items-center sm:p-5">
+    <div className="card group flex flex-col gap-4 p-4 transition hover:border-slate-300 hover:shadow-[0_6px_18px_-12px_rgb(20_32_44/0.25)] sm:flex-row sm:items-center sm:p-5">
       <div className="flex min-w-0 flex-1 items-center gap-4">
-        <div className="relative">
-          <TopicIcon topic={topic} />
-          <span className="absolute -left-2 -top-2 grid h-6 w-6 place-items-center rounded-full bg-slate-900 text-[11px] font-bold text-white ring-2 ring-white">{index + 1}</span>
-        </div>
+        <span className="w-6 shrink-0 font-mono text-[.8rem] font-medium text-brand-600">{String(index + 1).padStart(2, '0')}</span>
+        <TopicIcon topic={topic} />
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
-            <Link to={`/thema/${topic.id}`} className="truncate font-semibold text-slate-900 hover:text-brand-700">{topic.title}</Link>
-            {index === 0 && !done && <span className="chip bg-amber-100 text-amber-800"><Sparkles size={12} /> Als Nächstes empfohlen</span>}
+            <Link to={`/thema/${topic.id}`} className="truncate text-[1.1rem] font-bold text-slate-900 hover:text-brand-700">{topic.title}</Link>
+            {index === 0 && !done && <span className="chip bg-brand-50 text-brand-700"><Sparkles size={12} /> Als Nächstes empfohlen</span>}
             {done && <span className="chip bg-emerald-100 text-emerald-700"><PartyPopper size={12} /> Geschafft</span>}
           </div>
           <div className="mt-2 flex items-center gap-3">
@@ -163,19 +155,19 @@ function FeedbackBox({ feedback, onRead }) {
     }
   };
   return (
-    <div id="feedback" className="card scroll-mt-24 overflow-hidden">
-      <div className="flex items-center justify-between border-b border-slate-100 px-5 py-3.5">
-        <h3 className="flex items-center gap-2 font-semibold text-slate-900"><MessageSquareHeart size={18} className="text-rose-500" /> Feedback</h3>
-        {unread.length > 0 && <span className="chip bg-rose-500 text-white">{unread.length} neu</span>}
+    <div id="feedback" className="scroll-mt-24">
+      <div className="sec-head mb-1">
+        <h3 className="flex items-center gap-2 text-[1.3rem] font-bold text-slate-900">Feedback</h3>
+        {unread.length > 0 && <span className="chip ml-auto bg-brand-50 text-brand-700">{unread.length} neu</span>}
       </div>
       {feedback.length === 0 ? (
         <Empty icon="Inbox" title="Noch kein Feedback">Hier siehst du Rückmeldungen deiner Lehrkraft.</Empty>
       ) : (
-        <ul className="divide-y divide-slate-100">
+        <ul className="divide-y divide-slate-200">
           {feedback.slice(0, 5).map((f) => (
             <li key={f.id}>
-              <button onClick={() => show(f)} className="flex w-full items-start gap-3 px-5 py-3 text-left hover:bg-slate-50">
-                <span className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${f.read_at ? 'bg-slate-200' : 'bg-rose-500'}`} />
+              <button onClick={() => show(f)} className="flex w-full items-start gap-3 py-3 text-left hover:text-brand-700">
+                <span className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${f.read_at ? 'bg-slate-300' : 'bg-brand-400'}`} />
                 <span className="min-w-0">
                   <span className="block text-xs font-medium text-slate-500">{f.topic_title || 'Allgemein'}{f.task ? ` · Aufgabe ${f.task.no}` : ''} · {formatDate(f.created_at)}</span>
                   <span className={`line-clamp-2 text-sm ${f.read_at ? 'text-slate-600' : 'font-medium text-slate-900'}`}>{f.text}</span>
@@ -203,22 +195,22 @@ function FeedbackBox({ feedback, onRead }) {
 
 function EventsBox({ events }) {
   return (
-    <div className="card overflow-hidden">
-      <div className="border-b border-slate-100 px-5 py-3.5">
-        <h3 className="flex items-center gap-2 font-semibold text-slate-900"><CalendarClock size={18} className="text-brand-600" /> Nächste Termine</h3>
+    <div>
+      <div className="sec-head mb-1">
+        <h3 className="text-[1.3rem] font-bold text-slate-900">Nächste Termine</h3>
       </div>
       {events.length === 0 ? (
         <Empty icon="Inbox" title="Keine Termine geplant" />
       ) : (
-        <ul className="divide-y divide-slate-100">
+        <ul className="divide-y divide-slate-200">
           {events.map((e) => {
             const d = new Date(e.date + 'T12:00:00');
             return (
-              <li key={e.id} className="flex gap-4 px-5 py-3">
-                <div className="w-12 shrink-0 rounded-xl bg-brand-50 py-1.5 text-center text-brand-700">
-                  <div className="text-[10px] font-semibold uppercase">{d.toLocaleDateString('de-DE', { weekday: 'short' })}</div>
-                  <div className="text-lg font-bold leading-none">{d.getDate()}.</div>
-                  <div className="text-[10px]">{d.toLocaleDateString('de-DE', { month: 'short' })}</div>
+              <li key={e.id} className="flex gap-4 py-3.5">
+                <div className="w-12 shrink-0 rounded-lg border border-slate-300 bg-white py-1.5 text-center text-slate-900">
+                  <div className="text-[10px] font-semibold uppercase text-brand-600">{d.toLocaleDateString('de-DE', { weekday: 'short' })}</div>
+                  <div className="font-mono text-lg font-semibold leading-none">{d.getDate()}.</div>
+                  <div className="text-[10px] text-slate-500">{d.toLocaleDateString('de-DE', { month: 'short' })}</div>
                 </div>
                 <div className="min-w-0 text-sm">
                   <div className="font-semibold text-slate-900">{e.title}</div>
@@ -245,8 +237,8 @@ function RetestCard({ diagnose }) {
     navigate('/diagnose');
   };
   return (
-    <div className="card flex flex-col items-start gap-4 border-brand-200 bg-brand-50/60 p-5 sm:flex-row sm:items-center">
-      <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white text-brand-600 shadow-sm"><RotateCcw size={22} /></div>
+    <div className="card flex flex-col items-start gap-4 border-l-4 border-l-brand-400 p-5 sm:flex-row sm:items-center">
+      <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-600"><RotateCcw size={22} /></div>
       <div className="flex-1">
         <div className="font-semibold text-slate-900">{diagnose.active ? 'Dein Test wartet auf dich' : 'Neuer Test freigeschaltet!'}</div>
         <div className="text-sm text-slate-600">Finde heraus, in welchen Themen du dich schon verbessert hast. Dein Lernplan bleibt dabei erhalten.</div>

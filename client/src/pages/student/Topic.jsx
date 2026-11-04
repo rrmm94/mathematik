@@ -21,11 +21,11 @@ export default function Topic() {
   return (
     <div className="space-y-6">
       <Link to="/" className="text-sm font-medium text-brand-600 hover:underline">← Zurück zum Lernplan</Link>
-      <div className="card flex flex-col gap-5 p-6 sm:flex-row sm:items-center">
+      <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
         <TopicIcon topic={topic} size="lg" />
         <div className="flex-1">
-          <h1 className="text-2xl font-bold text-slate-900">{topic.title}</h1>
-          <p className="text-sm text-slate-500">{topic.description}</p>
+          <h1 className="display mb-[.25em] text-slate-900">{topic.title}</h1>
+          <p className="text-[1.05rem] text-slate-500">{topic.description}</p>
           <div className="mt-3 flex items-center gap-3">
             <ProgressBar value={progress.percent} color={topic.color} className="max-w-sm" height="h-2.5" />
             <span className={`text-sm font-semibold ${c.text}`}>{progress.percent} %</span>
@@ -36,7 +36,7 @@ export default function Topic() {
 
       <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
         <section>
-          <h2 className="mb-3 flex items-center gap-2 text-lg font-bold text-slate-900"><Dumbbell size={20} className={c.text} /> Übungspakete</h2>
+          <h2 className="sec-head mb-4 text-[1.3rem] font-bold text-slate-900">Übungspakete</h2>
           {packages.length === 0 ? (
             <div className="card"><Empty title="Hier gibt es noch keine Übungen">Schau bald wieder vorbei.</Empty></div>
           ) : (
@@ -45,7 +45,7 @@ export default function Topic() {
                 const pct = p.total ? Math.round((p.solved / p.total) * 100) : 0;
                 const complete = p.total > 0 && p.solved >= p.total;
                 return (
-                  <Link key={p.id} to={`/ueben/${p.id}`} className="card group flex flex-col p-5 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-lg">
+                  <Link key={p.id} to={`/ueben/${p.id}`} className="card group flex flex-col p-5 transition hover:border-slate-300 hover:shadow-[0_6px_18px_-12px_rgb(20_32_44/0.25)]">
                     <div className="mb-3 flex items-center justify-between">
                       <span className={`chip ${c.bg} ${c.text}`}>Paket {i + 1}</span>
                       {complete && <CheckCircle2 size={20} className="text-emerald-500" />}
@@ -67,7 +67,7 @@ export default function Topic() {
         <aside className="space-y-6">
           {feedback.length > 0 && (
             <div className="card p-5">
-              <h3 className="mb-3 flex items-center gap-2 font-semibold text-slate-900"><MessageSquareHeart size={18} className="text-rose-500" /> Feedback deiner Lehrkraft</h3>
+              <h3 className="sec-head mb-3 text-[1.15rem] font-bold text-slate-900">Feedback deiner Lehrkraft</h3>
               <div className="space-y-3">
                 {feedback.map((f) => (
                   <div key={f.id} className="rounded-xl bg-rose-50/70 p-3 text-sm text-slate-700">
@@ -84,7 +84,7 @@ export default function Topic() {
             </div>
           )}
           <div className="card p-5">
-            <h3 className="mb-3 flex items-center gap-2 font-semibold text-slate-900"><BookOpen size={18} className="text-brand-600" /> Im Skript nachlesen</h3>
+            <h3 className="sec-head mb-3 text-[1.15rem] font-bold text-slate-900">Im Skript nachlesen</h3>
             <ul className="space-y-1">
               {sections.map((s) => (
                 <li key={s.id}>
@@ -97,7 +97,7 @@ export default function Topic() {
           </div>
           {events.length > 0 && (
             <div className="card p-5">
-              <h3 className="mb-3 flex items-center gap-2 font-semibold text-slate-900"><CalendarClock size={18} className="text-brand-600" /> Wiederholung im Unterricht</h3>
+              <h3 className="sec-head mb-3 text-[1.15rem] font-bold text-slate-900">Wiederholung im Unterricht</h3>
               {events.map((e) => (
                 <div key={e.id} className="text-sm text-slate-600">
                   <span className="font-medium text-slate-900">{formatDate(e.date)}</span> {e.time && `· ${e.time}`} {e.room && `· ${e.room}`}

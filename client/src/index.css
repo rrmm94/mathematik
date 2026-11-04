@@ -1,45 +1,97 @@
 @import 'tailwindcss';
-@import '@fontsource-variable/inter';
+/* Schrift wie in der 3D-Druck Werkstatt: Bahnschrift (Windows), sonst die sehr ähnliche Barlow */
+@import '@fontsource/barlow/400.css';
+@import '@fontsource/barlow/500.css';
+@import '@fontsource/barlow/600.css';
+@import '@fontsource/barlow/700.css';
+@import '@fontsource-variable/jetbrains-mono';
 @import 'katex/dist/katex.min.css';
 
 @theme {
-  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
-  --color-brand-50: #eef2ff;
-  --color-brand-100: #e0e7ff;
-  --color-brand-200: #c7d2fe;
-  --color-brand-300: #a5b4fc;
-  --color-brand-400: #818cf8;
-  --color-brand-500: #6366f1;
-  --color-brand-600: #4f46e5;
-  --color-brand-700: #4338ca;
-  --color-brand-800: #3730a3;
-  --color-brand-900: #312e81;
-  --color-ink: #0f172a;
+  --font-sans: 'Bahnschrift', 'Barlow', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, 'SF Mono', Consolas, monospace;
+
+  /* Akzent: Werkstatt-Orange (600 = Knöpfe/Text, 400 = kräftige Striche) */
+  --color-brand-50: #fdece2;
+  --color-brand-100: #fbdac7;
+  --color-brand-200: #f6b896;
+  --color-brand-300: #f49566;
+  --color-brand-400: #f26b2a;
+  --color-brand-500: #dc5a1c;
+  --color-brand-600: #c24a12;
+  --color-brand-700: #a63e0e;
+  --color-brand-800: #86320c;
+  --color-brand-900: #5e230a;
+
+  /* Kühle Grautöne der Werkstatt-Seite statt Tailwind-Slate */
+  --color-slate-50: #f3f5f6;
+  --color-slate-100: #edf0f2;
+  --color-slate-200: #dfe4e8;
+  --color-slate-300: #c6ced4;
+  --color-slate-400: #8d99a3;
+  --color-slate-500: #58646e;
+  --color-slate-600: #46525c;
+  --color-slate-700: #303b45;
+  --color-slate-800: #1f2830;
+  --color-slate-900: #151c22;
+  --color-ink: #151c22;
+
+  /* dunkle Karten mit feinem Raster */
+  --color-night: #1d2833;
+  --color-night-2: #26333f;
+  --color-night-ink: #f2f5f7;
+  --color-night-muted: #aab6c0;
+  --color-night-line: #34424f;
+
+  /* flachere, technischere Ecken */
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-2xl: 12px;
 }
 
-html { -webkit-font-smoothing: antialiased; }
+html { --gutter: clamp(16px, 3.2vw, 64px); -webkit-font-smoothing: antialiased; font-size: clamp(16px, 13px + .25vw, 18px); }
 body {
-  @apply bg-slate-50 text-slate-800;
-  /* dezentes Karopapier */
-  background-image:
-    linear-gradient(to right, rgb(99 102 241 / 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(99 102 241 / 0.05) 1px, transparent 1px);
-  background-size: 24px 24px;
+  @apply bg-slate-50 text-slate-900;
+  font-variant-numeric: tabular-nums;
+  caret-color: var(--color-brand-600);
 }
+::selection { background: var(--color-brand-50); color: var(--color-slate-900); }
+h1, h2, h3, h4 { letter-spacing: -.01em; text-wrap: balance; }
+:focus-visible { outline: 2px solid var(--color-brand-600); outline-offset: 2px; }
 
-@utility card { @apply bg-white rounded-2xl border border-slate-200/80 shadow-[0_1px_2px_rgb(15_23_42/0.04),0_4px_16px_-6px_rgb(15_23_42/0.08)]; }
-@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition active:scale-[.98] disabled:opacity-50 disabled:pointer-events-none cursor-pointer; }
-@utility btn-primary { @apply btn bg-brand-600 text-white hover:bg-brand-700 shadow-sm shadow-brand-600/20; }
-@utility btn-secondary { @apply btn bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 hover:border-slate-300; }
-@utility btn-ghost { @apply btn text-slate-600 hover:bg-slate-100; }
-@utility btn-danger { @apply btn bg-white text-red-600 border border-red-200 hover:bg-red-50; }
-@utility btn-sm { @apply px-3 py-1.5 text-xs rounded-lg; }
-@utility input { @apply w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-base sm:text-sm text-slate-800 outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15 placeholder:text-slate-400; }
-@utility label { @apply block text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1.5; }
-@utility chip { @apply inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-medium; }
+@utility card { @apply bg-white rounded-xl border border-slate-200; }
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-lg border border-transparent px-4 py-2 min-h-10 text-[.94rem] font-semibold leading-tight transition-colors disabled:opacity-55 disabled:pointer-events-none cursor-pointer; }
+@utility btn-primary { @apply btn bg-brand-600 border-brand-600 text-white hover:bg-brand-700 hover:border-brand-700; }
+@utility btn-secondary { @apply btn bg-white text-slate-900 border-slate-300 hover:border-slate-500; }
+@utility btn-ghost { @apply btn text-slate-600 hover:bg-slate-100 hover:text-slate-900; }
+@utility btn-danger { @apply btn bg-white text-red-700 border-red-200 hover:border-red-500; }
+@utility btn-sm { @apply px-3 py-1.5 min-h-8 text-[.86rem] rounded-lg; }
+@utility input { @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-base text-slate-900 outline-none transition focus:border-brand-600 focus:outline-2 focus:outline-offset-1 focus:outline-brand-600 placeholder:text-slate-500/80; }
+@utility label { @apply block text-[.9rem] font-bold text-slate-900 mb-1.5; }
+@utility chip { @apply inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+
+/* Große Seitentitel wie „Theorie“ / „Konstruktionsübungen“ */
+@utility display { font-size: clamp(2.1rem, 1.5rem + 2vw, 3.2rem); font-weight: 700; letter-spacing: -.025em; line-height: 1.02; }
+/* Abschnitts-Überschrift mit kräftigem Strich darunter */
+@utility sec-head { @apply flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b-2 border-slate-900 pb-2.5; }
+/* Dunkle Karte mit Raster wie eine Arbeitsfläche */
+@utility night-card {
+  @apply relative rounded-2xl bg-night text-night-ink;
+  box-shadow: 0 18px 40px -22px rgb(10 20 30 / .55);
+  background-image: linear-gradient(rgb(255 255 255 / .035) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / .035) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+/* Reiter mit orangem Unterstrich */
+@utility tab {
+  @apply relative inline-flex min-h-[50px] items-center gap-2 whitespace-nowrap px-2.5 text-[.92rem] font-medium text-slate-500 transition-colors hover:text-slate-900;
+  &::after { content: ''; position: absolute; left: 10px; right: 10px; bottom: -1px; height: 2px; background: var(--color-brand-400); transform: scaleX(0); transition: transform .25s cubic-bezier(.16,1,.3,1); }
+  &.active { @apply font-bold text-slate-900; }
+  &.active::after { transform: scaleX(1); }
+}
+@utility icon-btn { @apply grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-slate-200 bg-white text-slate-500 transition-colors hover:border-slate-300 hover:text-slate-900 cursor-pointer; }
 
 /* Mathe-Inhalte */
-.prose-math { @apply text-[15px] leading-relaxed text-slate-700; }
+.prose-math { @apply text-base leading-relaxed text-slate-800; }
 .prose-math p { @apply my-2.5; }
 .prose-math h1, .prose-math h2, .prose-math h3 { @apply font-bold text-slate-900 mt-5 mb-2; }
 .prose-math h2 { @apply text-lg; }
@@ -48,13 +100,14 @@ body {
 .prose-math ol { @apply list-decimal pl-6 my-2 space-y-1; }
 .prose-math strong { @apply font-semibold text-slate-900; }
 .prose-math a { @apply text-brand-600 underline underline-offset-2; }
-.prose-math blockquote { @apply my-3 rounded-xl border-l-4 border-brand-400 bg-brand-50/60 px-4 py-1 text-slate-700; }
+.prose-math blockquote { @apply my-3 rounded-r-lg border-l-4 border-brand-400 bg-brand-50/60 px-4 py-1 text-slate-700; }
 .prose-math table { @apply my-3 w-auto border-collapse text-sm; display: block; overflow-x: auto; }
 .prose-math th, .prose-math td { @apply border border-slate-200 px-3 py-1.5 text-center; }
-.prose-math th { @apply bg-slate-50 font-semibold; }
+.prose-math th { @apply bg-slate-100 font-semibold; }
 .prose-math td:first-child, .prose-math th:first-child { @apply bg-slate-50 font-medium; }
 .prose-math img { @apply my-3 max-w-full rounded-xl border border-slate-200 bg-white p-2; max-height: 320px; }
-.prose-math code { @apply rounded bg-slate-100 px-1 py-0.5 text-[13px]; }
+.prose-math code { @apply rounded bg-slate-100 px-1 py-0.5 font-mono text-[13px]; }
+.prose-math li::marker { color: var(--color-brand-400); }
 .prose-math .katex-display { @apply my-3 overflow-x-auto overflow-y-hidden py-1; }
 .prose-math .katex { font-size: 1.08em; }
 
