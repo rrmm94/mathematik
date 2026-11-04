@@ -12,6 +12,8 @@ import PlanBuilding from './pages/student/PlanBuilding.jsx';
 import Topic from './pages/student/Topic.jsx';
 import Practice from './pages/student/Practice.jsx';
 import Script from './pages/student/Script.jsx';
+import NachtestResult from './pages/student/NachtestResult.jsx';
+import Exams from './pages/student/Exams.jsx';
 import AdminOverview from './pages/admin/Overview.jsx';
 import Courses from './pages/admin/Courses.jsx';
 import CourseDetail from './pages/admin/CourseDetail.jsx';
@@ -63,6 +65,8 @@ export default function App() {
           <Route path="/thema/:id" element={<Topic />} />
           <Route path="/ueben/:id" element={<Practice />} />
           <Route path="/skript/:topicId" element={<Script />} />
+          <Route path="/nachtest/:id" element={<NachtestResult />} />
+          <Route path="/pruefung" element={<Exams />} />
         </Route>
         <Route path="/admin" element={<RequireAdmin><AdminLayout /></RequireAdmin>}>
           <Route index element={<AdminOverview />} />

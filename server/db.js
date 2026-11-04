@@ -197,6 +197,25 @@ CREATE TABLE IF NOT EXISTS reports (
   resolved_at TEXT
 );
 
+-- Originale Abschlussprüfungen zum Durchrechnen (freigeschaltet ab 50 % Lernplan + Nachtest).
+-- Inhalte werden später ergänzt; die Aufgaben verweisen auf vorhandene Übungsaufgaben.
+CREATE TABLE IF NOT EXISTS exams (
+  id INTEGER PRIMARY KEY,
+  profile TEXT NOT NULL,         -- HS10, RS10, ERS10
+  title TEXT NOT NULL,           -- z. B. „Abschlussprüfung 2025“
+  year INTEGER,
+  description TEXT DEFAULT '',
+  sort INTEGER DEFAULT 0,
+  published INTEGER DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS exam_items (
+  exam_id INTEGER NOT NULL REFERENCES exams(id) ON DELETE CASCADE,
+  task_id INTEGER NOT NULL REFERENCES tasks(id) ON DELETE CASCADE,
+  sort INTEGER DEFAULT 0,
+  PRIMARY KEY (exam_id, task_id)
+);
+
 CREATE TABLE IF NOT EXISTS uploads (
   id INTEGER PRIMARY KEY,
   filename TEXT NOT NULL,
@@ -222,6 +241,9 @@ addColumn('task_variants', 'source', "TEXT DEFAULT ''"); // Herkunft (z. B. Absc
 addColumn('diag_runs', 'current_item', 'INTEGER'); // zuletzt geöffnete Aufgabe, dort geht es nach einer Pause weiter
 addColumn('task_progress', 'draft', 'TEXT'); // JSON {variantId, answer}: zuletzt eingegebene, noch nicht geprüfte Antwort
 addColumn('task_progress', 'solution_variant', 'INTEGER'); // Variante, zu der die Lösung bereits angezeigt wurde
+addColumn('plan_items', 'extra_levels', "TEXT DEFAULT '[]'"); // JSON: Zusatz-Stufen nach einem Nachtest (zählen nicht zum Gesamtfortschritt)
+addColumn('plan_items', 'extra_run_id', 'INTEGER'); // Nachtest, durch den die Zusatzübungen dazukamen
+addColumn('users', 'milestone_at', 'TEXT'); // Zeitpunkt, zu dem 50 % des Lernplans erstmals erreicht wurden (Nachtest/Prüfung bleiben dann frei)
 addColumn('feedback', 'task_id', 'INTEGER REFERENCES tasks(id) ON DELETE SET NULL'); // Feedback zu einer einzelnen Aufgabe
 if (addColumn('users', 'topics_asked', 'INTEGER DEFAULT 0')) {
   // Wer schon einen Test gemacht hat, wird nicht nachträglich gefragt.

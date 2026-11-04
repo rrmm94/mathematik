@@ -92,3 +92,108 @@ export function topicProgress(userId, topicId, profile, levels) {
   const total = r.total || 0;
   return { total, done: r.done || 0, solved: r.solved || 0, percent: total ? Math.round(((r.solved || 0) / total) * 100) : 0 };
 }
+
+// ---------------------------------------------------------------- Gesamtfortschritt, Nachtest, Prüfung
+
+// Ab diesem Anteil gelöster Lernplan-Aufgaben werden Nachtest und Prüfungen freigeschaltet.
+export const MILESTONE_PERCENT = 50;
+
+// Für das Kind sichtbare Stufen eines Plan-Eintrags: Lernplan + Zusatzübungen nach einem Nachtest.
+export function visibleLevels(p) {
+  return [...new Set([...json(p.levels, [1]), ...json(p.extra_levels, [])])].sort();
+}
+
+// Gesamtfortschritt über den Lernplan. Zusatzübungen aus einem Nachtest zählen NICHT mit,
+// damit der Balken durch neue Übungen nicht zurückfällt.
+export function planProgress(userId, profile) {
+  const plan = all('SELECT topic_id, levels FROM plan_items WHERE user_id = ?', userId);
+  let solved = 0, total = 0, done = 0;
+  for (const p of plan) {
+    const pr = topicProgress(userId, p.topic_id, profile, json(p.levels, [1]));
+    solved += pr.solved; total += pr.total; done += pr.done;
+  }
+  return { solved, done, total, percent: total ? Math.round((solved / total) * 100) : 0 };
+}
+
+// Stand des Kindes: Fortschritt, Nachtest und Prüfung (für Startseite und Lehrkraft).
+// Wer die 50 % einmal erreicht hat, behält die Freischaltung, auch wenn die Lehrkraft später Aufgaben ergänzt.
+export function progressState(u) {
+  const progress = planProgress(u.id, u.profile);
+  let milestoneAt = u.milestone_at || null;
+  if (!milestoneAt && progress.total > 0 && progress.percent >= MILESTONE_PERCENT) {
+    milestoneAt = new Date().toISOString().replace('T', ' ').slice(0, 19);
+    run('UPDATE users SET milestone_at = ? WHERE id = ?', milestoneAt, u.id);
+  }
+  const runs = all('SELECT id, number, status, finished_at FROM diag_runs WHERE user_id = ? ORDER BY number', u.id);
+  const active = runs.find((x) => x.status === 'active');
+  const done = runs.filter((x) => x.status === 'done');
+  const retests = done.filter((x) => x.number > 1);
+  const hasPlan = !!get('SELECT 1 FROM plan_items WHERE user_id = ? LIMIT 1', u.id);
+  const reached = !!milestoneAt;
+  // Den ersten Nachtest schaltet das Erreichen der 50 % frei, jeden weiteren die Lehrkraft.
+  const unlocked = hasPlan && (reached && retests.length === 0 || (done.length > 0 && !!u.diag_unlocked));
+  return {
+    progress,
+    milestone: { percent: MILESTONE_PERCENT, reached, at: milestoneAt },
+    nachtest: {
+      active: active && active.number > 1 ? { id: active.id } : null,
+      canStart: !active && unlocked,
+      count: retests.length,
+      last: retests.length ? { id: retests[retests.length - 1].id, finishedAt: retests[retests.length - 1].finished_at } : null,
+      byTeacher: !!u.diag_unlocked && done.length > 0,
+    },
+    exam: { unlocked: reached && retests.length > 0 },
+  };
+}
+
+// Vergleich zweier Diagnose-Durchläufe je Thema (Anzahl richtig, ohne Stufen).
+// status: better | same | worse | perfect (vorher und jetzt alles richtig)
+export function compareRuns(prevRunId, runId) {
+  const a = prevRunId ? runTopicScores(prevRunId) : {};
+  const b = runTopicScores(runId);
+  const out = [];
+  for (const [topicId, s] of Object.entries(b)) {
+    const before = a[topicId] || null;
+    const ratio = (x) => (x && x.total ? x.correct / x.total : 0);
+    let status;
+    if (!before) status = 'new';
+    else if (ratio(s) > ratio(before)) status = 'better';
+    else if (ratio(s) < ratio(before)) status = 'worse';
+    else status = s.total && s.correct >= s.total ? 'perfect' : 'same';
+    out.push({ topicId: Number(topicId), before: before && { correct: before.correct, total: before.total }, after: { correct: s.correct, total: s.total }, status });
+  }
+  return out;
+}
+
+// Vorheriger abgeschlossener Durchlauf (für den Vergleich beim Nachtest).
+export function previousRun(userId, run) {
+  return get("SELECT * FROM diag_runs WHERE user_id = ? AND number < ? AND status = 'done' ORDER BY number DESC LIMIT 1", userId, run.number);
+}
+
+// Nach einem Nachtest: In Themen ohne Verbesserung (oder mit Verschlechterung) werden Zusatzübungen
+// freigeschaltet. Zuerst die nächstleichtere Stufe (Grundlagen festigen), sonst die nächsthöhere.
+// Die Zusatz-Stufen zählen nicht zum Gesamtfortschritt.
+export function addExtraPractice(userId, runId) {
+  const user = get('SELECT profile FROM users WHERE id = ?', userId);
+  const runRow = get('SELECT * FROM diag_runs WHERE id = ?', runId);
+  const prev = previousRun(userId, runRow);
+  if (!prev) return [];
+  const added = [];
+  tx(() => {
+    for (const c of compareRuns(prev.id, runId)) {
+      if (c.status !== 'worse' && c.status !== 'same') continue;
+      const p = get('SELECT * FROM plan_items WHERE user_id = ? AND topic_id = ?', userId, c.topicId);
+      if (!p) continue;
+      const have = visibleLevels(p);
+      const hasPkgs = (lvl) => packagesFor(userId, c.topicId, user.profile, [lvl]).length > 0;
+      const lo = Math.min(...have), hi = Math.max(...have);
+      const candidates = [lo - 1, hi + 1, ...[0, 1, 2, 3].filter((l) => !have.includes(l))];
+      const lvl = candidates.find((l) => l >= 0 && l <= 3 && !have.includes(l) && hasPkgs(l));
+      if (lvl == null) continue;
+      const extra = [...new Set([...json(p.extra_levels, []), lvl])].sort();
+      run('UPDATE plan_items SET extra_levels = ?, extra_run_id = ? WHERE user_id = ? AND topic_id = ?', JSON.stringify(extra), runId, userId, c.topicId);
+      added.push(c.topicId);
+    }
+  });
+  return added;
+}

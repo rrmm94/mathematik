@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, useCallback, createContext, useContext } from 'react';
 import { createPortal } from 'react-dom';
-import { Loader2, AlertCircle, X, Check } from 'lucide-react';
+import { Loader2, AlertCircle, X, Check, Info } from 'lucide-react';
 import { ICONS } from '../lib/icons.js';
 import { renderMarkdown } from '../lib/markdown.js';
 
@@ -194,14 +194,14 @@ export function Toaster() {
   }, []);
   useEffect(() => {
     if (!t) return;
-    const h = setTimeout(() => setT(null), 2800);
+    const h = setTimeout(() => setT(null), t.type === 'info' ? 4500 : 2800);
     return () => clearTimeout(h);
   }, [t]);
   if (!t) return null;
   return (
-    <div className="fixed bottom-5 left-1/2 z-[60] -translate-x-1/2">
-      <div className={`animate-pop flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium text-white shadow-lg ${t.type === 'error' ? 'bg-red-600' : 'bg-slate-900'}`}>
-        {t.type === 'error' ? <AlertCircle size={16} /> : <Check size={16} />}
+    <div className="fixed bottom-5 left-1/2 z-[60] w-max max-w-[calc(100vw-2rem)] -translate-x-1/2">
+      <div className={`animate-pop flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium text-white shadow-lg ${t.type === 'error' ? 'bg-red-600' : t.type === 'info' ? 'bg-brand-700' : 'bg-slate-900'}`}>
+        {t.type === 'error' ? <AlertCircle size={16} className="shrink-0" /> : t.type === 'info' ? <Info size={16} className="shrink-0" /> : <Check size={16} className="shrink-0" />}
         {t.msg}
       </div>
     </div>

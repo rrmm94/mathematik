@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   ArrowDown, ArrowUp, Check, Star, ChevronDown, ChevronRight, Clock, Eye, KeyRound, MessageSquarePlus, Pencil, RotateCcw, Save, Trash2, Unlock, X, Minus, ArrowUpRight, ArrowDownRight,
-  ThumbsUp, ThumbsDown, Flag, MessageSquare,
+  ThumbsUp, ThumbsDown, Flag, MessageSquare, Lock, GraduationCap, PlusCircle, TrendingUp,
 } from 'lucide-react';
 import { LEVELS, PROFILES, DIFFICULTIES } from '../../../../shared/constants.js';
 import { api } from '../../lib/api.js';
@@ -64,12 +64,13 @@ export default function StudentDetail() {
         <button className="btn-secondary" onClick={() => setPwFor(s)}><KeyRound size={16} /> Passwort ändern</button>
         {s.diagnose?.count > 0 && (
           <button className={s.diagUnlocked ? 'btn-secondary border-sky-300 text-sky-700' : 'btn-secondary'} onClick={unlock}>
-            <Unlock size={16} /> {s.diagUnlocked ? 'Test-Freigabe zurücknehmen' : 'Test erneut freigeben'}
+            <Unlock size={16} /> {s.diagUnlocked ? 'Test-Freigabe zurücknehmen' : detail.plan.length ? 'Weiteren Nachtest freigeben' : 'Test erneut freigeben'}
           </button>
         )}
         <button className="btn-danger" onClick={reset}><RotateCcw size={16} /> Zurücksetzen</button>
       </PageHeader>
       {s.note && <div className="mb-4 rounded-xl bg-amber-50 px-4 py-2 text-sm text-amber-900">📝 {s.note}</div>}
+      {detail.plan.length > 0 && <ProgressSummary student={s} runs={detail.runs} onOpenRun={() => setTab('diag')} />}
 
       <div className="mb-5 flex gap-1 rounded-xl bg-slate-100 p-1 sm:inline-flex">
         {[['plan', 'Lernplan & Fortschritt'], ['diag', `Diagnosetests (${detail.runs.length})`], ['feedback', `${detail.reports.length ? 'Feedback & Meldungen' : 'Feedback'} (${detail.feedback.length + detail.reports.length})`]].map(([k, l]) => (
@@ -87,6 +88,56 @@ export default function StudentDetail() {
   );
 }
 
+// ---------------------------------------------------------------- Gesamtfortschritt, Nachtest, Prüfung
+function ProgressSummary({ student: s, runs, onOpenRun }) {
+  const p = s.progressDetail;
+  const mark = s.milestone.percent;
+  const last = [...runs].reverse().find((r) => r.number > 1 && r.status === 'done');
+  const cmp = last?.compare || [];
+  const count = (st) => cmp.filter((c) => c.status === st).length;
+  const nStatus = s.nachtest.active
+    ? { text: 'Nachtest läuft gerade', cls: 'bg-sky-100 text-sky-700' }
+    : s.nachtest.canStart
+      ? { text: s.nachtest.byTeacher ? 'Nachtest von dir freigegeben, noch nicht begonnen' : `${mark} % erreicht, Nachtest freigeschaltet`, cls: 'bg-amber-100 text-amber-800' }
+      : s.nachtest.count
+        ? { text: `${s.nachtest.count} Nachtest${s.nachtest.count > 1 ? 's' : ''} gemacht`, cls: 'bg-emerald-100 text-emerald-700' }
+        : { text: `Nachtest ab ${mark} %`, cls: 'bg-slate-100 text-slate-500' };
+  return (
+    <div className="card mb-5 grid gap-5 p-5 lg:grid-cols-[minmax(0,1fr)_auto]">
+      <div className="min-w-0">
+        <div className="mb-1.5 flex flex-wrap items-baseline justify-between gap-2">
+          <span className="text-sm font-semibold text-slate-700">Gesamtfortschritt im Lernplan</span>
+          <span className="text-sm text-slate-500"><b className="text-lg text-slate-900">{p.percent} %</b> · {p.solved} von {p.total} Aufgaben gelöst · {p.done} bearbeitet</span>
+        </div>
+        <div className="relative">
+          <ProgressBar value={p.percent} height="h-3" />
+          <div className="absolute -top-1 h-5 w-0.5 rounded bg-slate-400" style={{ left: `${mark}%` }} title={`${mark} %: Nachtest und Prüfungen`} />
+        </div>
+        <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
+          <span className={`chip ${nStatus.cls}`}>{s.nachtest.count ? <Check size={12} /> : s.nachtest.canStart || s.nachtest.active ? <Unlock size={12} /> : <Lock size={12} />} {nStatus.text}</span>
+          <span className={`chip ${s.exam.unlocked ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-500'}`}>{s.exam.unlocked ? <GraduationCap size={12} /> : <Lock size={12} />} Prüfungen {s.exam.unlocked ? 'freigeschaltet' : 'gesperrt'}</span>
+          {s.milestone.at && <span className="text-slate-500">{mark} % erreicht am {formatDate(s.milestone.at, { day: '2-digit', month: '2-digit', year: 'numeric' })}</span>}
+        </div>
+      </div>
+      {last && (
+        <button onClick={onOpenRun} className="flex items-center gap-4 rounded-xl border border-slate-200 px-4 py-3 text-left hover:bg-slate-50">
+          <TrendingUp size={22} className="shrink-0 text-emerald-600" />
+          <div className="text-sm">
+            <div className="font-semibold text-slate-900">Letzter Nachtest · {formatDate(last.finished_at)}</div>
+            <div className="mt-0.5 flex flex-wrap gap-x-3 text-xs">
+              <span className="text-emerald-700">{count('better')} besser</span>
+              <span className="text-slate-500">{count('same') + count('perfect')} gleich</span>
+              <span className="text-rose-700">{count('worse')} schlechter</span>
+              {last.extraTopics.length > 0 && <span className="text-violet-700">{last.extraTopics.length} × Zusatzübungen</span>}
+            </div>
+          </div>
+          <ChevronRight size={16} className="text-slate-400" />
+        </button>
+      )}
+    </div>
+  );
+}
+
 // ---------------------------------------------------------------- Lernplan
 function PlanEditor({ student, plan, onSaved }) {
   const [items, setItems] = useState(plan);
@@ -94,7 +145,8 @@ function PlanEditor({ student, plan, onSaved }) {
   const [taskId, setTaskId] = useState(null);
   const [dragIdx, setDragIdx] = useState(null);
   useEffect(() => setItems(plan), [plan]);
-  const dirty = JSON.stringify(items.map((i) => [i.topicId, i.levels])) !== JSON.stringify(plan.map((i) => [i.topicId, i.levels]));
+  const key = (arr) => JSON.stringify(arr.map((i) => [i.topicId, i.levels, i.extraLevels]));
+  const dirty = key(items) !== key(plan);
 
   if (!plan.length) {
     return <div className="card"><Empty title="Noch kein Lernplan">Der Lernplan wird erstellt, sobald {student.displayName} den Diagnosetest abgeschlossen hat.</Empty></div>;
@@ -110,13 +162,15 @@ function PlanEditor({ student, plan, onSaved }) {
   const toggleLevel = (idx, lvl) => {
     setItems(items.map((it, i) => {
       if (i !== idx) return it;
+      // Zusatz-Stufe (nach Nachtest) anklicken = wieder entfernen
+      if (it.extraLevels.includes(lvl)) return { ...it, extraLevels: it.extraLevels.filter((l) => l !== lvl) };
       const has = it.levels.includes(lvl);
       const levels = has ? it.levels.filter((l) => l !== lvl) : [...it.levels, lvl].sort();
       return { ...it, levels: levels.length ? levels : it.levels };
     }));
   };
   const save = async () => {
-    await api.put(`/admin/students/${student.id}/plan`, { items: items.map((i) => ({ topicId: i.topicId, levels: i.levels })) });
+    await api.put(`/admin/students/${student.id}/plan`, { items: items.map((i) => ({ topicId: i.topicId, levels: i.levels, extraLevels: i.extraLevels })) });
     toast('Lernplan gespeichert');
     onSaved();
   };
@@ -156,15 +210,16 @@ function PlanEditor({ student, plan, onSaved }) {
               <div className="flex flex-wrap gap-1">
                 {LEVELS.map((l) => {
                   const on = it.levels.includes(l.id);
+                  const extra = !on && it.extraLevels.includes(l.id);
                   return (
                     <button
                       key={l.id}
                       onClick={() => toggleLevel(idx, l.id)}
-                      className={`rounded-lg border px-2.5 py-1 text-xs font-semibold transition ${on ? 'border-transparent text-white' : 'border-slate-200 bg-white text-slate-400 hover:text-slate-700'}`}
-                      style={on ? { background: l.color } : undefined}
-                      title={l.label}
+                      className={`rounded-lg border px-2.5 py-1 text-xs font-semibold transition ${on ? 'border-transparent text-white' : extra ? 'border-dashed bg-white' : 'border-slate-200 bg-white text-slate-400 hover:text-slate-700'}`}
+                      style={on ? { background: l.color } : extra ? { borderColor: l.color, color: l.color } : undefined}
+                      title={extra ? `${l.label}: Zusatzübungen nach dem Nachtest (zählen nicht zum Fortschritt). Klicken zum Entfernen.` : l.label}
                     >
-                      {on && <Check size={11} className="-ml-0.5 mr-0.5 inline" strokeWidth={3} />}{l.short}
+                      {on && <Check size={11} className="-ml-0.5 mr-0.5 inline" strokeWidth={3} />}{extra && <PlusCircle size={11} className="-ml-0.5 mr-0.5 inline" />}{l.short}
                     </button>
                   );
                 })}
@@ -216,6 +271,7 @@ function PlanEditor({ student, plan, onSaved }) {
       </div>
       <div className="mt-3 flex flex-wrap gap-3 text-xs text-slate-500">
         {LEVELS.map((l) => <span key={l.id} className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full" style={{ background: l.color }} />{l.label}</span>)}
+        <span className="flex items-center gap-1.5"><PlusCircle size={12} /> gestrichelt = Zusatzübungen nach dem Nachtest (zählen nicht zum Gesamtfortschritt)</span>
         <span>· Für das Kind sind die Stufen nicht sichtbar. Klicke eine bearbeitete Aufgabe an, um die Eingaben des Kindes zu sehen.</span>
       </div>
       <StudentTaskDetail student={student} taskId={taskId} onClose={() => setTaskId(null)} onChanged={onSaved} />
@@ -260,7 +316,7 @@ function DiagnoseView({ student, runs, plan, onChanged }) {
       <div className="flex flex-wrap items-center gap-2">
         {runs.map((r) => (
           <button key={r.id} onClick={() => setSel(r.id)} className={`rounded-xl border px-4 py-2 text-sm font-semibold transition ${sel === r.id ? 'border-brand-500 bg-brand-50 text-brand-700' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'}`}>
-            {r.number === 1 ? 'Einstiegstest' : `Wiederholung ${r.number - 1}`}
+            {r.number === 1 ? 'Einstiegstest' : `Nachtest ${r.number - 1}`}
             <span className="ml-2 text-xs font-normal text-slate-500">{r.status === 'done' ? formatDate(r.finished_at) : 'läuft'}</span>
           </button>
         ))}
@@ -268,6 +324,25 @@ function DiagnoseView({ student, runs, plan, onChanged }) {
 
       <div className="card flex flex-wrap items-center gap-6 p-5">
         <div><div className="text-xs uppercase text-slate-500">Richtig</div><div className="text-xl font-bold text-slate-900">{correct} / {run.items.length}</div></div>
+        {prev && run.compare && (
+          <div>
+            <div className="text-xs uppercase text-slate-500">Vorher ({prev.number === 1 ? 'Einstiegstest' : `Nachtest ${prev.number - 1}`})</div>
+            <div className="text-xl font-bold text-slate-900">
+              {prev.items.filter((i) => i.correct === 1).length} / {prev.items.length}
+              {(() => { const d = correct - prev.items.filter((i) => i.correct === 1).length; return <span className={`ml-2 text-sm ${d > 0 ? 'text-emerald-600' : d < 0 ? 'text-rose-600' : 'text-slate-400'}`}>{d > 0 ? `+${d}` : d}</span>; })()}
+            </div>
+          </div>
+        )}
+        {run.compare && (
+          <div>
+            <div className="text-xs uppercase text-slate-500">Themen</div>
+            <div className="flex gap-3 text-sm font-semibold">
+              <span className="text-emerald-700">{run.compare.filter((c) => c.status === 'better').length} besser</span>
+              <span className="text-slate-500">{run.compare.filter((c) => c.status === 'same' || c.status === 'perfect').length} gleich</span>
+              <span className="text-rose-700">{run.compare.filter((c) => c.status === 'worse').length} schlechter</span>
+            </div>
+          </div>
+        )}
         <div><div className="text-xs uppercase text-slate-500">Bearbeitungszeit</div><div className="text-xl font-bold text-slate-900">{formatDuration(totalTime)}</div></div>
         <div><div className="text-xs uppercase text-slate-500">Profil</div><div className="text-xl font-bold text-slate-900">{PROFILES[run.profile]?.short}</div></div>
         {run.status === 'done' && run.number > 1 && (
@@ -299,6 +374,7 @@ function DiagnoseView({ student, runs, plan, onChanged }) {
                       {delta > 0 ? <ArrowUpRight size={12} /> : delta < 0 ? <ArrowDownRight size={12} /> : <Minus size={12} />} vorher {pv.correct}/{pv.total}
                     </span>
                   )}
+                  {run.extraTopics?.includes(t.topicId) && <span className="chip bg-violet-100 text-violet-700"><PlusCircle size={12} /> Zusatzübungen freigeschaltet</span>}
                   {planItem && <span className="text-xs text-slate-500">Plan-Position {plan.indexOf(planItem) + 1}</span>}
                 </div>
                 <div className="grid gap-2 sm:grid-cols-3">

@@ -4,7 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { all, get, run, json, tx, getSetting, setSetting, UPLOAD_DIR } from '../db.js';
 import { requireAdmin, hashPassword } from '../auth.js';
-import { runTopicScores, buildPlanFromRun, topicsForProfile, topicProgress, syncPlan } from '../plan.js';
+import { runTopicScores, buildPlanFromRun, topicsForProfile, topicProgress, syncPlan, progressState, compareRuns, previousRun } from '../plan.js';
 import { PROFILE_KEYS, MIN_STUDENT_PASSWORD } from '../../shared/constants.js';
 import { checkAnswer, publicAnswerSpec, answerSummary } from '../../shared/checker.js';
 
@@ -66,11 +66,7 @@ r.get('/students', (_req, res) => {
 function studentSummary(u) {
   const runs = all('SELECT id, number, status, finished_at FROM diag_runs WHERE user_id = ? ORDER BY number', u.id);
   const plan = all('SELECT topic_id, levels, diag_level FROM plan_items WHERE user_id = ?', u.id);
-  let solved = 0, total = 0;
-  for (const p of plan) {
-    const pr = topicProgress(u.id, p.topic_id, u.profile, json(p.levels, [1]));
-    solved += pr.solved; total += pr.total;
-  }
+  const state = progressState(u);
   const levelCounts = [0, 0, 0, 0];
   for (const p of plan) if (p.diag_level != null) levelCounts[p.diag_level]++;
   return {
@@ -85,7 +81,11 @@ function studentSummary(u) {
     lastLogin: u.last_login,
     note: u.note,
     diagnose: runs.length ? { count: runs.filter((x) => x.status === 'done').length, active: runs.some((x) => x.status === 'active'), last: runs[runs.length - 1].finished_at } : null,
-    progress: total ? Math.round((solved / total) * 100) : 0,
+    progress: state.progress.percent,
+    progressDetail: state.progress,
+    milestone: state.milestone,
+    nachtest: state.nachtest,
+    exam: state.exam,
     levelCounts,
   };
 }
@@ -182,7 +182,7 @@ r.post('/students/:id/reset', (req, res) => {
   const uid = id(req.params.id);
   tx(() => {
     for (const t of ['diag_runs', 'plan_items', 'attempts', 'task_progress']) run(`DELETE FROM ${t} WHERE user_id = ?`, uid);
-    run('UPDATE users SET diag_unlocked = 1 WHERE id = ?', uid);
+    run('UPDATE users SET diag_unlocked = 1, milestone_at = NULL WHERE id = ?', uid);
   });
   res.json({ ok: true });
 });
@@ -204,7 +204,10 @@ r.get('/students/:id', (req, res) => {
       source: i.source || '', variant: i.variant_sort + 1, prompt: i.prompt, context: i.context || '', answer: json(i.answer), spec: json(i.spec, {}), correct: i.correct, timeMs: i.time_ms, answeredAt: i.answered_at,
       ...answerView(json(i.spec, {}), json(i.answer)), solution: i.solution || '',
     }));
-    return { ...d, items, scores: runTopicScores(d.id) };
+    // Nachtest: Vergleich mit dem vorherigen Test und dabei freigeschaltete Zusatzübungen
+    const prev = d.status === 'done' && d.number > 1 ? previousRun(u.id, d) : null;
+    const extraTopics = d.number > 1 ? all('SELECT topic_id FROM plan_items WHERE user_id = ? AND extra_run_id = ?', u.id, d.id).map((x) => x.topic_id) : [];
+    return { ...d, items, scores: runTopicScores(d.id), compare: prev ? compareRuns(prev.id, d.id) : null, extraTopics };
   });
 
   const plan = all(
@@ -225,6 +228,7 @@ r.get('/students/:id', (req, res) => {
     return {
       topicId: p.topic_id, title: p.title, icon: p.icon, color: p.color, sort: p.sort,
       diagLevel: p.diag_level, levels,
+      extraLevels: json(p.extra_levels, []).filter((l) => !levels.includes(l)),
       progress: topicProgress(u.id, p.topic_id, u.profile, levels),
       tasks: tasks.filter((t) => t.attempts || t.solution_viewed || t.rating),
     };
@@ -293,8 +297,13 @@ r.put('/students/:id/plan', (req, res) => {
   if (!Array.isArray(items)) return bad(res, 'Ungültige Daten.');
   tx(() => {
     items.forEach((it, i) => {
-      const levels = [...new Set((it.levels || []).map(Number).filter((l) => l >= 0 && l <= 3))].sort();
-      run('UPDATE plan_items SET sort = ?, levels = ? WHERE user_id = ? AND topic_id = ?', i, JSON.stringify(levels.length ? levels : [1]), uid, id(it.topicId));
+      const norm = (arr) => [...new Set((arr || []).map(Number).filter((l) => l >= 0 && l <= 3))].sort();
+      const levels = norm(it.levels);
+      const final = levels.length ? levels : [1];
+      // Zusatzübungen (nach Nachtest) getrennt halten; eine Stufe ist entweder Lernplan oder Zusatz
+      const extra = it.extraLevels ? norm(it.extraLevels).filter((l) => !final.includes(l)) : null;
+      if (extra) run('UPDATE plan_items SET sort = ?, levels = ?, extra_levels = ? WHERE user_id = ? AND topic_id = ?', i, JSON.stringify(final), JSON.stringify(extra), uid, id(it.topicId));
+      else run('UPDATE plan_items SET sort = ?, levels = ? WHERE user_id = ? AND topic_id = ?', i, JSON.stringify(final), uid, id(it.topicId));
     });
   });
   res.json({ ok: true });

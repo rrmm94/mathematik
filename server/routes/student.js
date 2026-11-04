@@ -2,7 +2,10 @@ import { Router } from 'express';
 import { all, get, run, json, tx, getSetting } from '../db.js';
 import { requireStudent, verifyPassword, hashPassword } from '../auth.js';
 import { checkAnswer, publicAnswerSpec, answerSummary } from '../../shared/checker.js';
-import { buildPlanFromRun, runTopicScores, topicsForProfile, packagesFor, topicProgress, syncPlan } from '../plan.js';
+import {
+  buildPlanFromRun, runTopicScores, topicsForProfile, packagesFor, topicProgress, syncPlan,
+  visibleLevels, progressState, compareRuns, previousRun, addExtraPractice,
+} from '../plan.js';
 import { PROFILES, GOAL_OPTIONS, MIN_STUDENT_PASSWORD } from '../../shared/constants.js';
 import { publicUser } from './auth.js';
 
@@ -82,12 +85,14 @@ r.get('/dashboard', (req, res) => {
      JOIN topics t ON t.id = p.topic_id WHERE p.user_id = ? ORDER BY p.sort`,
     u.id,
   );
+  const state = progressState(u);
   const plan = planRows.map((p) => {
     const levels = json(p.levels, [1]);
     const sections = all('SELECT id FROM script_sections WHERE topic_id = ? LIMIT 1', p.topic_id);
     return {
       topic: { id: p.topic_id, title: p.title, description: p.description, icon: p.icon, color: p.color },
       progress: topicProgress(u.id, p.topic_id, u.profile, levels),
+      extra: extraInfo(u, p, state.nachtest.last?.id),
       hasScript: sections.length > 0,
     };
   });
@@ -105,10 +110,19 @@ r.get('/dashboard', (req, res) => {
     u.course_id, today(),
   );
 
-  // Rückmeldung zum letzten Wiederholungstest (ohne Stufen!)
+  // Rückmeldung zum letzten Nachtest (ohne Stufen!)
   let retest = null;
   const last = finished[finished.length - 1];
-  if (last && last.number > 1) retest = { finishedAt: last.finished_at, improved: improvedTopics(u.id, last.id) };
+  if (last && last.number > 1) {
+    const cmp = compareRuns(previousRun(u.id, last)?.id, last.id);
+    retest = {
+      runId: last.id,
+      finishedAt: last.finished_at,
+      improved: improvedTopics(u.id, last.id),
+      extraTopics: plan.filter((p) => p.extra?.isNew).map((p) => p.topic),
+      better: cmp.filter((c) => c.status === 'better').length,
+    };
+  }
 
   res.json({
     user: publicUser(u),
@@ -118,15 +132,28 @@ r.get('/dashboard', (req, res) => {
     diagnose: {
       hasPlan: plan.length > 0,
       active: activeRun ? { id: activeRun.id, retest: activeRun.number > 1, ...runProgress(activeRun.id) } : null,
-      canStart: !activeRun && (!!u.diag_unlocked || finished.length === 0),
+      canStart: plan.length ? state.nachtest.canStart : !activeRun && (!!u.diag_unlocked || finished.length === 0),
       isRetest: finished.length > 0,
     },
     plan,
+    progress: state.progress,
+    milestone: state.milestone,
+    nachtest: state.nachtest,
+    exam: state.exam,
     feedback,
     events,
     retest,
   });
 });
+
+// Zusatzübungen eines Themas (nach einem Nachtest freigeschaltet, zählen nicht zum Gesamtfortschritt).
+function extraInfo(u, p, lastRetestId) {
+  const extra = json(p.extra_levels, []).filter((l) => !json(p.levels, []).includes(l));
+  if (!extra.length) return null;
+  const pr = topicProgress(u.id, p.topic_id, u.profile, extra);
+  if (!pr.total) return null;
+  return { total: pr.total, solved: pr.solved, isNew: !!lastRetestId && p.extra_run_id === lastRetestId };
+}
 
 // Verweis auf die Aufgabe, zu der die Lehrkraft Feedback gegeben hat (nur wenn das Paket freigeschaltet ist).
 function feedbackTask(u, taskId) {
@@ -167,7 +194,26 @@ r.post('/diagnose/start', (req, res) => {
   const active = get("SELECT * FROM diag_runs WHERE user_id = ? AND status = 'active'", u.id);
   if (active) return res.json({ runId: active.id });
   const doneCount = get("SELECT COUNT(*) AS n FROM diag_runs WHERE user_id = ? AND status = 'done'", u.id).n;
-  if (doneCount > 0 && !u.diag_unlocked) return res.status(403).json({ error: 'Der Test ist gerade nicht freigeschaltet.' });
+  const hasPlan = !!get('SELECT 1 FROM plan_items WHERE user_id = ? LIMIT 1', u.id);
+  if (doneCount > 0) {
+    const st = hasPlan ? progressState(u) : null;
+    if (!(st ? st.nachtest.canStart : u.diag_unlocked)) {
+      return res.status(403).json({
+        error: st && st.nachtest.count > 0
+          ? 'Einen weiteren Nachtest kann deine Lehrkraft für dich freischalten.'
+          : 'Der Nachtest ist noch nicht freigeschaltet. Bearbeite zuerst mindestens die Hälfte deiner Lernplan-Aufgaben.',
+      });
+    }
+  }
+  // Nachtest: möglichst Varianten (andere Zahlen), die das Kind in früheren Tests noch nicht hatte
+  const seen = new Map();
+  for (const x of all('SELECT i.variant_id FROM diag_items i JOIN diag_runs d ON d.id = i.run_id WHERE d.user_id = ?', u.id)) {
+    seen.set(x.variant_id, (seen.get(x.variant_id) || 0) + 1);
+  }
+  const pickVariant = (variants) => {
+    const fewest = Math.min(...variants.map((v) => seen.get(v.id) || 0));
+    return pick(variants.filter((v) => (seen.get(v.id) || 0) === fewest));
+  };
 
   const topics = topicsForProfile(u.profile);
   const runId = tx(() => {
@@ -179,7 +225,7 @@ r.post('/diagnose/start', (req, res) => {
       for (const task of tasks) {
         const variants = all('SELECT id FROM task_variants WHERE task_id = ?', task.id);
         if (!variants.length) continue;
-        run('INSERT INTO diag_items (run_id, task_id, variant_id, topic_id, difficulty, sort) VALUES (?, ?, ?, ?, ?, ?)', id, task.id, pick(variants).id, t.id, task.difficulty, sort++);
+        run('INSERT INTO diag_items (run_id, task_id, variant_id, topic_id, difficulty, sort) VALUES (?, ?, ?, ?, ?, ?)', id, task.id, pickVariant(variants).id, t.id, task.difficulty, sort++);
       }
     }
     run('UPDATE users SET diag_unlocked = 0 WHERE id = ?', u.id);
@@ -258,33 +304,73 @@ r.post('/diagnose/finish', (req, res) => {
     buildPlanFromRun(u.id, active.id);
     return res.json({ kind: 'initial' });
   }
-  res.json({ kind: 'retest', improved: improvedTopics(u.id, active.id) });
+  addExtraPractice(u.id, active.id);
+  res.json({ kind: 'retest', runId: active.id, improved: improvedTopics(u.id, active.id) });
+});
+
+// Ergebnis eines Nachtests im Vergleich zum vorherigen Test – je Thema, ohne Stufen.
+r.get('/nachtest/:runId', (req, res) => {
+  const u = req.user;
+  const d = get("SELECT * FROM diag_runs WHERE id = ? AND user_id = ? AND status = 'done' AND number > 1", Number(req.params.runId), u.id);
+  if (!d) return res.status(404).json({ error: 'Nachtest nicht gefunden.' });
+  const prev = previousRun(u.id, d);
+  const plan = new Map(all('SELECT * FROM plan_items WHERE user_id = ?', u.id).map((p) => [p.topic_id, p]));
+  const order = all('SELECT topic_id FROM plan_items WHERE user_id = ? ORDER BY sort', u.id).map((x) => x.topic_id);
+  const topics = compareRuns(prev?.id, d.id)
+    .map((c) => {
+      const t = get('SELECT * FROM topics WHERE id = ?', c.topicId);
+      const p = plan.get(c.topicId);
+      return t && { ...c, topic: topicPublic(t), extra: p && p.extra_run_id === d.id ? extraInfo(u, p, d.id) : null };
+    })
+    .filter(Boolean)
+    .sort((a, b) => order.indexOf(a.topicId) - order.indexOf(b.topicId));
+  const sum = (k) => topics.reduce((s, t) => s + (t[k]?.correct || 0), 0);
+  res.json({
+    run: { id: d.id, number: d.number - 1, finishedAt: d.finished_at },
+    previous: prev ? { kind: prev.number === 1 ? 'Einstiegstest' : `Nachtest ${prev.number - 1}`, finishedAt: prev.finished_at } : null,
+    total: { before: sum('before'), after: sum('after'), of: topics.reduce((s, t) => s + (t.after.total || 0), 0) },
+    topics,
+  });
+});
+
+// ---------- Prüfungen (originale Abschlussprüfungen) ----------
+r.get('/exams', (req, res) => {
+  const u = req.user;
+  const state = progressState(u);
+  const exams = state.exam.unlocked
+    ? all('SELECT e.id, e.title, e.year, e.description, (SELECT COUNT(*) FROM exam_items x WHERE x.exam_id = e.id) AS tasks FROM exams e WHERE e.profile = ? AND e.published = 1 ORDER BY e.sort, e.year DESC, e.id', u.profile)
+    : [];
+  res.json({ unlocked: state.exam.unlocked, progress: state.progress, milestone: state.milestone, nachtestDone: state.nachtest.count > 0, exams });
 });
 
 // ---------- Themen & Übungen ----------
 function planLevels(userId, topicId) {
-  const p = get('SELECT levels FROM plan_items WHERE user_id = ? AND topic_id = ?', userId, topicId);
-  return p ? json(p.levels, [1]) : null;
+  const p = get('SELECT levels, extra_levels FROM plan_items WHERE user_id = ? AND topic_id = ?', userId, topicId);
+  return p ? visibleLevels(p) : null;
 }
 
 r.get('/topics/:id', (req, res) => {
   const u = req.user;
   const topic = get('SELECT * FROM topics WHERE id = ?', Number(req.params.id));
-  const levels = topic && planLevels(u.id, topic.id);
-  if (!topic || !levels) return res.status(404).json({ error: 'Thema nicht gefunden.' });
+  const pi = topic && get('SELECT * FROM plan_items WHERE user_id = ? AND topic_id = ?', u.id, topic.id);
+  if (!topic || !pi) return res.status(404).json({ error: 'Thema nicht gefunden.' });
+  const levels = visibleLevels(pi);
+  const core = json(pi.levels, [1]);
   const pkgs = packagesFor(u.id, topic.id, u.profile, levels).map((p) => {
     const s = get(
       `SELECT COUNT(*) AS total, SUM(CASE WHEN tp.solved = 1 THEN 1 ELSE 0 END) AS solved
        FROM tasks t LEFT JOIN task_progress tp ON tp.task_id = t.id AND tp.user_id = ? WHERE t.package_id = ?`,
       u.id, p.id,
     );
-    return { id: p.id, title: p.title, description: p.description, total: s.total, solved: s.solved || 0 };
+    // extra: Zusatzübung nach dem Nachtest (zählt nicht zum Fortschritt) – ohne Stufe zu verraten
+    return { id: p.id, title: p.title, description: p.description, total: s.total, solved: s.solved || 0, extra: !core.includes(p.level) };
   });
+  pkgs.sort((a, b) => a.extra - b.extra);
   const sections = all('SELECT id, title FROM script_sections WHERE topic_id = ? ORDER BY sort, id', topic.id);
   const feedback = all('SELECT id, text, created_at, read_at, task_id FROM feedback WHERE user_id = ? AND topic_id = ? ORDER BY created_at DESC', u.id, topic.id)
     .map((f) => ({ ...f, task: feedbackTask(u, f.task_id) }));
   const events = all('SELECT id, title, date, time, room FROM events WHERE topic_id = ? AND (course_id = ? OR course_id IS NULL) AND date >= ? ORDER BY date', topic.id, u.course_id, today());
-  res.json({ topic: topicPublic(topic), progress: topicProgress(u.id, topic.id, u.profile, levels), packages: pkgs, sections, feedback, events });
+  res.json({ topic: topicPublic(topic), progress: topicProgress(u.id, topic.id, u.profile, core), packages: pkgs, sections, feedback, events });
 });
 
 // Prüft, ob ein Paket für das Kind freigeschaltet ist.

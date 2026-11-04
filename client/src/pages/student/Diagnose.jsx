@@ -112,7 +112,7 @@ export default function Diagnose() {
     <div className="mx-auto max-w-3xl">
       <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wider text-brand-600">{data.run.retest ? 'Wiederholungstest' : 'Einstiegstest'}</div>
+          <div className="text-xs font-semibold uppercase tracking-wider text-brand-600">{data.run.retest ? 'Nachtest' : 'Einstiegstest'}</div>
           <div className="text-sm text-slate-500">{doneCount} von {items.length} Aufgaben bearbeitet</div>
         </div>
         <div className="flex flex-col items-end gap-1">

@@ -1,12 +1,17 @@
 import { Link, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
-import { BookOpen, ChevronRight, Dumbbell, MessageSquareHeart, CalendarClock, CheckCircle2 } from 'lucide-react';
+import { BookOpen, ChevronRight, Dumbbell, MessageSquareHeart, CalendarClock, CheckCircle2, PlusCircle } from 'lucide-react';
 import { api } from '../../lib/api.js';
 import { useLoad, PageLoader, ErrorBox, TopicIcon, ProgressBar, Empty, formatDate, colorOf } from '../../components/ui.jsx';
 
 export default function Topic() {
   const { id } = useParams();
   const { data, error, loading } = useLoad(() => api.get(`/student/topics/${id}`), [id]);
+
+  // Sprung zu den Zusatzübungen (#zusatz), sobald die Seite geladen ist
+  useEffect(() => {
+    if (data && window.location.hash === '#zusatz') document.getElementById('zusatz')?.scrollIntoView({ behavior: 'smooth' });
+  }, [data]);
 
   useEffect(() => {
     const unread = data?.feedback?.filter((f) => !f.read_at).map((f) => f.id);
@@ -37,29 +42,16 @@ export default function Topic() {
       <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
         <section>
           <h2 className="mb-3 flex items-center gap-2 text-lg font-bold text-slate-900"><Dumbbell size={20} className={c.text} /> Übungspakete</h2>
-          {packages.length === 0 ? (
+          {packages.filter((p) => !p.extra).length === 0 ? (
             <div className="card"><Empty title="Hier gibt es noch keine Übungen">Schau bald wieder vorbei.</Empty></div>
           ) : (
-            <div className="grid gap-3 sm:grid-cols-2">
-              {packages.map((p, i) => {
-                const pct = p.total ? Math.round((p.solved / p.total) * 100) : 0;
-                const complete = p.total > 0 && p.solved >= p.total;
-                return (
-                  <Link key={p.id} to={`/ueben/${p.id}`} className="card group flex flex-col p-5 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-lg">
-                    <div className="mb-3 flex items-center justify-between">
-                      <span className={`chip ${c.bg} ${c.text}`}>Paket {i + 1}</span>
-                      {complete && <CheckCircle2 size={20} className="text-emerald-500" />}
-                    </div>
-                    <div className="font-semibold text-slate-900">{p.title}</div>
-                    <div className="mb-4 text-sm text-slate-500">{p.description}</div>
-                    <div className="mt-auto flex items-center gap-3">
-                      <ProgressBar value={pct} color={topic.color} />
-                      <span className="shrink-0 text-xs font-medium text-slate-500">{p.solved}/{p.total}</span>
-                      <ChevronRight size={18} className="shrink-0 text-slate-400 transition group-hover:translate-x-0.5" />
-                    </div>
-                  </Link>
-                );
-              })}
+            <PackageGrid packages={packages.filter((p) => !p.extra)} topic={topic} />
+          )}
+          {packages.some((p) => p.extra) && (
+            <div id="zusatz" className="mt-8 scroll-mt-24">
+              <h2 className="flex items-center gap-2 text-lg font-bold text-slate-900"><PlusCircle size={20} className="text-violet-600" /> Zusatzübungen</h2>
+              <p className="mb-3 text-sm text-slate-500">Nach deinem Nachtest für dich freigeschaltet, damit du in diesem Thema noch sicherer wirst. Sie zählen nicht zu deinem Lernplan-Fortschritt, du kannst also nur gewinnen.</p>
+              <PackageGrid packages={packages.filter((p) => p.extra)} topic={topic} extra />
             </div>
           )}
         </section>
@@ -107,6 +99,33 @@ export default function Topic() {
           )}
         </aside>
       </div>
+    </div>
+  );
+}
+
+function PackageGrid({ packages, topic, extra }) {
+  const c = colorOf(topic.color);
+  return (
+    <div className="grid gap-3 sm:grid-cols-2">
+      {packages.map((p, i) => {
+        const pct = p.total ? Math.round((p.solved / p.total) * 100) : 0;
+        const complete = p.total > 0 && p.solved >= p.total;
+        return (
+          <Link key={p.id} to={`/ueben/${p.id}`} className={`card group flex flex-col p-5 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-lg ${extra ? 'border-dashed border-violet-200 bg-violet-50/30' : ''}`}>
+            <div className="mb-3 flex items-center justify-between">
+              <span className={`chip ${extra ? 'bg-violet-100 text-violet-700' : `${c.bg} ${c.text}`}`}>{extra ? `Zusatz ${i + 1}` : `Paket ${i + 1}`}</span>
+              {complete && <CheckCircle2 size={20} className="text-emerald-500" />}
+            </div>
+            <div className="font-semibold text-slate-900">{p.title}</div>
+            <div className="mb-4 text-sm text-slate-500">{p.description}</div>
+            <div className="mt-auto flex items-center gap-3">
+              <ProgressBar value={pct} color={extra ? 'violet' : topic.color} />
+              <span className="shrink-0 text-xs font-medium text-slate-500">{p.solved}/{p.total}</span>
+              <ChevronRight size={18} className="shrink-0 text-slate-400 transition group-hover:translate-x-0.5" />
+            </div>
+          </Link>
+        );
+      })}
     </div>
   );
 }

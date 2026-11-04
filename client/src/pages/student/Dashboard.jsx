@@ -2,9 +2,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import {
   ClipboardCheck, ArrowRight, Target, CalendarClock, MessageSquareHeart, BookOpen, Dumbbell, Sparkles, Clock, MapPin, PartyPopper, TrendingUp, RotateCcw,
+  Lock, GraduationCap, CheckCircle2, PlusCircle,
 } from 'lucide-react';
 import { api } from '../../lib/api.js';
-import { useLoad, PageLoader, ErrorBox, TopicIcon, ProgressBar, formatDate, Empty, colorOf, Modal } from '../../components/ui.jsx';
+import { useLoad, PageLoader, ErrorBox, TopicIcon, ProgressBar, formatDate, Empty, colorOf, Modal, toast } from '../../components/ui.jsx';
 
 export default function Dashboard() {
   const { data, error, loading, reload } = useLoad(() => api.get('/student/dashboard'));
@@ -32,7 +33,6 @@ export default function Dashboard() {
         </a>
       )}
       {data.retest && <RetestResult retest={data.retest} />}
-      {(diagnose.canStart || diagnose.active) && <RetestCard diagnose={diagnose} />}
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
         <section className="min-w-0">
@@ -77,7 +77,84 @@ function GoalBanner({ data, compact }) {
           </div>
         )}
       </div>
+      {!compact && data.progress && <OverallProgress data={data} />}
     </div>
+  );
+}
+
+// Gesamtfortschritt über den Lernplan + Nachtest und Prüfung (beide ab 50 % freigeschaltet).
+function OverallProgress({ data }) {
+  const navigate = useNavigate();
+  const [busy, setBusy] = useState(false);
+  const { progress, milestone, nachtest, exam } = data;
+  const mark = milestone.percent;
+
+  const startNachtest = async () => {
+    if (nachtest.active) return navigate('/diagnose');
+    if (!nachtest.canStart) {
+      if (nachtest.last) return navigate(`/nachtest/${nachtest.last.id}`);
+      return toast(`Den Nachtest kannst du machen, sobald du ${mark} % deines Lernplans geschafft hast.`, 'info');
+    }
+    setBusy(true);
+    try {
+      await api.post('/student/diagnose/start');
+      navigate('/diagnose');
+    } finally {
+      setBusy(false);
+    }
+  };
+  const openExam = () => {
+    if (exam.unlocked) return navigate('/pruefung');
+    toast(milestone.reached ? 'Die Prüfungen werden freigeschaltet, sobald du den Nachtest gemacht hast.' : `Die Prüfungen werden ab ${mark} % und nach dem Nachtest freigeschaltet.`, 'info');
+  };
+
+  const nState = nachtest.active ? 'active' : nachtest.canStart ? 'open' : nachtest.last ? 'done' : 'locked';
+  const nLabel = { active: 'Nachtest', open: 'Nachtest starten', done: 'Nachtest', locked: 'Nachtest' }[nState];
+  const nSub = { active: 'weitermachen', open: 'Zeig, was du kannst!', done: 'Ergebnis ansehen', locked: `ab ${mark} %` }[nState];
+
+  return (
+    <div className="relative mt-6 flex flex-col gap-4 border-t border-white/15 pt-5 lg:flex-row lg:items-center lg:gap-6">
+      <div className="min-w-0 flex-1">
+        <div className="mb-2 flex items-baseline justify-between gap-3">
+          <span className="text-sm font-medium text-indigo-100">Dein Gesamtfortschritt</span>
+          <span className="text-2xl font-extrabold tabular-nums leading-none">{progress.percent} %</span>
+        </div>
+        <div className="relative">
+          <div className="h-3 w-full overflow-hidden rounded-full bg-white/20">
+            <div className="h-3 rounded-full bg-gradient-to-r from-amber-300 to-emerald-300 transition-all duration-700" style={{ width: `${Math.min(100, progress.percent)}%` }} />
+          </div>
+          {/* Markierung: ab hier Nachtest und Prüfung */}
+          <div className="absolute -top-1 h-5 w-0.5 rounded bg-white/80" style={{ left: `${mark}%` }} aria-hidden />
+        </div>
+        <div className="mt-2 flex flex-wrap justify-between gap-x-4 gap-y-1 text-xs text-indigo-100">
+          <span>{progress.solved} von {progress.total} Aufgaben gelöst</span>
+          <span>{milestone.reached ? <><CheckCircle2 size={12} className="mr-1 inline" />{mark} % erreicht: Nachtest freigeschaltet</> : `Noch ${Math.max(0, Math.ceil((progress.total * mark) / 100) - progress.solved)} Aufgaben bis zum Nachtest`}</span>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-3 lg:w-[400px] lg:shrink-0">
+        <BannerButton icon={nState === 'locked' ? Lock : nState === 'done' ? TrendingUp : RotateCcw} label={nLabel} sub={nSub} locked={nState === 'locked'} highlight={nState === 'open' || nState === 'active'} disabled={busy} onClick={startNachtest} />
+        <BannerButton icon={exam.unlocked ? GraduationCap : Lock} label="Prüfung" sub={exam.unlocked ? 'Originale üben' : milestone.reached ? 'nach dem Nachtest' : `ab ${mark} % + Nachtest`} locked={!exam.unlocked} onClick={openExam} />
+      </div>
+    </div>
+  );
+}
+
+function BannerButton({ icon: Icon, label, sub, locked, highlight, disabled, onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      aria-disabled={locked}
+      className={`flex min-h-16 items-center gap-2.5 rounded-2xl px-3 py-3 text-left sm:gap-3 sm:px-4 transition ${
+        highlight ? 'bg-white text-brand-700 shadow-lg hover:bg-indigo-50' : locked ? 'cursor-not-allowed bg-white/5 text-indigo-200 ring-1 ring-white/15' : 'bg-white/15 text-white ring-1 ring-white/25 hover:bg-white/25'
+      }`}
+    >
+      <Icon size={22} className="shrink-0" />
+      <span className="min-w-0">
+        <span className="block font-semibold leading-tight">{label}</span>
+        <span className={`block text-xs ${highlight ? 'text-brand-600/80' : 'text-indigo-200'}`}>{sub}</span>
+      </span>
+    </button>
   );
 }
 
@@ -142,6 +219,11 @@ function PlanCard({ item, index }) {
             <span className={`whitespace-nowrap text-xs font-semibold tabular-nums ${c.text}`}>{progress.percent} %</span>
           </div>
           <div className="mt-1 text-xs text-slate-500">{progress.solved} von {progress.total} Aufgaben gelöst</div>
+          {item.extra && (
+            <Link to={`/thema/${topic.id}#zusatz`} className={`mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ${item.extra.isNew ? 'bg-violet-50 text-violet-700 ring-violet-200' : 'bg-slate-50 text-slate-600 ring-slate-200'} hover:brightness-95`}>
+              <PlusCircle size={13} /> {item.extra.isNew ? 'Neu: ' : ''}Zusatzübungen · {item.extra.solved}/{item.extra.total}
+            </Link>
+          )}
         </div>
       </div>
       <div className="flex gap-2 sm:shrink-0">
@@ -238,24 +320,6 @@ function EventsBox({ events }) {
   );
 }
 
-function RetestCard({ diagnose }) {
-  const navigate = useNavigate();
-  const start = async () => {
-    if (!diagnose.active) await api.post('/student/diagnose/start');
-    navigate('/diagnose');
-  };
-  return (
-    <div className="card flex flex-col items-start gap-4 border-brand-200 bg-brand-50/60 p-5 sm:flex-row sm:items-center">
-      <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white text-brand-600 shadow-sm"><RotateCcw size={22} /></div>
-      <div className="flex-1">
-        <div className="font-semibold text-slate-900">{diagnose.active ? 'Dein Test wartet auf dich' : 'Neuer Test freigeschaltet!'}</div>
-        <div className="text-sm text-slate-600">Finde heraus, in welchen Themen du dich schon verbessert hast. Dein Lernplan bleibt dabei erhalten.</div>
-      </div>
-      <button className="btn-primary" onClick={start}>{diagnose.active ? 'Fortsetzen' : 'Test starten'} <ArrowRight size={16} /></button>
-    </div>
-  );
-}
-
 function RetestResult({ retest }) {
   const [hidden, setHidden] = useState(() => {
     try { return localStorage.getItem('retest-seen') === retest.finishedAt; } catch { return false; }
@@ -267,12 +331,12 @@ function RetestResult({ retest }) {
   };
   return (
     <div className="card border-emerald-200 bg-emerald-50/70 p-5">
-      <div className="flex items-start gap-4">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
         <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white text-emerald-600 shadow-sm"><TrendingUp size={22} /></div>
-        <div className="flex-1">
+        <div className="min-w-0 flex-1">
           {retest.improved.length ? (
             <>
-              <div className="font-semibold text-slate-900">Stark! In diesen Themen hast du dich verbessert:</div>
+              <div className="font-semibold text-slate-900">Stark! Im Nachtest hast du dich in {retest.improved.length === 1 ? 'einem Thema' : `${retest.improved.length} Themen`} verbessert:</div>
               <div className="mt-2 flex flex-wrap gap-2">
                 {retest.improved.map((t) => (
                   <span key={t.id} className="chip bg-white py-1 pl-1 pr-3 text-slate-700 ring-1 ring-emerald-200"><TopicIcon topic={t} size="sm" /> {t.title}</span>
@@ -280,11 +344,19 @@ function RetestResult({ retest }) {
               </div>
             </>
           ) : (
-            <div className="font-semibold text-slate-900">Danke fürs Mitmachen beim Test! Bleib dran, denn Übung macht den Unterschied.</div>
+            <div className="font-semibold text-slate-900">Danke fürs Mitmachen beim Nachtest! Bleib dran, denn Übung macht den Unterschied.</div>
           )}
-          <p className="mt-3 text-sm text-slate-600">Deine Lehrkraft sieht dein Ergebnis und kann dir bei Bedarf auch schwierigere Aufgaben freischalten.</p>
+          {retest.extraTopics.length > 0 && (
+            <p className="mt-3 text-sm text-slate-700">
+              <PlusCircle size={14} className="mr-1 inline text-violet-600" />
+              Für {retest.extraTopics.map((t) => t.title).join(', ')} hast du <b>neue Zusatzübungen</b> bekommen. Dein Fortschritt bleibt dabei, wie er ist.
+            </p>
+          )}
         </div>
-        <button className="btn-ghost btn-sm" onClick={close}>Ausblenden</button>
+        <div className="flex shrink-0 gap-2">
+          <Link to={`/nachtest/${retest.runId}`} className="btn-primary btn-sm">Ergebnis ansehen <ArrowRight size={14} /></Link>
+          <button className="btn-ghost btn-sm" onClick={close}>Ausblenden</button>
+        </div>
       </div>
     </div>
   );

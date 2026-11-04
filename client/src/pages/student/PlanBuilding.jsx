@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Check, Loader2, Sparkles, ArrowRight, TrendingUp } from 'lucide-react';
-import { TopicIcon } from '../../components/ui.jsx';
+import { Check, Loader2, Sparkles, ArrowRight } from 'lucide-react';
 
 const STEPS_INITIAL = [
   'Deine Antworten werden ausgewertet',
@@ -14,6 +13,7 @@ const STEPS_RETEST = [
   'Deine Antworten werden ausgewertet',
   'Vergleich mit deinem letzten Test',
   'Deine Fortschritte werden zusammengestellt',
+  'Zusatzübungen werden ausgewählt',
 ];
 
 // Visualisierung: "Dein individueller Lernplan wird erstellt"
@@ -50,7 +50,7 @@ export default function PlanBuilding() {
           </div>
         </div>
         <h1 className="text-2xl font-bold text-slate-900">
-          {done ? (retest ? 'Auswertung fertig!' : 'Dein Lernplan ist fertig!') : retest ? 'Dein Test wird ausgewertet …' : 'Dein individueller Lernplan wird erstellt …'}
+          {done ? (retest ? 'Auswertung fertig!' : 'Dein Lernplan ist fertig!') : retest ? 'Dein Nachtest wird ausgewertet …' : 'Dein individueller Lernplan wird erstellt …'}
         </h1>
         <p className="mt-2 text-sm text-slate-500">{done ? (retest ? 'Schau dir an, was sich getan hat.' : 'Er passt genau zu dir und deinem Ziel.') : 'Einen Moment bitte, wir suchen die besten Aufgaben für dich heraus.'}</p>
 
@@ -69,25 +69,9 @@ export default function PlanBuilding() {
           })}
         </ul>
 
-        {done && retest && (
-          <div className="animate-pop mt-8 rounded-2xl bg-emerald-50 p-5 text-left">
-            {state.improved?.length ? (
-              <>
-                <div className="flex items-center gap-2 font-semibold text-emerald-800"><TrendingUp size={18} /> Hier hast du dich verbessert:</div>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {state.improved.map((t) => <span key={t.id} className="chip bg-white py-1 pl-1 pr-3 text-slate-700 ring-1 ring-emerald-200"><TopicIcon topic={t} size="sm" /> {t.title}</span>)}
-                </div>
-              </>
-            ) : (
-              <div className="font-semibold text-emerald-800">Danke fürs Mitmachen! Bleib dran, denn jede Übung zählt.</div>
-            )}
-            <p className="mt-3 text-sm text-slate-600">Deine Lehrkraft sieht dein Ergebnis und kann dir bei Bedarf auch schwierigere Aufgaben freischalten.</p>
-          </div>
-        )}
-
         {done && (
-          <button className="btn-primary animate-pop mt-8 px-8 py-3 text-base" onClick={() => navigate('/', { replace: true })}>
-            {retest ? 'Zur Startseite' : 'Zu meinem Lernplan'} <ArrowRight size={18} />
+          <button className="btn-primary animate-pop mt-8 px-8 py-3 text-base" onClick={() => navigate(retest && state.runId ? `/nachtest/${state.runId}` : '/', { replace: true })}>
+            {retest ? 'Ergebnis ansehen' : 'Zu meinem Lernplan'} <ArrowRight size={18} />
           </button>
         )}
       </div>
