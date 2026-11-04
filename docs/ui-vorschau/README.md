@@ -9,3 +9,9 @@ Vorher-Nachher-Bilder der wichtigsten Seiten (links aktuell, rechts neu). `00-vo
 - Lehrkraft-Bereich: Reiter oben statt Seitenleiste
 - große Seitentitel, Abschnittsüberschriften mit kräftigem Strich darunter, nummerierte Schritte (`01 02 03`)
 - flache Karten (8 px Ecken, kein Schatten), dunkle Karte mit Raster für Countdown und Anmeldung
+
+Üben und Einstiegstest (Bilder `11` bis `17`), angelehnt an die Theorie-Übungen der Werkstatt:
+- Aufgaben mit Nummer `01 02 …` und fettem Titel, Kopfzeilen ohne grauen Hintergrund
+- Rückmeldung, Tipp und Musterlösung als Kästen mit farbigem Rand links bzw. Überschrift mit Strich
+- Auswahlantworten als große Karten mit 2 px Rand (wie die Antwortkarten der Werkstatt-Theorie)
+- Einstiegstest mit Titel, Zähler und blauem Fortschrittsbalken, aktuelle Aufgabe dunkel markiert

@@ -201,14 +201,14 @@ export default function AnswerInput({ spec, value, onChange, status, disabled, o
                   onChange([...next]);
                 } else onChange([i]);
               }}
-              className={`flex items-center gap-3 rounded-xl border px-4 py-3 text-left text-sm transition ${
-                active ? 'border-brand-500 bg-brand-50 text-brand-700 ring-4 ring-brand-500/10' : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50'
+              className={`flex min-h-[52px] items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left text-base transition ${
+                active ? 'border-brand-600 bg-brand-50 text-slate-900' : 'border-slate-200 bg-white hover:border-brand-600'
               } ${status && active ? (status.correct ? '!border-emerald-400 !bg-emerald-50 !text-emerald-800' : '!border-red-300 !bg-red-50 !text-red-700') : ''}`}
             >
               <span className={`grid h-5 w-5 shrink-0 place-items-center border-2 ${spec.multiple ? 'rounded-md' : 'rounded-full'} ${active ? 'border-brand-600 bg-brand-600 text-white' : 'border-slate-300'}`}>
                 {active && <Check size={12} strokeWidth={3} />}
               </span>
-              <span className="font-medium"><Inline md={o.text} /></span>
+              <span className="font-semibold"><Inline md={o.text} /></span>
             </button>
           );
         })}

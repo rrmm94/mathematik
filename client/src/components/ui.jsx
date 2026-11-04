@@ -56,6 +56,7 @@ export function InlineMath({ md, className = '' }) {
 
 // ---------- Themen-Symbole und Farben ----------
 export const COLOR = {
+  brand: { bg: 'bg-brand-50', text: 'text-brand-600', ring: 'ring-brand-100', bar: 'bg-brand-600', solid: 'bg-brand-600' },
   indigo: { bg: 'bg-indigo-50', text: 'text-indigo-600', ring: 'ring-indigo-100', bar: 'bg-indigo-500', solid: 'bg-indigo-500' },
   sky: { bg: 'bg-sky-50', text: 'text-sky-600', ring: 'ring-sky-100', bar: 'bg-sky-500', solid: 'bg-sky-500' },
   emerald: { bg: 'bg-emerald-50', text: 'text-emerald-600', ring: 'ring-emerald-100', bar: 'bg-emerald-500', solid: 'bg-emerald-500' },
@@ -89,7 +90,7 @@ export function TopicIcon({ topic, size = 'md' }) {
   );
 }
 
-export function ProgressBar({ value = 0, color = 'indigo', className = '', height = 'h-2' }) {
+export function ProgressBar({ value = 0, color = 'brand', className = '', height = 'h-2' }) {
   const c = colorOf(color);
   return (
     <div className={`w-full overflow-hidden rounded-full bg-slate-100 ${height} ${className}`}>

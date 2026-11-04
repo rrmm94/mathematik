@@ -38,10 +38,10 @@ export default function Practice() {
   return (
     <div className="mx-auto max-w-3xl space-y-5">
       <Link to={`/thema/${topic.id}`} className="text-sm font-medium text-brand-600 hover:underline">← {topic.title}</Link>
-      <div className="card sticky top-[72px] z-30 flex items-center gap-4 p-4">
+      <div className="card sticky top-[70px] z-30 flex items-center gap-4 p-4 shadow-[0_1px_2px_rgb(20_32_44/0.10)]">
         <TopicIcon topic={topic} size="sm" />
         <div className="min-w-0 flex-1">
-          <div className="truncate font-semibold text-slate-900">{pkg.title}</div>
+          <div className="truncate text-[1.15rem] font-bold text-slate-900">{pkg.title}</div>
           <div className="flex items-center gap-3">
             <ProgressBar value={tasks.length ? (solved / tasks.length) * 100 : 0} color={topic.color} />
             <span className={`shrink-0 text-xs font-semibold ${c.text}`}>{solved}/{tasks.length}</span>
@@ -213,10 +213,10 @@ function TaskCard({ task, index, topicId, onUpdate, highlight, onReport }) {
 
   return (
     <div id={`aufgabe-${task.id}`} className={`card scroll-mt-40 overflow-hidden ${shake ? 'animate-shake' : ''} ${highlight ? 'ring-4 ring-rose-300/60' : ''}`}>
-      <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-b border-slate-100 px-5 py-3">
+      <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-b border-slate-200 px-5 py-3">
         <div className="flex items-center gap-2">
-          <span className="grid h-7 w-7 place-items-center rounded-lg bg-slate-900 text-xs font-bold text-white">{index + 1}</span>
-          <span className="hidden text-sm font-semibold text-slate-700 sm:inline">Aufgabe {index + 1}</span>
+          <span className="font-mono text-[.8rem] font-medium text-brand-600">{String(index + 1).padStart(2, '0')}</span>
+          <span className="hidden text-[1.05rem] font-bold text-slate-900 sm:inline">Aufgabe {index + 1}</span>
           {task.solved && <CheckCircle2 size={18} className="text-emerald-500" />}
           {task.points > 0 && <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-600">{task.points} {task.points === 1 ? 'Punkt' : 'Punkte'}</span>}
         </div>
@@ -236,7 +236,7 @@ function TaskCard({ task, index, topicId, onUpdate, highlight, onReport }) {
         <TaskBody prompt={task.prompt} spec={task.spec} value={value} onChange={change} status={isFree ? null : status} onSubmit={check} />
 
         {status && !isFree && (
-          <div className={`animate-pop flex items-start gap-2 rounded-xl px-4 py-3 text-sm font-medium ${status.correct ? 'bg-emerald-50 text-emerald-800' : 'bg-red-50 text-red-700'}`}>
+          <div className={`animate-pop flex items-start gap-2 rounded-r-lg border-l-4 px-4 py-3 text-[.94rem] font-semibold ${status.correct ? 'border-emerald-600 bg-emerald-50 text-emerald-800' : 'border-red-600 bg-red-50 text-red-800'}`}>
             {status.correct ? <CheckCircle2 size={18} className="shrink-0" /> : <XCircle size={18} className="shrink-0" />}
             <span>
               {status.correct ? 'Richtig! Sehr gut.' : 'Noch nicht ganz. Versuch es noch einmal oder schau dir einen Tipp an.'}
@@ -249,12 +249,12 @@ function TaskCard({ task, index, topicId, onUpdate, highlight, onReport }) {
         )}
 
         {hint && task.hint && (
-          <div className="animate-pop flex gap-2 rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-900"><Lightbulb size={18} className="shrink-0" /> <span>{task.hint}</span></div>
+          <div className="animate-pop flex gap-2 rounded-r-lg border-l-4 border-amber-500 bg-amber-50 px-4 py-3 text-[.94rem] text-amber-900"><Lightbulb size={18} className="shrink-0" /> <span><b className="mr-1">Tipp:</b>{task.hint}</span></div>
         )}
 
         {solution && (
-          <div className="animate-pop rounded-xl border border-brand-100 bg-brand-50/50 p-4">
-            <div className="mb-1 text-xs font-semibold uppercase tracking-wider text-brand-700">Musterlösung</div>
+          <div className="animate-pop rounded-lg border border-slate-200 bg-slate-50 p-4">
+            <div className="mb-2 border-b-2 border-slate-900 pb-1.5 text-[1.05rem] font-bold text-slate-900">Musterlösung</div>
             {solution.summary && !isFree && <div className="mb-2 font-semibold text-slate-900">{solution.summary}</div>}
             {isFree && solution.summary && <p className="mb-2 text-sm text-slate-700">{solution.summary}</p>}
             <MathContent md={solution.solution} />

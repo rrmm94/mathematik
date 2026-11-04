@@ -112,15 +112,15 @@ export default function Diagnose() {
     <div className="mx-auto max-w-3xl">
       <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wider text-brand-600">{data.run.retest ? 'Wiederholungstest' : 'Einstiegstest'}</div>
-          <div className="text-sm text-slate-500">{doneCount} von {items.length} Aufgaben bearbeitet</div>
+          <h1 className="text-[1.8rem] font-bold leading-tight tracking-tight text-slate-900">{data.run.retest ? 'Wiederholungstest' : 'Einstiegstest'}</h1>
+          <div className="mt-0.5 text-[.88rem] font-semibold text-slate-500"><span className="font-mono text-brand-600">{String(doneCount).padStart(2, '0')}</span> von {items.length} Aufgaben bearbeitet</div>
         </div>
         <div className="flex flex-col items-end gap-1">
           <button className="btn-secondary btn-sm" onClick={async () => { await autosave.flush(); navigate('/'); }}><Pause size={14} /> Pause machen und später weitermachen</button>
           <span className="text-[11px] text-slate-400">Deine Eingaben werden automatisch gespeichert.</span>
         </div>
       </div>
-      <ProgressBar value={(doneCount / items.length) * 100} height="h-2.5" className="mb-6" />
+      <ProgressBar value={(doneCount / items.length) * 100} className="mb-6" />
 
       {/* Themen-Leiste */}
       <div className="mb-5 flex gap-2 overflow-x-auto p-1">
@@ -133,7 +133,7 @@ export default function Diagnose() {
               key={t.id}
               title={t.title}
               onClick={() => go(items.findIndex((x) => x.topic.id === t.id))}
-              className={`flex min-w-12 flex-1 items-center justify-center rounded-xl border px-2 py-2.5 transition ${current ? 'border-brand-500 bg-brand-50 ring-4 ring-brand-500/10' : complete ? 'border-brand-200 bg-brand-50/50 hover:bg-brand-50' : 'border-slate-200 bg-white hover:bg-slate-50'}`}
+              className={`flex min-w-12 flex-1 items-center justify-center rounded-xl border px-2 py-2.5 transition ${current ? 'border-2 border-brand-600 bg-white' : complete ? 'border-slate-200 bg-slate-100 hover:border-slate-300' : 'border-slate-200 bg-white hover:border-slate-300'}`}
               aria-label={`Thema ${i + 1}: ${t.title}`}
               aria-current={current}
             >
@@ -144,11 +144,11 @@ export default function Diagnose() {
       </div>
 
       <div key={item.id} className="card animate-soft overflow-hidden">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-3 border-b border-slate-100 bg-slate-50/70 px-6 py-4">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-3 border-b border-slate-200 px-6 py-4">
           <TopicIcon topic={item.topic} size="sm" />
           <div className="min-w-48 flex-1">
-            <div className="truncate font-semibold text-slate-900">{item.topic.title}</div>
-            <div className="text-xs text-slate-500">Thema {topicNo} von {topics.length} · Aufgabe {posInTopic} von {inTopic.length}</div>
+            <div className="truncate text-[1.15rem] font-bold text-slate-900">{item.topic.title}</div>
+            <div className="text-[.8rem] text-slate-500">Thema {topicNo} von {topics.length} · Aufgabe {posInTopic} von {inTopic.length}</div>
           </div>
           <div className="flex flex-wrap justify-end gap-1.5">
             {inTopic.map((x, n) => {
@@ -160,7 +160,7 @@ export default function Diagnose() {
                   onClick={() => go(items.findIndex((y) => y.id === x.id))}
                   aria-label={`Aufgabe ${n + 1}${done ? ' (bearbeitet)' : ' (offen)'}`}
                   aria-current={cur}
-                  className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-semibold transition ${cur ? 'border-brand-600 bg-brand-600 text-white shadow-sm' : done ? 'border-slate-200 bg-slate-100 text-slate-600 hover:bg-slate-200' : 'border-slate-300 bg-white text-slate-500 hover:border-slate-400 hover:text-slate-700'}`}
+                  className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-semibold transition ${cur ? 'border-slate-900 bg-slate-900 text-white' : done ? 'border-slate-200 bg-slate-100 text-slate-600 hover:border-slate-400' : 'border-slate-300 bg-white text-slate-600 hover:border-slate-500 hover:text-slate-900'}`}
                 >
                   {done && !cur && <Check size={12} strokeWidth={3} />}
                   <span><span className="hidden sm:inline">Aufgabe </span>{n + 1}</span>
@@ -173,7 +173,7 @@ export default function Diagnose() {
           <TaskContext md={item.context} />
           <TaskBody prompt={item.prompt} spec={item.spec} value={answers[item.id]} onChange={change} onSubmit={next} />
         </div>
-        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 px-6 py-4">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 px-6 py-4">
           <button className="btn-ghost" disabled={idx === 0 || busy} onClick={() => go(idx - 1)}><ArrowLeft size={16} /> Zurück</button>
           <div className="flex gap-2">
             {isEmptyAnswer(item.spec, answers[item.id]) ? (
