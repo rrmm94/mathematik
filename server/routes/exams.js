@@ -5,6 +5,7 @@ import { Router } from 'express';
 import { all, get, run, json } from '../db.js';
 import { requireStudent } from '../auth.js';
 import { progressState } from '../plan.js';
+import { gradeFor } from '../../shared/grades.js';
 import {
   examsForProfile, examByKey, publicPart, reviewPart, scoreAttempt, maxPoints, SECTIONS, TIMING, WAHL_CHOOSE, PART_TITLES,
 } from '../exams/index.js';
@@ -39,6 +40,8 @@ export function attemptSummary(a) {
     id: a.id, examKey: a.exam_key, title: exam.title, status: a.status, section: a.section, sections,
     startedAt: a.started_at, finishedAt: a.finished_at, choice: json(a.choice, []),
     total: sc.total, max: sc.max, auto: sc.auto, selfOpen: sc.selfOpen,
+    // Note erst, wenn alle Selbsteinschätzungen eingetragen sind
+    grade: a.status === 'done' && sc.selfOpen === 0 ? gradeFor(sc.total, sc.max) : null,
     parts: Object.fromEntries(Object.entries(sc.parts).map(([k, p]) => [k, { title: p.title, score: p.score, max: p.max }])),
     durations: {
       teil1: a.s1_started && a.s1_finished ? ms(a.s1_finished) - ms(a.s1_started) : null,

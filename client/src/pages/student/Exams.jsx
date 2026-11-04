@@ -6,6 +6,7 @@ import {
 import { api } from '../../lib/api.js';
 import { useLoad, PageLoader, ErrorBox, Modal, formatDate } from '../../components/ui.jsx';
 import { fmtPts } from '../../components/ExamReview.jsx';
+import { GRADE_TONE } from './ExamResult.jsx';
 
 export const FORMELSAMMLUNG = '/formelsammlung-hs-rs.pdf';
 
@@ -192,7 +193,7 @@ function ExamList({ exams, timing, active, onBack }) {
                       <span className="font-medium">{formatDate(a.finishedAt, { day: '2-digit', month: '2-digit', year: 'numeric' })}</span>
                       <span className="text-slate-500">{a.sections.length === 2 ? 'komplett' : a.sections[0] === 'teil1' ? 'nur Hauptteil 1' : 'Hauptteil 2 + Wahlteil'}</span>
                       <span className="ml-auto font-semibold tabular-nums">{fmtPts(a.total)} / {a.max} Punkte</span>
-                      {a.selfOpen > 0 && <span className="chip bg-amber-100 text-amber-800">{a.selfOpen} selbst einschätzen</span>}
+                      {a.selfOpen > 0 ? <span className="chip bg-amber-100 text-amber-800">{a.selfOpen} selbst einschätzen</span> : a.grade && <span className={`chip text-white ${GRADE_TONE[a.grade.grade]}`}>Note {a.grade.grade}</span>}
                       <ArrowRight size={14} className="text-slate-400" />
                     </Link>
                   </li>

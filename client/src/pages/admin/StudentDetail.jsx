@@ -151,7 +151,7 @@ function ExamsView({ student, exams }) {
     <div className="card overflow-hidden">
       <table className="w-full text-sm">
         <thead className="bg-slate-50 text-left text-xs uppercase text-slate-500">
-          <tr><th className="px-4 py-2.5">Prüfung</th><th>Datum</th><th>Hauptteil 1</th><th>Hauptteil 2</th><th>Wahlteil</th><th>Gesamt</th><th /></tr>
+          <tr><th className="px-4 py-2.5">Prüfung</th><th>Datum</th><th>Hauptteil 1</th><th>Hauptteil 2</th><th>Wahlteil</th><th>Gesamt / Note</th><th /></tr>
         </thead>
         <tbody className="divide-y divide-slate-100">
           {exams.map((a) => (
@@ -166,7 +166,10 @@ function ExamsView({ student, exams }) {
                   {a.parts[k] ? <>{fmtPts(a.parts[k].score)} / {fmtPts(a.parts[k].max)}<div className="text-[11px] text-slate-400">{k === 'wahl' ? `Aufg. ${a.choice.join(' + ')}` : dur(a.durations[k === 'teil1' ? 'teil1' : 'teil2'])}</div></> : <span className="text-slate-300">–</span>}
                 </td>
               ))}
-              <td className="font-semibold tabular-nums text-slate-900">{a.status === 'done' ? `${fmtPts(a.total)} / ${a.max}` : '–'}</td>
+              <td className="font-semibold tabular-nums text-slate-900">
+                {a.status === 'done' ? `${fmtPts(a.total)} / ${a.max}` : '–'}
+                {a.status === 'done' && <div className="text-[11px] font-normal text-slate-500">{a.grade ? `Note ${a.grade.grade} (${a.grade.label}) · ${String(a.grade.percent).replace('.', ',')} %` : 'Note erst nach Selbsteinschätzung'}</div>}
+              </td>
               <td className="pr-4 text-right"><ChevronRight size={16} className="inline text-slate-400" /></td>
             </tr>
           ))}

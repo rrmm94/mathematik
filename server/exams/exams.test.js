@@ -62,3 +62,12 @@ test('während der Prüfung keine Lösungen in der Ansicht', () => {
   const text = JSON.stringify(['teil1', 'teil2', 'wahl'].map((p) => publicPart(exam, p)));
   assert.ok(!/"correct"|"value"|"solution"|"alternatives"/.test(text));
 });
+
+test('Notenspiegel', async () => {
+  const { gradeFor } = await import('../../shared/grades.js');
+  const g = (p) => gradeFor(p, 100).grade;
+  assert.deepEqual([g(100), g(96), g(95.9), g(80), g(79.9), g(60), g(59), g(45), g(44), g(16), g(15), g(0)], [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6]);
+  assert.equal(gradeFor(81, 84).grade, 1); // 96,4 %
+  assert.equal(gradeFor(80, 84).grade, 2); // 95,2 %
+  assert.equal(gradeFor(38, 84).grade, 4); // 45,2 %
+});

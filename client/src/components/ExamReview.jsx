@@ -41,7 +41,7 @@ function GroupReview({ pk, g, sg, answers, onSelf, readOnly }) {
   const [open, setOpen] = useState(selfOpen && !readOnly);
   const full = sg.score >= sg.max;
   return (
-    <div className={`card overflow-hidden ${sg.counted ? '' : 'opacity-70'}`}>
+    <div data-selfopen={selfOpen ? '1' : undefined} className={`card scroll-mt-24 overflow-hidden ${sg.counted ? '' : 'opacity-70'}`}>
       <button onClick={() => setOpen(!open)} className="flex w-full items-center gap-3 px-5 py-3.5 text-left hover:bg-slate-50">
         {open ? <ChevronDown size={18} className="text-slate-400" /> : <ChevronRight size={18} className="text-slate-400" />}
         <span className="font-semibold text-slate-900">{name}</span>
