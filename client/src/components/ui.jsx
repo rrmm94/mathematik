@@ -135,17 +135,32 @@ export function Modal({ open, onClose, title, children, wide = false }) {
     if (!open) return;
     const onKey = (e) => e.key === 'Escape' && onClose?.();
     window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    // Seite dahinter nicht mitscrollen lassen
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prevOverflow;
+    };
   }, [open, onClose]);
   if (!open) return null;
+  // Das Fenster ist nie höher als der Bildschirm: Kopfzeile (mit Schließen-Button) bleibt
+  // immer sichtbar, nur der Inhalt darunter scrollt.
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-slate-900/40 p-4 backdrop-blur-sm sm:items-center" onMouseDown={onClose}>
-      <div className={`card animate-pop w-full ${wide === 'xl' ? 'max-w-5xl' : wide ? 'max-w-3xl' : 'max-w-lg'} p-6`} onMouseDown={(e) => e.stopPropagation()}>
-        <div className="mb-4 flex items-center justify-between gap-4">
-          <h2 className="text-lg font-bold text-slate-900">{title}</h2>
-          <button className="btn-ghost btn-sm" onClick={onClose} aria-label="Schließen"><X size={18} /></button>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-2 backdrop-blur-sm sm:p-4" onMouseDown={onClose}>
+      <div
+        className={`card animate-pop flex max-h-full w-full flex-col overflow-hidden ${wide === 'xl' ? 'max-w-5xl' : wide ? 'max-w-3xl' : 'max-w-lg'}`}
+        role="dialog"
+        aria-modal="true"
+        onMouseDown={(e) => e.stopPropagation()}
+      >
+        <div className="flex shrink-0 items-center justify-between gap-4 border-b border-slate-100 px-4 py-3 sm:px-6 sm:py-4">
+          <h2 className="min-w-0 text-lg font-bold text-slate-900">{title}</h2>
+          <button className="btn-ghost btn-sm shrink-0" onClick={onClose} aria-label="Schließen"><X size={18} /></button>
         </div>
-        {children}
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-4 sm:px-6 sm:py-5">
+          {children}
+        </div>
       </div>
     </div>
   );
