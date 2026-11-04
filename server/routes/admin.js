@@ -4,7 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { all, get, run, json, tx, getSetting, setSetting, UPLOAD_DIR } from '../db.js';
 import { requireAdmin, hashPassword } from '../auth.js';
-import { runTopicScores, buildPlanFromRun, topicsForProfile, topicProgress, syncPlan, progressState, compareRuns, previousRun } from '../plan.js';
+import { runTopicScores, buildPlanFromRun, topicsForProfile, topicProgress, syncPlan, progressState, compareRuns, previousRun, nachtestTrend, practiceStats } from '../plan.js';
 import { PROFILE_KEYS, MIN_STUDENT_PASSWORD } from '../../shared/constants.js';
 import { checkAnswer, publicAnswerSpec, answerSummary } from '../../shared/checker.js';
 import { attemptSummary, attemptSections } from './exams.js';
@@ -83,6 +83,10 @@ function studentSummary(u) {
     lastLogin: u.last_login,
     note: u.note,
     diagnose: runs.length ? { count: runs.filter((x) => x.status === 'done').length, active: runs.some((x) => x.status === 'active'), last: runs[runs.length - 1].finished_at } : null,
+    // Einstiegstest (Durchlauf 1) getrennt von den Nachtests
+    entry: runs.find((x) => x.number === 1) ? { done: runs.find((x) => x.number === 1).status === 'done', finishedAt: runs.find((x) => x.number === 1).finished_at } : null,
+    trend: nachtestTrend(u.id),
+    practice: practiceStats(u.id),
     progress: state.progress.percent,
     progressDetail: state.progress,
     milestone: state.milestone,

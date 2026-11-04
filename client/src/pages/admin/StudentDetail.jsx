@@ -119,6 +119,8 @@ function ProgressSummary({ student: s, runs, onOpenRun }) {
           <span className={`chip ${nStatus.cls}`}>{s.nachtest.count ? <Check size={12} /> : s.nachtest.canStart || s.nachtest.active ? <Unlock size={12} /> : <Lock size={12} />} {nStatus.text}</span>
           <span className={`chip ${s.exam.unlocked ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-500'}`}>{s.exam.unlocked ? <GraduationCap size={12} /> : <Lock size={12} />} Prüfungen {s.exam.unlocked ? 'freigeschaltet' : 'gesperrt'}</span>
           {s.milestone.at && <span className="text-slate-500">{mark} % erreicht am {formatDate(s.milestone.at, { day: '2-digit', month: '2-digit', year: 'numeric' })}</span>}
+          {s.practice?.firstTry?.tasks > 0 && <span className="chip bg-slate-100 text-slate-700" title="Übungsaufgaben, die beim ersten Versuch richtig waren">1. Versuch richtig: {s.practice.firstTry.percent} % ({s.practice.firstTry.correct}/{s.practice.firstTry.tasks})</span>}
+          {s.practice?.solution?.tasks > 0 && <span className="chip bg-slate-100 text-slate-700" title="Bei so vielen bearbeiteten Übungsaufgaben wurde die Lösung angezeigt"><Eye size={12} /> Lösung angesehen: {s.practice.solution.viewed}× ({s.practice.solution.percent} %)</span>}
         </div>
       </div>
       {last && (

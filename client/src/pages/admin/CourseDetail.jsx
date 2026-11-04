@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { UserPlus, KeyRound, Pencil, Unlock, Printer, Trash2, ChevronRight } from 'lucide-react';
+import { UserPlus, KeyRound, Pencil, Unlock, Printer, Trash2, ArrowUpRight, ArrowDownRight, ArrowRight, Check, Eye, Target } from 'lucide-react';
 import { PROFILES, LEVELS, MIN_STUDENT_PASSWORD } from '../../../../shared/constants.js';
 import { api } from '../../lib/api.js';
 import { useLoad, PageLoader, ErrorBox, Modal, toast, Empty, ProgressBar, formatDate } from '../../components/ui.jsx';
@@ -33,11 +33,11 @@ export default function CourseDetail() {
   );
 }
 
-export function LevelMix({ counts }) {
+export function LevelMix({ counts, className = 'w-28' }) {
   const total = counts.reduce((a, b) => a + b, 0);
   if (!total) return <span className="text-xs text-slate-400">–</span>;
   return (
-    <div className="flex w-28 overflow-hidden rounded-full" title={LEVELS.map((l, i) => `${l.short}: ${counts[i]}`).join(' · ')}>
+    <div className={`flex overflow-hidden rounded-full ${className}`} title={LEVELS.map((l, i) => `${l.short}: ${counts[i]}`).join(' · ')}>
       {counts.map((n, i) => n > 0 && <div key={i} className="h-2.5" style={{ width: `${(n / total) * 100}%`, background: LEVELS[i].color }} />)}
     </div>
   );
@@ -58,51 +58,108 @@ export function StudentTable({ students, courses, onChange }) {
   return (
     <>
       <div className="card overflow-x-auto">
-        <table className="w-full min-w-[780px] text-sm">
-          <thead className="border-b border-slate-200 bg-slate-50/80 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
+        <table className="w-full min-w-[960px] text-sm">
+          <thead className="whitespace-nowrap border-b border-slate-200 bg-slate-50/80 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
             <tr>
-              <th className="px-4 py-3">Name</th>
-              <th className="px-4 py-3">Ziel</th>
-              <th className="px-4 py-3">Diagnose</th>
-              <th className="px-4 py-3">Niveaus</th>
-              <th className="px-4 py-3">Fortschritt</th>
-              <th className="px-4 py-3 text-right">Aktionen</th>
+              <th className="px-3 py-3">Name</th>
+              <th className="px-3 py-3">Ziel</th>
+              <th className="px-3 py-3">Einstiegstest</th>
+              <th className="px-3 py-3">Niveaus</th>
+              <th className="px-3 py-3">Nachtest</th>
+              <th className="px-3 py-3">Fortschritt</th>
+              <th className="px-3 py-3" title="Anteil der Übungsaufgaben, die beim allerersten Versuch richtig waren">1. Versuch</th>
+              <th className="px-3 py-3" title="Bei wie vielen bearbeiteten Übungsaufgaben die Lösung angezeigt wurde">Lösung</th>
+              <th className="px-3 py-3"><span className="sr-only">Aktionen</span></th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100">
             {students.map((s) => (
               <tr key={s.id} className="hover:bg-slate-50/60">
-                <td className="px-4 py-3">
+                <td className="px-3 py-3">
                   <Link to={`/admin/kinder/${s.id}`} className="whitespace-nowrap font-semibold text-slate-900 hover:text-brand-700">{s.displayName}</Link>
                   <div className="whitespace-nowrap text-xs text-slate-500">{s.username}{s.lastLogin && ` · zuletzt ${formatDate(s.lastLogin)}`}</div>
                 </td>
-                <td className="px-4 py-3">{s.profile ? <span className="chip bg-brand-50 text-brand-700">{PROFILES[s.profile]?.short}</span> : <span className="text-slate-400">offen</span>}</td>
-                <td className="px-4 py-3">
-                  {s.diagnose?.active ? <span className="chip bg-amber-100 text-amber-800">läuft</span>
-                    : s.diagnose?.count ? <span className="chip bg-emerald-100 text-emerald-700">{s.diagnose.count}× gemacht</span>
+                <td className="px-3 py-3">{s.profile ? <span className="chip bg-brand-50 text-brand-700">{PROFILES[s.profile]?.short}</span> : <span className="text-slate-400">offen</span>}</td>
+                <td className="px-3 py-3">
+                  {s.entry?.done ? <span className="chip bg-emerald-100 text-emerald-700"><Check size={12} /> gemacht</span>
+                    : s.entry ? <span className="chip bg-amber-100 text-amber-800">läuft</span>
                       : <span className="chip bg-slate-100 text-slate-500">ausstehend</span>}
-                  {s.diagUnlocked && s.diagnose?.count > 0 && <span className="chip ml-1 bg-sky-100 text-sky-700">freigegeben</span>}
                 </td>
-                <td className="px-4 py-3"><LevelMix counts={s.levelCounts} /></td>
-                <td className="px-4 py-3">
-                  <div className="flex items-center gap-2"><ProgressBar value={s.progress} className="w-20" /><span className="whitespace-nowrap text-xs text-slate-500">{s.progress} %</span></div>
+                <td className="px-3 py-3"><LevelMix counts={s.levelCounts} className="w-20" /></td>
+                <td className="px-3 py-3"><NachtestCell s={s} /></td>
+                <td className="px-3 py-3">
+                  <div className="flex items-center gap-2"><ProgressBar value={s.progress} className="w-20" /><span className="whitespace-nowrap text-xs font-semibold text-slate-700">{s.progress} %</span></div>
+                  {s.progressDetail?.total > 0 && <div className="mt-0.5 whitespace-nowrap text-[11px] text-slate-400">{s.progressDetail.solved} von {s.progressDetail.total} gelöst</div>}
                 </td>
-                <td className="whitespace-nowrap px-4 py-3 text-right">
+                <td className="px-3 py-3"><FirstTryCell p={s.practice?.firstTry} /></td>
+                <td className="px-3 py-3"><SolutionCell p={s.practice?.solution} /></td>
+                <td className="whitespace-nowrap px-3 py-3 text-right">
                   <button className="btn-ghost btn-sm" onClick={() => setEdit({ ...s })} title="Bearbeiten"><Pencil size={14} /></button>
                   <button className="btn-ghost btn-sm" onClick={() => setPwFor(s)} title="Passwort ändern"><KeyRound size={14} /></button>
                   {s.diagnose?.count > 0 && (
                     <button className={`btn-ghost btn-sm ${s.diagUnlocked ? 'text-sky-600' : ''}`} onClick={() => unlock(s)} title={s.diagUnlocked ? 'Freigabe zurücknehmen' : 'Diagnosetest erneut freigeben'}><Unlock size={14} /></button>
                   )}
-                  <Link to={`/admin/kinder/${s.id}`} className="btn-ghost btn-sm" title="Details"><ChevronRight size={14} /></Link>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-xs text-slate-500">
+        <span><b>Nachtest:</b> Pfeil und Zahl = Veränderung des Anteils richtiger Antworten gegenüber dem Test davor, in Prozentpunkten über alle Themen</span>
+        <span><b>1. Versuch:</b> Übungsaufgaben, die gleich beim ersten Versuch stimmten (wie in der Prüfung)</span>
+        <span><b>Lösung:</b> so oft wurde bei Übungsaufgaben die Lösung angesehen</span>
+      </div>
       <EditStudent student={edit} courses={courses} onClose={() => setEdit(null)} onSaved={() => { setEdit(null); onChange(); }} />
       <SetPassword student={pwFor} onClose={() => setPwFor(null)} />
     </>
+  );
+}
+
+// Nachtest: gemacht? Und im Schnitt besser, gleich oder schlechter als der Test davor?
+function NachtestCell({ s }) {
+  const t = s.trend;
+  if (s.nachtest?.active) return <span className="chip bg-amber-100 text-amber-800">läuft</span>;
+  if (!s.nachtest?.count) {
+    if (s.nachtest?.canStart) return <span className="chip bg-sky-100 text-sky-700">{s.nachtest.byTeacher ? 'freigegeben' : 'freigeschaltet'}</span>;
+    return <span className="whitespace-nowrap text-xs text-slate-400">noch nicht</span>;
+  }
+  const tone = !t ? 'text-slate-500' : t.direction === 'up' ? 'text-emerald-700' : t.direction === 'down' ? 'text-rose-700' : 'text-slate-500';
+  const Icon = !t ? null : t.direction === 'up' ? ArrowUpRight : t.direction === 'down' ? ArrowDownRight : ArrowRight;
+  return (
+    <div title={t ? `Richtig im Test davor: ${t.before} %, im Nachtest: ${t.after} % · ${t.better} Themen besser, ${t.same} gleich, ${t.worse} schlechter` : ''}>
+      <div className="flex items-center gap-1.5 whitespace-nowrap">
+        <span className="chip bg-emerald-100 text-emerald-700"><Check size={12} /> {s.nachtest.count}×</span>
+        {t && (
+          <span className={`inline-flex items-center gap-0.5 text-sm font-bold tabular-nums ${tone}`}>
+            <Icon size={16} strokeWidth={2.5} />{t.delta > 0 ? `+${t.delta}` : t.delta}
+          </span>
+        )}
+        {s.nachtest.canStart && <span className="chip bg-sky-100 text-sky-700">neu freigegeben</span>}
+      </div>
+      {t && <div className="mt-0.5 whitespace-nowrap text-[11px] text-slate-400">{t.before} % → {t.after} % richtig</div>}
+    </div>
+  );
+}
+
+function FirstTryCell({ p }) {
+  if (!p || !p.tasks) return <span className="text-xs text-slate-400">–</span>;
+  const tone = p.percent >= 70 ? 'text-emerald-700' : p.percent >= 40 ? 'text-amber-700' : 'text-rose-700';
+  return (
+    <div className="whitespace-nowrap">
+      <span className={`inline-flex items-center gap-1 text-sm font-bold tabular-nums ${tone}`}><Target size={14} /> {p.percent} %</span>
+      <div className="text-[11px] text-slate-400">{p.correct} von {p.tasks}</div>
+    </div>
+  );
+}
+
+function SolutionCell({ p }) {
+  if (!p || !p.tasks) return <span className="text-xs text-slate-400">–</span>;
+  return (
+    <div className="whitespace-nowrap">
+      <span className={`inline-flex items-center gap-1 text-sm font-bold tabular-nums ${p.percent >= 30 ? 'text-amber-700' : 'text-slate-700'}`}><Eye size={14} /> {p.viewed}×</span>
+      <div className="text-[11px] text-slate-400">bei {p.percent} % der Aufg.</div>
+    </div>
   );
 }
 

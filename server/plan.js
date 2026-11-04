@@ -197,3 +197,53 @@ export function addExtraPractice(userId, runId) {
   });
   return added;
 }
+
+// ---------------------------------------------------------------- Kennzahlen für die Lehrkraft
+
+// Ergebnis des letzten Nachtests im Vergleich zum vorherigen Test: Anteil richtiger Antworten über alle Themen,
+// die in beiden Tests vorkamen (Durchschnitt), dazu die Anzahl besserer/gleicher/schlechterer Themen.
+export function nachtestTrend(userId) {
+  const last = get("SELECT * FROM diag_runs WHERE user_id = ? AND status = 'done' AND number > 1 ORDER BY number DESC LIMIT 1", userId);
+  if (!last) return null;
+  const prev = previousRun(userId, last);
+  if (!prev) return null;
+  const cmp = compareRuns(prev.id, last.id).filter((c) => c.before && c.before.total && c.after.total);
+  const sum = (k, f) => cmp.reduce((s, c) => s + c[k][f], 0);
+  const before = sum('before', 'total') ? sum('before', 'correct') / sum('before', 'total') : 0;
+  const after = sum('after', 'total') ? sum('after', 'correct') / sum('after', 'total') : 0;
+  const delta = Math.round((after - before) * 100);
+  return {
+    runId: last.id,
+    finishedAt: last.finished_at,
+    before: Math.round(before * 100),
+    after: Math.round(after * 100),
+    delta,
+    direction: delta > 0 ? 'up' : delta < 0 ? 'down' : 'same',
+    better: cmp.filter((c) => c.status === 'better').length,
+    same: cmp.filter((c) => c.status === 'same' || c.status === 'perfect').length,
+    worse: cmp.filter((c) => c.status === 'worse').length,
+  };
+}
+
+// Übungsaufgaben: Wie viele wurden beim allerersten Versuch richtig gelöst, wie oft wurde die Lösung angesehen?
+// Gezählt werden nur automatisch prüfbare Aufgaben (Freitext hat kein Richtig/Falsch).
+export function practiceStats(userId) {
+  const first = get(
+    `SELECT COUNT(*) AS n, SUM(CASE WHEN a.correct = 1 THEN 1 ELSE 0 END) AS ok
+     FROM attempts a JOIN tasks t ON t.id = a.task_id AND t.kind = 'practice'
+     WHERE a.id IN (SELECT MIN(id) FROM attempts WHERE user_id = ? GROUP BY task_id) AND a.correct IS NOT NULL`,
+    userId,
+  );
+  const worked = get(
+    `SELECT COUNT(*) AS n, SUM(CASE WHEN tp.solution_viewed = 1 THEN 1 ELSE 0 END) AS viewed,
+            SUM(CASE WHEN tp.solution_viewed = 1 AND tp.solved = 1 THEN 1 ELSE 0 END) AS viewedSolved
+     FROM task_progress tp JOIN tasks t ON t.id = tp.task_id AND t.kind = 'practice'
+     WHERE tp.user_id = ? AND (tp.attempts > 0 OR tp.solution_viewed = 1)`,
+    userId,
+  );
+  const n = first.n || 0;
+  return {
+    firstTry: { tasks: n, correct: first.ok || 0, percent: n ? Math.round(((first.ok || 0) / n) * 100) : null },
+    solution: { tasks: worked.n || 0, viewed: worked.viewed || 0, viewedThenSolved: worked.viewedSolved || 0, percent: worked.n ? Math.round(((worked.viewed || 0) / worked.n) * 100) : null },
+  };
+}
