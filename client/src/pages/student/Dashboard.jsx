@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import {
   ClipboardCheck, ArrowRight, Target, CalendarClock, MessageSquareHeart, BookOpen, Dumbbell, Sparkles, Clock, MapPin, PartyPopper, TrendingUp, RotateCcw,
-  Lock, GraduationCap, CheckCircle2, PlusCircle, Check,
+  Lock, GraduationCap, CheckCircle2, PlusCircle,
 } from 'lucide-react';
 import { api } from '../../lib/api.js';
 import { useLoad, PageLoader, ErrorBox, TopicIcon, ProgressBar, formatDate, Empty, colorOf, Modal, toast } from '../../components/ui.jsx';
@@ -24,10 +24,6 @@ export default function Dashboard() {
     );
   }
 
-  // Empfehlung: das erste Thema im Lernplan, das noch nicht geschafft ist
-  const isDone = (p) => p.progress.total > 0 && p.progress.solved >= p.progress.total;
-  const nextIdx = plan.findIndex((p) => !isDone(p));
-
   return (
     <div className="space-y-6">
       <GoalBanner data={data} />
@@ -43,11 +39,11 @@ export default function Dashboard() {
           <div className="mb-3 flex items-end justify-between">
             <div>
               <h2 className="text-lg font-bold text-slate-900">Dein Lernplan</h2>
-              <p className="text-sm text-slate-500">Erledigte Themen sind ausgegraut. Mach beim markierten Thema weiter, du kannst aber auch jedes andere frei wählen.</p>
+              <p className="text-sm text-slate-500">Oben steht, womit du am besten anfängst. Du kannst aber jedes Thema frei wählen.</p>
             </div>
           </div>
           <div className="space-y-3">
-            {plan.map((p, i) => <PlanCard key={p.topic.id} item={p} index={i} next={i === nextIdx} />)}
+            {plan.map((p, i) => <PlanCard key={p.topic.id} item={p} index={i} />)}
           </div>
         </section>
         <aside className="order-first grid gap-6 md:grid-cols-2 lg:order-none lg:block lg:space-y-6">
@@ -201,58 +197,33 @@ function DiagnoseStart({ diagnose, first }) {
   );
 }
 
-function PlanCard({ item, index, next }) {
+function PlanCard({ item, index }) {
   const { topic, progress } = item;
   const c = colorOf(topic.color);
   const done = progress.total > 0 && progress.solved >= progress.total;
-  const extraChip = item.extra && (
-    <Link to={`/thema/${topic.id}#zusatz`} className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ${item.extra.isNew ? 'bg-violet-50 text-violet-700 ring-violet-200' : 'bg-white text-slate-600 ring-slate-200'} hover:brightness-95`}>
-      <PlusCircle size={13} /> {item.extra.isNew ? 'Neu: ' : ''}Zusatzübungen · {item.extra.solved}/{item.extra.total}
-    </Link>
-  );
-
-  // Erledigte Themen: kompakt und ausgegraut, damit das nächste offene Thema schnell ins Auge fällt.
-  if (done) {
-    return (
-      <div className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-slate-100/60 px-4 py-3 sm:flex-row sm:items-center">
-        <div className="flex min-w-0 flex-1 items-center gap-3">
-          <div className="relative">
-            <div className="opacity-50 grayscale"><TopicIcon topic={topic} size="sm" /></div>
-            <span className="absolute -bottom-1 -right-1 grid h-4 w-4 place-items-center rounded-full bg-emerald-500 text-white ring-2 ring-white"><Check size={10} strokeWidth={3.5} /></span>
-          </div>
-          <div className="min-w-0 flex-1">
-            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-              <Link to={`/thema/${topic.id}`} className="truncate font-medium text-slate-500 hover:text-brand-700">{topic.title}</Link>
-              <span className="chip bg-emerald-100/80 text-emerald-700"><PartyPopper size={12} /> Geschafft · {progress.solved}/{progress.total}</span>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-wrap items-center gap-2 sm:shrink-0">
-          {extraChip}
-          <Link to={`/thema/${topic.id}`} className="btn-ghost btn-sm text-slate-500"><RotateCcw size={14} /> Wiederholen</Link>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className={`card group flex flex-col gap-4 p-4 transition sm:flex-row sm:items-center sm:p-5 ${next ? 'border-brand-300 ring-4 ring-brand-500/10' : 'hover:border-slate-300'}`}>
+    <div className="card group flex flex-col gap-4 p-4 transition hover:border-slate-300 sm:flex-row sm:items-center sm:p-5">
       <div className="flex min-w-0 flex-1 items-center gap-4">
         <div className="relative">
           <TopicIcon topic={topic} />
-          <span className={`absolute -left-2 -top-2 grid h-6 w-6 place-items-center rounded-full text-[11px] font-bold text-white ring-2 ring-white ${next ? 'bg-brand-600' : 'bg-slate-900'}`}>{index + 1}</span>
+          <span className="absolute -left-2 -top-2 grid h-6 w-6 place-items-center rounded-full bg-slate-900 text-[11px] font-bold text-white ring-2 ring-white">{index + 1}</span>
         </div>
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <Link to={`/thema/${topic.id}`} className="truncate font-semibold text-slate-900 hover:text-brand-700">{topic.title}</Link>
-            {next && <span className="chip bg-amber-100 text-amber-800"><Sparkles size={12} /> Hier geht’s weiter</span>}
+            {index === 0 && !done && <span className="chip bg-amber-100 text-amber-800"><Sparkles size={12} /> Als Nächstes empfohlen</span>}
+            {done && <span className="chip bg-emerald-100 text-emerald-700"><PartyPopper size={12} /> Geschafft</span>}
           </div>
           <div className="mt-2 flex items-center gap-3">
             <ProgressBar value={progress.percent} color={topic.color} className="max-w-xs" />
             <span className={`whitespace-nowrap text-xs font-semibold tabular-nums ${c.text}`}>{progress.percent} %</span>
           </div>
           <div className="mt-1 text-xs text-slate-500">{progress.solved} von {progress.total} Aufgaben gelöst</div>
-          {extraChip && <div className="mt-2">{extraChip}</div>}
+          {item.extra && (
+            <Link to={`/thema/${topic.id}#zusatz`} className={`mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ${item.extra.isNew ? 'bg-violet-50 text-violet-700 ring-violet-200' : 'bg-slate-50 text-slate-600 ring-slate-200'} hover:brightness-95`}>
+              <PlusCircle size={13} /> {item.extra.isNew ? 'Neu: ' : ''}Zusatzübungen · {item.extra.solved}/{item.extra.total}
+            </Link>
+          )}
         </div>
       </div>
       <div className="flex gap-2 sm:shrink-0">
