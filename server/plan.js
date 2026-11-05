@@ -26,7 +26,55 @@ export function runTopicScores(runId) {
 // Ab dieser Stufe (Regelstandard) gilt ein Thema im Test als „gekonnt“.
 export const GOOD_LEVEL = 2;
 
+// So viele Übungsaufgaben soll ein Kind je Thema im Lernplan mindestens haben.
+export const MIN_TASKS_PER_TOPIC = 10;
+
+// Anzahl der Übungsaufgaben je Stufe (0..3) in einem Thema für ein Profil.
+function practiceCountsByLevel(topicId, profile) {
+  const counts = {};
+  const pkgs = all('SELECT p.id, p.level, p.profiles, (SELECT COUNT(*) FROM tasks t WHERE t.package_id = p.id AND t.kind = \'practice\') AS n FROM packages p WHERE p.topic_id = ?', topicId);
+  for (const p of pkgs) {
+    const pr = json(p.profiles, []);
+    if (pr.length && !pr.includes(profile)) continue;
+    counts[p.level] = (counts[p.level] || 0) + p.n;
+  }
+  return counts;
+}
+
+// Freizuschaltende Stufen: die Stufe aus dem Test (bzw. bereits freigeschaltete
+// Stufen) plus die nächstgelegenen Stufen, bis mindestens MIN_TASKS_PER_TOPIC
+// Übungsaufgaben zusammenkommen. Bei gleichem Abstand zuerst die leichtere Stufe.
+export function levelsWithMinTasks(topicId, profile, baseLevels) {
+  const counts = practiceCountsByLevel(topicId, profile);
+  const levels = new Set(baseLevels);
+  const sum = () => [...levels].reduce((a, l) => a + (counts[l] || 0), 0);
+  const base = Math.min(...baseLevels);
+  const top = Math.max(...baseLevels);
+  const candidates = [0, 1, 2, 3]
+    .filter((l) => !levels.has(l) && counts[l])
+    .sort((a, b) => Math.min(Math.abs(a - base), Math.abs(a - top)) - Math.min(Math.abs(b - base), Math.abs(b - top)) || a - b);
+  for (const l of candidates) {
+    if (sum() >= MIN_TASKS_PER_TOPIC) break;
+    levels.add(l);
+  }
+  return [...levels].sort();
+}
+
+// Ergänzt bestehende Lernpläne um Stufen, bis je Thema mindestens
+// MIN_TASKS_PER_TOPIC Übungsaufgaben freigeschaltet sind (es wird nichts entfernt).
+export function ensureMinTasksInPlans() {
+  const rows = all('SELECT p.user_id, p.topic_id, p.levels, u.profile FROM plan_items p JOIN users u ON u.id = p.user_id');
+  tx(() => {
+    for (const r of rows) {
+      const old = json(r.levels, [1]);
+      const levels = levelsWithMinTasks(r.topic_id, r.profile, old.length ? old : [1]);
+      if (levels.length !== old.length) run('UPDATE plan_items SET levels = ? WHERE user_id = ? AND topic_id = ?', JSON.stringify(levels), r.user_id, r.topic_id);
+    }
+  });
+}
+
 // Erstellt den Lernplan aus dem ersten Diagnosetest: schwächste Themen zuerst.
+// Je Thema werden mindestens MIN_TASKS_PER_TOPIC passende Übungsaufgaben freigeschaltet.
 // Themen, die dem Kind nach eigener Aussage leichtfallen UND im Test mindestens
 // auf Regelstandard lagen, kommen ans Ende – sie müssen nicht zuerst geübt werden.
 export function buildPlanFromRun(userId, runId) {
@@ -45,7 +93,8 @@ export function buildPlanFromRun(userId, runId) {
   tx(() => {
     run('DELETE FROM plan_items WHERE user_id = ?', userId);
     items.forEach((it, i) => {
-      run('INSERT INTO plan_items (user_id, topic_id, sort, diag_level, levels) VALUES (?, ?, ?, ?, ?)', userId, it.topic.id, i, it.level, JSON.stringify([it.level]));
+      const levels = levelsWithMinTasks(it.topic.id, user.profile, [it.level]);
+      run('INSERT INTO plan_items (user_id, topic_id, sort, diag_level, levels) VALUES (?, ?, ?, ?, ?)', userId, it.topic.id, i, it.level, JSON.stringify(levels));
     });
   });
 }
@@ -65,7 +114,7 @@ export function syncPlan(userId) {
   const have = new Set(existing.map((e) => e.topic_id));
   let max = Math.max(...existing.map((e) => e.sort));
   for (const t of topicsForProfile(user.profile)) {
-    if (!have.has(t.id)) run('INSERT INTO plan_items (user_id, topic_id, sort, diag_level, levels) VALUES (?, ?, ?, NULL, ?)', userId, t.id, ++max, '[1]');
+    if (!have.has(t.id)) run('INSERT INTO plan_items (user_id, topic_id, sort, diag_level, levels) VALUES (?, ?, ?, NULL, ?)', userId, t.id, ++max, JSON.stringify(levelsWithMinTasks(t.id, user.profile, [1])));
   }
 }
 

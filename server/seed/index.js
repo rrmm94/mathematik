@@ -3,7 +3,7 @@
 // optional einen Demo-Kurs. Aufruf auch manuell: npm run seed
 import { get, run, all, tx, setSetting, getSetting } from '../db.js';
 import { hashPassword } from '../auth.js';
-import { buildPlanFromRun } from '../plan.js';
+import { buildPlanFromRun, ensureMinTasksInPlans } from '../plan.js';
 import { rng } from './helpers.js';
 import { topicsA } from './topics-a.js';
 import { topicsB } from './topics-b.js';
@@ -204,11 +204,13 @@ function seedTopicHints() {
 
 export function seedIfEmpty() {
   seedSettings();
+  let demoCreated = false;
   if (get('SELECT COUNT(*) AS n FROM topics').n === 0) {
     console.log('Lege Beispielinhalte an …');
     seedContent();
     if (process.env.SEED_DEMO !== 'false' && get("SELECT COUNT(*) AS n FROM users WHERE role = 'student'").n === 0) {
       tx(seedDemo);
+      demoCreated = true;
       console.log('Demo-Kurs angelegt (Kennungen: peter, lea, ali, Passwort: demo1234)');
     }
     const c = get("SELECT (SELECT COUNT(*) FROM tasks WHERE kind='diagnose') AS d, (SELECT COUNT(*) FROM tasks WHERE kind='practice') AS p, (SELECT COUNT(*) FROM task_variants) AS v");
@@ -222,6 +224,13 @@ export function seedIfEmpty() {
   seedDiagGlsWachstum();
   // Einstiegstest der erw. RS: aus den (angepassten) RS10-Aufgaben abgeleitet, mit schwierigeren Zahlen und vertiefenden Fragen
   seedErsDiagnose();
+  // Demo-Lernpläne neu aufbauen, jetzt wo alle Übungspakete importiert sind
+  if (demoCreated) for (const d of all("SELECT d.* FROM diag_runs d JOIN users u ON u.id = d.user_id WHERE u.role = 'student' AND d.status = 'done'")) buildPlanFromRun(d.user_id, d.id);
+  // Lernpläne: je Thema mindestens 10 Übungsaufgaben freischalten (einmalig für bestehende Pläne)
+  if (!getSetting('plan_min_tasks_v1', '')) {
+    ensureMinTasksInPlans();
+    setSetting('plan_min_tasks_v1', '1');
+  }
 }
 
 // Direkter Aufruf: npm run seed
