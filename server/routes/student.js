@@ -150,7 +150,8 @@ r.get('/dashboard', (req, res) => {
 function extraInfo(u, p, lastRetestId) {
   const extra = json(p.extra_levels, []).filter((l) => !json(p.levels, []).includes(l));
   if (!extra.length) return null;
-  const pr = topicProgress(u.id, p.topic_id, u.profile, extra);
+  const coreTasks = practiceTasksFor(u.id, p.topic_id, u.profile, json(p.levels, [1]));
+  const pr = topicProgress(u.id, p.topic_id, u.profile, extra, coreTasks);
   if (!pr.total) return null;
   return { total: pr.total, solved: pr.solved, isNew: !!lastRetestId && p.extra_run_id === lastRetestId };
 }
@@ -345,7 +346,8 @@ function visiblePracticeTasks(u, topicId) {
   if (!p) return [];
   const core = json(p.levels, [1]);
   const extra = json(p.extra_levels, []).filter((level) => !core.includes(level));
-  return [...practiceTasksFor(u.id, topicId, u.profile, core), ...practiceTasksFor(u.id, topicId, u.profile, extra)];
+  const coreTasks = practiceTasksFor(u.id, topicId, u.profile, core);
+  return [...coreTasks, ...practiceTasksFor(u.id, topicId, u.profile, extra, coreTasks)];
 }
 
 r.get('/topics/:id', (req, res) => {

@@ -1,4 +1,6 @@
 import { all, get, run, json, tx } from './db.js';
+import { createHash } from 'node:crypto';
+import { publicAnswerSpec } from '../shared/checker.js';
 
 // Stufe aus der Anzahl richtig gelöster Diagnoseaufgaben (0..3).
 // Bei weniger/mehr als 3 bewertbaren Aufgaben wird auf 0..3 skaliert.
@@ -29,32 +31,20 @@ export const GOOD_LEVEL = 2;
 // So viele Übungsaufgaben soll ein Kind je Thema im Lernplan mindestens haben.
 export const MIN_TASKS_PER_TOPIC = 10;
 
-// Anzahl der Übungsaufgaben je Stufe (0..3) in einem Thema für ein Profil.
-function practiceCountsByLevel(topicId, profile) {
-  const counts = {};
-  const pkgs = all('SELECT p.id, p.level, p.profiles, (SELECT COUNT(*) FROM tasks t WHERE t.package_id = p.id AND t.kind = \'practice\') AS n FROM packages p WHERE p.topic_id = ?', topicId);
-  for (const p of pkgs) {
-    const pr = json(p.profiles, []);
-    if (pr.length && !pr.includes(profile)) continue;
-    counts[p.level] = (counts[p.level] || 0) + p.n;
-  }
-  return counts;
-}
-
 // Freizuschaltende Stufen: die Stufe aus dem Test (bzw. bereits freigeschaltete
 // Stufen) plus die nächstgelegenen Stufen, bis mindestens MIN_TASKS_PER_TOPIC
 // Übungsaufgaben zusammenkommen. Bei gleichem Abstand zuerst die leichtere Stufe.
 export function levelsWithMinTasks(topicId, profile, baseLevels) {
-  const counts = practiceCountsByLevel(topicId, profile);
   const levels = new Set(baseLevels);
-  const sum = () => [...levels].reduce((a, l) => a + (counts[l] || 0), 0);
+  // Dieselbe eindeutige Auswahl wie im Lernplan zählen, nicht doppelte Datensätze.
+  const count = () => practiceTasksFor(0, topicId, profile, [...levels]).length;
   const base = Math.min(...baseLevels);
   const top = Math.max(...baseLevels);
   const candidates = [0, 1, 2, 3]
-    .filter((l) => !levels.has(l) && counts[l])
+    .filter((l) => !levels.has(l) && practiceTasksFor(0, topicId, profile, [l]).length > 0)
     .sort((a, b) => Math.min(Math.abs(a - base), Math.abs(a - top)) - Math.min(Math.abs(b - base), Math.abs(b - top)) || a - b);
   for (const l of candidates) {
-    if (sum() >= MIN_TASKS_PER_TOPIC) break;
+    if (count() >= MIN_TASKS_PER_TOPIC) break;
     levels.add(l);
   }
   return [...levels].sort();
@@ -126,10 +116,30 @@ export function packagesFor(userId, topicId, profile, levels) {
   });
 }
 
+// Nur sichtbaren Inhalt vergleichen: Titel, Quellen und Lösungen können bei
+// Kopien verschieden sein. Zahlen, Bilder und Antwortmöglichkeiten bleiben erhalten.
+function canonicalContent(value) {
+  if (typeof value === 'string') return value.normalize('NFC').replace(/\s+/g, ' ').trim();
+  if (Array.isArray(value)) return value.map(canonicalContent);
+  if (value && typeof value === 'object') return Object.fromEntries(
+    Object.keys(value).sort().map((key) => [key, canonicalContent(value[key])]),
+  );
+  return value;
+}
+
+function variantFingerprint(v) {
+  return createHash('sha256').update(JSON.stringify(canonicalContent({
+    context: v.context || '',
+    prompt: v.prompt.trimStart().replace(/^\*\*[a-z]\)\*\*\s*/i, ''),
+    spec: publicAnswerSpec(json(v.answer, {})),
+  }))).digest('hex');
+}
+
 // Stabile Auswahl über alle freigeschalteten Pakete: höchstens 14 Aufgaben
 // pro Thema, reihum aus den Paketen, damit alle Übungsschwerpunkte vorkommen.
-export function practiceTasksFor(userId, topicId, profile, levels) {
+export function practiceTasksFor(userId, topicId, profile, levels, excludedTasks = []) {
   const pkgs = packagesFor(userId, topicId, profile, levels);
+  if (!pkgs.length) return [];
   const queues = pkgs.map((p) => all(
     `SELECT t.*, COALESCE(tp.solved, 0) AS solved,
             COALESCE(tp.attempts, 0) AS attempts, COALESCE(tp.solution_viewed, 0) AS solution_viewed
@@ -138,11 +148,29 @@ export function practiceTasksFor(userId, topicId, profile, levels) {
        AND EXISTS (SELECT 1 FROM task_variants v WHERE v.task_id = t.id)
      ORDER BY t.sort, t.id`, userId, p.id,
   ));
+  const fingerprints = new Map();
+  for (const v of all(`SELECT v.task_id, v.prompt, v.context, v.answer FROM task_variants v JOIN tasks t ON t.id = v.task_id
+                      WHERE t.topic_id = ? AND t.kind = 'practice'`, topicId)) {
+    if (!fingerprints.has(v.task_id)) fingerprints.set(v.task_id, []);
+    fingerprints.get(v.task_id).push(variantFingerprint(v));
+  }
+  const seen = new Set(excludedTasks.flatMap((t) => fingerprints.get(t.id) || []));
   const selected = [];
-  for (let i = 0; selected.length < 14; i++) {
+  const positions = queues.map(() => 0);
+  while (selected.length < 14) {
     let added = false;
-    for (const tasks of queues) {
-      if (tasks[i]) { selected.push(tasks[i]); added = true; }
+    for (let p = 0; p < queues.length; p++) {
+      while (positions[p] < queues[p].length) {
+        const task = queues[p][positions[p]++];
+        const keys = fingerprints.get(task.id) || [];
+        // Schon eine gemeinsame Variante reicht: Auch „Neue Zahlen“ soll
+        // später keine zweite Kopie einer anderen ausgewählten Aufgabe zeigen.
+        if (keys.some((key) => seen.has(key))) continue;
+        keys.forEach((key) => seen.add(key));
+        selected.push(task);
+        added = true;
+        break;
+      }
       if (selected.length === 14) break;
     }
     if (!added) break;
@@ -150,8 +178,8 @@ export function practiceTasksFor(userId, topicId, profile, levels) {
   return selected;
 }
 
-export function topicProgress(userId, topicId, profile, levels) {
-  const tasks = practiceTasksFor(userId, topicId, profile, levels);
+export function topicProgress(userId, topicId, profile, levels, excludedTasks = []) {
+  const tasks = practiceTasksFor(userId, topicId, profile, levels, excludedTasks);
   const total = tasks.length;
   const done = tasks.filter((t) => t.attempts > 0 || t.solution_viewed).length;
   const solved = tasks.filter((t) => t.solved).length;
