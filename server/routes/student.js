@@ -3,7 +3,7 @@ import { all, get, run, json, tx, getSetting } from '../db.js';
 import { requireStudent, verifyPassword, hashPassword } from '../auth.js';
 import { checkAnswer, publicAnswerSpec, answerSummary } from '../../shared/checker.js';
 import {
-  buildPlanFromRun, runTopicScores, topicsForProfile, packagesFor, topicProgress, syncPlan,
+  buildPlanFromRun, runTopicScores, topicsForProfile, packagesFor, practiceTasksFor, topicProgress, syncPlan,
   visibleLevels, progressState, compareRuns, previousRun, addExtraPractice,
 } from '../plan.js';
 import { PROFILES, GOAL_OPTIONS, MIN_STUDENT_PASSWORD } from '../../shared/constants.js';
@@ -339,6 +339,15 @@ function planLevels(userId, topicId) {
   return p ? visibleLevels(p) : null;
 }
 
+// Zusatzübungen bleiben separat: Sie verändern die Auswahl im Lernplan nicht.
+function visiblePracticeTasks(u, topicId) {
+  const p = get('SELECT levels, extra_levels FROM plan_items WHERE user_id = ? AND topic_id = ?', u.id, topicId);
+  if (!p) return [];
+  const core = json(p.levels, [1]);
+  const extra = json(p.extra_levels, []).filter((level) => !core.includes(level));
+  return [...practiceTasksFor(u.id, topicId, u.profile, core), ...practiceTasksFor(u.id, topicId, u.profile, extra)];
+}
+
 r.get('/topics/:id', (req, res) => {
   const u = req.user;
   const topic = get('SELECT * FROM topics WHERE id = ?', Number(req.params.id));
@@ -346,15 +355,11 @@ r.get('/topics/:id', (req, res) => {
   if (!topic || !pi) return res.status(404).json({ error: 'Thema nicht gefunden.' });
   const levels = visibleLevels(pi);
   const core = json(pi.levels, [1]);
+  const selected = visiblePracticeTasks(u, topic.id);
   const pkgs = packagesFor(u.id, topic.id, u.profile, levels).map((p) => {
-    const s = get(
-      `SELECT COUNT(*) AS total, SUM(CASE WHEN tp.solved = 1 THEN 1 ELSE 0 END) AS solved
-       FROM tasks t LEFT JOIN task_progress tp ON tp.task_id = t.id AND tp.user_id = ? WHERE t.package_id = ?`,
-      u.id, p.id,
-    );
-    // extra: Zusatzübung nach dem Nachtest (zählt nicht zum Fortschritt) – ohne Stufe zu verraten
-    return { id: p.id, title: p.title, description: p.description, total: s.total, solved: s.solved || 0, extra: !core.includes(p.level) };
-  });
+    const tasks = selected.filter((t) => t.package_id === p.id);
+    return { id: p.id, title: p.title, description: p.description, total: tasks.length, solved: tasks.filter((t) => t.solved).length, extra: !core.includes(p.level) };
+  }).filter((p) => p.total > 0);
   pkgs.sort((a, b) => a.extra - b.extra);
   const sections = all('SELECT id, title FROM script_sections WHERE topic_id = ? ORDER BY sort, id', topic.id);
   const feedback = all('SELECT id, text, created_at, read_at, task_id FROM feedback WHERE user_id = ? AND topic_id = ? ORDER BY created_at DESC', u.id, topic.id)
@@ -434,7 +439,8 @@ r.get('/packages/:id', (req, res) => {
   const p = allowedPackage(u, Number(req.params.id));
   if (!p) return res.status(404).json({ error: 'Übungspaket nicht gefunden.' });
   const topic = get('SELECT * FROM topics WHERE id = ?', p.topic_id);
-  const tasks = all("SELECT * FROM tasks WHERE package_id = ? AND kind = 'practice' ORDER BY sort, id", p.id)
+  const tasks = visiblePracticeTasks(u, topic.id)
+    .filter((t) => t.package_id === p.id)
     .map((t) => taskView(u, t))
     .filter(Boolean);
   res.json({ package: { id: p.id, title: p.title, description: p.description }, topic: topicPublic(topic), tasks });
@@ -443,7 +449,7 @@ r.get('/packages/:id', (req, res) => {
 function allowedTask(u, taskId) {
   const t = get("SELECT * FROM tasks WHERE id = ? AND kind = 'practice'", taskId);
   if (!t || !allowedPackage(u, t.package_id)) return null;
-  return t;
+  return visiblePracticeTasks(u, t.topic_id).find((task) => task.id === t.id) || null;
 }
 
 r.post('/tasks/:id/check', (req, res) => {

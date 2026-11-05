@@ -126,20 +126,36 @@ export function packagesFor(userId, topicId, profile, levels) {
   });
 }
 
-export function topicProgress(userId, topicId, profile, levels) {
+// Stabile Auswahl über alle freigeschalteten Pakete: höchstens 14 Aufgaben
+// pro Thema, reihum aus den Paketen, damit alle Übungsschwerpunkte vorkommen.
+export function practiceTasksFor(userId, topicId, profile, levels) {
   const pkgs = packagesFor(userId, topicId, profile, levels);
-  if (!pkgs.length) return { total: 0, done: 0, solved: 0, percent: 0 };
-  const ids = pkgs.map((p) => p.id);
-  const r = get(
-    `SELECT COUNT(*) AS total,
-            SUM(CASE WHEN tp.attempts > 0 OR tp.solution_viewed = 1 THEN 1 ELSE 0 END) AS done,
-            SUM(CASE WHEN tp.solved = 1 THEN 1 ELSE 0 END) AS solved
+  const queues = pkgs.map((p) => all(
+    `SELECT t.*, COALESCE(tp.solved, 0) AS solved,
+            COALESCE(tp.attempts, 0) AS attempts, COALESCE(tp.solution_viewed, 0) AS solution_viewed
      FROM tasks t LEFT JOIN task_progress tp ON tp.task_id = t.id AND tp.user_id = ?
-     WHERE t.kind = 'practice' AND t.package_id IN (${ids.map(() => '?').join(',')})`,
-    userId, ...ids,
-  );
-  const total = r.total || 0;
-  return { total, done: r.done || 0, solved: r.solved || 0, percent: total ? Math.round(((r.solved || 0) / total) * 100) : 0 };
+     WHERE t.kind = 'practice' AND t.package_id = ?
+       AND EXISTS (SELECT 1 FROM task_variants v WHERE v.task_id = t.id)
+     ORDER BY t.sort, t.id`, userId, p.id,
+  ));
+  const selected = [];
+  for (let i = 0; selected.length < 14; i++) {
+    let added = false;
+    for (const tasks of queues) {
+      if (tasks[i]) { selected.push(tasks[i]); added = true; }
+      if (selected.length === 14) break;
+    }
+    if (!added) break;
+  }
+  return selected;
+}
+
+export function topicProgress(userId, topicId, profile, levels) {
+  const tasks = practiceTasksFor(userId, topicId, profile, levels);
+  const total = tasks.length;
+  const done = tasks.filter((t) => t.attempts > 0 || t.solution_viewed).length;
+  const solved = tasks.filter((t) => t.solved).length;
+  return { total, done, solved, percent: total ? Math.round((solved / total) * 100) : 0 };
 }
 
 // ---------------------------------------------------------------- Gesamtfortschritt, Nachtest, Prüfung
